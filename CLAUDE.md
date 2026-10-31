@@ -22,6 +22,13 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Video: thumbnail loops self-hosted; any video with a player comes from YouTube (lite facade). No paid CDN.
 - Staging on subdomain, deploy via GitHub Actions. EN primary, PT secondary. Full SEO plan in the master doc (8 keyword groups).
 
+## Current site audit (2026-10-31, via FTP read-only)
+- Docroot /public_html. Theme: Stockholm 8.10 (Select Themes, commercial, 18 MB) + empty child theme → all customisation lives in theme options / page-builder content.
+- Plugins: WPBakery (js_composer) AND Elementor + Qi addons, LayerSlider, Revolution Slider, Jetpack, ACF Pro (folder "advanced-custom-fields-pro-master" — check licence/updates), 3 separate custom-CSS plugins, right-click/inspect blockers, Wordfence, Limit Login, Really Simple SSL, CF7, PixelYourSite, Google Sitemap Generator, stockholm-core (portfolio post type).
+- Uploads: 3.0 GB.
+- Verdict: not lean → build a new lightweight custom theme that keeps the same content (portfolio post type slug, ACF fields, pages, URLs) so wp-admin stays familiar; retire builders/sliders after migration.
+- FTP: account claude@boundvisuals.com (home dir), secrets FTP_HOST/FTP_USER/FTP_PASS in GitHub. SSH: port 44222 exists but firewalled from outside.
+
 ## Content program (decided)
 - Vítor sends: MEGA link to a project's FINALS subfolder + a one-line note. Nothing else.
 - One image per post. 4:5 → single slide. Any other ratio → carousel: auto 4:5 detail crops, last slide = whole image on WHITE 4:5 (Vítor's own habit).
@@ -41,7 +48,8 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
 
 ## Pending from Vítor
-- SSH port (asked PTServidor support).
+- SSH: port 44222 firewalled; asked PTServidor to open it (key-only). FTP works meanwhile.
+- WordPress XML export (Tools → Export → All content) to map content/builders.
 - MEGA links per project.
 - Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
