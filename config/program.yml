@@ -1,0 +1,20 @@
+instagram:
+  one_image_per_post: true
+  feed_ratio: [4, 5]
+  feed_size: [1080, 1350]
+  story_size: [1080, 1920]
+  landscape_policy: frame      # never crop the composition
+  frame_color: "#111111"       # adjust to brand manual
+  rotate_projects: true
+  open_with_best_image: true
+  per_day: {image_posts: 1, stories: [3, 5]}
+  reels: {every_n_days: 2, one_per_project: true}
+  queue_days_target: 14
+  queue_days_warning: 7
+  require_approval: true
+web:
+  lightbox: lossless_original   # pixel-identical, verified
+  grid_widths: [800, 1600, 2400]
+publish_order:
+  first: [website, behance, cgarchitect, chaos_cgconnect, industriacriativa]
+  then: [instagram, facebook, pinterest, linkedin, youtube]

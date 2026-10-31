@@ -1,0 +1,36 @@
+name: Ingest project from MEGA
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project id (e.g. vivendas-cete)"
+        required: true
+      mega_link:
+        description: "Public MEGA folder link to the FINALS folder"
+        required: true
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq megatools
+          pip install -q pillow pyyaml
+      - name: Download finals from MEGA
+        env:
+          LINK: ${{ inputs.mega_link }}
+        run: |
+          mkdir -p in
+          megatools dl --no-progress --path in "$LINK"
+          echo "Downloaded:"; find in -type f | sed 's/^/  /'
+      - name: Process (lossless web + Instagram 4:5)
+        run: python scripts/process_media.py in out "${{ inputs.project_id }}" config/program.yml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.project_id }}-processed
+          path: out
+          retention-days: 14

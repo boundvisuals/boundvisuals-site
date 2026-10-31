@@ -1,0 +1,11 @@
+# One entry per project. Vítor only supplies: mega, note.
+# status: pending → ingested → queued → published
+projects: []
+#  - id: vivendas-cete
+#    title: Vivendas Cête
+#    client: anonymous
+#    location: Cête, Paredes, PT
+#    mega: https://mega.nz/folder/XXXX#YYYY
+#    publish: true          # false = private portfolio only (NDA)
+#    note: "destaque: a sala e o exterior ao fim da tarde"
+#    status: pending
