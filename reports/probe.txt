@@ -1,0 +1,11 @@
+21 OPEN 220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------220-You are user 
+22 closed
+2022 closed
+2200 closed
+2222 closed
+7822 closed
+10022 closed
+21098 closed
+22022 closed
+22222 closed
+65002 closed
