@@ -27,6 +27,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Plugins: WPBakery (js_composer) AND Elementor + Qi addons, LayerSlider, Revolution Slider, Jetpack, ACF Pro (folder "advanced-custom-fields-pro-master" — check licence/updates), 3 separate custom-CSS plugins, right-click/inspect blockers, Wordfence, Limit Login, Really Simple SSL, CF7, PixelYourSite, Google Sitemap Generator, stockholm-core (portfolio post type).
 - Uploads: 3.0 GB.
 - Verdict: not lean → build a new lightweight custom theme that keeps the same content (portfolio post type slug, ACF fields, pages, URLs) so wp-admin stays familiar; retire builders/sliders after migration.
+- Content (XML export 2026-10-31): 5 pages (Work=home, Info, Get my budget, Obter o meu orçamento, Privacy) + 36 portfolio_page items, ALL built with Elementor (WPBakery unused → removable). Each portfolio item = ONE image/shot (e.g. Gold Village ×7), URL /portfolio_page/<slug>/, grid loops via post-featured-video plugin (27 mp4 in uploads). Categories: Image, Architectural, Marketing, Product, Design, Film/Animation, Concept, Digital Art, Automotive. Every portfolio item has the same SEO title "3D - Bound Visuals" (leftover SEOPress/qode meta, plugin gone) → major SEO fix. No real case-study pages per project.
 - FTP: account claude@boundvisuals.com (home dir), secrets FTP_HOST/FTP_USER/FTP_PASS in GitHub. SSH: port 44222 exists but firewalled from outside.
 
 ## Content program (decided)
@@ -49,7 +50,6 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 
 ## Pending from Vítor
 - SSH: port 44222 firewalled; asked PTServidor to open it (key-only). FTP works meanwhile.
-- WordPress XML export (Tools → Export → All content) to map content/builders.
 - MEGA links per project.
 - Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
