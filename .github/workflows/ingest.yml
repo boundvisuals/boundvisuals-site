@@ -45,4 +45,4 @@ jobs:
           cp out/*.log out/folder_tree.txt out/manifest.json "$D/" 2>/dev/null || true
           cp out/ig/*.jpg "$D/ig/" 2>/dev/null || true
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
-          git add reports && git commit -m "Report: ${{ inputs.project_id }}" && git push || echo "nothing to commit"
+          git add reports && git commit -m "Report: ${{ inputs.project_id }}" && (git pull --rebase -q && git push) || echo "nothing to commit"
