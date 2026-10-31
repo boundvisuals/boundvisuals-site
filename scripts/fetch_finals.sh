@@ -19,10 +19,13 @@ if [ ! -s finals.txt ]; then
   grep -iE '\.(png|jpe?g|tiff?|webp|exr|mp4|mov)$' all.txt > finals.txt || true
 fi
 echo "Finals found: $(wc -l < finals.txt)"
+FAIL=0
 while IFS= read -r f; do
   shot=$(echo "$f" | awk -F/ '{ if (NF>3) print $(NF-2); else print "" }' | tr ' /' '__')
   dest="$OUT/${shot:-root}"; mkdir -p "$dest"
-  echo "  get $f"
-  mega-get "$f" "$dest/" >/dev/null
+  rel="${f#/*/}"                      # paths are listed as /<shared-root>/...; mega-get wants them relative to it
+  echo "  get $rel"
+  mega-get "$rel" "$dest/" >/dev/null || { echo "  FAILED $rel"; FAIL=$((FAIL+1)); }
 done < finals.txt
 mega-logout >/dev/null || true
+echo "Downloaded: $(find "$OUT" -type f | wc -l)  failed: $FAIL"
