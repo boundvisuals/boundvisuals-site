@@ -1,11 +1,50 @@
+== picard.servidorpt.pt (185.32.190.7)
 21 OPEN 220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------220-You are user 
 22 closed
+222 closed
+2020 closed
 2022 closed
+2122 closed
 2200 closed
 2222 closed
+2233 closed
+4422 closed
+5022 closed
+6022 closed
+7022 closed
 7822 closed
+8022 closed
+9022 closed
 10022 closed
+12022 closed
+18765 closed
 21098 closed
 22022 closed
 22222 closed
+50022 closed
+65002 closed
+== 185.32.190.7 (185.32.190.7)
+21 OPEN 220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------220-You are user 
+22 closed
+222 closed
+2020 closed
+2022 closed
+2122 closed
+2200 closed
+2222 closed
+2233 closed
+4422 closed
+5022 closed
+6022 closed
+7022 closed
+7822 closed
+8022 closed
+9022 closed
+10022 closed
+12022 closed
+18765 closed
+21098 closed
+22022 closed
+22222 closed
+50022 closed
 65002 closed
