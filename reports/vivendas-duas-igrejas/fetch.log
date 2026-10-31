@@ -1,3 +1,6 @@
 [Initiating MEGAcmd server in background. Log: /home/runner/.megaCmd/megacmdserver.log]
 Folder contains 8 entries
-Finals found: 0
+No *final* subfolders: taking every image/video in the shared folder
+Finals found: 7
+  get /Publicar/1 - Front _ webp + Seedvr2 bravo.png
+[2026-10-31_16-26-06.366269 cmd ERR  Couldn't find /Publicar/1 - Front _ webp + Seedvr2 bravo.png]
