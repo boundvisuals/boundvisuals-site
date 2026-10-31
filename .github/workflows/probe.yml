@@ -9,11 +9,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p reports
-          for p in 21 22 2022 2200 2222 7822 10022 21098 22022 22222 65002; do
-            if timeout 5 bash -c "echo > /dev/tcp/185.32.190.7/$p" 2>/dev/null; then
-              b=$(timeout 4 bash -c "exec 3<>/dev/tcp/185.32.190.7/$p; head -c 80 <&3" 2>/dev/null | tr -d '\r\n')
+          for h in picard.servidorpt.pt 185.32.190.7; do echo "== $h ($(getent hosts $h | cut -d" " -f1))"; for p in 21 22 222 2020 2022 2122 2200 2222 2233 4422 5022 6022 7022 7822 8022 9022 10022 12022 18765 21098 22022 22222 50022 65002; do
+            if timeout 5 bash -c "echo > /dev/tcp/$h/$p" 2>/dev/null; then
+              b=$(timeout 4 bash -c "exec 3<>/dev/tcp/$h/$p; head -c 80 <&3" 2>/dev/null | tr -d '\r\n')
               echo "$p OPEN $b"
             else echo "$p closed"; fi
-          done | tee reports/probe.txt
+          done; done | tee reports/probe.txt
           git config user.name bv-robot; git config user.email robot@boundvisuals.com
           git add reports/probe.txt && git commit -qm "Probe report" && git pull --rebase -q && git push -q || true
