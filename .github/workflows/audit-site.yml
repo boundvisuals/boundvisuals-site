@@ -1,0 +1,35 @@
+name: Audit current site (FTP, read-only)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Read-only listing + download themes (never wp-config.php)
+        env:
+          H: ${{ secrets.FTP_HOST }}
+          U: ${{ secrets.FTP_USER }}
+          P: ${{ secrets.FTP_PASS }}
+        run: |
+          mkdir -p audit
+          L() { lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; set net:timeout 20; $1; bye" "$H"; }
+          L "cls -1 /" > audit/home.txt 2>&1 || true
+          cat audit/home.txt
+          for d in public_html boundvisuals.com; do
+            if L "cls -1 /$d/wp-config.php" >/dev/null 2>&1; then echo "$d" > audit/docroot.txt; break; fi
+          done
+          R=$(cat audit/docroot.txt 2>/dev/null || echo public_html); echo "docroot: $R"
+          L "cls -1 /$R/wp-content/themes/" > audit/themes.txt 2>&1 || true
+          L "cls -1 /$R/wp-content/plugins/" > audit/plugins.txt 2>&1 || true
+          L "cls -1 /$R/" > audit/docroot_listing.txt 2>&1 || true
+          L "du -sh /$R/wp-content/uploads" > audit/uploads_size.txt 2>&1 || true
+          mkdir -p audit/themes
+          L "mirror --exclude-glob=*.jpg --exclude-glob=*.png --exclude-glob=*.mp4 --exclude-glob=*.webp --exclude-glob=*.zip --exclude-glob=node_modules/ /$R/wp-content/themes/ audit/themes/" || true
+          find audit -name wp-config.php -delete
+          du -sh audit/themes/* 2>/dev/null | tee audit/themes_size.txt
+      - run: |
+          git config user.name bv-robot; git config user.email robot@boundvisuals.com
+          git add audit && git commit -qm "Audit: current site themes + listings" && git pull --rebase -q && git push -q || echo nothing
