@@ -1,0 +1,19 @@
+name: Probe server ports
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p reports
+          for p in 21 22 2022 2200 2222 7822 10022 21098 22022 22222 65002; do
+            if timeout 5 bash -c "echo > /dev/tcp/185.32.190.7/$p" 2>/dev/null; then
+              b=$(timeout 4 bash -c "exec 3<>/dev/tcp/185.32.190.7/$p; head -c 80 <&3" 2>/dev/null | tr -d '\r\n')
+              echo "$p OPEN $b"
+            else echo "$p closed"; fi
+          done | tee reports/probe.txt
+          git config user.name bv-robot; git config user.email robot@boundvisuals.com
+          git add reports/probe.txt && git commit -qm "Probe report" && git pull --rebase -q && git push -q || true
