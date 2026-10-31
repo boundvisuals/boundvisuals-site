@@ -1,0 +1,1123 @@
+﻿8.10
+- Added WordPress 5.8.1 compatibility
+- Added WooCommerce 5.7.1 compatibility
+- Updated Stockholm Core plugin to 2.3.2
+- Updated Stockholm Membership plugin to 1.1.4
+- Updated Stockholm Child theme to 1.1.1
+- Fixed cart widgets on WP 5.8
+- Fixed widgets dependency on WP 5.8
+- Fixed creation of the Custom Sidebars in new Widgets layout
+- Improved Select Slider header effect logic for PHP 8
+- Improved stockholm_qode_get_attachment_id_from_url function
+- Removed Google+ from Social Networks sharing options
+- Removed Google+ option from login form
+
+8.9.1
+- Updated Stockholm Core plugin to 2.3.1
+- Updated Revolution Slider to 6.5.8
+- Updated WPBakery page builder to 6.7.0
+- Fixed potential security issue
+
+8.9
+- Theme Options, Shortcodes and Custom Post Types are now disabled if theme purchase code is not registered on live server
+- Updated Stockholm Core plugin to 2.3
+
+8.8
+- Added Anneli demo
+- Updated Modernizr script
+- Updated Stockholm Core plugin to 2.2.9
+- Updated Select Instagram Feed to plugin 2.0.2
+- Updated Revolution Slider to 6.4.11
+- Improved compatibility with QI Addons for Elementor plugin
+- Fixed Select Instagram Feed connection and feed fetching issue
+
+8.7
+- Added Signe demo
+- Added 'Horizontal Layout' shortcode
+- Updated Stockholm Core plugin to 2.2.8
+- Updated LayerSlider to 6.11.8
+- Fixed preview image for Vimeo video when used on portfolio single page
+
+8.6
+- Added Filippa demo
+- Added 'Portfolio List Horizontal' shortcode
+- Updated Stockholm Core plugin to 2.2.7
+
+8.5
+- Added compatibility with QI Addons for Elementor plugin
+- Added QI Addons for Elementor plugin as recommended
+- Updated Stockholm Core plugin to 2.2.6
+- Updated Charts script
+
+8.4
+- Added Klara demo
+- Updated Stockholm Core plugin to 2.2.5
+- Fixed Icon Pack option for Button WPBakery shortcode
+
+8.3
+- Added Botill demo
+- Added Number of Columns option for 'Portfolio Slider' shortcode
+- Updated Stockholm Core plugin to 2.2.4
+
+8.2
+- Added Thomas demo
+- Updated Stockholm Core plugin to 2.2.3
+
+8.1
+- Added Ulla demo
+- Updated Stockholm Core plugin to 2.2.2
+- Updated Revolution Slider to 6.4.6
+
+8.0
+- Added Livia demo
+- Updated Stockholm Core plugin to 2.2.1
+
+7.9
+- Added Aaren demo
+- Added 'wp_nav_menu_item_custom_fields' action within theme custom navigation walker
+- Updated Stockholm Core plugin to 2.2.0
+- Updated Revolution Slider to 6.4.3
+- Updated LayerSlider to 6.11.6
+- Updated Google Fonts
+
+7.8
+- Added Juno demo
+- Updated Stockholm Core plugin to 2.1.9
+- Updated Revolution Slider to 6.4.2
+
+7.7
+- Added Jesper demo
+- Updated Stockholm Core plugin to 2.1.8
+- Updated Revolution Slider to 6.4.0
+- Updated WPBakery page builder to 6.6.0
+
+7.6
+- Added Melker demo
+- Updated Stockholm Core plugin to 2.1.7
+
+7.5
+- Added Sigurd demo
+- Added additional years in 'Countdown' shortcode
+- Updated Stockholm Core plugin to 2.1.6
+- Updated Revolution Slider to 6.3.9
+- Updated LayerSlider to 6.11.5
+- Fixed mobile logo not showing properly in certain cases
+- Fixed width of the Large Height portfolio item in 'Portfolio Masonry List' shortcode for WPBakery page builder
+
+7.4
+- Added Agnar demo
+- Updated Stockholm Core plugin to 2.1.5
+- Updated Revolution Slider to 6.3.8
+- Updated LayerSlider to 6.11.4
+- Improved PHP 8 compatibility
+
+7.3
+- Added Anneke demo
+- Updated Stockholm Core plugin to 2.1.4
+- Updated Revolution Slider to 6.3.6
+- Updated FullPage plugin script
+- Fixed Full Screen Page not working properly on Mac devices with Safari browser
+- Fixed theme registration with PHP8
+- Fixed 'Like' button on Blog Lists
+
+7.2
+- Added Erika demo
+- Updated Stockholm Core plugin to 2.1.3
+- Improved Ajax Page Transitions when 'Vertical Split Slider' or masonry layout without predefined columns for 'Portfolio List' are used
+- Improved Justify Gallery type for 'Portfolio List' when 'Hide' is set as Last Row Behaviour
+
+7.1
+- Added Ester demo
+- Added 'Vertical Split Slider' shortcode
+- Updated Stockholm Core plugin to 2.1.2
+
+7.0
+- Added Idun demo
+- Added mobile logo option
+- Added option for masonry layout without predefined columns and space between items for 'Portfolio List' shortcode
+- Updated Stockholm Core plugin to 2.1.1
+- Updated Revolution Slider to 6.3.5
+- Updated WPBakery page builder to 6.5.0
+- Improved Stockholm One Click Import to import Elementor Content Width option
+
+6.9
+- Added Bertil demo
+- Added Disable Google Fonts option in Select Options -> General
+- Updated Stockholm Core plugin to 2.1
+- Updated Revolution Slider to 6.3.2
+
+6.8
+- Added Erna demo
+- Updated Stockholm Core plugin to 2.0.9
+
+6.7
+- Added Albin demo
+- Added 'Split Scrolling Section' shortcode
+- Added '6 rows' option for 'Latest Posts' shortcode
+- Updated Stockholm Core plugin to 2.0.8
+- Updated WPBakery page builder to 6.4.2
+- Updated Revolution Slider to 6.3.1
+
+6.6
+- Added Inga demo
+- Updated Stockholm Core plugin to 2.0.7
+- Fixed Classic Editor Select Shortcodes button functionality
+
+6.5
+- Added Mikaela demo
+- Added Split as type option for 'Portfolio List' shortcode
+- Updated Stockholm Core plugin to 2.0.6
+- Improved responsiveness for 'Horizontally Scrolling Portfolio List' for touch devices
+- Fixed Select Instagram Feed plugin not being suggested as recommended plugin
+
+6.4
+- Added Agda demo
+- Updated Stockholm Core plugin to 2.0.5
+- Fixed fatal error when core plugin is activated without theme
+
+6.3
+- Added Kerstin demo
+- Updated Stockholm Core plugin to 2.0.4
+
+6.2
+- Added Agnes demo
+- Updated Stockholm Core plugin to 2.0.3
+- Updated Timetable Responsive Schedule For WordPress to 6.4
+
+6.1
+- Added Sven demo
+- Updated Stockholm Core plugin to 2.0.2
+
+6.0.1
+- Updated Stockholm Core plugin to 2.0.1
+- Updated Select Instagram Feed to plugin 2.0.1
+- Fixed error when Ajax Page Transitions are enabled
+- Fixed Position option for 'Icon' shortcode for all Icon Packs
+- Fixed Select Instagram Feed Business Instagram Account connection
+
+6.0
+- Added Astrid Demo
+- Added Knut Demo
+- Added Liv Demo
+- Added Felix Demo
+- Added Alma Demo
+- Added Grete Demo
+- Added Hanne Demo
+- Added Elin Demo
+- Added Karin Demo
+- Added Lene Demo
+- Added Ludvig Demo
+- Added Agata Demo
+- Added Hedda Demo
+- Added Oddvar Demo
+- Added Elias Demo
+- Added Linnea Demo
+- Added Sigrid Demo
+- Added Malin Demo
+- Added Trine Demo
+- Added Sebastian Demo
+- Added Freja Demo
+- Added Agneta Demo
+- Added Ingunn Demo
+- Added Nora Demo
+- Added Stella Demo
+- Added Bodil Demo
+- Added Alf Demo
+- Added Sanna Demo
+- Added Nils Demo
+- Added Arne Demo
+- Added Einar Demo
+- Added Edvin Demo
+- Added Arvid Demo
+- Added Jens Demo
+- Added Else Demo
+- Added Ville Demo
+- Added Wilda Demo
+- Added Unni Demo
+- Added Ida Demo
+- Added Ingrid Demo
+- Added Otto Demo
+- Added Kjell Demo
+- Added Finn Demo
+- Added Mikkel Demo
+- Added Alfred Demo
+- Added Jorunn Demo
+- Added Juni Demo
+- Added Loke Demo
+- Added Hilma Demo
+- Added Marius Demo
+- Added Ivar Demo
+- Added Axel Demo
+- Added Janne Demo
+- Added Jarle Demo
+- Added Olle Demo
+- Added Rolf Demo
+- Added Gerd Demo
+- Added Svea Demo
+- Added Inger Demo
+- Added Lotta Demo
+- Added Olander Demo
+- Added Eira Demo
+- Added Marit Demo
+- Added Jonna Demo
+- Added Lovisa Demo
+- Added Leia Demo
+- Added Leif Demo
+- Added Nissa Demo
+- Added Kirsten Demo
+- Added Harald Demo
+- Added Eirik Demo
+- Added Emil Demo
+- Added Helge Demo
+- Added Henrik Demo
+- Added Timetable Responsive Schedule For WordPress Plugin
+- Added 'Initial Width of Content' changer to Select Options
+- Added Contact Form 7 shortcode for Elementor
+- Added 'Footer Bottom in Grid' option in Select Options -> Footer section
+- Added 'Content in center' option for 'Interactive Image' shortcode
+- Added 'Select Drodown Cart Icon Source' and 'Dropdown Cart Icon SVG Path' options in Select Options -> Woocommerce -> Dropdown Cart section
+- Added 'Linea Icon Pack' as option for WooCommerce dropdwn icon
+- Added 'Show Product Number' option in Select Options -> Woocommerce -> Dropdown Cart section
+- Added 'Info Below / Button on Image Hover' info position for 'Product List Elegant' shortcode
+- Added 'Developer Tool' tab for 'Icon', 'Button', 'Contact Form 7', 'Custom Font', 'Icon With Text' elementor widgets in which you can change default widget view to shortcode view which can be reusable
+- Added 'Show Navigation Arrows' for testimoanials shortcode
+- Added 'Text Above Title', 'Text Above Title - Title Tag', 'Text Above Title Color' options on page
+- Added Font Options for 'Text Above Title' in Select Options -> Fonts section
+- Added Responsive Font Options for title tags in Select Options -> Fonts section
+- Added SVG Icon option for sidearea opener in Select Options -> Header -> Side Area section
+- Added SVG Icon option for popup menu opener in Select Options -> Header -> Fullscreen Menu section
+- Added 'Letter Spacing' option for 'Button' shortcode
+- Added 'Items Visible' and 'Stage Padding' option for 'draggable' type of 'Select Carousel' schortcode
+- Added 'Linea Icons' and 'Ion Icons' for 'Icon', 'Button' schortcode
+- Added 'Select Separator' widget
+- Added 3 columns in proportion '25%+50%+25%' in Footer Top Columns option
+- Added 'Titile in Grid' option in Select Options -> Title section
+- Added 'Titile padding' option in Select Options -> Title section
+- Added 'Breadcrumbs Position' option in Select Options -> Title section
+- Added Footer Top Column Alignment options in Select Options -> Footer -> Footer Top
+- Added 'Info Below Image' and 'Info Below / Button on Image Hover' hover types for 'Product List Elegant - Carousel' shortcode
+- Added Video Box shortcode
+- Added Footer Advanced Responsive Options in Select Options -> Footer
+- Added Sidebar Advanced Responsive Options in Select Options -> General
+- Added 'Left' as 'Menu Position' in Select Options -> Header
+- Added 'Info Tab Postion' in Select Options -> Woocommerce -> Product Single section
+- Added 'Interactive Links' shortcode
+- Added option to choose 'Back To Top' icon in Select Options -> Elements -> Back To Top
+- Added Custom Style 2 panel for 'Contact Form 7' in Select Options -> Contact Page
+- Added 'Switch to Left Menu' and 'Left Menu Area' options in Select Options -> Header
+- Added 'Horizontally Scrolling Portfolio List' shortcode
+- Added 'Full Screen Sections' Elementor widget
+- Added footer options for page, post and portfolio item
+- Added 'Mobile Navigation' menu location to display it on mobile devices if needed
+- Added Snazzy map style option for 'Qode Google Map' shortcode
+- Added 'Workflow' shortcode
+- Added 'Image Marquee' shortcode
+- Added Social Icons Position option for "Team" shortcode
+- Added 'Audio Blog List' shortcode
+- Added 'Read More Style' option for 'Simple Blog List' shortcode
+- Added 'Background Image' options for footer
+- Added 'Background Image' options for footer top
+- Added Show Project Title option for 'Centered Portfolio Carousel' shortcode
+- Added 'Product Type' option to choose Product Single layout in Select Options -> Woocommerce -> Product Single
+- Added 'Enable Pagination' for Product List Elegant - Carousel shortcode
+- Added 'Portfolio big images inverted', 'Portfolio full width slider inverted' as portfolio single type options
+- Added 'Portfolio Project Info' shortcode
+- Added "Image Size" option for "Latest Posts" shortcode
+- Added "Image Size" option for "Portfolio List" shortcode when Pinterest Type is selected
+- Added 'Item Link' and 'Item Link Target' options for 'Icon List Item' shortcode
+- Added 'Five Columns' option for 'Latest Posts' shortcode
+- Added 'Space Between' option for Portfolio List - Justified Gallery type
+- Added 'p' as title tag option for Icon With Text shortcode
+- Added 'Position of thumbnails' option for Default Single Product type in Select Options -> WooCommerce -> Single Product
+- Added 'Content Background Image' option in Select Options -> General
+- Added 'Page Background Image' option per page
+- Improved import
+- Improved responsiveness of Woocommerce Product Single layout
+- Improved responsiveness of 'Portfolio Full Screen Slider' single type
+- Improved Cart Table responsiveness
+- Updated Google Fonts
+- Updated Revolution Slider to 6.2.23
+- Updated WPBakery page builder to 6.4.1
+- Updated Stockholm Core plugin to 2.0
+- Updated Select Restaurant plugin to 2.0
+- Updated Select Instagram Feed to 2.0
+- Updated Select Twitter Feed to 2.0
+- Fixed changing of 'First Main Color' for some woocommerce elements
+- Fixed position of close icon in cart dropdown
+- Fixed 'underline' style for Button shortcode
+- Fixed woocommerce columns responsive
+- Fixed default woocommerce templates including in elementor frontend view
+- Fixed 'Product Title Style' from Select Options -> WooCommerce not applying on Standard 'Select Products List'
+- Fixed 'Related product' title styling from Select Options
+- Fixed submitting of 'Reservation Form' shortcode in Select Restaurnat plugin
+- Fixed audio player layout on blog and portfolio items
+- Fixed Product List - Elegant filter not showing "Add to Cart" button properly
+- Fixed Stockholm Instagram Widget to work with latest version of Instagram API
+
+5.3
+- Added WordPress 5.5 compatibility
+- Added WooCommerce 4.4.1 compatibility
+- Updated Stockholm Core to 1.2.2
+- Updated Select Membership to 1.1.3
+- Updated Revolution Slider to 6.2.22
+- Updated WPBakery page builder to 6.3.0
+- Updated LayerSlider to 6.11.2
+- Updated language files
+- Updated Infinite Scroll plugin script
+- Fixed Infinite Scroll pagination when used with Masonry Blog templates
+
+5.2.1
+- Updated Stockholm Core to 1.2.1
+- Fixed registration 
+
+5.2
+- Added Stockholm Dashboard
+- Added Welcome Page
+- Updated Stockholm Core to 1.2
+- Updated Revolution Slider to 6.1.5
+- Updated Layer Slider to 6.10.0
+- Updated WPBakery Page Builder to 6.1
+- Removed unused file instagram-redirect.php from Select Instagram Feed plugin
+- Removed unused file twitter-redirect.php from Select Twitter Feed plugin
+- Updated Select Instagram Feed plugin to 1.1.1
+- Updated Select Twitter Feed plugin to 1.1.2
+- Fixed content slider speed animation
+- Changed Select Options Position
+- Improved Import
+
+5.1.9
+- Updated Revolution Slider to 6.1.0
+- Updated Layer Slider to 6.9.1
+- Updated Stockholm Core to 1.1.1
+- Fixed Facebook Social Share issue
+- Fixed portfolio single templates when left sidebar layouts are enabled
+- Fixed anchor links for Fullscreen menu opener
+
+5.1.8
+- Added WooCommerce 3.7.0 compatibility
+- Updated WPBakery Page Builder to 6.0.5
+- Updated Revolution Slider to 6.0.9
+- Updated Layer Slider to 6.9
+- Updated languages pot files
+- Fixed sidebar layout for WooCommerce archive pages
+- Fixed social share on Single Product page when Social Share is disabled
+- Fixed Left/Right Spacing Between Languages in List (px) option in Select Options -> Header -> WPML
+- Fixed sidebar notice when core plugin is not installed
+- Fixed Header Background Color -> After Scroll for Fixed Advance header type
+
+5.1.7
+- Updated Stockholm Core to 1.1
+- Enabled Widget Sidebar and Default WordPress widget shortcodes for WPBakery Page Builder
+- Fixed duplicated title area on User Dashboard template page
+- Fixed duplicate labels when cart is empty
+- Fixed subtitle text on archive pages
+- Fixed sidebar layout on archive pages
+- Fixed contact page template form submission
+
+5.1.6
+- Updated Stockholm Core to 1.0.9
+- Updated WPBakery Page Builder to 6.0.3
+- Updated languages stockholm.pot and stockholm-core.pot files
+- Improved import functionality
+- Fixed WooCommerce add to cart button classes
+- Fixed single image pretty photo functionality
+
+5.1.5
+- Updated WPBakery Page Builder to 6.0.2
+- Fixed Blog Chequered feature image
+- Fixed WPBakery Page Builder 6.x problem when Stockholm Core plugin is not installed
+- Fixed default WPBakery Page Builder Old Tabs shortcode
+
+5.1.4
+- Updated WPBakery Page Builder to 6.0.1
+
+5.1.3
+- Updated WPBakery Page Builder to 6.0
+- Updated Layer Slider to 6.8.4
+- Improved template files
+
+5.1.2
+- Updated Stockholm Core to 1.0.8
+- Improved theme functionality
+- Improved contact form on Contact Page template
+- Implemented recaptcha2 on Contact Page
+- Fixed default WordPress read more tag functionality
+
+5.1.1
+- Updated Stockholm Core to 1.0.7
+- Updated Layer Slider to 6.8.3
+- Improved Portfolio list shortcode Order By option
+- Fixed WooCommerce shipping calculator style on Cart page
+- Fixed sidebar layout for WooCommerce archive pages
+
+5.1
+- Added WooCommerce 3.6.1 compatibility
+- Updated Stockholm Core to 1.0.6
+- Updated languages stockholm.pot file
+- Improved template files
+- Improved product search widget style
+- Fixed page transition when Enable Grid Elements option is enabled
+- Fixed portfolio list load more pagination on Home page
+
+5.0.7
+- Updated Stockholm Core to 1.0.5
+- Improved import functionality
+- Improved framework files
+- Removed unnecessary loading of jquery effect scripts (bounce, blind, clip, drop, explode, fold, pulsate, shake, transfer and highlight) to increase theme speed
+- Fixed top header area background option
+- Fixed content position when header type is fixed, prevent header to overlapping content
+
+5.0.6
+- Updated Stockholm Core to 1.0.4
+- Updated Select Membership to 1.1.2
+- Improved default WordPress menu widgets functionality inside SideArea
+- Improved contact form functionality for contact page template
+- Fixed countdown shortcode js
+- Fixed blog animated template layout
+- Fixed undefined function inside membership plugin
+- Fixed sidebar layout global option for blog single pages
+- Fixed load more and infinite scroll pagination for blog masonry templates
+- Fixed elegant product list style for default shop page
+- Fixed minor bugs
+
+5.0.5
+- Updated Select Twitter to 1.1.1
+- Updated languages pot files
+- Improved Put Content Below Header option functionality
+- Fixed Loading Animation option and page preloader
+- Fixed content position when Regular header type is set and header background is transparent
+- Fixed twitter connection
+- Fixed Contact Page option tab inside Select Options
+- Fixed typography select box options inside Select Options
+
+5.0.4
+- Updated Stockholm Core to 1.0.3
+- Updated Select Restaurant to 1.1.1
+- Updated Select Membership to 1.1.1
+- Improved default WordPress menu widgets functionality inside SideArea
+- Improved portfolio single templates
+- Fixed masonry layout for portfolio single pages
+- Fixed fatal error inside Select Restaurant plugin
+- Fixed minor bugs
+
+5.0.3
+- Updated Stockholm Core to 1.0.2
+- Improved prettyPhoto js script
+- Fixed portfolio single items layout
+- Fixed WooCommerce option tab inside Select Options
+- Fixed post formats meta boxes for Gutenberg Editor
+- Fixed menu items custom options
+- Fixed colorpicker style inside meta boxes
+- Fixed custom widget sidebar area
+
+5.0.2
+- Updated Stockholm Core to 1.0.1
+- Fixed shortcodes template loading
+- Fixed menu ordering
+
+5.0.1
+- Fixed menu navigation when page transition is enabled
+- Removed unnecessary js scripts
+
+5.0 (Major update)
+- Added WordPress 5.x compatibility
+- Added Stockholm Core plugin
+- Updated Stockholm Child Theme to 1.1
+- Updated Select Instagram Feed to 1.1
+- Updated Select Twitter Feed to 1.1
+- Updated Select Restaurant to 1.1
+- Updated Select Membership to 1.1
+- Updated Layer Slider to 6.8.1
+- Updated Revolution Slider to 5.4.8.3
+- Updated WPBakery Page Builder to 5.7
+- Updated Google Fonts list
+- Updated stockholm.pot languages file
+- Improved theme templates, modules and functions
+- Improved theme security
+- Improved options image pop-up editor for dashboard panel
+- Improved google map script on contact page to prevent potential error if Google Map API key is not set
+- Improved comments list
+- Escaped all variables, text domains etc.
+- Renamed all functions, hooks, templates with unique name
+- Removed unnecessary functions, variables etc.
+- Removed custom_css.php and custom_js.php files and improved logic to add custom code as inline
+- Fixed theme text domain
+- Fixed bugs
+
+4.7
+- Added WooCommerce 3.5.5 compatibility
+- Updated WPBakery Page Builder to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated Layer Slider to 6.8.1
+- Updated Envato Market to 2.0.1
+
+4.6
+- Added WooCommerce 3.5.1 compatibility
+- Added compatibility with Gutenberg plugin
+- Updated WPBakery Page Builder to 5.5.5
+- Updated Select Membership plugin to 1.0.2
+- Improved Simple Blog List mobile view
+- Improved Product List Elegant - Carousel shortcode
+
+4.5
+- Added 'Backup Options' panel in Select Options. Added fields to export/import options, custom sidebars and widgets.
+- Improved loading images thumbnails in Select Options
+- Added WooCommerce 3.4.3 compatibility
+- Updated Visual Composer to 5.5.2
+- Updated Revolution Slider to 5.4.8
+- Updated Layer Slider to 6.7.6
+
+4.4.1
+- Updated Revolution slider to version 5.4.7.3
+- Updated theme pot file
+- Fixed deprecated create_function
+- Fixed Popup navigation third level
+- Fixed navigation arrows not showing on PrettyPhoto when 'Select Image Slider' shortcode is used
+- Fixed bug with removing products from Cart on Cart page
+- Fixed image caption not showing on lightbox when 'Portfolio List' shortcode is used with lightbox functionality 
+- Fixed Product List Types missing class
+
+4.4
+- Added WooCommerce 3.3.4 compatibility
+- Fixed function for Logo Size On Small Screens
+
+4.3
+- Added compatibility with PHP 7.2
+- Updated Visual Composer to 5.4.7
+- Updated Revolution slider to version 5.4.7.2
+- Updated Layer Slider to version 6.7.1
+- Updated Envato Market to 2.0.0
+
+4.2.1
+- Fixed array_key_exists warning in theme options
+- Fixed choosing custom sidebars for Content Bottom area
+- Removed unnecessary options for title size on single post/page/portfolio
+
+4.2
+- Added WooCommerce 3.2.4 compatibility
+- Added recommended plugins (WooCommerce and Contact Form 7)
+- Replaced Envato Wordpress Toolkit with Envato Market plugin
+- Updated Visual Composer to 5.4.4
+- Updated Layer Slider to version 6.6.2
+- Updated Revolution slider to version 5.4.6.3.1
+- Improved import functionality
+- Fixed foreach warning from theme options
+- Fixed WooCommerce Dropdown styling
+- Fixed VC shortcodes icons for 5.4.3
+- Fixed style_dynamic.php typo error
+- Fixed choosing custom sidebars on single posts in Select Admin
+- Fixed line height option in Fonts -> Portfolio Single -> Text Info Style
+- Fixed product title options for Simple Lists
+- Fixed widgets saving per language option
+
+4.1
+- Added 'Enable Default WooCommerce Product Gallery Features' in Select Options -> WooCommerce -> Product Single
+- Fixed potential security issue when saving theme options
+
+4.0
+- Added Olaf Demo
+- Added Freya Demo
+- Added Gunnar Demo
+- Improved icons for custom shortocodes in Visual Composer admin
+- Added 'Select Memebership' plugin
+- Added 'Select Restaurant' plugin
+- Added support for Yith Whishlist plugin
+- Added support for Yith Quic Look plugin
+- Added 'Product List Elegant' shortcode
+- Added 'Product List Elegant - Carousel' shortcode
+- Added 'Interactive Image' shortcode
+- Added 'Interactive Image' shortcode
+- Added 'Google Map' shortcode
+- Added 'Image With Overlapping Info Settings' shortcode
+- Added 'Simple Blog List' shortcode
+- Added 'Centered Portfolio Carousel' shortcode
+- Added 'Content Slider' shortcode
+- Added 'Parallax Holder' shortcode
+- Added filter custom title option for 'Portfolio List' shortcode
+- Added 'Background Animation' option on 'Row' shortcode
+- Added Popup functionality for Contact Form 7
+- Added new 'Elegant' list layout in Select Options > Woocommerce > Product List section
+- Added 'bottom border' option for tabs in Select Options > Elements > Tabs
+- Added option for number of thumbnals on product single page in Select Options > Woocommerce > Product Single
+- Added option for quantity input option on product single page in Select Options > Woocommerce > Product Single
+- Added 'Cart Icon Font' option for Dropdown Cart Widget in Select Options > Woocommerce > Dropdown Cart panel
+- Added portfolio single types 'Wide Left' and 'Wide Right'
+- Added padding left and right for footer top in Select Options -> Footer -> Footer Top
+- Added padding left and right for button in Select Options -> Elements -> Button
+- Added option for hiding Header Top on Mobile Devices in Select Options -> Header -> Header Top
+- Added option 'Enable Full Width Background for Wide Dropdown Type' in Select Options -> Header -> Menu
+- Added width, height, right offset, bottom offset and border width option for back to top in Select Options -> Elements -> Back to Top Style
+- Added width, height and border width option for slider navigation in Select Options -> Elements -> Slider Navigation
+- Added 'Icon Type' in Select Options -> Header -> Side Area -> Open Icon Style
+- Added icon type option for Select Search in Select Options > Header > Select Search section
+- Added 'Link Whole Overlapping Holder' option for 'Image With Overlapping Info' shortcode
+- Updated Revolution Slider to version 5.4.5.1
+- Updated Layer Slider to version 6.5.5
+- Updated pot language file
+- Fixed import to work with PHP versions 7+
+- Fixed content margin on product pages
+
+3.8.1
+- Fix for Layer Slider
+- Updated Revolution slider to version 5.4.3
+
+3.8
+- Added WooCommerce 3+ compatibility
+- Updated Visual Composer to 5.1.1
+- Updated Layer Slider to version 6.3.0
+- Updated Revolution slider to version 5.4.1
+- Fixed Fullscreen Portfolio Slider to use original image size
+- Fixed order by on Carousel element
+
+3.7
+- Added WooCommerce 2.6.12 compatibility
+- Fixed Select slider animation
+- Fixed overlapping issue with parallax on Mac (Chrome browser)
+
+3.6
+- Added WooCommerce 2.6.9 compatibility
+- Updated Layer Slider to version 6.1.0
+- Updated Revolution slider to version 5.3.1.5
+
+3.5.2
+- Fixed conflict with saving Woocommerce style in Select Options
+
+3.5.1
+- Updated Visual Composer to 5.0.1
+
+3.5
+- Added WooCommerce 2.6.8 compatibility
+- Updated Font Awesome pack to version 4.7.0
+- Updated Visual Composer to 5.0
+- Updated Layer Slider to version 6.0.5
+- Updated Revolution slider to version 5.3.0.2
+- Fixed bug with image gallery custom links
+- Fixed the issue with Select options not being applied
+
+3.4
+- Added WordPress 4.6.1 compatibility
+- Added WooCommerce 2.6.4 compatibility
+- Updated Visual Composer to 4.12.1
+
+3.3.1
+- Fixed showing highlighted text in Pricing List item
+
+3.3
+- Added option for Google Maps API key
+- Updated Google Fonts
+- Updated documentation
+- Fixed Custom CSS field escaping special characters
+
+3.2.3
+- Improved Theme security
+- Updated TGM Plugin Activation to 2.6.1
+- Updated Layer Slider to 5.6.10
+- Updated po/mo files
+- Updated pot file
+- Fixed Data Validation issues
+
+3.2.2
+- Updated Revolution Slider to 5.2.6
+- Updated Layer Slider to 5.6.9
+- Updated FontAwesome icons
+- Updated Google fonts
+- Fixed bug in owl slider
+- Fixed twitter share excerpt
+- Fixed bug with mobile menu active state
+- Fixed blog pinterest responsive
+
+3.2.1
+- Fixed woocommerce 2.6.1 template version
+- Fixed Social Share functionality
+
+3.2
+- Added Woocommerce 2.6 compatibility
+- Updated Layer Slider to 5.6.8
+- Updated Revolution Slider to 5.2.5.4
+- Updated Visual Composer to 4.12
+- Updated po/mo files
+- Updated pot file
+
+3.1.1
+- Updated Layer Slider to 5.6.6
+- Updated Revolution Slider to 5.2.5
+- Fixed bug with city dropdown on shipping calculator
+
+3.1
+- Added new type of Select Carousel Slider
+- Added Revolution Slider exported files for new demos
+- Updated waypoints.js to 2.0.5
+- Updated Visual Composer to 4.11.2.1
+- Fixed bug with image rendering in Mozilla Firefox
+
+3.0.2
+-Updated Visual Composer to 4.11.2
+-Updated Layer Slider to 5.6.5
+
+3.0.1
+- Added  Wordpress 4.5 compatibility
+
+3.0
+- Added Kelda Demo
+- Added Frida Demo
+- Added Jette Demo
+- Added Metta Demo
+- Added G�ta Demo
+- Added Eva Demo
+- Added Tilde Demo
+- Added Ebba Demo
+- Added Rona Demo
+- Added Tove Demo
+- Added Solveig Demo
+- Added Hilde Demo
+- Added Kajsa Demo
+- Added Elke Demo
+- Added Anke Demo
+- Added Dagmar Demo
+- Added Tala Demo
+- Added Oda Demo
+- Added Ylva Demo
+- Added Gala Demo
+- Added Slider Revolution Responsive WordPress Plugin ($19 value) to the theme
+- Added Woocommerce 2.5.5 compatibility
+- Added 'Elements Holder' shortcode
+- Added 'Always Put Content Below Header' functionality
+- Added 'Justified Gallery' portfolio list type
+- Added 'Blog Chequered' list type
+- Added 'Blog Animated' list type
+- Added 'Blog Pinterest' list type
+- Added 'Blog Centered' list type
+- Added field for author job position in testimonials
+- Added Twitter Plugin - enables twitter widget and twitter shortcode
+- Added Instagram Plugin - enables instagram widget
+- Added options for contact form custom style
+- Added "Info on Hover" type of team shortcode
+- Added Fixed Right Portfolio Single Type
+- Added Fixed Left Portfolio Single Type
+- Added Gallery Right Portfolio Single Type
+- Added Masonry Portfolio Single Type
+- Added Full Screen Slider Portfolio Single Type
+- Added Full Width Slider Portfolio Single Type
+- Added 'Select Product List' shortcode
+- Added Standard Product List type
+- Added Simple Product List type
+- Added Linear Icons font
+- Added 'Shop Category Showcase' shortcode
+- Added Passepartout
+- Added 'Info on Hover' Type of Portfolio Hover for Pinterest
+- Added Option 'Space Between Pinterest' on Pinterest Portfolio List
+- Added Pricing List Shortcode
+- Added Loading Animation for Pinterest and Masonry Portfolio Lists
+- Added Loading Animation for Pinterest and Masonry Blog Lists
+- Added "Border Radius" Option for Icons Shortcode
+- Added option for default shop layout.
+- Added new options for testimonials
+- Added Landing Page template
+- Added Menu Hover Animation options
+- Added Dropdown Appearance options
+- Added Fulscreen Search type
+- Added new spinners
+- Added option for Slide title text background color
+- Added option for title text background color
+- Added button hover animation for icon
+- Added options for search input fields
+- Added Side Area Types
+- Added Close Icon Position
+- Added Countdown shortcode
+- Added pot language file
+- Added Revolution Slider
+- Updated po/mo language files
+- Updated Visual Composer to 4.11.1
+- Updated 'Testimonials' shortcode
+- Updated 'Pie Chart' shortcode
+- Updated 'Pie Chart With Icon' shortcode
+- Updated Google fonts list
+- Updated 'Icon' shortcode
+- Updated 'Icon with text' shortcode
+- Updated 'Row' shortcode
+- Updated Contact Page options
+- Updated 'Social Share List' shortcode
+- Updated 'Image Gallery' shortcode
+- Updated 'Button' shortcode
+- Updated 'Carousel' shortcode
+- Updated 'Counter' shortcode
+- Updated Portfolio options
+- Updated Header options
+- Updated Blog Single options
+- Updated Woocommerce options
+- Updated contact form - reply to field added inside header
+- Fixed Font Options for Contact Page
+- Fixed Slider Anchor not using text color from slider
+- Fixed option for footer padding not working for full width footer
+- Fixed option for slider navigation not working on prettyphoto
+- Fixed Select Slider - Slide text not using margin bottom setting
+- Fixed cart icon not using settings from header icons styles
+- Fixed portfolio not using default sidebar option
+- Fixed custom widget area not able to delete
+
+2.6
+- Added Woocommerce 2.5.0 compatibility
+- Updated Visual Composer to 4.9.2
+
+2.5
+- Added Woocommerce 2.4.10 compatibility
+- Updated Visual Composer to 4.8.1
+- Fixed issue with Select Image Slider links on touch devices
+- Fixed Lightbox for Vimeo Videos bug in Single Portfolio
+- Fixed images hover state bug in Image Gallery element
+- Fixed issue with Custom Font element not saving default styling values
+- Fixed issue with Blockquote element now rendering default blockquote text
+- Fixed bug with Icon With Text element not saving circle icon type settings
+- Fixed bug with Portfolio List Columns option - 2
+- Fixed Google Map Warning for Sensor parameter no longer being required
+
+2.4.1
+- Updated Visual Composer to 4.7.4
+- Updated Layer Slider to 5.6.2
+- Fixed VC button bug when VC Grid Elements are allowed
+- Fixed issue with Design Option Tab for Row
+
+2.4
+- Added Woocommerce 2.4.6 compatibility
+- Updated Visual Composer to 4.6.2
+- Updated Layer Slider to 5.5.1
+- Updated Font Awesome to 4.4.0
+- Updated po/mo language files
+- Fixed bug with title options in single product pages
+- Fixed translation bug with Tags label in Single Post
+
+2.3
+- Added Behance icon in Social Icon shortcode for Font Awesome icon pack
+- Updated Visual Composer to 4.5.3
+- Updated Google Fonts
+- Updated prettyPhoto version from 3.1.5 to 3.1.6
+- Fixed bug with email JavaScript validation on contact form
+- Fixed SSL issues with embeded media
+- Fixed bug with Portfolio Slider and Portfolio Custom Lightbox Content
+
+2.2
+- Added WooCommerce 2.3.10 compatibility
+- Added support for WPML language switcher in main menu
+- Updated Visual Composer to 4.5.2
+- Enabled Yoast SEO page analysis functionality as conflict between Yoast SEO and Visual Composer is solved in new VC version
+- Solved bug with accordion
+
+2.1
+- Updated Visual Composer to 4.5.1
+- Updated Layer Slider to 5.4.0
+- Fixed bug with page transitions and Yoast SEO plugin
+- Fixed bug with Yoast SEO and values from Select Meta boxes being reset. Page analysis in Yoast SEO has been disabled due to coding issue in Yoast SEO plugin
+
+2.0
+- Added WooCommerce 2.3.8 compatibility
+- Updated Visual Composer to version 4.4.4
+- Fixed bug with Single Image rounded style and border style
+
+1.9
+- Added Envato Wordpress Toolkit plugin (auto-update theme)
+- Added Visual Composer tab to Select Options
+- Added WooCommerce 2.3.7 compatibility
+- Updated Visual Composer to version 4.4.3
+- Improved anchor functionality
+- Improved Contact Form "from:" label to contain sender's full name and email address instead of "WordPress"
+- Fixed bug with navigation position for Select Image Slider shortcode
+- Fixed bug with accordion border radius option when Accordion Type is Toggle
+- Fixed bug with height for native WordPress video shortcode
+
+1.8
+- Added Portfolio Single typography options for Title, Meta titles and text in Select Options -> Fonts -> Portfolio Single
+- Added E-mail, WhatsApp, Facebook Official, Pinterest P and Forumbee icons into social icons list
+- Added E-mail icon into social icons list for Team shortcode
+- Added columns border color option for top footer area in Select Options -> Footer -> Footer Top Area Style
+- Added revert pagination order option for portfolio single in Select Options -> Portfolio -> Portfolio Single
+- Added buttons style options for select slider in Select Options -> Select Slider -> Slides Buttons Style
+- Added social share list shortcode
+- Added portfolio external link target option in Portfolio -> Single Portfolio -> Select General
+- Added WooCommerce 2.3.4 compatibility
+- Improved portfolio list masonry without space responsive on smaller screens
+- Improved image hover shortcode to display alt tag for images
+- Improved image with text shortcode to display alt tag for image
+- Improved interactive banners shortcode to display alt tag for image
+- Improved Select Image Slider shortcode to work in grid and inside columns
+- Updated FontAwesome icons pack to version 4.3.0
+- Updated FlexSlider script to 2.2.2 version
+- Updated documentation
+- Fixed bug with 3rd level menu widget style inside header top area
+- Fixed bug with YOAST meta description when ajax animation is enabled
+- Fixed bug with Select Search style when WooCommerce is installed
+- Fixed bug with woocomerce search product widget style when is set in footer area
+- Fixed bug with parallax speed field when parallax is set in child row
+- Fixed bug with social icons inside top header area when top header styles are set
+- Fixed bug with portfolio image hover color transparnecy field when is set 0
+- Fixed bug with content bottom area background color when is set in grid
+- Fixed bug with select slider responsivness when left menu area is enabled and boxed layout is enabled
+- Fixed bug with header border bottom color when color is set and this option is disabled
+- Fixed bug with theme logo loading when ssl is enabled
+
+1.7.1
+- Updated Visual Composer to version 4.3.5
+- Fixed bug with require message label position on contact page form
+
+1.7
+- Added Yelp social icon into Social Icons shortcode list
+- Added variation select box style for WooCommerce single product
+- Added select slider height field for tablet portrait and mobile devices landscape view in Select Options -> Select Slider
+- Added blog masonry image overlay color transparnecy field in Select Options -> Blog -> Blog List
+- Improved Full Screen Sections template functionality to add background image for each slide
+- Improved Select Image Slider functionality when ajax is enabled
+- Improved active state in main menu when page transition is enabled
+- Improved portfolio post type in admin panel to display portfolio categories section
+- Improved responsiveness for custom font shortcode
+- Improved breadcrumbs for WooCommerce single product pages to display shop archive page inside breadcrumb
+- Improved W3C validity warning with google fonts
+- Updated po/mo language files
+- Updated documentation
+- Fixed bug with label's translation for breadcrumbs title type
+- Fixed bug with row shortcode animation
+- Fixed bug with layer slider right arrow navigation position
+- Fixed bug with link post format, title is link now
+- Fixed bug with visual composer single image shortcode lightbox when ajax animation is enabled
+- Fixed bug with breadcrumbs title for pages
+- Fixed bug with breadcrumbs title position on smaller screens
+
+1.6
+- Added style for WooCommerce search widget in top header area
+- Improved Visual Composer Design Tab to works with ajax animation (page transition)
+- Improved youtube functionality for portfolio single pages when lightbox for video is enabled
+- Improved Full Screen Sections template functionality to add slides inside section
+- Improved WooCommerce products list, thumbnail is now link
+- Improved search page title functionality
+- Fixed bug with ajax when woocommerce pages aren't installed
+- Fixed bug with social share shortcode style when is added on page
+- Fixed bug with portfolio list show more button when clicked twice
+- Fixed bug with dependency check of bottom anchors in Select Options
+- Fixed bug with wide menu border line for items in first column
+- Fixed bug with portfolio masonry without space width when left menu area is enabled
+- Fixed bug with layer slider shortcode when it's added in Layer Slider or Select Slider Shortcode field
+- Fixed bug with left menu area sub menu items link on table landscape mode
+- Fixed bug with custom css when it used Visual Composer Design Tab
+- Fixed bug with content menu when sticky divided header type is enabled
+- Fixed bug with space on gallery without space portfolio list type
+
+1.5
+- Added WooCommerce 2.2.7 compatibility
+- Fixed bug with space between portfolio items on smaller screen when portfolio type is without space
+- Fixed bug with video background for full screen sections template
+- Fixed bug with skill title for team shortcode
+- Fixed bug with date for latest posts shortcode
+- Fixed bug with sliders arrow navigation when boxed layout is enabled
+- Fixed bug with lightbox dependency for portfolio list shortcode when type is standard
+
+1.4
+- Added compatibility for Gravity Forms plugin
+- Added Gravity Forms tab to Select Options
+- Added portfolio custom lighbox content (image/video) field in Portfolio -> Portfolio Single -> Select General
+- Added option to choose submenu display behavior for left menu area (hover and click event)
+- Added number of rows option for latest posts shortcode
+- Added hide author email option in Select Options -> Blog -> Blog Single -> Show Blog Author
+- Added logo height field for mobile header in Select Options -> Logo
+- Added select slider height field for mobile devices in Select Options -> Select Slider
+- Added compatibility for YITH WooCommerce Zoom Magnifier plugin
+- Added option to choose one column number for latest posts shortcode -> boxes type
+- Added hide category option in Select Options -> Portfolio -> Portfolio List
+- Added filter order by option for portfolio list shortcode
+- Added sidebar layout option in Select Options -> Portfolio -> Portfolio Single
+- Added custom sidebar option in Select Options -> Portfolio -> Portfolio Single
+- Added sidebar layout option in Portfolio -> Portfolio Single -> Select Sidebar
+- Added custom sidebar option in Portfolio -> Portfolio Single -> Select Sidebar
+- Improved accordion and toogle responsive for mobile devices
+- Improved animated icons with text responsive
+- Improved testimonials appear functionality
+- Updated LayerSlider to version 5.3.2
+- Updated documentation
+- Removed unnecessary field separator under title from Select Options -> Title
+- Fixed bug with woocommerce dropdown cart widget height when widget is set to top header
+- Fixed bug with posrtfolio slider navigation for Firefox Mac
+- Fixed bug with contact form 7 input and textarea placeholder color
+- Fixed bug with number of words for blog lists
+- Fixed bug with full screen sections scroll on mobile devices Chrome
+- Fixed bug with full screen sections when left menu area is enabled
+- Fixed bug with select search and WPML
+- Fixed bug with select slide text shadow
+- Fixed bug with theme options when used with multisite enabled
+- Fixed bug with vertical menu dropdowns on touch devices
+- Fixed bug with blockquote changing style from select options
+- Fixed bug with portfolio slider position when boxed layout is enabled
+- Fixed bug with logo position when logo is centered
+- Fixed bug with font awesome icon border for icon with text shortcode
+- Fixed bug with select slider navigation when transparent left menu is enabled
+- Fixed bug with youtube/vimeo videos on portfolio single when portfolio single layout is gallery and lighbox is enabled
+- Fixed bug with image proportions option for portfolio single gallery layout when single upload is used for images
+
+1.3
+- Added performance improvement functionality
+- Added scroll amount field to hide menu in 'Fixed Advanced' header type
+- Added logo height field for mobile devices in Select Options -> Logo
+- Added hide date option in Select Options -> Blog -> Blog Single
+- Added hide category option in Select Options -> Blog -> Blog Single
+- Added disable filter title option in Portfolio list shortcode
+- Added support for 2 columns WooCommerce recent products shortcode
+- Added portfolio image overlay color transparnecy field in Select Options -> Portfolio
+- Improved accordion and toogle responsive
+- Improved call to action responsive
+- Improved h2 responsive
+- Improved select slider buttons responsive
+- Improved latest posts title responsive
+- Improved sticky divided header type JavaScript function
+- Improved portfolio single images resize functionality
+- Improved side area functionality
+- Updated documentation
+- Updated LayerSlider to version 5.3.1
+- Updated po/mo language files
+- Removed 'parent' and 'top' options from target attributes in shortcodes
+- Fixed bug with total label color for dropdown cart widget when First main color is set
+- Fixed bug with meta description on category pages
+- Fixed bug with quick edit with custom post type
+- Fixed bug with left and right sticky header type and logo link
+- Fixed bug with team shortcode social icon responsive when left menu area is enabled
+- Fixed bug with search result posts date
+- Fixed bug with navigation active style for testimonials shortcode
+- Fixed dependency of show title area for posts, pages and portfolios
+- Fixed bug with logo size on fixed scrolled header when logo is smaller then scrolled header height
+
+1.2
+- Added Image proportions field for Portfolio single -> Gallery type in Select General
+- Added Shop sorting style in Select Options -> WooCommerce
+- Added Interactive Banners style in Select Options -> Elements
+- Added Hide pagination field in Select Options -> Portfolio -> Portfolio Single
+- Added Link styles fields in Select Options -> Header -> Side Area
+- Improved Select Documentation file
+- Improved blog lists responsive
+- Improved Full Screen Sections template functionality and responsive
+- Updated LayerSlider to version 5.3.0
+- Fixed bug with logo top margin when Header type is Sticky Divided
+- Fixed bug with portfolio filter for Portfolio Pinterest and Masonry Without Space types
+- Fixed bug with portfolio single projects date
+- Fixed bug with notice on tags page
+- Fixed bug with title area on Archive, Category and Tag pages
+- Fixed bug with social icons in Footer when Footer Top Text style is set
+- Fixed bug with latest posts slash mark when First main color is set
+- Fixed portfolio slider sliding when links are rendered on portfolio items (mouse wheel is enabled)
+- Fixed bug with line height option for 1st level menu style in Select Options -> Fonts
+- Fixed bug with interactive banners rollover color
+- Fixed bug with title style changing in Select Options -> Header -> Side Area
+
+1.1.1
+- Improved Full Screen Sections template functionality and responsive
+- Updated WooCommerce template files for 2.2.3 compatibility
+- Fixed bug with post comments date
+
+1.1
+- Added WooCommerce input fields style in Select Options -> WooCommerce
+- Improved Select Documentation file
+- Updated Visual Composer to version 4.3.4
+- Fixed bug with YOAST and page transitions error on home page
+- Fixed bug with WooCommerce plus/minus input hover color
+- Fixed bug with WooCommerce checkout page style
+- Fixed bug with Process shortcode styles
+- Fixed bug with scrolling of left menu
+- Fixed bug with mobile header rendering when sticky with left and right menu is set in Select Options -> Header
+- Fixed bug with paragprah style in Select Options -> Fonts
+- Fixed bug with posts date
+- Fixed bug with text transform field in Select Slider for text and subtitle style
+- Fixed bug with portfolio list for Firefox Mac
