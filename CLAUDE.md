@@ -15,6 +15,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 
 ## Website (decided)
 - WordPress on PTServidor (cPanel user `boundvis`, IP 185.32.190.7, SSH port pending from support). Public key `claude-boundvisuals` imported in cPanel.
+- Keep the current WordPress backend structure (content types, fields, admin) exactly; refresh design/SEO on top. Everything stays 100% editable in wp-admin. Theme code lives in Git; edit content in wp-admin, code via repo.
 - Start from the CURRENT theme: audit its code first; evolve if lean, otherwise rebuild with same look/logic.
 - Menu: Work (home: showreel + grid of auto-playing video loops, keep as today) · Lab · Services · Info.
 - Images: lightbox loads original resolution with LOSSLESS compression only (pixel-identical, verified). Grid thumbnails may be sized.
@@ -23,18 +24,26 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 
 ## Content program (decided)
 - Vítor sends: MEGA link to a project's FINALS subfolder + a one-line note. Nothing else.
-- One image per post. 4:5 as-is; landscape goes whole in a 4:5 frame, never cropped.
+- One image per post. 4:5 → single slide. Any other ratio → carousel: auto 4:5 detail crops, last slide = whole image on WHITE 4:5 (Vítor's own habit).
+- Finals detection: folders named final/finals/finais/final export(s)/publicar/publish; Vítor shares the project (or a finals) folder link.
 - Rotate projects (A, B, C, A…); each project opens with its best image; one auto reel per project.
 - 1 image post/day, reel every other day, 3–5 stories/day. Queue ~2 weeks; warn when < 7 days.
 - Daily approval page before anything publishes.
 - Publish order on launch day: site + Behance + CG platforms first, then Instagram/Facebook/Pinterest/LinkedIn linking back.
 - Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa, LinkedIn company page until API approval.
 
+## Open decision
+- Brand architecture: Bound Visuals = archviz/3D studio (current site filters) vs Vítor Hugo = the person doing more (AI image/video, ads, film). Options proposed 2026-10-31; waiting for Vítor.
+
 ## Pending from Vítor
 - SSH port (asked PTServidor support).
 - MEGA links per project.
 - Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
+- Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
+- Replace old handle @_boundvisuals_ everywhere it is cross-referenced (site, email signature, other profiles, docs).
+- Instagram profile: bio, avatar (Vítor holding the 3D 'bound' logo), highlight covers, links, action buttons, category.
+- LinkedIn: all texts drafted in the master doc §7 — Vítor to review and paste.
 
 ## Parked (never forget — raise after current phase)
 - AI Build Lab: analyse the 120 ideas (PDFs + xlsx) and pick ones that serve the portfolio.
