@@ -11,7 +11,7 @@ usage: process_media.py <input_dir> <output_dir> <project_id> [config/program.ym
               4:5 are fitted whole inside a 4:5 frame.
 - manifest.json describing everything.
 """
-import json, sys, pathlib, hashlib
+import json, sys, pathlib, hashlib, shutil
 from PIL import Image, ImageOps
 
 try:
@@ -36,9 +36,15 @@ def high_bit(img):
     return img.mode in ("I;16", "I;16B", "I;16L", "I", "F") or img.info.get("bits", 8) > 8
 
 
-def lossless_full(img, stem, out_dir):
-    """Write a lossless file and prove it is pixel-identical."""
+def lossless_full(img, stem, out_dir, src=None):
+    """Write a lossless file and prove it is pixel-identical.
+    Already-compressed sources (WebP/JPEG/AVIF) are kept byte-for-byte:
+    re-encoding them could only make them bigger, never better."""
     out_dir.mkdir(parents=True, exist_ok=True)
+    if src is not None and src.suffix.lower() in (".webp", ".jpg", ".jpeg", ".avif"):
+        dst = out_dir / (stem + src.suffix.lower())
+        shutil.copyfile(src, dst)
+        return dst
     if high_bit(img):
         dst = out_dir / (stem + ".png")
         img.save(dst, optimize=True)
@@ -97,7 +103,7 @@ def main():
         img = Image.open(src)
         img.load()
         stem = "_".join(src.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
-        full = lossless_full(img, stem, out_dir / "web" / "full")
+        full = lossless_full(img, stem, out_dir / "web" / "full", src)
         feed, mode = instagram_feed(img, stem, out_dir / "ig", cfg["feed_size"], cfg["frame_color"])
         items.append({
             "source": str(src.relative_to(src_dir)),
