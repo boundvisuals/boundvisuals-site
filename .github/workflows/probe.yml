@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p reports
-          for h in picard.servidorpt.pt 185.32.190.7; do echo "== $h ($(getent hosts $h | cut -d" " -f1))"; for p in 21 22 222 2020 2022 2122 2200 2222 2233 4422 5022 6022 7022 7822 8022 9022 10022 12022 18765 21098 22022 22222 50022 65002; do
+          for h in picard.servidorpt.pt; do echo "== $h ($(getent hosts $h | cut -d" " -f1))"; for p in 44222 11234 27217 5959; do
             if timeout 5 bash -c "echo > /dev/tcp/$h/$p" 2>/dev/null; then
               b=$(timeout 4 bash -c "exec 3<>/dev/tcp/$h/$p; head -c 80 <&3" 2>/dev/null | tr -d '\r\n')
               echo "$p OPEN $b"
