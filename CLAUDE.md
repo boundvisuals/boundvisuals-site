@@ -32,8 +32,13 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Publish order on launch day: site + Behance + CG platforms first, then Instagram/Facebook/Pinterest/LinkedIn linking back.
 - Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa, LinkedIn company page until API approval.
 
-## Open decision
-- Brand architecture: Bound Visuals = archviz/3D studio (current site filters) vs Vítor Hugo = the person doing more (AI image/video, ads, film). Options proposed 2026-10-31; waiting for Vítor.
+## Brand architecture (decided 2026-10-31)
+- Bound Visuals = archviz/3D studio (keeps current site filters). Vítor Hugo = the person: archviz + AI image/video, ads, film.
+- ONE site, two doors: boundvisuals.com (studio: Work, Services) + boundvisuals.com/vitorhugo (AI, video, ads, Lab, CV). No subdomain, no second domain.
+- Instagram is Vítor's (person-first bio, mentions the studio).
+
+## Instagram crops (decided)
+- Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
 
 ## Pending from Vítor
 - SSH port (asked PTServidor support).
@@ -42,7 +47,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
 - Replace old handle @_boundvisuals_ everywhere it is cross-referenced (site, email signature, other profiles, docs).
-- Instagram profile: bio, avatar (Vítor holding the 3D 'bound' logo), highlight covers, links, action buttons, category.
+- Instagram profile: bio, two avatar tests (holding the 3D 'bound' logo; clay-render portrait), highlight covers, links, action buttons. Category already 'Artist'.
 - LinkedIn: all texts drafted in the master doc §7 — Vítor to review and paste.
 
 ## Parked (never forget — raise after current phase)
