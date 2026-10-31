@@ -10,6 +10,9 @@ on:
         description: "Public MEGA link to the PROJECT folder (only *final* subfolders are taken)"
         required: true
 
+permissions:
+  contents: write
+
 jobs:
   ingest:
     runs-on: ubuntu-24.04
@@ -23,11 +26,23 @@ jobs:
       - name: Download finals only
         env:
           LINK: ${{ inputs.mega_link }}
-        run: bash scripts/fetch_finals.sh "$LINK" in
+        run: |
+          mkdir -p out
+          bash scripts/fetch_finals.sh "$LINK" in 2>&1 | tee out/fetch.log
+          cp all.txt out/folder_tree.txt || true
       - name: Process (lossless web + Instagram 4:5)
-        run: python scripts/process_media.py in out "${{ inputs.project_id }}" config/program.yml
+        run: python scripts/process_media.py in out "${{ inputs.project_id }}" config/program.yml 2>&1 | tee out/process.log
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.project_id }}-processed
           path: out
           retention-days: 14
+      - name: Save report + Instagram previews to repo
+        if: always()
+        run: |
+          D=reports/${{ inputs.project_id }}
+          rm -rf "$D"; mkdir -p "$D/ig"
+          cp out/*.log out/folder_tree.txt out/manifest.json "$D/" 2>/dev/null || true
+          cp out/ig/*.jpg "$D/ig/" 2>/dev/null || true
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -m "Report: ${{ inputs.project_id }}" && git push || echo "nothing to commit"
