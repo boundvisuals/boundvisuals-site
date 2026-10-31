@@ -12,7 +12,7 @@ usage: process_media.py <input_dir> <output_dir> <project_id> [config/program.ym
 - manifest.json describing everything.
 """
 import json, sys, pathlib, hashlib
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageOps
 
 try:
     import yaml
@@ -36,26 +36,26 @@ def high_bit(img):
     return img.mode in ("I;16", "I;16B", "I;16L", "I", "F") or img.info.get("bits", 8) > 8
 
 
-def lossless_full(img, src, out_dir):
+def lossless_full(img, stem, out_dir):
     """Write a lossless file and prove it is pixel-identical."""
     out_dir.mkdir(parents=True, exist_ok=True)
     if high_bit(img):
-        dst = out_dir / (src.stem + ".png")
+        dst = out_dir / (stem + ".png")
         img.save(dst, optimize=True)
     else:
         base = img.convert("RGBA" if "A" in img.getbands() else "RGB")
-        dst = out_dir / (src.stem + ".webp")
+        dst = out_dir / (stem + ".webp")
         base.save(dst, lossless=True, quality=100, method=6, exact=True)
         img = base
     back = Image.open(dst)
     back.load()
     back = back.convert(img.mode) if back.mode != img.mode else back
     if back.size != img.size or back.tobytes() != img.tobytes():
-        raise SystemExit(f"PIXEL MISMATCH: {src.name} -> {dst.name}")
+        raise SystemExit(f"PIXEL MISMATCH: {stem} -> {dst.name}")
     return dst
 
 
-def grid_versions(img, src, out_dir, widths):
+def grid_versions(img, stem, out_dir, widths):
     out_dir.mkdir(parents=True, exist_ok=True)
     rgb = img.convert("RGB")
     outs = []
@@ -63,13 +63,13 @@ def grid_versions(img, src, out_dir, widths):
         if w >= rgb.width:
             continue
         h = round(rgb.height * w / rgb.width)
-        dst = out_dir / f"{src.stem}-{w}.webp"
+        dst = out_dir / f"{stem}-{w}.webp"
         rgb.resize((w, h), Image.LANCZOS).save(dst, quality=92, method=6)
         outs.append(str(dst))
     return outs
 
 
-def instagram_feed(img, src, out_dir, size, color):
+def instagram_feed(img, stem, out_dir, size, color):
     out_dir.mkdir(parents=True, exist_ok=True)
     W, H = size
     rgb = img.convert("RGB")
@@ -83,7 +83,7 @@ def instagram_feed(img, src, out_dir, size, color):
         canvas = Image.new("RGB", (W, H), color)
         canvas.paste(fitted, ((W - fitted.width) // 2, (H - fitted.height) // 2))
         mode = "framed"
-    dst = out_dir / f"{src.stem}-feed.jpg"
+    dst = out_dir / f"{stem}-feed.jpg"
     canvas.save(dst, quality=95, subsampling=0, optimize=True)
     return str(dst), mode
 
@@ -96,15 +96,16 @@ def main():
     for src in sorted(p for p in src_dir.rglob("*") if p.suffix.lower() in EXTS):
         img = Image.open(src)
         img.load()
-        full = lossless_full(img, src, out_dir / "web" / "full")
-        feed, mode = instagram_feed(img, src, out_dir / "ig", cfg["feed_size"], cfg["frame_color"])
+        stem = "_".join(src.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
+        full = lossless_full(img, stem, out_dir / "web" / "full")
+        feed, mode = instagram_feed(img, stem, out_dir / "ig", cfg["feed_size"], cfg["frame_color"])
         items.append({
-            "source": src.name,
+            "source": str(src.relative_to(src_dir)),
             "sha1": hashlib.sha1(src.read_bytes()).hexdigest(),
             "size": list(img.size),
             "orientation": "landscape" if img.width > img.height else "portrait" if img.height > img.width else "square",
             "web_full": str(full), "lossless_verified": True,
-            "web_grid": grid_versions(img, src, out_dir / "web" / "grid", cfg["grid_widths"]),
+            "web_grid": grid_versions(img, stem, out_dir / "web" / "grid", cfg["grid_widths"]),
             "ig_feed": feed, "ig_mode": mode,
             "source_bytes": src.stat().st_size, "full_bytes": full.stat().st_size,
         })

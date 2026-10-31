@@ -4,29 +4,26 @@ on:
   workflow_dispatch:
     inputs:
       project_id:
-        description: "Project id (e.g. vivendas-cete)"
+        description: "Project id (e.g. vivendas-duas-igrejas)"
         required: true
       mega_link:
-        description: "Public MEGA folder link to the FINALS folder"
+        description: "Public MEGA link to the PROJECT folder (only *final* subfolders are taken)"
         required: true
 
 jobs:
   ingest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Install tools
+      - name: Install MEGAcmd + Python deps
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq megatools
+          wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
+          sudo apt-get update -qq && sudo apt-get install -y -qq ./megacmd.deb
           pip install -q pillow pyyaml
-      - name: Download finals from MEGA
+      - name: Download finals only
         env:
           LINK: ${{ inputs.mega_link }}
-        run: |
-          mkdir -p in
-          megatools dl --no-progress --path in "$LINK"
-          echo "Downloaded:"; find in -type f | sed 's/^/  /'
+        run: bash scripts/fetch_finals.sh "$LINK" in
       - name: Process (lossless web + Instagram 4:5)
         run: python scripts/process_media.py in out "${{ inputs.project_id }}" config/program.yml
       - uses: actions/upload-artifact@v4

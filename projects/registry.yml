@@ -1,11 +1,12 @@
-# One entry per project. Vítor only supplies: mega, note.
+# One entry per project. Vítor only supplies: mega (PROJECT folder link), note.
+# The robot takes only files inside subfolders whose name contains "final".
 # status: pending → ingested → queued → published
-projects: []
-#  - id: vivendas-cete
-#    title: Vivendas Cête
-#    client: anonymous
-#    location: Cête, Paredes, PT
-#    mega: https://mega.nz/folder/XXXX#YYYY
-#    publish: true          # false = private portfolio only (NDA)
-#    note: "destaque: a sala e o exterior ao fim da tarde"
-#    status: pending
+projects:
+  - id: vivendas-duas-igrejas
+    title: Vivendas Duas Igrejas
+    client: Space Emotions
+    location: Duas Igrejas, Penafiel, PT
+    mega: https://mega.nz/folder/yzxFxDhJ#Rt5gDuogKXxRsiAgjUau7w
+    publish: true
+    note: ""
+    status: pending
