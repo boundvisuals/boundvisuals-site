@@ -10,7 +10,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Bound Visuals logo and brand are NOT to be changed. No personal logo. Signature = two lines: "Vítor Hugo" / "Bound Visuals" in the brand typeface.
 - Positioning line: 3D Artist (ArchViz · Product · CGI Generalist) · AI Image & Video Specialist · Performance Ads Designer. Tools: ComfyUI · Seedance 2.5 · FloraAI · Nano Banana · Unreal · Corona/3ds Max.
 - Goals: get hired (main archviz role + AI Power User), win clients, and stay visibly active/modern (public diary of work).
-- Avatar: clean portrait on LinkedIn; Vítor holding the "bound" logo as a 3D object on Instagram/YouTube.
+- Avatar: Vítor chose the GPT Image 2 half-photo/half-clay portrait (2026-10-31).
 - Behance: keep both accounts (criativovitorhugo + boundvisuals), cross-credited.
 
 ## Website (decided)
@@ -27,7 +27,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Plugins: WPBakery (js_composer) AND Elementor + Qi addons, LayerSlider, Revolution Slider, Jetpack, ACF Pro (folder "advanced-custom-fields-pro-master" — check licence/updates), 3 separate custom-CSS plugins, right-click/inspect blockers, Wordfence, Limit Login, Really Simple SSL, CF7, PixelYourSite, Google Sitemap Generator, stockholm-core (portfolio post type).
 - Uploads: 3.0 GB.
 - Verdict: not lean → build a new lightweight custom theme that keeps the same content (portfolio post type slug, ACF fields, pages, URLs) so wp-admin stays familiar; retire builders/sliders after migration.
-- Content (XML export 2026-10-31): 5 pages (Work=home, Info, Get my budget, Obter o meu orçamento, Privacy) + 36 portfolio_page items, ALL built with Elementor (WPBakery unused → removable). Each portfolio item = ONE image/shot (e.g. Gold Village ×7), URL /portfolio_page/<slug>/, grid loops via post-featured-video plugin (27 mp4 in uploads). Categories: Image, Architectural, Marketing, Product, Design, Film/Animation, Concept, Digital Art, Automotive. Every portfolio item has the same SEO title "3D - Bound Visuals" (leftover SEOPress/qode meta, plugin gone) → major SEO fix. No real case-study pages per project.
+- Content (XML export 2026-10-31): 5 pages (Work=home, Info, Get my budget, Obter o meu orçamento, Privacy) + 36 portfolio_page items, ALL built with Elementor (WPBakery unused → removable). 12 real project pages (one per project, URL /portfolio_page/<slug>/) + 24 extra grid thumbnails that redirect to their project page via the page-links-to plugin (_links_to meta) — keep this behaviour, grid loops via post-featured-video plugin (27 mp4 in uploads). Categories: Image, Architectural, Marketing, Product, Design, Film/Animation, Concept, Digital Art, Automotive. Every portfolio item has the same SEO title "3D - Bound Visuals" (leftover SEOPress/qode meta, plugin gone) → major SEO fix.
 - FTP: account claude@boundvisuals.com (home dir), secrets FTP_HOST/FTP_USER/FTP_PASS in GitHub. SSH: port 44222 exists but firewalled from outside.
 
 ## Content program (decided)
