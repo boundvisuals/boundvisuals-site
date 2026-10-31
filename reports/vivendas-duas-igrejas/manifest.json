@@ -16,8 +16,13 @@
         "out/web/grid/root_1_-_Front___webp_+_Seedvr2_bravo-1600.webp",
         "out/web/grid/root_1_-_Front___webp_+_Seedvr2_bravo-2400.webp"
       ],
-      "ig_feed": "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg",
+        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-02.jpg",
+        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-03.jpg",
+        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 53677895,
       "full_bytes": 27834906
     },
@@ -36,8 +41,13 @@
         "out/web/grid/root_2_-_Back_webp_+_Seedvr2_bravo-1600.webp",
         "out/web/grid/root_2_-_Back_webp_+_Seedvr2_bravo-2400.webp"
       ],
-      "ig_feed": "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg",
+        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg",
+        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-03.jpg",
+        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 59934515,
       "full_bytes": 32237410
     },
@@ -56,10 +66,15 @@
         "out/web/grid/root_3-interior1_webp-1600.webp",
         "out/web/grid/root_3-interior1_webp-2400.webp"
       ],
-      "ig_feed": "out/ig/root_3-interior1_webp-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_3-interior1_webp-01.jpg",
+        "out/ig/root_3-interior1_webp-02.jpg",
+        "out/ig/root_3-interior1_webp-03.jpg",
+        "out/ig/root_3-interior1_webp-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 9863870,
-      "full_bytes": 23155426
+      "full_bytes": 9863870
     },
     {
       "source": "root/4 - exterior frente_webp.webp",
@@ -76,10 +91,15 @@
         "out/web/grid/root_4_-_exterior_frente_webp-1600.webp",
         "out/web/grid/root_4_-_exterior_frente_webp-2400.webp"
       ],
-      "ig_feed": "out/ig/root_4_-_exterior_frente_webp-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_4_-_exterior_frente_webp-01.jpg",
+        "out/ig/root_4_-_exterior_frente_webp-02.jpg",
+        "out/ig/root_4_-_exterior_frente_webp-03.jpg",
+        "out/ig/root_4_-_exterior_frente_webp-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 11903476,
-      "full_bytes": 27983868
+      "full_bytes": 11903476
     },
     {
       "source": "root/5-interior2_webp.webp",
@@ -96,10 +116,12 @@
         "out/web/grid/root_5-interior2_webp-1600.webp",
         "out/web/grid/root_5-interior2_webp-2400.webp"
       ],
-      "ig_feed": "out/ig/root_5-interior2_webp-feed.jpg",
-      "ig_mode": "native",
+      "ig_slides": [
+        "out/ig/root_5-interior2_webp-01.jpg"
+      ],
+      "ig_mode": "single",
       "source_bytes": 10414348,
-      "full_bytes": 26048366
+      "full_bytes": 10414348
     },
     {
       "source": "root/6-interior3_webp.webp",
@@ -116,10 +138,15 @@
         "out/web/grid/root_6-interior3_webp-1600.webp",
         "out/web/grid/root_6-interior3_webp-2400.webp"
       ],
-      "ig_feed": "out/ig/root_6-interior3_webp-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_6-interior3_webp-01.jpg",
+        "out/ig/root_6-interior3_webp-02.jpg",
+        "out/ig/root_6-interior3_webp-03.jpg",
+        "out/ig/root_6-interior3_webp-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 7819416,
-      "full_bytes": 17792880
+      "full_bytes": 7819416
     },
     {
       "source": "root/7-interior4_webp.webp",
@@ -136,10 +163,15 @@
         "out/web/grid/root_7-interior4_webp-1600.webp",
         "out/web/grid/root_7-interior4_webp-2400.webp"
       ],
-      "ig_feed": "out/ig/root_7-interior4_webp-feed.jpg",
-      "ig_mode": "framed",
+      "ig_slides": [
+        "out/ig/root_7-interior4_webp-01.jpg",
+        "out/ig/root_7-interior4_webp-02.jpg",
+        "out/ig/root_7-interior4_webp-03.jpg",
+        "out/ig/root_7-interior4_webp-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
       "source_bytes": 6743026,
-      "full_bytes": 16582392
+      "full_bytes": 6743026
     }
   ]
 }
