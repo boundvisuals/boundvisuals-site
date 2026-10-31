@@ -3,7 +3,7 @@ instagram:
   feed_ratio: [4, 5]
   feed_size: [1080, 1350]
   story_size: [1080, 1920]
-  landscape_policy: frame      # never crop the composition
+  non_4x5_policy: carousel     # 4:5 detail crops + whole image on white as last slide
   frame_color: "#111111"       # adjust to brand manual
   rotate_projects: true
   open_with_best_image: true
