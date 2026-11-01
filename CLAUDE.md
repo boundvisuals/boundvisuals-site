@@ -49,7 +49,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
 
 ## Pending from Vítor
-- SSH: port 44222 firewalled; asked PTServidor to open it (key-only). FTP works meanwhile.
+- SSH: PTServidor only allows whitelisted fixed IPs (port 1082) — not usable from GitHub. Decided path: FTP for files + WordPress REST API with an Application Password (GitHub secrets WP_USER, WP_APP_PASS) for content. cPanel Terminal for rare manual commands.
 - MEGA links per project.
 - Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
