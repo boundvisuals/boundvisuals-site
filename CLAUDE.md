@@ -70,6 +70,8 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Live changes log
 - 2026-11-02 19:36 SEO mu-plugin bv-seo.php LIVE (/public_html/wp-content/mu-plugins). Verified titles/descriptions on home, Vivendas Cête, Corim. Undo: deploy-mu.yml action=remove-mu target=production.
 
+- 2026-11-02 20:48 bv-seo.php home description updated to brand definition ("Vítor Hugo's 3D brand… architecture and product"). A broken upload was blocked by the robot's PHP syntax check; live verified OK.
+
 ## Housekeeping rule (Vítor, 2026-11-02)
 - Always delete what is no longer needed (staging copies, parked theme files on the server, test files, robots that served once).
 
