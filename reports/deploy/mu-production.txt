@@ -1,0 +1,5 @@
+-rw-r--r-- 1026     1029         6750 Nov  2 19:36 /public_html/wp-content/mu-plugins/bv-seo.php
+-rw-r--r-- 1026     1029        52487 Oct 10  2024 /public_html/wp-content/mu-plugins/health-check-troubleshooting-mode.php
+/public_html/wp-content/themes/index.php
+/public_html/wp-content/themes/stockholm/
+/public_html/wp-content/themes/stockholm-child/
