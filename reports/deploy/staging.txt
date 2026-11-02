@@ -34,13 +34,13 @@ Removing old file `inc/customizer.php'
 Transferring file `inc/customizer.php'
 Removing old file `inc/seo.php'
 Transferring file `inc/seo.php'
-drwxr-xr-x 1026     1029              Nov  2 18:48 /public_html/novo/wp-content/themes/boundvisuals/assets/
--rw-r--r-- 1026     1029         1816 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/footer.php
--rw-r--r-- 1026     1029         2071 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/front-page.php
--rw-r--r-- 1026     1029         2834 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/functions.php
--rw-r--r-- 1026     1029         1568 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/header.php
-drwxr-xr-x 1026     1029              Nov  2 18:48 /public_html/novo/wp-content/themes/boundvisuals/inc/
--rw-r--r-- 1026     1029          551 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/index.php
--rw-r--r-- 1026     1029          572 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/page.php
--rw-r--r-- 1026     1029         3295 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/single-portfolio_page.php
--rw-r--r-- 1026     1029          399 Nov  2 18:47 /public_html/novo/wp-content/themes/boundvisuals/style.css
+drwxr-xr-x 1026     1029              Nov  2 18:50 /public_html/novo/wp-content/themes/boundvisuals/assets/
+-rw-r--r-- 1026     1029         1816 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/footer.php
+-rw-r--r-- 1026     1029         2071 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/front-page.php
+-rw-r--r-- 1026     1029         2834 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/functions.php
+-rw-r--r-- 1026     1029         1568 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/header.php
+drwxr-xr-x 1026     1029              Nov  2 18:50 /public_html/novo/wp-content/themes/boundvisuals/inc/
+-rw-r--r-- 1026     1029          551 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/index.php
+-rw-r--r-- 1026     1029          572 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/page.php
+-rw-r--r-- 1026     1029         3295 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/single-portfolio_page.php
+-rw-r--r-- 1026     1029          399 Nov  2 18:49 /public_html/novo/wp-content/themes/boundvisuals/style.css
