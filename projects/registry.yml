@@ -10,3 +10,23 @@ projects:
     publish: true
     note: ""
     status: pending
+  - id: vivendas-cete
+    title: Vivendas Cête
+    mega: https://mega.nz/folder/qjQ2iTJK#rt93sxKYmfkRaydquDO6KQ
+    publish: true
+    note: ""
+    status: pending
+  - id: gold-village
+    title: Gold Village
+    mega: https://mega.nz/folder/uioSxSJZ#wbqWl4RotEMkiRGfVkxhDA
+    publish: true
+    note: ""
+    status: pending
+  - id: apartamentos-gondomar-2
+    title: Apartamentos Gondomar 2
+    mega: https://mega.nz/folder/6qYTTLSY#gu60C2W2i9AfJdkK8CDcEw
+    publish: true
+    note: ""
+    status: pending
+# In progress (Vítor will send links): school-building, 10-moradias-sao-felix-da-marinha,
+# corim-residence, vivendas-aveleda, apartamentos-cete-2026, casas-mouriz-respirar-arte
