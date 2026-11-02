@@ -1,0 +1,31 @@
+name: deploy-mu
+# Uploads mu-plugins/*.php to wp-content/mu-plugins on staging (default) or production.
+# action=remove-theme deletes the parked boundvisuals theme folder from the target.
+on:
+  workflow_dispatch:
+    inputs:
+      target: { description: "staging or production", default: staging }
+      action: { description: "upload | remove-mu | remove-theme", default: upload }
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp php-cli && for f in mu-plugins/*.php; do php -l "$f" || exit 1; done
+      - env:
+          H: ${{ secrets.FTP_HOST }}
+          U: ${{ secrets.FTP_USER }}
+          P: ${{ secrets.FTP_PASS }}
+        run: |
+          if [ "${{ inputs.target }}" = production ]; then R=/public_html; else R=/public_html/novo; fi
+          case "${{ inputs.action }}" in
+            upload) CMD="mkdir -p $R/wp-content/mu-plugins; mirror -R --verbose --include-glob=*.php mu-plugins $R/wp-content/mu-plugins" ;;
+            remove-mu) CMD="rm -f $R/wp-content/mu-plugins/bv-seo.php" ;;
+            remove-theme) CMD="rm -rf $R/wp-content/themes/boundvisuals" ;;
+          esac
+          mkdir -p reports/deploy
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; $CMD; cls -l $R/wp-content/mu-plugins/; cls -1 $R/wp-content/themes/; bye" "$H" 2>&1 | tee reports/deploy/mu-${{ inputs.target }}.txt
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Report: deploy-mu" && (git pull --rebase -q && git push) || true

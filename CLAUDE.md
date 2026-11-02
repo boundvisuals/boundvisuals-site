@@ -67,6 +67,9 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Site design (2026-11-02)
 - Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Rule (Vítor): improve everything (faster, more beautiful) but keep the essence; any visible change must be justified ("better because X/Y") — list each change with its reason when showing staging. Reference = docs/current-site-spec.md (measured in Vítor's browser pane; GitHub headless screenshots hang on this site).
 
+## Housekeeping rule (Vítor, 2026-11-02)
+- Always delete what is no longer needed (staging copies, parked theme files on the server, test files, robots that served once).
+
 ## DECISION 2026-11-02 19:02 — site stays as is
 - Vítor keeps the current Stockholm/Elementor site and wp-admin exactly as today; he keeps editing it himself. New theme (theme/boundvisuals) is PARKED, not to be deployed to production.
 - Claude only does important, invisible changes on the live site, each approved first: SEO (titles/descriptions/schema via a small mu-plugin, test on /novo first), speed/security cleanup (list for Vítor), no design changes.
@@ -77,7 +80,8 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
 
 ## Pending from Vítor
-- Approve: SEO mu-plugin on live (after test on /novo).
+- Switch staging back to the Stockholm child theme (novo/wp-admin → Aparência → Temas) so the SEO plugin is tested on the real setup; then robot deletes parked theme from staging.
+- Approve: SEO mu-plugin (mu-plugins/bv-seo.php) on live after test on /novo.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
