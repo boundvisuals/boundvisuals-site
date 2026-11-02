@@ -4,7 +4,7 @@
  */
 defined('ABSPATH') || exit;
 
-define('BV_VER', '1.0.1');
+define('BV_VER', '1.0.2');
 define('BV_URI', get_template_directory_uri());
 define('BV_DIR', get_template_directory());
 
@@ -31,15 +31,13 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('bv-main', BV_URI . '/assets/main.css', [], BV_VER);
 	wp_enqueue_script('bv-main', BV_URI . '/assets/main.js', [], BV_VER, ['strategy' => 'defer', 'in_footer' => true]);
 
-	// Front end does not need builder / icon-font / slider assets from old plugins.
+	// Front end loads only what this theme needs (allowlist). Pages still built with Elementor keep everything.
 	$builder_page = is_page() && !is_front_page() && get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder';
 	if (!is_admin() && !$builder_page) {
-		foreach (['elementor-frontend', 'elementor-icons', 'elementor-post-*', 'qi-addons-for-elementor-grid-style', 'qi-addons-for-elementor-helper-parts-style', 'qi-addons-for-elementor-style', 'js_composer_front', 'layerslider', 'rs-plugin-settings', 'wp-block-library', 'global-styles', 'classic-theme-styles', 'font-awesome', 'elementor-gf-local-raleway'] as $h) {
-			wp_dequeue_style($h);
-		}
-		foreach (['elementor-frontend', 'elementor-waypoints', 'layerslider', 'tp-tools', 'revmin', 'jquery-migrate'] as $h) {
-			wp_dequeue_script($h);
-		}
+		$keep = '/^(bv-|admin-bar|dashicons|contact-form-7|wpcf7|cookie|pys|pixel|jquery-core|jquery$|wp-hooks|wp-i18n|swv)/i';
+		global $wp_styles, $wp_scripts;
+		foreach ((array) $wp_styles->queue as $h) { if (!preg_match($keep, $h)) wp_dequeue_style($h); }
+		foreach ((array) $wp_scripts->queue as $h) { if (!preg_match($keep, $h)) wp_dequeue_script($h); }
 	}
 	// reCAPTCHA only where a form is shown.
 	if (!is_page(['get-my-budget', 'obter-o-meu-orcamento'])) {

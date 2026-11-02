@@ -11,6 +11,33 @@ defined('ABSPATH') || exit;
 const BV_PT  = 'portfolio_page';
 const BV_TAX = 'portfolio_category';
 
+/**
+ * The portfolio type and categories used to come from the Stockholm theme. Register them here
+ * (same names, same URLs) so the content no longer depends on that theme.
+ */
+add_action('init', function () {
+	if (!post_type_exists(BV_PT)) {
+		register_post_type(BV_PT, [
+			'label' => 'Portfolio', 'labels' => ['name' => 'Portfolio', 'singular_name' => 'Portfolio item', 'add_new_item' => 'Add portfolio item', 'edit_item' => 'Edit portfolio item'],
+			'public' => true, 'show_in_rest' => true, 'menu_icon' => 'dashicons-format-gallery', 'menu_position' => 5,
+			'has_archive' => false, 'rewrite' => ['slug' => 'portfolio_page', 'with_front' => false],
+			'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes', 'revisions', 'elementor'],
+		]);
+	}
+	if (!taxonomy_exists(BV_TAX)) {
+		register_taxonomy(BV_TAX, BV_PT, [
+			'label' => 'Portfolio categories', 'hierarchical' => true, 'public' => true, 'show_in_rest' => true, 'show_admin_column' => true,
+			'rewrite' => ['slug' => 'portfolio_category', 'with_front' => false],
+		]);
+	} else {
+		register_taxonomy_for_object_type(BV_TAX, BV_PT);
+	}
+	if (get_option('bv_rewrite_ver') !== BV_VER) {
+		flush_rewrite_rules(false);
+		update_option('bv_rewrite_ver', BV_VER);
+	}
+}, 5);
+
 function bv_items(): array {
 	return get_posts([
 		'post_type'      => BV_PT,
@@ -18,6 +45,13 @@ function bv_items(): array {
 		'post_status'    => 'publish',
 		'orderby'        => ['menu_order' => 'ASC', 'date' => 'DESC'],
 	]);
+}
+
+/** Home grid order: shuffled on every visit, as on the current site. */
+function bv_grid_items(): array {
+	$items = bv_items();
+	shuffle($items);
+	return $items;
 }
 
 /** Categories that actually have items, in name order (like the current filter row). */

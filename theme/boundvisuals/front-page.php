@@ -14,7 +14,7 @@
 	<div class="grid" id="grid">
 		<?php
 		$i = 0;
-		foreach (bv_items() as $p) :
+		foreach (bv_grid_items() as $p) :
 			$terms = bv_item_terms($p);
 			$slugs = implode(' ', wp_list_pluck($terms, 'slug'));
 			$names = implode(' / ', wp_list_pluck($terms, 'name'));

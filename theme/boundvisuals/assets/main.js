@@ -20,7 +20,7 @@
 	if (grid) {
 		const cards = $$('.card', grid);
 		const layout = () => {
-			const W = grid.clientWidth, n = W > 1100 ? 3 : W > 600 ? 2 : 1, gap = 10, cw = (W - gap * (n - 1)) / n;
+			const W = grid.clientWidth, n = W >= 900 ? 3 : W >= 560 ? 2 : 1, gap = 10, cw = (W - gap * (n - 1)) / n;
 			const h = Array(n).fill(0);
 			grid.classList.add('masonry');
 			cards.forEach(c => {
