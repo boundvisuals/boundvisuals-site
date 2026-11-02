@@ -1,0 +1,36 @@
+name: deploy-theme
+# Uploads theme/boundvisuals to the STAGING site (/public_html/novo) over FTPS.
+# Production deploy is a separate, manual step after Vítor approves.
+on:
+  push:
+    branches: [main]
+    paths: ["theme/**"]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "staging or production"
+        default: staging
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp php-cli
+      - name: PHP syntax check
+        run: for f in $(find theme -name '*.php'); do php -l "$f" >/dev/null || exit 1; done
+      - name: Upload
+        env:
+          H: ${{ secrets.FTP_HOST }}
+          U: ${{ secrets.FTP_USER }}
+          P: ${{ secrets.FTP_PASS }}
+          TARGET: ${{ inputs.target || 'staging' }}
+        run: |
+          if [ "$TARGET" = production ]; then R=/public_html; else R=/public_html/novo; fi
+          mkdir -p reports/deploy
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; set net:timeout 30; mirror -R --delete --verbose theme/boundvisuals $R/wp-content/themes/boundvisuals; cls -l $R/wp-content/themes/boundvisuals; bye" "$H" 2>&1 | tee reports/deploy/$TARGET.txt
+      - if: always()
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Report: deploy theme" && (git pull --rebase -q && git push) || true
