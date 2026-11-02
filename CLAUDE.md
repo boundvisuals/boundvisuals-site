@@ -2,7 +2,7 @@
 
 Source of truth for the rebrand, the website and the content automation.
 Master plan (Claude Doc): https://claude.ai/artifact/CiMZbhepRpkE2qYCfgMwCw
-LIVING DOSSIER (Claude Doc, PT): https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k (doc id ce0edf0a-9970-4cf6-8e2b-82f7f036437d, body node a618e0cb-54b3). Vítor's rule: update it after EVERY decision/progress (Agora, Tarefas, Registo de decisões, Projetos…) and remind him of his tasks ahead of time. Reminder set: 2026-11-06 10:00 delete plugins.
+LIVING DOSSIER (Claude Doc, PT): https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k (doc id ce0edf0a-9970-4cf6-8e2b-82f7f036437d, body node a618e0cb-54b3). Vítor's rule: update it after EVERY decision/progress (Agora, Tarefas, Registo de decisões, Projetos…) and remind him of his tasks ahead of time. Reminder set: 2026-11-06 10:00 delete plugins. REMINDER CHANNEL (decided 2026-11-02): Claude app push notifications via scheduled tasks (Vítor has the app). Test push scheduled 2026-11-02 22:23 UTC (trig_01YYvkAC93jvBJb2BCgu8rdB) — confirm he received it. Planned recurring tasks once approval page exists: Sunday evening (week to approve + his tasks), Mon/Wed/Fri evening (daily-study brief for next day), launch −2 days, queue < 7 days warning.
 Talk to Vítor in European Portuguese. Generation prompts in English.
 RULE (Vítor, 2026-11-02): explain every step he must do in tiny, click-by-click detail ("como se eu fosse muito burro"): exact URL, exact button names, what he should see.
 RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY reply with what is still open/unanswered from before ("Ficou por responder/fazer"), repeating the open questions in full.
