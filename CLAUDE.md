@@ -48,6 +48,9 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Publishing model (decided 2026-11-02)
 - MANUAL by Vítor, whenever a project is ready (robot prepares a kit): website, Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa (+ LinkedIn company page until API approval).
 - AUTOMATIC (robot, after one-time connections): Instagram (1 post/day, reel every 2 days, 3–5 stories/day, hashtags in first comment), Facebook Page (mirror), Pinterest (pin → project URL), YouTube Shorts (reels), LinkedIn personal (2–3/week). Staggered best times, not simultaneous.
+- Vítor says "project X is ready" → robot automatically prepares the manual-platform kit (images per platform + texts) and notifies him; he publishes on site/Behance/CG platforms himself.
+- Something must go out EVERY day (at least a story). Need an endless-content plan (quick images/projects, series).
+- QUALITY: always maximum ("extreme high quality", "chocar a malta") — never ship soft crops, banding, wrong colour space or over-compressed files on any platform.
 - Approval: WEEKLY batch (Vítor approves next 7 days at once). Nothing publishes without ✅.
 - Ad-hoc posts: Vítor can post himself anytime (queue unaffected) or ask Claude to publish now.
 - Plan: queue builder (manifests → rotation A,B,C) → approval page on his server (/public_html/bv-fila, token, noindex; images there also serve as public URLs for the APIs) → publisher robot (GitHub Actions hourly cron, Meta Graph API via System User token, secret META_TOKEN).
