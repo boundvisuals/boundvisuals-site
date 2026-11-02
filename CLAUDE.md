@@ -41,7 +41,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa, LinkedIn company page until API approval.
 
 ## Brand architecture (decided 2026-10-31)
-- Bound Visuals = 3D architecture + 3D product (studio). Vítor Hugo = everything else: AI image/video, performance ads, image, video, other 3D, film (confirmed 2026-11-02).
+- Bound Visuals = 3D (all 3D, as since day one). Vítor Hugo = the person behind it all: all 3D of any kind + literally everything else (AI image/video, performance ads, image, video, film…) (confirmed 2026-11-02).
 - ONE site, two doors: boundvisuals.com (studio: Work, Services) + boundvisuals.com/vitorhugo (AI, video, ads, Lab, CV). No subdomain, no second domain.
 - Instagram is Vítor's (person-first bio, mentions the studio).
 
