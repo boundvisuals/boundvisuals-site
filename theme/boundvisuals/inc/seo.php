@@ -13,7 +13,7 @@ function bv_meta_description(): string {
 	if (is_singular(BV_PT)) {
 		$id = get_queried_object_id();
 		$d = get_post_meta($id, '_seopress_titles_desc', true) ?: get_post_meta($id, 'qode_seo_description', true);
-		if ($d) {
+		if ($d && stripos($d, 'We develop 3D solutions') !== 0) {
 			return $d;
 		}
 		$terms = wp_list_pluck(bv_item_terms(get_post($id)), 'name');
