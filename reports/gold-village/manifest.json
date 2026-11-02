@@ -1,0 +1,243 @@
+{
+  "project": "gold-village",
+  "items": [
+    {
+      "source": "10_-_interior3/10-interior3.png",
+      "sha1": "2743f1042417a9d6a3334b55432b2246ecb23aca",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/10_-_interior3_10-interior3.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/10_-_interior3_10-interior3-800.webp",
+        "out/web/grid/10_-_interior3_10-interior3-1600.webp",
+        "out/web/grid/10_-_interior3_10-interior3-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/10_-_interior3_10-interior3-01.jpg",
+        "out/ig/10_-_interior3_10-interior3-02.jpg",
+        "out/ig/10_-_interior3_10-interior3-03.jpg",
+        "out/ig/10_-_interior3_10-interior3-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 54180982,
+      "full_bytes": 23595584
+    },
+    {
+      "source": "11_-_interior4/11-interior4.png",
+      "sha1": "15953e523e0425dcf76ff3578376228786d2503c",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/11_-_interior4_11-interior4.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/11_-_interior4_11-interior4-800.webp",
+        "out/web/grid/11_-_interior4_11-interior4-1600.webp",
+        "out/web/grid/11_-_interior4_11-interior4-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/11_-_interior4_11-interior4-01.jpg",
+        "out/ig/11_-_interior4_11-interior4-02.jpg",
+        "out/ig/11_-_interior4_11-interior4-03.jpg",
+        "out/ig/11_-_interior4_11-interior4-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 49692476,
+      "full_bytes": 21709490
+    },
+    {
+      "source": "1_-_exterior1/1-exterior1.png",
+      "sha1": "de0cf67a5660860affe809652bafa880c935ba13",
+      "size": [
+        5568,
+        6912
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/1_-_exterior1_1-exterior1.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/1_-_exterior1_1-exterior1-800.webp",
+        "out/web/grid/1_-_exterior1_1-exterior1-1600.webp",
+        "out/web/grid/1_-_exterior1_1-exterior1-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/1_-_exterior1_1-exterior1-01.jpg"
+      ],
+      "ig_mode": "single",
+      "source_bytes": 85362334,
+      "full_bytes": 45398494
+    },
+    {
+      "source": "2_-_exterior2/2-exterior2.png",
+      "sha1": "3ec885c37d4be558ae60a0dc6a63af0625e2fdfa",
+      "size": [
+        6605,
+        3686
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/2_-_exterior2_2-exterior2.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2_-_exterior2_2-exterior2-800.webp",
+        "out/web/grid/2_-_exterior2_2-exterior2-1600.webp",
+        "out/web/grid/2_-_exterior2_2-exterior2-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2_-_exterior2_2-exterior2-01.jpg",
+        "out/ig/2_-_exterior2_2-exterior2-02.jpg",
+        "out/ig/2_-_exterior2_2-exterior2-03.jpg",
+        "out/ig/2_-_exterior2_2-exterior2-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 51672710,
+      "full_bytes": 26449156
+    },
+    {
+      "source": "3_-_exterior3/3_exterior3.png",
+      "sha1": "a1bf609db0edb306b190fffba77095b856beaad1",
+      "size": [
+        6605,
+        3686
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/3_-_exterior3_3_exterior3.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/3_-_exterior3_3_exterior3-800.webp",
+        "out/web/grid/3_-_exterior3_3_exterior3-1600.webp",
+        "out/web/grid/3_-_exterior3_3_exterior3-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/3_-_exterior3_3_exterior3-01.jpg",
+        "out/ig/3_-_exterior3_3_exterior3-02.jpg",
+        "out/ig/3_-_exterior3_3_exterior3-03.jpg",
+        "out/ig/3_-_exterior3_3_exterior3-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 54274614,
+      "full_bytes": 27639904
+    },
+    {
+      "source": "4_-_exterior4/4-exterior4.png",
+      "sha1": "ee44a78fd03234825ea37fc3279bda0ca6e28037",
+      "size": [
+        5568,
+        6912
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/4_-_exterior4_4-exterior4.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/4_-_exterior4_4-exterior4-800.webp",
+        "out/web/grid/4_-_exterior4_4-exterior4-1600.webp",
+        "out/web/grid/4_-_exterior4_4-exterior4-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/4_-_exterior4_4-exterior4-01.jpg"
+      ],
+      "ig_mode": "single",
+      "source_bytes": 83901858,
+      "full_bytes": 39784236
+    },
+    {
+      "source": "5_-_exterior5/5-exterior5.png",
+      "sha1": "1b3c76c4991d76bb511737e96d5222dcf3504af2",
+      "size": [
+        5568,
+        6912
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/5_-_exterior5_5-exterior5.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/5_-_exterior5_5-exterior5-800.webp",
+        "out/web/grid/5_-_exterior5_5-exterior5-1600.webp",
+        "out/web/grid/5_-_exterior5_5-exterior5-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/5_-_exterior5_5-exterior5-01.jpg"
+      ],
+      "ig_mode": "single",
+      "source_bytes": 89460039,
+      "full_bytes": 45044564
+    },
+    {
+      "source": "6_-_exterior6/6-exterior6.png",
+      "sha1": "40d8c661eb9f281bcc76dddfb7294c52cc123c3b",
+      "size": [
+        5568,
+        6912
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/6_-_exterior6_6-exterior6.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/6_-_exterior6_6-exterior6-800.webp",
+        "out/web/grid/6_-_exterior6_6-exterior6-1600.webp",
+        "out/web/grid/6_-_exterior6_6-exterior6-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/6_-_exterior6_6-exterior6-01.jpg"
+      ],
+      "ig_mode": "single",
+      "source_bytes": 78394021,
+      "full_bytes": 38291566
+    },
+    {
+      "source": "8_-_interior1/8-interior1.png",
+      "sha1": "00eb0c7711f9ae63d77f97f9644264867f5325a4",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/8_-_interior1_8-interior1.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/8_-_interior1_8-interior1-800.webp",
+        "out/web/grid/8_-_interior1_8-interior1-1600.webp",
+        "out/web/grid/8_-_interior1_8-interior1-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/8_-_interior1_8-interior1-01.jpg",
+        "out/ig/8_-_interior1_8-interior1-02.jpg",
+        "out/ig/8_-_interior1_8-interior1-03.jpg",
+        "out/ig/8_-_interior1_8-interior1-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 56131079,
+      "full_bytes": 25571170
+    },
+    {
+      "source": "9_-_interior2/9-interior2.png",
+      "sha1": "40c25ecf89f0379ab834d8bda7f9f8e55c3cb4f2",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/9_-_interior2_9-interior2.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/9_-_interior2_9-interior2-800.webp",
+        "out/web/grid/9_-_interior2_9-interior2-1600.webp",
+        "out/web/grid/9_-_interior2_9-interior2-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/9_-_interior2_9-interior2-01.jpg",
+        "out/ig/9_-_interior2_9-interior2-02.jpg",
+        "out/ig/9_-_interior2_9-interior2-03.jpg",
+        "out/ig/9_-_interior2_9-interior2-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "source_bytes": 55423597,
+      "full_bytes": 25337748
+    }
+  ]
+}

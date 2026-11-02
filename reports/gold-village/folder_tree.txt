@@ -1,0 +1,103 @@
+/2026 - FINAIS edit for bound visuals/1 - exterior1/1 - ai from nano banana 2.1/ComfyUI_temp_kxvhn_00001_.png
+/2026 - FINAIS edit for bound visuals/1 - exterior1/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/1 - exterior1/2 - upscale from comfyui/ComfyUI_temp_epbam_00002_.png
+/2026 - FINAIS edit for bound visuals/1 - exterior1/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/1 - exterior1/3 - edit/ComfyUI_temp_epbam_00002_edit.png
+/2026 - FINAIS edit for bound visuals/1 - exterior1/3 - edit/ComfyUI_temp_epbam_00002_edit.psd
+/2026 - FINAIS edit for bound visuals/1 - exterior1/3 - edit
+/2026 - FINAIS edit for bound visuals/1 - exterior1/4 - final export/1-exterior1.png
+/2026 - FINAIS edit for bound visuals/1 - exterior1/4 - final export
+/2026 - FINAIS edit for bound visuals/1 - exterior1
+/2026 - FINAIS edit for bound visuals/2 - exterior2/1 - ai from nano banana 2.1/from nano banana pro 4k.png
+/2026 - FINAIS edit for bound visuals/2 - exterior2/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/2 - exterior2/2 - upscale from comfyui/ComfyUI_temp_sndxs_00001_.png
+/2026 - FINAIS edit for bound visuals/2 - exterior2/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/2 - exterior2/3 - edit/ComfyUI_temp_sndxs_00001_edit.png
+/2026 - FINAIS edit for bound visuals/2 - exterior2/3 - edit/ComfyUI_temp_sndxs_00001_edit.psd
+/2026 - FINAIS edit for bound visuals/2 - exterior2/3 - edit
+/2026 - FINAIS edit for bound visuals/2 - exterior2/4 - final export/2-exterior2.png
+/2026 - FINAIS edit for bound visuals/2 - exterior2/4 - final export
+/2026 - FINAIS edit for bound visuals/2 - exterior2
+/2026 - FINAIS edit for bound visuals/3 - exterior3/1 - ai from nano banana 2.1/from nano banana pro 4k comfyui.png
+/2026 - FINAIS edit for bound visuals/3 - exterior3/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/3 - exterior3/2 - upscale from comfyui/ComfyUI_temp_sndxs_00002_.png
+/2026 - FINAIS edit for bound visuals/3 - exterior3/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/3 - exterior3/3 - edit/ComfyUI_temp_sndxs_00002_edit.png
+/2026 - FINAIS edit for bound visuals/3 - exterior3/3 - edit/ComfyUI_temp_sndxs_00002_edit.psd
+/2026 - FINAIS edit for bound visuals/3 - exterior3/3 - edit
+/2026 - FINAIS edit for bound visuals/3 - exterior3/4 - final export/3_exterior3.png
+/2026 - FINAIS edit for bound visuals/3 - exterior3/4 - final export
+/2026 - FINAIS edit for bound visuals/3 - exterior3
+/2026 - FINAIS edit for bound visuals/4 - exterior4/1 - ai from nano banana 2.1/Gemini_Generated_Image_m36fakm36fakm36f.jpeg
+/2026 - FINAIS edit for bound visuals/4 - exterior4/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/4 - exterior4/2 - upscale from comfyui/ComfyUI_temp_vovum_00002_.png
+/2026 - FINAIS edit for bound visuals/4 - exterior4/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/4 - exterior4/3 - edit/ComfyUI_temp_vovum_00002_edit.png
+/2026 - FINAIS edit for bound visuals/4 - exterior4/3 - edit/ComfyUI_temp_vovum_00002_edit.psd
+/2026 - FINAIS edit for bound visuals/4 - exterior4/3 - edit
+/2026 - FINAIS edit for bound visuals/4 - exterior4/4 - final export/4-exterior4.png
+/2026 - FINAIS edit for bound visuals/4 - exterior4/4 - final export
+/2026 - FINAIS edit for bound visuals/4 - exterior4
+/2026 - FINAIS edit for bound visuals/5 - exterior5/1 - ai from nano banana 2.1/Gemini_Generated_Image_d6xhpwd6xhpwd6xh.jpeg
+/2026 - FINAIS edit for bound visuals/5 - exterior5/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/5 - exterior5/2 - upscale from comfyui/ComfyUI_temp_kpoqp_00001_.png
+/2026 - FINAIS edit for bound visuals/5 - exterior5/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/5 - exterior5/3 - edit/ComfyUI_temp_kpoqp_00001_edit.png
+/2026 - FINAIS edit for bound visuals/5 - exterior5/3 - edit/ComfyUI_temp_kpoqp_00001_edit.psd
+/2026 - FINAIS edit for bound visuals/5 - exterior5/3 - edit
+/2026 - FINAIS edit for bound visuals/5 - exterior5/4 - final export/5-exterior5.png
+/2026 - FINAIS edit for bound visuals/5 - exterior5/4 - final export
+/2026 - FINAIS edit for bound visuals/5 - exterior5
+/2026 - FINAIS edit for bound visuals/6 - exterior6/1 - ai from nano banana 2.1/2tentativa.jpeg
+/2026 - FINAIS edit for bound visuals/6 - exterior6/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/6 - exterior6/2 - upscale from comfyui/ComfyUI_temp_ourhq_00001_.png
+/2026 - FINAIS edit for bound visuals/6 - exterior6/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/6 - exterior6/3 - edit/ComfyUI_temp_ourhq_00001_edit.png
+/2026 - FINAIS edit for bound visuals/6 - exterior6/3 - edit/ComfyUI_temp_ourhq_00001_edit.psd
+/2026 - FINAIS edit for bound visuals/6 - exterior6/3 - edit
+/2026 - FINAIS edit for bound visuals/6 - exterior6/4 - final export/6-exterior6.png
+/2026 - FINAIS edit for bound visuals/6 - exterior6/4 - final export
+/2026 - FINAIS edit for bound visuals/6 - exterior6
+/2026 - FINAIS edit for bound visuals/8 - interior1/1 - ai from nano banana 2.1/Gemini_Generated_Image_irj2eairj2eairj2.jpeg
+/2026 - FINAIS edit for bound visuals/8 - interior1/1 - ai from nano banana 2.1/Gemini_Generated_Image_qhxp3bqhxp3bqhxp.jpeg
+/2026 - FINAIS edit for bound visuals/8 - interior1/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/8 - interior1/2 - upscale from comfyui/ComfyUI_temp_ourhq_00003_.png
+/2026 - FINAIS edit for bound visuals/8 - interior1/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/8 - interior1/3 - edit/ComfyUI_temp_ourhq_00003_edit.png
+/2026 - FINAIS edit for bound visuals/8 - interior1/3 - edit/ComfyUI_temp_ourhq_00003_edit.psd
+/2026 - FINAIS edit for bound visuals/8 - interior1/3 - edit
+/2026 - FINAIS edit for bound visuals/8 - interior1/4 - final export/8-interior1.png
+/2026 - FINAIS edit for bound visuals/8 - interior1/4 - final export
+/2026 - FINAIS edit for bound visuals/8 - interior1
+/2026 - FINAIS edit for bound visuals/9 - interior2/1 - ai from nano banana 2.1/Gemini_Generated_Image_45r8rl45r8rl45r8.jpeg
+/2026 - FINAIS edit for bound visuals/9 - interior2/1 - ai from nano banana 2.1/Gemini_Generated_Image_n85gtcn85gtcn85g.jpeg
+/2026 - FINAIS edit for bound visuals/9 - interior2/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/9 - interior2/2 - upscale from comfyui/ComfyUI_temp_ourhq_00004_.png
+/2026 - FINAIS edit for bound visuals/9 - interior2/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/9 - interior2/3 - edit/ComfyUI_temp_ourhq_00004_edit.png
+/2026 - FINAIS edit for bound visuals/9 - interior2/3 - edit/ComfyUI_temp_ourhq_00004_edit.psd
+/2026 - FINAIS edit for bound visuals/9 - interior2/3 - edit
+/2026 - FINAIS edit for bound visuals/9 - interior2/4 - final export/9-interior2.png
+/2026 - FINAIS edit for bound visuals/9 - interior2/4 - final export
+/2026 - FINAIS edit for bound visuals/9 - interior2
+/2026 - FINAIS edit for bound visuals/10 - interior3/1 - ai from nano banana 2.1/Gemini_Generated_Image_dj3kbsdj3kbsdj3k.jpeg
+/2026 - FINAIS edit for bound visuals/10 - interior3/1 - ai from nano banana 2.1/Gemini_Generated_Image_gyv65lgyv65lgyv6.jpeg
+/2026 - FINAIS edit for bound visuals/10 - interior3/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/10 - interior3/2 - upscale from comfyui/ComfyUI_temp_ourhq_00005_.png
+/2026 - FINAIS edit for bound visuals/10 - interior3/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/10 - interior3/3 - edit/ComfyUI_temp_ourhq_00005_edit.png
+/2026 - FINAIS edit for bound visuals/10 - interior3/3 - edit/ComfyUI_temp_ourhq_00005_edit.psd
+/2026 - FINAIS edit for bound visuals/10 - interior3/3 - edit
+/2026 - FINAIS edit for bound visuals/10 - interior3/4 - final export/10-interior3.png
+/2026 - FINAIS edit for bound visuals/10 - interior3/4 - final export
+/2026 - FINAIS edit for bound visuals/10 - interior3
+/2026 - FINAIS edit for bound visuals/11 - interior4/1 - ai from nano banana 2.1/Gemini_Generated_Image_40fyfh40fyfh40fy.jpeg
+/2026 - FINAIS edit for bound visuals/11 - interior4/1 - ai from nano banana 2.1
+/2026 - FINAIS edit for bound visuals/11 - interior4/2 - upscale from comfyui/ComfyUI_temp_lijbb_00001_.png
+/2026 - FINAIS edit for bound visuals/11 - interior4/2 - upscale from comfyui
+/2026 - FINAIS edit for bound visuals/11 - interior4/3 - edit/ComfyUI_temp_lijbb_00001_.png
+/2026 - FINAIS edit for bound visuals/11 - interior4/3 - edit
+/2026 - FINAIS edit for bound visuals/11 - interior4/4 - final export/11-interior4.png
+/2026 - FINAIS edit for bound visuals/11 - interior4/4 - final export
+/2026 - FINAIS edit for bound visuals/11 - interior4
+/2026 - FINAIS edit for bound visuals
