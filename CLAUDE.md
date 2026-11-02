@@ -67,6 +67,9 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Site design (2026-11-02)
 - Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Rule (Vítor): improve everything (faster, more beautiful) but keep the essence; any visible change must be justified ("better because X/Y") — list each change with its reason when showing staging. Reference = docs/current-site-spec.md (measured in Vítor's browser pane; GitHub headless screenshots hang on this site).
 
+## Live changes log
+- 2026-11-02 19:36 SEO mu-plugin bv-seo.php LIVE (/public_html/wp-content/mu-plugins). Verified titles/descriptions on home, Vivendas Cête, Corim. Undo: deploy-mu.yml action=remove-mu target=production.
+
 ## Housekeeping rule (Vítor, 2026-11-02)
 - Always delete what is no longer needed (staging copies, parked theme files on the server, test files, robots that served once).
 
@@ -80,7 +83,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
 
 ## Pending from Vítor
-- Approve: SEO mu-plugin (mu-plugins/bv-seo.php) on live — tested OK on /novo with Stockholm (2026-11-02). Deploy: deploy-mu.yml target=production action=upload; undo: action=remove-mu.
+- Speed cleanup step 1: Vítor deactivates on STAGING (novo): WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer → Claude compares staging vs live, then same on live. Step 2 (check first): 3 CSS plugins (custom-css-js, simple-css, so-css — may hold real styling), 360 panorama, Qi addons, Loco, google-captcha vs CF7 reCAPTCHA, duplicate GA (ga-google-analytics + gtag), SEOPress (replaced by bv-seo).
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
