@@ -45,6 +45,13 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - ONE site, two doors: boundvisuals.com (studio: Work, Services) + boundvisuals.com/vitorhugo (AI, video, ads, Lab, CV). No subdomain, no second domain.
 - Instagram is Vítor's (person-first bio, mentions the studio).
 
+## Publishing model (decided 2026-11-02)
+- MANUAL by Vítor, whenever a project is ready (robot prepares a kit): website, Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa (+ LinkedIn company page until API approval).
+- AUTOMATIC (robot, after one-time connections): Instagram (1 post/day, reel every 2 days, 3–5 stories/day, hashtags in first comment), Facebook Page (mirror), Pinterest (pin → project URL), YouTube Shorts (reels), LinkedIn personal (2–3/week). Staggered best times, not simultaneous.
+- Approval: WEEKLY batch (Vítor approves next 7 days at once). Nothing publishes without ✅.
+- Ad-hoc posts: Vítor can post himself anytime (queue unaffected) or ask Claude to publish now.
+- Plan: queue builder (manifests → rotation A,B,C) → approval page on his server (/public_html/bv-fila, token, noindex; images there also serve as public URLs for the APIs) → publisher robot (GitHub Actions hourly cron, Meta Graph API via System User token, secret META_TOKEN).
+
 ## Instagram hashtags (decided 2026-11-02)
 - Caption stays clean (text + 14 mentions). Hashtags go in Vítor's FIRST COMMENT, posted by the robot right after publishing: 26 fixed + 4 rotating of 11 (max 30).
 
@@ -89,7 +96,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → DONE on live too: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
 - Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: Vítor DECLINED (2026-11-02) — do not propose again unless he asks.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
-- One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn. TOP PRIORITY for Vítor (2026-11-02: "calendarizar e começar a bombar").
+- Meta System User token (steps sent 2026-11-02) → GitHub secret META_TOKEN. Then: Pinterest, Pinterest, YouTube, LinkedIn. TOP PRIORITY for Vítor (2026-11-02: "calendarizar e começar a bombar").
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
 - Instagram profile: done by Vítor (2026-11-02); highlight covers still to design.
 
