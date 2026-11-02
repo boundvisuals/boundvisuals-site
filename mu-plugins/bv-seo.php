@@ -33,7 +33,7 @@ function bvseo_info(int $id): string {
 		foreach ((array) $nodes as $n) {
 			if ($found) return;
 			if (($n['widgetType'] ?? '') === 'text-editor' && !empty($n['settings']['editor'])) {
-				$found = trim(preg_replace('/\s+/', ' ', wp_strip_all_tags($n['settings']['editor'])));
+				$found = trim(preg_replace('/[ \t]+/', ' ', wp_strip_all_tags(preg_replace('~<br\s*/?>|</p>|</div>|</li>~i', "\n", $n['settings']['editor']))));
 				return;
 			}
 			if (!empty($n['elements'])) $walk($n['elements']);
@@ -70,10 +70,13 @@ function bvseo_description(): string {
 		$id = get_queried_object_id();
 		$custom = get_post_meta($id, '_seopress_titles_desc', true) ?: get_post_meta($id, 'qode_seo_description', true);
 		if (!bvseo_is_generic($custom)) return $custom;
-		$terms = array_map('strtolower', bvseo_terms($id));
-		$what = $terms ? implode(', ', $terms) . ' visualisation' : '3D visualisation';
+		$terms = array_values(array_diff(array_map('strtolower', bvseo_terms($id)), ['image']));
+		$what = $terms ? implode(' and ', $terms) . ' visualisation' : '3D visualisation';
 		$info = bvseo_info($id);
-		return wp_html_excerpt(sprintf('%s: %s by Bound Visuals, 3D studio in Portugal.%s', get_the_title($id), $what, $info ? ' ' . $info : ''), 158, '…');
+		$extra = '';
+		if (preg_match('/Client:\s*(.+)/i', $info, $m)) $extra .= ' Client: ' . trim($m[1]) . '.';
+		if (preg_match('/Date:\s*(\d{4})/i', $info, $m)) $extra .= ' ' . $m[1] . '.';
+		return wp_html_excerpt(sprintf('%s, %s by Bound Visuals, 3D studio in Portugal.%s', get_the_title($id), $what, $extra), 158, '…');
 	}
 	if (is_page() && !is_front_page()) {
 		$custom = get_post_meta(get_queried_object_id(), '_seopress_titles_desc', true);
