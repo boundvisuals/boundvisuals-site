@@ -1,0 +1,8 @@
+mkdir: Access failed: 550 Can't create directory: File exists (/public_html/novo/wp-content/mu-plugins)
+Transferring file `bv-seo.php'
+-rw-r--r-- 1026     1029         6483 Nov  2 19:17 /public_html/novo/wp-content/mu-plugins/bv-seo.php
+-rw-r--r-- 1026     1029        52487 Nov  2 18:14 /public_html/novo/wp-content/mu-plugins/health-check-troubleshooting-mode.php
+/public_html/novo/wp-content/themes/boundvisuals/
+/public_html/novo/wp-content/themes/index.php
+/public_html/novo/wp-content/themes/stockholm/
+/public_html/novo/wp-content/themes/stockholm-child/
