@@ -33,7 +33,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Content program (decided)
 - Vítor sends: MEGA link to a project's FINALS subfolder + a one-line note. Nothing else.
 - One image per post. 4:5 → single slide. Any other ratio → carousel: auto 4:5 detail crops, last slide = whole image on WHITE 4:5 (Vítor's own habit).
-- Finals detection: folders named final/finals/finais/final export(s)/publicar/publish; Vítor shares the project (or a finals) folder link.
+- Finals detection: folders named final/finals/finais/final export(s)/publicar/publish; Vítor shares the project (or a finals) folder link. Shots with numbered stage subfolders ("1 - ai…", "4 - SeedVr2 Upscale", "5 - final export"): take only the highest-numbered stage that has images (Gondomar 2 → "4 - SeedVr2 Upscale", 18 images).
 - Rotate projects (A, B, C, A…); each project opens with its best image; one auto reel per project.
 - 1 image post/day, reel every other day, 3–5 stories/day. Queue ~2 weeks; warn when < 7 days.
 - Daily approval page before anything publishes.
@@ -84,7 +84,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 
 ## Pending from Vítor
 - Speed cleanup step 1: DONE on staging + LIVE 2026-11-02 (verified). Delete after a few days: WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer. Delete them after a few days without issues.
-- Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → Vítor to apply on live: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
+- Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → DONE on live too: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
 - Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: Vítor DECLINED (2026-11-02) — do not propose again unless he asks.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.

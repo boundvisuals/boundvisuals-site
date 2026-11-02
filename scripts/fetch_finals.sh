@@ -19,6 +19,26 @@ if [ ! -s finals.txt ]; then
   echo "No finals/finais/publicar subfolders: taking every image/video in the shared folder"
   grep -iE '\.(png|jpe?g|tiff?|webp|exr|mp4|mov)$' all.txt > finals.txt || true
 fi
+# Numbered stage folders ("1 - ai", "2 - upscale", … "5 - final export"): per shot keep only
+# the highest-numbered stage that actually holds images (Vítor's last step = the final).
+python3 - <<'PY'
+import re, collections
+lines=[l.rstrip("\n") for l in open("finals.txt") if l.strip()]
+groups=collections.defaultdict(list)
+for l in lines:
+    parts=l.split("/")
+    stage=parts[-2] if len(parts)>2 else ""
+    m=re.match(r"\s*(\d+)\s*-", stage)
+    groups["/".join(parts[:-2])].append((int(m.group(1)) if m else None, l))
+out=[]
+for shot, items in groups.items():
+    nums=[n for n,_ in items if n is not None]
+    if nums and len(set(nums))>1:
+        top=max(nums); out += [l for n,l in items if n==top]
+    else:
+        out += [l for _,l in items]
+open("finals.txt","w").write("\n".join(out)+("\n" if out else ""))
+PY
 echo "Finals found: $(wc -l < finals.txt)"
 FAIL=0
 while IFS= read -r f; do
