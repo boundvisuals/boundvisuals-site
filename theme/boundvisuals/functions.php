@@ -4,7 +4,7 @@
  */
 defined('ABSPATH') || exit;
 
-define('BV_VER', '1.0.2');
+define('BV_VER', '1.0.3');
 define('BV_URI', get_template_directory_uri());
 define('BV_DIR', get_template_directory());
 

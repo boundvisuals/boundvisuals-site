@@ -110,11 +110,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn:hover{background:var(--light);color:var(--black)}
 
 /* Pages */
-.page{padding:calc(120px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) 60px max(24px,env(safe-area-inset-left,0px));background:linear-gradient(#000,var(--black) 400px);min-height:60vh}
-.page-builder{padding-left:0;padding-right:0}
-.page-plain{max-width:820px;margin:0 auto;color:var(--light)}
+.bv-page{padding:calc(120px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) 60px max(24px,env(safe-area-inset-left,0px));background:linear-gradient(#000,var(--black) 400px);min-height:60vh}
+.bv-page.page-builder{padding-left:0;padding-right:0}
+.bv-page.page-plain{max-width:820px;margin:0 auto;color:var(--light)}
 .page-title{color:#fff;font-weight:700;font-size:clamp(26px,3vw,40px);margin:0 0 24px}
-.page-plain a{text-decoration:underline;text-underline-offset:3px}
+.bv-page.page-plain a{text-decoration:underline;text-underline-offset:3px}
 
 /* Footer (same content as today, cleaner grid) */
 .site-footer{background:var(--black);border-top:1px solid #1d1e1e;padding:56px max(45px,env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(45px,env(safe-area-inset-left,0px));font-size:13px;line-height:1.7}

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<article class="page page-plain">
+<article class="bv-page page-plain">
 	<?php if (is_404()) : ?>
 		<h1 class="page-title">Page not found</h1>
 		<p>This page moved or no longer exists.</p>
