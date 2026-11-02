@@ -89,7 +89,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → DONE on live too: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
 - Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: Vítor DECLINED (2026-11-02) — do not propose again unless he asks.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
-- One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
+- One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn. TOP PRIORITY for Vítor (2026-11-02: "calendarizar e começar a bombar").
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
 - Instagram profile: done by Vítor (2026-11-02); highlight covers still to design.
 

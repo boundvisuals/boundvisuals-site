@@ -61,7 +61,7 @@ Phase 4 – Final results: I prepare and deliver the final files.
 
 ### Team
 **ATUAL:** título "Team"
-**NOVO:** sugiro "About me", porque "Team" com uma só pessoa contradiz a 1.ª pessoa. Se preferires, fica "Team".
+**NOVO:** About me (aprovado pelo Vítor)
 O texto da tua bio já está na 1.ª pessoa e fica igual.
 
 ---
