@@ -1,0 +1,14 @@
+name: snapshot-site
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  snap:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+      - run: python scripts/snapshot_site.py
+      - run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Report: site snapshot" && (git pull --rebase -q && git push) || true
