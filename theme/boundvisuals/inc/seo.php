@@ -96,7 +96,6 @@ add_filter('pre_get_document_title', function ($t) {
 	remove_filter('pre_get_document_title', 'seopress_titles_the_title', 10);
 	return '';
 }, 1000);
-add_filter('seopress_titles_title', fn($t) => bv_seo_plugin_active() ? $t : wp_get_document_title(), 1000);
 add_filter('seopress_titles_desc', fn($d) => bv_seo_plugin_active() ? $d : bv_meta_description(), 1000);
 add_filter('jetpack_enable_open_graph', '__return_false', 1000);
 add_filter('jetpack_disable_seo_tools', '__return_true');
