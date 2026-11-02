@@ -48,15 +48,21 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Instagram crops (decided)
 - Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
 
+## Access (working, 2026-11-02)
+- SSH not usable from GitHub (PTServidor whitelists fixed IPs only, port 1082). Path: FTP for files + WP REST API as user `claude-robot` (role Editor, Application Password; secrets WP_USER, WP_APP_PASS) — verified 200 by wp-check.yml. cPanel Terminal for rare manual commands.
+- portfolio_page is NOT exposed in REST (stockholm-core) → small mu-plugin via FTP needed to expose it + ACF/meta.
+- gh: use REST (`gh api .../dispatches`), GraphQL blocked; secrets list not readable.
+
+## Done by Vítor (2026-11-02)
+- Old handle replaced everywhere. LinkedIn: minimal changes, kept mostly as is for now (drafted texts stay in master doc §7, parked).
+
 ## Pending from Vítor
-- SSH: PTServidor only allows whitelisted fixed IPs (port 1082) — not usable from GitHub. Decided path: FTP for files + WordPress REST API with an Application Password (GitHub secrets WP_USER, WP_APP_PASS) for content. cPanel Terminal for rare manual commands.
+- Choose site design direction: A Gallery Dark / B Swiss Light / C Index (or mix).
 - MEGA links per project.
 - Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
-- Replace old handle @_boundvisuals_ everywhere it is cross-referenced (site, email signature, other profiles, docs).
 - Instagram profile: bio, two avatar tests (holding the 3D 'bound' logo; clay-render portrait), highlight covers, links, action buttons. Category already 'Artist'.
-- LinkedIn: all texts drafted in the master doc §7 — Vítor to review and paste.
 
 ## Parked (never forget — raise after current phase)
 - AI Build Lab: analyse the 120 ideas (PDFs + xlsx) and pick ones that serve the portfolio.
