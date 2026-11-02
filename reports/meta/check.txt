@@ -2,16 +2,7 @@ token set: yes
 --- me
 {"id":"122102499099530006","name":"bv-robot"}
 --- pages
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/usr/lib/python3.12/json/__init__.py", line 293, in load
-    return loads(fp.read(),
-           ^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/json/decoder.py", line 340, in decode
-    raise JSONDecodeError("Extra data", s, end)
-json.decoder.JSONDecodeError: Extra data: line 1 column 359 (char 358)
+102995032197827 Bound Visuals {'id': '17841450386900546', 'username': 'vitorhugo_boundvisuals'}
+
 --- token debug
 valid True expires 0 scopes ['pages_show_list', 'business_management', 'instagram_basic', 'instagram_manage_comments', 'instagram_content_publish', 'pages_read_engagement', 'pages_manage_posts', 'public_profile']
