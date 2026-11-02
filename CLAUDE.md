@@ -2,6 +2,7 @@
 
 Source of truth for the rebrand, the website and the content automation.
 Master plan (Claude Doc): https://claude.ai/artifact/CiMZbhepRpkE2qYCfgMwCw
+LIVING DOSSIER (Claude Doc, PT): https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k (doc id ce0edf0a-9970-4cf6-8e2b-82f7f036437d, body node a618e0cb-54b3). Vítor's rule: update it after EVERY decision/progress (Agora, Tarefas, Registo de decisões, Projetos…) and remind him of his tasks ahead of time. Reminder set: 2026-11-06 10:00 delete plugins.
 Talk to Vítor in European Portuguese. Generation prompts in English.
 RULE (Vítor, 2026-11-02): explain every step he must do in tiny, click-by-click detail ("como se eu fosse muito burro"): exact URL, exact button names, what he should see.
 RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY reply with what is still open/unanswered from before ("Ficou por responder/fazer"), repeating the open questions in full.
@@ -61,7 +62,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Always bilingual: EN first (hook in first ~125 chars), then PT below a separator. 14 mentions after the text. Hashtags in first comment.
 
 ## Content pillars (Vítor wants ALL, massive activity: posts, reels, stories, videos every day)
-1 finals · 2 details/crops (auto) · 3 render→final slider reels (auto when base render exists) · 4 Daily study #NNN (Vítor, frequency TBD) · 5 Seedance animated stills (near-auto) · 6 mood variations dawn/dusk/night/rain (near-auto) · 7 process/behind the scenes · 8 daily stories. Extra ideas proposed 2026-11-02 (awaiting ok): slow zoom reels, render-or-photo quiz, from-the-archive, colour palette carousels, weekly recap reel, then-vs-now, launch countdowns.
+1 finals · 2 details/crops (auto) · 3 render→final slider reels (auto when base render exists) · 4 Daily study #NNN (Vítor, frequency TBD) · 5 Seedance animated stills (near-auto) · 6 mood variations dawn/dusk/night/rain (near-auto) · 7 process/behind the scenes · 8 daily stories. Extras 9–15 APPROVED: slow zoom reels, render-or-photo, from-the-archive, colour palette carousels, weekly recap reel, then-vs-now, launch countdowns. Vítor will supply render base/clay/mask ID and animations (simple: LTX 2.5 in ComfyUI; storytelling: Kling 4.0/Seedance). Weekly calendar + 40 daily-study ideas + folder-name convention in the Dossier.
 - API limits to respect: polls/quiz/link stickers and Instagram-library music cannot be added via API → those stories are manual; reels get royalty-free audio baked in.
 
 ## Instagram hashtags (decided 2026-11-02)
