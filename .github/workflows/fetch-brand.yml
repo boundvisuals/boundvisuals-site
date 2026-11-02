@@ -1,0 +1,44 @@
+name: fetch-brand
+# Downloads Vítor's brand / CV / portfolio folders from MEGA and commits them
+# to the `assets` branch (files > 95 MB are listed but skipped).
+on:
+  workflow_dispatch:
+    inputs:
+      links:
+        description: "Lines 'name|mega_folder_link' separated by ';'"
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Install MEGAcmd
+        run: |
+          wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
+          sudo apt-get update -qq && sudo apt-get install -y -qq ./megacmd.deb
+      - name: Download
+        env: { LINKS: "${{ inputs.links }}" }
+        run: |
+          mkdir -p /tmp/brand; : > /tmp/tree.txt; : > /tmp/skipped.txt
+          IFS=';' read -ra L <<< "$LINKS"
+          for item in "${L[@]}"; do
+            name="${item%%|*}"; link="${item#*|}"; name="$(echo $name | xargs)"; link="$(echo $link | xargs)"
+            echo "== $name" | tee -a /tmp/tree.txt
+            mega-login "$link" >/dev/null || { echo "LOGIN FAILED $name" >> /tmp/tree.txt; continue; }
+            mkdir -p "/tmp/brand/$name"
+            mega-get / "/tmp/brand/$name/" >/dev/null 2>&1 || echo "  get errors" >> /tmp/tree.txt
+            mega-logout >/dev/null || true
+            (cd "/tmp/brand/$name" && find . -type f -printf '%s\t%p\n' | sort -k2) >> /tmp/tree.txt
+          done
+          find /tmp/brand -type f -size +95M -printf '%s\t%p\n' > /tmp/skipped.txt
+          find /tmp/brand -type f -size +95M -delete
+      - name: Commit to assets branch
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git checkout -B assets origin/assets 2>/dev/null || git checkout --orphan assets
+          git rm -rqf . 2>/dev/null || true
+          mkdir -p brand && cp -r /tmp/brand/. brand/ && cp /tmp/tree.txt /tmp/skipped.txt brand/
+          git add brand && git commit -qm "Brand assets from MEGA" && git push -f origin assets
