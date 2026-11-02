@@ -76,12 +76,11 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 
 ## Staging + theme (2026-11-02, parked)
 - Staging: https://www.boundvisuals.com/novo (Softaculous staging, DB boundvis_wp246, noindex on). Robot REST access verified there.
-- Theme code: theme/boundvisuals (no builder on front end; reads portfolio_page + Elementor JSON blocks, pfv_featured_video_uploading video ids, _links_to redirects). deploy-theme.yml uploads on push to /public_html/novo (production only via manual input target=production after approval).
+- Theme code: theme/boundvisuals (no builder on front end; reads portfolio_page + Elementor JSON blocks, pfv_featured_video_uploading video ids, _links_to redirects). Parked theme removed from staging server; deploy-theme robot deleted (code stays in git only).
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
 
 ## Pending from Vítor
-- Switch staging back to the Stockholm child theme (novo/wp-admin → Aparência → Temas) so the SEO plugin is tested on the real setup; then robot deletes parked theme from staging.
-- Approve: SEO mu-plugin (mu-plugins/bv-seo.php) on live after test on /novo.
+- Approve: SEO mu-plugin (mu-plugins/bv-seo.php) on live — tested OK on /novo with Stockholm (2026-11-02). Deploy: deploy-mu.yml target=production action=upload; undo: action=remove-mu.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
