@@ -16,7 +16,7 @@ jobs:
             echo "token set: $([ -n "$T" ] && echo yes || echo NO)"
             G=https://graph.facebook.com/v21.0
             echo "--- me"; curl -s "$G/me?access_token=$T"; echo
-            echo "--- pages"; curl -s "$G/me/accounts?fields=id,name,instagram_business_account{id,username}&access_token=$T" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(p.get('id'),p.get('name'),p.get('instagram_business_account')) for p in d.get('data',[])];print(d.get('error',''))"
+            echo "--- pages"; curl -sg "$G/me/accounts?fields=id,name,instagram_business_account{id,username}&access_token=$T" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(p.get('id'),p.get('name'),p.get('instagram_business_account')) for p in d.get('data',[])];print(d.get('error',''))"
             echo "--- token debug"; curl -s "$G/debug_token?input_token=$T&access_token=$T" | python3 -c "import json,sys;d=json.load(sys.stdin).get('data',{});print('valid',d.get('is_valid'),'expires',d.get('expires_at'),'scopes',d.get('scopes'))"
           } > reports/meta/check.txt 2>&1
           cat reports/meta/check.txt
