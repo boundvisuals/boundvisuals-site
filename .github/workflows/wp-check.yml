@@ -1,5 +1,10 @@
 name: wp-check
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "Site base URL"
+        default: "https://boundvisuals.com"
 permissions:
   contents: write
 jobs:
@@ -13,7 +18,7 @@ jobs:
           WP_APP_PASS: ${{ secrets.WP_APP_PASS }}
         run: |
           mkdir -p reports/wp
-          B=https://boundvisuals.com/wp-json
+          B=${{ inputs.base }}/wp-json
           {
             echo "secrets set: user=$([ -n "$WP_USER" ] && echo yes || echo NO) pass=$([ -n "$WP_APP_PASS" ] && echo yes || echo NO)"
             echo "--- users/me"
@@ -21,6 +26,8 @@ jobs:
             python3 -c "import json;d=json.load(open('/tmp/me.json'));print(d.get('name'),d.get('roles'),d.get('code',''))" || true
             echo "--- post types"
             curl -s -u "$WP_USER:$WP_APP_PASS" "$B/wp/v2/types" | python3 -c "import json,sys;print(list(json.load(sys.stdin).keys()))" || true
+            echo "--- settings"; curl -s -u "$WP_USER:$WP_APP_PASS" "$B/wp/v2/settings" | head -c 600; echo
+            echo "--- home"; curl -s -o /dev/null -w "%{http_code}\n" "${{ inputs.base }}/"
           } > reports/wp/check.txt 2>&1
           cat reports/wp/check.txt
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
