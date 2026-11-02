@@ -1,0 +1,6 @@
+secrets set: user=yes pass=yes
+--- users/me
+200
+claude robot ['editor'] 
+--- post types
+['post', 'page', 'attachment', 'nav_menu_item', 'wp_block', 'wp_template', 'wp_template_part', 'wp_global_styles', 'wp_navigation', 'wp_font_family', 'wp_font_face', 'elementor_library', 'jp_act_log_event', 'jp_pay_order', 'jp_pay_product']
