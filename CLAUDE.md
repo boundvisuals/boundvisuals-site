@@ -67,13 +67,17 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Site design (2026-11-02)
 - Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Rule (Vítor): improve everything (faster, more beautiful) but keep the essence; any visible change must be justified ("better because X/Y") — list each change with its reason when showing staging. Reference = docs/current-site-spec.md (measured in Vítor's browser pane; GitHub headless screenshots hang on this site).
 
-## Staging + theme (2026-11-02)
+## DECISION 2026-11-02 19:02 — site stays as is
+- Vítor keeps the current Stockholm/Elementor site and wp-admin exactly as today; he keeps editing it himself. New theme (theme/boundvisuals) is PARKED, not to be deployed to production.
+- Claude only does important, invisible changes on the live site, each approved first: SEO (titles/descriptions/schema via a small mu-plugin, test on /novo first), speed/security cleanup (list for Vítor), no design changes.
+
+## Staging + theme (2026-11-02, parked)
 - Staging: https://www.boundvisuals.com/novo (Softaculous staging, DB boundvis_wp246, noindex on). Robot REST access verified there.
 - Theme code: theme/boundvisuals (no builder on front end; reads portfolio_page + Elementor JSON blocks, pfv_featured_video_uploading video ids, _links_to redirects). deploy-theme.yml uploads on push to /public_html/novo (production only via manual input target=production after approval).
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
 
 ## Pending from Vítor
-- Activate theme "Bound Visuals" on staging (novo/wp-admin → Aparência → Temas) — Editor robot cannot.
+- Approve: SEO mu-plugin on live (after test on /novo).
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
