@@ -30,3 +30,9 @@ projects:
     status: pending
 # In progress (Vítor will send links): school-building, 10-moradias-sao-felix-da-marinha,
 # corim-residence, vivendas-aveleda, apartamentos-cete-2026, casas-mouriz-respirar-arte
+  - id: daily-study-2026
+    title: Daily Study 2026
+    mega: https://mega.nz/folder/b64hGZTD#IheHOIoJhFdssIbmGt5mUg
+    publish: true
+    note: "Series #NNN; each subfolder = one study (3D base + AI)"
+    status: series
