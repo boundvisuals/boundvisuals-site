@@ -1,0 +1,27 @@
+name: wp-check
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test WordPress REST login (read-only)
+        env:
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASS: ${{ secrets.WP_APP_PASS }}
+        run: |
+          mkdir -p reports/wp
+          B=https://boundvisuals.com/wp-json
+          {
+            echo "secrets set: user=$([ -n "$WP_USER" ] && echo yes || echo NO) pass=$([ -n "$WP_APP_PASS" ] && echo yes || echo NO)"
+            echo "--- users/me"
+            curl -s -o /tmp/me.json -w "%{http_code}\n" -u "$WP_USER:$WP_APP_PASS" "$B/wp/v2/users/me?context=edit"
+            python3 -c "import json;d=json.load(open('/tmp/me.json'));print(d.get('name'),d.get('roles'),d.get('code',''))" || true
+            echo "--- post types"
+            curl -s -u "$WP_USER:$WP_APP_PASS" "$B/wp/v2/types" | python3 -c "import json,sys;print(list(json.load(sys.stdin).keys()))" || true
+          } > reports/wp/check.txt 2>&1
+          cat reports/wp/check.txt
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Report: wp-check" && (git pull --rebase -q && git push) || true
