@@ -1,32 +1,46 @@
+Removing old file `footer.php'
 Transferring file `footer.php'
+Removing old file `front-page.php'
 Transferring file `front-page.php'
+Removing old file `functions.php'
 Transferring file `functions.php'
+Removing old file `header.php'
 Transferring file `header.php'
+Removing old file `index.php'
 Transferring file `index.php'
+Removing old file `page.php'
 Transferring file `page.php'
+Removing old file `single-portfolio_page.php'
 Transferring file `single-portfolio_page.php'
+Removing old file `style.css'
 Transferring file `style.css'
-Making directory `assets'
+Removing old file `assets/main.css'
 Transferring file `assets/main.css'
+Removing old file `assets/main.js'
 Transferring file `assets/main.js'
-Making directory `assets/fonts'
+Removing old file `assets/fonts/VisbyCF-Bold.woff2'
 Transferring file `assets/fonts/VisbyCF-Bold.woff2'
+Removing old file `assets/fonts/VisbyCF-Light.woff2'
 Transferring file `assets/fonts/VisbyCF-Light.woff2'
+Removing old file `assets/fonts/VisbyCF-Medium.woff2'
 Transferring file `assets/fonts/VisbyCF-Medium.woff2'
-Making directory `assets/img'
+Removing old file `assets/img/logo-dark.svg'
 Transferring file `assets/img/logo-dark.svg'
+Removing old file `assets/img/logo-light.svg'
 Transferring file `assets/img/logo-light.svg'
-Making directory `inc'
+Removing old file `inc/content.php'
 Transferring file `inc/content.php'
+Removing old file `inc/customizer.php'
 Transferring file `inc/customizer.php'
+Removing old file `inc/seo.php'
 Transferring file `inc/seo.php'
-drwxr-xr-x 1026     1029              Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/assets/
--rw-r--r-- 1026     1029         1816 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/footer.php
--rw-r--r-- 1026     1029         2066 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/front-page.php
--rw-r--r-- 1026     1029         2996 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/functions.php
--rw-r--r-- 1026     1029         1568 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/header.php
-drwxr-xr-x 1026     1029              Nov  2 18:21 /public_html/novo/wp-content/themes/boundvisuals/inc/
--rw-r--r-- 1026     1029          548 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/index.php
--rw-r--r-- 1026     1029          569 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/page.php
--rw-r--r-- 1026     1029         3295 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/single-portfolio_page.php
--rw-r--r-- 1026     1029          399 Nov  2 18:20 /public_html/novo/wp-content/themes/boundvisuals/style.css
+drwxr-xr-x 1026     1029              Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/assets/
+-rw-r--r-- 1026     1029         1816 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/footer.php
+-rw-r--r-- 1026     1029         2066 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/front-page.php
+-rw-r--r-- 1026     1029         2996 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/functions.php
+-rw-r--r-- 1026     1029         1568 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/header.php
+drwxr-xr-x 1026     1029              Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/inc/
+-rw-r--r-- 1026     1029          548 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/index.php
+-rw-r--r-- 1026     1029          569 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/page.php
+-rw-r--r-- 1026     1029         3295 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/single-portfolio_page.php
+-rw-r--r-- 1026     1029          399 Nov  2 18:43 /public_html/novo/wp-content/themes/boundvisuals/style.css
