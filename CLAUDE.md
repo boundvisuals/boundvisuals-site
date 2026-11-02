@@ -57,6 +57,13 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Ad-hoc posts: Vítor can post himself anytime (queue unaffected) or ask Claude to publish now.
 - Plan: queue builder (manifests → rotation A,B,C) → approval page on his server (/public_html/bv-fila, token, noindex; images there also serve as public URLs for the APIs) → publisher robot (GitHub Actions hourly cron, Meta Graph API via System User token, secret META_TOKEN).
 
+## Captions (decided 2026-11-02)
+- Always bilingual: EN first (hook in first ~125 chars), then PT below a separator. 14 mentions after the text. Hashtags in first comment.
+
+## Content pillars (Vítor wants ALL, massive activity: posts, reels, stories, videos every day)
+1 finals · 2 details/crops (auto) · 3 render→final slider reels (auto when base render exists) · 4 Daily study #NNN (Vítor, frequency TBD) · 5 Seedance animated stills (near-auto) · 6 mood variations dawn/dusk/night/rain (near-auto) · 7 process/behind the scenes · 8 daily stories. Extra ideas proposed 2026-11-02 (awaiting ok): slow zoom reels, render-or-photo quiz, from-the-archive, colour palette carousels, weekly recap reel, then-vs-now, launch countdowns.
+- API limits to respect: polls/quiz/link stickers and Instagram-library music cannot be added via API → those stories are manual; reels get royalty-free audio baked in.
+
 ## Instagram hashtags (decided 2026-11-02)
 - Caption stays clean (text + 14 mentions). Hashtags go in Vítor's FIRST COMMENT, posted by the robot right after publishing: 26 fixed + 4 rotating of 11 (max 30).
 
