@@ -12,12 +12,6 @@ instagram:
   queue_days_target: 14
   queue_days_warning: 7
   require_approval: true
-web:
-  lightbox: lossless_original   # pixel-identical, verified
-  grid_widths: [800, 1600, 2400]
-publish_order:
-  first: [website, behance, cgarchitect, chaos_cgconnect, industriacriativa]
-  then: [instagram, facebook, pinterest, linkedin, youtube]
   # MANDATORY on every Instagram post (Vítor, 2026-11-02)
   mentions:   # tagged on the image (user tags) AND in caption; IG max 20 tags → OK (14)
     - renderbox.magazine
@@ -37,3 +31,9 @@ publish_order:
   hashtags_max: 30   # Instagram hard limit; 38 given → 30 always + 8 rotate
   hashtags_always: [renderboxmagazine, cgtop, render_files, renderreactor, cgiaward, renderlovers, AllofRenders, render_community, topcgref, archviz, 3dartist, render, renderings, archvizstudio, architecturevisualization, rocvisual, renderinx, architrendz, coronarenderer, chaoscorona, tastyviz, rendersbook, render_awards, archilovers, renderbox, prorenders]
   hashtags_rotate: [homeinteriordaily, minimalmotifs, architecture_hunter, archiboom, Arc_Only, designcitylab, renderglobal, re_inspiration, rendering, cgi, allofarchitecture]   # 4 per post, cycling
+web:
+  lightbox: lossless_original   # pixel-identical, verified
+  grid_widths: [800, 1600, 2400]
+publish_order:
+  first: [website, behance, cgarchitect, chaos_cgconnect, industriacriativa]
+  then: [instagram, facebook, pinterest, linkedin, youtube]
