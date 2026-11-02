@@ -28,6 +28,7 @@ instagram:
     - architrendz
     - rendersbook
     - archilovers
+  hashtags_in: first_comment   # posted by the robot right after the post; caption stays clean
   hashtags_max: 30   # Instagram hard limit; 38 given → 30 always + 8 rotate
   hashtags_always: [renderboxmagazine, cgtop, render_files, renderreactor, cgiaward, renderlovers, AllofRenders, render_community, topcgref, archviz, 3dartist, render, renderings, archvizstudio, architecturevisualization, rocvisual, renderinx, architrendz, coronarenderer, chaoscorona, tastyviz, rendersbook, render_awards, archilovers, renderbox, prorenders]
   hashtags_rotate: [homeinteriordaily, minimalmotifs, architecture_hunter, archiboom, Arc_Only, designcitylab, renderglobal, re_inspiration, rendering, cgi, allofarchitecture]   # 4 per post, cycling

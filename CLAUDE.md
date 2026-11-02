@@ -41,9 +41,12 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa, LinkedIn company page until API approval.
 
 ## Brand architecture (decided 2026-10-31)
-- Bound Visuals = archviz/3D studio (keeps current site filters). Vítor Hugo = the person: archviz + AI image/video, ads, film.
+- Bound Visuals = 3D architecture + 3D product (studio). Vítor Hugo = everything else: AI image/video, performance ads, image, video, other 3D, film (confirmed 2026-11-02).
 - ONE site, two doors: boundvisuals.com (studio: Work, Services) + boundvisuals.com/vitorhugo (AI, video, ads, Lab, CV). No subdomain, no second domain.
 - Instagram is Vítor's (person-first bio, mentions the studio).
+
+## Instagram hashtags (decided 2026-11-02)
+- Caption stays clean (text + 14 mentions). Hashtags go in Vítor's FIRST COMMENT, posted by the robot right after publishing: 26 fixed + 4 rotating of 11 (max 30).
 
 ## Instagram crops (decided)
 - Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
@@ -62,11 +65,9 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Robot: fetch-brand.yml (MEGA folders → assets branch).
 
 ## Site design (2026-11-02)
-- Vítor rejected canvas A/B/C as dated ("sites de 1980"). Wants clean, minimal, elegant, premium, with motion. Prototype v1 (dark gallery, Visby Thin display, curtain intro, editorial grid, custom cursor, lightbox, render→final slider, services, footer CTA): https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f — awaiting feedback.
+- Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Reference = reports/site-snapshot (snapshot-site.yml).
 
 ## Pending from Vítor
-- Feedback on prototype v1.
-- Ok on IG hashtag split (26 fixed + 4 rotating of 11; IG max 30).
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
