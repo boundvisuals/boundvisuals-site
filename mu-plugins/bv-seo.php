@@ -82,7 +82,7 @@ function bvseo_description(): string {
 		$custom = get_post_meta(get_queried_object_id(), '_seopress_titles_desc', true);
 		if (!bvseo_is_generic($custom)) return $custom;
 	}
-	return 'Bound Visuals is Vítor Hugo's 3D brand in Portugal, dedicated to architectural visualisation and product CGI: photoreal images, animation and 360º for developers, architects and brands.';
+	return 'Bound Visuals is Vítor Hugo\'s 3D brand in Portugal, dedicated to architectural visualisation and product CGI: photoreal images, animation and 360º for developers, architects and brands.';
 }
 
 /* Titles: win over the theme and old SEO meta. */
