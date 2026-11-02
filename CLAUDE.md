@@ -56,13 +56,21 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Done by Vítor (2026-11-02)
 - Old handle replaced everywhere. LinkedIn: minimal changes, kept mostly as is for now (drafted texts stay in master doc §7, parked).
 
+## Brand assets (received 2026-11-02, branch `assets`, folder brand/)
+- Colours: #0b0c0c (black), #c5c1b7 (warm grey), #e5e5e3 (light). Typeface: Visby CF (woff2 in brand/fontes) + Poppins in the budget doc. Logo SVGs 01–21 (01/04/07/10/19 dark, 02/05/08/11/20 grey, 03/06/09/12/21 light).
+- InDesign packages (IDML+INDD+PDF+links): orcamento, CV long + short (short "por editar info igual ao long"), cover letter 2025, portfolio 3D / AI / All 2025. Manual de identidade only as .ai/.pdf (49 MB).
+- Robot: fetch-brand.yml (MEGA folders → assets branch).
+
+## Site design (2026-11-02)
+- Vítor rejected canvas A/B/C as dated ("sites de 1980"). Wants clean, minimal, elegant, premium, with motion. Prototype v1 (dark gallery, Visby Thin display, curtain intro, editorial grid, custom cursor, lightbox, render→final slider, services, footer CTA): https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f — awaiting feedback.
+
 ## Pending from Vítor
-- Choose site design direction: A Gallery Dark / B Swiss Light / C Index (or mix).
-- MEGA links per project.
-- Brand docs (identity manual, budget doc…) exported as IDML to rewrite "nós" → "eu".
+- Feedback on prototype v1.
+- Ok on IG hashtag split (26 fixed + 4 rotating of 11; IG max 30).
+- MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
-- Instagram profile: bio, two avatar tests (holding the 3D 'bound' logo; clay-render portrait), highlight covers, links, action buttons. Category already 'Artist'.
+- Instagram profile: done by Vítor (2026-11-02); highlight covers still to design.
 
 ## Parked (never forget — raise after current phase)
 - AI Build Lab: analyse the 120 ideas (PDFs + xlsx) and pick ones that serve the portfolio.
