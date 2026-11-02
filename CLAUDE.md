@@ -85,7 +85,7 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 ## Pending from Vítor
 - Speed cleanup step 1: DONE on staging + LIVE 2026-11-02 (verified). Delete after a few days: WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer. Delete them after a few days without issues.
 - Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → Vítor to apply on live: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
-- Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: test on staging (side effect: home grid order frozen per cache period instead of shuffled per visit).
+- Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: Vítor DECLINED (2026-11-02) — do not propose again unless he asks.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
