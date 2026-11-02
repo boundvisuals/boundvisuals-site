@@ -21,7 +21,7 @@ jobs:
         run: |
           if [ "${{ inputs.target }}" = production ]; then R=/public_html; else R=/public_html/novo; fi
           case "${{ inputs.action }}" in
-            upload) CMD="mkdir -p $R/wp-content/mu-plugins; mirror -R --verbose --include-glob=*.php mu-plugins $R/wp-content/mu-plugins" ;;
+            upload) CMD="mkdir -pf $R/wp-content/mu-plugins; put -O $R/wp-content/mu-plugins mu-plugins/bv-seo.php" ;;
             remove-mu) CMD="rm -f $R/wp-content/mu-plugins/bv-seo.php" ;;
             remove-theme) CMD="rm -rf $R/wp-content/themes/boundvisuals" ;;
           esac
