@@ -83,9 +83,9 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
 
 ## Pending from Vítor
-- Speed cleanup step 1: VERIFIED on staging 2026-11-02 (same content on 6 pages; −10 JS, −3 CSS, −15 KB HTML). Vítor to deactivate the same 8 on LIVE: WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer. Delete them after a few days without issues.
-- Speed cleanup step 2 (on staging first): GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
-- Findings: Stockholm itself loads 44 files/page; server nginx, no page cache (no-store) → propose WP Super Cache (approval needed).
+- Speed cleanup step 1: DONE on staging + LIVE 2026-11-02 (verified). Delete after a few days: WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer. Delete them after a few days without issues.
+- Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → Vítor to apply on live: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
+- Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: test on staging (side effect: home grid order frozen per cache period instead of shuffled per visit).
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
