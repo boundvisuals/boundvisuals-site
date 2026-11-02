@@ -6,7 +6,7 @@
 defined('ABSPATH') || exit;
 
 function bv_seo_plugin_active(): bool {
-	return defined('WPSEO_VERSION') || defined('SEOPRESS_VERSION') || defined('RANK_MATH_VERSION') || class_exists('AIOSEO\\Plugin\\AIOSEO');
+	return defined('WPSEO_VERSION') || defined('RANK_MATH_VERSION');
 }
 
 function bv_meta_description(): string {
@@ -86,3 +86,17 @@ add_action('wp_head', function () {
 	}
 	echo '<script type="application/ld+json">' . wp_json_encode(['@context' => 'https://schema.org', '@graph' => $graph], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
 }, 2);
+
+/* The old SEOPress / Jetpack leftovers print a generic "3D - Bound Visuals" title and the home
+   headline as every description. This theme's values win; their Open Graph tags are switched off. */
+add_filter('pre_get_document_title', function ($t) {
+	if (bv_seo_plugin_active()) {
+		return $t;
+	}
+	remove_filter('pre_get_document_title', 'seopress_titles_the_title', 10);
+	return '';
+}, 1000);
+add_filter('seopress_titles_title', fn($t) => bv_seo_plugin_active() ? $t : wp_get_document_title(), 1000);
+add_filter('seopress_titles_desc', fn($d) => bv_seo_plugin_active() ? $d : bv_meta_description(), 1000);
+add_filter('jetpack_enable_open_graph', '__return_false', 1000);
+add_filter('jetpack_disable_seo_tools', '__return_true');
