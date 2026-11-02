@@ -1,0 +1,168 @@
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Light Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Bold'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Light'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF Extra';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Extra Bold'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Bold Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Thin Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ThinOblique.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Heavy'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Thin'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Medium'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Extra Bold Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-ExtraBoldOblique.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Medium Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-MediumOblique.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Heavy Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-HeavyOblique.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Visby CF Demi';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Demi Bold'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF Demi Bold Oblique';
+    src: url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique.eot');
+    src: local('https://www.boundvisuals.com/wp-content/uploads/2021/12/Visby CF Demi Bold Oblique'), local('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique.woff2') format('woff2'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique.woff') format('woff'),
+        url('https://www.boundvisuals.com/wp-content/uploads/2021/12/VisbyCF-DemiBoldOblique.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}

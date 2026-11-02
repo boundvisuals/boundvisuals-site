@@ -1,0 +1,178 @@
+%!Adobe-FontList 1.25
+%Locale:0x816
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Bold
+FamilyName:Visby CF
+StyleName:Bold
+FullName:Visby CF Bold
+MenuName:Visby CF Bold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51120
+FileModTime:1550396429
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Bold
+NameArray:0,Win,1,Visby CF Bold
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-DemiBold
+FamilyName:Visby CF
+StyleName:Demi Bold
+FullName:Visby CF Demi Bold
+MenuName:Visby CF Demi Bold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-DemiBold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:50756
+FileModTime:1550396432
+WeightClass:600
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Demi Bold
+NameArray:0,Win,1,Visby CF Demi Bold
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-ExtraBold
+FamilyName:Visby CF
+StyleName:Extra Bold
+FullName:Visby CF Extra Bold
+MenuName:Visby CF Extra Bold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-ExtraBold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51496
+FileModTime:1550396429
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Extra Bold
+NameArray:0,Win,1,Visby CF Extra Bold
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Heavy
+FamilyName:Visby CF
+StyleName:Heavy
+FullName:Visby CF Heavy
+MenuName:Visby CF Heavy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-Heavy.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51420
+FileModTime:1550396430
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Heavy
+NameArray:0,Win,1,Visby CF Heavy
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Light
+FamilyName:Visby CF
+StyleName:Light
+FullName:Visby CF Light
+MenuName:Visby CF Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51056
+FileModTime:1550396429
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Light
+NameArray:0,Win,1,Visby CF Light
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Medium
+FamilyName:Visby CF
+StyleName:Medium
+FullName:Visby CF Medium
+MenuName:Visby CF Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:50980
+FileModTime:1550396431
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Medium
+NameArray:0,Win,1,Visby CF Medium
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Thin
+FamilyName:Visby CF
+StyleName:Thin
+FullName:Visby CF Thin
+MenuName:Visby CF Thin
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\MATERIAL TECNICO\PORTFOLIO + CV\PORTFOLIO + CV\FORMATO FISICO E DIGITAL\2025\EN\PORTFOLIO + CV_en\All_en\package\Portfolio_2025_All_en Folder\Document fonts\VisbyCF-Thin.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:52212
+FileModTime:1550396431
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Thin
+NameArray:0,Win,1,Visby CF Thin
+NameArray:0,Win,16,Visby CF
+%EndFont
+

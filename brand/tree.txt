@@ -1,0 +1,338 @@
+== orcamento
+5448	./package/orcamento_FINAL Folder/Document fonts/AdobeFnt25.lst
+153944	./package/orcamento_FINAL Folder/Document fonts/Poppins-Bold.ttf
+159892	./package/orcamento_FINAL Folder/Document fonts/Poppins-Light.ttf
+156520	./package/orcamento_FINAL Folder/Document fonts/Poppins-Medium.ttf
+158240	./package/orcamento_FINAL Folder/Document fonts/Poppins-Regular.ttf
+51120	./package/orcamento_FINAL Folder/Document fonts/VisbyCF-Bold.ttf
+51420	./package/orcamento_FINAL Folder/Document fonts/VisbyCF-Heavy.ttf
+51056	./package/orcamento_FINAL Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/orcamento_FINAL Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/orcamento_FINAL Folder/Document fonts/VisbyCF-Thin.ttf
+35585	./package/orcamento_FINAL Folder/Links/Bound_Visuals_PNG-01.png
+106006	./package/orcamento_FINAL Folder/Links/Bound_Visuals_PNG-13.png
+272988	./package/orcamento_FINAL Folder/orcamento_FINAL.idml
+4268032	./package/orcamento_FINAL Folder/orcamento_FINAL.indd
+464854	./package/orcamento_FINAL Folder/orcamento_FINAL.pdf
+== fontes
+757874	./FONTES/Bound_Visuals_fonte.pdf
+11835	./FONTES/CSS da letra para colocar no site (Additional CSS)/Css Visby CF.txt
+51406	./FONTES/Visby CF/VisbyCF-Bold.eot
+51120	./FONTES/Visby CF/VisbyCF-Bold.ttf
+25692	./FONTES/Visby CF/VisbyCF-Bold.woff
+17844	./FONTES/Visby CF/VisbyCF-Bold.woff2
+53884	./FONTES/Visby CF/VisbyCF-BoldOblique.eot
+53584	./FONTES/Visby CF/VisbyCF-BoldOblique.ttf
+26832	./FONTES/Visby CF/VisbyCF-BoldOblique.woff
+18284	./FONTES/Visby CF/VisbyCF-BoldOblique.woff2
+51062	./FONTES/Visby CF/VisbyCF-DemiBold.eot
+50756	./FONTES/Visby CF/VisbyCF-DemiBold.ttf
+25540	./FONTES/Visby CF/VisbyCF-DemiBold.woff
+17628	./FONTES/Visby CF/VisbyCF-DemiBold.woff2
+54414	./FONTES/Visby CF/VisbyCF-DemiBoldOblique.eot
+54076	./FONTES/Visby CF/VisbyCF-DemiBoldOblique.ttf
+27428	./FONTES/Visby CF/VisbyCF-DemiBoldOblique.woff
+18956	./FONTES/Visby CF/VisbyCF-DemiBoldOblique.woff2
+51806	./FONTES/Visby CF/VisbyCF-ExtraBold.eot
+51496	./FONTES/Visby CF/VisbyCF-ExtraBold.ttf
+25800	./FONTES/Visby CF/VisbyCF-ExtraBold.woff
+17924	./FONTES/Visby CF/VisbyCF-ExtraBold.woff2
+54346	./FONTES/Visby CF/VisbyCF-ExtraBoldOblique.eot
+54032	./FONTES/Visby CF/VisbyCF-ExtraBoldOblique.ttf
+27804	./FONTES/Visby CF/VisbyCF-ExtraBoldOblique.woff
+19340	./FONTES/Visby CF/VisbyCF-ExtraBoldOblique.woff2
+51710	./FONTES/Visby CF/VisbyCF-Heavy.eot
+51420	./FONTES/Visby CF/VisbyCF-Heavy.ttf
+25988	./FONTES/Visby CF/VisbyCF-Heavy.woff
+18048	./FONTES/Visby CF/VisbyCF-Heavy.woff2
+54868	./FONTES/Visby CF/VisbyCF-HeavyOblique.eot
+54564	./FONTES/Visby CF/VisbyCF-HeavyOblique.ttf
+27972	./FONTES/Visby CF/VisbyCF-HeavyOblique.woff
+19376	./FONTES/Visby CF/VisbyCF-HeavyOblique.woff2
+51346	./FONTES/Visby CF/VisbyCF-Light.eot
+51056	./FONTES/Visby CF/VisbyCF-Light.ttf
+25020	./FONTES/Visby CF/VisbyCF-Light.woff
+17140	./FONTES/Visby CF/VisbyCF-Light.woff2
+54720	./FONTES/Visby CF/VisbyCF-LightOblique.eot
+54416	./FONTES/Visby CF/VisbyCF-LightOblique.ttf
+26836	./FONTES/Visby CF/VisbyCF-LightOblique.woff
+18244	./FONTES/Visby CF/VisbyCF-LightOblique.woff2
+51274	./FONTES/Visby CF/VisbyCF-Medium.eot
+50980	./FONTES/Visby CF/VisbyCF-Medium.ttf
+25468	./FONTES/Visby CF/VisbyCF-Medium.woff
+17728	./FONTES/Visby CF/VisbyCF-Medium.woff2
+54468	./FONTES/Visby CF/VisbyCF-MediumOblique.eot
+54160	./FONTES/Visby CF/VisbyCF-MediumOblique.ttf
+27452	./FONTES/Visby CF/VisbyCF-MediumOblique.woff
+18992	./FONTES/Visby CF/VisbyCF-MediumOblique.woff2
+52498	./FONTES/Visby CF/VisbyCF-Thin.eot
+52212	./FONTES/Visby CF/VisbyCF-Thin.ttf
+25856	./FONTES/Visby CF/VisbyCF-Thin.woff
+17928	./FONTES/Visby CF/VisbyCF-Thin.woff2
+55196	./FONTES/Visby CF/VisbyCF-ThinOblique.eot
+54896	./FONTES/Visby CF/VisbyCF-ThinOblique.ttf
+27664	./FONTES/Visby CF/VisbyCF-ThinOblique.woff
+19100	./FONTES/Visby CF/VisbyCF-ThinOblique.woff2
+27356	./FONTES/Visby CF/demo.html
+6181	./FONTES/Visby CF/stylesheet.css
+== logo
+130075	./LOGO/JPG/Bound_Visuals_JPG-01.jpg
+129411	./LOGO/JPG/Bound_Visuals_JPG-02.jpg
+95359	./LOGO/JPG/Bound_Visuals_JPG-03.jpg
+112892	./LOGO/JPG/Bound_Visuals_JPG-04.jpg
+111743	./LOGO/JPG/Bound_Visuals_JPG-05.jpg
+84692	./LOGO/JPG/Bound_Visuals_JPG-06.jpg
+123398	./LOGO/JPG/Bound_Visuals_JPG-07.jpg
+123964	./LOGO/JPG/Bound_Visuals_JPG-08.jpg
+99529	./LOGO/JPG/Bound_Visuals_JPG-09.jpg
+170792	./LOGO/JPG/Bound_Visuals_JPG-10.jpg
+168836	./LOGO/JPG/Bound_Visuals_JPG-11.jpg
+126526	./LOGO/JPG/Bound_Visuals_JPG-12.jpg
+303626	./LOGO/JPG/Bound_Visuals_JPG-13.jpg
+289303	./LOGO/JPG/Bound_Visuals_JPG-14.jpg
+197725	./LOGO/JPG/Bound_Visuals_JPG-15.jpg
+193233	./LOGO/JPG/Bound_Visuals_JPG-19.jpg
+194651	./LOGO/JPG/Bound_Visuals_JPG-20.jpg
+133212	./LOGO/JPG/Bound_Visuals_JPG-21.jpg
+35585	./LOGO/PNG/Bound_Visuals_PNG-01.png
+35729	./LOGO/PNG/Bound_Visuals_PNG-02.png
+35577	./LOGO/PNG/Bound_Visuals_PNG-03.png
+29384	./LOGO/PNG/Bound_Visuals_PNG-04.png
+29560	./LOGO/PNG/Bound_Visuals_PNG-05.png
+29445	./LOGO/PNG/Bound_Visuals_PNG-06.png
+36875	./LOGO/PNG/Bound_Visuals_PNG-07.png
+37297	./LOGO/PNG/Bound_Visuals_PNG-08.png
+36943	./LOGO/PNG/Bound_Visuals_PNG-09.png
+52145	./LOGO/PNG/Bound_Visuals_PNG-10.png
+52298	./LOGO/PNG/Bound_Visuals_PNG-11.png
+52153	./LOGO/PNG/Bound_Visuals_PNG-12.png
+106006	./LOGO/PNG/Bound_Visuals_PNG-13.png
+105983	./LOGO/PNG/Bound_Visuals_PNG-14.png
+105609	./LOGO/PNG/Bound_Visuals_PNG-15.png
+55441	./LOGO/PNG/Bound_Visuals_PNG-19.png
+55594	./LOGO/PNG/Bound_Visuals_PNG-20.png
+55325	./LOGO/PNG/Bound_Visuals_PNG-21.png
+4252	./LOGO/SVG/Bound_Visuals_SVG-01.svg
+4252	./LOGO/SVG/Bound_Visuals_SVG-02.svg
+4252	./LOGO/SVG/Bound_Visuals_SVG-03.svg
+1907	./LOGO/SVG/Bound_Visuals_SVG-04.svg
+1907	./LOGO/SVG/Bound_Visuals_SVG-05.svg
+1907	./LOGO/SVG/Bound_Visuals_SVG-06.svg
+742	./LOGO/SVG/Bound_Visuals_SVG-07.svg
+742	./LOGO/SVG/Bound_Visuals_SVG-08.svg
+742	./LOGO/SVG/Bound_Visuals_SVG-09.svg
+3186	./LOGO/SVG/Bound_Visuals_SVG-10.svg
+3186	./LOGO/SVG/Bound_Visuals_SVG-11.svg
+3186	./LOGO/SVG/Bound_Visuals_SVG-12.svg
+16725	./LOGO/SVG/Bound_Visuals_SVG-13.svg
+16725	./LOGO/SVG/Bound_Visuals_SVG-14.svg
+16725	./LOGO/SVG/Bound_Visuals_SVG-15.svg
+26495	./LOGO/SVG/Bound_Visuals_SVG-19.svg
+26495	./LOGO/SVG/Bound_Visuals_SVG-20.svg
+26495	./LOGO/SVG/Bound_Visuals_SVG-21.svg
+751802	./LOGO/VECTOR/Bound_Visuals_vector.ai
+836113	./LOGO/VECTOR/Bound_Visuals_vector.pdf
+== cores
+709801	./CORES/Bound_Visuals_cores.pdf
+== manual
+51544681	./MANUAL DE IDENTIDADE/Boundvisuals_ID.ai
+51559926	./MANUAL DE IDENTIDADE/Boundvisuals_ID.pdf
+== cv
+184095	./package/CV_vitor hugo_2026_LongVersion_en Folder/CV_vitor hugo_2026_LongVersion_en.idml
+11071488	./package/CV_vitor hugo_2026_LongVersion_en Folder/CV_vitor hugo_2026_LongVersion_en.indd
+574349	./package/CV_vitor hugo_2026_LongVersion_en Folder/CV_vitor hugo_2026_LongVersion_en.pdf
+3933	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/AdobeFnt25.lst
+51120	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-Bold.ttf
+51496	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51420	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-Heavy.ttf
+51056	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/CV_vitor hugo_2026_LongVersion_en Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/00 - cópia.png
+6246693	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/00 16.jpg
+12540740	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/01 - cópia.png
+12034842	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/02 - cópia.png
+10931846	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/03.png
+11255163	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/06.png
+1349326	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/3_the_lamp_3840x2160.jpg
+2329598	./package/CV_vitor hugo_2026_LongVersion_en Folder/Links/versao3.png
+208189	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long).idml
+11309056	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long).indd
+557305	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long).pdf
+4131	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/AdobeFnt25.lst
+51120	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-Bold.ttf
+51496	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51420	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-Heavy.ttf
+51056	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/00 - cópia.png
+6246693	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/00 16.jpg
+12540740	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/01 - cópia.png
+12034842	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/02 - cópia.png
+10931846	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/03.png
+11255163	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/06.png
+1349326	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/3_the_lamp_3840x2160.jpg
+2329598	./package/CV_vitor hugo_2026_ShortVersion_en (por editar info igual ao long) Folder/Links/versao3.png
+== cover-letter
+138987	./package/Cover Letter_2025_en Folder/Cover Letter_2025_en.idml
+10260480	./package/Cover Letter_2025_en Folder/Cover Letter_2025_en.indd
+171190	./package/Cover Letter_2025_en Folder/Cover Letter_2025_en.pdf
+3306	./package/Cover Letter_2025_en Folder/Document fonts/AdobeFnt25.lst
+50756	./package/Cover Letter_2025_en Folder/Document fonts/VisbyCF-DemiBold.ttf
+51496	./package/Cover Letter_2025_en Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51056	./package/Cover Letter_2025_en Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/Cover Letter_2025_en Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/Cover Letter_2025_en Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/Cover Letter_2025_en Folder/Links/00 - cópia.png
+6246693	./package/Cover Letter_2025_en Folder/Links/00 16.jpg
+12540740	./package/Cover Letter_2025_en Folder/Links/01 - cópia.png
+12034842	./package/Cover Letter_2025_en Folder/Links/02 - cópia.png
+10931846	./package/Cover Letter_2025_en Folder/Links/03.png
+11255163	./package/Cover Letter_2025_en Folder/Links/06.png
+1349326	./package/Cover Letter_2025_en Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/Cover Letter_2025_en Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/Cover Letter_2025_en Folder/Links/3_the_lamp_3840x2160.jpg
+== portfolio-3d
+5017	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/AdobeFnt25.lst
+51120	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-Bold.ttf
+50756	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-DemiBold.ttf
+51496	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51420	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-Heavy.ttf
+51056	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/00 - cópia.png
+6246693	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/00 16.jpg
+12540740	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/01 - cópia.png
+12034842	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/02 - cópia.png
+10931846	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/03.png
+11255163	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/06.png
+1349326	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/3_the_lamp_3840x2160.jpg
+2700483	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/Gemini_Generated_Image_46egoy46egoy46eg (1)_COMFYUI.png
+1926997	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam 19 - patios_fria.jpg
+1973766	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam 2 - varanda_fria copy.jpg
+2534239	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam 9 - frente_fria.jpg
+1008998	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam010.jpg
+1213968	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam090000.jpg
+5112109	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam10.jpg
+1326836	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam120000_Edit.jpg
+5458660	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam14.jpg
+4273303	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam16.jpg
+1213356	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam160000_edit.jpg
+1499257	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam180000.jpg
+3942105	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam19.jpg
+2566795	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam1_ext_horizontal_frente_JPEG_fria_medium.jpg
+1216488	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam2_horizontal_8k_5.0noise copy.jpg
+6457476	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam3.jpg
+387167	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam3_vertical_4k_5.0noise copy.jpg
+6569634	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam5.jpg
+382635	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam6_vertical_4k_5.0noise copy.jpg
+2242900	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam9_int_horizontal_sala_JPEG_fria_medium.jpg
+1058410	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_11_wc_3456 X 4320_PNG_8bits_lowsize.jpg
+1403010	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_14_quarto_6144x3456_4.0noise_edit.jpg
+1148804	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_15_sala_6144x3456_PNG_8bits_lowsize copy.jpg
+1229828	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_View02_edit.jpg
+5734210	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_quarto_3.jpg
+5694818	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_sala_2.jpg
+5061068	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_sala_3.jpg
+5097731	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/cam_sala_4.jpg
+1199822	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera 12_6k_PNG_16bits copy.jpg
+671156	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera 15_6k_4noise_EDIT copy.jpg
+935343	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera 19_6k_4noise_EDIT copy.jpg
+1918981	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera 3_6k_4noise_EDIT.jpg
+1530744	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera21_3840x3072_edit.jpg
+1302709	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera30_3840x3072_edit.jpg
+1408844	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera33_3840x3072_edit.jpg
+5277478	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera_1_EDIT_lowsize_JPG_EDIT copy.jpg
+4418437	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera_5__edit copy__FINAL.jpg
+4774242	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/camera_6_EDIT_lowsize_JPG.jpg
+4263853	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Links/patio_EDIT_low_size.jpg
+1628587	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Portfolio_2025_3DArchitectureVisualization_en.idml
+27283456	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Portfolio_2025_3DArchitectureVisualization_en.indd
+23497622	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Portfolio_2025_3DArchitectureVisualization_en.pdf
+23640979	./package/Portfolio_2025_3DArchitectureVisualization_en Folder/Portfolio_2025_3DArchitectureVisualization_en_cai_placeho
+== portfolio-ai
+6027	./package/Portfolio_2025_AI_en Folder/Document fonts/AdobeFnt25.lst
+51120	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-Bold.ttf
+53584	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-BoldOblique.ttf
+51496	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51420	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-Heavy.ttf
+54564	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-HeavyOblique.ttf
+51056	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-Medium.ttf
+54160	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-MediumOblique.ttf
+52212	./package/Portfolio_2025_AI_en Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/Portfolio_2025_AI_en Folder/Links/00 - cópia.png
+6246693	./package/Portfolio_2025_AI_en Folder/Links/00 16.jpg
+12540740	./package/Portfolio_2025_AI_en Folder/Links/01 - cópia.png
+12034842	./package/Portfolio_2025_AI_en Folder/Links/02 - cópia.png
+10931846	./package/Portfolio_2025_AI_en Folder/Links/03.png
+11255163	./package/Portfolio_2025_AI_en Folder/Links/06.png
+445505	./package/Portfolio_2025_AI_en Folder/Links/1.jpg
+4266680	./package/Portfolio_2025_AI_en Folder/Links/2.png
+1349326	./package/Portfolio_2025_AI_en Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/Portfolio_2025_AI_en Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/Portfolio_2025_AI_en Folder/Links/3_the_lamp_3840x2160.jpg
+1503607	./package/Portfolio_2025_AI_en Folder/Links/ComfyUI_00002_.png
+1200824	./package/Portfolio_2025_AI_en Folder/Links/ComfyUI_temp_lblok_00003_.png
+1456638	./package/Portfolio_2025_AI_en Folder/Links/ComfyUI_temp_pxpge_00006_.png
+1265389	./package/Portfolio_2025_AI_en Folder/Links/ComfyUI_temp_pxpge_00007_.png
+4329743	./package/Portfolio_2025_AI_en Folder/Links/Enhanced_image__00001_.png
+911378	./package/Portfolio_2025_AI_en Folder/Links/Foto_vitor_Hugo_2021-01.jpg
+259591	./package/Portfolio_2025_AI_en Folder/Links/Luxury_Dream_Home_in_Mediterranean_Paradise_featured_on_architecture_beast_01.jpg
+981101	./package/Portfolio_2025_AI_en Folder/Links/after.png
+1540980	./package/Portfolio_2025_AI_en Folder/Links/enhancement antes.png
+6807843	./package/Portfolio_2025_AI_en Folder/Links/enhancement depois.png
+1678904	./package/Portfolio_2025_AI_en Folder/Links/img2im2_architecture.png
+1503607	./package/Portfolio_2025_AI_en Folder/Links/inserir objeto.png
+1540980	./package/Portfolio_2025_AI_en Folder/Links/inserir objeto_depois.png
+1282240	./package/Portfolio_2025_AI_en Folder/Links/people_before.png
+885195	./package/Portfolio_2025_AI_en Folder/Links/pngtree-3d-architectural-illustration-of-building-sketch-with-perspective-lines-picture-image_5836130.jpg
+562479	./package/Portfolio_2025_AI_en Folder/Links/poltrona_azul_sharp_for_insta.jpg
+1818825	./package/Portfolio_2025_AI_en Folder/Links/poltrona_azul_sharp_for_insta_depois.png
+4973469	./package/Portfolio_2025_AI_en Folder/Links/product_after.png
+2122217	./package/Portfolio_2025_AI_en Folder/Links/product_after3.png
+1328484	./package/Portfolio_2025_AI_en Folder/Links/product_antes.png
+1479175	./package/Portfolio_2025_AI_en Folder/Links/product_before3.png
+965209	./package/Portfolio_2025_AI_en Folder/Links/render de interior.jpg
+1150462	./package/Portfolio_2025_AI_en Folder/Links/rgthree.compare._temp_xiihq_00008_.png
+1045559	./package/Portfolio_2025_AI_en Folder/Links/texttoimage_Performance Ad Style.png
+1087201	./package/Portfolio_2025_AI_en Folder/Links/texttoimage_automobile.png
+1206924	./package/Portfolio_2025_AI_en Folder/Links/texttoimage_product.png
+872191	./package/Portfolio_2025_AI_en Folder/Links/texttoimage_product3.png
+187423	./package/Portfolio_2025_AI_en Folder/Links/workflows_thumb video.png
+274425	./package/Portfolio_2025_AI_en Folder/Portfolio_2025_AI_en.idml
+17563648	./package/Portfolio_2025_AI_en Folder/Portfolio_2025_AI_en.indd
+6145994	./package/Portfolio_2025_AI_en Folder/Portfolio_2025_AI_en.pdf
+== portfolio-all
+4653	./package/Portfolio_2025_All_en Folder/Document fonts/AdobeFnt25.lst
+51120	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-Bold.ttf
+50756	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-DemiBold.ttf
+51496	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-ExtraBold.ttf
+51420	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-Heavy.ttf
+51056	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-Light.ttf
+50980	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-Medium.ttf
+52212	./package/Portfolio_2025_All_en Folder/Document fonts/VisbyCF-Thin.ttf
+18958626	./package/Portfolio_2025_All_en Folder/Links/00 - cópia.png
+6246693	./package/Portfolio_2025_All_en Folder/Links/00 16.jpg
+12540740	./package/Portfolio_2025_All_en Folder/Links/01 - cópia.png
+12034842	./package/Portfolio_2025_All_en Folder/Links/02 - cópia.png
+10931846	./package/Portfolio_2025_All_en Folder/Links/03.png
+11255163	./package/Portfolio_2025_All_en Folder/Links/06.png
+1349326	./package/Portfolio_2025_All_en Folder/Links/2_1920x1080_5.0_45min.jpg
+5100808	./package/Portfolio_2025_All_en Folder/Links/2_4k_3.5_50min_002.jpg
+2200352	./package/Portfolio_2025_All_en Folder/Links/3_the_lamp_3840x2160.jpg
+2700483	./package/Portfolio_2025_All_en Folder/Links/Gemini_Generated_Image_46egoy46egoy46eg (1)_COMFYUI.png
+2566795	./package/Portfolio_2025_All_en Folder/Links/cam1_ext_horizontal_frente_JPEG_fria_medium.jpg
+1595429	./package/Portfolio_2025_All_en Folder/Links/cam8_int_horizontal_quarto_JPEG_fria_medium.jpg
+2242900	./package/Portfolio_2025_All_en Folder/Links/cam9_int_horizontal_sala_JPEG_fria_medium.jpg
+312668	./package/Portfolio_2025_All_en Folder/Portfolio_2025_All_en.idml
+11886592	./package/Portfolio_2025_All_en Folder/Portfolio_2025_All_en.indd
+1504808	./package/Portfolio_2025_All_en Folder/Portfolio_2025_All_en.pdf

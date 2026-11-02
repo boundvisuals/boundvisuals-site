@@ -1,0 +1,222 @@
+%!Adobe-FontList 1.25
+%Locale:0x816
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Poppins-Bold
+FamilyName:Poppins
+StyleName:Bold
+FullName:Poppins Bold
+MenuName:Poppins
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\Poppins-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:153944
+FileModTime:1733344266
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Poppins
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Poppins-Light
+FamilyName:Poppins
+StyleName:Light
+FullName:Poppins Light
+MenuName:Poppins Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\Poppins-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:159892
+FileModTime:1733344266
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Poppins Light
+NameArray:0,Win,16,Poppins
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Poppins-Medium
+FamilyName:Poppins
+StyleName:Medium
+FullName:Poppins Medium
+MenuName:Poppins Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\Poppins-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:156520
+FileModTime:1733344266
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Poppins Medium
+NameArray:0,Win,16,Poppins
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Poppins-Regular
+FamilyName:Poppins
+StyleName:Regular
+FullName:Poppins Regular
+MenuName:Poppins
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\Poppins-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:158240
+FileModTime:1733344266
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Poppins
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Bold
+FamilyName:Visby CF
+StyleName:Bold
+FullName:Visby CF Bold
+MenuName:Visby CF Bold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\VisbyCF-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51120
+FileModTime:1550396429
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Bold
+NameArray:0,Win,1,Visby CF Bold
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Heavy
+FamilyName:Visby CF
+StyleName:Heavy
+FullName:Visby CF Heavy
+MenuName:Visby CF Heavy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\VisbyCF-Heavy.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51420
+FileModTime:1550396430
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Heavy
+NameArray:0,Win,1,Visby CF Heavy
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Light
+FamilyName:Visby CF
+StyleName:Light
+FullName:Visby CF Light
+MenuName:Visby CF Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\VisbyCF-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51056
+FileModTime:1550396429
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Light
+NameArray:0,Win,1,Visby CF Light
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Medium
+FamilyName:Visby CF
+StyleName:Medium
+FullName:Visby CF Medium
+MenuName:Visby CF Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\VisbyCF-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:50980
+FileModTime:1550396431
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Medium
+NameArray:0,Win,1,Visby CF Medium
+NameArray:0,Win,16,Visby CF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:VisbyCF-Thin
+FamilyName:Visby CF
+StyleName:Thin
+FullName:Visby CF Thin
+MenuName:Visby CF Thin
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\MEGA\FREELANCER STUFF\3D\BOUND VISUALS\A BOUND VISUALS\A MARCA\DOCUMENTACAO\PT\ORCAMENTOS\package\orcamento_FINAL Folder\Document fonts\VisbyCF-Thin.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:52212
+FileModTime:1550396431
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Visby CF Thin
+NameArray:0,Win,1,Visby CF Thin
+NameArray:0,Win,16,Visby CF
+%EndFont
+
