@@ -65,9 +65,10 @@ Talk to Vítor in European Portuguese. Generation prompts in English.
 - Robot: fetch-brand.yml (MEGA folders → assets branch).
 
 ## Site design (2026-11-02)
-- Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Reference = docs/current-site-spec.md (measured in Vítor's browser pane; GitHub headless screenshots hang on this site).
+- Vítor rejected canvas A/B/C AND prototype v1 (https://claude.ai/artifact/VVfwDYmV3hBvQNZEcMy87f). DECIDED: the new site must look very close to the CURRENT live site — same look, rebuilt lean, then refined. Rule (Vítor): improve everything (faster, more beautiful) but keep the essence; any visible change must be justified ("better because X/Y") — list each change with its reason when showing staging. Reference = docs/current-site-spec.md (measured in Vítor's browser pane; GitHub headless screenshots hang on this site).
 
 ## Pending from Vítor
+- Create staging via Softaculous "Criar Ambiente de Staging" (asked 2026-11-02: domain boundvisuals.com, directory `novo` → /novo).
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
 - One-time authorisations: Instagram/Facebook, Pinterest, YouTube, LinkedIn.
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
