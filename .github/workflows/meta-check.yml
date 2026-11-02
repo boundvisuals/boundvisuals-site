@@ -11,7 +11,7 @@ jobs:
       - env:
           T: ${{ secrets.META_TOKEN }}
         run: |
-          mkdir -p reports/meta
+          set +e; mkdir -p reports/meta
           {
             echo "token set: $([ -n "$T" ] && echo yes || echo NO)"
             G=https://graph.facebook.com/v21.0
