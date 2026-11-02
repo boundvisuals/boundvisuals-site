@@ -11,9 +11,9 @@ try:
       for name, url in URLS.items():
           for dev, vp in [("desktop", (1440, 900)), ("mobile", (390, 844))]:
               pg = b.new_page(viewport={"width": vp[0], "height": vp[1]}, **ctx)
-              pg.goto(url, wait_until="load", timeout=60000); pg.wait_for_timeout(6000)
-              pg.screenshot(path=f"{OUT}/{name}-{dev}.jpg", type="jpeg", quality=70)
-              pg.screenshot(path=f"{OUT}/{name}-{dev}-full.jpg", type="jpeg", quality=55, full_page=True)
+              pg.goto(url, wait_until="load", timeout=60000); pg.wait_for_timeout(6000); pg.evaluate("document.querySelectorAll('video').forEach(v=>v.pause())")
+              pg.screenshot(path=f"{OUT}/{name}-{dev}.jpg", type="jpeg", quality=70, timeout=120000, animations="disabled")
+              pg.screenshot(path=f"{OUT}/{name}-{dev}-full.jpg", type="jpeg", quality=55, full_page=True, timeout=120000, animations="disabled")
               if dev == "desktop":
                   if name == "home":
                       links = pg.eval_on_selector_all("a[href*='portfolio_page']", "els=>[...new Set(els.map(e=>e.href))]")
@@ -26,8 +26,8 @@ try:
               pg.close()
       if facts.get("project_links"):
           u = facts["project_links"][0]
-          pg = b.new_page(viewport={"width": 1440, "height": 900}, **ctx); pg.goto(u, wait_until="load", timeout=60000); pg.wait_for_timeout(6000)
-          pg.screenshot(path=f"{OUT}/project-desktop-full.jpg", type="jpeg", quality=55, full_page=True); facts["project_sample"] = u
+          pg = b.new_page(viewport={"width": 1440, "height": 900}, **ctx); pg.goto(u, wait_until="load", timeout=60000); pg.wait_for_timeout(6000); pg.evaluate("document.querySelectorAll('video').forEach(v=>v.pause())")
+          pg.screenshot(path=f"{OUT}/project-desktop-full.jpg", type="jpeg", quality=55, full_page=True, timeout=120000, animations="disabled"); facts["project_sample"] = u
       b.close()
 except Exception:
     facts["error"]=traceback.format_exc()
