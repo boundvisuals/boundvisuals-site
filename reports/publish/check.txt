@@ -1,8 +1,8 @@
-2026-11-03T11:28:09.744413+00:00
-ERR 2026-11-03_vivendas-duas-igrejas: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"A_XDItz03giYcbqalgDNF9D"}}
-ERR 2026-11-04_vivendas-cete: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"ADBSMt02ynxCOVFj_qOF5g-"}}
-ERR 2026-11-05_gold-village: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"Ai-mdt7JNkHtpj6UOFpU0-H"}}
-ERR 2026-11-06_vivendas-duas-igrejas: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AVDHSH1Ihba4_E8cQ0zXEfV"}}
-ERR 2026-11-07_vivendas-cete: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"A2xyQrbGB69coBTo-mAix9d"}}
-ERR 2026-11-08_gold-village: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"A8l3Sbn9V3uXpusW848ldxK"}}
-ERR 2026-11-09_vivendas-duas-igrejas: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"ABW-TSQw3b4XgacvdLOVZrZ"}}
+2026-11-03T12:34:34.457966+00:00
+OK  2026-11-03_vivendas-duas-igrejas: IG accepted 4 slide(s) (container 18090770726679564, not published)
+OK  2026-11-04_vivendas-cete: IG accepted 3 slide(s) (container 18090770807679564, not published)
+OK  2026-11-05_gold-village: IG accepted 4 slide(s) (container 18090770930679564, not published)
+OK  2026-11-06_vivendas-duas-igrejas: IG accepted 3 slide(s) (container 18090771005679564, not published)
+ERR 2026-11-07_vivendas-cete: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"Al0rhAf6zS1eNl91ec0k6fQ"}}
+ERR 2026-11-08_gold-village: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AqofaEPptoK3294G2Kx0Cwv"}}
+ERR 2026-11-09_vivendas-duas-igrejas: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AorQXMefY14jInF2ggb78ow"}}
