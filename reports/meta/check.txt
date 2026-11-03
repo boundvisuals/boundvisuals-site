@@ -11,20 +11,20 @@ valid True expires 0 scopes ['pages_show_list', 'business_management', 'instagra
 --- image url
 200 image/jpeg 0
 --- slide 01: 200 image/jpeg 0
-{"id":"18090825734679564"}
+{"id":"18090826490679564"}
 --- slide 02: 200 image/jpeg 0
-{"id":"18090825755679564"}
+{"id":"18090826511679564"}
 --- slide 03: 200 image/jpeg 0
-{"id":"18090825773679564"}
+{"id":"18090826532679564"}
 --- slide 04-full: 200 image/jpeg 0
-{"id":"18090825791679564"}
+{"id":"18090826550679564"}
 --- carousel status test
-children 18090825812679564,18090825839679564,18090825863679564,18090825893679564
-child 18090825812679564: {"id":"18090825812679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
-child 18090825839679564: {"id":"18090825839679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
-child 18090825863679564: {"id":"18090825863679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
-child 18090825893679564: {"id":"18090825893679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
-parent nocaption: {"id":"18090825995679564"}
-parent caption: {"id":"18090826001679564"}
-status 18090825995679564: {"id":"18090825995679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
-status 18090826001679564: {"id":"18090826001679564","status":"Error: Media upload has failed with error code 2207032","status_code":"ERROR"}
+children 18090826571679564,18090826592679564,18090826613679564,18090826634679564
+child 18090826571679564: {"id":"18090826571679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090826592679564: {"id":"18090826592679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090826613679564: {"id":"18090826613679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090826634679564: {"id":"18090826634679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+parent unique caption: {"id":"0"}
+parent mention caption: {"id":"18090826673679564"}
+status 0: {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"A26lXKGbG9jhAQQuikpY_pk"}}
+status 18090826673679564: {"id":"18090826673679564","status":"Error: Media upload has failed with error code 2207032","status_code":"ERROR"}
