@@ -23,6 +23,7 @@
         "out/ig/10_-_Interior_3_10-interior3_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 30714044,
       "full_bytes": 22139504
     },
@@ -45,6 +46,7 @@
         "out/ig/11_-_Interior_4_11-interior4_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 35239684,
       "full_bytes": 25867472
     },
@@ -67,6 +69,7 @@
         "out/ig/12_-_Interior_5_12-interior5_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 33598387,
       "full_bytes": 25001080
     },
@@ -89,6 +92,7 @@
         "out/ig/13_-_Interior_6_13-interior6_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 34535202,
       "full_bytes": 25839718
     },
@@ -114,6 +118,7 @@
         "out/ig/14_-_Interior_7_14-interior7_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 26687000,
       "full_bytes": 18767462
     },
@@ -136,6 +141,7 @@
         "out/ig/15_-_Interior_8_15-interior8_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 38306883,
       "full_bytes": 27010582
     },
@@ -158,6 +164,7 @@
         "out/ig/16_-_Interior_9_16-interior9_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 32947999,
       "full_bytes": 24515216
     },
@@ -180,6 +187,7 @@
         "out/ig/17_-_Interior_10_17-interior10_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 39005658,
       "full_bytes": 26964548
     },
@@ -202,6 +210,7 @@
         "out/ig/18_-_Interior_11_18-interior11_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 39783507,
       "full_bytes": 29132166
     },
@@ -227,6 +236,7 @@
         "out/ig/19_-_Interior_12_19-interior12_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 25433272,
       "full_bytes": 19153052
     },
@@ -252,6 +262,7 @@
         "out/ig/1_-_Exterior1_1-exterior1_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 43893304,
       "full_bytes": 31524670
     },
@@ -274,6 +285,7 @@
         "out/ig/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 61993164,
       "full_bytes": 30252524
     },
@@ -296,6 +308,7 @@
         "out/ig/3_-_Exterior3_3-exterior3_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 48678621,
       "full_bytes": 32521950
     },
@@ -318,6 +331,7 @@
         "out/ig/4_-_Exterior4_4-exterior4_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 43400990,
       "full_bytes": 30839462
     },
@@ -343,6 +357,7 @@
         "out/ig/5_-_Exterior5_5-exterior5_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 32518485,
       "full_bytes": 25162496
     },
@@ -365,6 +380,7 @@
         "out/ig/7_-_Exterior_7_7-exterior7_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 39591478,
       "full_bytes": 29112756
     },
@@ -390,6 +406,7 @@
         "out/ig/8_-_Interior_1_8-interior1_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 23453607,
       "full_bytes": 17396628
     },
@@ -412,6 +429,7 @@
         "out/ig/9_-_Interior_2_9-interior2_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 28336118,
       "full_bytes": 21676230
     }
