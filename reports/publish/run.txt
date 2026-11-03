@@ -1,2 +1,2 @@
-2026-11-03T20:53:32.239343+00:00
-ERR 2026-11-03_vivendas-duas-igrejas: Meta returned container id 0 for CAROUSEL: full response {"id": "0"}; params ['media_type', 'children', 'caption']
+2026-11-03T21:07:39.982954+00:00
+ERR 2026-11-03_vivendas-duas-igrejas: container 18090825083679564 ERROR
