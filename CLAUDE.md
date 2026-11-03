@@ -150,3 +150,10 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - publish.yml DISABLED (manual disable via API) to stop further attempts. Re-enable with: gh api -X PUT repos/boundvisuals/boundvisuals-site/actions/workflows/publish.yml/enable
 - Next: Vítor checks the Instagram app notice (Settings > Account status / "Ação bloqueada") and taps "Tell us if we made a mistake"; wait 24h; then ONE single test, never more check-mode runs. Do not run meta-check container tests again. publish.py now retries container creation (id 0) and shows error detail.
 - Hand crops done for Gondomar 2 and second batches of VDI/Cête/GV (config/crops.yml); stories/reel generated for Gondomar 2 (reports/apartamentos-gondomar-2); Daily Study #001–#003 briefs in docs/daily-study-briefings.md.
+
+## PAINEL (built 2026-11-03 23:30) — Vítor's single place for everything
+- https://www.boundvisuals.com/painel/ (private: key link /painel/?k=KEY sets a 1-year cookie; repo holds only the sha256 in painel/config.php; the key was given to Vítor in chat). PWA: installable on Windows (Edge/Chrome → install) and phone (Add to home screen).
+- Tabs: Hoje (alerts, KPIs, today, networks, robot log), Calendário (all feed/stories/reels; "Aprovar dia"/"Aprovar tudo" → api.php writes store/approvals.json.php), Tarefas (docs/tasks.yml; ticks stored server-side), Projetos (registry + counts), Links.
+- Robot .github/workflows/painel.yml (push on queue/reports/tasks, cron */10, after each publish run): applies panel approvals to queue/*.yml, builds data (scripts/build_painel.py), uploads via FTP. Page polls every 15 s. No Claude credits needed to stay updated.
+- RULE CHANGE (Vítor chose option A 2026-11-03): links + open lists live in the Painel; replies stay short and end with the Painel link + only what is new. Keep docs/tasks.yml as the master task list (update it whenever something is agreed/done).
+- No repeated tests ever (Vítor 2026-11-03: "não faças testes… faz publicação direto"). Budget credits: heavy work in robots, not chat.
