@@ -27,19 +27,19 @@ jobs:
               echo "--- slide $n: $(curl -sI -o /dev/null -w '%{http_code} %{content_type} %{size_download}' "$U2")"
               curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U2" -d is_carousel_item=true -d "access_token=$T"; echo
             done
-            echo "--- parent carousel, short caption"
+            echo "--- carousel status test"
             IDS=""
             for n in 01 02 03 04-full; do
               U2="https://www.boundvisuals.com/bv-fila/vivendas-duas-igrejas/root_1_-_Front___webp_%2B_Seedvr2_bravo-$n.jpg"
               K=$(curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U2" -d is_carousel_item=true -d "access_token=$T" | python3 -c "import json,sys;print(json.load(sys.stdin).get('id',''))")
-              IDS="$IDS,$K"; sleep 3
+              IDS="$IDS,$K"
             done
-            IDS=${IDS#,}; echo "children $IDS"
-            sleep 30
-            echo "caption test (after wait)"; curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=test" -d "access_token=$T"; echo
-            echo "caption real-ish"; curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=Late light, open carport. Row houses in Duas Igrejas, Penafiel. @boundvisuals" -d "access_token=$T"; echo
-            curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" -d "access_token=$T"; echo
-            echo "--- one container (full response)"; curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U" -d is_carousel_item=true -d "access_token=$T"; echo
+            IDS=${IDS#,}; echo "children $IDS"; sleep 40
+            for K in ${IDS//,/ }; do echo "child $K: $(curl -s "$G/$K?fields=status_code,status&access_token=$T")"; done
+            P1=$(curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" -d "access_token=$T"); echo "parent nocaption: $P1"
+            P2=$(curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=Late light, open carport. Row houses in Duas Igrejas, Penafiel." -d "access_token=$T"); echo "parent caption: $P2"
+            sleep 40
+            for P in "$P1" "$P2"; do I=$(echo "$P" | python3 -c "import json,sys;print(json.load(sys.stdin).get('id',''))"); echo "status $I: $(curl -s "$G/$I?fields=status_code,status&access_token=$T")"; done
           } > reports/meta/check.txt 2>&1
           cat reports/meta/check.txt
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
