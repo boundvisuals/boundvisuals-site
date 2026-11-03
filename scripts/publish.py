@@ -45,6 +45,15 @@ def hashtags(n):
     return " ".join("#" + t for t in tags[: INS.get("hashtags_max", 30)])
 
 
+def new_container(**params):
+    """Create a media container. Meta answers id "0" (HTTP 200) when it silently throttles
+    container creation (seen after ~20 test containers in an hour): fail loudly instead."""
+    cid = api("POST", f"{IG}/media", **params).get("id")
+    if not cid or str(cid) == "0":
+        raise RuntimeError("Meta throttled container creation (id 0): wait ~1 hour and retry; check mode creates many containers, use CHECK_LIMIT")
+    return cid
+
+
 def wait_ready(cid):
     for _ in range(30):
         s = api("GET", cid, fields="status_code").get("status_code")
@@ -59,12 +68,12 @@ def wait_ready(cid):
 def ig_container(item):
     urls = [f"{BASE}/{item['project']}/{urllib.parse.quote(s)}" for s in item["slides"]]
     if len(urls) == 1:
-        c = api("POST", f"{IG}/media", image_url=urls[0], caption=caption(item))["id"]
+        c = new_container(image_url=urls[0], caption=caption(item))
     else:
-        kids = [api("POST", f"{IG}/media", image_url=u, is_carousel_item="true")["id"] for u in urls]
+        kids = [new_container(image_url=u, is_carousel_item="true") for u in urls]
         for k in kids:
             wait_ready(k)
-        c = api("POST", f"{IG}/media", media_type="CAROUSEL", children=",".join(kids), caption=caption(item))["id"]
+        c = new_container(media_type="CAROUSEL", children=",".join(kids), caption=caption(item))
     wait_ready(c)
     return c, urls
 
@@ -90,6 +99,9 @@ def main(mode):
         key = f"{it['date']}_{it['project']}"
         when = datetime.fromisoformat(f"{it['date']}T{it['time']}").replace(tzinfo=TZ)
         if mode == "check":
+            if n >= int(os.environ.get("CHECK_LIMIT", "3")):
+                log.append(f"SKIP {key}: check limited to first {os.environ.get('CHECK_LIMIT', '3')} items (Meta throttles test containers)")
+                continue
             try:
                 c, _ = ig_container(it)
                 log.append(f"OK  {key}: IG accepted {len(it['slides'])} slide(s) (container {c}, not published)")
