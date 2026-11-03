@@ -1,0 +1,35 @@
+name: Make stories + reel
+# Builds stories (1080x1920) and one reel per project from the ORIGINAL finals, only for images with
+# hand-reviewed crops in config/crops.yml. Output committed to reports/<project>/{story,reel}.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id: { description: "Project id (e.g. gold-village)", required: true }
+      mega_link: { description: "Public MEGA link to the PROJECT folder", required: true }
+      title: { description: "Title shown on the stories/reel (e.g. Gold Village)", required: true }
+permissions:
+  contents: write
+jobs:
+  social:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MEGAcmd, ffmpeg, Python deps
+        run: |
+          wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
+          sudo apt-get update -qq && sudo apt-get install -y -qq ./megacmd.deb ffmpeg
+          pip install -q pillow pyyaml numpy
+      - name: Download finals
+        env: { LINK: "${{ inputs.mega_link }}" }
+        run: mkdir -p out && bash scripts/fetch_finals.sh "$LINK" in 2>&1 | tee out/fetch.log
+      - name: Build stories + reel
+        run: |
+          D=reports/${{ inputs.project_id }}
+          rm -rf "$D/story" "$D/reel"; mkdir -p "$D"
+          python scripts/make_social.py in "$D" "${{ inputs.project_id }}" "${{ inputs.title }}" 2>&1 | tee out/social.log
+          cp out/social.log "$D/social.log"
+      - name: Save to repo
+        if: always()
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Stories + reel: ${{ inputs.project_id }}" && (git pull --rebase -q && git push) || echo "nothing to commit"
