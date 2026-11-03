@@ -1,7 +1,14 @@
 stories: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT -> 3
 skip (no reviewed crops): 2-interior2.png
-skip (no reviewed crops): 3-interior3.png
+skip (no reviewed crops): 2-interior2.webp
+skip (no reviewed crops): 3-interior3.webp
+skip (no reviewed crops): 4-interior4.webp
+skip (no reviewed crops): 5-exterior1.webp
+skip (no reviewed crops): 6-exterior2.webp
+skip (no reviewed crops): ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp
+stories: 3-interior3_3-interior3 -> 4
 skip (no reviewed crops): 4-interior4.png
 stories: 5-exterior1_5-exterior1 -> 3
-skip (no reviewed crops): 6-exterior2.png
-reel: 4 shots
+stories: 6-exterior2_6-exterior2 -> 4
+reel 1: 4 shots
+reel 2: 4 shots
