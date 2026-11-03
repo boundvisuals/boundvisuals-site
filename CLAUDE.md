@@ -63,8 +63,8 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 
 ## Publishing system (BUILT 2026-11-03)
 - queue/week-NN.yml (date, time Lisbon, project, slides from reports/<p>/ig, caption_en/pt, approved) → .github/workflows/publish.yml (cron */30 + dispatch mode run|check) uploads used slides to /public_html/bv-fila/<project>/ (noindex) and scripts/publish.py publishes approved+due items: IG carousel + hashtags as 1st comment + FB page multi-photo. State: queue/published.json; logs reports/publish/.
-- Week 1 ON HOLD: Vítor said crops are bad (2026-11-03) → redo crops by hand before approval.
-- Week 1 (3–9 Nov, 19:00 daily, 7 carousels VDI/Cête/GV, weak crops removed) passed CHECK (all accepted by IG). Preview for approval: https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1. Approve = set approved: true in queue/week-01.yml.
+- Week 1: crops REDONE BY HAND 2026-11-03 (config/crops.yml = [cx,cy,h] fractions per image; process_media.py uses them, otherwise auto crops flagged "auto-unreviewed" in process.log). Reviewed at full size, one by one. Awaiting Vítor's approval.
+- Week 1 (3–9 Nov, 19:00 daily, 7 carousels VDI/Cête/GV; 3–4 slides each) preview for approval (v2, new crops): https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1. Re-run CHECK after the crop change. Approve = set approved: true in queue/week-01.yml.
 - Not yet: stories, reels, server approval page, weekly push reminders, Pinterest/YouTube/LinkedIn.
 
 ## Captions (decided 2026-11-02)
@@ -78,7 +78,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Caption stays clean (text + 14 mentions). Hashtags go in Vítor's FIRST COMMENT, posted by the robot right after publishing: 26 fixed + 4 rotating of 11 (max 30).
 
 ## Instagram crops (decided)
-- Robot proposes detail crops; Claude reviews them visually and replaces weak ones (foliage/sky-only, cut heads) before the approval queue. If Vítor puts his own 4:5 crops in the finals folder, his win.
+- Claude composes each carousel's detail crops by eye (composition-first: subject + context, no fragments) and writes them in config/crops.yml BEFORE an image enters the queue; any image without an entry gets auto crops that are NOT to be queued until reviewed. Auto picker (edge energy) produced meaningless fragments, do not trust it. If Vítor puts his own 4:5 crops in the finals folder, his win.
 
 ## Access (working, 2026-11-02)
 - SSH not usable from GitHub (PTServidor whitelists fixed IPs only, port 1082). Path: FTP for files + WP REST API as user `claude-robot` (role Editor, Application Password; secrets WP_USER, WP_APP_PASS) — verified 200 by wp-check.yml. cPanel Terminal for rare manual commands.
@@ -112,6 +112,11 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Staging: https://www.boundvisuals.com/novo (Softaculous staging, DB boundvis_wp246, noindex on). Robot REST access verified there.
 - Theme code: theme/boundvisuals (no builder on front end; reads portfolio_page + Elementor JSON blocks, pfv_featured_video_uploading video ids, _links_to redirects). Parked theme removed from staging server; deploy-theme robot deleted (code stays in git only).
 - Changes vs current site to present with reasons: Visby CF for nav/body too (brand typeface, one font family less); header turns solid on scroll; loops play only when visible; lightbox with original file; prev/next project links; real SEO titles/descriptions + schema; Maionese credit removed (new theme); icon fonts/reCAPTCHA/builder CSS not loaded.
+
+## Pinterest/YouTube/LinkedIn API facts (checked 2026-11-03)
+- Pinterest: new apps start in Trial access; pins created are visible only to the app owner until Standard access is approved (screencast of OAuth + pin creation required, typically 1-2 weeks; community reports, confirm in Pinterest developer portal).
+- YouTube Data API: videos.insert costs 1 unit of the uploads bucket, max 100 calls/day (per Google docs page); unverified-project private-upload rule not stated on that page, verify in console.
+- LinkedIn personal posting: self-serve product Share on LinkedIn, scope w_member_social, no partner review, up to 4 images, no video, tokens last 60 days, no company page needed (third-party source, confirm on Microsoft Learn).
 
 ## Pending from Vítor
 - Speed cleanup step 1: DONE on staging + LIVE 2026-11-02 (verified). Delete after a few days: WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer. Delete them after a few days without issues.
