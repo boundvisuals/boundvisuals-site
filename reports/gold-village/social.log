@@ -1,11 +1,23 @@
 stories: 10_-_interior3_10-interior3 -> 4
-skip (no reviewed crops): 11-interior4.png
+stories: 11_-_interior4_11-interior4 -> 4
 skip (no reviewed crops): 1-exterior1.png
+skip (no reviewed crops): 1-exterior1 copy.webp
+skip (no reviewed crops): 10-interior3.webp
+skip (no reviewed crops): 11-interior4.webp
+skip (no reviewed crops): 2-exterior2 copy.webp
+skip (no reviewed crops): 3_exterior3.webp
+skip (no reviewed crops): 4-exterior4.webp
+skip (no reviewed crops): 5-exterior5.webp
+skip (no reviewed crops): 6-exterior6.webp
+skip (no reviewed crops): 8-interior1.webp
+skip (no reviewed crops): 9-interior2.webp
 stories: 2_-_exterior2_2-exterior2 -> 4
-skip (no reviewed crops): 3_exterior3.png
+stories: 3_-_exterior3_3_exterior3 -> 4
 skip (no reviewed crops): 4-exterior4.png
 skip (no reviewed crops): 5-exterior5.png
 skip (no reviewed crops): 6-exterior6.png
-skip (no reviewed crops): 8-interior1.png
-skip (no reviewed crops): 9-interior2.png
-reel: 4 shots
+stories: 8_-_interior1_8-interior1 -> 4
+stories: 9_-_interior2_9-interior2 -> 4
+reel 1: 4 shots
+reel 2: 4 shots
+reel 3: 4 shots
