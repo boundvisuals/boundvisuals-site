@@ -18,6 +18,11 @@ jobs:
             echo "--- me"; curl -s "$G/me?access_token=$T"; echo
             echo "--- pages"; curl -sg "$G/me/accounts?fields=id,name,instagram_business_account{id,username}&access_token=$T" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(p.get('id'),p.get('name'),p.get('instagram_business_account')) for p in d.get('data',[])];print(d.get('error',''))"
             echo "--- token debug"; curl -s "$G/debug_token?input_token=$T&access_token=$T" | python3 -c "import json,sys;d=json.load(sys.stdin).get('data',{});print('valid',d.get('is_valid'),'expires',d.get('expires_at'),'scopes',d.get('scopes'))"
+            IG=17841450386900546
+            echo "--- publishing limit"; curl -s "$G/$IG/content_publishing_limit?fields=quota_usage,config&access_token=$T"; echo
+            U="https://www.boundvisuals.com/bv-fila/vivendas-duas-igrejas/root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg"
+            echo "--- image url"; curl -sI -o /dev/null -w "%{http_code} %{content_type} %{size_download}\n" "$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1],safe=':/'))" "$U")"
+            echo "--- one container (full response)"; curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U" -d is_carousel_item=true -d "access_token=$T"; echo
           } > reports/meta/check.txt 2>&1
           cat reports/meta/check.txt
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
