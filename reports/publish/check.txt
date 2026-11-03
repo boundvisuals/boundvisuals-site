@@ -1,8 +1,8 @@
-2026-11-03T10:38:49.299017+00:00
-OK  2026-11-03_vivendas-duas-igrejas: IG accepted 4 slide(s) (container 18090756518679564, not published)
-OK  2026-11-04_vivendas-cete: IG accepted 4 slide(s) (container 18090756683679564, not published)
-OK  2026-11-05_gold-village: IG accepted 4 slide(s) (container 18090756791679564, not published)
-OK  2026-11-06_vivendas-duas-igrejas: IG accepted 3 slide(s) (container 18090756956679564, not published)
-OK  2026-11-07_vivendas-cete: IG accepted 4 slide(s) (container 18090757127679564, not published)
-OK  2026-11-08_gold-village: IG accepted 4 slide(s) (container 18090757205679564, not published)
-OK  2026-11-09_vivendas-duas-igrejas: IG accepted 4 slide(s) (container 18090757325679564, not published)
+2026-11-03T11:23:53.227065+00:00
+OK  2026-11-03_vivendas-duas-igrejas: IG accepted 4 slide(s) (container 18090761531679564, not published)
+OK  2026-11-04_vivendas-cete: IG accepted 3 slide(s) (container 18090761594679564, not published)
+OK  2026-11-05_gold-village: IG accepted 4 slide(s) (container 18090761687679564, not published)
+OK  2026-11-06_vivendas-duas-igrejas: IG accepted 3 slide(s) (container 18090761810679564, not published)
+OK  2026-11-07_vivendas-cete: IG accepted 3 slide(s) (container 18090761990679564, not published)
+ERR 2026-11-08_gold-village: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AKClfiknrnH_yfkKtN3mP-6"}}
+ERR 2026-11-09_vivendas-duas-igrejas: GET 0 -> 400 {"error":{"message":"Unsupported get request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AhuQIT8NUK-84GvSbqMn1-a"}}
