@@ -1,2 +1,2 @@
-2026-11-03T20:43:06.357840+00:00
-ERR 2026-11-03_vivendas-duas-igrejas: Meta throttled container creation (id 0): wait ~1 hour and retry; check mode creates many containers, use CHECK_LIMIT
+2026-11-03T20:53:32.239343+00:00
+ERR 2026-11-03_vivendas-duas-igrejas: Meta returned container id 0 for CAROUSEL: full response {"id": "0"}; params ['media_type', 'children', 'caption']
