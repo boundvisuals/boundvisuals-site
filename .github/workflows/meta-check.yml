@@ -27,6 +27,16 @@ jobs:
               echo "--- slide $n: $(curl -sI -o /dev/null -w '%{http_code} %{content_type} %{size_download}' "$U2")"
               curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U2" -d is_carousel_item=true -d "access_token=$T"; echo
             done
+            echo "--- parent carousel, short caption"
+            IDS=""
+            for n in 01 02 03 04-full; do
+              U2="https://www.boundvisuals.com/bv-fila/vivendas-duas-igrejas/root_1_-_Front___webp_%2B_Seedvr2_bravo-$n.jpg"
+              K=$(curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U2" -d is_carousel_item=true -d "access_token=$T" | python3 -c "import json,sys;print(json.load(sys.stdin).get('id',''))")
+              IDS="$IDS,$K"; sleep 3
+            done
+            IDS=${IDS#,}; echo "children $IDS"
+            curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=test" -d "access_token=$T"; echo
+            curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" -d "access_token=$T"; echo
             echo "--- one container (full response)"; curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U" -d is_carousel_item=true -d "access_token=$T"; echo
           } > reports/meta/check.txt 2>&1
           cat reports/meta/check.txt
