@@ -63,7 +63,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 
 ## Publishing system (BUILT 2026-11-03)
 - queue/week-NN.yml (date, time Lisbon, project, slides from reports/<p>/ig, caption_en/pt, approved) → .github/workflows/publish.yml (cron */30 + dispatch mode run|check) uploads used slides to /public_html/bv-fila/<project>/ (noindex) and scripts/publish.py publishes approved+due items: IG carousel + hashtags as 1st comment + FB page multi-photo. State: queue/published.json; logs reports/publish/.
-- Week 1: crops REDONE BY HAND 2026-11-03 (config/crops.yml = [cx,cy,h] fractions per image; process_media.py uses them, otherwise auto crops flagged "auto-unreviewed" in process.log). Reviewed at full size, one by one. Awaiting Vítor's approval.
+- Week 1: crops REDONE BY HAND 2026-11-03 (config/crops.yml = [cx,cy,h] fractions per image; process_media.py uses them, otherwise auto crops flagged "auto-unreviewed" in process.log). Reviewed at full size, one by one. APPROVED by Vítor 2026-11-03 18:03 (all 7 days, approved: true).
 - Week 1 (3–9 Nov, 19:00 daily, 7 carousels VDI/Cête/GV; 3–4 slides each) preview for approval (v2, new crops): https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1. Re-run CHECK after the crop change. Approve = set approved: true in queue/week-01.yml.
 - Not yet: stories, reels, server approval page, weekly push reminders, Pinterest/YouTube/LinkedIn.
 
