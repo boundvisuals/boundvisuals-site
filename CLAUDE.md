@@ -140,3 +140,13 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - `config/program.yml` — the content program rules above, as data.
 - `scripts/` — ingest (MEGA) and media processing.
 - `.github/workflows/` — robots.
+
+## RULES added 2026-11-03 21:20 (Vítor)
+- EVERY reply ends with (1) list of links to all docs/pages created (Master plan, Dossier, approval pages, briefings, repo, MEGA) and (2) the FULL list of everything agreed and still open since the beginning. Vítor wants everything automated; he will NOT publish manually. Show produced work continuously (daily study briefs etc.).
+- Links: Master plan https://claude.ai/artifact/CiMZbhepRpkE2qYCfgMwCw · Dossier https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k · Week 1 feed approval https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1 · Stories+reels week 1 https://claude.ai/artifact/4PK3eSRaENXSbapLzqkNT2 · Daily study briefs docs/daily-study-briefings.md · Daily Study MEGA https://mega.nz/folder/b64hGZTD#IheHOIoJhFdssIbmGt5mUg · Repo https://github.com/boundvisuals/boundvisuals-site
+
+## INSTAGRAM BLOCK (2026-11-03 ~21:20) — OPEN
+- Graph API returns code 4 / subcode 2207051 ("Restringimos determinadas atividades…", action blocked) on container creation WITH caption (single+caption error; carousel parent+caption returns id 0 / status error 2207032; children and no-caption parent OK). Cause: too many test containers/same captions from my check runs. Day-1 feed post (Duas Igrejas, due 19:00) NOT published.
+- publish.yml DISABLED (manual disable via API) to stop further attempts. Re-enable with: gh api -X PUT repos/boundvisuals/boundvisuals-site/actions/workflows/publish.yml/enable
+- Next: Vítor checks the Instagram app notice (Settings > Account status / "Ação bloqueada") and taps "Tell us if we made a mistake"; wait 24h; then ONE single test, never more check-mode runs. Do not run meta-check container tests again. publish.py now retries container creation (id 0) and shows error detail.
+- Hand crops done for Gondomar 2 and second batches of VDI/Cête/GV (config/crops.yml); stories/reel generated for Gondomar 2 (reports/apartamentos-gondomar-2); Daily Study #001–#003 briefs in docs/daily-study-briefings.md.
