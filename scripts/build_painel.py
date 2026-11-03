@@ -10,6 +10,36 @@ import yaml
 from PIL import Image
 
 TZ = ZoneInfo("Europe/Lisbon")
+FILA = "https://www.boundvisuals.com/bv-fila"
+from urllib.parse import quote
+
+
+def studies():
+    """Parse docs/daily-study-briefings.md into [{num,title,when,blocks:[{k,t}]}] for the Estúdio tab."""
+    p = "docs/daily-study-briefings.md"
+    if not os.path.exists(p):
+        return []
+    out, cur, code = [], None, None
+    for line in open(p, encoding="utf-8").read().splitlines():
+        m = re.match(r"## (#\d+) · (.+?)(?: \((.+)\))?$", line)
+        if m:
+            cur = {"num": m.group(1), "title": m.group(2), "when": m.group(3) or "", "blocks": []}; out.append(cur); continue
+        if cur is None or line.startswith("---"):
+            continue
+        if line.startswith("```"):
+            if code is None:
+                code = []
+            else:
+                cur["blocks"].append({"k": "code", "t": "\n".join(code)}); code = None
+            continue
+        if code is not None:
+            code.append(line); continue
+        if not line.strip():
+            continue
+        if re.match(r"\*\*.+\*\*$", line.strip()):
+            cur["blocks"].append({"k": "h", "t": line.strip().strip("*")}); continue
+        cur["blocks"].append({"k": "li" if line.lstrip().startswith("- ") else "p", "t": re.sub(r"\*\*|`", "", line.lstrip("- ").strip())})
+    return out
 _REG = yaml.safe_load(open("projects/registry.yml")) or {}
 _REG = _REG.get("projects", []) if isinstance(_REG, dict) else _REG
 TITLES = {p["id"]: p.get("title", p["id"]) for p in _REG}
@@ -101,6 +131,7 @@ def build(out):
                 "key": feed_key(it), "type": "feed", "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "status": st, "link": link,
+                "full": [f"{FILA}/{it['project']}/{quote(x)}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
                 "note": errs.get(pkey, "")})
     for f in sorted(glob.glob("queue/social-week-*.yml")):
         for it in yaml.safe_load(open(f, encoding="utf-8")) or []:
@@ -112,7 +143,8 @@ def build(out):
             days.setdefault(it["date"], []).append({
                 "key": social_key(it), "type": it["type"], "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
-                "thumb": th, "status": st, "link": link, "note": errs.get(pkey, "")})
+                "thumb": th, "status": st, "link": link, "note": errs.get(pkey, ""), "caption_pt": it.get("caption_pt", ""),
+                "full": [f"{FILA}/{it['project']}/{it['type']}/{quote(it['file'])}"]})
     cal = [{"date": d, "items": sorted(v, key=lambda x: x["time"])} for d, v in sorted(days.items())]
 
     now = datetime.datetime.now(TZ)
@@ -186,7 +218,7 @@ def build(out):
     gitlog = subprocess.run(["git", "log", "-12", "--date=format-local:%d/%m %H:%M", "--format=%ad  %s"], capture_output=True, text=True,
                             env={**os.environ, "TZ": "Europe/Lisbon"}).stdout.strip().splitlines()
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "projects": projects, "links": links,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}
     with open(os.path.join(out, "store", "data.json.php"), "w", encoding="utf-8") as fh:
         fh.write("<?php exit; ?>\n" + json.dumps(data, ensure_ascii=False))
