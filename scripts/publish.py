@@ -6,7 +6,7 @@ usage: python scripts/publish.py run|check
 State is kept in queue/published.json. Images are served from https://www.boundvisuals.com/bv-fila/<project>/<file>.
 """
 import glob, json, os, sys, time, urllib.parse, urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 import yaml
 
@@ -141,7 +141,14 @@ def main(mode):
         items += yaml.safe_load(open(f)) or []
     now = datetime.now(TZ)
     log = []
+    cool = state.get("_cooldown_until")
+    if mode == "run" and cool and now < datetime.fromisoformat(cool):
+        print(f"cooling down until {cool} after an Instagram error: no API calls this run")
+        return
+    halt = False
     for n, it in enumerate(items):
+        if halt:
+            break
         key = f"{it['date']}_{it['project']}"
         when = datetime.fromisoformat(f"{it['date']}T{it['time']}").replace(tzinfo=TZ)
         if mode == "check":
@@ -155,6 +162,10 @@ def main(mode):
                 log.append(f"ERR {key}: {e}")
             continue
         if key in state or not it.get("approved") or when > now:
+            continue
+        if (now - when).total_seconds() > 18 * 3600:       # too late: never post stale feed items in a burst
+            state[key] = {"at": now.isoformat(), "skipped": "missed window"}
+            log.append(f"SKIPPED {key}: missed window (>18h late)")
             continue
         rec = {"at": now.isoformat()}
         try:
@@ -173,9 +184,12 @@ def main(mode):
                 rec["fb"] = f"ERR {e}"
             state[key] = rec
             log.append(f"PUBLISHED {key}: {rec}")
+            break                                            # one feed post per run
         except Exception as e:
             log.append(f"ERR {key}: {e}")
-    if mode == "run":
+            halt = True
+            state["_cooldown_until"] = (now + timedelta(hours=3)).isoformat()
+    if mode == "run" and not halt:
         for n, it in enumerate(social_items()):
             key = f"{it['date']}_{it['time']}_{it['type']}_{it['file']}"
             when = datetime.fromisoformat(f"{it['date']}T{it['time']}").replace(tzinfo=TZ)
@@ -191,6 +205,9 @@ def main(mode):
                 log.append(f"PUBLISHED {key}: {rec}")
             except Exception as e:
                 log.append(f"ERR {key}: {e}")
+                state["_cooldown_until"] = (now + timedelta(hours=3)).isoformat()
+                json.dump(state, open(STATE_F, "w"), indent=1)
+                break
             json.dump(state, open(STATE_F, "w"), indent=1)
     json.dump(state, open(STATE_F, "w"), indent=1)
     os.makedirs("reports/publish", exist_ok=True)
