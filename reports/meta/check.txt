@@ -1,6 +1,6 @@
 token set: yes
 --- me
-{"name":"bv-robot","id":"122102499099530006"}
+{"id":"122102499099530006","name":"bv-robot"}
 --- pages
 102995032197827 Bound Visuals {'id': '17841450386900546', 'username': 'vitorhugo_boundvisuals'}
 
@@ -11,16 +11,19 @@ valid True expires 0 scopes ['pages_show_list', 'business_management', 'instagra
 --- image url
 200 image/jpeg 0
 --- slide 01: 200 image/jpeg 0
-{"id":"18090823916679564"}
+{"id":"18090824162679564"}
 --- slide 02: 200 image/jpeg 0
-{"id":"18090823934679564"}
+{"id":"18090824186679564"}
 --- slide 03: 200 image/jpeg 0
-{"id":"18090823955679564"}
+{"id":"18090824207679564"}
 --- slide 04-full: 200 image/jpeg 0
-{"id":"18090823973679564"}
+{"id":"18090824225679564"}
 --- parent carousel, short caption
-children 18090823994679564,18090824012679564,18090824030679564,18090824048679564
+children 18090824246679564,18090824267679564,18090824288679564,18090824321679564
+caption test (after wait)
 {"id":"0"}
-{"id":"18090824072679564"}
+caption real-ish
+{"id":"18090824366679564"}
+{"id":"18090824369679564"}
 --- one container (full response)
-{"id":"18090824075679564"}
+{"id":"18090824372679564"}
