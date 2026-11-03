@@ -34,7 +34,7 @@ jobs:
                   if it.get("cover"):
                       shutil.copy(f"reports/{it['project']}/{it['type']}/{it['cover']}", d)
           PY
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --only-newer fila /public_html/bv-fila; bye" "$H"
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --only-missing fila /public_html/bv-fila; bye" "$H"
       - name: Publish
         env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
         run: python3 scripts/publish.py "${{ inputs.mode || 'run' }}"

@@ -1,0 +1,100 @@
+# Every open item agreed with Vítor (source for the Painel "Tarefas" tab).
+# owner: vitor | claude | parked. Ticks made in the Painel are stored on the server (store/ticks.json.php).
+- id: v-ig-check
+  owner: vitor
+  title: Ver o estado da conta no Instagram
+  detail: "Perfil → ☰ → Estado da conta. Se houver 'Ação bloqueada', tocar em 'Informa-nos se achas que cometemos um erro'. (Feito 3 nov: tudo verde.)"
+  done: true
+- id: v-approve-w2-4
+  owner: vitor
+  title: Aprovar semanas 2, 3 e 4 (posts, stories, reels)
+  detail: "Separador Calendário → 'Aprovar tudo' ou dia a dia."
+  due: até dom 8 nov
+- id: v-integrations-order
+  owner: vitor
+  title: Escolher a ordem das integrações Pinterest, YouTube Shorts, LinkedIn
+  detail: "Sugestão: Pinterest → LinkedIn → YouTube. Depois dou-te os passos clique a clique."
+- id: v-fb-schedule
+  owner: vitor
+  title: "Dizer sim/não: agendar o Facebook pela API e usar o Business Suite como plano B do Instagram"
+- id: v-mega-links
+  owner: vitor
+  title: Enviar links MEGA dos projetos em falta
+  detail: "School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte."
+- id: v-site-texts
+  owner: vitor
+  title: Colar no site os textos em 1.ª pessoa
+- id: v-plugins
+  owner: vitor
+  title: Apagar 8 plugins antigos no wp-admin
+  detail: "WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer."
+  due: sex 6 nov 10:00
+- id: v-ds-001
+  owner: vitor
+  title: "Daily Study #001 · Janelas: a luz de uma tarde"
+  detail: "Briefing em docs/daily-study-briefings.md. Guardar em Daily Study - 2026 / #001 - Janelas."
+  due: qui 5 nov
+- id: v-ds-002
+  owner: vitor
+  title: "Daily Study #002 · Escada escultural"
+  due: sáb 7 nov
+- id: v-ds-003
+  owner: vitor
+  title: "Daily Study #003 · Uma divisão, 3 materiais"
+  due: ter 10 nov
+- id: v-manual-kit
+  owner: vitor
+  title: Publicar o kit manual dos 3 projetos (site, Behance, CGArchitect, Chaos CG Connect, Indústria Criativa)
+  detail: "Textos em docs/kit-lancamento-3-projetos.md."
+- id: c-ig-day1
+  owner: claude
+  title: Publicar o post de 3 nov (Duas Igrejas) assim que o Instagram aceitar
+  detail: "Bloqueio temporário da Meta às legendas via API. Robô tenta sozinho com pausas de 3 h."
+- id: c-painel
+  owner: claude
+  title: Painel v1 (este) a funcionar e atualizado pelos robôs
+- id: c-integrations
+  owner: claude
+  title: Ligar Pinterest, YouTube Shorts e LinkedIn (com passos clique a clique)
+- id: c-reminders
+  owner: claude
+  title: "Lembretes no telemóvel: domingo (semana a aprovar), seg/qua/sex (briefing do Daily Study), fila < 7 dias"
+- id: c-more-content
+  owner: claude
+  title: Mais stories e reels para a semana 4 em diante (precisa de novos projetos/Daily Study)
+- id: c-ds-next
+  owner: claude
+  title: "Briefings Daily Study #004 em diante"
+- id: c-dossier
+  owner: claude
+  title: Atualizar dossier e CLAUDE.md (bloqueio, semanas 2–4, painel)
+- id: c-highlights
+  owner: claude
+  title: Capas dos destaques do Instagram
+- id: c-brand-docs
+  owner: claude
+  title: Reescrever documentos de marca, portfólio e CV em 1.ª pessoa
+- id: c-portfolio-auto
+  owner: claude
+  title: Portfólio vivo (PDF 3D/AI/All atualizado sozinho a cada projeto publicado)
+- id: c-linkedin
+  owner: claude
+  title: Textos finais do LinkedIn (título, sobre, experiência)
+- id: p-ai-lab
+  owner: parked
+  title: "AI Build Lab: analisar as 120 ideias e escolher as que servem o portfólio"
+- id: p-viral
+  owner: parked
+  title: Contas temáticas virais (Instagram + TikTok) e receitas automáticas
+- id: p-tiktok
+  owner: parked
+  title: TikTok da conta principal
+- id: p-teaching
+  owner: parked
+  title: Oferta de ensino pago
+- id: p-strategy
+  owner: parked
+  title: Estratégia Pinterest, Facebook, Indústria Criativa
+- id: p-site-theme
+  owner: parked
+  title: Tema novo do site (parado; o site fica como está)

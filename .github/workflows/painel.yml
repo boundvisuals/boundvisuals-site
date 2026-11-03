@@ -1,0 +1,43 @@
+name: painel
+# Keeps https://www.boundvisuals.com/painel/ up to date (no Claude credits):
+# reads approvals/ticks made in the panel → applies approvals to queue/*.yml → rebuilds data + thumbs → uploads.
+on:
+  push:
+    branches: [main]
+    paths: ["queue/**", "reports/**", "docs/tasks.yml", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
+  schedule: [{ cron: "*/10 * * * *" }]
+  workflow_run: { workflows: ["publish"], types: [completed] }
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: painel, cancel-in-progress: false }
+jobs:
+  painel:
+    runs-on: ubuntu-24.04
+    env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 20 }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow
+      - name: Read approvals made in the panel
+        run: |
+          mkdir -p in
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/approvals.json.php -o approvals.json.php; bye" "$H" 2>/dev/null || true
+          if [ -f in/approvals.json.php ]; then
+            n=$(python3 scripts/build_painel.py apply in/approvals.json.php)
+            echo "applied $n approvals"
+            if [ "$n" != "0" ]; then
+              git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+              git add queue && git commit -qm "Approved in the panel ($n)"
+              for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+            fi
+          fi
+      - name: Build panel
+        run: |
+          mkdir -p out
+          cp painel/app.html painel/api.php painel/index.php painel/config.php painel/manifest.webmanifest painel/sw.js painel/icon.svg painel/icon-192.png painel/icon-512.png out/
+          printf 'User-agent: *\nDisallow: /\n' > out/robots.txt
+          python3 scripts/build_painel.py build out
+      - name: Upload
+        run: |
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/store; mirror -R --only-missing out/thumbs /public_html/painel/thumbs; put -O /public_html/painel/store out/store/data.json.php; mput -O /public_html/painel out/app.html out/api.php out/index.php out/config.php out/manifest.webmanifest out/sw.js out/icon.svg out/icon-192.png out/icon-512.png out/robots.txt; bye" "$H"
