@@ -48,9 +48,11 @@ def hashtags(n):
 def new_container(**params):
     """Create a media container. Meta answers id "0" (HTTP 200) when it silently throttles
     container creation (seen after ~20 test containers in an hour): fail loudly instead."""
-    cid = api("POST", f"{IG}/media", **params).get("id")
+    resp = api("POST", f"{IG}/media", **params)
+    cid = resp.get("id")
     if not cid or str(cid) == "0":
-        raise RuntimeError("Meta throttled container creation (id 0): wait ~1 hour and retry; check mode creates many containers, use CHECK_LIMIT")
+        what = params.get("media_type") or ("carousel item" if params.get("is_carousel_item") else "single")
+        raise RuntimeError(f"Meta returned container id 0 for {what}: full response {json.dumps(resp)[:300]}; params {[k for k in params if k != 'access_token']}")
     return cid
 
 
