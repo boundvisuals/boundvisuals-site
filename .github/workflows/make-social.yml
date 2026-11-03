@@ -32,4 +32,9 @@ jobs:
         if: always()
         run: |
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
-          git add reports && git commit -qm "Stories + reel: ${{ inputs.project_id }}" && (git pull --rebase -q && git push) || echo "nothing to commit"
+          git add reports && git commit -qm "Stories + reel: ${{ inputs.project_id }}"
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase -q && git push && exit 0
+            echo "push attempt $i failed, retrying"; sleep $((RANDOM % 20 + 10))
+          done
+          echo "PUSH FAILED"; exit 1
