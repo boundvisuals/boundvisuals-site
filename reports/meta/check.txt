@@ -11,19 +11,20 @@ valid True expires 0 scopes ['pages_show_list', 'business_management', 'instagra
 --- image url
 200 image/jpeg 0
 --- slide 01: 200 image/jpeg 0
-{"id":"18090824162679564"}
+{"id":"18090825734679564"}
 --- slide 02: 200 image/jpeg 0
-{"id":"18090824186679564"}
+{"id":"18090825755679564"}
 --- slide 03: 200 image/jpeg 0
-{"id":"18090824207679564"}
+{"id":"18090825773679564"}
 --- slide 04-full: 200 image/jpeg 0
-{"id":"18090824225679564"}
---- parent carousel, short caption
-children 18090824246679564,18090824267679564,18090824288679564,18090824321679564
-caption test (after wait)
-{"id":"0"}
-caption real-ish
-{"id":"18090824366679564"}
-{"id":"18090824369679564"}
---- one container (full response)
-{"id":"18090824372679564"}
+{"id":"18090825791679564"}
+--- carousel status test
+children 18090825812679564,18090825839679564,18090825863679564,18090825893679564
+child 18090825812679564: {"id":"18090825812679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090825839679564: {"id":"18090825839679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090825863679564: {"id":"18090825863679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+child 18090825893679564: {"id":"18090825893679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+parent nocaption: {"id":"18090825995679564"}
+parent caption: {"id":"18090826001679564"}
+status 18090825995679564: {"id":"18090825995679564","status":"Finished: Media has been uploaded and it is ready to be published.","status_code":"FINISHED"}
+status 18090826001679564: {"id":"18090826001679564","status":"Error: Media upload has failed with error code 2207032","status_code":"ERROR"}
