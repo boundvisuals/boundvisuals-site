@@ -1,2 +1,2 @@
-2026-11-03T21:07:39.982954+00:00
-ERR 2026-11-03_vivendas-duas-igrejas: container 18090825083679564 ERROR
+2026-11-03T21:16:59.369667+00:00
+ERR 2026-11-03_vivendas-duas-igrejas: container 18090825584679564 ERROR: {"id": "18090825584679564", "status": "Error: Media upload has failed with error code 2207032", "status_code": "ERROR"}
