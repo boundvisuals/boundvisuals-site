@@ -61,26 +61,36 @@ def new_container(**params):
 
 def wait_ready(cid, tries=30):
     for _ in range(tries):
-        s = api("GET", cid, fields="status_code").get("status_code")
+        r = api("GET", cid, fields="status_code,status")
+        s = r.get("status_code")
         if s == "FINISHED":
             return
         if s == "ERROR":
-            raise RuntimeError(f"container {cid} ERROR")
+            raise RuntimeError(f"container {cid} ERROR: {json.dumps(r)[:300]}")
         time.sleep(5)
     raise RuntimeError(f"container {cid} not ready")
 
 
 def ig_container(item):
     urls = [f"{BASE}/{item['project']}/{urllib.parse.quote(s)}" for s in item["slides"]]
-    if len(urls) == 1:
-        c = new_container(image_url=urls[0], caption=caption(item))
-    else:
-        kids = [new_container(image_url=u, is_carousel_item="true") for u in urls]
-        for k in kids:
-            wait_ready(k)
-        c = new_container(media_type="CAROUSEL", children=",".join(kids), caption=caption(item))
-    wait_ready(c)
-    return c, urls
+    last = None
+    for attempt in range(3):
+        try:
+            if len(urls) == 1:
+                c = new_container(image_url=urls[0], caption=caption(item))
+            else:
+                kids = [new_container(image_url=u, is_carousel_item="true") for u in urls]
+                for k in kids:
+                    wait_ready(k)
+                time.sleep(5)
+                c = new_container(media_type="CAROUSEL", children=",".join(kids), caption=caption(item))
+            wait_ready(c)
+            return c, urls
+        except RuntimeError as e:
+            last = e
+            print("container attempt", attempt + 1, "failed:", e)
+            time.sleep(30)
+    raise last
 
 
 def fb_post(item, urls):
