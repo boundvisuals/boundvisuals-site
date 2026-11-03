@@ -53,6 +53,10 @@
 - id: c-painel
   owner: claude
   title: Painel v1 (este) a funcionar e atualizado pelos robôs
+  done: true
+- id: c-painel-v2
+  owner: claude
+  title: "Painel v2: separador Portfólio (PDF sempre atualizado), Oportunidades (vagas/clientes), números das redes, notificações no telemóvel"
 - id: c-integrations
   owner: claude
   title: Ligar Pinterest, YouTube Shorts e LinkedIn (com passos clique a clique)
