@@ -163,21 +163,26 @@ def main():
             frame_story(img, title, box=b).save(out_dir / "story" / f"{stem}-s{k:02d}.jpg", quality=95, subsampling=0)
         per_image.append((stem, img, bx))
         print(f"stories: {stem} -> {1 + len(bx)}")
-    # reel: round-robin over images (crop 1 of each, then crop 2 ...), up to 4 shots, project's best image first
+    # reels: round-robin over images (crop 1 of each, then crop 2 ...), 4 shots per reel, project's best image first.
+    # Reel 1 keeps the legacy name <pid>-reel.mp4; further reels are <pid>-reel-02.mp4 ... (max 3 per project).
     order = [k for k in crops if k in {s for s, _, _ in per_image}]
     per_image.sort(key=lambda x: order.index(x[0]))
-    shots = []
+    pool = []
     k = 0
-    while len(shots) < 4 and any(k < len(bx) for _, _, bx in per_image):
+    while any(k < len(bx) for _, _, bx in per_image):
         for _, img, bx in per_image:
-            if k < len(bx) and len(shots) < 4:
-                shots.append((img, bx[k]))
+            if k < len(bx):
+                pool.append((img, bx[k]))
         k += 1
-    if shots:
+    import shutil
+    n_reels = min(3, len(pool) // 4)
+    for r in range(max(n_reels, 1 if pool else 0)):
+        shots = pool[r * 4:(r + 1) * 4] or pool[:4]
         tmp = out_dir / "_tmp"; tmp.mkdir(exist_ok=True)
-        make_reel(shots, title, out_dir / "reel" / f"{pid}-reel.mp4", out_dir / "reel" / f"{pid}-reel-cover.jpg", tmp)
-        import shutil; shutil.rmtree(tmp)
-        print(f"reel: {len(shots)} shots")
+        name = f"{pid}-reel" if r == 0 else f"{pid}-reel-{r + 1:02d}"
+        make_reel(shots, title, out_dir / "reel" / f"{name}.mp4", out_dir / "reel" / f"{name}-cover.jpg", tmp)
+        shutil.rmtree(tmp)
+        print(f"reel {r + 1}: {len(shots)} shots")
 
 
 if __name__ == "__main__":
