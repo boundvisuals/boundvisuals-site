@@ -1,0 +1,38 @@
+name: publish
+# Every 30 min: upload queued images to the server, then publish approved posts that are due.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode: { description: "run | check (check = private test, publishes nothing)", default: run }
+permissions:
+  contents: write
+concurrency: { group: publish, cancel-in-progress: false }
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml
+      - name: Upload queued images to /bv-fila
+        env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
+        run: |
+          python3 - <<'PY'
+          import yaml, glob, os, shutil
+          os.makedirs("fila", exist_ok=True)
+          open("fila/.htaccess","w").write("Options -Indexes\n<IfModule mod_headers.c>\nHeader set X-Robots-Tag \"noindex, nofollow\"\n</IfModule>\n")
+          for f in glob.glob("queue/week-*.yml"):
+              for it in yaml.safe_load(open(f)) or []:
+                  d = f"fila/{it['project']}"; os.makedirs(d, exist_ok=True)
+                  for s in it["slides"]:
+                      shutil.copy(f"reports/{it['project']}/ig/{s}", d)
+          PY
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --only-newer fila /public_html/bv-fila; bye" "$H"
+      - name: Publish
+        env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
+        run: python3 scripts/publish.py "${{ inputs.mode || 'run' }}"
+      - if: always()
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add queue/published.json reports/publish 2>/dev/null; git commit -qm "Publish log" && (git pull --rebase -q && git push) || true

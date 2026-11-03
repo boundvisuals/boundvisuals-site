@@ -1,0 +1,51 @@
+# Week 1 — feed posts (Instagram carousel + Facebook mirror). Times Europe/Lisbon.
+# approved: false until Vítor says so. Slides = files in reports/<project>/ig (weak crops removed by Claude).
+- date: 2026-11-03
+  time: "19:00"
+  project: vivendas-duas-igrejas
+  slides: [root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg, root_1_-_Front___webp_+_Seedvr2_bravo-02.jpg, root_1_-_Front___webp_+_Seedvr2_bravo-03.jpg, root_1_-_Front___webp_+_Seedvr2_bravo-04-full.jpg]
+  caption_en: "Late light, open carport, a garden that grows over the pergola. Row houses in Duas Igrejas, Penafiel."
+  caption_pt: "Luz de fim de tarde, carport aberto e um jardim que sobe pela pérgola. Moradias em banda em Duas Igrejas, Penafiel."
+  approved: false
+- date: 2026-11-04
+  time: "19:00"
+  project: vivendas-cete
+  slides: [5-exterior1_5-exterior1-01.jpg, 5-exterior1_5-exterior1-02.jpg, 5-exterior1_5-exterior1-03.jpg, 5-exterior1_5-exterior1-04-full.jpg]
+  caption_en: "Cobblestone, hedges and a quiet morning walk home. Vivendas Cête, Penafiel."
+  caption_pt: "Calçada, sebes e uma caminhada tranquila de manhã. Vivendas Cête, Penafiel."
+  approved: false
+- date: 2026-11-05
+  time: "19:00"
+  project: gold-village
+  slides: [2_-_exterior2_2-exterior2-01.jpg, 2_-_exterior2_2-exterior2-02.jpg, 2_-_exterior2_2-exterior2-03.jpg, 2_-_exterior2_2-exterior2-04-full.jpg]
+  caption_en: "Timber, dark cladding and balconies that become gardens. Gold Village."
+  caption_pt: "Madeira, revestimento escuro e varandas que se tornam jardins. Gold Village."
+  approved: false
+- date: 2026-11-06
+  time: "19:00"
+  project: vivendas-duas-igrejas
+  slides: [root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-04-full.jpg]
+  caption_en: "The back garden on a Sunday afternoon. This is what the plans were really about."
+  caption_pt: "O jardim das traseiras numa tarde de domingo. Era isto que as plantas queriam dizer."
+  approved: false
+- date: 2026-11-07
+  time: "19:00"
+  project: vivendas-cete
+  slides: [1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-04-full.jpg]
+  caption_en: "Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête."
+  caption_pt: "Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête."
+  approved: false
+- date: 2026-11-08
+  time: "19:00"
+  project: gold-village
+  slides: [10_-_interior3_10-interior3-01.jpg, 10_-_interior3_10-interior3-02.jpg, 10_-_interior3_10-interior3-03.jpg, 10_-_interior3_10-interior3-04-full.jpg]
+  caption_en: "First light through the curtains. A bedroom designed to slow the morning down. Gold Village."
+  caption_pt: "A primeira luz pelas cortinas. Um quarto pensado para abrandar a manhã. Gold Village."
+  approved: false
+- date: 2026-11-09
+  time: "19:00"
+  project: vivendas-duas-igrejas
+  slides: [root_3-interior1_webp-01.jpg, root_3-interior1_webp-02.jpg, root_3-interior1_webp-03.jpg, root_3-interior1_webp-04-full.jpg]
+  caption_en: "A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas."
+  caption_pt: "Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas."
+  approved: false
