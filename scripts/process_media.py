@@ -7,8 +7,10 @@ usage: process_media.py <input_dir> <output_dir> <project_id> [config/program.ym
               for >8-bit sources). Every file is decoded again and compared
               pixel-by-pixel with the source; any difference aborts the run.
 - web/grid/:  sized versions for the gallery grid (high-quality WebP).
-- ig/:        1080x1350 JPEG per image. Never crops: images that are not
-              4:5 are fitted whole inside a 4:5 frame.
+- ig/:        1080x1350 JPEG per image. Non-4:5 images become a carousel:
+              hand-composed 4:5 crops from config/crops.yml (or, if the image
+              is not listed there, auto crops flagged "auto-unreviewed"),
+              then the whole image on white as the last slide.
 - manifest.json describing everything.
 """
 import json, sys, pathlib, hashlib, shutil
@@ -30,6 +32,28 @@ def load_cfg(path):
         defaults["frame_color"] = c["instagram"]["frame_color"]
         defaults["grid_widths"] = c["web"]["grid_widths"]
     return defaults
+
+
+def load_manual_crops(path="config/crops.yml"):
+    """Hand-composed crops: {stem: [[cx, cy, h], ...]} (fractions of the original)."""
+    if yaml and pathlib.Path(path).exists():
+        return (yaml.safe_load(open(path)) or {}).get("crops", {}) or {}
+    return {}
+
+
+def manual_boxes(rgb, spec):
+    """[cx, cy, h] fractions -> pixel boxes (4:5, clamped inside the image)."""
+    W, H = rgb.size
+    boxes = []
+    for cx, cy, fh in spec:
+        ch = min(fh * H, H)
+        cw = 0.8 * ch
+        if cw > W:
+            cw = W; ch = cw / 0.8
+        x0 = min(max(cx * W - cw / 2, 0), W - cw)
+        y0 = min(max(cy * H - ch / 2, 0), H - ch)
+        boxes.append((round(x0), round(y0), round(x0 + cw), round(y0 + ch)))
+    return boxes
 
 
 def high_bit(img):
@@ -131,7 +155,7 @@ def detail_crops(rgb, n=3, ratio=0.8):
     return [tuple(round(v / k) for v in b) for b in picks]
 
 
-def instagram_post(img, stem, out_dir, size, color, white="#FFFFFF"):
+def instagram_post(img, stem, out_dir, size, color, white="#FFFFFF", manual=None):
     """4:5 source -> single slide. Anything else -> carousel:
     interesting 4:5 detail crops, then the whole image on white as the last slide."""
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -141,7 +165,8 @@ def instagram_post(img, stem, out_dir, size, color, white="#FFFFFF"):
     if abs(rgb.width / rgb.height - W / H) < 0.01:
         return [save(rgb.resize((W, H), Image.LANCZOS), f"{stem}-01.jpg")], "single"
     slides = []
-    for i, (x0, y0, x1, y1) in enumerate(detail_crops(rgb), 1):
+    boxes = manual_boxes(rgb, manual) if manual else detail_crops(rgb)
+    for i, (x0, y0, x1, y1) in enumerate(boxes, 1):
         crop = rgb.crop((x0, y0, x1, y1)).resize((W, H), Image.LANCZOS)
         slides.append(save(crop, f"{stem}-{i:02d}.jpg"))
     fitted = ImageOps.contain(rgb, (W, H), Image.LANCZOS)
@@ -156,12 +181,14 @@ def main():
     cfg = load_cfg(sys.argv[4] if len(sys.argv) > 4 else "config/program.yml")
     pid = str(pid)
     items = []
+    manual_all = load_manual_crops()
     for src in sorted(p for p in src_dir.rglob("*") if p.suffix.lower() in EXTS):
         img = Image.open(src)
         img.load()
         stem = "_".join(src.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
         full = lossless_full(img, stem, out_dir / "web" / "full", src)
-        slides, mode = instagram_post(img, stem, out_dir / "ig", cfg["feed_size"], cfg["frame_color"])
+        manual = manual_all.get(stem)
+        slides, mode = instagram_post(img, stem, out_dir / "ig", cfg["feed_size"], cfg["frame_color"], manual=manual)
         items.append({
             "source": str(src.relative_to(src_dir)),
             "sha1": hashlib.sha1(src.read_bytes()).hexdigest(),
@@ -169,11 +196,11 @@ def main():
             "orientation": "landscape" if img.width > img.height else "portrait" if img.height > img.width else "square",
             "web_full": str(full), "lossless_verified": True,
             "web_grid": grid_versions(img, stem, out_dir / "web" / "grid", cfg["grid_widths"]),
-            "ig_slides": slides, "ig_mode": mode,
+            "ig_slides": slides, "ig_mode": mode, "crops": "manual" if manual else "auto-unreviewed",
             "source_bytes": src.stat().st_size, "full_bytes": full.stat().st_size,
         })
         print(f"ok  {src.name}  {img.size[0]}x{img.size[1]}  ig:{mode}  "
-              f"{src.stat().st_size/1e6:.1f}MB -> {full.stat().st_size/1e6:.1f}MB lossless")
+              f"{src.stat().st_size/1e6:.1f}MB -> {full.stat().st_size/1e6:.1f}MB lossless  crops:{'manual' if manual else 'AUTO (unreviewed)'}")
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "manifest.json").write_text(json.dumps({"project": pid, "items": items}, indent=2))
     print(f"{len(items)} image(s) processed for {pid}")

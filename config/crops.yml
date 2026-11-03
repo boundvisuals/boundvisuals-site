@@ -1,0 +1,33 @@
+# Hand-composed Instagram detail crops (composition-first). Overrides the automatic
+# edge-energy picker in scripts/process_media.py for every image listed here.
+# Key = file stem as used by process_media.py (path parts joined with "_", spaces -> "_").
+# Each crop = [cx, cy, h]: centre of the 4:5 crop as a fraction of the ORIGINAL width/height,
+# and its height as a fraction of the original height (width = 0.8 * height in pixels).
+# Slide order = list order; the whole image on white is always appended as the last slide.
+# Reviewed by eye on the full image, one by one (Claude, 2026-11-03).
+crops:
+  root_1_-_Front___webp_+_Seedvr2_bravo:            # VDI front: corner+pergola | man+car | entrance
+    - [0.505, 0.540, 0.805]
+    - [0.698, 0.594, 0.800]
+    - [0.481, 0.617, 0.515]
+  root_2_-_Back_webp_+_Seedvr2_bravo:               # VDI back: couple+dog | eucalyptus garden
+    - [0.637, 0.545, 0.900]
+    - [0.224, 0.500, 1.000]
+  root_3-interior1_webp:                            # VDI interior: reading+shelf | kitchen+dog | dining pendants
+    - [0.722, 0.516, 0.907]
+    - [0.398, 0.479, 0.866]
+    - [0.147, 0.614, 0.656]
+  5-exterior1_5-exterior1:                          # Cete exterior: Defender+woman | sports car+balconies
+    - [0.278, 0.533, 0.907]
+    - [0.685, 0.541, 0.825]
+  1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT:   # Cete living room
+    - [0.329, 0.518, 0.845]
+    - [0.632, 0.520, 0.898]
+  2_-_exterior2_2-exterior2:                        # Gold Village exterior 2
+    - [0.595, 0.500, 1.000]
+    - [0.694, 0.570, 0.619]
+    - [0.440, 0.510, 0.597]
+  10_-_interior3_10-interior3:                      # Gold Village bedroom
+    - [0.616, 0.522, 0.886]
+    - [0.194, 0.529, 0.866]
+    - [0.416, 0.754, 0.492]

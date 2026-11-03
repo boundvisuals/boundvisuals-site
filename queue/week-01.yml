@@ -1,5 +1,6 @@
 # Week 1 — feed posts (Instagram carousel + Facebook mirror). Times Europe/Lisbon.
-# approved: false until Vítor says so. Slides = files in reports/<project>/ig (weak crops removed by Claude).
+# approved: false until Vítor says so. Slides = files in reports/<project>/ig.
+# Crops redone by hand 2026-11-03 (config/crops.yml), composition-first; Vítor reviews before approving.
 - date: 2026-11-03
   time: "19:00"
   project: vivendas-duas-igrejas
@@ -10,7 +11,7 @@
 - date: 2026-11-04
   time: "19:00"
   project: vivendas-cete
-  slides: [5-exterior1_5-exterior1-01.jpg, 5-exterior1_5-exterior1-02.jpg, 5-exterior1_5-exterior1-03.jpg, 5-exterior1_5-exterior1-04-full.jpg]
+  slides: [5-exterior1_5-exterior1-01.jpg, 5-exterior1_5-exterior1-02.jpg, 5-exterior1_5-exterior1-03-full.jpg]
   caption_en: "Cobblestone, hedges and a quiet morning walk home. Vivendas Cête, Penafiel."
   caption_pt: "Calçada, sebes e uma caminhada tranquila de manhã. Vivendas Cête, Penafiel."
   approved: false
@@ -24,14 +25,14 @@
 - date: 2026-11-06
   time: "19:00"
   project: vivendas-duas-igrejas
-  slides: [root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-04-full.jpg]
+  slides: [root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg, root_2_-_Back_webp_+_Seedvr2_bravo-03-full.jpg]
   caption_en: "The back garden on a Sunday afternoon. This is what the plans were really about."
   caption_pt: "O jardim das traseiras numa tarde de domingo. Era isto que as plantas queriam dizer."
   approved: false
 - date: 2026-11-07
   time: "19:00"
   project: vivendas-cete
-  slides: [1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-04-full.jpg]
+  slides: [1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg, 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg]
   caption_en: "Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête."
   caption_pt: "Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête."
   approved: false
