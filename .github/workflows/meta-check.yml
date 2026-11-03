@@ -35,7 +35,9 @@ jobs:
               IDS="$IDS,$K"; sleep 3
             done
             IDS=${IDS#,}; echo "children $IDS"
-            curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=test" -d "access_token=$T"; echo
+            sleep 30
+            echo "caption test (after wait)"; curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=test" -d "access_token=$T"; echo
+            echo "caption real-ish"; curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" --data-urlencode "caption=Late light, open carport. Row houses in Duas Igrejas, Penafiel. @boundvisuals" -d "access_token=$T"; echo
             curl -s -X POST "$G/$IG/media" -d media_type=CAROUSEL --data-urlencode "children=$IDS" -d "access_token=$T"; echo
             echo "--- one container (full response)"; curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U" -d is_carousel_item=true -d "access_token=$T"; echo
           } > reports/meta/check.txt 2>&1
