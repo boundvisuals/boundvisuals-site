@@ -22,6 +22,11 @@ jobs:
             echo "--- publishing limit"; curl -s "$G/$IG/content_publishing_limit?fields=quota_usage,config&access_token=$T"; echo
             U="https://www.boundvisuals.com/bv-fila/vivendas-duas-igrejas/root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg"
             echo "--- image url"; curl -sI -o /dev/null -w "%{http_code} %{content_type} %{size_download}\n" "$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1],safe=':/'))" "$U")"
+            for n in 01 02 03 04-full; do
+              U2="https://www.boundvisuals.com/bv-fila/vivendas-duas-igrejas/root_1_-_Front___webp_%2B_Seedvr2_bravo-$n.jpg"
+              echo "--- slide $n: $(curl -sI -o /dev/null -w '%{http_code} %{content_type} %{size_download}' "$U2")"
+              curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U2" -d is_carousel_item=true -d "access_token=$T"; echo
+            done
             echo "--- one container (full response)"; curl -s -X POST "$G/$IG/media" --data-urlencode "image_url=$U" -d is_carousel_item=true -d "access_token=$T"; echo
           } > reports/meta/check.txt 2>&1
           cat reports/meta/check.txt
