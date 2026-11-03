@@ -23,6 +23,7 @@
         "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "manual",
       "source_bytes": 53677895,
       "full_bytes": 27834906
     },
@@ -44,10 +45,10 @@
       "ig_slides": [
         "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg",
         "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg",
-        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-03.jpg",
-        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-04-full.jpg"
+        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-03-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "manual",
       "source_bytes": 59934515,
       "full_bytes": 32237410
     },
@@ -73,6 +74,7 @@
         "out/ig/root_3-interior1_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "manual",
       "source_bytes": 9863870,
       "full_bytes": 9863870
     },
@@ -98,6 +100,7 @@
         "out/ig/root_4_-_exterior_frente_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 11903476,
       "full_bytes": 11903476
     },
@@ -120,6 +123,7 @@
         "out/ig/root_5-interior2_webp-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 10414348,
       "full_bytes": 10414348
     },
@@ -145,6 +149,7 @@
         "out/ig/root_6-interior3_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 7819416,
       "full_bytes": 7819416
     },
@@ -170,6 +175,7 @@
         "out/ig/root_7-interior4_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 6743026,
       "full_bytes": 6743026
     }
