@@ -23,6 +23,7 @@
         "out/ig/10_-_interior3_10-interior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "manual",
       "source_bytes": 54180982,
       "full_bytes": 23595584
     },
@@ -48,6 +49,7 @@
         "out/ig/11_-_interior4_11-interior4-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 49692476,
       "full_bytes": 21709490
     },
@@ -70,6 +72,7 @@
         "out/ig/1_-_exterior1_1-exterior1-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 85362334,
       "full_bytes": 45398494
     },
@@ -95,6 +98,7 @@
         "out/ig/2_-_exterior2_2-exterior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "manual",
       "source_bytes": 51672710,
       "full_bytes": 26449156
     },
@@ -120,6 +124,7 @@
         "out/ig/3_-_exterior3_3_exterior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 54274614,
       "full_bytes": 27639904
     },
@@ -142,6 +147,7 @@
         "out/ig/4_-_exterior4_4-exterior4-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 83901858,
       "full_bytes": 39784236
     },
@@ -164,6 +170,7 @@
         "out/ig/5_-_exterior5_5-exterior5-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 89460039,
       "full_bytes": 45044564
     },
@@ -186,6 +193,7 @@
         "out/ig/6_-_exterior6_6-exterior6-01.jpg"
       ],
       "ig_mode": "single",
+      "crops": "auto-unreviewed",
       "source_bytes": 78394021,
       "full_bytes": 38291566
     },
@@ -211,6 +219,7 @@
         "out/ig/8_-_interior1_8-interior1-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 56131079,
       "full_bytes": 25571170
     },
@@ -236,6 +245,7 @@
         "out/ig/9_-_interior2_9-interior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
       "source_bytes": 55423597,
       "full_bytes": 25337748
     }
