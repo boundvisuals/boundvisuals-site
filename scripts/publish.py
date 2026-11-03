@@ -54,8 +54,8 @@ def new_container(**params):
     return cid
 
 
-def wait_ready(cid):
-    for _ in range(30):
+def wait_ready(cid, tries=30):
+    for _ in range(tries):
         s = api("GET", cid, fields="status_code").get("status_code")
         if s == "FINISHED":
             return
@@ -86,6 +86,37 @@ def fb_post(item, urls):
     for i, pid in enumerate(ids):
         params[f"attached_media[{i}]"] = json.dumps({"media_fbid": pid})
     return api("POST", f"{PAGE}/feed", token=ptok, **params)["id"]
+
+
+def social_items():
+    items = []
+    for f in sorted(glob.glob("queue/social-week-*.yml")):
+        items += yaml.safe_load(open(f)) or []
+    return items
+
+
+def publish_social(it, n):
+    """Story (image, no caption) or reel (mp4 + cover + caption). Files are uploaded to /bv-fila/<project>/<type>/ by the workflow."""
+    typ, proj, fn = it["type"], it["project"], it["file"]
+    url = f"{BASE}/{proj}/{typ}/{urllib.parse.quote(fn)}"
+    rec = {}
+    if typ == "story":
+        c = new_container(image_url=url, media_type="STORIES")
+        wait_ready(c)
+    else:
+        cover = f"{BASE}/{proj}/{typ}/{urllib.parse.quote(it['cover'])}"
+        c = new_container(media_type="REELS", video_url=url, cover_url=cover, caption=caption(it), share_to_feed="true")
+        wait_ready(c, tries=90)
+    mid = api("POST", f"{IG}/media_publish", creation_id=c)["id"]
+    rec["ig"] = mid
+    if typ == "reel":
+        rec["ig_link"] = api("GET", mid, fields="permalink").get("permalink")
+        try:
+            api("POST", f"{mid}/comments", message=hashtags(n))
+            rec["hashtags"] = "ok"
+        except Exception as e:
+            rec["hashtags"] = f"ERR {e}"
+    return rec
 
 
 def main(mode):
@@ -129,6 +160,23 @@ def main(mode):
             log.append(f"PUBLISHED {key}: {rec}")
         except Exception as e:
             log.append(f"ERR {key}: {e}")
+    if mode == "run":
+        for n, it in enumerate(social_items()):
+            key = f"{it['date']}_{it['time']}_{it['type']}_{it['file']}"
+            when = datetime.fromisoformat(f"{it['date']}T{it['time']}").replace(tzinfo=TZ)
+            if key in state or not it.get("approved") or when > now:
+                continue
+            if (now - when).total_seconds() > 6 * 3600:      # missed by more than 6 h: skip, never post stale stories
+                state[key] = {"at": now.isoformat(), "skipped": "missed window"}
+                log.append(f"SKIPPED {key}: missed window")
+                continue
+            try:
+                rec = publish_social(it, n)
+                rec["at"] = now.isoformat(); state[key] = rec
+                log.append(f"PUBLISHED {key}: {rec}")
+            except Exception as e:
+                log.append(f"ERR {key}: {e}")
+            json.dump(state, open(STATE_F, "w"), indent=1)
     json.dump(state, open(STATE_F, "w"), indent=1)
     os.makedirs("reports/publish", exist_ok=True)
     with open(f"reports/publish/{mode}.txt", "w") as fh:
