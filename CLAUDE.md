@@ -58,6 +58,11 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Ad-hoc posts: Vítor can post himself anytime (queue unaffected) or ask Claude to publish now.
 - Plan: queue builder (manifests → rotation A,B,C) → approval page on his server (/public_html/bv-fila, token, noindex; images there also serve as public URLs for the APIs) → publisher robot (GitHub Actions hourly cron, Meta Graph API via System User token, secret META_TOKEN).
 
+## Publishing system (BUILT 2026-11-03)
+- queue/week-NN.yml (date, time Lisbon, project, slides from reports/<p>/ig, caption_en/pt, approved) → .github/workflows/publish.yml (cron */30 + dispatch mode run|check) uploads used slides to /public_html/bv-fila/<project>/ (noindex) and scripts/publish.py publishes approved+due items: IG carousel + hashtags as 1st comment + FB page multi-photo. State: queue/published.json; logs reports/publish/.
+- Week 1 (3–9 Nov, 19:00 daily, 7 carousels VDI/Cête/GV, weak crops removed) passed CHECK (all accepted by IG). Preview for approval: https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1. Approve = set approved: true in queue/week-01.yml.
+- Not yet: stories, reels, server approval page, weekly push reminders, Pinterest/YouTube/LinkedIn.
+
 ## Captions (decided 2026-11-02)
 - Always bilingual: EN first (hook in first ~125 chars), then PT below a separator. 14 mentions after the text. Hashtags in first comment.
 
