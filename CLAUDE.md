@@ -5,6 +5,9 @@ Master plan (Claude Doc): https://claude.ai/artifact/CiMZbhepRpkE2qYCfgMwCw
 LIVING DOSSIER (Claude Doc, PT): https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k (doc id ce0edf0a-9970-4cf6-8e2b-82f7f036437d, body node a618e0cb-54b3). Vítor's rule: update it after EVERY decision/progress (Agora, Tarefas, Registo de decisões, Projetos…) and remind him of his tasks ahead of time. Reminder set: 2026-11-06 10:00 delete plugins. REMINDER CHANNEL (decided 2026-11-02): Claude app push notifications via scheduled tasks (Vítor has the app). Test push 2026-11-02 22:23 RECEIVED by Vítor ✅ (one-off trigger, self-disabled). Planned recurring tasks once approval page exists: Sunday evening (week to approve + his tasks), Mon/Wed/Fri evening (daily-study brief for next day), launch −2 days, queue < 7 days warning.
 Talk to Vítor in European Portuguese. Generation prompts in English.
 RULE (Vítor, 2026-11-02): explain every step he must do in tiny, click-by-click detail ("como se eu fosse muito burro"): exact URL, exact button names, what he should see.
+RULE (Vítor, 2026-11-03): DO every Claude-side task proactively without waiting to be told; report when ready.
+RULE (Vítor, 2026-11-03): crops were bad — review every crop at FULL size, composition-first (no meaningless fragments); he may supply his own crops.
+CREDITS: chat got expensive; new chats start from Project doc claude/COMECA-AQUI.md + this file.
 RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY reply with what is still open/unanswered from before ("Ficou por responder/fazer"), repeating the open questions in full.
 
 ## Identity (decided)
@@ -60,6 +63,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 
 ## Publishing system (BUILT 2026-11-03)
 - queue/week-NN.yml (date, time Lisbon, project, slides from reports/<p>/ig, caption_en/pt, approved) → .github/workflows/publish.yml (cron */30 + dispatch mode run|check) uploads used slides to /public_html/bv-fila/<project>/ (noindex) and scripts/publish.py publishes approved+due items: IG carousel + hashtags as 1st comment + FB page multi-photo. State: queue/published.json; logs reports/publish/.
+- Week 1 ON HOLD: Vítor said crops are bad (2026-11-03) → redo crops by hand before approval.
 - Week 1 (3–9 Nov, 19:00 daily, 7 carousels VDI/Cête/GV, weak crops removed) passed CHECK (all accepted by IG). Preview for approval: https://claude.ai/artifact/BA2KNFmzt1a2MgLyHzJqh1. Approve = set approved: true in queue/week-01.yml.
 - Not yet: stories, reels, server approval page, weekly push reminders, Pinterest/YouTube/LinkedIn.
 
@@ -114,7 +118,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Speed cleanup step 2: VERIFIED on staging 2026-11-02 (GA now 1×, Info icons intact) → DONE on live too: GA Google Analytics (same G-9CWHCJLG72 tag loaded twice → visits counted double), Simple Social Icons (Info icons come from Elementor), Health Check. KEEP: 360 panorama (1 widget), Qi addons (contact form widget), page-links-to, post-featured-video, CF7, cookie box.
 - Findings: Stockholm itself loads 44 files/page; server nginx, no page cache; HTML takes ~1.6–1.8 s to generate. WP Super Cache: Vítor DECLINED (2026-11-02) — do not propose again unless he asks.
 - MEGA links per project (sent: Vivendas Cête, Gold Village, Apartamentos Gondomar 2; in progress: School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte).
-- Meta app "Bound Visuals Publisher" CREATED 2026-11-02 (use cases: Instagram content + Page). CONNECTED 2026-11-02: META_TOKEN valid, never expires, scopes OK. Page 102995032197827 (Bound Visuals) ↔ IG 17841450386900546 (@vitorhugo_boundvisuals) — in config/program.yml. Then: Pinterest, Pinterest, YouTube, LinkedIn. TOP PRIORITY for Vítor (2026-11-02: "calendarizar e começar a bombar").
+- Meta app "Bound Visuals Publisher" CREATED 2026-11-02 (use cases: Instagram content + Page). CONNECTED 2026-11-02: META_TOKEN valid, never expires, scopes OK. Page 102995032197827 (Bound Visuals) ↔ IG 17841450386900546 (@vitorhugo_boundvisuals) — in config/program.yml. Pinterest/YouTube/LinkedIn integrations: Vítor wants them NOW (2026-11-03). Launch kit texts for VDI/Cête/GV in docs/kit-lancamento-3-projetos.md; Vítor publishing manual platforms on 2026-11-03. TOP PRIORITY for Vítor (2026-11-02: "calendarizar e começar a bombar").
 - Rewrite all brand docs, portfolio documents and CV (1st person, new positioning).
 - Instagram profile: done by Vítor (2026-11-02); highlight covers still to design.
 
