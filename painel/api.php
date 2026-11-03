@@ -18,7 +18,7 @@ if (!authed()) { http_response_code(401); echo '{"error":"no access"}'; exit; }
 
 $store = __DIR__ . '/store';
 if (!is_dir($store)) mkdir($store, 0755, true);
-function read_store($f) {           // files start with "<?php exit; ?>\n" so they are never served directly
+function read_store($f) {           // store files begin with a PHP exit line so they are never served directly
   if (!file_exists($f)) return null;
   $raw = file_get_contents($f);
   $nl = strpos($raw, "\n");
