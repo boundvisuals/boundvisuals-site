@@ -151,7 +151,7 @@ def load(src_dir, crops):
 def style_a(imgs, crops, title, out, tmp):
     SH, XF = 12.0, 0.6                       # Vítor: slower — 12 s per image                      # long holds, short dissolve (Vítor: images must stay longer)
     shots = []
-    for k, (stem, im) in enumerate(imgs[:4]):
+    for k, (stem, im) in enumerate(imgs[:4]):   # caller passes the image subset for each reel
         iw, ih = im.size; c = crops[stem][0]
         if iw / ih > 0.75:                 # every landscape image: slow pan across the WHOLE width (edge to edge)
             a = box916(iw, ih, 0.0, 0.5, 1.0); b = box916(iw, ih, 1.0, 0.5, 1.0)
@@ -254,6 +254,17 @@ def main():
         raise SystemExit("no images with reviewed crops")
     out_dir.mkdir(parents=True, exist_ok=True)
     tmp = out_dir / "_tmp"; tmp.mkdir(exist_ok=True)
+    if which == "series":   # house style (A, slow): replaces the project's reels <pid>-reel.mp4, -reel-02, -reel-03 (+ covers)
+        for r in range(3):
+            sub = imgs[r * 4:(r + 1) * 4]
+            if len(sub) < 2:
+                break
+            name = f"{pid}-reel" if r == 0 else f"{pid}-reel-{r + 1:02d}"
+            mp4 = out_dir / f"{name}.mp4"
+            style_a(sub, crops, title, mp4, tmp)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "2.5", "-i", str(mp4), "-frames:v", "1", "-q:v", "2", str(out_dir / f"{name}-cover.jpg")], check=True)
+            print("reel", name, len(sub), "images")
+        import shutil; shutil.rmtree(tmp); return
     if "A" in which:
         style_a(imgs, crops, title, out_dir / f"{pid}-reel-A.mp4", tmp); print("A done")
     if "B" in which:
