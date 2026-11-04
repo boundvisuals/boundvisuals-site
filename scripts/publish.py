@@ -34,8 +34,11 @@ def api(method, path, token=TOKEN, **params):
 
 
 def caption(item):
-    mentions = " ".join("@" + m for m in INS["mentions"])
-    return f"{item['caption_en']}\n—\n{item['caption_pt']}\n\n{mentions}"
+    # Mentions OFF (2026-11-04): 14 @mentions per API post look like spam to Instagram; re-enable with instagram.mentions_in_caption: true
+    text = f"{item['caption_en']}\n—\n{item['caption_pt']}"
+    if INS.get("mentions_in_caption"):
+        text += "\n\n" + " ".join("@" + m for m in INS["mentions"])
+    return text
 
 
 def hashtags(n):
@@ -165,10 +168,11 @@ def main(mode):
             continue
         if key in state or not it.get("approved") or when > now:
             continue
-        if (now - when).total_seconds() > 18 * 3600:       # too late: never post stale feed items in a burst
-            state[key] = {"at": now.isoformat(), "skipped": "missed window"}
-            log.append(f"SKIPPED {key}: missed window (>18h late)")
-            continue
+        last_feed = max([datetime.fromisoformat(v["at"]) for k2, v in state.items()
+                         if isinstance(v, dict) and v.get("ig") and not k2.count("_") > 1] or [datetime(2000, 1, 1, tzinfo=TZ)])
+        if (now - last_feed).total_seconds() < 20 * 3600:  # late items never burst: max one feed post per ~day, schedule slides
+            log.append(f"WAIT {key}: last feed post {last_feed:%d/%m %H:%M}, next allowed 20 h later")
+            break
         rec = {"at": now.isoformat()}
         try:
             c, urls = ig_container(it)
