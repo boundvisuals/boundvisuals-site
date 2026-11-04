@@ -365,6 +365,26 @@ def apply_crops(path):
         print(p)
 
 
+def apply_captions(path):
+    """Caption edits made in the panel → queue files. Prints number of items changed."""
+    ed = read_store(path)
+    n = 0
+    for f in sorted(glob.glob("queue/week-*.yml")) + sorted(glob.glob("queue/social-week-*.yml")):
+        txt = open(f, encoding="utf-8").read()
+        head = "".join(l for l in txt.splitlines(True) if l.startswith("#"))
+        items = yaml.safe_load(txt) or []
+        ch = False
+        for it in items:
+            d = str(it["date"])
+            k = social_key({**it, "date": d}) if "type" in it else feed_key({**it, "date": d})
+            e = ed.get(k)
+            if e and (it.get("caption_en") != e["en"] or it.get("caption_pt") != e["pt"]):
+                it["caption_en"], it["caption_pt"] = e["en"], e["pt"]; ch = True; n += 1
+        if ch:
+            open(f, "w", encoding="utf-8").write(head + yaml.safe_dump(items, allow_unicode=True, sort_keys=False, width=240))
+    print(n)
+
+
 def sync_slides():
     """Queue slides follow the files actually generated (crop count can change in the editor)."""
     n = 0
@@ -386,6 +406,8 @@ def sync_slides():
 
 
 if __name__ == "__main__":
+    if sys.argv[1] == "apply-captions":
+        apply_captions(sys.argv[2]); sys.exit()
     if sys.argv[1] == "sync-slides":
         sync_slides(); sys.exit()
     if sys.argv[1] == "apply":

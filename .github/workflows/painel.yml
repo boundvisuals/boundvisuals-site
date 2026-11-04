@@ -67,6 +67,16 @@ jobs:
             done
             echo "rebuild dispatched for $pid"
           done < in/changed.txt
+      - name: Apply caption edits made in the panel
+        run: |
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/captions.json.php -o captions.json.php; bye" "$H" 2>/dev/null || true
+          [ -f in/captions.json.php ] || exit 0
+          n=$(python3 scripts/build_painel.py apply-captions in/captions.json.php)
+          if [ "$n" != "0" ]; then
+            git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+            git add queue && git commit -qm "Captions edited in the panel ($n)"
+            for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+          fi
       - name: Queue follows regenerated slides
         run: |
           n=$(python3 scripts/build_painel.py sync-slides)
