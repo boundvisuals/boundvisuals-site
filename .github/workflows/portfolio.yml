@@ -13,9 +13,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
-        with: { ref: assets, path: assets, sparse-checkout: "brand/fontes" }
+        with:
+          ref: assets
+          path: assets
+          sparse-checkout: |
+            brand/fontes
+            brand/portfolio-3d/package
+            brand/portfolio-ai/package
+            brand/portfolio-all/package
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
-      - run: python scripts/build_portfolio.py out assets && python scripts/build_vitorhugo.py site assets && mkdir -p site/files && cp out/*.pdf site/files/
+      - name: Full-resolution originals from MEGA (finals of each project)
+        run: |
+          wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
+          sudo apt-get install -y -qq ./megacmd.deb >/dev/null
+          python3 -c "
+          import yaml
+          r=yaml.safe_load(open('projects/registry.yml')); r=r.get('projects',r) if isinstance(r,dict) else r
+          print('\n'.join(f\"{p['id']} {p['mega']}\" for p in r if p.get('mega') and p['id']!='daily-study-2026'))" > megas.txt
+          while read id link; do mkdir -p "hires/$id"; (cd /tmp && bash "$GITHUB_WORKSPACE/scripts/fetch_finals.sh" "$link" "$GITHUB_WORKSPACE/hires/$id" | tail -2) || echo "fetch failed $id"; find "hires/$id" -iname '*.mp4' -o -iname '*.mov' | xargs -r rm; done < megas.txt
+          du -sh hires/* || true
+      - run: python scripts/build_portfolio.py out assets && PDF_MAXPX=1800 PDF_JPGQ=85 PDF_SUFFIX=_light python scripts/build_portfolio.py out assets && python scripts/build_vitorhugo.py site assets && mkdir -p site/files && cp out/*.pdf site/files/
       - env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
         run: |
           date -u +%Y-%m-%dT%H:%M:%SZ > out/updated.txt

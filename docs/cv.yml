@@ -5,7 +5,7 @@ short_name: "Vítor Hugo"
 studio: "Bound Visuals"
 title: "3D Artist · Performance Ads Designer · AI Expert for Image & Video"
 born: "28 . 01 . 1993"
-location: "Penafiel // Porto // Portugal"
+location: "Portugal"
 phone: "+351 913 215 170"
 email: "vitorhugobs@hotmail.com"
 linkedin: "criativovitorhugo"
@@ -55,7 +55,7 @@ experience:
   - role: "Co-Founder | Multimedia & Web Designer"
     org: "Maionese Design · Full-time"
     dates: "November 2021 – March 2023"
-    place: "Penafiel, Porto, Portugal · On-site"
+    place: "Portugal · On-site"
     tags: [design, web, video, marketing]
     bullets:
       - "Co-founded and grew a creative studio delivering design, web, and multimedia solutions for diverse clients."
@@ -66,7 +66,7 @@ experience:
   - role: "Multimedia & Web Designer"
     org: "Anca Design Studio · Full-time (internship from March 2019)"
     dates: "March 2019 – October 2021"
-    place: "Penafiel, Porto, Portugal · On-site"
+    place: "Portugal · On-site"
     tags: [design, web, video, photo, 3d]
     bullets:
       - "Worked as a multi-disciplinary creative, recognized as the “Swiss Army knife” of the team."
@@ -78,7 +78,7 @@ experience:
   - role: "Multimedia | Web | Design"
     org: "Freelance"
     dates: "August 2017 – March 2019"
-    place: "Penafiel, Porto, Portugal · On-site"
+    place: "Portugal · On-site"
     tags: [design, web, video, photo, 3d]
     bullets:
       - "Delivered a wide range of creative services: web design, branding, photography, video production, graphic design, and 3D visualization."
@@ -87,9 +87,9 @@ experience:
       - "Designed and developed websites (WordPress, CSS) with focus on usability and brand consistency."
       - "Built long-term client relationships through direct communication, independent project management, and reliable delivery."
   - role: "Communication, Design, Production & Logistics"
-    org: "Penafiel City Council · Internship"
+    org: "City Council · Internship"
     dates: "February 2017 – July 2017"
-    place: "Penafiel, Porto, Portugal · On-site"
+    place: "Portugal · On-site"
     tags: [design, marketing]
     bullets:
       - "Focused on communication, design, production, and logistics, supporting cultural and public events of the municipality."
@@ -100,7 +100,7 @@ experience:
   - role: "HVAC Technician"
     org: "Freelance"
     dates: "January 2015 – June 2017"
-    place: "On-site"
+    place: "Portugal · On-site"
     tags: [tech]
     bullets:
       - "Specialized exclusively in air conditioning installation and troubleshooting (split, multisplit, VRV)."
@@ -109,7 +109,7 @@ experience:
   - role: "HVAC Technician"
     org: "Climafiel · Full-time"
     dates: "August 2011 – April 2016"
-    place: "Penafiel · On-site"
+    place: "Portugal · On-site"
     tags: [tech]
     bullets:
       - "Installation, maintenance and repair of air conditioning systems (split, multisplit, VRV), including diagnostics and troubleshooting."
@@ -151,7 +151,7 @@ certifications:
   - { name: "Render is Power 2.0", by: "Ander Alencar", date: "May 2020" }
   - { name: "Render is Power 1.0", by: "Ander Alencar", date: "Jan 2020" }
   - { name: "Identity through Typography", by: "ISCE Douro", date: "Jun 2019" }
-  - { name: "Escritaria 2018 – Pepetela", by: "Penafiel City Council", date: "Oct 2018" }
+  - { name: "Escritaria 2018 – Pepetela", by: "City Council", date: "Oct 2018" }
   - { name: "Conference “Being Different is Normal”", by: "ISCE Douro", date: "Jun 2016" }
   - { name: "Layout for 3D Animation", by: "CINANIMA", date: "Nov 2015" }
 

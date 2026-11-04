@@ -22,13 +22,103 @@ crops = list((yaml.safe_load(open("config/crops.yml")) or {}).get("crops", {}))
 e = lambda s: html.escape(str(s or ""))
 
 
-def img(p, maxw=2000):
+Image.MAX_IMAGE_PIXELS = None
+HIRES = pathlib.Path(os.environ.get("HIRES_DIR", "hires"))
+QMAX = int(os.environ.get("PDF_MAXPX", "3600"))      # long side of every embedded image (HQ: 3600 px ≈ 400+ dpi on A4 width)
+SUFFIX = os.environ.get("PDF_SUFFIX", "")
+QJPG = int(os.environ.get("PDF_JPGQ", "95"))
+
+
+def _stem(rel):
+    return "_".join(pathlib.Path(rel).with_suffix("").parts).replace(" ", "_")
+
+
+def _dhash(p):
+    im = Image.open(p).convert("L").resize((17, 16), Image.LANCZOS)
+    px = list(im.tobytes())
+    return sum(1 << i for i in range(256) if px[(i // 16) * 17 + i % 16] > px[(i // 16) * 17 + i % 16 + 1])
+
+
+_LINKS = None
+
+
+def _links():
+    global _LINKS
+    if _LINKS is None:
+        _LINKS = []
+        for f in A.glob("brand/portfolio-*/package/*/Links/*"):
+            if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".psd"):
+                try:
+                    _LINKS.append((_dhash(f), Image.open(f).size, f))
+                except Exception:
+                    pass
+    return _LINKS
+
+
+_ORIG = {}
+_MM = None
+
+
+def _mad(x, y):
+    a = Image.open(x).convert("L").resize((64, 64), Image.LANCZOS)
+    b = Image.open(y).convert("L").resize((64, 64), Image.LANCZOS)
+    return sum(abs(i - j) for i, j in zip(a.tobytes(), b.tobytes())) / 4096
+
+
+def _media_map():
+    """Match each old-portfolio image to its InDesign Link original. One original → at most ONE image (the closest),
+    so before/after pairs never collapse into the same 'after' file."""
+    global _MM
+    if _MM is None:
+        best = {}
+        for p in M.glob("*.jpg"):
+            w, h = Image.open(p).size; r = w / h; hp = _dhash(p)
+            c = [(bin(hp ^ lh).count("1"), f) for lh, sz, f in _links() if abs(sz[0] / sz[1] - r) < 0.04 and max(sz) > max(w, h)]
+            c = sorted(c, key=lambda x: x[0])[:4]
+            sc = sorted((_mad(p, f), f) for d, f in c if d <= 12)
+            if sc and sc[0][0] < 1.5:
+                best[p.name] = sc[0]
+        owner = {}
+        for n, (m, f) in best.items():
+            if f not in owner or m < best[owner[f]][0]:
+                owner[f] = n
+        _MM = {n: f for f, n in owner.items()}
+    return _MM
+
+
+def original(p):
+    """Full-resolution source of a preview: MEGA finals (hires/<project>/) or the InDesign Links of his 2025 portfolios."""
     p = pathlib.Path(p)
-    im = Image.open(p).convert("RGB")
-    if max(im.size) > maxw:
-        s = maxw / max(im.size); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
+    if p in _ORIG:
+        return _ORIG[p]
+    best = p
+    parts = p.parts
+    if "reports" in parts and "preview" in parts:
+        pid = parts[parts.index("reports") + 1]
+        root = HIRES / pid
+        if root.exists():
+            for f in root.rglob("*"):
+                if f.is_file() and _stem(f.relative_to(root)) == p.stem:
+                    best = f; break
+    elif "media" in parts:
+        best = _media_map().get(p.name, p)
+    _ORIG[p] = best
+    if best == p:
+        print("  low-res (no original found):", p)
+    return best
+
+
+def img(p, maxw=None):
     import io
-    b = io.BytesIO(); im.save(b, "JPEG", quality=86, optimize=True)
+    src = original(p)
+    im = Image.open(src)
+    if im.mode in ("RGBA", "LA", "P"):
+        im = im.convert("RGBA"); bg = Image.new("RGB", im.size, "white"); bg.paste(im, mask=im.split()[-1]); im = bg
+    im = im.convert("RGB")
+    lim = QMAX if maxw is None else min(QMAX, max(maxw * 2, 1400))
+    if max(im.size) > lim:
+        s = lim / max(im.size); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
+    b = io.BytesIO(); im.save(b, "JPEG", quality=QJPG, subsampling=0, optimize=True)
     return "data:image/jpeg;base64," + base64.b64encode(b.getvalue()).decode()
 
 
@@ -286,12 +376,12 @@ def number_index(pages):
 def render(name, pages):
     pages = number_index(pages)
     from playwright.sync_api import sync_playwright
-    h = OUT / f"_{name}.html"
+    h = OUT / f"_{name}{SUFFIX}.html"
     h.write_text(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{"".join(pages)}</body></html>', encoding="utf-8")
     with sync_playwright() as pw:
         b = pw.chromium.launch(); pg = b.new_page()
-        pg.goto(f"file://{h.resolve()}"); pg.wait_for_timeout(800)
-        pg.pdf(path=str(OUT / name), width="210mm", height="297mm", print_background=True)
+        pg.goto(f"file://{h.resolve()}", timeout=0); pg.wait_for_timeout(1500)
+        pg.pdf(path=str(OUT / (name.replace(".pdf", SUFFIX + ".pdf"))), width="210mm", height="297mm", print_background=True)
         b.close()
     h.unlink()
     print(name, len(pages), "pages")
