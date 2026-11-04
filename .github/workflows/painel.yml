@@ -91,9 +91,11 @@ jobs:
           r=$(python3 scripts/build_painel.py sync-reels)
           n=$(python3 scripts/build_painel.py sync-slides)
           [ "$r" != "0" ] && n="$n+$r reels"
+          t=$(python3 scripts/make_teasers.py || echo 0)
+          [ "$t" != "0" ] && n="$n+$t teasers"
           if [ "$n" != "0" ]; then
             git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
-            git add queue && git commit -qm "Queue slides synced ($n)"
+            git add queue; git add reports/*/story/teaser-*.jpg 2>/dev/null || true; git commit -qm "Queue slides synced ($n)"
             for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
           fi
       - name: Build panel

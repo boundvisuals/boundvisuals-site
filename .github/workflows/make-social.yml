@@ -25,7 +25,7 @@ jobs:
       - name: Build stories + reel
         run: |
           D=reports/${{ inputs.project_id }}
-          rm -rf "$D/story" "$D/reel"; mkdir -p "$D"
+          find "$D/story" -name "*.jpg" ! -name "teaser-*" -delete 2>/dev/null; rm -rf "$D/reel"; mkdir -p "$D"   # teaser stories (make_teasers.py) are kept
           python scripts/make_social.py in "$D" "${{ inputs.project_id }}" "${{ inputs.title }}" 2>&1 | tee out/social.log
           # house reel style (slow editorial, full pans) replaces the simple reels
           rm -f "$D"/reel/*.mp4 "$D"/reel/*-cover.jpg

@@ -218,6 +218,11 @@ def build(out):
     approved_days = {d["date"] for d in cal for i in d["items"] if i["type"] == "feed" and i["status"] in ("approved", "published") and d["date"] >= today}
     if len(approved_days) < 7:
         alerts.append({"level": "warn", "text": f"Só há {len(approved_days)} dias de posts aprovados à frente. Aprova no Calendário."})
+    feed_days = [d["date"] for d in cal for i in d["items"] if i["type"] == "feed"]
+    if feed_days:
+        end = datetime.date.fromisoformat(max(feed_days))
+        if (end - now.date()).days < 21:
+            alerts.append({"level": "warn", "text": f"A fila de posts acaba a {end:%d/%m}. Preciso de projetos novos: envia links MEGA (Tarefas) ou faz Daily Studies."})
     pend = sum(1 for d in cal for i in d["items"] if i["status"] == "pending")
     if pend:
         alerts.append({"level": "info", "text": f"{pend} publicações à espera do teu ✅ no Calendário."})

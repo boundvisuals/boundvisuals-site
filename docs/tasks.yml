@@ -66,6 +66,7 @@
 - id: c-more-content
   owner: claude
   title: Mais stories e reels para a semana 4 em diante (precisa de novos projetos/Daily Study)
+  detail: "04/11: stories diárias até 16 dez — cada dia com post e sem stories leva 2 stories automáticas (10:00 'Hoje · 19:00' com um pormenor do post; 20:30 'Novo no feed' com a 1.ª imagem), feitas dos recortes já revistos (scripts/make_teasers.py, robô do Painel). Falta: 3–5 stories/dia e reels depois de 1 dez → precisa de projetos novos (links MEGA) ou Daily Study."
 - id: c-ds-next
   owner: claude
   title: "Briefings Daily Study #004 em diante"
@@ -88,6 +89,8 @@
 - id: c-portfolio-auto
   owner: claude
   title: Portfólio vivo (PDF 3D/AI/All atualizado sozinho a cada projeto publicado)
+  done: true
+  detail: "Já funciona: o robô do portfólio refaz CV + PDFs (3D/AI/All, versões leves) sempre que um projeto novo é processado (pré-visualizações), quando mudam recortes ou o perfil. Painel → Vítor Hugo → Portfólio."
 - id: c-linkedin
   owner: claude
   title: Textos finais do LinkedIn (título, sobre, experiência)
