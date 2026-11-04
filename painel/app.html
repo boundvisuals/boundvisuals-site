@@ -418,9 +418,10 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
    ${st==="pending"?`<button class="btn pri" id="mApprove" ${rv?"":"disabled title='Primeiro aceita ou edita os recortes'"}>Aprovar</button>${rv?"":`<span class="sub">Primeiro aceita ou edita os recortes</span>`}`:""}
    ${st==="approved"?`<button class="btn" id="mUnapprove">↺ Desaprovar</button>`:""}</div>
   <div class="gal">${media}</div>
-  ${i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:""}
+  ${i.copy_caption?`<div class="caps">${cb("Legenda completa (o que vai para o Instagram)",i.copy_caption)}${(i.copy_comments||[]).map((c,n)=>cb(`Comentário ${n+1} · hashtags`,c)).join("")}</div>`:(i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:"")}
   ${i.note?`<div class="alert err" style="margin-top:14px"><i></i><div>${esc(i.note)}</div></div>`:""}`;
   $("#modal").classList.add("on");document.body.style.overflow="hidden";
+  $("#mbox").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
   $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,"story",i.story_idx);
   const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
   const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}

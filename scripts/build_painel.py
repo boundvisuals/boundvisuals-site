@@ -121,6 +121,15 @@ def crop_info(it, out):
     return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, []), "story_crops": sc}
 
 
+def copy_texts(it, n):
+    """Exactly what the robot puts on Instagram, for manual copy while the API refuses captions/comments."""
+    os.environ.setdefault("META_TOKEN", "x")
+    sys.path.insert(0, "scripts")
+    import publish as P
+    it2 = dict(it); it2["_n"] = n
+    return {"copy_caption": P.caption(it2), "copy_comments": P.extra_hashtag_comments(n) if P.INS.get("hashtags_extra_comments") else []}
+
+
 def fhash(p):
     import hashlib
     try:
@@ -168,8 +177,10 @@ def build(out):
             return "error", None
         return ("approved" if approved else "pending"), None
 
+    feed_n = -1
     for f in sorted(glob.glob("queue/week-*.yml")):
         for it in yaml.safe_load(open(f, encoding="utf-8")) or []:
+            feed_n += 1
             it["date"] = str(it["date"])
             pkey = f"{it['date']}_{it['project']}"
             st, link = status(it.get("approved"), pkey)
@@ -180,7 +191,7 @@ def build(out):
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "status": st, "link": link,
                 "full": [f"{FILA}/{it['project']}/{quote(x)}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/ig/{x}')}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
-                **crop_info(it, out),
+                **crop_info(it, out), **copy_texts(it, feed_n),
                 "note": errs.get(pkey, "")})
     for f in sorted(glob.glob("queue/social-week-*.yml")):
         for it in yaml.safe_load(open(f, encoding="utf-8")) or []:

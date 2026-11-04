@@ -43,6 +43,27 @@ def caption(item):
     return text
 
 
+def extra_hashtag_comments(n):
+    """The old 30-tag set minus what is already in the caption, in comments of 5."""
+    used = set(hashtags(n).replace("#", "").split())
+    rest = [t for t in INS.get("hashtags_old_30", []) + INS["hashtags_rotate"] if t not in used]
+    rest = list(dict.fromkeys(rest))[:25]
+    return [" ".join("#" + t for t in rest[i:i + 5]) for i in range(0, len(rest), 5)]
+
+
+def post_extra_comments(mid, n, rec):
+    if not INS.get("hashtags_extra_comments"):
+        return
+    done = []
+    for c in extra_hashtag_comments(n):
+        time.sleep(INS.get("hashtags_comment_gap_s", 120))
+        try:
+            api("POST", f"{mid}/comments", message=c); done.append("ok")
+        except Exception as e:
+            done.append(f"ERR {str(e)[:120]}"); break            # stop at the first refusal (spam protection)
+    rec["extra_hashtag_comments"] = done
+
+
 def hashtags(n):
     rot = INS["hashtags_rotate"]
     k = max(0, INS.get("hashtags_max", 5) - len(INS["hashtags_always"]))
@@ -189,6 +210,7 @@ def main(mode):
             log.append(f"WAIT {key}: last feed post {last_feed:%d/%m %H:%M}, next allowed 2 h later")
             break
         rec = {"at": now.isoformat()}
+        it["_n"] = n
         try:
             no_cap = False
             try:
@@ -213,6 +235,8 @@ def main(mode):
                 rec["hashtags"] = "ok"
             except Exception as e:
                 rec["hashtags"] = f"ERR {e}"
+            if not no_cap:
+                post_extra_comments(mid, n, rec)
             try:
                 rec["fb"] = fb_post(it, urls)
             except Exception as e:

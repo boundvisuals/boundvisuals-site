@@ -30,6 +30,8 @@ instagram:
     - archilovers
   hashtags_in: caption   # Instagram allows max 5 hashtags per post since Dec 2025 → 5, at the end of the caption, no extra comment
   hashtags_max: 5
+  hashtags_extra_comments: true   # the other 25 of the old 30 → comments of 5, posted one by one with a pause (Vítor 04/11)
+  hashtags_comment_gap_s: 120
   hashtags_always: [archviz, architecturevisualization, 3dartist, coronarenderer]   # + 1 rotating = 5
   hashtags_old_30: [renderboxmagazine, cgtop, render_files, renderreactor, cgiaward, renderlovers, AllofRenders, render_community, topcgref, archviz, 3dartist, render, renderings, archvizstudio, architecturevisualization, rocvisual, renderinx, architrendz, coronarenderer, chaoscorona, tastyviz, rendersbook, render_awards, archilovers, renderbox, prorenders]
   hashtags_rotate: [homeinteriordaily, minimalmotifs, architecture_hunter, archiboom, Arc_Only, designcitylab, renderglobal, re_inspiration, rendering, cgi, allofarchitecture]   # 1 per post, cycling
