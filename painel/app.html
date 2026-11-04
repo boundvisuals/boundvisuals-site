@@ -303,7 +303,10 @@ function ago(iso){if(!iso)return"—";const s=Math.max(0,(Date.now()-new Date(is
   if(s<60)return"agora mesmo";if(s<3600)return`há ${Math.round(s/60)} min`;if(s<86400)return`há ${Math.round(s/3600)} h`;return`há ${Math.round(s/86400)} dias`}
 function isDone(t){const k=D.ticks&&D.ticks[t.id];return k?k.done:!!t.done}
 function allItems(){return (D.calendar||[]).flatMap(d=>d.items.map(i=>({...i,date:d.date})))}
-function effStatus(i){if(i.status==="pending"&&D.pending_approvals&&D.pending_approvals[i.key])return"approved";return i.status}
+function effStatus(i){const a=D.pending_approvals&&D.pending_approvals[i.key];
+  if(a&&typeof a==="object"&&a.v===false)return(i.status==="approved"||i.status==="pending")?"pending":i.status;
+  if(i.status==="pending"&&a)return"approved";return i.status}
+function reviewed(i){return !i.stem||!!(D.reviews&&D.reviews[i.key])}
 function pendingCount(){return D?allItems().filter(i=>effStatus(i)==="pending").length:0}
 function itemRow(i){
   const st=effStatus(i);const th=i.thumb?`<img class="thumb ${i.type!=="feed"?"st":""}" loading="lazy" src="${esc(i.thumb)}" alt="">`:`<div class="thumb"></div>`;
@@ -350,7 +353,7 @@ function renderCal(){
     return `<div class="day"><div class="dayh"><b>${fmtDay(d.date)}</b>${pend.length?`<button class="btn pri" data-ap='${esc(JSON.stringify(pend.map(i=>i.key)))}'>Aprovar dia (${pend.length})</button>`:""}</div>
     ${[...feeds,...reels].map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${(i.slides||[i.thumb]).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
       <div><div class="meta">${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</div><p>${esc(i.caption||"")}</p></div>
-      <div class="act">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}</div></div>`).join("")}
+      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}</div></div>`).join("")}
     ${stories.length?`<div class="card" style="padding:12px"><div class="meta" style="font-size:12px;color:var(--mut)">${stories.length} stories · ${stories.map(s=>s.time).join(" · ")}</div><div class="strip">${stories.map(s=>`<img class="clickable" data-open="${esc(s.key)}" loading="lazy" src="${esc(s.thumb)}" alt="" title="${esc(s.time)} · ${ST[effStatus(s)]}" style="${effStatus(s)==="pending"?"outline:1px solid var(--warn)":""}">`).join("")}</div></div>`:""}
     </div>`}).join("");
   const allPend=allItems().filter(i=>effStatus(i)==="pending").map(i=>i.key);
@@ -359,10 +362,14 @@ function renderCal(){
   $("#v-cal").querySelectorAll("[data-ap]").forEach(b=>b.onclick=()=>approve(JSON.parse(b.dataset.ap),b));
 }
 function addDays(iso,n){const x=new Date(iso+"T12:00:00");x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)}
-async function approve(keys,btn){btn.disabled=true;
-  try{const r=await fetch("api.php?a=approve",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({keys})});
-    if(!r.ok)throw 0;keys.forEach(k=>{D.pending_approvals=D.pending_approvals||{};D.pending_approvals[k]=new Date().toISOString()});
-    toast("Aprovado ✓ O robô aplica em poucos minutos");renderAll()}catch(e){btn.disabled=false;toast("Não consegui gravar. Tenta outra vez.")}}
+async function approve(keys,btn,undo){if(btn)btn.disabled=true;
+  try{const r=await fetch("api.php?a=approve",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(undo?{keys,value:false}:{keys})});
+    if(!r.ok)throw 0;D.pending_approvals=D.pending_approvals||{};keys.forEach(k=>{D.pending_approvals[k]=undo?{v:false,at:new Date().toISOString()}:new Date().toISOString()});
+    toast(undo?"Desaprovado ↺":"Aprovado ✓");renderAll();undoBar(undo?"Desaprovado":"Aprovado "+keys.length,()=>approve(keys,null,!undo))}catch(e){if(btn)btn.disabled=false;toast("Não consegui gravar. Tenta outra vez.")}}
+let undoT=null;
+function undoBar(text,fn){const e=$("#toast");e.innerHTML=`${esc(text)} · <button style="background:none;border:0;font:inherit;font-weight:600;text-decoration:underline;color:inherit;pointer-events:auto" id="undoB">Anular</button>`;e.classList.add("on");e.style.pointerEvents="auto";
+  $("#undoB").onclick=()=>{e.classList.remove("on");e.style.pointerEvents="none";fn()};clearTimeout(undoT);undoT=setTimeout(()=>{e.classList.remove("on");e.style.pointerEvents="none"},7000)}
+async function review(i,undo){try{const r=await fetch("api.php?a=review",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,how:"aceite",undo:!!undo})});const j=await r.json();if(!j.ok)throw 0;D.reviews=j.reviews;renderAll();openItem(i.key);if(!undo)undoBar("Recortes aceites",()=>review(i,true))}catch(e){toast("Sem ligação")}}
 function taskRow(t){const d=isDone(t);return `<div class="task ${d?"done":""}"><button class="chk ${d?"on":""}" data-t="${esc(t.id)}" aria-label="concluir"></button><div style="flex:1;min-width:0"><div class="tt">${esc(t.title)}</div>${t.detail?`<div class="td">${esc(t.detail)}</div>`:""}</div>${t.due?`<span class="due">${esc(t.due)}</span>`:""}</div>`}
 function bindTasks(root){root.querySelectorAll("[data-t]").forEach(b=>b.onclick=async()=>{
   const id=b.dataset.t;const t=D.tasks.find(x=>x.id===id);const nd=!isDone(t);D.ticks=D.ticks||{};D.ticks[id]={done:nd};renderAll();
@@ -390,12 +397,19 @@ function renderLinks(){
 }
 function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;const st=effStatus(i);
   const media=i.type==="reel"?`<video src="${esc(i.full[0])}" poster="${esc(i.thumb)}" controls playsinline preload="metadata"></video>`:(i.full||[]).map((u,n)=>`<img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt="">`).join("");
-  $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${fmtDay(i.date)} · ${esc(i.time)} · ${TY[i.type]}</div><b>${esc(i.project_title)}</b></div><div style="display:flex;gap:8px;align-items:center">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:`<span class="pill ${st}">${ST[st]}</span>`}${i.stem&&st!=="published"?`<button class="btn" id="mCrop">Editar recortes</button>`:""}${st==="pending"?`<button class="btn pri" id="mApprove">Aprovar</button>`:""}<button class="x" id="mx" aria-label="fechar">×</button></div></div>
+  const rv=reviewed(i),rinfo=D.reviews&&D.reviews[i.key];
+  $("#mbox").innerHTML=`<div class="mhead"><div style="min-width:0"><div class="sub">${fmtDay(i.date)} · ${esc(i.time)} · ${TY[i.type]}</div><b>${esc(i.project_title)}</b></div><button class="x" id="mx" aria-label="fechar">×</button></div>
+  <div class="cbar" style="margin:0 0 12px">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:`<span class="pill ${st}">${ST[st]}</span>`}
+   ${i.stem&&st!=="published"?`<button class="btn" id="mCrop">✎ Editar recortes</button>${rv?`<span class="pill approved">Recortes ${esc(rinfo.how)} ✓</span><button class="btn" id="mRevUndo">↺</button>`:`<button class="btn" id="mAccept">✓ Aceitar recortes</button>`}`:""}
+   ${st==="pending"?`<button class="btn pri" id="mApprove" ${rv?"":"disabled title='Primeiro aceita ou edita os recortes'"}>Aprovar</button>${rv?"":`<span class="sub">Primeiro aceita ou edita os recortes</span>`}`:""}
+   ${st==="approved"?`<button class="btn" id="mUnapprove">↺ Desaprovar</button>`:""}</div>
   <div class="gal">${media}</div>
   ${i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:""}
   ${i.note?`<div class="alert err" style="margin-top:14px"><i></i><div>${esc(i.note)}</div></div>`:""}`;
   $("#modal").classList.add("on");document.body.style.overflow="hidden";
-  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
+  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);
+  const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
+  const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
 function closeModal(){$("#modal").classList.remove("on");document.body.style.overflow="";const v=$("#mbox video");if(v)v.pause()}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 $("#modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
@@ -428,7 +442,8 @@ function renderIdeias(){const N=D.inbox||[],R=D.replies||{};const keep=$("#noteT
   $("#noteSave").onclick=async()=>{const t=$("#noteText").value.trim();if(!t)return;const b=$("#noteSave");b.disabled=true;
     try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:t,tag:noteTag})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;toast("Guardado ✓");renderIdeias()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
   $("#v-ideias").querySelectorAll("[data-del]").forEach(b=>b.onclick=async()=>{if(b.dataset.confirm!=="1"){b.dataset.confirm="1";b.textContent="tens a certeza?";return}
-    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({delete:b.dataset.del})});const j=await r.json();D.inbox=j.inbox;renderIdeias();toast("Apagado")}catch(e){toast("Sem ligação")}});
+    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({delete:b.dataset.del})});const j=await r.json();const gone=(D.inbox||[]).find(n=>n.id===b.dataset.del);D.inbox=j.inbox;renderIdeias();
+      undoBar("Ideia apagada",async()=>{const r2=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:gone.text,tag:gone.tag})});const j2=await r2.json();D.inbox=j2.inbox;renderIdeias()})}catch(e){toast("Sem ligação")}});
   if(keep)$("#noteText").value=keep;
   if(cur==="ideias"&&(D.inbox||[]).some(n=>(D.replies||{})[n.id]&&!seenReply(n.id))){markSeen();nav()}
 }
@@ -557,8 +572,9 @@ function cropEditor(it,mode){mode=mode||"post";const AR=mode==="story"?.5625:.8;
   $("#cdel").onclick=()=>{if(C.length<=1)return toast("Fica pelo menos 1");C.splice(sel,1);sel=0;draw()};
   $("#csave").onclick=async()=>{const b=$("#csave");b.disabled=true;
     C=C.map(c=>{const g=geom(c);return[+((g.x+g.w/2)/g.W).toFixed(3),+((g.y+g.h/2)/g.H).toFixed(3),+(g.h/g.H).toFixed(3)]});
-    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C,kind:mode})});if(!r.ok)throw 0;const j=await r.json();
-      if(mode==="story")it.story_crops=C;else it.crops=C;toast(j.robot==="started"?"Guardado ✓ Robô a refazer agora (~5 min)":"Guardado ✓ O robô refaz em ~10 min");closeModal()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
+    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C,kind:mode,item_key:it.key,previous:(mode==="story"?it.story_crops:it.crops)})});if(!r.ok)throw 0;const j=await r.json();
+      const prevC=(mode==="story"?it.story_crops:it.crops);if(mode==="story")it.story_crops=C;else it.crops=C;D.reviews=D.reviews||{};D.reviews[it.key]={how:"editado"};closeModal();renderAll();
+      undoBar(j.robot==="started"?"Recortes guardados, robô a refazer":"Recortes guardados",async()=>{await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:prevC,kind:mode})});if(mode==="story")it.story_crops=prevC;else it.crops=prevC;toast("Recortes repostos ↺")})}catch(e){b.disabled=false;toast("Não consegui guardar")}};
   if(img.complete)draw();else img.onload=draw;window.addEventListener("resize",()=>{if($("#ced"))draw()},{once:true})}
 function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps();renderMarca()}
 async function load(){

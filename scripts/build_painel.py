@@ -75,8 +75,10 @@ def apply(path):
         for it in items:
             it_date = str(it["date"])
             k = social_key({**it, "date": it_date}) if "type" in it else feed_key({**it, "date": it_date})
-            if k in appr and not it.get("approved"):
-                it["approved"] = True; ch = True; n += 1
+            if k in appr:
+                want = not (isinstance(appr[k], dict) and appr[k].get("v") is False)
+                if bool(it.get("approved")) != want:
+                    it["approved"] = want; ch = True; n += 1
         if ch:
             open(f, "w", encoding="utf-8").write(head + yaml.safe_dump(items, allow_unicode=True, sort_keys=False, width=240))
     print(n)

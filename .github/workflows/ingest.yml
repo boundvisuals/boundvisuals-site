@@ -37,12 +37,26 @@ jobs:
           name: ${{ inputs.project_id }}-processed
           path: out
           retention-days: 14
-      - name: Save report + Instagram previews to repo
+      - name: Save report + Instagram slides + editor previews to repo
         if: always()
         run: |
           D=reports/${{ inputs.project_id }}
-          rm -rf "$D"; mkdir -p "$D/ig"
+          # only replace what this robot owns (ig slides, logs, previews); stories/reels belong to make-social
+          rm -rf "$D/ig" "$D/preview"; mkdir -p "$D/ig" "$D/preview"
           cp out/*.log out/folder_tree.txt out/manifest.json "$D/" 2>/dev/null || true
           cp out/ig/*.jpg "$D/ig/" 2>/dev/null || true
+          python3 - "$D/preview" <<'PY'
+          import pathlib, sys
+          from PIL import Image
+          Image.MAX_IMAGE_PIXELS = None
+          src = pathlib.Path("in"); out = pathlib.Path(sys.argv[1])
+          for p in sorted(src.rglob("*")):
+              if p.suffix.lower() not in {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp"}: continue
+              stem = "_".join(p.relative_to(src).with_suffix("").parts).replace(" ", "_")
+              im = Image.open(p); im.load(); im = im.convert("RGB"); w, h = im.size
+              s = 1400 / max(w, h); im.resize((round(w * s), round(h * s)), Image.LANCZOS).save(out / f"{stem}.jpg", quality=85)
+          PY
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
-          git add reports && git commit -m "Report: ${{ inputs.project_id }}" && (git pull --rebase -q && git push) || echo "nothing to commit"
+          git add -A reports && git commit -qm "Report: ${{ inputs.project_id }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done
+          exit 1

@@ -55,6 +55,7 @@ if ($a === 'data') {
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['opps'] = read_store("$store/opps.json.php") ?? [];
+  $d['reviews'] = read_store("$store/reviews.json.php") ?? new stdClass();
   $d['robot_link'] = file_exists("$store/gh.json.php");
   $d['served_at'] = gmdate('c');
   echo json_encode($d, JSON_UNESCAPED_UNICODE);
@@ -63,8 +64,9 @@ if ($a === 'data') {
 $in = json_decode(file_get_contents('php://input'), true) ?? [];
 if ($a === 'approve' && $_SERVER['REQUEST_METHOD'] === 'POST') {
   $cur = read_store("$store/approvals.json.php") ?? [];
+  $undo = isset($in['value']) && $in['value'] === false;          // "desaprovar" (undo)
   foreach (($in['keys'] ?? []) as $k) {
-    if (is_string($k) && strlen($k) < 300) $cur[$k] = gmdate('c');
+    if (is_string($k) && strlen($k) < 300) $cur[$k] = $undo ? ['v' => false, 'at' => gmdate('c')] : gmdate('c');
   }
   write_store("$store/approvals.json.php", $cur);
   echo json_encode(['ok' => true, 'count' => count($cur), 'robot' => kick_robot()]);
@@ -113,6 +115,15 @@ if ($a === 'opp' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // opportunities:
   echo json_encode(['ok' => true, 'opps' => $cur], JSON_UNESCAPED_UNICODE);
   exit;
 }
+if ($a === 'review' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crops looked at: accepted or edited (required before single approve)
+  $cur = read_store("$store/reviews.json.php") ?? [];
+  $k = (string)($in['key'] ?? '');
+  if ($k === '' || strlen($k) > 300) { http_response_code(400); echo '{"error":"key"}'; exit; }
+  if (!empty($in['undo'])) unset($cur[$k]); else $cur[$k] = ['how' => ($in['how'] ?? 'aceite') === 'editado' ? 'editado' : 'aceite', 'at' => gmdate('c')];
+  write_store("$store/reviews.json.php", $cur);
+  echo json_encode(['ok' => true, 'reviews' => $cur], JSON_UNESCAPED_UNICODE);
+  exit;
+}
 if ($a === 'crops' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crop editor: {project, stem, crops:[[cx,cy,h],...]}
   $cur = read_store("$store/crops.json.php") ?? [];
   $stem = (string)($in['stem'] ?? ''); $proj = preg_replace('/[^a-z0-9-]/', '', (string)($in['project'] ?? ''));
@@ -122,7 +133,12 @@ if ($a === 'crops' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crop editor:
   }
   if ($stem === '' || strlen($stem) > 200 || $proj === '' || count($cr) < 1 || count($cr) > 9) { http_response_code(400); echo '{"error":"bad crops"}'; exit; }
   $kind = ($in['kind'] ?? '') === 'story' ? 'story' : 'post';
-  $cur[($kind === 'story' ? 'story|' : '') . $stem] = ['project' => $proj, 'kind' => $kind, 'crops' => $cr, 'at' => gmdate('c')];
+  $ck = ($kind === 'story' ? 'story|' : '') . $stem;
+  $hist = read_store("$store/crops_history.json.php") ?? [];
+  $hist[$ck] = array_slice(array_merge([$in['previous'] ?? null], $hist[$ck] ?? []), 0, 10);   // undo stack
+  write_store("$store/crops_history.json.php", $hist);
+  $cur[$ck] = ['project' => $proj, 'kind' => $kind, 'crops' => $cr, 'at' => gmdate('c')];
+  if (!empty($in['item_key'])) { $rv = read_store("$store/reviews.json.php") ?? []; $rv[(string)$in['item_key']] = ['how' => 'editado', 'at' => gmdate('c')]; write_store("$store/reviews.json.php", $rv); }
   write_store("$store/crops.json.php", $cur);
   echo json_encode(['ok' => true, 'robot' => kick_robot()]);
   exit;
