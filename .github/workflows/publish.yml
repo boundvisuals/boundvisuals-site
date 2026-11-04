@@ -26,12 +26,12 @@ jobs:
               for it in yaml.safe_load(open(f)) or []:
                   d = f"fila/{it['project']}"; os.makedirs(d, exist_ok=True)
                   for s in it["slides"]:
-                      shutil.copy(f"reports/{it['project']}/ig/{s}", d)
+                      if os.path.exists(f"reports/{it['project']}/ig/{s}"): shutil.copy(f"reports/{it['project']}/ig/{s}", d)
           for f in glob.glob("queue/social-week-*.yml"):
               for it in yaml.safe_load(open(f)) or []:
                   d = f"fila/{it['project']}/{it['type']}"; os.makedirs(d, exist_ok=True)
-                  shutil.copy(f"reports/{it['project']}/{it['type']}/{it['file']}", d)
-                  if it.get("cover"):
+                  if os.path.exists(f"reports/{it['project']}/{it['type']}/{it['file']}"): shutil.copy(f"reports/{it['project']}/{it['type']}/{it['file']}", d)
+                  if it.get("cover") and os.path.exists(f"reports/{it['project']}/{it['type']}/{it['cover']}"):
                       shutil.copy(f"reports/{it['project']}/{it['type']}/{it['cover']}", d)
           PY
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --ignore-time fila /public_html/bv-fila; bye" "$H"

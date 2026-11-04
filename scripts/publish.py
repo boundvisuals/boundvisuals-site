@@ -219,6 +219,9 @@ def main(mode):
                 state[key] = {"at": now.isoformat(), "skipped": "missed window"}
                 log.append(f"SKIPPED {key}: missed window")
                 continue
+            if not os.path.exists(f"reports/{it['project']}/{it['type']}/{it['file']}"):   # crop removed in the editor
+                state[key] = {"at": now.isoformat(), "skipped": "file no longer exists"}
+                continue
             if it["type"] == "reel" and halt:                 # captions currently refused → hold reels, keep stories going
                 continue
             try:
