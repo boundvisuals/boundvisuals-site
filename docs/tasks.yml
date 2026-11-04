@@ -84,6 +84,7 @@
 - id: c-brand-docs
   owner: claude
   title: Reescrever documentos de marca, portfólio e CV em 1.ª pessoa
+  detail: "Feito: CV e portfólios (PDF no Painel), textos do site (docs/textos-1a-pessoa.md), LinkedIn, orçamento PT na 1.ª pessoa + versão EN completa (docs/orcamento-1a-pessoa.md, 04/11; 7 erros do PDF atual assinalados). Falta: carta de apresentação geral e Manual de identidade (só .ai/.pdf)."
 - id: c-portfolio-auto
   owner: claude
   title: Portfólio vivo (PDF 3D/AI/All atualizado sozinho a cada projeto publicado)
@@ -92,6 +93,10 @@
   title: Textos finais do LinkedIn (título, sobre, experiência)
   done: true
   detail: "Escritos 04/11: título EN/PT, Sobre EN/PT, experiência Bound Visuals + GrowthHit, competências e Em destaque. Painel → Vítor Hugo → Perfil (botões Copiar + passos)."
+- id: v-orcamento
+  owner: vitor
+  title: "(Quando quiseres) passar o orçamento para a 1.ª pessoa no InDesign e corrigir 7 erros"
+  detail: "Painel → Links → 'Orçamento na 1.ª pessoa (PT + EN)'. Cada bloco tem ATUAL → NOVO com a página. Erros: validade 'propostas 1, 2 e 3' na pág. 3 (é 4, 5 e 6), data '55 de janeiro de 2022' na pág. 9, 'devem', etc. A versão EN serve para clientes internacionais."
 - id: v-linkedin
   owner: vitor
   title: "(Quando quiseres) colar os textos finais no LinkedIn: Painel → Vítor Hugo → Perfil → cartão LinkedIn"
