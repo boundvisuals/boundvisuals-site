@@ -1,0 +1,640 @@
+POR
+TFO
+L I O
+
+
+
+ Vítor Hugo
+    2025
+INDEX
+
+
+
+
+                                                  Presentation
+
+                                                         CV
+
+                                                  Text to Image
+
+                                                Image to Image
+
+                                                    Inpainting
+
+                                          Enhancement + Upscaling
+
+                                                    ControlNET
+
+                                                    Workflows
+
+
+
+
+Confidentiality Notice                  However, they represent only a small     Each workflow featured here
+                                        part of what I work with.                includes a recorded Making Of —
+Some of my most advanced AI and         Beyond what’s shown here, I also         showing the real ComfyUI process,
+CGI workflows were developed for        design and implement advanced            step-by-step, from prompt to final
+global brand campaigns under NDA.       processes involving Object Migration,    image.
+For confidentiality reasons, they are   CGI + AI Integration, external AI API    Watching these short videos is
+not displayed here — but I’m happy      tools (Arcads, Reve, Visual Electric),   the best way to understand how I
+to walk through those projects in       Paid AI systems inside ComfyUI,          actually build, control, and refine
+detail during a private discussion or   Video and Sound AI, Viewport to          each visual.
+live call.                              Image conversions, Style Transfer        (All videos are available through
+                                        pipelines, and other complex             the “Making Of” links next to each
+                                        automation workflows.                    image.)
+About this Portfolio
+                                        Showing every single workflow
+This document presents a focused        would make this portfolio infinite —
+                                        so this version focuses on what’s        Closing Note
+overview of key AI techniques —
+including Text to Image, Image to       most relevant, keeping it clean and
+                                        concise.                                 This portfolio is designed to be a
+Image, Inpainting, Enhancement, and
+                                        The broader technical setups             transparent, technical, and creative
+Upscaling.
+                                        and confidential projects can            overview of how I build AI-driven
+These examples highlight the core
+                                        be reviewed privately during an          workflows for production.
+capabilities of my daily workflow:
+                                        interview or video call.                 It’s a concise showcase — the full
+from pure generation to technical
+                                                                                 scope of my research and applied
+refinement and production-ready
+                                                                                 systems extends far beyond these
+outputs.
+                                                                                 pages, ready to be discussed when
+                                                                                 needed.
+
+
+
+
+                                                     Vítor Hugo
+
+                                                                                                                        2
+PRESENTATION
+
+
+
+                                   I’m a 3D Artist specialized in             Tooling I master: ComfyUI, KLING,
+                                   Architectural Visualization (ArchViz)      VEO 3, ArcadsAI, Runway, Google
+                                   and product CGI, experienced in            Gemini, Nano Banana, Visual Electric,
+                                   producing photoreal renders, real-         Reve Image, etc.
+                                   time previews and animations with
+                                   Unreal Engine, Blender, Corona             What I deliver:
+                                   Renderer, KLING, VEO 3, and more.          · ArchViz — photoreal exteriors/
+                                                                              interiors, materials/lookdev, lighting,
+                                   Since early on, my dream has been          post; cinematic shots; interactive
+                                   to dive into cinema and the broader        previews for review.
+                                   world of imagery — especially 3D.          · Product CGI — stills and animated
+                                   That passion drives me to keep             visuals with fine detail and realism.
+                                   learning, growing, winning and             · Performance Ads — multi-format
+                                   aiming high. I also care deeply about      production (1:1, 9:16, 16:9), speed-to-
+VÍTOR HUGO BARROS DA SILVA         supporting others, because creativity      creative, data-guided iteration.
+                                   thrives in collaboration.                  · Post — high-end image retouch
+                                                                              (Photoshop + AI), video editing, sound
+                                   In parallel, I work as a Performance       tweaks.
+3D Artist · Performance Ads
+                                   Ads Designer (US agency, 2024–
+Designer · AI Expert for Image &
+                                   present), creating end-to-end              How I work: clear brief -> rapid
+Video
+                                   creatives for Meta, LinkedIn, Reddit       prototypes -> short iteration
+                                   and Google: static, motion and UGC. I      loops -> controlled final delivery.
+28 . 01 . 1993
+                                   operate with fast iteration cycles and     Clean communication; organized
+Penafiel // Porto // Portugal
+                                   a data-driven mindset, preserving          versioning; backups and file hygiene.
+                                   brand consistency and execution            Open to art tests or proof-of-
++351 913 215 170
+                                   quality.                                   concepts.
+vitorhugobs@hotmail.com
+                                   Key differentiator: advanced,              Languages: Portuguese native ·
+                                   professional AI applied to image           English C2 · French intermediate (B2
+LINKEDIN // BEHANCE
+                                   and video. I integrate AI across the       in progress) · Spanish intermediate ·
+criativovitorhugo
+                                   pipeline without sacrificing fidelity or   German beginner.
+                                   craft: from from-scratch generation        Mobility: Open to opportunities in
+                                   and visual ideation, to editing and        French- and German-speaking
+WEBSITE
+                                   enhancement (inpainting, upscaling,        Switzerland; preference for
+boundvisuals.com
+                                   artifact correction, denoising), plus      international English-friendly
+                                   automation of creative workflows           environments.
+                                   to accelerate delivery while keeping
+                                   artistic control.
+
+
+
+
+                                         vitorhugobs@hotmail.com
+                                               +351 913 215 170
+                                                   Index                                                              3
+CV                                     EDUCATION
+                                                                               Web & UI/UX
+                                       ISCE DOURO                              Web Design · Responsive Web
+                                       2015 - 2017                             Design · Web Development ·
+                                       Higher Professional Technical Course    E-commerce · Figma · Elementor ·
+PROFESSIONAL                           in Multimedia Content Development       WordPress · CSS
+EXPERIENCE                             Final grade: 17 (scale from 0 to 20)
+                                                                               Soft Skills
+Performance Ads Designer               ISCE DOURO                              Leadership · Team Collaboration ·
+GrowthHit · Full-time                  2017 - 2019                             Problem Solving · Organizational
+February 2024 – Present · 1 year 9     Degree in Production of Interactive     Skills · Team Integration Activities
+months                                 and Multimedia Contents
+Seattle, Washington, United States ·   Final grade: 16 (scale from 0 to 20)
+Remote
+
+Founder | 3D Artist                    SKILLS/SOFTWARE                         LANGUAGES
+Bound Visuals · Full-time
+November 2021 – Present · 4 years      Software                                Portuguese (native)
+Penafiel, Porto, Portugal · On-site    Adobe Photoshop · Adobe Illustrator     English (fluent)
+                                       · Adobe Premiere Pro · Adobe After      French (intermediate)
+Co-Founder | Multimedia & Web          Effects · Adobe InDesign · 3ds Max      Spanish (intermediate)
+Designer                               · Corona Renderer · V-Ray · Unreal      German (basic)
+Maionese Design · Full-time            Engine · Blender · AutoCAD · Figma
+November 2021 – March 2023 · 1         · WordPress · Elementor · CSS ·
+year 5 months                          ComfyUI · KLING · VEO 3 · Runway ·
+Penafiel, Porto, Portugal · On-site    Gemini
+                                                                               RECOMMENDATIONS
+Multimedia & Web Designer                                                      Harun Asefa
+                                       AI, Automation & Data
+Anca Design Studio · Full-time                                                 VP of Operations at GrowthHit
+                                       Artificial Intelligence (AI) · AI for
+March 2020 – October 2021 · 1 year     Image & Video (Generation, Editing,
+8 months                                                                       Vitor has been working with us at
+                                       Workflows) · Generative AI (ComfyUI,
+Penafiel, Porto, Portugal · On-site                                            GrowthHit for almost two years, and
+                                       KLING, VEO 3, Runway, Gemini,
+                                                                               he’s been incredible to work with.
+                                       etc.) · Workflow Automation with
+Multimedia & Web Designer                                                      He’s professional, creative, and really
+                                       AI · AI-Powered Image Editing · AI
+Anca Design Studio · Internship                                                knows his stuff when it comes to
+                                       Video Creation · Inpainting & Image
+March 2019 – March 2020 · 1 year                                               paid ad creative.
+                                       Enhancement · Upscaling & Image
+Penafiel, Porto, Portugal · On-site    Restoration · Data-Driven Creative
+                                                                               What I appreciate most is how
+                                       Iteration
+Multimedia | Web | Design                                                      forward-thinking he is. Vitor has
+Freelance                                                                      completely changed how we test
+                                       Design & Creativity
+August 2017 – March 2019 · 1 year 8                                            and use AI in our creative process.
+                                       Graphic Design · Creative Direction
+months                                                                         He’s always pushing us to try new
+                                       for Ads · Branding & Visual Identity
+Penafiel, Porto, Portugal · On-site                                            tools and new ways of working, and
+                                       · Creativity & Innovation · Visual
+                                                                               that’s had a big impact on our team.
+                                       Storytelling · Performance Ads
+Communication, Design, Production      Design · UGC Ads Creation
+& Logistics — Penafiel City Council                                            On top of that, he’s just a great
+Penafiel City Council · Internship                                             person to collaborate with — reliable,
+                                       3D, CGI & Visualization
+February 2017 – July 2017 · 6 months                                           easy to work with, and always
+                                       3D Visualization (ArchViz & CGI) ·
+Penafiel, Porto, Portugal · On-site                                            bringing fresh ideas. I’d highly
+                                       Architectural Visualization (ArchViz)
+                                                                               recommend him to anyone.
+                                       · CGI for Product Visualization ·
+HVAC Technician                        Rendering (Corona, V-Ray, Blender,
+Freelance                                                                      Angela Brugioni
+                                       Unreal Engine) · Lighting & Look
+January 2015 – June 2017 · 2 years 6                                           Creative Director | Partner at Neat
+                                       Development · 3D Modeling · 3D
+months                                                                         Apparel
+                                       Animation
+On-site
+                                                                               I had the pleasure of working with
+                                       Video, Motion & Post-Production
+HVAC Technician                                                                Vitor on performance ad campaigns,
+                                       Video Ads Production · Video
+Climafiel · Full-time                                                          where his creativity and eye for
+                                       Editing & Motion Design · Post-
+August 2011 – April 2016 · 4 years 9                                           detail elevated every project. He
+                                       Production (Photoshop, After Effects)
+months                                                                         has been a champion at integrating
+                                       · Photography & Retouching · Video ·
+Penafiel · On-site                                                             AI into the design process, and his
+                                       Photography
+
+                                                    Vítor Hugo
+
+                                                       Index                                                          4
+adaptability made the work both            Pedro Rocha                                His broad skill set — including 3D,
+innovative and effective.                  eRetail Search Coordinator at Nestlé       design, video, image editing, and
+                                           | MSc in Data Driven Marketing |           production assistance — gives him a
+Yevheniia Moroz                            SEO | Digital Marketing                    wide perspective and enables highly
+Digital Designer                                                                      effective responses to any challenge
+                                           I had the pleasure of sharing an           presented to him.
+Working with Vitor has been a truly        office with Vitor, which gave me
+inspiring experience. As a fellow          the opportunity to see firsthand the       Angelina Pereira
+designer, I’ve been amazed at how          quality of his work and the way            Master’s Student in Service
+effortlessly he blends creativity with     he approaches challenges. He was           Engineering and Management
+technical skill, especially in the areas   always willing to help me, especially
+of AI image and video generation.          with design, web development, and          I had the privilege of working with
+His work is always polished,               editing skills, and I learned a lot from   Vitor Hugo, and I can confidently
+imaginative, and a step ahead of the       his guidance.                              say that his combination of talent,
+curve.                                                                                professionalism, and creativity is
+                                           What stood out the most was his            truly exceptional. With impressive
+What I value most about                    creativity and talent in 3D – his          experience in 3D, marketing, and
+collaborating with him is his              projects never failed to impress me.       web development, Vitor not only
+openness and generosity — he’s             Beyond his technical expertise, Vitor      delivered high-quality results but
+always willing to share knowledge,         brings a strong work ethic and a real      also guided and supported me in
+exchange ideas, and push concepts          sense of responsibility to everything      each of these areas with clarity and
+further.                                   he does. He’s reliable, collaborative,     effectiveness.
+                                           and someone you can always count
+Vitor is not just a talented creator,      on to deliver great results.               What stands out most about Vitor is
+but also a great teammate —                                                           his ability to combine strategic vision
+someone who makes the process              André Ferreira                             with meticulous attention to detail.
+enjoyable while consistently raising       Media Buyer | PPC Specialist | User        He can transform complex ideas
+the bar.                                   Acquisition Manager | Paid Media           into practical, creative, and visually
+                                           Specialist | Digital Marketer              compelling solutions.
+Daniel Ferreira
+Media Buyer | User Acquisition             I had the opportunity to work              Moreover, his collaborative,
+Manager | PPC Specialist | Paid            with Vitor on several projects. As         empathetic, and approachable
+Media Specialist                           a graphic designer, he combines            attitude makes working with him an
+                                           creativity, precision, and an              inspiring and motivating experience.
+Working with Vitor was a real              excellent understanding of client
+privilege, as it gave me the chance        needs. He particularly stands out in       I wholeheartedly recommend
+to see not only the high standard          creating ads for platforms like Meta,      Vitor Hugo to anyone looking for
+of his work but also the thoughtful        producing images and videos that           a multifaceted, innovative, and
+way he tackles challenges. He              not only capture attention but also        reliable professional. His contribution
+was always open to sharing his             deliver the message clearly and            was decisive to the success of the
+knowledge, particularly in design,         effectively.                               projects we worked on together, and
+web development, and editing, and                                                     I’m certain he will continue to exceed
+I benefited greatly from his support       Highly professional, with great            expectations in any challenge he
+and insights.                              attention to detail and a strong           takes on.
+                                           ability to meet deadlines — he’s an
+What I admired most was his                invaluable asset to any team.
+originality and talent in 3D – every
+project he created had something           Daniel Oliveira
+unique that stood out. Beyond his          Architect and Project Manager
+technical expertise, Vitor combines
+professionalism with a strong sense        An outstanding professional.
+of responsibility. He’s dependable,        Technically knowledgeable, always
+collaborative, and someone you can         up to date, and constantly eager to
+always trust to deliver outstanding        learn.
+results.
+
+
+
+
+                                                 vitorhugobs@hotmail.com
+                                                       +351 913 215 170
+                                                           Index                                                            5
+Text to Image
+
+The foundation of every project — pure generation from text.
+This is where ideas take visual form: architecture, products, people, and advertising concepts.
+Each image is generated from detailed physical prompts that simulate real camera behavior, material accuracy, and
+lighting conditions.
+
+
+                                       Prompt:
+
+                                       ultra-photoreal architectural exterior, minimalist concrete villa with low-
+                                       iron glass façade, floor-to-ceiling windows, early morning sunlight grazing
+                                       travertine terrace, long soft shadows across stone floor, realistic GI
+                                       reflections, pine forest in background with light haze,
+                                       neutral exposure, 24mm architectural lens, crisp micro-roughness on
+                                       concrete, soft volumetric light entering living room, premium magazine
+                                       photography style.
+
+                                       Watch making-of video
+
+
+
+
+Explore full view on my site
+
+
+
+                                       Prompt:
+
+                                       commercial product photograph of a performance running shoe on wet
+                                       asphalt, low-angle 35mm camera, warm golden-hour reflections, soft rim
+                                       light behind, water droplets visible, realistic fabric knit texture and TPU
+                                       reflections, shallow depth of field, cinematic advertising composition, no
+                                       logos, realistic lighting bounce from ground, neutral tone balance.
+
+                                       Watch making-of video
+
+
+
+
+Explore full view on my site
+
+
+
+                                       Prompt:
+
+                                       luxury perfume bottle with golden liquid, on white marble surface with fine
+                                       grey veining, studio gradient background from black to mid-grey, two large
+                                       softboxes creating clean reflections on glass, controlled specular highlights,
+                                       subtle caustics visible on marble, 85mm macro look, f/4 style depth, no dust
+                                       or fingerprints, advertising photography lighting precision.
+
+                                       Watch making-of video
+
+
+
+
+Explore full view on my site
+
+
+                                                    Vítor Hugo
+
+                                                       Index                                                            6
+                               Prompt:
+
+                               female athlete studio portrait, subtle sweat sheen on skin, confident neutral
+                               pose, 2-point lighting setup: key softbox 45° camera right and cool rim light
+                               from behind, neutral grey seamless backdrop, 50mm lens framing chest-up,
+                               realistic skin texture and pores, balanced tone, professional editorial lighting.
+
+                               Watch making-of video
+
+
+
+
+Explore full view on my site
+
+
+
+                               Prompt:
+
+                               sports car in studio, three-quarter rear angle, glossy wet black floor, clean
+                               controlled rim reflections along body lines, metallic graphite paint with fine
+                               flake texture, soft light gradient on background, 70mm product lens,
+                               advertising studio shot aesthetic, realistic tire and metal microtexture.
+
+                               Watch making-of video
+
+
+
+
+Explore full view on my site
+
+
+
+
+                                     vitorhugobs@hotmail.com
+                                           +351 913 215 170
+                                               Index                                                               7
+Image to Image
+
+Reinterpreting and refining existing visuals — keeping geometry while improving light, tone, and atmosphere.
+Perfect for converting renders or AI images into campaign-ready artwork.
+
+
+
+
+BEFORE                                                          AFTER
+
+
+Prompt:
+
+convert daylight architectural render into warm golden-hour atmosphere, extend highlight latitude, add volumetric
+haze near horizon, soft sunlight reflections on glass, warm orange hue (4800K), increase shadow depth slightly,
+maintain geometry and surface realism, balanced contrast, filmic tone curve, subtle vignette for photographic look.
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                                     Vítor Hugo
+
+                                                        Index                                                         8
+BEFORE                                                          AFTER
+
+
+Prompt:
+
+restyle product into premium studio lighting setup with gradient background (charcoal to soft grey), precise reflections
+and soft edge highlights, neutral color calibration (5000K), smooth falloff between highlight zones, commercial
+advertising aesthetic, retain geometry and materials, no color cast, clean exposure balance.
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                               vitorhugobs@hotmail.com
+                                                     +351 913 215 170
+                                                        Index                                                         9
+BEFORE                                                           AFTER
+
+
+Prompt:
+
+apply cinematic grade with warm amber midtones and cool teal shadows, preserve natural skin texture and
+microcontrast, add fine filmic grain, balance rim light and highlight roll-off, enhance color depth while keeping
+saturation natural, achieve editorial campaign tone, professional portrait finish.
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                                       Vítor Hugo
+
+                                                         Index                                                      10
+BEFORE                                                         AFTER
+
+
+Prompt:
+
+convert neutral daylight interior into cozy evening ambiance, add lamp glow pools and warm practical light falloff,
+preserve material albedos and geometry, increase shadow depth for contrast, realistic light bounce on walls, white
+balance around 2800K, cinematic interior mood.
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                              vitorhugobs@hotmail.com
+                                                    +351 913 215 170
+                                                       Index                                                          11
+Inpainting
+
+Precise contextual editing — adding, removing, or extending image areas while maintaining realism. It’s where AI
+meets art direction.
+
+
+
+
+          BEFORE                                                       AFTER
+
+
+Prompt:
+
+Remove the object
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                                     Vítor Hugo
+
+                                                        Index                                                      12
+BEFORE                                                              AFTER
+
+
+Prompt:
+
+Insert lavender plants, insert some colorful flowers also
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                                vitorhugobs@hotmail.com
+                                                      +351 913 215 170
+                                                            Index           13
+     BEFORE                                                      AFTER
+
+
+Prompt:
+
+Change the color of the walls to Olive Green: #636B2F
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                                    Vítor Hugo
+
+                                                        Index            14
+Enhancement + Upscaling
+
+Turning 1K conceptual renders into production-grade imagery. This stage focuses on micro-detail refinement and
+high-resolution export for print or campaigns.
+
+
+
+
+BEFORE                                                        AFTER
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+BEFORE                                                        AFTER
+
+Watch making-of video
+Explore full view on my site
+
+                                             vitorhugobs@hotmail.com
+                                                   +351 913 215 170
+                                                      Index                                                      15
+BEFORE                                   AFTER
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+BEFORE                                   AFTER
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                               Vítor Hugo
+
+                                 Index           16
+ControlNET
+
+Structural guidance through depth, edge maps, canny, lineart, pose control, etc, maintaining geometry while
+enhancing realism. Used here to demonstrate controlled composition and lighting accuracy.
+
+
+
+
+                                  REFERENCE
+
+
+
+
+BEFORE                                                         AFTER
+
+
+
+
+Watch making-of video
+Explore full view on my site
+
+
+
+
+                                              vitorhugobs@hotmail.com
+                                                    +351 913 215 170
+                                                       Index                                                  17
+Workflows
+
+I recorded a walkthrough of my workflows — the best way to understand everything at a glance.
+
+
+
+
+Workflows - video
+
+
+
+
+                                                   Vítor Hugo
+
+                                                      Index                                     18
+VÍTOR HUGO BARROS DA SILVA
+                  Portfolio
+
+
+
+
+        3D Artist · Performance Ads
+      Designer · AI Expert for Image &
+                    Video
+
+        Penafiel // Porto // Portugal
+
+                +351 913 215 170
+          vitorhugobs@hotmail.com
+
+
+           LINKEDIN // BEHANCE
+              criativovitorhugo
+
+
+                WEBSITE
+             boundvisuals.com
+
+
+
+
+              Portugal // 2025
+

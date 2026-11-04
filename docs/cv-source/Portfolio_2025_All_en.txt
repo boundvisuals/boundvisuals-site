@@ -1,0 +1,284 @@
+POR
+TFO
+L I O
+
+
+
+ Vítor Hugo
+    2025
+INDEX
+Presentation
+CV
+
+3D - Architecture Visualization
+3D - Product Visualization
+3D - Automotive & Generalist
+
+Product Photograhy
+Interior Photography
+Editorial Photography
+Sports Photography
+Digital Content Photography
+Photography + 3D Integration
+
+Institutional Video
+Documentary Video
+Promotional Video
+
+Design & Branding
+Web Design
+Performance Ads Design (Static & Video)
+
+AI For Image & Video
+       Text to Image
+       Image to Image
+       Inpainting
+       Enhancement + Upscaling
+       ControlNET
+       Workflows
+
+
+
+
+                                          2
+PRESENTATION
+
+                                   I’m a 3D Artist specialized in             Tooling I master: ComfyUI, KLING,
+                                   Architectural Visualization (ArchViz)      VEO 3, ArcadsAI, Runway, Google
+                                   and product CGI, experienced in            Gemini, Nano Banana, Visual
+                                   producing photoreal renders, real-         Electric, Reve Image, etc.
+                                   time previews and animations with
+                                   Unreal Engine, Blender, Corona             What I deliver:
+                                   Renderer, KLING, VEO 3, and more.          · ArchViz — photoreal exteriors/
+                                                                              interiors, materials/lookdev, lighting,
+                                   Since early on, my dream has been          post; cinematic shots; interactive
+                                   to dive into cinema and the broader        previews for review.
+                                   world of imagery — especially 3D.          · Product CGI — stills and animated
+                                   That passion drives me to keep             visuals with fine detail and realism.
+                                   learning, growing, winning and             · Performance Ads — multi-format
+                                   aiming high. I also care deeply            production (1:1, 9:16, 16:9), speed-to-
+                                   about supporting others, because           creative, data-guided iteration.
+                                   creativity thrives in collaboration.       · Post — high-end image retouch
+                                                                              (Photoshop + AI), video editing,
+                                   In parallel, I work as a Performance       sound tweaks.
+                                   Ads Designer (US agency, 2024–
+                                   present), creating end-to-end              How I work: clear brief -> rapid
+                                   creatives for Meta, LinkedIn, Reddit       prototypes -> short iteration
+                                   and Google: static, motion and             loops -> controlled final delivery.
+                                   UGC. I operate with fast iteration         Clean communication; organized
+VÍTOR HUGO BARROS DA SILVA
+                                   cycles and a data-driven mindset,          versioning; backups and file
+3D Artist · Performance Ads        preserving brand consistency and           hygiene. Open to art tests or proof-
+Designer · AI Expert for Image &   execution quality.                         of-concepts.
+Video
+                                   Key differentiator: advanced,              Languages: Portuguese native ·
+28 . 01 . 1993                     professional AI applied to image           English C2 · French intermediate (B2
+Penafiel // Porto // Portugal      and video. I integrate AI across the       in progress) · Spanish intermediate ·
+                                   pipeline without sacrificing fidelity or   German beginner.
++351 913 215 170                   craft: from from-scratch generation        Mobility: Open to opportunities in
+vitorhugobs@hotmail.com            and visual ideation, to editing and        French- and German-speaking
+                                   enhancement (inpainting, upscaling,        Switzerland; preference for
+                                   artifact correction, denoising), plus      international English-friendly
+LINKEDIN // BEHANCE                automation of creative workflows           environments.
+criativovitorhugo                  to accelerate delivery while keeping
+                                   artistic control.
+
+WEBSITE
+boundvisuals.com
+
+
+
+
+                                                                                                                     3
+CV
+
+Professional                           Education                               Video, Motion & Post-Production
+                                                                               Video Ads Production · Video
+Performance Ads Designer               ISCE DOURO                              Editing & Motion Design · Post-
+GrowthHit · Full-time                  2015 - 2017                             Production (Photoshop, After Effects)
+February 2024 – Present · 1 year 9     Higher Professional Technical Course    · Photography & Retouching · Video ·
+months                                 in Multimedia Content Development       Photography
+Seattle, Washington, United States ·   Final grade: 17 (scale from 0 to 20)
+Remote                                                                         Web & UI/UX
+                                       ISCE DOURO                              Web Design · Responsive Web
+Founder | 3D Artist                    2017 - 2019                             Design · Web Development ·
+Bound Visuals · Full-time              Degree in Production of Interactive     E-commerce · Figma · Elementor ·
+November 2021 – Present · 4 years      and Multimedia Contents                 WordPress · CSS
+Penafiel, Porto, Portugal · On-site    Final grade: 16 (scale from 0 to 20)
+                                                                               Soft Skills
+                                                                               Leadership · Team Collaboration ·
+Co-Founder | Multimedia & Web
+Designer
+                                       Skills/Software                         Problem Solving · Organizational
+Maionese Design · Full-time            Software                                Skills · Team Integration Activities
+November 2021 – March 2023 · 1         Adobe Photoshop · Adobe Illustrator
+year 5 months                          · Adobe Premiere Pro · Adobe After
+Penafiel, Porto, Portugal · On-site    Effects · Adobe InDesign · 3ds Max
+                                                                               Languages
+                                       · Corona Renderer · V-Ray · Unreal      Portuguese (native)
+Multimedia & Web Designer              Engine · Blender · AutoCAD · Figma      English (fluent)
+Anca Design Studio · Full-time         · WordPress · Elementor · CSS ·         French (intermediate)
+March 2020 – October 2021 · 1 year     ComfyUI · KLING · VEO 3 · Runway ·      Spanish (intermediate)
+8 months                               Gemini                                  German (basic)
+Penafiel, Porto, Portugal · On-site
+                                       AI, Automation & Data
+Multimedia & Web Designer              Artificial Intelligence (AI) · AI for   Recommendations
+Anca Design Studio · Internship        Image & Video (Generation, Editing,
+March 2019 – March 2020 · 1 year       Workflows) · Generative AI (ComfyUI,    Harun Asefa
+Penafiel, Porto, Portugal · On-site    KLING, VEO 3, Runway, Gemini,           VP of Operations at GrowthHit
+                                       etc.) · Workflow Automation with
+Multimedia | Web | Design              AI · AI-Powered Image Editing · AI      Vitor has been working with us at
+Freelance                              Video Creation · Inpainting & Image     GrowthHit for almost two years, and
+August 2017 – March 2019 · 1 year 8    Enhancement · Upscaling & Image         he’s been incredible to work with.
+months                                 Restoration · Data-Driven Creative      He’s professional, creative, and really
+Penafiel, Porto, Portugal · On-site    Iteration                               knows his stuff when it comes to
+                                                                               paid ad creative.
+Communication, Design, Production      Design & Creativity
+& Logistics — Penafiel City Council    Graphic Design · Creative Direction     What I appreciate most is how
+Penafiel City Council · Internship     for Ads · Branding & Visual Identity    forward-thinking he is. Vitor has
+February 2017 – July 2017 · 6 months   · Creativity & Innovation · Visual      completely changed how we test
+Penafiel, Porto, Portugal · On-site    Storytelling · Performance Ads          and use AI in our creative process.
+                                       Design · UGC Ads Creation               He’s always pushing us to try new
+HVAC Technician                                                                tools and new ways of working, and
+Freelance                              3D, CGI & Visualization                 that’s had a big impact on our team.
+January 2015 – June 2017 · 2 years     3D Visualization (ArchViz & CGI) ·
+6 months                               Architectural Visualization (ArchViz)   On top of that, he’s just a great
+On-site                                · CGI for Product Visualization ·       person to collaborate with — reliable,
+                                       Rendering (Corona, V-Ray, Blender,      easy to work with, and always
+HVAC Technician                        Unreal Engine) · Lighting & Look        bringing fresh ideas. I’d highly
+Climafiel · Full-time                  Development · 3D Modeling · 3D          recommend him to anyone.
+August 2011 – April 2016 · 4 years 9   Animation
+months
+Penafiel · On-site
+
+
+
+
+                                                    Vítor Hugo
+
+                                                       Index                                                          4
+Angela Brugioni                            What I admired most was his                Daniel Oliveira
+Creative Director | Partner at Neat        originality and talent in 3D – every       Architect and Project Manager
+Apparel                                    project he created had something
+                                           unique that stood out. Beyond his          An outstanding professional.
+I had the pleasure of working with         technical expertise, Vitor combines        Technically knowledgeable, always
+Vitor on performance ad campaigns,         professionalism with a strong sense        up to date, and constantly eager to
+where his creativity and eye for           of responsibility. He’s dependable,        learn.
+detail elevated every project. He          collaborative, and someone you can
+has been a champion at integrating         always trust to deliver outstanding        His broad skill set — including 3D,
+AI into the design process, and his        results.                                   design, video, image editing, and
+adaptability made the work both                                                       production assistance — gives him a
+innovative and effective.                  Pedro Rocha                                wide perspective and enables highly
+                                           eRetail Search Coordinator at Nestlé       effective responses to any challenge
+Yevheniia Moroz                            | MSc in Data Driven Marketing |           presented to him.
+Digital Designer                           SEO | Digital Marketing
+                                                                                      Angelina Pereira
+Working with Vitor has been a truly        I had the pleasure of sharing an           Master’s Student in Service
+inspiring experience. As a fellow          office with Vitor, which gave me           Engineering and Management
+designer, I’ve been amazed at how          the opportunity to see firsthand the
+effortlessly he blends creativity with     quality of his work and the way            I had the privilege of working with
+technical skill, especially in the areas   he approaches challenges. He was           Vitor Hugo, and I can confidently
+of AI image and video generation.          always willing to help me, especially      say that his combination of talent,
+His work is always polished,               with design, web development, and          professionalism, and creativity is
+imaginative, and a step ahead of the       editing skills, and I learned a lot from   truly exceptional. With impressive
+curve.                                     his guidance.                              experience in 3D, marketing, and
+                                                                                      web development, Vitor not only
+What I value most about                    What stood out the most was his            delivered high-quality results but
+collaborating with him is his              creativity and talent in 3D – his          also guided and supported me in
+openness and generosity — he’s             projects never failed to impress me.       each of these areas with clarity and
+always willing to share knowledge,         Beyond his technical expertise, Vitor      effectiveness.
+exchange ideas, and push concepts          brings a strong work ethic and a real
+further.                                   sense of responsibility to everything      What stands out most about Vitor is
+                                           he does. He’s reliable, collaborative,     his ability to combine strategic vision
+Vitor is not just a talented creator,      and someone you can always count           with meticulous attention to detail.
+but also a great teammate —                on to deliver great results.               He can transform complex ideas
+someone who makes the process                                                         into practical, creative, and visually
+enjoyable while consistently raising       André Ferreira                             compelling solutions.
+the bar.                                   Media Buyer | PPC Specialist | User
+                                           Acquisition Manager | Paid Media           Moreover, his collaborative,
+Daniel Ferreira                            Specialist | Digital Marketer              empathetic, and approachable
+Media Buyer | User Acquisition                                                        attitude makes working with him an
+Manager | PPC Specialist | Paid            I had the opportunity to work              inspiring and motivating experience.
+Media Specialist                           with Vitor on several projects. As
+                                           a graphic designer, he combines            I wholeheartedly recommend
+Working with Vitor was a real              creativity, precision, and an              Vitor Hugo to anyone looking for
+privilege, as it gave me the chance        excellent understanding of client          a multifaceted, innovative, and
+to see not only the high standard          needs. He particularly stands out in       reliable professional. His contribution
+of his work but also the thoughtful        creating ads for platforms like Meta,      was decisive to the success of the
+way he tackles challenges. He              producing images and videos that           projects we worked on together, and
+was always open to sharing his             not only capture attention but also        I’m certain he will continue to exceed
+knowledge, particularly in design,         deliver the message clearly and            expectations in any challenge he
+web development, and editing, and          effectively.                               takes on.
+I benefited greatly from his support
+and insights.                              Highly professional, with great
+                                           attention to detail and a strong
+                                           ability to meet deadlines — he’s an
+                                           invaluable asset to any team.
+
+
+                                                 vitorhugobs@hotmail.com
+                                                       +351 913 215 170
+                                                                                                                            5
+3D - Architecture Visualization
+                                  Project name:
+                                  Client:
+                                  Date:
+
+                                  View all project images
+                                  www.boundvisuals.com
+
+
+
+
+                                  Project name:
+                                  Client:
+                                  Date:
+
+                                  View all project images
+                                  www.boundvisuals.com
+
+
+
+
+                                  Project name:
+                                  Client:
+                                  Date:
+
+                                  View all project images
+                                  www.boundvisuals.com
+
+
+
+
+                          Index                             6
+7
+Index   8
+VÍTOR HUGO BARROS DA SILVA
+                 Portfolio
+
+
+
+
+        3D Artist · Performance Ads
+      Designer · AI Expert for Image &
+                     Video
+
+               28 . 01 . 1993
+       Penafiel // Porto // Portugal
+
+               +351 913 215 170
+         vitorhugobs@hotmail.com
+
+
+           LINKEDIN // BEHANCE
+              criativovitorhugo
+
+
+                 WEBSITE
+             boundvisuals.com
+
+
+
+
+             Portugal // 2025
+

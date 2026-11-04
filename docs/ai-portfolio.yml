@@ -1,0 +1,44 @@
+# AI portfolio content (transcribed from Portfolio_2025_AI_en, 2026-11-04). Images in docs/cv-source/media/.
+intro:
+  - title: "About this portfolio"
+    text: "This document presents a focused overview of key AI techniques — Text to Image, Image to Image, Inpainting, Enhancement and Upscaling, ControlNET and Workflows. These examples highlight the core capabilities of my daily workflow. Showing every single workflow would make this portfolio infinite, so this version focuses on what’s most relevant, keeping it clean and concise."
+  - title: "Confidentiality notice"
+    text: "Some of my most advanced AI and CGI workflows were developed for global brand campaigns under NDA. For confidentiality reasons they are not displayed here — but I’m happy to walk through those projects in detail during a private discussion or live call. Beyond what’s shown here, I also design and implement advanced processes involving Object Migration, CGI + AI Integration, external AI API tools (Arcads, Reve, Visual Electric), paid AI systems inside ComfyUI, Video and Sound AI, Viewport-to-Image conversions, Style Transfer pipelines and other complex automation workflows."
+  - title: "Making of"
+    text: "Each workflow featured here includes a recorded making-of — the real ComfyUI process, step by step, from prompt to final image. Ask me for the links."
+sections:
+  - name: "Text to Image"
+    lead: "The foundation of every project — pure generation from text. This is where ideas take visual form: architecture, products, people and advertising concepts. Each image is generated from detailed physical prompts that simulate real camera behaviour, material accuracy and lighting conditions."
+    items:
+      - { img: [ai-006-001.jpg], prompt: "ultra-photoreal architectural exterior, minimalist concrete villa with low-iron glass façade, floor-to-ceiling windows, early morning sunlight grazing travertine terrace, long soft shadows across stone floor, realistic GI reflections, pine forest in background with light haze, neutral exposure, 24mm architectural lens, crisp micro-roughness on concrete, soft volumetric light entering living room, premium magazine photography style." }
+      - { img: [ai-007-004.jpg], prompt: "female athlete studio portrait, subtle sweat sheen on skin, confident neutral pose, 2-point lighting setup: key softbox 45° camera right and cool rim light from behind, neutral grey seamless backdrop, 50mm lens framing chest-up, realistic skin texture and pores, balanced tone, professional editorial lighting." }
+      - { img: [ai-007-005.jpg], prompt: "sports car in studio, three-quarter rear angle, glossy wet black floor, clean controlled rim reflections along body lines, metallic graphite paint with fine flake texture, soft light gradient on background, 70mm product lens, advertising studio shot aesthetic, realistic tire and metal microtexture." }
+      - { img: [ai-006-002.jpg, ai-006-003.jpg] }
+  - name: "Image to Image"
+    lead: "Reinterpreting and refining existing visuals — keeping geometry while improving light, tone and atmosphere. Perfect for converting renders or AI images into campaign-ready artwork."
+    items:
+      - { pair: [ai-008-006.jpg, ai-008-007.jpg], prompt: "convert daylight architectural render into warm golden-hour atmosphere, extend highlight latitude, add volumetric haze near horizon, soft sunlight reflections on glass, warm orange hue (4800K), increase shadow depth slightly, maintain geometry and surface realism, balanced contrast, filmic tone curve, subtle vignette for photographic look." }
+      - { pair: [ai-009-008.jpg, ai-009-009.jpg], prompt: "restyle product into premium studio lighting setup with gradient background (charcoal to soft grey), precise reflections and soft edge highlights, neutral color calibration (5000K), smooth falloff between highlight zones, commercial advertising aesthetic, retain geometry and materials, no color cast, clean exposure balance." }
+      - { pair: [ai-010-010.jpg, ai-010-011.jpg], prompt: "apply cinematic grade with warm amber midtones and cool teal shadows, preserve natural skin texture and microcontrast, add fine filmic grain, balance rim light and highlight roll-off, enhance color depth while keeping saturation natural, achieve editorial campaign tone, professional portrait finish." }
+      - { pair: [ai-011-012.jpg, ai-011-013.jpg], prompt: "convert neutral daylight interior into cozy evening ambiance, add lamp glow pools and warm practical light falloff, preserve material albedos and geometry, increase shadow depth for contrast, realistic light bounce on walls, white balance around 2800K, cinematic interior mood." }
+  - name: "Inpainting"
+    lead: "Precise contextual editing — adding, removing or extending image areas while maintaining realism. It’s where AI meets art direction."
+    items:
+      - { pair: [ai-012-014.jpg, ai-012-015.jpg], prompt: "Remove the object" }
+      - { pair: [ai-013-016.jpg, ai-013-017.jpg], prompt: "Insert lavender plants, insert some colorful flowers also" }
+      - { pair: [ai-014-018.jpg, ai-014-019.jpg], prompt: "Change the color of the walls to Olive Green: #636B2F" }
+  - name: "Enhancement + Upscaling"
+    lead: "Turning 1K conceptual renders into production-grade imagery. This stage focuses on micro-detail refinement and high-resolution export for print or campaigns."
+    items:
+      - { pair: [ai-015-020.jpg, ai-015-022.jpg] }
+      - { pair: [ai-015-021.jpg, ai-015-023.jpg] }
+      - { pair: [ai-016-024.jpg, ai-016-027.jpg] }
+      - { pair: [ai-016-025.jpg, ai-016-028.jpg] }
+  - name: "ControlNET"
+    lead: "Structural guidance through depth, edge maps, canny, lineart, pose control — maintaining geometry while enhancing realism. Used here to demonstrate controlled composition and lighting accuracy."
+    items:
+      - { triple: [ai-017-029.jpg, ai-017-030.jpg, ai-017-031.jpg] }
+  - name: "Workflows"
+    lead: "I recorded a walkthrough of my workflows — the best way to understand everything at a glance."
+    items:
+      - { img: [ai-018-033.jpg] }

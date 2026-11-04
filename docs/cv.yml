@@ -1,0 +1,186 @@
+# Vítor's CV content (single source for CV long/short, cover letters and portfolio intro pages).
+# Transcribed 1:1 from his CV_vitor hugo_2026_LongVersion_en (InDesign) on 2026-11-04. Edit here; the robot rebuilds every PDF.
+name: "Vítor Hugo Barros da Silva"
+short_name: "Vítor Hugo"
+studio: "Bound Visuals"
+title: "3D Artist · Performance Ads Designer · AI Expert for Image & Video"
+born: "28 . 01 . 1993"
+location: "Penafiel // Porto // Portugal"
+phone: "+351 913 215 170"
+email: "vitorhugobs@hotmail.com"
+linkedin: "criativovitorhugo"
+behance: "criativovitorhugo"
+website: "boundvisuals.com"
+instagram: "@vitorhugo_boundvisuals"
+
+presentation:
+  - "I’m a 3D Artist specialized in Architectural Visualization (ArchViz) and product CGI, experienced in producing photoreal renders, real-time previews and animations with Unreal Engine, Blender, Corona Renderer, KLING, VEO 3, and more."
+  - "Since early on, my dream has been to dive into cinema and the broader world of imagery — especially 3D. That passion drives me to keep learning, growing, winning and aiming high. I also care deeply about supporting others, because creativity thrives in collaboration."
+  - "In parallel, I work as a Performance Ads Designer (US agency, 2024–present), creating end-to-end creatives for Meta, LinkedIn, Reddit and Google: static, motion and UGC. I operate with fast iteration cycles and a data-driven mindset, preserving brand consistency and execution quality."
+  - "Key differentiator: advanced, professional AI applied to image and video. I integrate AI across the pipeline without sacrificing fidelity or craft: from from-scratch generation and visual ideation, to editing and enhancement (inpainting, upscaling, artifact correction, denoising), plus automation of creative workflows to accelerate delivery while keeping artistic control."
+  - "Tooling I master: ComfyUI, KLING, VEO 3, ArcadsAI, Runway, Google Gemini, Nano Banana, Visual Electric, Reve Image, etc."
+deliver:
+  - "ArchViz — photoreal exteriors/interiors, materials/lookdev, lighting, post; cinematic shots; interactive previews for review."
+  - "Product CGI — stills and animated visuals with fine detail and realism."
+  - "Performance Ads — multi-format production (1:1, 9:16, 16:9), speed-to-creative, data-guided iteration."
+  - "AI Character & Voice — photorealistic human characters with accurate lip-sync and speech-to-movement synchronization, using Kling, VEO 3, Seedance, and ComfyUI."
+  - "Post — high-end image retouch (Photoshop + AI), video editing, sound tweaks."
+how_i_work: "Clear brief → rapid prototypes → short iteration loops → controlled final delivery. Clean communication; organized versioning; backups and file hygiene. Open to art tests or proof-of-concepts."
+mobility: "Open to opportunities in French- and German-speaking Switzerland; preference for international English-friendly environments."
+
+experience:
+  - role: "Performance Ads Designer"
+    org: "GrowthHit · Full-time"
+    dates: "February 2024 – Present"
+    place: "Seattle, Washington, United States · Remote"
+    tags: [ads, ai, marketing, design]
+    bullets:
+      - "Created end-to-end ad creatives for Meta, LinkedIn, Reddit, Google: static, motion and UGC in multiple formats (1:1, 9:16, 16:9)."
+      - "Produced AI-generated video featuring photorealistic human characters with accurate lip-sync, using Kling, VEO 3, Seedance, ComfyUI."
+      - "Managed creative sprints delivering multiple variations weekly with rapid turnaround, ensuring brand consistency."
+      - "Applied data-driven iteration: CTR/CPA/CVR learnings (NDA-safe), A/B testing, continuous optimization."
+      - "Leveraged advanced AI for generation/editing across image, video, and voice; high-end Photoshop retouching."
+      - "Built automated creative workflows to boost production speed while maintaining execution quality."
+  - role: "Founder | 3D Artist"
+    org: "Bound Visuals · Full-time"
+    dates: "November 2021 – Present"
+    place: "Portugal · On-site"
+    tags: [3d, ai]
+    bullets:
+      - "Specialized in Architectural Visualization (ArchViz) for residential and commercial projects: photoreal exteriors, interiors, cinematic shots, interactive previews (Unreal Engine)."
+      - "Produced high-end product CGI: detailed stills and short motion spots with strong realism."
+      - "Integrated AI workflows (ComfyUI, KLING, VEO 3, ArcadsAI, Runway, Gemini…) for ideation, inpainting, upscaling, artifact cleanup, enhancement."
+      - "Delivered lookdev and post-production: lighting, materials, Photoshop + AI retouch, color management."
+      - "Collaborated with international studios and architecture offices under tight deadlines; structured deliveries with versioning and asset libraries."
+  - role: "Co-Founder | Multimedia & Web Designer"
+    org: "Maionese Design · Full-time"
+    dates: "November 2021 – March 2023"
+    place: "Penafiel, Porto, Portugal · On-site"
+    tags: [design, web, video, marketing]
+    bullets:
+      - "Co-founded and grew a creative studio delivering design, web, and multimedia solutions for diverse clients."
+      - "Led branding and web design projects: corporate websites, landing pages, micro-sites, with UX-focused implementation."
+      - "Produced and directed video content: storyboards, filming, editing, and post-production for promotional and music videos."
+      - "Acted as creative director and project manager: client meetings, requirements gathering, workflow organization, and delivery."
+      - "Balanced hands-on creative work with client management and business operations, ensuring high-quality outcomes under tight deadlines."
+  - role: "Multimedia & Web Designer"
+    org: "Anca Design Studio · Full-time (internship from March 2019)"
+    dates: "March 2019 – October 2021"
+    place: "Penafiel, Porto, Portugal · On-site"
+    tags: [design, web, video, photo, 3d]
+    bullets:
+      - "Worked as a multi-disciplinary creative, recognized as the “Swiss Army knife” of the team."
+      - "Professional photography: fashion, product, interiors and exteriors (architecture), with advanced retouching and post-production."
+      - "Full-cycle video production: storyboarding, filming, editing, and finalization for campaigns and digital content."
+      - "Web design and light front-end (WordPress, CSS), combined with graphic design for branding and digital marketing."
+      - "Delivered architectural 3D visualization projects as well as advanced image editing/manipulation."
+      - "Provided broad support for digital campaigns and branding, consistently delivering above expectations."
+  - role: "Multimedia | Web | Design"
+    org: "Freelance"
+    dates: "August 2017 – March 2019"
+    place: "Penafiel, Porto, Portugal · On-site"
+    tags: [design, web, video, photo, 3d]
+    bullets:
+      - "Delivered a wide range of creative services: web design, branding, photography, video production, graphic design, and 3D visualization."
+      - "Produced photo shoots (fashion, product, architecture) with advanced editing and retouch."
+      - "Managed video projects end-to-end: storyboarding, filming, editing, and delivery for clients across different industries."
+      - "Designed and developed websites (WordPress, CSS) with focus on usability and brand consistency."
+      - "Built long-term client relationships through direct communication, independent project management, and reliable delivery."
+  - role: "Communication, Design, Production & Logistics"
+    org: "Penafiel City Council · Internship"
+    dates: "February 2017 – July 2017"
+    place: "Penafiel, Porto, Portugal · On-site"
+    tags: [design, marketing]
+    bullets:
+      - "Focused on communication, design, production, and logistics, supporting cultural and public events of the municipality."
+      - "Designed promotional materials: posters, banners, large-scale prints — and also participated hands-on in installing them across the city."
+      - "Known for being proactive and versatile: equally comfortable creating visuals at the desk or climbing a crane with the operations team to bring projects to life."
+      - "Built a valuable professional network during this internship, connecting with people who later became long-term collaborators and supporters."
+      - "Earned recognition for energy, adaptability, and willingness to “get the job done,” no matter the task."
+  - role: "HVAC Technician"
+    org: "Freelance"
+    dates: "January 2015 – June 2017"
+    place: "On-site"
+    tags: [tech]
+    bullets:
+      - "Specialized exclusively in air conditioning installation and troubleshooting (split, multisplit, VRV)."
+      - "Performed diagnostics, repairs, and maintenance with strong technical precision."
+      - "Supported clients mainly during evenings, weekends, and holidays — showing dedication and resilience."
+  - role: "HVAC Technician"
+    org: "Climafiel · Full-time"
+    dates: "August 2011 – April 2016"
+    place: "Penafiel · On-site"
+    tags: [tech]
+    bullets:
+      - "Installation, maintenance and repair of air conditioning systems (split, multisplit, VRV), including diagnostics and troubleshooting."
+      - "Hands-on experience with AHUs, ventilation, ductwork, boilers, heat pumps, and solar panels."
+      - "Strong foundations in technical rigor, discipline, and meeting on-site deadlines."
+
+education:
+  - { school: "ISCE Douro", dates: "2017 – 2019", course: "Degree in Production of Interactive and Multimedia Contents", grade: "Final grade: 16 (0–20)" }
+  - { school: "ISCE Douro", dates: "2015 – 2017", course: "Higher Professional Technical Course in Multimedia Content Development", grade: "Final grade: 17 (0–20)" }
+
+skills:
+  "Software": "Adobe Photoshop · Illustrator · Premiere Pro · After Effects · InDesign · 3ds Max · Corona Renderer · V-Ray · Unreal Engine · Blender · AutoCAD · Figma · WordPress · Elementor · CSS · ComfyUI · KLING · VEO 3 · Runway · Gemini"
+  "AI, Automation & Data": "AI for Image & Video (generation, editing, workflows) · Generative AI (ComfyUI, KLING, VEO 3, Runway, Gemini) · Workflow automation with AI · AI-powered image editing · AI video creation · Inpainting & enhancement · Upscaling & restoration · Data-driven creative iteration"
+  "Design & Creativity": "Graphic design · Creative direction for ads · Branding & visual identity · Visual storytelling · Performance ads design · UGC ads creation"
+  "3D, CGI & Visualization": "Architectural visualization (ArchViz) · CGI for product visualization · Rendering (Corona, V-Ray, Blender, Unreal Engine) · Lighting & look development · 3D modeling · 3D animation"
+  "Video, Motion & Post-Production": "Video ads production · Video editing & motion design · Post-production (Photoshop, After Effects) · Photography & retouching"
+  "Web & UI/UX": "Web design · Responsive web design · Web development · E-commerce · Figma · Elementor · WordPress · CSS"
+  "Soft Skills": "Leadership · Team collaboration · Problem solving · Organizational skills · Team integration activities"
+
+languages:
+  - "Portuguese — native"
+  - "English — fluent (C2)"
+  - "French — intermediate (B2 in progress)"
+  - "Spanish — intermediate"
+  - "German — basic"
+
+certifications:
+  - { name: "ArchX AI", by: "Eder Xavier", date: "Sep 2025" }
+  - { name: "The Next Step of Rendering 2.0", by: "Ander Alencar", date: "May 2025" }
+  - { name: "Render Era", by: "Ander Alencar", date: "Nov 2022" }
+  - { name: "Unlocking Unreal", by: "Ander Alencar", date: "Sep 2022" }
+  - { name: "Architectural Visualization | 3ds Max and Corona Renderer", by: "Domestika", date: "Oct 2021" }
+  - { name: "Render Bravo Week", by: "Ander Alencar", date: "Aug 2021" }
+  - { name: "Renderflix", by: "Ander Alencar", date: "Jan 2021" }
+  - { name: "Render Bravo Week", by: "Ander Alencar", date: "Nov 2020" }
+  - { name: "3DS Max from Scratch 2.0", by: "Ander Alencar", date: "Oct 2020" }
+  - { name: "Render Bravo Week", by: "Ander Alencar", date: "Sep 2020" }
+  - { name: "Render is Power 3.0", by: "Ander Alencar", date: "Jul 2020" }
+  - { name: "Render is Power 2.0", by: "Ander Alencar", date: "May 2020" }
+  - { name: "Render is Power 1.0", by: "Ander Alencar", date: "Jan 2020" }
+  - { name: "Identity through Typography", by: "ISCE Douro", date: "Jun 2019" }
+  - { name: "Escritaria 2018 – Pepetela", by: "Penafiel City Council", date: "Oct 2018" }
+  - { name: "Conference “Being Different is Normal”", by: "ISCE Douro", date: "Jun 2016" }
+  - { name: "Layout for 3D Animation", by: "CINANIMA", date: "Nov 2015" }
+
+projects:
+  - { name: "Penafiel Racing Fest", dates: "June 2017 – Present", what: "Organization, design, communication, media & streaming (editions 2017, 2018, 2019, 2022, 2023, 2024)" }
+  - { name: "FIACED I & II", dates: "2016, 2018", what: "Event organization and multimedia coverage · associated with ISCE Douro" }
+
+recommendations:
+  - { who: "Harun Asefa", role: "VP of Operations at GrowthHit", text: "Vitor has been working with us at GrowthHit for almost two years, and he’s been incredible to work with. He’s professional, creative, and really knows his stuff when it comes to paid ad creative. What I appreciate most is how forward-thinking he is. Vitor has completely changed how we test and use AI in our creative process. He’s always pushing us to try new tools and new ways of working, and that’s had a big impact on our team. On top of that, he’s just a great person to collaborate with — reliable, easy to work with, and always bringing fresh ideas. I’d highly recommend him to anyone." }
+  - { who: "Angela Brugioni", role: "Creative Director | Partner at Neat Apparel", text: "I had the pleasure of working with Vitor on performance ad campaigns, where his creativity and eye for detail elevated every project. He has been a champion at integrating AI into the design process, and his adaptability made the work both innovative and effective." }
+  - { who: "Yevheniia Moroz", role: "Digital Designer", text: "Working with Vitor has been a truly inspiring experience. As a fellow designer, I’ve been amazed at how effortlessly he blends creativity with technical skill, especially in the areas of AI image and video generation. His work is always polished, imaginative, and a step ahead of the curve. What I value most about collaborating with him is his openness and generosity — he’s always willing to share knowledge, exchange ideas, and push concepts further. Vitor is not just a talented creator, but also a great teammate — someone who makes the process enjoyable while consistently raising the bar." }
+  - { who: "Daniel Ferreira", role: "Media Buyer | User Acquisition Manager | PPC Specialist", text: "Working with Vitor was a real privilege, as it gave me the chance to see not only the high standard of his work but also the thoughtful way he tackles challenges. He was always open to sharing his knowledge, particularly in design, web development, and editing, and I benefited greatly from his support and insights. What I admired most was his originality and talent in 3D – every project he created had something unique that stood out. Beyond his technical expertise, Vitor combines professionalism with a strong sense of responsibility. He’s dependable, collaborative, and someone you can always trust to deliver outstanding results." }
+  - { who: "Pedro Rocha", role: "eRetail Search Coordinator at Nestlé", text: "I had the pleasure of sharing an office with Vitor, which gave me the opportunity to see firsthand the quality of his work and the way he approaches challenges. He was always willing to help me, especially with design, web development, and editing skills, and I learned a lot from his guidance. What stood out the most was his creativity and talent in 3D – his projects never failed to impress me. Beyond his technical expertise, Vitor brings a strong work ethic and a real sense of responsibility to everything he does. He’s reliable, collaborative, and someone you can always count on to deliver great results." }
+  - { who: "André Ferreira", role: "Media Buyer | PPC Specialist | Digital Marketer", text: "I had the opportunity to work with Vitor on several projects. As a graphic designer, he combines creativity, precision, and an excellent understanding of client needs. He particularly stands out in creating ads for platforms like Meta, producing images and videos that not only capture attention but also deliver the message clearly and effectively. Highly professional, with great attention to detail and a strong ability to meet deadlines — he’s an invaluable asset to any team." }
+  - { who: "Daniel Oliveira", role: "Architect and Project Manager", text: "An outstanding professional. Technically knowledgeable, always up to date, and constantly eager to learn. His broad skill set — including 3D, design, video, image editing, and production assistance — gives him a wide perspective and enables highly effective responses to any challenge presented to him." }
+  - { who: "Angelina Pereira", role: "Master’s Student in Service Engineering and Management", text: "I had the privilege of working with Vitor Hugo, and I can confidently say that his combination of talent, professionalism, and creativity is truly exceptional. With impressive experience in 3D, marketing, and web development, Vitor not only delivered high-quality results but also guided and supported me in each of these areas with clarity and effectiveness. What stands out most about Vitor is his ability to combine strategic vision with meticulous attention to detail. He can transform complex ideas into practical, creative, and visually compelling solutions." }
+  - { who: "Emma Sisich", role: "Head of Business Development and Partnerships | GrowthHit", text: "Working with Vítor has been such a great experience. He brings a rare mix of creativity, technical skill, and attention to detail that shows in every project. His work is always original, polished, and thoughtfully executed. What stands out most is his attitude — he’s reliable, collaborative, and always brings positive energy to the team." }
+  - { who: "Rishabh Sachdev", role: "Data to Dollars | Boosting Sales", text: "I highly recommend Vítor. He is an exceptional professional who uniquely blends creative insight and technical expertise. His broad skills in design and editing are notable, and his 3D work in particular demonstrates a powerful and original artistic vision." }
+  - { who: "Rahul R", role: "CRO Consultant | UX Researcher | Growth Marketing", text: "Vítor makes complex work feel effortless. He combines sharp creative thinking with strong technical execution and meticulous attention to detail, always pushing for smarter, forward-looking solutions. He communicates clearly, anticipates risks, and delivers reliably — often improving the brief along the way." }
+  - { who: "Andrea Jaramillo", role: "Digital Marketeer | Paid Media | SEM", text: "Vitor is an outstanding creative professional. He brings ideas to life by combining a variety of tools and AI solutions to deliver impressive, high-quality results. Even in situations with limited visual assets, Vitor consistently finds smart alternatives and produces exceptional outcomes." }
+  - { who: "Vitalli Dremliuha", role: "Design Director", text: "Working with Vitor Hugo is a real pleasure. He is a talented designer with a strong sense of performance-driven design and a very modern approach to creativity. Vitor actively uses AI tools to speed up workflows, test ideas, and improve creative output – and he does it smartly and strategically. Super reliable, proactive, and always open to feedback." }
+  - { who: "Anastasiia Karavaieva", role: "Digital Designer", text: "I had the pleasure of working with Vítor on performance ads, and he consistently brought a thoughtful, strategic approach to the process. He has a strong understanding of how to connect creative direction with performance goals, and he’s been especially proactive in applying AI to improve workflows, generate stronger ideas, and make the ad creation process more efficient." }
+
+cover_letter_template: |
+  Dear Hiring Team,
+  I’m writing to express my enthusiasm for the {role} position at {company}.
+  {why_fit}
+  Currently, as a Performance Ads Designer at GrowthHit (US) and Founder of Bound Visuals, I combine 3D visualization, generative AI and creative automation — blending data-driven iteration with refined visual craft.
+  {why_company}
+  I would be delighted to further discuss how my experience can support your team.
+  Warm regards,
+  Vítor Hugo Barros da Silva

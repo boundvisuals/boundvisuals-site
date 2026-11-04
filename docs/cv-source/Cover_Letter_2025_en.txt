@@ -1,0 +1,63 @@
+Cover Letter
+
+VÍTOR HUGO BARROS DA SILVA
+Penafiel · Porto · Portugal
++351 913 215 170
+vitorhugobs@hotmail.com
+boundvisuals.com
+linkedin.com/in/criativovitorhugo
+
+Date: October 14, 2025
+
+Hiring Team
+INDG / Grip
+
+Subject: Application for AI Workflow Specialist (ComfyUI)
+
+Dear Hiring Team,
+
+I’m writing to express my enthusiasm for the AI Workflow Specialist (ComfyUI) position at INDG / Grip.
+With a multidisciplinary background bridging 3D visualization, generative AI, and creative automation, I have
+developed a deep technical and artistic understanding of how to design, refine, and scale AI-driven image
+workflows — exactly the core of what this role demands.
+
+Over the past years, I have built and deployed advanced ComfyUI pipelines integrating ControlNET, inpainting,
+enhancement, and upscaling techniques for production-grade visuals. My daily work combines creative direction
+and technical control: translating concepts into modular workflows that ensure visual fidelity, style consistency, and
+repeatability. Beyond what’s visible in my public portfolio, I’ve also developed confidential AI–CGI workflows for
+global brand campaigns, under NDA, which streamlined content delivery without compromising quality.
+
+Currently, as a Performance Ads Designer at GrowthHit (US) and Founder of Bound Visuals, I integrate AI automation
+into performance creatives for Meta, LinkedIn, and Google campaigns — blending data-driven iteration with refined
+visual craft. My technical fluency extends across ComfyUI, KLING, VEO 3, Runway, ArcadsAI, Visual Electric, and
+Reve Image, enabling me to prototype, test, and optimize AI workflows efficiently within any visual production
+environment.
+
+What truly excites me about INDG / Grip is the opportunity to join a team that merges creativity with scalability —
+turning AI pipelines into structured systems that elevate global brand storytelling. I’m confident that my experience
+designing template-based AI workflows and my strong eye for detail would contribute meaningfully to INDG’s
+mission to make content production more intelligent, flexible, and future-proof.
+
+In short:
+
+Advanced user of ComfyUI and ControlNET for workflow design and automation
+
+Strong foundation in AI for Image & Video, CGI, and 3D visualization
+
+Experienced in creative systems thinking — building modular, reusable AI setups
+
+Proven ability to combine technical precision with visual excellence
+
+Fluent in English (C2); adaptable to international, cross-functional collaboration
+
+I would be delighted to further discuss how my experience can support INDG’s AI workflow initiatives.
+Thank you for considering my application — I look forward to the opportunity to contribute and grow with your
+team.
+
+Warm regards,
+
+
+Vítor Hugo Barros da Silva
+AI & CGI Workflow Specialist | ComfyUI Expert
+boundvisuals.com | linkedin.com/in/criativovitorhugo
+

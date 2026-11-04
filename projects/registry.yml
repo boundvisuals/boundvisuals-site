@@ -3,6 +3,8 @@
 # status: pending → ingested → queued → published
 projects:
   - id: vivendas-duas-igrejas
+    client: "Space Emotions"
+    year: 2023
     title: Vivendas Duas Igrejas
     client: Space Emotions
     location: Duas Igrejas, Penafiel, PT
@@ -11,18 +13,24 @@ projects:
     note: ""
     status: pending
   - id: vivendas-cete
+    client: "Joaquim & Sofia Barroso Imobiliária"
+    year: 2023
     title: Vivendas Cête
     mega: https://mega.nz/folder/qjQ2iTJK#rt93sxKYmfkRaydquDO6KQ
     publish: true
     note: ""
     status: pending
   - id: gold-village
+    client: "Dape"
+    year: 2023
     title: Gold Village
     mega: https://mega.nz/folder/uioSxSJZ#wbqWl4RotEMkiRGfVkxhDA
     publish: true
     note: ""
     status: pending
   - id: apartamentos-gondomar-2
+    client: "Dape"
+    year: 2024
     title: Apartamentos Gondomar 2
     mega: https://mega.nz/folder/6qYTTLSY#gu60C2W2i9AfJdkK8CDcEw
     publish: true
