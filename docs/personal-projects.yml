@@ -1,0 +1,56 @@
+# Vítor Hugo → Projetos pessoais (Painel). stage: ideia | explorar | em-curso | parado | feito
+- id: bv-rebrand
+  title: "Rebrand Vítor Hugo • Bound Visuals"
+  stage: em-curso
+  area: Marca
+  next: "Painel, conteúdo diário a sair, integrações Pinterest/LinkedIn/YouTube"
+- id: painel
+  title: "Esta app (Painel / hub)"
+  stage: em-curso
+  area: Ferramentas
+  next: "Portfólio PDF automático, Oportunidades, notificações, números das redes"
+- id: portfolio-docs
+  title: "Portfólio, CV e carta em 1.ª pessoa (3D / AI / All)"
+  stage: explorar
+  area: Carreira
+  next: "Reescrever com o novo posicionamento a partir dos pacotes InDesign"
+- id: ai-build-lab
+  title: "AI Build Lab (120 ideias)"
+  stage: parado
+  area: Negócio
+  next: "Analisar PDFs + xlsx e escolher as que servem o portfólio"
+- id: viral-accounts
+  title: "Contas temáticas virais (Instagram + TikTok)"
+  stage: ideia
+  area: Rendimento
+  next: "Escolher 1 tema, nome e formato automático"
+- id: tiktok-main
+  title: "TikTok da conta principal"
+  stage: ideia
+  area: Marca
+  next: "Reaproveitar os reels automaticamente"
+- id: revenue-auto
+  title: "Conteúdo automático com receita (YouTube e outros)"
+  stage: ideia
+  area: Rendimento
+  next: "Definir canal e modelo de receita"
+- id: teaching
+  title: "Oferta de ensino pago (archviz + AI)"
+  stage: ideia
+  area: Rendimento
+  next: "Formato: curso, workshop ou mentoria"
+- id: site-theme
+  title: "Tema novo do site (parado; site fica como está)"
+  stage: parado
+  area: Site
+  next: "Só SEO e limpeza invisível"
+- id: fps-game
+  title: "Jogo FPS de esquadrão (pessoal)"
+  stage: parado
+  area: Pessoal
+  next: "Protótipo three.js feito; migração para Unreal Engine 5"
+- id: linkedin-texts
+  title: "LinkedIn: título, sobre, experiência"
+  stage: parado
+  area: Carreira
+  next: "Textos no plano mestre §7"

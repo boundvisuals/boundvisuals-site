@@ -234,7 +234,9 @@ def build(out):
     gitlog = subprocess.run(["git", "log", "-12", "--date=format-local:%d/%m %H:%M", "--format=%ad  %s"], capture_output=True, text=True,
                             env={**os.environ, "TZ": "Europe/Lisbon"}).stdout.strip().splitlines()
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile,
+            "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
+            "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}
     with open(os.path.join(out, "store", "data.json.php"), "w", encoding="utf-8") as fh:
         fh.write("<?php exit; ?>\n" + json.dumps(data, ensure_ascii=False))

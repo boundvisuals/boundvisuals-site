@@ -4,7 +4,7 @@ name: painel
 on:
   push:
     branches: [main]
-    paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/inbox-replies.yml", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
+    paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
   schedule: [{ cron: "*/10 * * * *" }]
   workflow_run: { workflows: ["publish"], types: [completed] }
   workflow_dispatch:

@@ -1,0 +1,78 @@
+# Everything agreed for Bound Visuals content (shown in the Painel → Bound Visuals → Conteúdo).
+# status: ativo | pronto | por-fazer | precisa-material
+pillars:
+  - { n: 1, name: "Projetos finais", what: "Carrossel com recortes à mão + imagem inteira em branco", who: "Auto", format: "Post", status: ativo }
+  - { n: 2, name: "Pormenores", what: "Recortes de materiais, luz e texturas", who: "Auto", format: "Story, post", status: ativo }
+  - { n: 3, name: "Render → final", what: "Slider do render cru / clay / mask ID até à final", who: "Auto (precisa render base)", format: "Reel", status: precisa-material, needs: "Pasta '0 - render base' / '0 - clay' em cada câmara" }
+  - { n: 4, name: "Daily Study #NNN", what: "Mini-projeto 3D + AI, 3×/semana (ter, qui, sáb)", who: "Tu (briefing meu)", format: "Post + reel", status: ativo }
+  - { n: 5, name: "Imagem animada", what: "Still animado com Seedance / LTX", who: "Quase auto", format: "Reel", status: precisa-material, needs: "Animações em pasta 'anim'" }
+  - { n: 6, name: "Variações de ambiente", what: "Amanhecer / pôr do sol / noite / chuva da mesma imagem", who: "Quase auto", format: "Carrossel, reel", status: por-fazer }
+  - { n: 7, name: "Processo / bastidores", what: "Screenshots do canvas, ComfyUI, 3ds Max", who: "Tu manda, eu monto", format: "Story, reel", status: precisa-material }
+  - { n: 8, name: "Stories diárias", what: "3–5 por dia, pormenores", who: "Auto", format: "Story", status: ativo }
+  - { n: 9, name: "Zoom lento", what: "Reel com zoom lento numa imagem", who: "Auto", format: "Reel", status: ativo }
+  - { n: 10, name: "Render ou foto?", what: "Story-jogo (sondagem manual)", who: "Tu (sticker manual)", format: "Story", status: por-fazer }
+  - { n: 11, name: "Do arquivo", what: "Trabalhos antigos teus", who: "Auto (precisa pasta)", format: "Post", status: precisa-material, needs: "Link MEGA do arquivo" }
+  - { n: 12, name: "Paleta de cores", what: "Carrossel com a paleta extraída da imagem", who: "Auto", format: "Carrossel", status: por-fazer }
+  - { n: 13, name: "Resumo da semana", what: "Reel ao domingo com o melhor da semana", who: "Auto", format: "Reel", status: por-fazer }
+  - { n: 14, name: "Antes e agora", what: "Render antigo vs refeito hoje com AI", who: "Tu + eu", format: "Carrossel, reel", status: precisa-material }
+  - { n: 15, name: "Contagem para lançamento", what: "Stories antes de lançar um projeto", who: "Auto", format: "Story", status: por-fazer }
+week:
+  - { day: "Segunda", post: "Projeto final", reel: "Render → final", stories: "Pormenor · render ou foto?" }
+  - { day: "Terça", post: "Daily study", reel: "Zoom lento", stories: "Pormenor · work in progress" }
+  - { day: "Quarta", post: "Pormenores (carrossel)", reel: "Imagem animada", stories: "Pormenor · sondagem A/B (manual)" }
+  - { day: "Quinta", post: "Daily study", reel: "Variações de ambiente", stories: "Pormenor · bastidores" }
+  - { day: "Sexta", post: "Projeto final ou paleta", reel: "Animação tua (Kling/Seedance)", stories: "Pormenor · render ou foto?" }
+  - { day: "Sábado", post: "Daily study ou do arquivo", reel: "Antes e agora", stories: "Pormenor · partilhas" }
+  - { day: "Domingo", post: "Do arquivo", reel: "Resumo da semana", stories: "Contagem para lançamento" }
+daily_ideas:
+  "Arquitetura e lugares":
+    - "Uma foto de rua tua transformada no teu estilo suíço"
+    - "Um esboço à mão (2 min) → render fotorreal"
+    - "Edifício icónico reimaginado: Siza, Souto de Moura, Zumthor, Ando"
+    - "\"Se fosse em Portugal\": casa famosa no Douro, Alentejo, Gerês"
+    - "Casa portuguesa em ruína → recuperada (antes/depois)"
+    - "Planta simples → interior completo"
+    - "Uma divisão, 4 estilos: suíço, japandi, brutalista, mediterrânico"
+    - "A mesma sala do nascer ao pôr do sol (5 imagens)"
+    - "As 4 estações na mesma fachada"
+    - "Arquitetura de cinema: espaço de um filme como archviz"
+    - "Cabana mínima: 20 m², um material só"
+    - "Casa em pedra, madeira, betão: o mesmo volume em 3 materiais"
+    - "Interior de um café / loja imaginária"
+    - "Escadas: uma escada escultural por semana"
+    - "Luz dura vs luz suave na mesma cena"
+  "Produto e CGI":
+    - "Objeto do dia a dia como anúncio de luxo (chávena, chave)"
+    - "Cadeira de design icónica em 3 materiais"
+    - "Candeeiro: o mesmo objeto, 3 ambientes"
+    - "Packaging inventado para uma marca portuguesa"
+    - "Produto a flutuar / exploded view"
+    - "Macro de materiais: a textura como protagonista"
+  "AI e processo":
+    - "Mesmo prompt, 3 modelos (Nano Banana vs FloraAI vs ComfyUI)"
+    - "Clay → final em 4 passos"
+    - "Um render antigo teu (2021) refeito hoje com AI"
+    - "Corrigir um render \"mau\" (um dos teus primeiros)"
+    - "Desafio 15 minutos"
+    - "Uma imagem, 5 horários / 5 climas"
+    - "Pessoas no render: a mesma cena vazia e com vida"
+    - "Do sketch ao vídeo: sketch → imagem → animação 5 s"
+    - "Recriar uma pintura famosa (domínio público) como espaço"
+  "Séries e desafios":
+    - "\"Casas de Portugal\": uma por distrito (18 semanas)"
+    - "\"Janelas\": só janelas e a luz que entra"
+    - "Abecedário arquitetónico: A de arco, B de betão…"
+    - "Votos dos seguidores: eles escolhem o tema"
+    - "Desafio de cor: uma cor por semana"
+    - "\"O meu bairro\": Penafiel / Porto em versão archviz"
+    - "Casa para um cliente imaginário (músico, surfista)"
+    - "Recriações de concursos (CGArchitect, Render Awards)"
+    - "Minimalismo extremo: um espaço com 3 elementos"
+    - "Noite: só cenas noturnas durante uma semana"
+rules:
+  - "Algo sai TODOS os dias (pelo menos uma story)"
+  - "1 post/dia às 19:00, reel dia sim dia não, 3–5 stories/dia"
+  - "Legendas EN primeiro, PT a seguir; 14 identificações; hashtags no 1.º comentário (26 fixas + 4 a rodar)"
+  - "Qualidade sempre máxima; recortes compostos à mão"
+  - "Aprovação semanal; nada sai sem o teu ✅"
+  - "Polls, quiz, links e música do Instagram não dá por API → essas stories são manuais"
