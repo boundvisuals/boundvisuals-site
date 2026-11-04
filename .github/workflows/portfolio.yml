@@ -4,7 +4,7 @@ name: portfolio
 on:
   push:
     branches: [main]
-    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py"]
+    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py", "docs/vitorhugo-pt.yml"]
   workflow_dispatch:
 concurrency: { group: portfolio, cancel-in-progress: true }
 jobs:

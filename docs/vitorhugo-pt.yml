@@ -1,0 +1,62 @@
+# Portuguese (PT-PT) texts for boundvisuals.com/vitorhugo/pt/ — used by scripts/build_vitorhugo.py.
+# Edit freely: anything missing here falls back to the English text.
+title: "Vítor Hugo — Imagem e Vídeo com IA · Artista 3D · Anúncios de Performance"
+description: "Vítor Hugo — artista 3D e especialista em imagem e vídeo com IA, em Portugal. Personagens, produtos e espaços com IA, anúncios de performance, design e vídeo. Arquitetura 3D na Bound Visuals."
+nav: { work: "Trabalho", ai: "IA", about: "Sobre", contact: "Contacto" }
+where: "Portugal · disponível para todo o mundo"
+lead: "Faço imagens e filmes que ontem não existiam — com 3D, IA e olhar de designer."
+ticker: "Imagem e Vídeo com IA · Arquitetura 3D · Anúncios de Performance · Design · Vídeo · ComfyUI · Seedance · Kling · Veo · Nano Banana · Unreal · Corona"
+work_k: "O que faço"
+work_h: "Uma pessoa,<br>cinco disciplinas."
+disc:
+  - ["Imagem e Vídeo com IA", "Personagens, produtos e espaços fotorrealistas. Lip-sync, movimento, consistência entre planos. ComfyUI · Seedance · Kling · Veo · Nano Banana."]
+  - ["Arquitetura 3D", "Archviz fotorrealista — exteriores, interiores, animação. Vive no meu estúdio 3D, a Bound Visuals."]
+  - ["Anúncios de Performance", "Criativos em vários formatos (1:1, 9:16, 16:9), UGC e avatares IA, rapidez do brief ao criativo, iteração guiada por dados."]
+  - ["Design e Vídeo", "Marca, paginação, motion, edição e som. Da ideia ao ficheiro entregue."]
+  - ["Lab", "Daily Study — uma pequena peça 3D + IA, três vezes por semana, em público."]
+ai_k: "Imagem e Vídeo com IA"
+ai_h: "Do texto, da imagem<br>e do 3D ao final."
+before: "Antes"
+after: "Depois"
+reference: "Referência"
+ai_sections:
+  "Text to Image": ["Texto para imagem", "A base de cada projeto — geração pura a partir de texto. É aqui que as ideias ganham forma: arquitetura, produtos, pessoas e conceitos de publicidade. Cada imagem nasce de prompts físicos detalhados que simulam o comportamento real da câmara, a precisão dos materiais e as condições de luz."]
+  "Image to Image": ["Imagem para imagem", "Reinterpretar e afinar imagens existentes — manter a geometria e melhorar luz, tom e atmosfera. Ideal para transformar renders ou imagens IA em peças prontas para campanha."]
+  "Inpainting": ["Inpainting", "Edição precisa e com contexto — acrescentar, remover ou prolongar zonas da imagem sem perder realismo. É onde a IA encontra a direção de arte."]
+  "Enhancement + Upscaling": ["Melhoria + Upscaling", "Transformar renders conceptuais de 1K em imagens de produção. Foco no refinamento do micro-detalhe e na exportação em alta resolução para impressão ou campanhas."]
+  "ControlNET": ["ControlNet", "Guia estrutural com profundidade, mapas de arestas, canny, lineart e pose — manter a geometria e ganhar realismo. Usado aqui para mostrar composição e luz controladas."]
+  "Workflows": ["Workflows", "Gravei uma visita guiada aos meus workflows — a melhor forma de perceber tudo de uma vez."]
+arch_k: "Arquitetura 3D · Bound Visuals"
+arch_h: "A arquitetura vive<br>no meu estúdio 3D."
+arch_btn: "Ver todo o trabalho 3D em boundvisuals.com ↗"
+ads_k: "Anúncios de Performance · Design · Vídeo"
+ads_h: "Criativos que<br>dão resultado."
+deliver:
+  - "ArchViz — exteriores e interiores fotorrealistas, materiais/lookdev, luz, pós-produção; planos cinematográficos; pré-visualizações interativas para revisão."
+  - "CGI de produto — imagens e animações com detalhe fino e realismo."
+  - "Anúncios de performance — produção em vários formatos (1:1, 9:16, 16:9), rapidez do brief ao criativo, iteração guiada por dados."
+  - "Personagens e voz com IA — personagens humanas fotorrealistas com lip-sync preciso e movimento sincronizado com a fala, com Kling, VEO 3, Seedance e ComfyUI."
+  - "Pós-produção — retoque de imagem de topo (Photoshop + IA), edição de vídeo, afinação de som."
+lab_h: "Daily Study."
+lab_p: "Um mini projeto 3D a sério, três vezes por semana: um modelo quase pronto, as minhas câmaras e luz, um render base — depois IA e edição. Simples, bonito, em público."
+lab_btn: "Seguir no Instagram ↗"
+about_k: "Sobre"
+about_h: "Olá —<br>sou o Vítor."
+presentation: "Sou artista 3D especializado em visualização arquitetónica (ArchViz) e CGI de produto, com experiência em renders fotorrealistas, pré-visualizações em tempo real e animações com Unreal Engine, Blender, Corona Renderer, KLING, VEO 3 e mais."
+how_i_work: "Brief claro → protótipos rápidos → ciclos curtos de iteração → entrega final controlada. Comunicação clara; versões organizadas; backups e ficheiros arrumados. Disponível para testes de arte ou provas de conceito."
+exp_k: "Experiência"
+experience:
+  - ["fevereiro 2024 – presente", "Performance Ads Designer", "GrowthHit · tempo inteiro"]
+  - ["novembro 2021 – presente", "Fundador | Artista 3D", "Bound Visuals · tempo inteiro"]
+  - ["novembro 2021 – março 2023", "Cofundador | Designer Multimédia e Web", "Maionese Design · tempo inteiro"]
+  - ["março 2019 – outubro 2021", "Designer Multimédia e Web", "Anca Design Studio · tempo inteiro (estágio desde março 2019)"]
+  - ["agosto 2017 – março 2019", "Multimédia | Web | Design", "Freelancer"]
+  - ["fevereiro 2017 – julho 2017", "Comunicação, Design, Produção e Logística", "Câmara Municipal · estágio"]
+docs_k: "CV e portfólios"
+docs: ["CV — longo", "CV — curto", "Portfólio — Tudo", "Portfólio — Arquitetura 3D", "Portfólio — IA"]
+recos_k: "Recomendações · {n} no LinkedIn"
+recos_h: "O que dizem."
+contact_k: "Contacto"
+contact_big: "Vamos criar<br>algo novo."
+contact_labels: ["Telefone", "Email", "LinkedIn", "Behance", "Instagram", "Estúdio 3D"]
+footer_bv: "Estúdio 3D → Bound Visuals ↗"

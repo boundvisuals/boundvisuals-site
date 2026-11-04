@@ -139,3 +139,4 @@
 - id: c-site-vh-v2
   owner: claude
   title: "Site pessoal v2: secções Ads/Design/Video com trabalhos reais (precisa de material do Vítor), Lab com os Daily Study, versão PT"
+  detail: "04/11: versão PT feita (boundvisuals.com/vitorhugo/pt/, botão PT/EN no menu, hreflang; textos em docs/vitorhugo-pt.yml). Falta: Ads/Design/Video com trabalhos reais (material do Vítor) e Lab com os primeiros Daily Study prontos."
