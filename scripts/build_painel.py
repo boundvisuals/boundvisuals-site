@@ -233,8 +233,40 @@ def build(out):
                 portfolio.append({"project": p["id"], "project_title": p.get("title", p["id"]), "cat": cat(st), "sm": sm, "lg": lg})
     gitlog = subprocess.run(["git", "log", "-12", "--date=format-local:%d/%m %H:%M", "--format=%ad  %s"], capture_output=True, text=True,
                             env={**os.environ, "TZ": "Europe/Lisbon"}).stdout.strip().splitlines()
+    # timeline: robot + Claude actions (git) and publications (state)
+    FR = [(r"^Publish log", "robot", "Robô de publicação correu"), (r"^Stories \+ reel: (.+)", "robot", r"Stories e reels gerados: \1"),
+          (r"^Approved in the panel \((\d+)\)", "you", r"Aprovaste \1 publicações no painel"), (r"^Stats", "robot", "Números do Instagram atualizados"),
+          (r"^Painel: ideas inbox", "you", "Nova ideia apontada"), (r"^Previews: (.+)", "robot", r"Pré-visualizações: \1"),
+          (r"^Ingest|^Report: (.+)", "robot", "Imagens processadas"), (r"^Hand crops: (.+)", "claude", r"Recortes à mão: \1")]
+    raw = subprocess.run(["git", "log", "-80", "--format=%aI\t%an\t%s"], capture_output=True, text=True).stdout.strip().splitlines()
+    timeline, seen_log = [], None
+    for line in raw:
+        try:
+            at, who, subj = line.split("\t", 2)
+        except ValueError:
+            continue
+        kind, text = ("robot" if who == "bv-robot" else "claude"), subj
+        for rx, k, t in FR:
+            m = re.search(rx, subj)
+            if m:
+                try:
+                    kind, text = k, (m.expand(t) if "\\" in t else t)
+                except Exception:
+                    kind, text = k, t.split("\\")[0]
+                break
+        if text == "Robô de publicação correu":
+            if seen_log:
+                continue
+            seen_log = True
+        timeline.append({"at": at, "kind": kind, "text": text})
+    for k, v in state.items():
+        if isinstance(v, dict) and v.get("ig"):
+            timeline.append({"at": v.get("at"), "kind": "pub", "text": f"Publicado no Instagram: {k.replace('_', ' ')}", "link": v.get("ig_link")})
+    timeline.sort(key=lambda x: x["at"] or "", reverse=True)
+    stats = json.load(open("reports/meta/stats.json")) if os.path.exists("reports/meta/stats.json") else {}
+    followers = json.load(open("reports/meta/followers.json")) if os.path.exists("reports/meta/followers.json") else {}
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "timeline": timeline[:60], "stats": stats, "followers": followers,
             "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
             "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}

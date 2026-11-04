@@ -114,6 +114,17 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.feedg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:520px}
+.feedg a,.feedg div.f{position:relative;aspect-ratio:4/5;background:var(--panel2);overflow:hidden;display:block}
+.feedg img{width:100%;height:100%;object-fit:cover;display:block}
+.feedg .tag{position:absolute;top:6px;left:6px;font-size:10px;background:rgba(11,12,12,.75);color:var(--warm);padding:2px 7px;border-radius:10px}
+.tl{position:relative;padding-left:18px}
+.tl:before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tli{position:relative;padding:7px 0;font-size:13px}
+.tli:before{content:"";position:absolute;left:-17px;top:13px;width:9px;height:9px;border-radius:50%;background:var(--mut)}
+.tli.claude:before{background:var(--warm)}.tli.robot:before{background:var(--info)}.tli.you:before{background:var(--ok)}.tli.pub:before{background:var(--ok);box-shadow:0 0 0 3px rgba(143,191,143,.25)}
+.tli span{display:block;font-size:11px;color:var(--mut)}
+.spark{width:100%;height:60px}
 .sinput{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:inherit;font-size:16px;padding:14px 16px}
 .sinput:focus{outline:1px solid var(--warm)}
 .sres{margin-top:12px}.sres a,.sres button.r{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:11px 4px;border:0;border-top:1px solid var(--line);background:none;text-decoration:none;font-size:14px}
@@ -218,6 +229,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
     <section class="view" id="v-pessoais"></section>
     <section class="view" id="v-conteudo"></section>
     <section class="view" id="v-opps"></section>
+    <section class="view" id="v-marca"></section>
     <section class="view" id="v-links"></section>
   </main>
 </div>
@@ -240,10 +252,11 @@ const ICON={
  conteudo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16M4 12h16M4 19h10"/></svg>',
  opps:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>',
  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+ marca:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
  links:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>'
 };
 const SPACES={vh:{name:"Vítor Hugo",sub:"Tudo",tabs:[["hoje","Início"],["ideias","Ideias"],["pessoais","Projetos pessoais"],["portfolio","Portfólio"],["opps","Oportunidades"],["sobre","Perfil"],["tarefas","Tarefas"],["links","Links"]],bottom:["hoje","ideias","pessoais","tarefas"]},
- bv:{name:"Bound Visuals",sub:"Marca 3D",tabs:[["cal","Calendário"],["conteudo","Conteúdo"],["projetos","Projetos"],["estudio","Estúdio"],["hoje","Início"]],bottom:["cal","conteudo","projetos","estudio"]}};
+ bv:{name:"Bound Visuals",sub:"Marca 3D",tabs:[["marca","Marca"],["cal","Calendário"],["conteudo","Conteúdo"],["projetos","Projetos"],["estudio","Estúdio"]],bottom:["marca","cal","conteudo","projetos"]}};
 let space="vh";try{space=localStorage.getItem("bv_space")||"vh"}catch(e){}
 let TABS=SPACES[space].tabs,BOTTOM=SPACES[space].bottom;
 const ALLTABS=[...new Map([...SPACES.vh.tabs,...SPACES.bv.tabs].map(t=>[t[0],t])).values()];
@@ -308,7 +321,8 @@ function renderHoje(){
       <div class="card"><h2>Próximas tarefas tuas</h2>${(D.tasks||[]).filter(x=>x.owner==="vitor"&&!isDone(x)).slice(0,4).map(taskRow).join("")||`<div class="empty">Nada pendente.</div>`}</div>
     </div>
   </div>
-  <div class="card" style="margin-top:14px"><h2>Atividade dos robôs</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div>`;
+  <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${(D.timeline||[]).slice(0,18).map(t=>`<div class="tli ${t.kind}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div></div>
+  <div class="card"><h2>Último robô de publicação</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div></div>`;
   bindTasks($("#v-hoje"));
 }
 function renderCal(){
@@ -478,7 +492,26 @@ function search(){$("#mbox").innerHTML=`<div class="mhead"><b>Pesquisar tudo</b>
       const sp=Object.keys(SPACES).find(k=>SPACES[k].tabs.some(t=>t[0]===x.go));if(sp&&sp!==space){setSpace(sp)}go(x.go)})}}
 $("#sbtn").onclick=search;
 document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();search()}});
-function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps()}
+function spark(h){const e=Object.entries(h||{}).sort();if(e.length<2)return"";const v=e.map(x=>+x[1]||0),mn=Math.min(...v),mx=Math.max(...v),r=mx-mn||1;
+  const pts=v.map((y,i)=>`${(i/(v.length-1)*300).toFixed(1)},${(55-(y-mn)/r*50).toFixed(1)}`).join(" ");
+  return `<svg class="spark" viewBox="0 0 300 60" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="var(--warm)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`}
+function renderMarca(){const st=D.stats||{},ac=st.account||{},M=st.media||[];const t=todayISO();
+  const fut=allItems().filter(i=>i.type==="feed"&&i.date>=t&&!["published","skipped"].includes(i.status)).sort((a,b)=>(b.date+b.time).localeCompare(a.date+a.time));
+  const fol=Object.values(D.followers||{}).map(Number);const d7=fol.length>1?fol[fol.length-1]-fol[Math.max(0,fol.length-8)]:null;
+  $("#v-marca").innerHTML=`<div class="grid g4" style="margin-bottom:14px">
+    <div class="card kpi"><b>${ac.followers_count??"—"}</b><span>seguidores${d7!==null?` · ${d7>=0?"+":""}${d7} esta semana`:""}</span></div>
+    <div class="card kpi"><b>${ac.media_count??"—"}</b><span>publicações no Instagram</span></div>
+    <div class="card kpi"><b>${st.reach_7d??"—"}</b><span>alcance 7 dias</span></div>
+    <div class="card kpi"><b>${fut.length}</b><span>posts na fila</span></div></div>
+  ${st.error?`<div class="alert warn"><i></i><div>Números do Instagram indisponíveis: ${esc(st.error)}</div></div>`:""}
+  <div class="grid g2"><div class="card"><h2>O teu feed: o que vem + o que já saiu</h2><div class="feedg">
+    ${fut.map(i=>`<div class="f clickable" data-open="${esc(i.key)}"><img loading="lazy" src="${esc(i.thumb)}" alt=""><span class="tag">${fmtDay(i.date)}</span></div>`).join("")}
+    ${M.map(m=>`<a href="${esc(m.permalink)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.img)}" alt=""></a>`).join("")}</div>
+    <div class="sub" style="margin-top:8px">${st.at?`Instagram lido ${ago(st.at)}`:"Números chegam com o próximo robô de estatísticas."}</div></div>
+   <div class="grid" style="align-content:start"><div class="card"><h2>Seguidores</h2>${spark(D.followers)||`<div class="empty">A curva aparece a partir do 2.º dia.</div>`}</div>
+    <div class="card"><h2>Melhores posts recentes</h2>${M.slice().sort((a,b)=>((b.like_count||0)+(b.comments_count||0)*3)-((a.like_count||0)+(a.comments_count||0)*3)).slice(0,5).map(m=>`<div class="mini"><a href="${esc(m.permalink)}" target="_blank" rel="noopener" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.caption||"(sem legenda)")}</a><span>♥ ${m.like_count??0} · 💬 ${m.comments_count??0}</span></div>`).join("")||`<div class="empty">—</div>`}</div>
+    <div class="card"><h2>Redes</h2>${(D.networks||[]).map(n=>`<div class="net"><div>${esc(n.name)}</div><span>${esc(n.status)}</span></div>`).join("")}</div></div></div>`}
+function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps();renderMarca()}
 async function load(){
   try{const r=await fetch("api.php?a=data",{cache:"no-store"});if(r.status===401){location.reload();return}
     const j=await r.json();const changed=!D||j.generated_at!==D.generated_at||JSON.stringify(j.pending_approvals)!==JSON.stringify(D.pending_approvals)||JSON.stringify(j.ticks)!==JSON.stringify(D.ticks);

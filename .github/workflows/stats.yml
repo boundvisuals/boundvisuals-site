@@ -1,0 +1,19 @@
+name: stats
+# Read-only Instagram numbers for the Painel, every 3 hours. Commits reports/meta/stats.json → painel rebuilds.
+on:
+  schedule: [{ cron: "17 */3 * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pyyaml
+      - env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
+        run: python3 scripts/ig_stats.py
+      - run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports/meta && git commit -qm "Stats" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done
