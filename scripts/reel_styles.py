@@ -136,7 +136,10 @@ def load(src_dir, crops):
         if p.suffix.lower() not in EXTS:
             continue
         stem = "_".join(p.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
-        if stem in crops:
+        if stem.startswith("2026_-_FINAIS"):       # duplicate export folder
+            continue
+        crops.setdefault(stem, [[0.5, 0.5, 1.0]])  # every image counts (singles have no detail crops)
+        if True:
             im = Image.open(p); im.load(); im = im.convert("RGB")
             s = 3200 / max(im.size)
             if s < 1:
@@ -144,6 +147,7 @@ def load(src_dir, crops):
             imgs.append((stem, im))
     order = list(crops)
     imgs.sort(key=lambda x: order.index(x[0]))
+    # crop-reviewed images first (best first), then the rest — the whole project is shown
     return imgs
 
 
@@ -255,7 +259,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     tmp = out_dir / "_tmp"; tmp.mkdir(exist_ok=True)
     if which == "series":   # house style (A, slow): replaces the project's reels <pid>-reel.mp4, -reel-02, -reel-03 (+ covers)
-        for r in range(3):
+        for r in range(math.ceil(len(imgs) / 4)):   # as many reels as needed to show the WHOLE project
             sub = imgs[r * 4:(r + 1) * 4]
             if len(sub) < 2:
                 break
