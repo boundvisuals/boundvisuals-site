@@ -29,6 +29,7 @@ instagram:
     - rendersbook
     - archilovers
   hashtags_in: caption   # Instagram allows max 5 hashtags per post since Dec 2025 → 5, at the end of the caption, no extra comment
+  mentions_in_caption: true   # Vítor 04/11: the 14 mentions always go in the caption
   hashtags_max: 5
   hashtags_extra_comments: true   # the other 25 of the old 30 → comments of 5, posted one by one with a pause (Vítor 04/11)
   hashtags_comment_gap_s: 120
