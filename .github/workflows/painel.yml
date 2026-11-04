@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency: { group: painel, cancel-in-progress: false }
 jobs:
   painel:
@@ -41,6 +42,24 @@ jobs:
               for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
             fi
           fi
+      - name: Apply crop edits made in the panel (then rebuild slides + stories of that project)
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/crops.json.php -o crops.json.php; bye" "$H" 2>/dev/null || true
+          [ -f in/crops.json.php ] || exit 0
+          python3 scripts/build_painel.py apply-crops in/crops.json.php > in/changed.txt
+          [ -s in/changed.txt ] || exit 0
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add config/crops.yml && git commit -qm "Crops edited in the panel: $(tr '\n' ' ' < in/changed.txt)"
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+          while read -r pid; do
+            link=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('mega','') for p in r if p['id']==sys.argv[1]),''))" "$pid")
+            title=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('title','') for p in r if p['id']==sys.argv[1]),''))" "$pid")
+            [ -n "$link" ] || continue
+            gh api -X POST "repos/${{ github.repository }}/actions/workflows/ingest.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[mega_link]=$link"
+            gh api -X POST "repos/${{ github.repository }}/actions/workflows/make-social.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[title]=$title" -f "inputs[mega_link]=$link"
+            echo "rebuild dispatched for $pid"
+          done < in/changed.txt
       - name: Build panel
         run: |
           mkdir -p out

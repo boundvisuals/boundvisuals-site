@@ -99,6 +99,20 @@ def last_log():
     return open(p, encoding="utf-8").read().strip().splitlines() if os.path.exists(p) else []
 
 
+CROPS = (yaml.safe_load(open("config/crops.yml")) or {}).get("crops", {}) if os.path.exists("config/crops.yml") else {}
+
+
+def crop_info(it, out):
+    """Original image + current hand crops, for the in-app crop editor (feed carousels only)."""
+    stem = re.sub(r"-\d\d(-full)?\.jpg$", "", it["slides"][0]) if it.get("slides") else None
+    src = f"reports/{it['project']}/preview/{stem}.jpg" if stem else None
+    if not src or not os.path.exists(src) or len(it["slides"]) < 2:
+        return {}
+    w, h = Image.open(src).size
+    lg = thumb(src, out, f"portfolio/{it['project']}/lg_{stem}.jpg", (1400, 1400))
+    return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, [])}
+
+
 def build(out):
     os.makedirs(os.path.join(out, "store"), exist_ok=True)
     state = json.load(open("queue/published.json")) if os.path.exists("queue/published.json") else {}
@@ -132,6 +146,7 @@ def build(out):
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "status": st, "link": link,
                 "full": [f"{FILA}/{it['project']}/{quote(x)}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
+                **crop_info(it, out),
                 "note": errs.get(pkey, "")})
     for f in sorted(glob.glob("queue/social-week-*.yml")):
         for it in yaml.safe_load(open(f, encoding="utf-8")) or []:
@@ -275,8 +290,30 @@ def build(out):
     print(f"painel data: {sum(len(d['items']) for d in cal)} items, {len(tasks)} tasks, {len(projects)} projects")
 
 
+def apply_crops(path):
+    """Panel crop edits → config/crops.yml. Prints the project ids whose crops changed (one per line)."""
+    edits = read_store(path)
+    if not edits:
+        return
+    cfg = yaml.safe_load(open("config/crops.yml")) or {}
+    cr = cfg.setdefault("crops", {})
+    changed = set()
+    for stem, e in edits.items():
+        new = [[round(float(v), 3) for v in c] for c in e.get("crops", [])]
+        if new and cr.get(stem) != new:
+            cr[stem] = new
+            changed.add(e.get("project"))
+    if changed:
+        hdr = "# Hand-composed 4:5 crops: [cx, cy, h] as fractions of the original. Edited by Claude and in the Painel crop editor.\n"
+        open("config/crops.yml", "w").write(hdr + yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False, default_flow_style=None, width=200))
+    for p in sorted(x for x in changed if x):
+        print(p)
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "apply":
         apply(sys.argv[2])
+    elif sys.argv[1] == "apply-crops":
+        apply_crops(sys.argv[2])
     else:
         build(sys.argv[2])

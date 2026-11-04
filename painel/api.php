@@ -92,5 +92,18 @@ if ($a === 'opp' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // opportunities:
   echo json_encode(['ok' => true, 'opps' => $cur], JSON_UNESCAPED_UNICODE);
   exit;
 }
+if ($a === 'crops' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crop editor: {project, stem, crops:[[cx,cy,h],...]}
+  $cur = read_store("$store/crops.json.php") ?? [];
+  $stem = (string)($in['stem'] ?? ''); $proj = preg_replace('/[^a-z0-9-]/', '', (string)($in['project'] ?? ''));
+  $cr = [];
+  foreach (($in['crops'] ?? []) as $c) {
+    if (is_array($c) && count($c) === 3) $cr[] = array_map(fn($v) => round(max(0, min(1, (float)$v)), 3), $c);
+  }
+  if ($stem === '' || strlen($stem) > 200 || $proj === '' || count($cr) < 1 || count($cr) > 9) { http_response_code(400); echo '{"error":"bad crops"}'; exit; }
+  $cur[$stem] = ['project' => $proj, 'crops' => $cr, 'at' => gmdate('c')];
+  write_store("$store/crops.json.php", $cur);
+  echo json_encode(['ok' => true]);
+  exit;
+}
 http_response_code(400);
 echo '{"error":"bad request"}';
