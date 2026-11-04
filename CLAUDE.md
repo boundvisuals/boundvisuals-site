@@ -166,3 +166,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Reels: house style = scripts/reel_styles.py "series" (slow, 12 s per image, landscape pans edge to edge, whole project covered, 4 images per reel); new reels auto-scheduled (queue/social-week-90-reels.yml).
 - Scheduled tasks: "Painel: responder às Ideias" (hourly :56), "Painel: sessão de trabalho automática" (hourly :26), reminder 06/11 11:00 (end of stand-by), 06/11 10:00 plugins.
 - Vítor will also make his own videos (LTX 2.5 / Seedance / Kling) in a "video"/"anim" subfolder → TODO: assemble into reels.
+
+## PERSONAL SITE + PRINT PORTFOLIO (2026-11-04)
+- Vítor: two sites linked to each other. DECIDED (by Claude, Vítor delegated): boundvisuals.com/vitorhugo (static folder /public_html/vitorhugo, no subdomain → same domain authority, zero setup). Built by scripts/build_vitorhugo.py, deployed by portfolio.yml (also copies PDFs to /vitorhugo/files). noindex until Vítor approves. 3D Architecture links out to boundvisuals.com.
+- Portfolios/CV: white print-friendly pages, images NEVER cropped, links everywhere (index with page numbers, tel/mail/web), no "Bound Visuals" branding (only as site/employer), all 14 full LinkedIn recommendations. Vítor: "faz o que achares melhor, nem me perguntes" — modern, attractive, different.

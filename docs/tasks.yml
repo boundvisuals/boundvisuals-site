@@ -114,3 +114,10 @@
 - id: c-video-reels
   owner: claude
   title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"
+- id: v-site-vh-review
+  owner: vitor
+  title: "Ver o site pessoal boundvisuals.com/vitorhugo e dizer OK (está noindex até aprovares)"
+  detail: "Depois do OK: tiro o noindex e ponho um link 'Vítor Hugo' no menu do boundvisuals.com (tu decides se aparece)."
+- id: c-site-vh-v2
+  owner: claude
+  title: "Site pessoal v2: secções Ads/Design/Video com trabalhos reais (precisa de material do Vítor), Lab com os Daily Study, versão PT"
