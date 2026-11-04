@@ -38,12 +38,15 @@ def caption(item):
     text = f"{item['caption_en']}\n—\n{item['caption_pt']}"
     if INS.get("mentions_in_caption"):
         text += "\n\n" + " ".join("@" + m for m in INS["mentions"])
+    if INS.get("hashtags_in") == "caption":
+        text += "\n\n" + hashtags(item.get("_n", 0))
     return text
 
 
 def hashtags(n):
     rot = INS["hashtags_rotate"]
-    pick = [rot[(n * 4 + i) % len(rot)] for i in range(4)]
+    k = max(0, INS.get("hashtags_max", 5) - len(INS["hashtags_always"]))
+    pick = [rot[(n * k + i) % len(rot)] for i in range(k)]
     tags = INS["hashtags_always"] + pick
     return " ".join("#" + t for t in tags[: INS.get("hashtags_max", 30)])
 
@@ -141,7 +144,8 @@ def publish_social(it, n):
     if typ == "reel":
         rec["ig_link"] = api("GET", mid, fields="permalink").get("permalink")
         try:
-            api("POST", f"{mid}/comments", message=hashtags(n))
+            if INS.get("hashtags_in") != "caption":
+                api("POST", f"{mid}/comments", message=hashtags(n))
             rec["hashtags"] = "ok"
         except Exception as e:
             rec["hashtags"] = f"ERR {e}"
@@ -204,7 +208,8 @@ def main(mode):
                 except Exception as e:
                     rec["caption_comment"] = f"ERR {e}"
             try:
-                api("POST", f"{mid}/comments", message=hashtags(n))
+                if INS.get("hashtags_in") != "caption":
+                    api("POST", f"{mid}/comments", message=hashtags(n))
                 rec["hashtags"] = "ok"
             except Exception as e:
                 rec["hashtags"] = f"ERR {e}"
