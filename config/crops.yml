@@ -1,51 +1,85 @@
-# Hand-composed Instagram detail crops (composition-first). Overrides the automatic
-# edge-energy picker in scripts/process_media.py for every image listed here.
-# Key = file stem as used by process_media.py (path parts joined with "_", spaces -> "_").
-# Each crop = [cx, cy, h]: centre of the 4:5 crop as a fraction of the ORIGINAL width/height,
-# and its height as a fraction of the original height (width = 0.8 * height in pixels).
-# Slide order = list order; the whole image on white is always appended as the last slide.
-# Reviewed by eye on the full image, one by one (Claude, 2026-11-03).
+# Hand-composed 4:5 crops: [cx, cy, h] as fractions of the original. Edited by Claude and in the Painel crop editor.
 crops:
-  root_1_-_Front___webp_+_Seedvr2_bravo:            # VDI front: corner+pergola | man+car | entrance
-    - [0.505, 0.540, 0.805]
-    - [0.698, 0.594, 0.800]
-    - [0.481, 0.617, 0.515]
-  root_2_-_Back_webp_+_Seedvr2_bravo:               # VDI back: couple+dog | eucalyptus garden
-    - [0.637, 0.545, 0.900]
-    - [0.224, 0.500, 1.000]
-  root_3-interior1_webp:                            # VDI interior: reading+shelf | kitchen+dog | dining pendants
-    - [0.722, 0.516, 0.907]
-    - [0.398, 0.479, 0.866]
-    - [0.147, 0.614, 0.656]
-  5-exterior1_5-exterior1:                          # Cete exterior: Defender+woman | sports car+balconies
-    - [0.278, 0.533, 0.907]
-    - [0.685, 0.541, 0.825]
-  1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT:   # Cete living room
-    - [0.329, 0.518, 0.845]
-    - [0.632, 0.520, 0.898]
-  2_-_exterior2_2-exterior2:                        # Gold Village exterior 2
-    - [0.595, 0.500, 1.000]
-    - [0.694, 0.570, 0.619]
-    - [0.440, 0.510, 0.597]
-  10_-_interior3_10-interior3:                      # Gold Village bedroom
-    - [0.616, 0.522, 0.886]
-    - [0.194, 0.529, 0.866]
-    - [0.416, 0.754, 0.492]
-  # --- Apartamentos Gondomar 2 (composed by eye 2026-11-03; 4:5 originals need no crops) ---
-  10_-_Interior_3_10-interior3_edit_0001: [[0.70,0.50,1.0],[0.38,0.50,1.0],[0.17,0.55,0.9]]
-  14_-_Interior_7_14-interior7_edit_0001: [[0.60,0.50,1.0],[0.22,0.55,0.85],[0.56,0.70,0.60]]
-  19_-_Interior_12_19-interior12_0001: [[0.86,0.50,1.0],[0.40,0.50,1.0],[0.74,0.68,0.62]]
-  1_-_Exterior1_1-exterior1_edit_0001: [[0.60,0.78,0.50],[0.62,0.27,0.45]]
-  5_-_Exterior5_5-exterior5_edit_0001: [[0.30,0.50,1.0],[0.70,0.55,1.0],[0.50,0.78,0.50]]
-  8_-_Interior_1_8-interior1_edit_0001: [[0.22,0.50,1.0],[0.60,0.50,1.0],[0.62,0.62,0.55]]
-  # --- Vivendas Duas Igrejas, second batch (by eye 2026-11-03) ---
-  root_4_-_exterior_frente_webp: [[0.80,0.50,1.0],[0.32,0.58,0.80],[0.50,0.62,0.50]]
-  root_6-interior3_webp: [[0.62,0.50,1.0],[0.28,0.50,1.0],[0.65,0.72,0.55]]
-  root_7-interior4_webp: [[0.42,0.50,1.0],[0.17,0.40,0.75],[0.85,0.75,0.60]]
-  # --- Cête + Gold Village, second batch (by eye 2026-11-03) ---
-  3-interior3_3-interior3: [[0.40,0.50,1.0],[0.80,0.50,1.0],[0.30,0.72,0.55]]
-  6-exterior2_6-exterior2: [[0.25,0.60,0.90],[0.80,0.55,1.0],[0.58,0.70,0.60]]
-  11_-_interior4_11-interior4: [[0.22,0.50,1.0],[0.86,0.50,1.0],[0.22,0.38,0.62]]
-  3_-_exterior3_3_exterior3: [[0.70,0.55,1.0],[0.22,0.55,1.0],[0.47,0.30,0.45]]
-  8_-_interior1_8-interior1: [[0.24,0.50,1.0],[0.76,0.50,1.0],[0.45,0.55,0.60]]
-  9_-_interior2_9-interior2: [[0.60,0.55,1.0],[0.22,0.50,1.0],[0.63,0.62,0.55]]
+  root_1_-_Front___webp_+_Seedvr2_bravo:
+  - [0.517, 0.5, 1.0]
+  - [0.74, 0.5, 1.0]
+  root_2_-_Back_webp_+_Seedvr2_bravo:
+  - [0.637, 0.545, 0.9]
+  - [0.224, 0.5, 1.0]
+  root_3-interior1_webp:
+  - [0.722, 0.516, 0.907]
+  - [0.398, 0.479, 0.866]
+  - [0.147, 0.614, 0.656]
+  5-exterior1_5-exterior1:
+  - [0.278, 0.533, 0.907]
+  - [0.685, 0.541, 0.825]
+  1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT:
+  - [0.329, 0.518, 0.845]
+  - [0.632, 0.52, 0.898]
+  2_-_exterior2_2-exterior2:
+  - [0.595, 0.5, 1.0]
+  - [0.694, 0.57, 0.619]
+  - [0.44, 0.51, 0.597]
+  10_-_interior3_10-interior3:
+  - [0.616, 0.522, 0.886]
+  - [0.194, 0.529, 0.866]
+  - [0.416, 0.754, 0.492]
+  10_-_Interior_3_10-interior3_edit_0001:
+  - [0.7, 0.5, 1.0]
+  - [0.38, 0.5, 1.0]
+  - [0.17, 0.55, 0.9]
+  14_-_Interior_7_14-interior7_edit_0001:
+  - [0.6, 0.5, 1.0]
+  - [0.22, 0.55, 0.85]
+  - [0.56, 0.7, 0.6]
+  19_-_Interior_12_19-interior12_0001:
+  - [0.86, 0.5, 1.0]
+  - [0.4, 0.5, 1.0]
+  - [0.74, 0.68, 0.62]
+  1_-_Exterior1_1-exterior1_edit_0001:
+  - [0.6, 0.78, 0.5]
+  - [0.62, 0.27, 0.45]
+  5_-_Exterior5_5-exterior5_edit_0001:
+  - [0.3, 0.5, 1.0]
+  - [0.7, 0.55, 1.0]
+  - [0.5, 0.78, 0.5]
+  8_-_Interior_1_8-interior1_edit_0001:
+  - [0.22, 0.5, 1.0]
+  - [0.6, 0.5, 1.0]
+  - [0.62, 0.62, 0.55]
+  root_4_-_exterior_frente_webp:
+  - [0.8, 0.5, 1.0]
+  - [0.32, 0.58, 0.8]
+  - [0.5, 0.62, 0.5]
+  root_6-interior3_webp:
+  - [0.62, 0.5, 1.0]
+  - [0.28, 0.5, 1.0]
+  - [0.65, 0.72, 0.55]
+  root_7-interior4_webp:
+  - [0.42, 0.5, 1.0]
+  - [0.17, 0.4, 0.75]
+  - [0.85, 0.75, 0.6]
+  3-interior3_3-interior3:
+  - [0.4, 0.5, 1.0]
+  - [0.8, 0.5, 1.0]
+  - [0.3, 0.72, 0.55]
+  6-exterior2_6-exterior2:
+  - [0.25, 0.6, 0.9]
+  - [0.8, 0.55, 1.0]
+  - [0.58, 0.7, 0.6]
+  11_-_interior4_11-interior4:
+  - [0.22, 0.5, 1.0]
+  - [0.86, 0.5, 1.0]
+  - [0.22, 0.38, 0.62]
+  3_-_exterior3_3_exterior3:
+  - [0.7, 0.55, 1.0]
+  - [0.22, 0.55, 1.0]
+  - [0.47, 0.3, 0.45]
+  8_-_interior1_8-interior1:
+  - [0.24, 0.5, 1.0]
+  - [0.76, 0.5, 1.0]
+  - [0.45, 0.55, 0.6]
+  9_-_interior2_9-interior2:
+  - [0.6, 0.55, 1.0]
+  - [0.22, 0.5, 1.0]
+  - [0.63, 0.62, 0.55]
