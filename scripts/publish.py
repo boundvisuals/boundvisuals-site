@@ -74,19 +74,20 @@ def wait_ready(cid, tries=30):
     raise RuntimeError(f"container {cid} not ready")
 
 
-def ig_container(item):
+def ig_container(item, with_caption=True, tries=3):
     urls = [f"{BASE}/{item['project']}/{urllib.parse.quote(s)}" for s in item["slides"]]
+    cap = {"caption": caption(item)} if with_caption else {}
     last = None
-    for attempt in range(3):
+    for attempt in range(tries):
         try:
             if len(urls) == 1:
-                c = new_container(image_url=urls[0], caption=caption(item))
+                c = new_container(image_url=urls[0], **cap)
             else:
                 kids = [new_container(image_url=u, is_carousel_item="true") for u in urls]
                 for k in kids:
                     wait_ready(k)
                 time.sleep(5)
-                c = new_container(media_type="CAROUSEL", children=",".join(kids), caption=caption(item))
+                c = new_container(media_type="CAROUSEL", children=",".join(kids), **cap)
             wait_ready(c)
             return c, urls
         except RuntimeError as e:
@@ -175,10 +176,23 @@ def main(mode):
             break
         rec = {"at": now.isoformat()}
         try:
-            c, urls = ig_container(it)
+            no_cap = False
+            try:
+                c, urls = ig_container(it, tries=1)
+            except RuntimeError as e:                      # captions refused by Instagram (temporary restriction): post without, caption as 1st comment
+                log.append(f"NOTE {key}: caption refused ({str(e)[:80]}), publishing without caption")
+                c, urls = ig_container(it, with_caption=False)
+                no_cap = True
             mid = api("POST", f"{IG}/media_publish", creation_id=c)["id"]
             rec["ig"] = mid
             rec["ig_link"] = api("GET", mid, fields="permalink").get("permalink")
+            if no_cap:
+                rec["caption"] = "TO-FIX: posted as 1st comment"
+                try:
+                    api("POST", f"{mid}/comments", message=f"{it['caption_en']}\n—\n{it['caption_pt']}")
+                    rec["caption_comment"] = "ok"
+                except Exception as e:
+                    rec["caption_comment"] = f"ERR {e}"
             try:
                 api("POST", f"{mid}/comments", message=hashtags(n))
                 rec["hashtags"] = "ok"
