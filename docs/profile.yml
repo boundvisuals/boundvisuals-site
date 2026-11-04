@@ -30,3 +30,69 @@ links:
   - { title: "Instagram", url: "https://www.instagram.com/vitorhugo_boundvisuals/" }
   - { title: "Behance · Bound Visuals", url: "https://www.behance.net/boundvisuals" }
   - { title: "Behance · Vítor Hugo", url: "https://www.behance.net/criativovitorhugo" }
+
+# LinkedIn final texts (task c-linkedin, 2026-11-04). Shown in Painel → Vítor Hugo → Perfil with copy buttons.
+# Facts only from docs/cv.yml. Limits: headline 220, About 2600, experience description 2000 characters.
+linkedin:
+  headline_en: "3D Artist · ArchViz & Product CGI · AI Image & Video Specialist · Performance Ads Designer | 3ds Max · Corona · Unreal · ComfyUI | Founder of Bound Visuals"
+  headline_pt: "Artista 3D · ArchViz e CGI de Produto · Especialista em Imagem e Vídeo com AI · Designer de Anúncios de Performance | Fundador da Bound Visuals"
+  about_en: |-
+    I'm Vítor Hugo, a 3D artist from Portugal. I build architectural and product images in 3ds Max, Corona and Unreal Engine, and finish them with AI, without losing the craft.
+
+    What I do
+    • ArchViz: photoreal exteriors and interiors, lookdev, lighting, post-production, cinematic shots and real-time previews for review.
+    • Product CGI: stills and short motion spots with fine detail and realism.
+    • AI image and video: generation, inpainting, upscaling, artefact cleanup and photoreal characters with lip-sync (ComfyUI, Kling, Veo 3, Seedance, Nano Banana, FloraAI).
+    • Performance ads: static, motion and UGC creatives for Meta, LinkedIn, Reddit and Google, iterated on real data.
+
+    Since 2021 I run Bound Visuals, my 3D studio for architecture and product. Since 2024 I also design performance ads for GrowthHit, a US growth agency, where I brought AI into the team's creative process.
+
+    How I work: clear brief → fast prototypes → short iteration loops → controlled final delivery. Organised versioning, clean files, direct communication. Open to art tests and proofs of concept.
+
+    I publish my work every day (finals, details, process and Daily Study mini-projects) on Instagram @vitorhugo_boundvisuals.
+
+    Open to full-time ArchViz / 3D roles where AI is part of the pipeline (French- or German-speaking Switzerland, or international English-friendly teams) and to freelance work with architects, developers and brands.
+
+    vitorhugobs@hotmail.com · boundvisuals.com
+  about_pt: |-
+    Sou o Vítor Hugo, artista 3D em Portugal. Crio imagens de arquitetura e de produto em 3ds Max, Corona e Unreal Engine e finalizo-as com AI, sem perder o rigor do ofício.
+
+    O que faço
+    • ArchViz: exteriores e interiores fotorrealistas, lookdev, iluminação, pós-produção, planos cinematográficos e pré-visualizações em tempo real.
+    • CGI de produto: imagens e pequenos spots animados com detalhe e realismo.
+    • Imagem e vídeo com AI: geração, inpainting, upscaling, limpeza de artefactos e personagens fotorrealistas com lip-sync (ComfyUI, Kling, Veo 3, Seedance, Nano Banana, FloraAI).
+    • Anúncios de performance: criativos estáticos, motion e UGC para Meta, LinkedIn, Reddit e Google, otimizados com dados reais.
+
+    Desde 2021 tenho a Bound Visuals, o meu estúdio de 3D para arquitetura e produto. Desde 2024 desenho também anúncios de performance para a GrowthHit, uma agência de crescimento dos EUA, onde trouxe a AI para o processo criativo da equipa.
+
+    Como trabalho: briefing claro → protótipos rápidos → ciclos curtos de revisão → entrega final controlada. Versões organizadas, ficheiros limpos, comunicação direta. Aberto a testes de arte e provas de conceito.
+
+    Publico o meu trabalho todos os dias (finais, detalhes, processo e mini-projetos Daily Study) no Instagram @vitorhugo_boundvisuals.
+
+    Aberto a funções a tempo inteiro em ArchViz / 3D com AI no processo (Suíça francófona ou germanófona, ou equipas internacionais em inglês) e a trabalho freelance com arquitetos, promotores e marcas.
+
+    vitorhugobs@hotmail.com · boundvisuals.com
+  experience:
+    - title: "Founder | 3D Artist · Bound Visuals"
+      text: |-
+        Bound Visuals is my 3D studio for architecture and product.
+        • Architectural visualisation for residential and commercial projects: photoreal exteriors and interiors, cinematic shots and interactive previews in Unreal Engine.
+        • Product CGI: detailed stills and short motion spots.
+        • AI in the pipeline (ComfyUI, Kling, Veo 3, Nano Banana, FloraAI) for ideation, inpainting, upscaling, artefact cleanup and enhancement, with full coherence between angles.
+        • Lookdev and post-production: lighting, materials, Photoshop + AI retouch, colour management.
+        • Work with international studios and architecture offices under tight deadlines, with structured deliveries, versioning and asset libraries.
+        Work: boundvisuals.com · Instagram @vitorhugo_boundvisuals
+    - title: "Performance Ads Designer · GrowthHit"
+      text: |-
+        End-to-end ad creatives for Meta, LinkedIn, Reddit and Google: static, motion and UGC in 1:1, 9:16 and 16:9.
+        • AI video with photoreal human characters and accurate lip-sync (Kling, Veo 3, Seedance, ComfyUI).
+        • Weekly creative sprints with many variations and fast turnaround, keeping brands consistent.
+        • Data-driven iteration: CTR/CPA/CVR learnings, A/B tests, continuous optimisation.
+        • Automated creative workflows that speed up production without lowering quality.
+        • Brought new AI tools and ways of working into the team's creative process.
+  top_skills: ["Architectural Visualization", "3D Rendering", "Generative AI", "ComfyUI", "Advertising Design"]
+  featured:
+    - "boundvisuals.com (link do site)"
+    - "Behance · Bound Visuals (link)"
+    - "Instagram @vitorhugo_boundvisuals (link)"
+    - "O teu melhor projeto (ex.: Vivendas Cête) como imagem + link para a página do projeto"

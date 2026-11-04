@@ -90,6 +90,11 @@
 - id: c-linkedin
   owner: claude
   title: Textos finais do LinkedIn (título, sobre, experiência)
+  done: true
+  detail: "Escritos 04/11: título EN/PT, Sobre EN/PT, experiência Bound Visuals + GrowthHit, competências e Em destaque. Painel → Vítor Hugo → Perfil (botões Copiar + passos)."
+- id: v-linkedin
+  owner: vitor
+  title: "(Quando quiseres) colar os textos finais no LinkedIn: Painel → Vítor Hugo → Perfil → cartão LinkedIn"
 - id: p-ai-lab
   owner: parked
   title: "AI Build Lab: analisar as 120 ideias e escolher as que servem o portfólio"
