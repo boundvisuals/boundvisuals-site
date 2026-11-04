@@ -346,6 +346,7 @@ function renderHoje(){
       <div class="card"><h2>Próximas tarefas tuas</h2>${(D.tasks||[]).filter(x=>x.owner==="vitor"&&!isDone(x)).slice(0,4).map(taskRow).join("")||`<div class="empty">Nada pendente.</div>`}</div>
     </div>
   </div>
+  ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().reverse().slice(0,6).map(m=>`<div class="reply"><small>${ago(m.at)}</small>${esc(m.text)}</div>`).join("")}</div>`:""}
   <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${(D.timeline||[]).slice(0,18).map(t=>`<div class="tli ${t.kind}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div></div>
   <div class="card"><h2>Último robô de publicação</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div></div>`;
   bindTasks($("#v-hoje"));
