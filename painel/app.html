@@ -530,8 +530,10 @@ function oppForm(o){o=o||{};$("#mbox").innerHTML=`<div class="mhead"><b>${o.id?"
   <input id="oTitle" placeholder="Função ou projeto" value="${esc(o.title||"")}"><input id="oOrg" placeholder="Empresa / cliente" value="${esc(o.org||"")}">
   <input id="oUrl" placeholder="Link (anúncio, site, email)" value="${esc(o.url||"")}" style="grid-column:1/-1">
   <textarea id="oNotes" placeholder="Notas: contacto, valores, prazos, o que enviar…">${esc(o.notes||"")}</textarea></div>
+  ${o.id&&(D.kits||{})[o.id]?`<div class="card" style="margin-top:12px"><h2>Kit preparado pelo Claude</h2><div class="code" style="white-space:pre-wrap"><button class="btn" data-copy="${esc(D.kits[o.id])}">Copiar</button>${esc(D.kits[o.id])}</div></div>`:(o.id?`<div class="sub" style="margin-top:10px">⏳ O Claude prepara o kit (carta + imagens + CV certo) na próxima sessão automática.</div>`:"")}
   <div style="display:flex;justify-content:space-between;margin-top:12px;gap:8px">${o.id?`<button class="btn" id="oDel">Apagar</button>`:"<span></span>"}<button class="btn pri" id="oSave">Guardar</button></div></div>`;
   $("#modal").classList.add("on");$("#mx").onclick=closeModal;
+  $("#mbox").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
   const send=async body=>{const r=await fetch("api.php?a=opp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const j=await r.json();if(!j.ok)throw 0;D.opps=j.opps;closeModal();renderOpps();renderHoje()};
   $("#oSave").onclick=()=>send({id:o.id,kind:$("#oKind").value,stage:$("#oStage").value,title:$("#oTitle").value,org:$("#oOrg").value,url:$("#oUrl").value,notes:$("#oNotes").value}).then(()=>toast("Guardado ✓")).catch(()=>toast("Falta o título ou sem ligação"));
   const d=$("#oDel");if(d)d.onclick=()=>{if(d.dataset.c!=="1"){d.dataset.c="1";d.textContent="Tens a certeza?";return}send({delete:o.id}).then(()=>toast("Apagado"))}}

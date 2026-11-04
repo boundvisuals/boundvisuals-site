@@ -102,3 +102,9 @@
 - id: p-site-theme
   owner: parked
   title: Tema novo do site (parado; o site fica como está)
+- id: c-opp-kits
+  owner: claude
+  title: "Kit por oportunidade: para cada entrada em docs/opps.json sem docs/kits/<id>.md, escrever o kit (carta EN+PT adaptada à vaga/cliente, 6-10 imagens do portfólio a enviar, versão do CV, data de follow-up)"
+- id: c-video-reels
+  owner: claude
+  title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"

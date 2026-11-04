@@ -4,7 +4,7 @@ name: painel
 on:
   push:
     branches: [main]
-    paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/decisions.yml", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
+    paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/decisions.yml", "docs/kits/**", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
   schedule: [{ cron: "*/10 * * * *" }]
   workflow_run: { workflows: ["publish"], types: [completed] }
   workflow_dispatch:
@@ -30,6 +30,15 @@ jobs:
             if ! git diff --quiet -- docs/inbox.json 2>/dev/null || [ -n "$(git status --porcelain docs/inbox.json)" ]; then
               git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
               git add docs/inbox.json && git commit -qm "Painel: ideas inbox" || true
+              for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+            fi
+          fi
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/opps.json.php -o opps.json.php; bye" "$H" 2>/dev/null || true
+          if [ -f in/opps.json.php ]; then
+            tail -n +2 in/opps.json.php > docs/opps.json
+            if [ -n "$(git status --porcelain docs/opps.json)" ]; then
+              git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+              git add docs/opps.json && git commit -qm "Painel: opportunities" || true
               for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
             fi
           fi

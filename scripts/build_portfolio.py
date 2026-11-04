@@ -21,7 +21,7 @@ pages = []
 pages.append(f'''<section class="cover"><div><h1>Vítor Hugo</h1><h2>Bound Visuals</h2></div>
 <p class="pos">{html.escape(prof.get("headline_en", ""))}</p><p class="url">boundvisuals.com · @vitorhugo_boundvisuals</p></section>''')
 pages.append(f'''<section class="about"><div class="col"><h3>About</h3><p>{html.escape(prof.get("bio_long_en", ""))}</p></div>
-<div class="col"><h3>Services</h3><ul>{"".join(f"<li>{html.escape(x)}</li>" for x in prof.get("services", []))}</ul>
+<div class="col"><h3>Services</h3><ul>{"".join(f"<li>{html.escape(x)}</li>" for x in prof.get("services_en", prof.get("services", [])))}</ul>
 <h3>Tools</h3><p class="tools">{" · ".join(html.escape(x) for x in prof.get("tools", []))}</p></div></section>''')
 n_img = 0
 for p in reg:

@@ -18,6 +18,12 @@ services:
   - "Imagens de produto e CGI"
   - "Vídeo e animação com AI (Seedance, Kling, LTX)"
   - "Anúncios de performance (estáticos e UGC)"
+services_en:
+  - "3D architectural imagery (exterior and interior)"
+  - "AI post-production of renders (realism, mood, people, planting)"
+  - "Product and CGI imagery"
+  - "AI video and animation (Seedance, Kling, LTX)"
+  - "Performance ads (static and UGC)"
 tools: ["3ds Max", "Corona", "Unreal", "ComfyUI", "Nano Banana", "FloraAI", "Seedance 2.5", "Kling", "LTX", "GPT Image"]
 links:
   - { title: "Site", url: "https://www.boundvisuals.com" }
