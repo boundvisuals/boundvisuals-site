@@ -33,6 +33,7 @@ if ($a === 'data') {
   $d = read_store("$store/data.json.php") ?? ['error' => 'no data yet'];
   $d['pending_approvals'] = read_store("$store/approvals.json.php") ?? [];
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
+  $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['served_at'] = gmdate('c');
   echo json_encode($d, JSON_UNESCAPED_UNICODE);
   exit;
@@ -53,6 +54,20 @@ if ($a === 'task' && $_SERVER['REQUEST_METHOD'] === 'POST') {
   if (is_string($id) && $id !== '' && strlen($id) < 120) $cur[$id] = ['done' => !empty($in['done']), 'at' => gmdate('c')];
   write_store("$store/ticks.json.php", $cur);
   echo json_encode(['ok' => true]);
+  exit;
+}
+if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topics written in the panel
+  $cur = read_store("$store/inbox.json.php") ?? [];
+  if (!empty($in['delete'])) {
+    $cur = array_values(array_filter($cur, fn($n) => ($n['id'] ?? '') !== $in['delete']));
+  } else {
+    $text = trim((string)($in['text'] ?? ''));
+    if ($text === '' || mb_strlen($text) > 5000) { http_response_code(400); echo '{"error":"empty"}'; exit; }
+    $tag = in_array($in['tag'] ?? '', ['ideia', 'debater', 'tarefa', 'conteudo', 'outro'], true) ? $in['tag'] : 'ideia';
+    array_unshift($cur, ['id' => bin2hex(random_bytes(6)), 'text' => $text, 'tag' => $tag, 'at' => gmdate('c'), 'status' => 'novo']);
+  }
+  write_store("$store/inbox.json.php", $cur);
+  echo json_encode(['ok' => true, 'inbox' => $cur], JSON_UNESCAPED_UNICODE);
   exit;
 }
 http_response_code(400);

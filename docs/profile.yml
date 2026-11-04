@@ -1,0 +1,26 @@
+# "Sobre o Vítor Hugo" tab of the Painel. Edit freely; the robot republishes on push.
+name: Vítor Hugo
+studio: Bound Visuals
+display: "Vítor Hugo • Bound Visuals"
+headline_en: "3D Artist (ArchViz · Product · CGI Generalist) · AI Image & Video Specialist · Performance Ads Designer"
+headline_pt: "Artista 3D (ArchViz · Produto · Generalista CGI) · Especialista em Imagem e Vídeo com AI · Designer de Anúncios de Performance"
+bio_short_en: "I'm Vítor Hugo, the 3D artist behind Bound Visuals. I create architectural and product imagery that blends 3D precision with AI, plus AI video and performance ads."
+bio_short_pt: "Sou o Vítor Hugo, o artista 3D por trás da Bound Visuals. Crio imagens de arquitetura e produto que juntam a precisão do 3D com AI, além de vídeo com AI e anúncios de performance."
+bio_long_en: "Bound Visuals is my 3D studio: architecture, interiors and products, built in 3ds Max and Corona and finished with AI tools like ComfyUI, Nano Banana and FloraAI. Beyond 3D, I work on AI image and video (Seedance, Kling, LTX) and performance ads. I care about quiet, believable images with full coherence between angles, and I publish my work daily as a public diary."
+bio_long_pt: "A Bound Visuals é o meu estúdio de 3D: arquitetura, interiores e produto, construídos em 3ds Max e Corona e finalizados com ferramentas de AI como ComfyUI, Nano Banana e FloraAI. Para lá do 3D, trabalho em imagem e vídeo com AI (Seedance, Kling, LTX) e anúncios de performance. Gosto de imagens calmas e credíveis, com coerência total entre ângulos, e publico o meu trabalho todos os dias como um diário público."
+goals:
+  - "Ser contratado: função principal em archviz + AI Power User"
+  - "Ganhar clientes (promotores, arquitetos, marcas)"
+  - "Estar sempre visível e moderno: diário público de trabalho"
+services:
+  - "Imagens 3D de arquitetura (exterior e interior)"
+  - "Pós-produção de renders com AI (realismo, ambientes, pessoas, vegetação)"
+  - "Imagens de produto e CGI"
+  - "Vídeo e animação com AI (Seedance, Kling, LTX)"
+  - "Anúncios de performance (estáticos e UGC)"
+tools: ["3ds Max", "Corona", "Unreal", "ComfyUI", "Nano Banana", "FloraAI", "Seedance 2.5", "Kling", "LTX", "GPT Image"]
+links:
+  - { title: "Site", url: "https://www.boundvisuals.com" }
+  - { title: "Instagram", url: "https://www.instagram.com/vitorhugo_boundvisuals/" }
+  - { title: "Behance · Bound Visuals", url: "https://www.behance.net/boundvisuals" }
+  - { title: "Behance · Vítor Hugo", url: "https://www.behance.net/criativovitorhugo" }

@@ -215,10 +215,26 @@ def build(out):
             links.append({"group": "Pastas MEGA", "title": p.get("title", p["id"]), "url": p["mega"]})
 
     tasks = yaml.safe_load(open("docs/tasks.yml", encoding="utf-8")) or []
+    profile = yaml.safe_load(open("docs/profile.yml", encoding="utf-8")) if os.path.exists("docs/profile.yml") else {}
+    replies = yaml.safe_load(open("docs/inbox-replies.yml", encoding="utf-8")) if os.path.exists("docs/inbox-replies.yml") else {}
+    portfolio = []
+    cat = lambda st: "Interior" if re.search(r"(?i)interior|int\d", st) else ("Exterior" if re.search(r"(?i)exterior|front|back|frente|ext", st) else "Outro")
+    for p in reg:
+        prev = sorted(glob.glob(f"reports/{p['id']}/preview/*.jpg"))
+        seen = set()
+        for f in prev:
+            st = os.path.basename(f)[:-4]
+            if st.startswith("2026_-_FINAIS"):      # duplicate export folders
+                continue
+            sm = thumb(f, out, f"portfolio/{p['id']}/sm_{os.path.basename(f)}", (640, 640))
+            lg = thumb(f, out, f"portfolio/{p['id']}/lg_{os.path.basename(f)}", (1400, 1400))
+            if sm and st not in seen:
+                seen.add(st)
+                portfolio.append({"project": p["id"], "project_title": p.get("title", p["id"]), "cat": cat(st), "sm": sm, "lg": lg})
     gitlog = subprocess.run(["git", "log", "-12", "--date=format-local:%d/%m %H:%M", "--format=%ad  %s"], capture_output=True, text=True,
                             env={**os.environ, "TZ": "Europe/Lisbon"}).stdout.strip().splitlines()
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "studies": studies(), "projects": projects, "links": links,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}
     with open(os.path.join(out, "store", "data.json.php"), "w", encoding="utf-8") as fh:
         fh.write("<?php exit; ?>\n" + json.dumps(data, ensure_ascii=False))

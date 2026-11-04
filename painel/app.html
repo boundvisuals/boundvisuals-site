@@ -114,6 +114,33 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.sheet{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sheet button{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 8px;border-radius:14px;border:1px solid var(--line);background:var(--panel);font-size:13px}
+.sheet svg{width:24px;height:24px}
+.compose{display:grid;gap:10px}
+.compose textarea{width:100%;min-height:96px;resize:vertical;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:inherit;padding:12px 14px}
+.compose textarea:focus{outline:1px solid var(--warm)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags button{border:1px solid var(--line);background:none;border-radius:20px;padding:5px 12px;font-size:12px;color:var(--mut)}
+.tags button.on{background:var(--warm);color:#0b0c0c;border-color:var(--warm)}
+.note{padding:14px 0;border-top:1px solid var(--line)}
+.note:first-child{border-top:0}
+.note .nt{white-space:pre-wrap;font-size:14px}
+.note .nm{display:flex;gap:10px;align-items:center;font-size:11px;color:var(--mut);margin-top:6px}
+.note .del{margin-left:auto;background:none;border:0;color:var(--mut);font-size:12px;padding:2px 4px}
+.reply{margin-top:10px;padding:12px 14px;border-left:2px solid var(--warm);background:var(--panel2);border-radius:0 10px 10px 0;font-size:14px;color:var(--warm);white-space:pre-wrap}
+.reply small{display:block;font-size:11px;color:var(--mut);margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
+.pgrid{columns:3;column-gap:10px}@media (max-width:860px){.pgrid{columns:2;column-gap:8px}}
+.pgrid figure{margin:0 0 10px;break-inside:avoid;position:relative;border-radius:10px;overflow:hidden;cursor:zoom-in;background:var(--panel2)}
+.pgrid img{width:100%;display:block}
+.pgrid figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:12px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#eee;opacity:0;transition:.2s}
+.pgrid figure:hover figcaption{opacity:1}
+.prof h2{margin-top:6px}
+.prof .big{font-size:22px;font-weight:500;line-height:1.3;margin:0 0 6px}
+.copyblock{position:relative;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px;font-size:14px;color:var(--warm);margin:8px 0}
+.copyblock small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.copyblock button{position:absolute;top:10px;right:10px;font-size:12px;padding:4px 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{border:1px solid var(--line);border-radius:20px;padding:4px 11px;font-size:12px;color:var(--warm)}
 .study{margin-bottom:14px}
 .study .sh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;cursor:pointer}
 .study .num{font-size:12px;color:var(--warm);letter-spacing:.1em}
@@ -154,6 +181,9 @@ nav.bottom{display:none}
     <section class="view" id="v-tarefas"></section>
     <section class="view" id="v-projetos"></section>
     <section class="view" id="v-estudio"></section>
+    <section class="view" id="v-ideias"></section>
+    <section class="view" id="v-portfolio"></section>
+    <section class="view" id="v-sobre"></section>
     <section class="view" id="v-links"></section>
   </main>
 </div>
@@ -167,9 +197,14 @@ const ICON={
  tarefas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>',
  projetos:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg>',
  estudio:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>',
+ ideias:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg>',
+ portfolio:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>',
+ sobre:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
+ mais:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>',
  links:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>'
 };
-const TABS=[["hoje","Hoje"],["cal","Calendário"],["tarefas","Tarefas"],["projetos","Projetos"],["estudio","Estúdio"],["links","Links"]];
+const TABS=[["hoje","Hoje"],["cal","Calendário"],["tarefas","Tarefas"],["ideias","Ideias"],["portfolio","Portfólio"],["projetos","Projetos"],["estudio","Estúdio"],["sobre","Sobre mim"],["links","Links"]];
+const BOTTOM=["hoje","cal","tarefas","ideias"];
 const ST={published:"Publicado",approved:"Aprovado",pending:"Por aprovar",error:"Erro",skipped:"Saltado"};
 const TY={feed:"Post",story:"Story",reel:"Reel"};
 let D=null,cur="hoje",calF="todos",taskF="vitor",lastOk=0;
@@ -180,14 +215,15 @@ const fmtDay=d=>{const x=new Date(d+"T12:00:00");return `${WD[x.getDay()]} ${x.g
 const todayISO=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2200)}
 function nav(){
-  const badge={tarefas:(D?.tasks||[]).filter(t=>t.owner==="vitor"&&!isDone(t)).length,cal:pendingCount()};
+  const badge={ideias:(D?.inbox||[]).filter(n=>(D.replies||{})[n.id]&&!seenReply(n.id)).length,tarefas:(D?.tasks||[]).filter(t=>t.owner==="vitor"&&!isDone(t)).length,cal:pendingCount()};
   const h=(cls)=>TABS.map(([k,l])=>`<button class="tab ${cur===k?"on":""}" data-k="${k}">${ICON[k]}<span>${l}</span>${badge[k]?`<span class="n">${badge[k]}</span>`:""}</button>`).join("");
   $("#side").innerHTML=`<div class="brand"><b>Vítor Hugo</b><span>Bound Visuals</span></div>${h()}<div class="foot" id="gen"></div>`;
-  $("#bottom").innerHTML=h();
-  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>go(b.dataset.k));
+  $("#bottom").innerHTML=TABS.filter(([k])=>BOTTOM.includes(k)).map(([k,l])=>`<button class="tab ${cur===k?"on":""}" data-k="${k}">${ICON[k]}<span>${l}</span>${badge[k]?`<span class="n">${badge[k]}</span>`:""}</button>`).join("")+`<button class="tab ${BOTTOM.includes(cur)?"":"on"}" data-more="1">${ICON.mais}<span>Mais</span></button>`;
+  const mb=$("#bottom [data-more]");if(mb)mb.onclick=openMore;
+  document.querySelectorAll(".tab[data-k]").forEach(b=>b.onclick=()=>go(b.dataset.k));
   if(D)$("#gen").textContent="Dados dos robôs: "+ago(D.generated_at);
 }
-function go(k){cur=k;try{localStorage.setItem("bv_tab",k)}catch(e){}
+function go(k){cur=k;if(k==="ideias"&&D){markSeen()}try{localStorage.setItem("bv_tab",k)}catch(e){}
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id==="v-"+k));
   $("#title").textContent=TABS.find(t=>t[0]===k)[1];nav();window.scrollTo(0,0)}
 function ago(iso){if(!iso)return"—";const s=Math.max(0,(Date.now()-new Date(iso))/1000);
@@ -296,7 +332,47 @@ function renderEstudio(){const S=D.studies||[];
   $("#v-estudio").querySelectorAll(".sh").forEach(h=>h.onclick=()=>h.parentElement.classList.toggle("open"));
   $("#v-estudio").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Prompt copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
 }
-function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderProjetos();renderEstudio();renderLinks()}
+function openMore(){const rest=TABS.filter(([k])=>!BOTTOM.includes(k));
+  $("#mbox").innerHTML=`<div class="mhead"><b>Mais</b><button class="x" id="mx">×</button></div><div class="sheet">${rest.map(([k,l])=>`<button data-go="${k}">${ICON[k]}${l}</button>`).join("")}</div>`;
+  $("#modal").classList.add("on");$("#mx").onclick=closeModal;$("#mbox").querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{closeModal();go(b.dataset.go)})}
+function seenReply(id){try{return (JSON.parse(localStorage.getItem("bv_seen")||"[]")).includes(id)}catch(e){return true}}
+function markSeen(){try{const ids=(D.inbox||[]).filter(n=>(D.replies||{})[n.id]).map(n=>n.id);localStorage.setItem("bv_seen",JSON.stringify(ids))}catch(e){}}
+let noteTag="ideia";
+const TAGS=[["ideia","Ideia"],["debater","Para debater"],["conteudo","Conteúdo"],["tarefa","Tarefa"],["outro","Outro"]];
+function renderIdeias(){const N=D.inbox||[],R=D.replies||{};const keep=$("#noteText")?$("#noteText").value:"";
+  $("#v-ideias").innerHTML=`<div class="card compose"><h2>Escreve aqui o que te passar pela cabeça</h2>
+   <textarea id="noteText" placeholder="Uma ideia, um assunto para debatermos, algo a não esquecer…"></textarea>
+   <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><div class="tags">${TAGS.map(([k,l])=>`<button class="${noteTag===k?"on":""}" data-tag="${k}">${l}</button>`).join("")}</div><button class="btn pri" id="noteSave">Guardar</button></div>
+   <div class="sub">Fica guardado no teu servidor. Eu leio e respondo aqui na próxima vez que falarmos.</div></div>
+   <div class="card" style="margin-top:14px">${N.length?N.map(n=>`<div class="note"><div class="nt">${esc(n.text)}</div><div class="nm"><span class="pill">${esc((TAGS.find(t=>t[0]===n.tag)||[0,n.tag])[1])}</span><span>${ago(n.at)}</span><button class="del" data-del="${esc(n.id)}">apagar</button></div>${R[n.id]?`<div class="reply"><small>Claude</small>${esc(R[n.id])}</div>`:""}</div>`).join(""):`<div class="empty">Ainda não há nada. Escreve a primeira ideia acima.</div>`}</div>`;
+  $("#v-ideias").querySelectorAll("[data-tag]").forEach(b=>b.onclick=()=>{noteTag=b.dataset.tag;$("#v-ideias").querySelectorAll("[data-tag]").forEach(x=>x.classList.toggle("on",x===b))});
+  $("#noteSave").onclick=async()=>{const t=$("#noteText").value.trim();if(!t)return;const b=$("#noteSave");b.disabled=true;
+    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:t,tag:noteTag})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;toast("Guardado ✓");renderIdeias()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
+  $("#v-ideias").querySelectorAll("[data-del]").forEach(b=>b.onclick=async()=>{if(b.dataset.confirm!=="1"){b.dataset.confirm="1";b.textContent="tens a certeza?";return}
+    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({delete:b.dataset.del})});const j=await r.json();D.inbox=j.inbox;renderIdeias();toast("Apagado")}catch(e){toast("Sem ligação")}});
+  if(keep)$("#noteText").value=keep;
+  if(cur==="ideias"&&(D.inbox||[]).some(n=>(D.replies||{})[n.id]&&!seenReply(n.id))){markSeen();nav()}
+}
+let pfF="Tudo";
+function renderPortfolio(){const P=D.portfolio||[];const projs=[...new Set(P.map(x=>x.project_title))];
+  const fl=["Tudo","Exterior","Interior",...projs];const list=P.filter(x=>pfF==="Tudo"||x.cat===pfF||x.project_title===pfF);
+  $("#v-portfolio").innerHTML=`<div class="seg">${fl.map(f=>`<button class="${pfF===f?"on":""}" data-pf="${esc(f)}">${esc(f)}</button>`).join("")}</div>
+  <div class="sub" style="margin:-4px 0 12px">${list.length} imagens · o PDF do portfólio, gerado sozinho, chega já a seguir</div>
+  <div class="pgrid">${list.map((x,n)=>`<figure data-lg="${esc(x.lg)}" data-t="${esc(x.project_title)}"><img loading="lazy" src="${esc(x.sm)}" alt="${esc(x.project_title)}"><figcaption>${esc(x.project_title)} · ${esc(x.cat)}</figcaption></figure>`).join("")}</div>`;
+  $("#v-portfolio").querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{pfF=b.dataset.pf;renderPortfolio()});
+  $("#v-portfolio").querySelectorAll("figure").forEach(f=>f.onclick=()=>{$("#mbox").innerHTML=`<div class="mhead"><b>${esc(f.dataset.t)}</b><button class="x" id="mx">×</button></div><img src="${esc(f.dataset.lg)}" style="width:100%;border-radius:10px" alt="">`;$("#modal").classList.add("on");$("#mx").onclick=closeModal});
+}
+function cb(label,text){return `<div class="copyblock"><small>${label}</small><button class="btn" data-copy="${esc(text)}">Copiar</button>${esc(text)}</div>`}
+function renderSobre(){const p=D.profile||{};
+  $("#v-sobre").innerHTML=`<div class="grid g2"><div class="card prof"><p class="big">${esc(p.display||"Vítor Hugo • Bound Visuals")}</p><div class="sub">${esc(p.headline_pt||"")}</div>
+   <h2 style="margin-top:18px">Objetivos</h2><ul style="margin:0;padding-left:18px">${(p.goals||[]).map(g=>`<li style="margin:4px 0">${esc(g)}</li>`).join("")}</ul>
+   <h2 style="margin-top:18px">Serviços</h2><ul style="margin:0;padding-left:18px">${(p.services||[]).map(g=>`<li style="margin:4px 0">${esc(g)}</li>`).join("")}</ul>
+   <h2 style="margin-top:18px">Ferramentas</h2><div class="chips">${(p.tools||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
+   <h2 style="margin-top:18px">Links</h2><div class="links">${(p.links||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}<span>↗</span></a>`).join("")}</div></div>
+   <div class="card"><h2>Textos prontos a copiar</h2>${cb("Título EN",p.headline_en||"")}${cb("Bio curta EN",p.bio_short_en||"")}${cb("Bio curta PT",p.bio_short_pt||"")}${cb("Bio longa EN",p.bio_long_en||"")}${cb("Bio longa PT",p.bio_long_pt||"")}</div></div>`;
+  $("#v-sobre").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
+}
+function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks()}
 async function load(){
   try{const r=await fetch("api.php?a=data",{cache:"no-store"});if(r.status===401){location.reload();return}
     const j=await r.json();const changed=!D||j.generated_at!==D.generated_at||JSON.stringify(j.pending_approvals)!==JSON.stringify(D.pending_approvals)||JSON.stringify(j.ticks)!==JSON.stringify(D.ticks);
