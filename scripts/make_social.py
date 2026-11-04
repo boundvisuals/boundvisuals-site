@@ -58,14 +58,32 @@ def label(draw, title):
     draw.text((W // 2, 1722), "Vítor Hugo  •  Bound Visuals", font=f2, fill=GREY, anchor="mm")
 
 
-def frame_story(photo, title, box=None, wide=False):
-    canvas = Image.new("RGB", (W, H), BLACK)
-    if wide:
-        ph = round(W * photo.height / photo.width)
-        canvas.paste(photo.resize((W, ph), Image.LANCZOS), (0, (H - ph) // 2 - 40))
-    else:
-        canvas.paste(photo.resize((W, 1350), Image.LANCZOS, box=box), (0, 250))
-    label(ImageDraw.Draw(canvas), title)
+def box916(img, spec):
+    """[cx, cy, h] fractions → full-screen 9:16 box (same centre and height as the post crop, narrower)."""
+    iw, ih = img.size
+    cx, cy, fh = spec
+    ch = min(fh * ih, ih)
+    cw = 0.5625 * ch
+    if cw > iw:
+        cw = iw; ch = min(cw / 0.5625, ih)
+    x0 = min(max(cx * iw - cw / 2, 0), iw - cw)
+    y0 = min(max(cy * ih - ch / 2, 0), ih - ch)
+    return (x0, y0, x0 + cw, y0 + ch)
+
+
+def frame_story(photo, title, box):
+    """Full-screen story (1080x1920): the 9:16 crop fills the screen; small brand label on a soft bottom gradient."""
+    canvas = photo.resize((W, H), Image.LANCZOS, box=box).convert("RGB")
+    grad = Image.new("L", (1, 420))
+    for y in range(420):
+        grad.putpixel((0, y), int(170 * (y / 419) ** 1.6))
+    shade = Image.new("RGB", (W, 420), BLACK)
+    canvas.paste(shade, (0, H - 420 - 230), grad.resize((W, 420)))
+    lower = Image.new("RGB", (W, 230), BLACK)
+    canvas.paste(lower, (0, H - 230), Image.new("L", (W, 230), 170))
+    d = ImageDraw.Draw(canvas)
+    d.text((W // 2, H - 300), title, font=font(FONT_M, 40), fill=LIGHT, anchor="mm")
+    d.text((W // 2, H - 250), "Vítor Hugo  •  Bound Visuals", font=font(FONT_L, 28), fill=GREY, anchor="mm")
     return canvas
 
 
@@ -149,6 +167,8 @@ def main():
     src_dir, out_dir = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
     pid, title = sys.argv[3], sys.argv[4]
     crops = yaml.safe_load(open("config/crops.yml"))["crops"]
+    # optional story-specific 9:16 crops: stem → [s00 spec, s01 spec, ...]; otherwise derived from the post crops
+    story_crops = (yaml.safe_load(open("config/story_crops.yml")) or {}).get("story_crops", {}) if pathlib.Path("config/story_crops.yml").exists() else {}
     (out_dir / "story").mkdir(parents=True, exist_ok=True); (out_dir / "reel").mkdir(parents=True, exist_ok=True)
     per_image = []
     for src in sorted(p for p in src_dir.rglob("*") if p.suffix.lower() in EXTS):
@@ -158,9 +178,11 @@ def main():
             continue
         img = Image.open(src); img.load(); img = img.convert("RGB")
         bx = boxes_for(img, crops[stem])
-        frame_story(img, title, wide=True).save(out_dir / "story" / f"{stem}-s00.jpg", quality=95, subsampling=0)
+        sc = story_crops.get(stem)
+        frame_story(img, title, box916(img, sc[0] if sc else [crops[stem][0][0], 0.5, 1.0])).save(out_dir / "story" / f"{stem}-s00.jpg", quality=95, subsampling=0)
         for k, b in enumerate(bx, 1):
-            frame_story(img, title, box=b).save(out_dir / "story" / f"{stem}-s{k:02d}.jpg", quality=95, subsampling=0)
+            spec = sc[k] if sc and k < len(sc) else crops[stem][k - 1]
+            frame_story(img, title, box916(img, spec)).save(out_dir / "story" / f"{stem}-s{k:02d}.jpg", quality=95, subsampling=0)
         per_image.append((stem, img, bx))
         print(f"stories: {stem} -> {1 + len(bx)}")
     # reels: round-robin over images (crop 1 of each, then crop 2 ...), 4 shots per reel, project's best image first.

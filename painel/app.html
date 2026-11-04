@@ -448,7 +448,9 @@ function renderSobre(){const p=D.profile||{};
    <h2 style="margin-top:18px">Serviços</h2><ul style="margin:0;padding-left:18px">${(p.services||[]).map(g=>`<li style="margin:4px 0">${esc(g)}</li>`).join("")}</ul>
    <h2 style="margin-top:18px">Ferramentas</h2><div class="chips">${(p.tools||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
    <h2 style="margin-top:18px">Links</h2><div class="links">${(p.links||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}<span>↗</span></a>`).join("")}</div></div>
+   <div class="card"><h2>Robô imediato</h2>${D.robot_link?`<div class="sub" style="color:var(--ok)">Ligado: aprovações e recortes são aplicados na hora.</div>`:`<div class="sub">Cola aqui a chave do GitHub para o robô reagir na hora (passos no chat).</div><div style="display:flex;gap:8px;margin-top:8px"><input id="ghT" class="sinput" style="font-size:13px;padding:10px" placeholder="github_pat_…"><button class="btn pri" id="ghS">Ligar</button></div>`}</div>
    <div class="card"><h2>Textos prontos a copiar</h2>${cb("Título EN",p.headline_en||"")}${cb("Bio curta EN",p.bio_short_en||"")}${cb("Bio curta PT",p.bio_short_pt||"")}${cb("Bio longa EN",p.bio_long_en||"")}${cb("Bio longa PT",p.bio_long_pt||"")}</div></div>`;
+  const gs=$("#ghS");if(gs)gs.onclick=async()=>{try{const r=await fetch("api.php?a=ghtoken",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:$("#ghT").value.trim()})});const j=await r.json();if(!j.ok)throw 0;D.robot_link=true;toast(j.robot==="started"?"Ligado ✓ Robô a correr":"Guardado, mas o GitHub respondeu "+j.robot);renderSobre()}catch(e){toast("Chave inválida")}};
   $("#v-sobre").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
 }
 const STG=[["ideia","Ideia"],["explorar","A explorar"],["em-curso","Em curso"],["parado","Parado"],["feito","Feito"]];
@@ -524,22 +526,25 @@ function renderMarca(){const st=D.stats||{},ac=st.account||{},M=st.media||[];con
    <div class="grid" style="align-content:start"><div class="card"><h2>Seguidores</h2>${spark(D.followers)||`<div class="empty">A curva aparece a partir do 2.º dia.</div>`}</div>
     <div class="card"><h2>Melhores posts recentes</h2>${M.slice().sort((a,b)=>((b.like_count||0)+(b.comments_count||0)*3)-((a.like_count||0)+(a.comments_count||0)*3)).slice(0,5).map(m=>`<div class="mini"><a href="${esc(m.permalink)}" target="_blank" rel="noopener" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.caption||"(sem legenda)")}</a><span>♥ ${m.like_count??0} · 💬 ${m.comments_count??0}</span></div>`).join("")||`<div class="empty">—</div>`}</div>
     <div class="card"><h2>Redes</h2>${(D.networks||[]).map(n=>`<div class="net"><div>${esc(n.name)}</div><span>${esc(n.status)}</span></div>`).join("")}</div></div></div>`}
-function cropEditor(it){let C=(it.crops||[]).map(c=>c.slice());if(!C.length)C=[[.5,.5,1]];let sel=0;const R=it.orig_ratio;
-  $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${esc(it.project_title)} · recortes 4:5 (grelha dos terços)</div><b>Editar recortes</b></div><button class="x" id="mx">×</button></div>
+function cropEditor(it,mode){mode=mode||"post";const AR=mode==="story"?.5625:.8;
+  let C=((mode==="story"?it.story_crops:it.crops)||[]).map(c=>c.slice());if(!C.length)C=[[.5,.5,1]];let sel=0;const R=it.orig_ratio;
+  $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${esc(it.project_title)} · grelha dos terços</div><b>Editar recortes</b></div><button class="x" id="mx">×</button></div>
+  <div class="seg"><button class="${mode==="post"?"on":""}" data-cm="post">Post 4:5</button><button class="${mode==="story"?"on":""}" data-cm="story">Stories 9:16</button></div>
   <div class="ced" id="ced"><img id="cimg" src="${esc(it.orig)}" alt=""></div>
   <div class="cbar"><span class="sub">Tamanho</span><input type="range" id="csz" min="0.25" max="1" step="0.005"><button class="btn" id="cadd">+ Recorte</button><button class="btn" id="cdel">Apagar este</button></div>
   <div class="cprev" id="cprev"></div>
-  <div class="cbar" style="justify-content:space-between"><span class="sub">Arrasta a moldura. O último slide (imagem inteira em branco) é sempre acrescentado.</span><button class="btn pri" id="csave">Guardar recortes</button></div>`;
+  <div class="cbar" style="justify-content:space-between"><span class="sub">${mode==="story"?"Stories em ecrã inteiro: o 1.º é a abertura, os outros os pormenores.":"Arrasta a moldura. O último slide (imagem inteira em branco) é sempre acrescentado."}</span><button class="btn pri" id="csave">Guardar recortes</button></div>`;
   $("#modal").classList.add("on");$("#mx").onclick=closeModal;
+  $("#mbox").querySelectorAll("[data-cm]").forEach(b=>b.onclick=()=>cropEditor(it,b.dataset.cm));
   const ced=$("#ced"),img=$("#cimg");
-  const geom=c=>{const W=ced.clientWidth,H=W/R;let ch=c[2]*H,cw=.8*ch;if(cw>W){cw=W;ch=cw/.8}
+  const geom=c=>{const W=ced.clientWidth,H=W/R;let ch=Math.min(c[2]*H,H),cw=AR*ch;if(cw>W){cw=W;ch=Math.min(cw/AR,H)}
     let x=c[0]*W-cw/2,y=c[1]*H-ch/2;x=Math.min(Math.max(x,0),W-cw);y=Math.min(Math.max(y,0),H-ch);return{x,y,w:cw,h:ch,W,H}};
   const draw=()=>{ced.querySelectorAll(".cbox").forEach(b=>b.remove());
     C.forEach((c,n)=>{const g=geom(c);const b=document.createElement("div");b.className="cbox"+(n===sel?" on":"");b.style.cssText=`left:${g.x}px;top:${g.y}px;width:${g.w}px;height:${g.h}px`;
       b.innerHTML=`<i class="v1"></i><i class="v2"></i><i class="h1"></i><i class="h2"></i><b>${n+1}</b>`;b.dataset.n=n;ced.appendChild(b)});
     $("#csz").value=C[sel][2];prev()};
-  const prev=()=>{const pv=$("#cprev");pv.innerHTML="";C.forEach((c,n)=>{const g=geom(c),cv=document.createElement("canvas");cv.width=192;cv.height=240;cv.className=n===sel?"on":"";
-    const k=img.naturalWidth/g.W;try{cv.getContext("2d").drawImage(img,g.x*k,g.y*k,g.w*k,g.h*k,0,0,192,240)}catch(e){}cv.onclick=()=>{sel=n;draw()};pv.appendChild(cv)})};
+  const prev=()=>{const pv=$("#cprev");pv.innerHTML="";C.forEach((c,n)=>{const g=geom(c),cv=document.createElement("canvas");cv.width=mode==="story"?135:192;cv.height=240;cv.style.width=mode==="story"?"68px":"96px";cv.className=n===sel?"on":"";
+    const k=img.naturalWidth/g.W;try{cv.getContext("2d").drawImage(img,g.x*k,g.y*k,g.w*k,g.h*k,0,0,cv.width,240)}catch(e){}cv.onclick=()=>{sel=n;draw()};pv.appendChild(cv)})};
   let drag=null;
   ced.addEventListener("pointerdown",e=>{const b=e.target.closest(".cbox");if(!b)return;sel=+b.dataset.n;const g=geom(C[sel]);const r=ced.getBoundingClientRect();
     drag={dx:e.clientX-r.left-g.x-g.w/2,dy:e.clientY-r.top-g.y-g.h/2};ced.setPointerCapture(e.pointerId);draw()});
@@ -552,8 +557,8 @@ function cropEditor(it){let C=(it.crops||[]).map(c=>c.slice());if(!C.length)C=[[
   $("#cdel").onclick=()=>{if(C.length<=1)return toast("Fica pelo menos 1");C.splice(sel,1);sel=0;draw()};
   $("#csave").onclick=async()=>{const b=$("#csave");b.disabled=true;
     C=C.map(c=>{const g=geom(c);return[+((g.x+g.w/2)/g.W).toFixed(3),+((g.y+g.h/2)/g.H).toFixed(3),+(g.h/g.H).toFixed(3)]});
-    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C})});if(!r.ok)throw 0;
-      it.crops=C;toast("Guardado ✓ O robô refaz os slides em ~10 min");closeModal()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
+    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C,kind:mode})});if(!r.ok)throw 0;const j=await r.json();
+      if(mode==="story")it.story_crops=C;else it.crops=C;toast(j.robot==="started"?"Guardado ✓ Robô a refazer agora (~5 min)":"Guardado ✓ O robô refaz em ~10 min");closeModal()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
   if(img.complete)draw();else img.onload=draw;window.addEventListener("resize",()=>{if($("#ced"))draw()},{once:true})}
 function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps();renderMarca()}
 async function load(){

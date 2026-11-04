@@ -28,13 +28,34 @@ function write_store($f, $data) {
   file_put_contents($f, "<?php exit; ?>\n" . json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), LOCK_EX);
 }
 
+// Wakes the panel robot at once (GitHub workflow_dispatch) when Vítor saved a token in the panel settings.
+function kick_robot() {
+  global $store;
+  $t = read_store("$store/gh.json.php")['token'] ?? '';
+  if ($t === '') return 'no-token';
+  $ch = curl_init('https://api.github.com/repos/boundvisuals/boundvisuals-site/actions/workflows/painel.yml/dispatches');
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => '{"ref":"main"}', CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 15,
+    CURLOPT_HTTPHEADER => ["Authorization: Bearer $t", 'Accept: application/vnd.github+json', 'User-Agent: bv-painel', 'Content-Type: application/json']]);
+  curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+  return $code === 204 ? 'started' : "error-$code";
+}
+
 $a = $_GET['a'] ?? 'data';
+if ($a === 'ghtoken' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+  $in0 = json_decode(file_get_contents('php://input'), true) ?? [];
+  $t = trim((string)($in0['token'] ?? ''));
+  if (!preg_match('/^(github_pat_|ghp_)[A-Za-z0-9_]{20,255}$/', $t)) { http_response_code(400); echo '{"error":"token"}'; exit; }
+  write_store("$store/gh.json.php", ['token' => $t, 'at' => gmdate('c')]);
+  echo json_encode(['ok' => true, 'robot' => kick_robot()]);
+  exit;
+}
 if ($a === 'data') {
   $d = read_store("$store/data.json.php") ?? ['error' => 'no data yet'];
   $d['pending_approvals'] = read_store("$store/approvals.json.php") ?? [];
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['opps'] = read_store("$store/opps.json.php") ?? [];
+  $d['robot_link'] = file_exists("$store/gh.json.php");
   $d['served_at'] = gmdate('c');
   echo json_encode($d, JSON_UNESCAPED_UNICODE);
   exit;
@@ -46,7 +67,7 @@ if ($a === 'approve' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (is_string($k) && strlen($k) < 300) $cur[$k] = gmdate('c');
   }
   write_store("$store/approvals.json.php", $cur);
-  echo json_encode(['ok' => true, 'count' => count($cur)]);
+  echo json_encode(['ok' => true, 'count' => count($cur), 'robot' => kick_robot()]);
   exit;
 }
 if ($a === 'task' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -100,9 +121,10 @@ if ($a === 'crops' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crop editor:
     if (is_array($c) && count($c) === 3) $cr[] = array_map(fn($v) => round(max(0, min(1, (float)$v)), 3), $c);
   }
   if ($stem === '' || strlen($stem) > 200 || $proj === '' || count($cr) < 1 || count($cr) > 9) { http_response_code(400); echo '{"error":"bad crops"}'; exit; }
-  $cur[$stem] = ['project' => $proj, 'crops' => $cr, 'at' => gmdate('c')];
+  $kind = ($in['kind'] ?? '') === 'story' ? 'story' : 'post';
+  $cur[($kind === 'story' ? 'story|' : '') . $stem] = ['project' => $proj, 'kind' => $kind, 'crops' => $cr, 'at' => gmdate('c')];
   write_store("$store/crops.json.php", $cur);
-  echo json_encode(['ok' => true]);
+  echo json_encode(['ok' => true, 'robot' => kick_robot()]);
   exit;
 }
 http_response_code(400);

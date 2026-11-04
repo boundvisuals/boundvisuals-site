@@ -50,7 +50,7 @@ jobs:
           python3 scripts/build_painel.py apply-crops in/crops.json.php > in/changed.txt
           [ -s in/changed.txt ] || exit 0
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
-          git add config/crops.yml && git commit -qm "Crops edited in the panel: $(tr '\n' ' ' < in/changed.txt)"
+          git add config/crops.yml config/story_crops.yml 2>/dev/null; git commit -qm "Crops edited in the panel: $(tr '\n' ' ' < in/changed.txt)"
           for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
           while read -r pid; do
             link=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('mega','') for p in r if p['id']==sys.argv[1]),''))" "$pid")

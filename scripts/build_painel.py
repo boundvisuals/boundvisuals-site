@@ -99,6 +99,7 @@ def last_log():
     return open(p, encoding="utf-8").read().strip().splitlines() if os.path.exists(p) else []
 
 
+SCROPS = (yaml.safe_load(open("config/story_crops.yml")) or {}).get("story_crops", {}) if os.path.exists("config/story_crops.yml") else {}
 CROPS = (yaml.safe_load(open("config/crops.yml")) or {}).get("crops", {}) if os.path.exists("config/crops.yml") else {}
 
 
@@ -110,7 +111,9 @@ def crop_info(it, out):
         return {}
     w, h = Image.open(src).size
     lg = thumb(src, out, f"portfolio/{it['project']}/lg_{stem}.jpg", (1400, 1400))
-    return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, [])}
+    pc = CROPS.get(stem, [])
+    sc = SCROPS.get(stem) or ([[pc[0][0] if pc else 0.5, 0.5, 1.0]] + pc)
+    return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, []), "story_crops": sc}
 
 
 def build(out):
@@ -297,12 +300,22 @@ def apply_crops(path):
         return
     cfg = yaml.safe_load(open("config/crops.yml")) or {}
     cr = cfg.setdefault("crops", {})
-    changed = set()
-    for stem, e in edits.items():
+    scfg = (yaml.safe_load(open("config/story_crops.yml")) or {}) if os.path.exists("config/story_crops.yml") else {}
+    scr = scfg.setdefault("story_crops", {})
+    changed, story_changed = set(), False
+    for key, e in edits.items():
         new = [[round(float(v), 3) for v in c] for c in e.get("crops", [])]
-        if new and cr.get(stem) != new:
-            cr[stem] = new
+        if key.startswith("story|"):
+            stem = key[6:]
+            if new and scr.get(stem) != new:
+                scr[stem] = new; changed.add(e.get("project")); story_changed = True
+            continue
+        if new and cr.get(key) != new:
+            cr[key] = new
             changed.add(e.get("project"))
+    if story_changed:
+        open("config/story_crops.yml", "w").write("# Full-screen 9:16 story crops [cx, cy, h] (s00, s01, …), edited in the Painel. Missing → derived from post crops.\n"
+                                                  + yaml.safe_dump(scfg, allow_unicode=True, sort_keys=False, default_flow_style=None, width=200))
     if changed:
         hdr = "# Hand-composed 4:5 crops: [cx, cy, h] as fractions of the original. Edited by Claude and in the Painel crop editor.\n"
         open("config/crops.yml", "w").write(hdr + yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False, default_flow_style=None, width=200))
