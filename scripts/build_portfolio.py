@@ -38,10 +38,25 @@ def ratio(p):
 
 
 # ------------------------------------------------------------------ pieces
-def P(cls, body, dark=False, num=True):
+# Print-friendly: white pages, black type, no solid fills. Images are NEVER cropped (always whole, aspect kept).
+TEL = "tel:" + CV["phone"].replace(" ", "")
+SITE = "https://www." + CV["website"]
+LINKS = [("Phone", CV["phone"], TEL), ("Email", CV["email"], "mailto:" + CV["email"]), ("Website", CV["website"], SITE),
+         ("LinkedIn", "linkedin.com/in/" + CV["linkedin"], "https://www.linkedin.com/in/" + CV["linkedin"]),
+         ("Behance", "behance.net/" + CV["behance"], "https://www.behance.net/" + CV["behance"]),
+         ("Instagram", CV["instagram"], "https://www.instagram.com/" + CV["instagram"].lstrip("@"))]
+FOOT = '<div class="brand"><a href="#top">Vítor Hugo</a> · <a href="' + TEL + '">' + CV["phone"] + '</a> · <a href="mailto:' + CV["email"] + '">' + CV["email"] + '</a></div>'
+A_ = lambda lab, href: f'<a href="{href}">{e(lab)}</a>'
+
+
+def P(cls, body, num=True, sid=""):
     fn = '<div class="fn"></div>' if num else ""
-    dk = "dark" if dark else ""
-    return f'<section class="pg {cls} {dk}">{body}{fn}<div class="brand">Vítor Hugo · Bound Visuals</div></section>'
+    ida = f' id="{sid}"' if sid else ""
+    return f'<section class="pg {cls}"{ida}>{body}{fn}{FOOT}</section>'
+
+
+def contact_list(sep="<br>"):
+    return sep.join(f'<span class="cl">{l}</span> {A_(t, h)}' for l, t, h in LINKS)
 
 
 def cover(kind):
@@ -54,21 +69,20 @@ def cover(kind):
             hero = prev[0]; break
     if kind == "AI":
         hero = M / "ai-006-001.jpg"
-    bg = f'style="background-image:url({img(hero, 1800)})"' if hero else ""
-    return (f'<section class="pg cover" {bg}><div class="shade"></div><div class="ct"><div class="kicker">Portfolio · {e(kind)} · 2026</div>'
-            f'<h1>Vítor Hugo</h1><h2>Bound Visuals</h2><p>{e(CV["title"])}</p></div>'
-            f'<div class="cf">{e(CV["website"])} · {e(CV["email"])} · {e(CV["phone"])}</div></section>')
+    im = f'<img class="whole" src="{img(hero, 2200)}">' if hero else ""
+    return (f'<section class="pg cover" id="top"><div class="kicker">{"Curriculum Vitae" if kind == "CV" else "Portfolio · " + e(kind)} · 2026</div><h1>Vítor Hugo</h1>'
+            f'<p class="tt">{e(CV["title"])}</p><div class="cimg">{im}</div><div class="cf">{contact_list(" &nbsp;·&nbsp; ")}</div></section>')
 
 
-def about():
+def about(sid="presentation"):
     pr = "".join(f"<p>{e(x)}</p>" for x in CV["presentation"])
     dl = "".join(f"<li>{e(x)}</li>" for x in CV["deliver"])
-    side = (f'<img class="portrait" src="{img(M / "portrait.jpg", 700)}"><div class="nm">{e(CV["name"])}</div><div class="tt">{e(CV["title"])}</div>'
-            f'<div class="ci">{e(CV["location"])}<br>{e(CV["phone"])}<br>{e(CV["email"])}<br>{e(CV["website"])}<br>LinkedIn / Behance: {e(CV["linkedin"])}</div>'
+    side = (f'<img class="portrait" src="{img(M / "portrait.jpg", 900)}"><div class="nm">{e(CV["name"])}</div><div class="tt">{e(CV["title"])}</div>'
+            f'<div class="ci">{e(CV["location"])}<br>{contact_list()}</div>'
             f'<h4>Languages</h4><div class="ci">{"<br>".join(e(x) for x in CV["languages"])}</div>'
             f'<h4>Mobility</h4><div class="ci">{e(CV["mobility"])}</div>')
     return P("about", f'<div class="side">{side}</div><div class="main"><div class="kicker">Presentation</div><h3>Hello — I’m Vítor.</h3>{pr}'
-                      f'<h4>What I deliver</h4><ul>{dl}</ul><h4>How I work</h4><p>{e(CV["how_i_work"])}</p></div>')
+                      f'<h4>What I deliver</h4><ul>{dl}</ul><h4>How I work</h4><p>{e(CV["how_i_work"])}</p></div>', sid=sid)
 
 
 def experience_pages(short=False, tags=None):
@@ -83,7 +97,8 @@ def experience_pages(short=False, tags=None):
     per = 4 if short else 3
     out = []
     for i in range(0, len(blocks), per):
-        out.append(P("cvp", f'<div class="kicker">CV</div><h3>{"Professional experience" if i == 0 else "Professional experience (cont.)"}</h3>{"".join(blocks[i:i + per])}'))
+        out.append(P("cvp", f'<div class="kicker">CV</div><h3>{"Professional experience" if i == 0 else "Professional experience (cont.)"}</h3>{"".join(blocks[i:i + per])}',
+                     sid="cv" if i == 0 else ""))
     return out
 
 
@@ -99,42 +114,68 @@ def skills_page(full=True):
     return pages
 
 
-def recos(n=None):
-    rs = CV["recommendations"][:n] if n else CV["recommendations"]
-    cards = [f'<div class="rc"><p>“{e(r["text"])}”</p><b>{e(r["who"])}</b><span>{e(r["role"])}</span></div>' for r in rs]
+def recos():
+    """ALL recommendations, full text (LinkedIn), paginated by text length so nothing overflows."""
+    cards, sizes = [], []
+    for r in CV["recommendations"]:
+        t = "".join(f"<p>{e(x)}</p>" for x in str(r["text"]).split("\n\n"))
+        cards.append(f'<div class="rc">{t}<b>{e(r["who"])}</b><span>{e(r["role"])}</span></div>')
+        sizes.append(len(r["text"]) + 260)
+    pages, cur, tot = [], [], 0
+    for c, s in zip(cards, sizes):
+        if cur and tot + s > 4300:
+            pages.append(cur); cur, tot = [], 0
+        cur.append(c); tot += s
+    if cur:
+        pages.append(cur)
     out = []
-    for i in range(0, len(cards), 6):
-        out.append(P("reco", f'<div class="kicker">Recommendations</div><h3>What people I worked with say</h3><div class="rcs">{"".join(cards[i:i + 6])}</div>'))
+    for i, g in enumerate(pages):
+        cols = [g[0::2], g[1::2]]
+        body = "".join(f'<div class="col">{"".join(c)}</div>' for c in cols)
+        h = "What people I worked with say" if i == 0 else "Recommendations (cont.)"
+        out.append(P("reco", f'<div class="kicker">Recommendations · {len(CV["recommendations"])} on LinkedIn</div><h3>{h}</h3><div class="rcs">{body}</div>',
+                     sid="recommendations" if i == 0 else ""))
     return out
 
 
-def divider(title, lead, bgimg=None):
-    bg = f'style="background-image:url({img(bgimg, 1800)})"' if bgimg else ""
-    return f'<section class="pg divider dark" {bg}><div class="shade"></div><div class="ct"><div class="kicker">Section</div><h1>{e(title)}</h1><p>{e(lead)}</p></div></section>'
+def divider(title, lead, sid, bgimg=None):
+    im = f'<div class="dimg"><img class="whole" src="{img(bgimg, 1800)}"></div>' if bgimg else ""
+    return P("divider", f'<div class="kicker">Section</div><h1>{e(title)}</h1><p class="dl">{e(lead)}</p>{im}', sid=sid)
 
 
-def project_pages(title, client, year, images, note=""):
+def gallery(title, imgs):
+    """Whole images only. Landscapes: stacked full width, as many per page as fit. Portraits: two side by side."""
+    W, H = 174.0, 238.0  # usable mm
+    pages, cur, used = [], [], 0.0
+    land = [x for x in imgs if ratio(x) >= 1.0]
+    port = [x for x in imgs if ratio(x) < 1.0]
+    for x in land:
+        h = W / ratio(x)
+        if cur and used + h + 6 > H:
+            pages.append(("l", cur)); cur, used = [], 0.0
+        cur.append(x); used += h + 6
+    if cur:
+        pages.append(("l", cur))
+    for i in range(0, len(port), 2):
+        pages.append(("p", port[i:i + 2]))
+    out = []
+    for k, g in pages:
+        ims = "".join(f'<img src="{img(x)}">' for x in g)
+        out.append(P("proj", f'<div class="ptop">{e(title)}</div><div class="g{k} n{len(g)}">{ims}</div>'))
+    return out
+
+
+def project_pages(title, client, year, images, sid=""):
     imgs = list(images)
     land = [x for x in imgs if ratio(x) >= 1.15]
-    port = [x for x in imgs if ratio(x) < 1.15]
-    meta = f'<div class="meta"><b>{e(title)}</b><span>{("Client: " + e(client) + " · ") if client else ""}{e(year)} · 3D + AI · Vítor Hugo • Bound Visuals</span></div>'
-    out = []
-    first = (land or port)[0]
-    out.append(f'<section class="pg proj hero"><img class="full" src="{img(first)}">{meta}<div class="fn"></div><div class="brand">Vítor Hugo · Bound Visuals</div></section>')
-    rest_l = [x for x in land if x != first]
-    rest_p = [x for x in port if x != first]
-    for i in range(0, len(rest_l), 2):
-        g = rest_l[i:i + 2]
-        out.append(P("proj", f'<div class="ptop">{e(title)}</div><div class="gl n{len(g)}">{"".join(f"<img src={chr(34)}{img(x)}{chr(34)}>" for x in g)}</div>'))
-    for i in range(0, len(rest_p), 2):
-        g = rest_p[i:i + 2]
-        out.append(P("proj", f'<div class="ptop">{e(title)}</div><div class="gp n{len(g)}">{"".join(f"<img src={chr(34)}{img(x)}{chr(34)}>" for x in g)}</div>'))
-    return out
+    first = (land or imgs)[0]
+    meta = f'<div class="meta"><h2>{e(title)}</h2><span>{("Client: " + e(client) + " · ") if client else ""}{e(year)} · 3D + AI · by Vítor Hugo</span></div>'
+    out = [P("proj hero", f'<div class="kicker">Project</div>{meta}<img class="whole" src="{img(first, 2400)}">', sid=sid)]
+    return out + gallery(title, [x for x in imgs if x != first])
 
 
 def three_d_pages():
-    pages = [divider("3D Architecture Visualization", "Photoreal exteriors and interiors, built in 3ds Max + Corona and finished with AI — full coherence between angles.",
-                     None)]
+    pages = [divider("3D Architecture Visualization", "Photoreal exteriors and interiors, built in 3ds Max + Corona and finished with AI — full coherence between angles.", "s-3d")]
     for p in reg:
         prev = [x for x in sorted(glob.glob(f"reports/{p['id']}/preview/*.jpg")) if not os.path.basename(x).startswith("2026_-_FINAIS")]
         if not prev:
@@ -147,7 +188,7 @@ def three_d_pages():
 
 
 def ai_pages():
-    pages = [divider("AI for Image & Video", AI["sections"][0]["lead"], M / "ai-006-001.jpg")]
+    pages = [divider("AI for Image & Video", AI["sections"][0]["lead"], "s-ai", M / "ai-006-001.jpg")]
     intro = "".join(f'<h4>{e(x["title"])}</h4><p>{e(x["text"])}</p>' for x in AI["intro"])
     pages.append(P("cvp", f'<div class="kicker">AI portfolio</div><h3>How to read this section</h3>{intro}'))
     for s in AI["sections"]:
@@ -170,12 +211,12 @@ def ai_pages():
 
 
 def back():
-    return (f'<section class="pg cover end"><div class="ct"><div class="kicker">Thank you</div><h1>Let’s work together.</h1><h2>{e(CV["name"])}</h2>'
-            f'<p>{e(CV["location"])}<br>{e(CV["phone"])} · {e(CV["email"])}<br>{e(CV["website"])} · LinkedIn / Behance: {e(CV["linkedin"])} · Instagram {e(CV["instagram"])}</p></div></section>')
+    rows = "".join(f'<div class="cr"><span>{l}</span>{A_(t, h)}</div>' for l, t, h in LINKS)
+    return P("end", f'<div class="kicker">Contact</div><h1>Let’s work together.</h1><p class="tt">{e(CV["name"])} · {e(CV["location"])}</p><div class="crs">{rows}</div>', sid="contact")
 
 
 def index_page(entries):
-    li = "".join(f"<li><span>{e(x)}</span></li>" for x in entries)
+    li = "".join(f'<li><a href="#{sid}">{e(x)}</a></li>' for x, sid in entries)
     return P("idx", f'<div class="kicker">Index</div><h3>Contents</h3><ol>{li}</ol>')
 
 
@@ -185,43 +226,45 @@ CSS = f'''
 @font-face{{font-family:V;src:url("file://{FONTS}/VisbyCF-DemiBold.ttf");font-weight:600}}
 @font-face{{font-family:V;src:url("file://{FONTS}/VisbyCF-Bold.ttf");font-weight:700}}
 @page{{size:210mm 297mm;margin:0}}*{{box-sizing:border-box}}
-body{{margin:0;font-family:V,sans-serif;color:#0b0c0c;counter-reset:pg}}
-.pg{{width:210mm;height:297mm;background:#e5e5e3;position:relative;overflow:hidden;page-break-after:always;padding:20mm 18mm 22mm;counter-increment:pg}}
-.pg.dark,.cover{{background:#0b0c0c;color:#e5e5e3}}
+body{{margin:0;font-family:V,sans-serif;color:#0b0c0c;counter-reset:pg;background:#fff}}
+a{{color:inherit;text-decoration:none}}
+.pg{{width:210mm;height:297mm;background:#fff;position:relative;overflow:hidden;page-break-after:always;padding:18mm 18mm 22mm;counter-increment:pg}}
 .fn{{position:absolute;right:18mm;bottom:10mm;font-size:8pt;font-weight:500;color:#8f8b82}}.fn::after{{content:counter(pg,decimal-leading-zero)}}
-.brand{{position:absolute;left:18mm;bottom:10mm;font-size:8pt;letter-spacing:.06em;color:#8f8b82}}
+.brand{{position:absolute;left:18mm;bottom:10mm;font-size:7.5pt;letter-spacing:.04em;color:#8f8b82}}
 .kicker{{font-size:7.5pt;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:3mm}}
 h3{{font-weight:600;font-size:20pt;margin:0 0 7mm;letter-spacing:-.01em}}h4{{font-weight:600;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;margin:7mm 0 2mm}}
 p,li{{font-size:9.6pt;line-height:1.55;font-weight:300}}ul{{padding-left:4.5mm;margin:0}}li{{margin:0 0 1.2mm}}
-.cover{{background-size:cover;background-position:center;padding:0}}.cover .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,12,.15),rgba(11,12,12,.25) 45%,rgba(11,12,12,.88))}}
-.cover .ct{{position:absolute;left:18mm;right:18mm;bottom:34mm}}.cover h1{{font-weight:700;font-size:54pt;margin:0;letter-spacing:-.02em;line-height:1}}
-.cover h2{{font-weight:300;font-size:26pt;margin:2mm 0 8mm;color:#c5c1b7}}.cover p{{font-size:11pt;color:#e5e5e3;max-width:150mm}}.cover .kicker{{color:#c5c1b7}}
-.cf{{position:absolute;left:18mm;bottom:14mm;font-size:8.5pt;letter-spacing:.06em;color:#c5c1b7}}
-.cover.end{{background:#0b0c0c}}.cover.end .ct{{bottom:auto;top:110mm}}.cover.end h1{{font-size:38pt}}.cover.end h2{{font-size:16pt}}.cover.end p{{color:#c5c1b7;font-size:10pt;line-height:1.8}}
-.about{{display:grid;grid-template-columns:58mm 1fr;gap:12mm}}.portrait{{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.15)}}
-.side .nm{{font-weight:700;font-size:12pt;margin:5mm 0 1mm}}.side .tt{{font-size:8.5pt;font-weight:500;color:#55534e}}.ci{{font-size:8.3pt;line-height:1.6;font-weight:300}}
+img.whole{{display:block;max-width:100%;height:auto;margin:0 auto}}
+.cover h1{{font-weight:700;font-size:58pt;margin:0;letter-spacing:-.025em;line-height:1}}.cover .tt{{font-size:11pt;font-weight:500;margin:4mm 0 10mm}}
+.cimg{{height:170mm;display:flex;align-items:center;justify-content:center}}.cimg img{{max-height:170mm;width:auto;max-width:100%}}
+.cf{{position:absolute;left:18mm;right:18mm;bottom:18mm;font-size:8pt;line-height:1.9;border-top:.3mm solid #0b0c0c;padding-top:3mm}}.cl{{color:#8f8b82}}
+.cover .brand{{display:none}}
+.about{{display:grid;grid-template-columns:58mm 1fr;gap:12mm}}.portrait{{width:100%;height:auto;display:block}}
+.side .nm{{font-weight:700;font-size:12pt;margin:5mm 0 1mm}}.side .tt{{font-size:8.5pt;font-weight:500;color:#55534e;margin-bottom:3mm}}.ci{{font-size:8.1pt;line-height:1.7;font-weight:300}}
 .main h3{{font-size:24pt}}
 .job{{display:grid;grid-template-columns:42mm 1fr;gap:6mm;padding:4mm 0;border-top:.3mm solid #c5c1b7}}.jd{{font-size:8.2pt;font-weight:500}}.jd span{{font-weight:300;color:#55534e}}
 .jb b{{font-weight:600;font-size:11pt}}.org{{font-size:8.6pt;color:#55534e;margin:.5mm 0 2mm}}.jb li{{font-size:8.8pt;line-height:1.45}}
 .ed{{padding:3mm 0;border-top:.3mm solid #c5c1b7}}.ed b{{font-weight:600;font-size:10pt}}.ed div{{font-size:8.6pt;color:#55534e}}
 .sks{{display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm}}.sk b{{font-weight:600;font-size:9pt}}.sk p{{font-size:8.6pt;margin:1mm 0 0}}
 .certs{{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm 8mm}}.cert{{border-top:.3mm solid #c5c1b7;padding-top:2mm}}.cert b{{font-weight:600;font-size:8.8pt;display:block}}.cert span{{font-size:8pt;color:#55534e}}
-.rcs{{display:grid;grid-template-columns:1fr 1fr;gap:6mm 8mm}}.rc{{border-top:.3mm solid #c5c1b7;padding-top:3mm}}.rc p{{font-size:8.4pt;font-style:normal;margin:0 0 2mm}}.rc b{{font-weight:600;font-size:9pt;display:block}}.rc span{{font-size:7.8pt;color:#55534e}}
-.divider{{background-size:cover;background-position:center;padding:0}}.divider .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,12,.35),rgba(11,12,12,.9))}}
-.divider .ct{{position:absolute;left:18mm;right:18mm;bottom:40mm}}.divider h1{{font-weight:700;font-size:36pt;margin:0 0 5mm;line-height:1.05}}.divider p{{color:#c5c1b7;font-size:11pt;max-width:150mm}}
-.proj.hero{{padding:0;background:#0b0c0c;color:#e5e5e3}}.proj.hero .full{{width:100%;height:205mm;object-fit:cover;display:block}}
-.proj.hero .meta{{padding:12mm 18mm}}.meta b{{display:block;font-weight:700;font-size:24pt;margin-bottom:2mm}}.meta span{{font-size:9pt;color:#c5c1b7;letter-spacing:.04em}}
+.rcs{{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm}}.rc{{border-top:.3mm solid #c5c1b7;padding:3mm 0 5mm}}.rc p{{font-size:8.1pt;line-height:1.5;margin:0 0 1.6mm}}.rc b{{font-weight:600;font-size:9pt;display:block;margin-top:2mm}}.rc span{{font-size:7.6pt;color:#55534e}}
+.divider h1{{font-weight:700;font-size:40pt;margin:60mm 0 5mm;line-height:1.05;letter-spacing:-.02em}}.divider .dl{{font-size:11pt;max-width:150mm;color:#3c3b38}}
+.dimg{{margin-top:12mm;height:120mm;display:flex;align-items:flex-start}}.dimg img{{max-height:120mm;width:auto}}
+.proj.hero .meta h2{{font-weight:700;font-size:26pt;margin:0 0 2mm;letter-spacing:-.01em}}.meta span{{font-size:9pt;color:#55534e;letter-spacing:.03em}}.proj.hero .meta{{margin-bottom:9mm}}
+.proj.hero img.whole{{max-height:205mm;width:auto}}
 .ptop{{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:6mm}}
-.gl{{display:grid;gap:6mm}}.gl img{{width:100%;height:118mm;object-fit:cover;display:block}}.gl.n1 img{{height:180mm}}
-.gp{{display:grid;grid-template-columns:1fr 1fr;gap:6mm}}.gp img{{width:100%;height:225mm;object-fit:cover;display:block}}.gp.n1{{grid-template-columns:1fr}}.gp.n1 img{{height:235mm}}
-.aip.two .ba img{{max-height:78mm}}.gap{{height:7mm}}
+.gl{{display:flex;flex-direction:column;gap:6mm}}.gl img{{width:100%;height:auto;display:block}}
+.gp{{display:flex;gap:6mm;align-items:flex-start;justify-content:center}}.gp img{{width:calc(50% - 3mm);height:auto;max-height:240mm;object-fit:contain;display:block}}.gp.n1 img{{width:auto;max-width:100%;max-height:240mm}}
+.aip.two .ba img{{max-height:80mm}}.gap{{height:7mm}}
 .aip .lead{{font-size:10pt;color:#3c3b38;max-width:160mm;margin:-3mm 0 7mm}}
-.ba{{display:grid;grid-template-columns:1fr 1fr;gap:5mm}}.ba.one{{grid-template-columns:1fr}}.ba.t3{{grid-template-columns:1fr 1fr 1fr}}
-.ba figure{{margin:0}}.ba img{{width:100%;max-height:150mm;object-fit:cover;display:block}}.ba.one img{{max-height:175mm}}
-.ba figcaption{{font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-top:2mm}}
-.prompt{{margin-top:6mm;padding:4mm 5mm;background:#dcdcd8;font-size:8.6pt;line-height:1.5;font-weight:300}}.prompt span{{display:block;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:1.5mm}}
+.ba{{display:grid;grid-template-columns:1fr 1fr;gap:5mm;align-items:start}}.ba.one{{grid-template-columns:1fr}}.ba.t3{{grid-template-columns:1fr 1fr 1fr}}
+.ba figure{{margin:0;display:flex;flex-direction:column;align-items:center}}.ba img{{max-width:100%;width:auto;height:auto;max-height:150mm;object-fit:contain;display:block}}.ba.one img{{max-height:175mm}}
+.ba figcaption{{align-self:flex-start;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-top:2mm}}
+.prompt{{margin-top:6mm;padding:1mm 0 1mm 5mm;border-left:.6mm solid #0b0c0c;font-size:8.6pt;line-height:1.5;font-weight:300}}.prompt span{{display:block;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:1.5mm}}
 .idx ol{{list-style:none;padding:0;margin:0;counter-reset:i}}.idx li{{counter-increment:i;font-size:16pt;font-weight:500;padding:4mm 0;border-top:.3mm solid #c5c1b7;display:flex;gap:8mm}}
-.idx li::before{{content:counter(i,decimal-leading-zero);font-size:9pt;color:#8f8b82;padding-top:2mm;width:10mm}}
+.idx li::before{{content:counter(i,decimal-leading-zero);font-size:9pt;color:#8f8b82;padding-top:2mm;width:10mm}}.idx li a::after{{content:"  →";color:#8f8b82}}
+.end h1{{font-weight:700;font-size:44pt;margin:70mm 0 4mm;letter-spacing:-.02em}}.end .tt{{font-size:11pt;margin-bottom:12mm}}
+.cr{{display:grid;grid-template-columns:32mm 1fr;padding:3.5mm 0;border-top:.3mm solid #0b0c0c;font-size:12pt;font-weight:500}}.cr span{{font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:#8f8b82;padding-top:1mm}}
 '''
 
 
@@ -238,12 +281,13 @@ def render(name, pages):
     print(name, len(pages), "pages")
 
 
-cv_long = [about()] + experience_pages() + skills_page(True) + recos()
+cv_long = [cover("CV")] + [about()] + experience_pages() + skills_page(True) + recos() + [back()]
 cv_short = [about()] + experience_pages(short=True, tags=["3d", "ai", "ads", "design", "marketing", "web", "video", "photo"])[:1] + skills_page(False)
 render("CV_Vitor_Hugo_Long.pdf", cv_long)
 render("CV_Vitor_Hugo_Short.pdf", cv_short)
 td, ai = three_d_pages(), ai_pages()
-intro_short = [about()] + experience_pages(short=True)[:2] + skills_page(False) + recos(6)
-render("Portfolio_3D_Architecture_Visualization.pdf", [cover("3D Architecture Visualization"), index_page(["Presentation", "CV", "Recommendations", "3D Architecture Visualization", "Contact"])] + intro_short + td + [back()])
-render("Portfolio_AI.pdf", [cover("AI"), index_page(["Presentation", "CV", "Recommendations", "AI for Image & Video", "Contact"])] + intro_short + ai + [back()])
-render("Portfolio_All.pdf", [cover("All"), index_page(["Presentation", "CV", "Recommendations", "3D Architecture Visualization", "AI for Image & Video", "Contact"])] + intro_short + td + ai + [back()])
+intro = [about()] + experience_pages(short=True)[:2] + skills_page(False) + recos()
+IX = [("Presentation", "presentation"), ("CV", "cv"), ("Recommendations", "recommendations")]
+render("Portfolio_3D_Architecture_Visualization.pdf", [cover("3D Architecture Visualization"), index_page(IX + [("3D Architecture Visualization", "s-3d"), ("Contact", "contact")])] + intro + td + [back()])
+render("Portfolio_AI.pdf", [cover("AI"), index_page(IX + [("AI for Image & Video", "s-ai"), ("Contact", "contact")])] + intro + ai + [back()])
+render("Portfolio_All.pdf", [cover("All"), index_page(IX + [("3D Architecture Visualization", "s-3d"), ("AI for Image & Video", "s-ai"), ("Contact", "contact")])] + intro + td + ai + [back()])

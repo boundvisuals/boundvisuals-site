@@ -160,21 +160,102 @@ projects:
   - { name: "FIACED I & II", dates: "2016, 2018", what: "Event organization and multimedia coverage · associated with ISCE Douro" }
 
 recommendations:
-  - { who: "Harun Asefa", role: "VP of Operations at GrowthHit", text: "Vitor has been working with us at GrowthHit for almost two years, and he’s been incredible to work with. He’s professional, creative, and really knows his stuff when it comes to paid ad creative. What I appreciate most is how forward-thinking he is. Vitor has completely changed how we test and use AI in our creative process. He’s always pushing us to try new tools and new ways of working, and that’s had a big impact on our team. On top of that, he’s just a great person to collaborate with — reliable, easy to work with, and always bringing fresh ideas. I’d highly recommend him to anyone." }
-  - { who: "Angela Brugioni", role: "Creative Director | Partner at Neat Apparel", text: "I had the pleasure of working with Vitor on performance ad campaigns, where his creativity and eye for detail elevated every project. He has been a champion at integrating AI into the design process, and his adaptability made the work both innovative and effective." }
-  - { who: "Yevheniia Moroz", role: "Digital Designer", text: "Working with Vitor has been a truly inspiring experience. As a fellow designer, I’ve been amazed at how effortlessly he blends creativity with technical skill, especially in the areas of AI image and video generation. His work is always polished, imaginative, and a step ahead of the curve. What I value most about collaborating with him is his openness and generosity — he’s always willing to share knowledge, exchange ideas, and push concepts further. Vitor is not just a talented creator, but also a great teammate — someone who makes the process enjoyable while consistently raising the bar." }
-  - { who: "Daniel Ferreira", role: "Media Buyer | User Acquisition Manager | PPC Specialist", text: "Working with Vitor was a real privilege, as it gave me the chance to see not only the high standard of his work but also the thoughtful way he tackles challenges. He was always open to sharing his knowledge, particularly in design, web development, and editing, and I benefited greatly from his support and insights. What I admired most was his originality and talent in 3D – every project he created had something unique that stood out. Beyond his technical expertise, Vitor combines professionalism with a strong sense of responsibility. He’s dependable, collaborative, and someone you can always trust to deliver outstanding results." }
-  - { who: "Pedro Rocha", role: "eRetail Search Coordinator at Nestlé", text: "I had the pleasure of sharing an office with Vitor, which gave me the opportunity to see firsthand the quality of his work and the way he approaches challenges. He was always willing to help me, especially with design, web development, and editing skills, and I learned a lot from his guidance. What stood out the most was his creativity and talent in 3D – his projects never failed to impress me. Beyond his technical expertise, Vitor brings a strong work ethic and a real sense of responsibility to everything he does. He’s reliable, collaborative, and someone you can always count on to deliver great results." }
-  - { who: "André Ferreira", role: "Media Buyer | PPC Specialist | Digital Marketer", text: "I had the opportunity to work with Vitor on several projects. As a graphic designer, he combines creativity, precision, and an excellent understanding of client needs. He particularly stands out in creating ads for platforms like Meta, producing images and videos that not only capture attention but also deliver the message clearly and effectively. Highly professional, with great attention to detail and a strong ability to meet deadlines — he’s an invaluable asset to any team." }
-  - { who: "Daniel Oliveira", role: "Architect and Project Manager", text: "An outstanding professional. Technically knowledgeable, always up to date, and constantly eager to learn. His broad skill set — including 3D, design, video, image editing, and production assistance — gives him a wide perspective and enables highly effective responses to any challenge presented to him." }
-  - { who: "Angelina Pereira", role: "Master’s Student in Service Engineering and Management", text: "I had the privilege of working with Vitor Hugo, and I can confidently say that his combination of talent, professionalism, and creativity is truly exceptional. With impressive experience in 3D, marketing, and web development, Vitor not only delivered high-quality results but also guided and supported me in each of these areas with clarity and effectiveness. What stands out most about Vitor is his ability to combine strategic vision with meticulous attention to detail. He can transform complex ideas into practical, creative, and visually compelling solutions." }
-  - { who: "Emma Sisich", role: "Head of Business Development and Partnerships | GrowthHit", text: "Working with Vítor has been such a great experience. He brings a rare mix of creativity, technical skill, and attention to detail that shows in every project. His work is always original, polished, and thoughtfully executed. What stands out most is his attitude — he’s reliable, collaborative, and always brings positive energy to the team." }
-  - { who: "Rishabh Sachdev", role: "Data to Dollars | Boosting Sales", text: "I highly recommend Vítor. He is an exceptional professional who uniquely blends creative insight and technical expertise. His broad skills in design and editing are notable, and his 3D work in particular demonstrates a powerful and original artistic vision." }
-  - { who: "Rahul R", role: "CRO Consultant | UX Researcher | Growth Marketing", text: "Vítor makes complex work feel effortless. He combines sharp creative thinking with strong technical execution and meticulous attention to detail, always pushing for smarter, forward-looking solutions. He communicates clearly, anticipates risks, and delivers reliably — often improving the brief along the way." }
-  - { who: "Andrea Jaramillo", role: "Digital Marketeer | Paid Media | SEM", text: "Vitor is an outstanding creative professional. He brings ideas to life by combining a variety of tools and AI solutions to deliver impressive, high-quality results. Even in situations with limited visual assets, Vitor consistently finds smart alternatives and produces exceptional outcomes." }
-  - { who: "Vitalli Dremliuha", role: "Design Director", text: "Working with Vitor Hugo is a real pleasure. He is a talented designer with a strong sense of performance-driven design and a very modern approach to creativity. Vitor actively uses AI tools to speed up workflows, test ideas, and improve creative output – and he does it smartly and strategically. Super reliable, proactive, and always open to feedback." }
-  - { who: "Anastasiia Karavaieva", role: "Digital Designer", text: "I had the pleasure of working with Vítor on performance ads, and he consistently brought a thoughtful, strategic approach to the process. He has a strong understanding of how to connect creative direction with performance goals, and he’s been especially proactive in applying AI to improve workflows, generate stronger ideas, and make the ad creation process more efficient." }
+- who: Harun Asefa
+  role: VP of Operations at GrowthHit
+  text: 'Vitor has been working with us at GrowthHit for almost two years, and he’s been incredible to work with. He’s professional, creative, and really knows his stuff when it comes to paid ad creative.
 
+
+    What I appreciate most is how forward-thinking he is. Vitor has completely changed how we test and use AI in our creative process. He’s always pushing us to try new tools and new ways of working, and that’s had a big impact on our team.
+
+
+    On top of that, he’s just a great person to collaborate with — reliable, easy to work with, and always bringing fresh ideas. I’d highly recommend him to anyone.'
+- who: Angela Brugioni
+  role: Creative Director | Partner at Neat Apparel
+  text: I had the pleasure of working with Vitor on performance ad campaigns, where his creativity and eye for detail elevated every project. He has been a champion at integrating AI into the design process, and his adaptability made the work both innovative and effective.
+- who: Yevheniia Moroz
+  role: Digital Designer
+  text: 'Working with Vitor has been a truly inspiring experience. As a fellow designer, I’ve been amazed at how effortlessly he blends creativity with technical skill, especially in the areas of AI image and video generation. His work is always polished, imaginative, and a step ahead of the curve.
+
+
+    What I value most about collaborating with him is his openness and generosity — he’s always willing to share knowledge, exchange ideas, and push concepts further.
+
+
+    Vitor is not just a talented creator, but also a great teammate — someone who makes the process enjoyable while consistently raising the bar.'
+- who: Daniel Ferreira
+  role: Media Buyer | User Acquisition Manager | PPC Specialist | Paid Media Specialist
+  text: 'Working with Vitor was a real privilege, as it gave me the chance to see not only the high standard of his work but also the thoughtful way he tackles challenges. He was always open to sharing his knowledge, particularly in design, web development, and editing, and I benefited greatly from his support and insights.
+
+
+    What I admired most was his originality and talent in 3D – every project he created had something unique that stood out. Beyond his technical expertise, Vitor combines professionalism with a strong sense of responsibility. He’s dependable, collaborative, and someone you can always trust to deliver outstanding results.'
+- who: Pedro Rocha
+  role: eRetail Search Coordinator at Nestlé | MSc in Data Driven Marketing | SEO | Digital Marketing
+  text: 'I had the pleasure of sharing an office with Vitor, which gave me the opportunity to see firsthand the quality of his work and the way he approaches challenges. He was always willing to help me, especially with design, web development, and editing skills, and I learned a lot from his guidance.
+
+
+    What stood out the most was his creativity and talent in 3D – his projects never failed to impress me. Beyond his technical expertise, Vitor brings a strong work ethic and a real sense of responsibility to everything he does. He’s reliable, collaborative, and someone you can always count on to deliver great results.'
+- who: André Ferreira
+  role: Media Buyer | PPC Specialist | User Acquisition Manager | Paid Media Specialist | Digital Marketer
+  text: 'I had the opportunity to work with Vitor on several projects. As a graphic designer, he combines creativity, precision, and an excellent understanding of client needs. He particularly stands out in creating ads for platforms like Meta, producing images and videos that not only capture attention but also deliver the message clearly and effectively.
+
+
+    Highly professional, with great attention to detail and a strong ability to meet deadlines — he’s an invaluable asset to any team.'
+- who: Daniel Oliveira
+  role: Architect and Project Manager
+  text: 'An outstanding professional. Technically knowledgeable, always up to date, and constantly eager to learn.
+
+
+    His broad skill set — including 3D, design, video, image editing, and production assistance — gives him a wide perspective and enables highly effective responses to any challenge presented to him.'
+- who: Angelina Pereira
+  role: Master’s Student in Service Engineering and Management
+  text: 'I had the privilege of working with Vitor Hugo, and I can confidently say that his combination of talent, professionalism, and creativity is truly exceptional. With impressive experience in 3D, marketing, and web development, Vitor not only delivered high-quality results but also guided and supported me in each of these areas with clarity and effectiveness.
+
+
+    What stands out most about Vitor is his ability to combine strategic vision with meticulous attention to detail. He can transform complex ideas into practical, creative, and visually compelling solutions.
+
+
+    Moreover, his collaborative, empathetic, and approachable attitude makes working with him an inspiring and motivating experience.
+
+
+    I wholeheartedly recommend Vitor Hugo to anyone looking for a multifaceted, innovative, and reliable professional. His contribution was decisive to the success of the projects we worked on together, and I’m certain he will continue to exceed expectations in any challenge he takes on.'
+- who: Emma Sisich
+  role: Head of Business Development and Partnerships | Growthhit
+  text: 'Working with Vítor has been such a great experience. He brings a rare mix of creativity, technical skill, and attention to detail that shows in every project. His work is always original, polished, and thoughtfully executed.
+
+
+    What stands out most is his attitude — he’s reliable, collaborative, and always brings positive energy to the team. Vítor’s professionalism and creative talent make him an incredible asset to any project or team he’s part of.'
+- who: Rishabh Sachdev
+  role: Data to Dollars | Boosting Sales
+  text: 'I highly recommend Vítor. He is an exceptional professional who uniquely blends creative insight and technical expertise. His broad skills in design and editing are notable, and his 3D work in particular demonstrates a powerful and original artistic vision.
+
+
+    Vítor is a consummate professional who is reliable, collaborative, and possesses absolute integrity. He consistently delivers high-quality, polished results and would be an invaluable asset to any team.'
+- who: Rahul R
+  role: CRO Consultant | UX Researcher | Growth Marketing | AI Enthusiast
+  text: 'Vítor makes complex work feel effortless. He combines sharp creative thinking with strong technical execution and meticulous attention to detail, always pushing for smarter, forward-looking solutions. He communicates clearly, anticipates risks, and delivers reliably — often improving the brief along the way.
+
+
+    Vítor’s professionalism and craft make him an exceptional asset to any team or project.'
+- who: Andrea Jaramillo
+  role: Digital Marketeer | Paid Media | SEM
+  text: 'Vitor is an outstanding creative professional. He brings ideas to life by combining a variety of tools and AI solutions to deliver impressive, high-quality results. He’s always up-to-date with the latest innovations, ensuring every project benefits from fresh and effective creative approaches.
+
+
+    Even in situations with limited visual assets, Vitor consistently finds smart alternatives and produces exceptional outcomes. He is collaborative, resourceful, and a key contributor to every project he’s part of.
+
+
+    It’s a pleasure working with him!'
+- who: Vitalli Dremliuha
+  role: Design Director
+  text: 'Working with Vitor Hugo is a real pleasure. He is a talented designer with a strong sense of performance-driven design and a very modern approach to creativity. Vitor actively uses AI tools to speed up workflows, test ideas, and improve creative output – and he does it smartly and strategically. Super reliable, proactive, and always open to feedback.
+
+
+    Really happy to work with Vitor. Highly recommend!'
+- who: Anastasiia Karavaieva
+  role: Digital Designer
+  text: 'I had the pleasure of working with Vítor on performance ads, and he consistently brought a thoughtful, strategic approach to the process. He has a strong understanding of how to connect creative direction with performance goals, and he’s been especially proactive in applying AI to improve workflows, generate stronger ideas, and make the ad creation process more efficient.
+
+
+    He’s collaborative, curious, and always looking for smarter ways to approach marketing challenges. I’d highly recommend him to any team looking for someone who combines performance marketing knowledge with a forward-thinking approach to AI.'
 cover_letter_template: |
   Dear Hiring Team,
   I’m writing to express my enthusiasm for the {role} position at {company}.
