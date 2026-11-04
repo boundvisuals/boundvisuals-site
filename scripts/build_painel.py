@@ -121,6 +121,24 @@ def crop_info(it, out):
     return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, []), "story_crops": sc}
 
 
+def story_info(it, out):
+    """Story → its source image + index, so the 9:16 crop can be edited in the panel."""
+    if it.get("type") != "story":
+        return {}
+    m = re.match(r"(.+)-s(\d\d)\.jpg$", it["file"])
+    if not m:
+        return {}
+    stem, idx = m.group(1), int(m.group(2))
+    src = f"reports/{it['project']}/preview/{stem}.jpg"
+    if not os.path.exists(src):
+        return {}
+    w, h = Image.open(src).size
+    lg = thumb(src, out, f"portfolio/{it['project']}/lg_{stem}.jpg", (1400, 1400))
+    pc = CROPS.get(stem, [])
+    sc = SCROPS.get(stem) or ([[pc[0][0] if pc else 0.5, 0.5, 1.0]] + pc)
+    return {"stem": stem, "story_idx": idx, "orig": lg, "orig_ratio": w / h, "crops": pc, "story_crops": sc}
+
+
 def build(out):
     os.makedirs(os.path.join(out, "store"), exist_ok=True)
     state = json.load(open("queue/published.json")) if os.path.exists("queue/published.json") else {}
@@ -167,7 +185,7 @@ def build(out):
                 "key": social_key(it), "type": it["type"], "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": th, "status": st, "link": link, "note": errs.get(pkey, ""), "caption_pt": it.get("caption_pt", ""),
-                "full": [f"{FILA}/{it['project']}/{it['type']}/{quote(it['file'])}"]})
+                "full": [f"{FILA}/{it['project']}/{it['type']}/{quote(it['file'])}"], **story_info(it, out)})
     cal = [{"date": d, "items": sorted(v, key=lambda x: x["time"])} for d, v in sorted(days.items())]
 
     now = datetime.datetime.now(TZ)

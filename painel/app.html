@@ -114,6 +114,11 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.btn.sm{padding:4px 10px;font-size:12px;border-radius:8px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.scard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.scard img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.sc-b{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:8px;font-size:11px;color:var(--mut)}
 .ced{position:relative;user-select:none;-webkit-user-select:none;touch-action:none;max-width:100%;margin:0 auto}
 .ced img{width:100%;display:block;border-radius:8px;pointer-events:none}
 .cbox{position:absolute;border:2px solid rgba(229,229,227,.9);box-shadow:0 0 0 9999px rgba(0,0,0,.0);cursor:move;border-radius:2px}
@@ -306,7 +311,7 @@ function allItems(){return (D.calendar||[]).flatMap(d=>d.items.map(i=>({...i,dat
 function effStatus(i){const a=D.pending_approvals&&D.pending_approvals[i.key];
   if(a&&typeof a==="object"&&a.v===false)return(i.status==="approved"||i.status==="pending")?"pending":i.status;
   if(i.status==="pending"&&a)return"approved";return i.status}
-function reviewed(i){return !i.stem||!!(D.reviews&&D.reviews[i.key])}
+function reviewed(i){return i.type!=="feed"||!i.stem||!!(D.reviews&&D.reviews[i.key])}
 function pendingCount(){return D?allItems().filter(i=>effStatus(i)==="pending").length:0}
 function itemRow(i){
   const st=effStatus(i);const th=i.thumb?`<img class="thumb ${i.type!=="feed"?"st":""}" loading="lazy" src="${esc(i.thumb)}" alt="">`:`<div class="thumb"></div>`;
@@ -353,14 +358,19 @@ function renderCal(){
     return `<div class="day"><div class="dayh"><b>${fmtDay(d.date)}</b>${pend.length?`<button class="btn pri" data-ap='${esc(JSON.stringify(pend.map(i=>i.key)))}'>Aprovar dia (${pend.length})</button>`:""}</div>
     ${[...feeds,...reels].map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${(i.slides||[i.thumb]).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
       <div><div class="meta">${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</div><p>${esc(i.caption||"")}</p></div>
-      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}</div></div>`).join("")}
-    ${stories.length?`<div class="card" style="padding:12px"><div class="meta" style="font-size:12px;color:var(--mut)">${stories.length} stories · ${stories.map(s=>s.time).join(" · ")}</div><div class="strip">${stories.map(s=>`<img class="clickable" data-open="${esc(s.key)}" loading="lazy" src="${esc(s.thumb)}" alt="" title="${esc(s.time)} · ${ST[effStatus(s)]}" style="${effStatus(s)==="pending"?"outline:1px solid var(--warn)":""}">`).join("")}</div></div>`:""}
+      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link&&i.type==="feed"?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}${actBtns(i)}</div></div>`).join("")}
+    ${stories.length?`<div class="sgrid">${stories.map(s=>`<div class="scard"><img class="clickable" data-open="${esc(s.key)}" loading="lazy" src="${esc(s.thumb)}" alt=""><div class="sc-b"><span>${esc(s.time)} · Story</span><span class="pill ${effStatus(s)}">${ST[effStatus(s)]}</span>${s.stem&&effStatus(s)!=="published"?`<button class="btn sm" data-scrop="${esc(s.key)}">✎</button>`:""}${actBtns(s)}</div></div>`).join("")}</div>`:""}
     </div>`}).join("");
   const allPend=allItems().filter(i=>effStatus(i)==="pending").map(i=>i.key);
   $("#v-cal").innerHTML=head+(allPend.length?`<div class="alert warn"><i></i><div style="flex:1">${allPend.length} publicações à espera do teu ✅.</div><button class="btn pri" data-ap='${esc(JSON.stringify(allPend))}'>Aprovar tudo</button></div>`:"")+(body||`<div class="empty">Nada neste filtro.</div>`);
   $("#v-cal").querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{calF=b.dataset.f;renderCal()});
-  $("#v-cal").querySelectorAll("[data-ap]").forEach(b=>b.onclick=()=>approve(JSON.parse(b.dataset.ap),b));
+  $("#v-cal").querySelectorAll("[data-ap]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve(JSON.parse(b.dataset.ap),b)});
+  $("#v-cal").querySelectorAll("[data-un]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve([b.dataset.un],b,true)});
+  $("#v-cal").querySelectorAll("[data-one]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.one);if(!reviewed(it)){openItem(it.key);toast("Primeiro aceita ou edita os recortes");return}approve([it.key],b)});
+  $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,"story",it.story_idx)});
 }
+function actBtns(i){const st=effStatus(i);if(i.link||st==="published"||st==="skipped")return"";
+  return st==="approved"?`<button class="btn sm" data-un="${esc(i.key)}" title="Desaprovar">↺ Desaprovar</button>`:`<button class="btn sm pri" data-one="${esc(i.key)}">✓ Aprovar</button>`}
 function addDays(iso,n){const x=new Date(iso+"T12:00:00");x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)}
 async function approve(keys,btn,undo){if(btn)btn.disabled=true;
   try{const r=await fetch("api.php?a=approve",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(undo?{keys,value:false}:{keys})});
@@ -400,14 +410,15 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
   const rv=reviewed(i),rinfo=D.reviews&&D.reviews[i.key];
   $("#mbox").innerHTML=`<div class="mhead"><div style="min-width:0"><div class="sub">${fmtDay(i.date)} · ${esc(i.time)} · ${TY[i.type]}</div><b>${esc(i.project_title)}</b></div><button class="x" id="mx" aria-label="fechar">×</button></div>
   <div class="cbar" style="margin:0 0 12px">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:`<span class="pill ${st}">${ST[st]}</span>`}
-   ${i.stem&&st!=="published"?`<button class="btn" id="mCrop">✎ Editar recortes</button>${rv?`<span class="pill approved">Recortes ${esc(rinfo.how)} ✓</span><button class="btn" id="mRevUndo">↺</button>`:`<button class="btn" id="mAccept">✓ Aceitar recortes</button>`}`:""}
+   ${i.type==="story"&&i.stem&&st!=="published"?`<button class="btn" id="mCropS">✎ Editar enquadramento</button>`:""}
+   ${i.type==="feed"&&i.stem&&st!=="published"?`<button class="btn" id="mCrop">✎ Editar recortes</button>${rv?`<span class="pill approved">Recortes ${esc(rinfo.how)} ✓</span><button class="btn" id="mRevUndo">↺</button>`:`<button class="btn" id="mAccept">✓ Aceitar recortes</button>`}`:""}
    ${st==="pending"?`<button class="btn pri" id="mApprove" ${rv?"":"disabled title='Primeiro aceita ou edita os recortes'"}>Aprovar</button>${rv?"":`<span class="sub">Primeiro aceita ou edita os recortes</span>`}`:""}
    ${st==="approved"?`<button class="btn" id="mUnapprove">↺ Desaprovar</button>`:""}</div>
   <div class="gal">${media}</div>
   ${i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:""}
   ${i.note?`<div class="alert err" style="margin-top:14px"><i></i><div>${esc(i.note)}</div></div>`:""}`;
   $("#modal").classList.add("on");document.body.style.overflow="hidden";
-  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);
+  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,"story",i.story_idx);
   const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
   const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
 function closeModal(){$("#modal").classList.remove("on");document.body.style.overflow="";const v=$("#mbox video");if(v)v.pause()}
@@ -541,8 +552,8 @@ function renderMarca(){const st=D.stats||{},ac=st.account||{},M=st.media||[];con
    <div class="grid" style="align-content:start"><div class="card"><h2>Seguidores</h2>${spark(D.followers)||`<div class="empty">A curva aparece a partir do 2.º dia.</div>`}</div>
     <div class="card"><h2>Melhores posts recentes</h2>${M.slice().sort((a,b)=>((b.like_count||0)+(b.comments_count||0)*3)-((a.like_count||0)+(a.comments_count||0)*3)).slice(0,5).map(m=>`<div class="mini"><a href="${esc(m.permalink)}" target="_blank" rel="noopener" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.caption||"(sem legenda)")}</a><span>♥ ${m.like_count??0} · 💬 ${m.comments_count??0}</span></div>`).join("")||`<div class="empty">—</div>`}</div>
     <div class="card"><h2>Redes</h2>${(D.networks||[]).map(n=>`<div class="net"><div>${esc(n.name)}</div><span>${esc(n.status)}</span></div>`).join("")}</div></div></div>`}
-function cropEditor(it,mode){mode=mode||"post";const AR=mode==="story"?.5625:.8;
-  let C=((mode==="story"?it.story_crops:it.crops)||[]).map(c=>c.slice());if(!C.length)C=[[.5,.5,1]];let sel=0;const R=it.orig_ratio;
+function cropEditor(it,mode,startSel){mode=mode||"post";const AR=mode==="story"?.5625:.8;
+  let C=((mode==="story"?it.story_crops:it.crops)||[]).map(c=>c.slice());if(!C.length)C=[[.5,.5,1]];let sel=Math.min(startSel||0,C.length-1);const R=it.orig_ratio;
   $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${esc(it.project_title)} · grelha dos terços</div><b>Editar recortes</b></div><button class="x" id="mx">×</button></div>
   <div class="seg"><button class="${mode==="post"?"on":""}" data-cm="post">Post 4:5</button><button class="${mode==="story"?"on":""}" data-cm="story">Stories 9:16</button></div>
   <div class="ced" id="ced"><img id="cimg" src="${esc(it.orig)}" alt=""></div>
@@ -550,7 +561,7 @@ function cropEditor(it,mode){mode=mode||"post";const AR=mode==="story"?.5625:.8;
   <div class="cprev" id="cprev"></div>
   <div class="cbar" style="justify-content:space-between"><span class="sub">${mode==="story"?"Stories em ecrã inteiro: o 1.º é a abertura, os outros os pormenores.":"Arrasta a moldura. O último slide (imagem inteira em branco) é sempre acrescentado."}</span><button class="btn pri" id="csave">Guardar recortes</button></div>`;
   $("#modal").classList.add("on");$("#mx").onclick=closeModal;
-  $("#mbox").querySelectorAll("[data-cm]").forEach(b=>b.onclick=()=>cropEditor(it,b.dataset.cm));
+  $("#mbox").querySelectorAll("[data-cm]").forEach(b=>b.onclick=()=>cropEditor(it,b.dataset.cm,mode==="story"?0:sel));
   const ced=$("#ced"),img=$("#cimg");
   const geom=c=>{const W=ced.clientWidth,H=W/R;let ch=Math.min(c[2]*H,H),cw=AR*ch;if(cw>W){cw=W;ch=Math.min(cw/AR,H)}
     let x=c[0]*W-cw/2,y=c[1]*H-ch/2;x=Math.min(Math.max(x,0),W-cw);y=Math.min(Math.max(y,0),H-ch);return{x,y,w:cw,h:ch,W,H}};
