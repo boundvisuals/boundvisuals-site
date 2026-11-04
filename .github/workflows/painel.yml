@@ -56,8 +56,13 @@ jobs:
             link=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('mega','') for p in r if p['id']==sys.argv[1]),''))" "$pid")
             title=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('title','') for p in r if p['id']==sys.argv[1]),''))" "$pid")
             [ -n "$link" ] || continue
-            gh api -X POST "repos/${{ github.repository }}/actions/workflows/ingest.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[mega_link]=$link"
-            gh api -X POST "repos/${{ github.repository }}/actions/workflows/make-social.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[title]=$title" -f "inputs[mega_link]=$link"
+            for w in ingest make-social; do
+              for t in 1 2 3 4 5; do
+                if [ $w = ingest ]; then gh api -X POST "repos/${{ github.repository }}/actions/workflows/ingest.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[mega_link]=$link" && break
+                else gh api -X POST "repos/${{ github.repository }}/actions/workflows/make-social.yml/dispatches" -f ref=main -f "inputs[project_id]=$pid" -f "inputs[title]=$title" -f "inputs[mega_link]=$link" && break; fi
+                sleep 10
+              done
+            done
             echo "rebuild dispatched for $pid"
           done < in/changed.txt
       - name: Queue follows regenerated slides
