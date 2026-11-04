@@ -149,7 +149,7 @@ def load(src_dir, crops):
 
 # ---------- style A: editorial ----------
 def style_a(imgs, crops, title, out, tmp):
-    SH, XF = 7.5, 0.45                      # long holds, short dissolve (Vítor: images must stay longer)
+    SH, XF = 12.0, 0.6                       # Vítor: slower — 12 s per image                      # long holds, short dissolve (Vítor: images must stay longer)
     shots = []
     for k, (stem, im) in enumerate(imgs[:4]):
         iw, ih = im.size; c = crops[stem][0]
@@ -167,20 +167,20 @@ def style_a(imgs, crops, title, out, tmp):
     nsh = int(SH * FPS); nx = int(XF * FPS)
     prev_tail = []
     for k, (im, a, b) in enumerate(shots):
-        cur = []
+        last_shot = k == len(shots) - 1
+        tail = []
         for i in range(nsh):
-            fr = render(im, lerp_box(a, b, ease(i / (nsh - 1))))
+            u = i / (nsh - 1)
+            fr = render(im, lerp_box(a, b, 0.15 * ease(u) + 0.85 * u))   # near-constant slow speed, soft start/end
             if k == 0:
-                al = min(1.0, max(0.0, (i / FPS - 0.4) / 0.8)) * min(1.0, max(0.0, (SH - 0.5 - i / FPS) / 0.6))
+                al = min(1.0, max(0.0, (i / FPS - 0.4) / 0.8)) * min(1.0, max(0.0, (4.5 - i / FPS) / 0.8))
                 fr = title_layer(fr, title, al)
-            cur.append(fr)
-        if prev_tail:
-            for j in range(nx):
-                enc.put(Image.blend(prev_tail[j], cur[j], ease(j / nx)))
-            cur = cur[nx:]
-        body, prev_tail = (cur[:-nx], cur[-nx:]) if k < len(shots) - 1 else (cur, [])
-        for fr in body:
+            if prev_tail and i < nx:                                     # dissolve from the previous shot
+                fr = Image.blend(prev_tail[i], fr, ease(i / nx))
+            if not last_shot and i >= nsh - nx:                         # keep the tail for the next dissolve
+                tail.append(fr); continue
             enc.put(fr)
+        prev_tail = tail
     endc = end_card(title)
     last = render(shots[-1][0], shots[-1][2])
     for i in range(int(2.4 * FPS)):
