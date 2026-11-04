@@ -114,6 +114,18 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.sinput{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:inherit;font-size:16px;padding:14px 16px}
+.sinput:focus{outline:1px solid var(--warm)}
+.sres{margin-top:12px}.sres a,.sres button.r{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:11px 4px;border:0;border-top:1px solid var(--line);background:none;text-decoration:none;font-size:14px}
+.sres .k{font-size:11px;color:var(--warm);letter-spacing:.06em;text-transform:uppercase;width:92px;flex:none}
+.oform{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.oform input,.oform select,.oform textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--fg);font:inherit;font-size:14px;padding:10px 12px;min-width:0}
+.oform textarea{grid-column:1/-1;min-height:70px}
+@media (max-width:860px){.oform{grid-template-columns:1fr}}
+.ostages{display:grid;grid-template-columns:repeat(7,minmax(190px,1fr));gap:10px;overflow-x:auto;max-width:100%;padding-bottom:8px;margin-top:14px}
+.ov{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.ov{grid-template-columns:1fr}}
+.mini{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}.mini:first-of-type{border-top:0}.mini span{color:var(--mut);font-size:12px;white-space:nowrap}
 .fab{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(24px + var(--safe-b));width:56px;height:56px;border-radius:50%;border:0;background:var(--warm);color:#0b0c0c;font-size:30px;line-height:1;box-shadow:0 8px 28px rgba(0,0,0,.45);z-index:30}
 @media (max-width:860px){.fab{bottom:calc(84px + var(--safe-b))}}
 .spaces{display:grid;gap:6px;margin:0 0 18px}
@@ -193,7 +205,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
   <main>
     <header class="top">
       <div style="min-width:0"><div class="mspace" id="mspace"></div><div class="sub" id="hello"></div><h1 id="title">Início</h1></div>
-      <div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div>
+      <div style="display:flex;gap:8px;align-items:center"><button class="x" id="sbtn" aria-label="Pesquisar" style="display:grid;place-items:center"><span style="width:18px;height:18px;display:block" id="sico"></span></button><div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div></div>
     </header>
     <section class="view on" id="v-hoje"></section>
     <section class="view" id="v-cal"></section>
@@ -205,6 +217,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
     <section class="view" id="v-sobre"></section>
     <section class="view" id="v-pessoais"></section>
     <section class="view" id="v-conteudo"></section>
+    <section class="view" id="v-opps"></section>
     <section class="view" id="v-links"></section>
   </main>
 </div>
@@ -225,9 +238,11 @@ const ICON={
  mais:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>',
  pessoais:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg>',
  conteudo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16M4 12h16M4 19h10"/></svg>',
+ opps:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>',
+ search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
  links:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>'
 };
-const SPACES={vh:{name:"Vítor Hugo",sub:"Tudo",tabs:[["hoje","Início"],["ideias","Ideias"],["pessoais","Projetos pessoais"],["portfolio","Portfólio"],["sobre","Perfil"],["tarefas","Tarefas"],["links","Links"]],bottom:["hoje","ideias","pessoais","tarefas"]},
+const SPACES={vh:{name:"Vítor Hugo",sub:"Tudo",tabs:[["hoje","Início"],["ideias","Ideias"],["pessoais","Projetos pessoais"],["portfolio","Portfólio"],["opps","Oportunidades"],["sobre","Perfil"],["tarefas","Tarefas"],["links","Links"]],bottom:["hoje","ideias","pessoais","tarefas"]},
  bv:{name:"Bound Visuals",sub:"Marca 3D",tabs:[["cal","Calendário"],["conteudo","Conteúdo"],["projetos","Projetos"],["estudio","Estúdio"],["hoje","Início"]],bottom:["cal","conteudo","projetos","estudio"]}};
 let space="vh";try{space=localStorage.getItem("bv_space")||"vh"}catch(e){}
 let TABS=SPACES[space].tabs,BOTTOM=SPACES[space].bottom;
@@ -280,6 +295,11 @@ function renderHoje(){
     <div class="card kpi"><b>${queueDays}</b><span>dias de posts aprovados</span></div>
     <div class="card kpi"><b>${pendingCount()}</b><span>por aprovar</span></div>
     <div class="card kpi"><b>${myOpen}</b><span>tarefas tuas</span></div>
+  </div>
+  <div class="ov" style="margin-bottom:14px">
+    <div class="card"><h2>Projetos pessoais em curso</h2>${(D.personal||[]).filter(p=>p.stage==="em-curso"||p.stage==="explorar").map(p=>`<div class="mini"><div>${esc(p.title)}</div><span>${esc(p.area||"")}</span></div>`).join("")||`<div class="empty">—</div>`}</div>
+    <div class="card"><h2>Ideias recentes</h2>${(D.inbox||[]).slice(0,4).map(n=>`<div class="mini"><div style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(n.text)}</div><span>${ago(n.at)}</span></div>`).join("")||`<div class="empty">Usa o botão + para apontar.</div>`}</div>
+    <div class="card"><h2>Oportunidades ativas</h2>${(D.opps||[]).filter(o=>!["ganha","perdida"].includes(o.stage)).slice(0,4).map(o=>`<div class="mini"><div>${esc(o.title)}</div><span>${esc((OST.find(s=>s[0]===o.stage)||[0,""])[1])}</span></div>`).join("")||`<div class="empty">Nenhuma ainda.</div>`}</div>
   </div>
   <div class="grid g2">
     <div class="card"><h2>Hoje · ${fmtDay(t)}</h2>${its.length?its.sort((a,b)=>a.time.localeCompare(b.time)).map(itemRow).join(""):`<div class="empty">Nada agendado para hoje.</div>`}</div>
@@ -419,7 +439,46 @@ function quick(){$("#mbox").innerHTML=`<div class="mhead"><b>Apontar</b><button 
   $("#qSave").onclick=async()=>{const t=$("#qText").value.trim();if(!t)return;$("#qSave").disabled=true;
     try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:t,tag:tg})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;closeModal();toast("Apontado ✓");renderIdeias()}catch(e){$("#qSave").disabled=false;toast("Não consegui guardar")}}}
 $("#fab").onclick=quick;
-function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo()}
+$("#sico").innerHTML=ICON.search;
+const OST=[["encontrada","Encontrada"],["enviada","Enviada"],["resposta","Resposta"],["entrevista","Entrevista"],["proposta","Proposta"],["ganha","Ganha"],["perdida","Perdida"]];
+function oppForm(o){o=o||{};$("#mbox").innerHTML=`<div class="mhead"><b>${o.id?"Editar":"Nova"} oportunidade</b><button class="x" id="mx">×</button></div><div class="card"><div class="oform">
+  <select id="oKind"><option value="vaga" ${o.kind!=="cliente"?"selected":""}>Vaga de emprego</option><option value="cliente" ${o.kind==="cliente"?"selected":""}>Cliente / projeto</option></select>
+  <select id="oStage">${OST.map(([k,l])=>`<option value="${k}" ${o.stage===k?"selected":""}>${l}</option>`).join("")}</select>
+  <input id="oTitle" placeholder="Função ou projeto" value="${esc(o.title||"")}"><input id="oOrg" placeholder="Empresa / cliente" value="${esc(o.org||"")}">
+  <input id="oUrl" placeholder="Link (anúncio, site, email)" value="${esc(o.url||"")}" style="grid-column:1/-1">
+  <textarea id="oNotes" placeholder="Notas: contacto, valores, prazos, o que enviar…">${esc(o.notes||"")}</textarea></div>
+  <div style="display:flex;justify-content:space-between;margin-top:12px;gap:8px">${o.id?`<button class="btn" id="oDel">Apagar</button>`:"<span></span>"}<button class="btn pri" id="oSave">Guardar</button></div></div>`;
+  $("#modal").classList.add("on");$("#mx").onclick=closeModal;
+  const send=async body=>{const r=await fetch("api.php?a=opp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const j=await r.json();if(!j.ok)throw 0;D.opps=j.opps;closeModal();renderOpps();renderHoje()};
+  $("#oSave").onclick=()=>send({id:o.id,kind:$("#oKind").value,stage:$("#oStage").value,title:$("#oTitle").value,org:$("#oOrg").value,url:$("#oUrl").value,notes:$("#oNotes").value}).then(()=>toast("Guardado ✓")).catch(()=>toast("Falta o título ou sem ligação"));
+  const d=$("#oDel");if(d)d.onclick=()=>{if(d.dataset.c!=="1"){d.dataset.c="1";d.textContent="Tens a certeza?";return}send({delete:o.id}).then(()=>toast("Apagado"))}}
+function renderOpps(){const O=D.opps||[];
+  $("#v-opps").innerHTML=`<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><p class="sub" style="margin:0">Vagas e clientes, do primeiro contacto ao fecho. Para cada uma preparo o portfólio, o CV e a carta certos.</p><button class="btn pri" id="oNew">+ Nova</button></div>
+  <div class="ostages">${OST.map(([k,l])=>{const it=O.filter(o=>o.stage===k);return `<div class="card"><h2 style="display:flex;justify-content:space-between"><span>${l}</span><span>${it.length}</span></h2>${it.map(o=>`<div class="pc clickable" data-opp="${esc(o.id)}"><span class="ar">${o.kind==="cliente"?"Cliente":"Vaga"}</span><b>${esc(o.title)}</b><p>${esc(o.org||"")}</p></div>`).join("")||`<div class="empty">—</div>`}</div>`}).join("")}</div>`;
+  $("#oNew").onclick=()=>oppForm();
+  $("#v-opps").querySelectorAll("[data-opp]").forEach(c=>c.onclick=()=>oppForm(O.find(o=>o.id===c.dataset.opp)))}
+function search(){$("#mbox").innerHTML=`<div class="mhead"><b>Pesquisar tudo</b><button class="x" id="mx">×</button></div><input class="sinput" id="sq" placeholder="Projeto, tarefa, ideia, legenda, link…" autocomplete="off"><div class="sres" id="sr"></div>`;
+  $("#modal").classList.add("on");$("#mx").onclick=closeModal;setTimeout(()=>$("#sq").focus(),50);
+  const idx=[];
+  (D.tasks||[]).forEach(t=>idx.push({k:"Tarefa",t:t.title,d:t.detail||"",go:"tarefas"}));
+  (D.inbox||[]).forEach(n=>idx.push({k:"Ideia",t:n.text,d:"",go:"ideias"}));
+  (D.personal||[]).forEach(p=>idx.push({k:"Projeto pessoal",t:p.title,d:p.next||"",go:"pessoais"}));
+  (D.projects||[]).forEach(p=>idx.push({k:"Projeto",t:p.title,d:p.status||"",go:"projetos"}));
+  (D.opps||[]).forEach(o=>idx.push({k:"Oportunidade",t:o.title,d:o.org||"",go:"opps"}));
+  (D.links||[]).forEach(l=>idx.push({k:"Link",t:l.title,d:l.url,url:l.url}));
+  (D.studies||[]).forEach(s=>idx.push({k:"Daily Study",t:s.num+" "+s.title,d:s.when,go:"estudio"}));
+  Object.values((D.content_plan||{}).daily_ideas||{}).flat().forEach(x=>idx.push({k:"Ideia DS",t:x,d:"",go:"conteudo"}));
+  ((D.content_plan||{}).pillars||[]).forEach(p=>idx.push({k:"Pilar",t:p.name,d:p.what,go:"conteudo"}));
+  allItems().forEach(i=>idx.push({k:TY[i.type],t:i.project_title+" · "+fmtDay(i.date)+" "+i.time,d:i.caption||"",key:i.key}));
+  const norm=x=>String(x).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  $("#sq").oninput=()=>{const q=norm($("#sq").value.trim());if(q.length<2){$("#sr").innerHTML="";return}
+    const r=idx.filter(x=>norm(x.t+" "+x.d).includes(q)).slice(0,40);
+    $("#sr").innerHTML=r.map((x,n)=>x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener"><span class="k">${esc(x.k)}</span><span>${esc(x.t)}</span></a>`:`<button class="r" data-n="${n}"><span class="k">${esc(x.k)}</span><span>${esc(x.t)}</span></button>`).join("")||`<div class="empty">Nada encontrado.</div>`;
+    $("#sr").querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>{const x=r[+b.dataset.n];closeModal();if(x.key){openItem(x.key);return}
+      const sp=Object.keys(SPACES).find(k=>SPACES[k].tabs.some(t=>t[0]===x.go));if(sp&&sp!==space){setSpace(sp)}go(x.go)})}}
+$("#sbtn").onclick=search;
+document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();search()}});
+function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps()}
 async function load(){
   try{const r=await fetch("api.php?a=data",{cache:"no-store"});if(r.status===401){location.reload();return}
     const j=await r.json();const changed=!D||j.generated_at!==D.generated_at||JSON.stringify(j.pending_approvals)!==JSON.stringify(D.pending_approvals)||JSON.stringify(j.ticks)!==JSON.stringify(D.ticks);

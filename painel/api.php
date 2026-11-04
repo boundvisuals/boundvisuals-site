@@ -34,6 +34,7 @@ if ($a === 'data') {
   $d['pending_approvals'] = read_store("$store/approvals.json.php") ?? [];
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
+  $d['opps'] = read_store("$store/opps.json.php") ?? [];
   $d['served_at'] = gmdate('c');
   echo json_encode($d, JSON_UNESCAPED_UNICODE);
   exit;
@@ -68,6 +69,27 @@ if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topic
   }
   write_store("$store/inbox.json.php", $cur);
   echo json_encode(['ok' => true, 'inbox' => $cur], JSON_UNESCAPED_UNICODE);
+  exit;
+}
+if ($a === 'opp' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // opportunities: jobs / clients
+  $cur = read_store("$store/opps.json.php") ?? [];
+  $clean = fn($v, $n = 500) => mb_substr(trim((string)$v), 0, $n);
+  if (!empty($in['delete'])) {
+    $cur = array_values(array_filter($cur, fn($o) => ($o['id'] ?? '') !== $in['delete']));
+  } else {
+    $o = ['id' => preg_replace('/[^a-f0-9]/', '', (string)($in['id'] ?? '')) ?: bin2hex(random_bytes(6)),
+          'kind' => in_array($in['kind'] ?? '', ['vaga', 'cliente'], true) ? $in['kind'] : 'vaga',
+          'title' => $clean($in['title'] ?? '', 200), 'org' => $clean($in['org'] ?? '', 200), 'url' => $clean($in['url'] ?? '', 500),
+          'stage' => in_array($in['stage'] ?? '', ['encontrada', 'enviada', 'resposta', 'entrevista', 'proposta', 'ganha', 'perdida'], true) ? $in['stage'] : 'encontrada',
+          'notes' => $clean($in['notes'] ?? '', 3000), 'updated' => gmdate('c')];
+    if ($o['title'] === '') { http_response_code(400); echo '{"error":"title"}'; exit; }
+    $found = false;
+    foreach ($cur as &$x) { if ($x['id'] === $o['id']) { $o['created'] = $x['created'] ?? $o['updated']; $x = $o; $found = true; } }
+    unset($x);
+    if (!$found) { $o['created'] = $o['updated']; array_unshift($cur, $o); }
+  }
+  write_store("$store/opps.json.php", $cur);
+  echo json_encode(['ok' => true, 'opps' => $cur], JSON_UNESCAPED_UNICODE);
   exit;
 }
 http_response_code(400);
