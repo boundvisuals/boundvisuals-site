@@ -84,6 +84,10 @@ if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topic
   $cur = read_store("$store/inbox.json.php") ?? [];
   if (!empty($in['delete'])) {
     $cur = array_values(array_filter($cur, fn($n) => ($n['id'] ?? '') !== $in['delete']));
+  } elseif (!empty($in['set_status'])) {                            // novo | em-curso | feito | arquivado
+    $stt = in_array($in['status'] ?? '', ['novo', 'em-curso', 'feito', 'arquivado'], true) ? $in['status'] : 'novo';
+    foreach ($cur as &$n) { if (($n['id'] ?? '') === $in['set_status']) { $n['status'] = $stt; if (!empty($in['tag'])) $n['tag'] = preg_replace('/[^a-z]/', '', $in['tag']); } }
+    unset($n);
   } elseif (!empty($in['reply_to'])) {                               // Vítor answers inside a thread
     $text = trim((string)($in['text'] ?? ''));
     if ($text === '' || mb_strlen($text) > 5000) { http_response_code(400); echo '{"error":"empty"}'; exit; }
@@ -93,7 +97,8 @@ if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topic
     $text = trim((string)($in['text'] ?? ''));
     if ($text === '' || mb_strlen($text) > 5000) { http_response_code(400); echo '{"error":"empty"}'; exit; }
     $tag = in_array($in['tag'] ?? '', ['ideia', 'debater', 'tarefa', 'conteudo', 'outro'], true) ? $in['tag'] : 'ideia';
-    array_unshift($cur, ['id' => bin2hex(random_bytes(6)), 'text' => $text, 'tag' => $tag, 'at' => gmdate('c'), 'status' => 'novo']);
+    $num = 1 + array_reduce($cur, fn($m, $n) => max($m, (int)($n['num'] ?? 0)), count($cur));
+    array_unshift($cur, ['id' => bin2hex(random_bytes(6)), 'num' => $num, 'text' => $text, 'tag' => $tag, 'at' => gmdate('c'), 'status' => 'novo']);
   }
   write_store("$store/inbox.json.php", $cur);
   kick_robot();

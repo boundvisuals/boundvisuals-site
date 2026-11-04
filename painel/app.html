@@ -114,6 +114,7 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.nsel{background:var(--panel2);border:1px solid var(--line);color:var(--fg);border-radius:8px;font:inherit;font-size:12px;padding:3px 6px}
 .reply.me{border-left-color:var(--ok);margin-left:24px}
 .rbox{display:flex;gap:8px;margin-top:10px}.rbox .sinput{flex:1;min-width:0}
 .btn.sm{padding:4px 10px;font-size:12px;border-radius:8px}
@@ -443,19 +444,29 @@ function openMore(){const rest=TABS.filter(([k])=>!BOTTOM.includes(k));
   $("#modal").classList.add("on");$("#mx").onclick=closeModal;$("#mbox").querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{closeModal();go(b.dataset.go)})}
 function seenReply(id){try{return (JSON.parse(localStorage.getItem("bv_seen")||"[]")).includes(id)}catch(e){return true}}
 function markSeen(){try{const ids=(D.inbox||[]).filter(n=>(D.replies||{})[n.id]).map(n=>n.id);localStorage.setItem("bv_seen",JSON.stringify(ids))}catch(e){}}
-let noteTag="ideia";
+let noteTag="ideia",ideaF="todas",ideaS="abertas";
+const NST=[["novo","Novo"],["em-curso","Em curso"],["feito","Feito"],["arquivado","Arquivado"]];
 const TAGS=[["ideia","Ideia"],["debater","Para debater"],["conteudo","Conteúdo"],["tarefa","Tarefa"],["outro","Outro"]];
 function thread(n,R){const cl=R[n.id];const cls=(Array.isArray(cl)?cl:(cl?[{text:cl,at:n.at}]:[])).map(x=>({who:"claude",text:typeof x==="string"?x:x.text,at:(x&&x.at)||n.at}));
   const all=[...cls,...(n.thread||[])].sort((a,b)=>String(a.at).localeCompare(String(b.at)));
   const last=all[all.length-1];
   return all.map(m=>m.who==="claude"?`<div class="reply"><small>Claude</small>${esc(m.text)}</div>`:`<div class="reply me"><small>Tu · ${ago(m.at)}</small>${esc(m.text)}</div>`).join("")+(last&&last.who==="vitor"?`<div class="sub" style="margin-top:6px">⏳ Respondo na próxima ronda (de hora a hora) ou quando falarmos no chat.</div>`:"")}
-function renderIdeias(){const N=D.inbox||[],R=D.replies||{};const keep=$("#noteText")?$("#noteText").value:"";
+function numOf(n){if(n.num)return n.num;const all=(D.inbox||[]).slice().sort((a,b)=>String(a.at).localeCompare(String(b.at)));return all.findIndex(x=>x.id===n.id)+1}
+function renderIdeias(){const N=D.inbox||[],R=D.replies||{};
+  const NN=N.filter(n=>(ideaF==="todas"||n.tag===ideaF)&&(ideaS==="abertas"?!["feito","arquivado"].includes(n.status||"novo"):(n.status||"novo")===ideaS));const keep=$("#noteText")?$("#noteText").value:"";
   $("#v-ideias").innerHTML=`<div class="card compose"><h2>Escreve aqui o que te passar pela cabeça</h2>
    <textarea id="noteText" placeholder="Uma ideia, um assunto para debatermos, algo a não esquecer…"></textarea>
    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><div class="tags">${TAGS.map(([k,l])=>`<button class="${noteTag===k?"on":""}" data-tag="${k}">${l}</button>`).join("")}</div><button class="btn pri" id="noteSave">Guardar</button></div>
-   <div class="sub">Fica guardado no teu servidor. Eu leio e respondo aqui na próxima vez que falarmos.</div></div>
+   <div class="sub">Fica numerado e guardado. Respondo aqui de hora a hora e transformo em tarefa, projeto ou conteúdo.</div></div>
    ${(D.decisions||[]).length?`<div class="card" style="margin-top:14px"><h2>Decidido nas nossas conversas</h2>${D.decisions.slice(0,12).map(d=>`<div class="mini"><div>${esc(d.text)}</div><span>${esc(d.date||"")}</span></div>`).join("")}</div>`:""}
-   <div class="card" style="margin-top:14px">${N.length?N.map(n=>`<div class="note"><div class="nt">${esc(n.text)}</div><div class="nm"><span class="pill">${esc((TAGS.find(t=>t[0]===n.tag)||[0,n.tag])[1])}</span><span>${ago(n.at)}</span><button class="del" data-del="${esc(n.id)}">apagar</button></div>${thread(n,R)}<div class="rbox"><input class="sinput" style="font-size:14px;padding:10px" placeholder="Responder…" data-rin="${esc(n.id)}"><button class="btn" data-rsend="${esc(n.id)}">Enviar</button></div></div>`).join(""):`<div class="empty">Ainda não há nada. Escreve a primeira ideia acima.</div>`}</div>`;
+   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><div class="seg" style="margin:0">${[["todas","Todas"],...TAGS].map(([k,l])=>`<button class="${ideaF===k?"on":""}" data-if="${k}">${l} ${k==="todas"?N.length:N.filter(n=>n.tag===k).length}</button>`).join("")}</div>
+   <div class="seg" style="margin:0">${[["abertas","Abertas"],...NST].map(([k,l])=>`<button class="${ideaS===k?"on":""}" data-is="${k}">${l}</button>`).join("")}</div></div>
+   <div class="card" style="margin-top:10px">${NN.length?NN.map(n=>`<div class="note"><div class="nm" style="margin:0 0 6px"><b style="color:var(--warm);font-weight:600">#${esc(numOf(n))}</b><span class="pill">${esc((TAGS.find(t=>t[0]===n.tag)||[0,n.tag])[1])}</span><select class="nsel" data-ns="${esc(n.id)}">${NST.map(([k,l])=>`<option value="${k}" ${(n.status||"novo")===k?"selected":""}>${l}</option>`).join("")}</select></div><div class="nt">${esc(n.text)}</div><div class="nm"><span>${ago(n.at)}</span><button class="del" data-del="${esc(n.id)}">apagar</button></div>${thread(n,R)}<div class="rbox"><input class="sinput" style="font-size:14px;padding:10px" placeholder="Responder…" data-rin="${esc(n.id)}"><button class="btn" data-rsend="${esc(n.id)}">Enviar</button></div></div>`).join(""):`<div class="empty">Nada neste filtro.</div>`}</div>`;
+  $("#v-ideias").querySelectorAll("[data-if]").forEach(b=>b.onclick=()=>{ideaF=b.dataset.if;renderIdeias()});
+  $("#v-ideias").querySelectorAll("[data-is]").forEach(b=>b.onclick=()=>{ideaS=b.dataset.is;renderIdeias()});
+  $("#v-ideias").querySelectorAll("[data-ns]").forEach(sl=>sl.onchange=async()=>{const id=sl.dataset.ns,old=(N.find(n=>n.id===id)||{}).status||"novo";
+    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({set_status:id,status:sl.value})});const j=await r.json();D.inbox=j.inbox;renderIdeias();
+      undoBar("Estado alterado",async()=>{const r2=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({set_status:id,status:old})});D.inbox=(await r2.json()).inbox;renderIdeias()})}catch(e){toast("Sem ligação")}});
   $("#v-ideias").querySelectorAll("[data-tag]").forEach(b=>b.onclick=()=>{noteTag=b.dataset.tag;$("#v-ideias").querySelectorAll("[data-tag]").forEach(x=>x.classList.toggle("on",x===b))});
   $("#noteSave").onclick=async()=>{const t=$("#noteText").value.trim();if(!t)return;const b=$("#noteSave");b.disabled=true;
     try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:t,tag:noteTag})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;toast("Guardado ✓");renderIdeias()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
