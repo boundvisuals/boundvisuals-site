@@ -35,6 +35,16 @@ jobs:
                       shutil.copy(f"reports/{it['project']}/{it['type']}/{it['cover']}", d)
           PY
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --ignore-time fila /public_html/bv-fila; bye" "$H"
+          # approved feed posts: always overwrite their slides (never let an old crop survive on the server)
+          python3 - > put.lftp <<'PY'
+          import yaml, glob, os
+          for f in glob.glob("queue/week-*.yml"):
+              for it in yaml.safe_load(open(f)) or []:
+                  if not it.get("approved"): continue
+                  fs = [f"reports/{it['project']}/ig/{s}" for s in it["slides"] if os.path.exists(f"reports/{it['project']}/ig/{s}")]
+                  if fs: print(f"mput -O /public_html/bv-fila/{it['project']} " + " ".join('"' + x + '"' for x in fs))
+          PY
+          [ -s put.lftp ] && lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; source put.lftp; bye" "$H" || true
       - name: Publish
         env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
         run: python3 scripts/publish.py "${{ inputs.mode || 'run' }}"
