@@ -40,6 +40,8 @@ jobs:
               git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
               git add queue && git commit -qm "Approved in the panel ($n)"
               for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+              # publish right away whatever is now approved and due
+              for t in 1 2 3 4 5; do GH_TOKEN="${{ github.token }}" gh api -X POST "repos/${{ github.repository }}/actions/workflows/publish.yml/dispatches" -f ref=main -f "inputs[mode]=run" && break; sleep 10; done
             fi
           fi
       - name: Apply crop edits made in the panel (then rebuild slides + stories of that project)
