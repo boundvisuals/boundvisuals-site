@@ -1,0 +1,49 @@
+# Week 6. approved only after Vítor's OK (crops reviewed in the panel first).
+- date: '2026-12-08'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 12_-_Interior_5_12-interior5_0001-01.jpg
+  caption_en: Dining table, shelves and the living room beyond. Apartamentos Gondomar 2.
+  caption_pt: Mesa de jantar, estantes e a sala logo a seguir. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-09'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 7_-_Exterior_7_7-exterior7_edit_0001-01.jpg
+  caption_en: A corner terrace with a hedge, and a neighbour at the door. Apartamentos Gondomar 2.
+  caption_pt: Um terraço de esquina com sebe, e uma vizinha à porta. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-10'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 16_-_Interior_9_16-interior9_0001-01.jpg
+  caption_en: Marble island, light curtains and a balcony full of plants. Apartamentos Gondomar 2.
+  caption_pt: Ilha em mármore, cortinas leves e uma varanda cheia de plantas. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-11'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 9_-_Interior_2_9-interior2_edit_0001-01.jpg
+  caption_en: From the breakfast bar to the living room, all in one light. Apartamentos Gondomar 2.
+  caption_pt: Do balcão de pequeno-almoço à sala, tudo na mesma luz. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-12'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 15_-_Interior_8_15-interior8_edit_0001-01.jpg
+  caption_en: Open plan, low sofa and the balcony door left open. Apartamentos Gondomar 2.
+  caption_pt: Espaço aberto, sofá baixo e a porta da varanda aberta. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-13'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 18_-_Interior_11_18-interior11_edit_0001-01.jpg
+  caption_en: A bathroom in marble and oak, with a round mirror and soft light. Apartamentos Gondomar 2.
+  caption_pt: Uma casa de banho em mármore e carvalho, com espelho redondo e luz suave. Apartamentos Gondomar 2.
+  approved: false
