@@ -84,6 +84,11 @@ if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topic
   $cur = read_store("$store/inbox.json.php") ?? [];
   if (!empty($in['delete'])) {
     $cur = array_values(array_filter($cur, fn($n) => ($n['id'] ?? '') !== $in['delete']));
+  } elseif (!empty($in['reply_to'])) {                               // Vítor answers inside a thread
+    $text = trim((string)($in['text'] ?? ''));
+    if ($text === '' || mb_strlen($text) > 5000) { http_response_code(400); echo '{"error":"empty"}'; exit; }
+    foreach ($cur as &$n) { if (($n['id'] ?? '') === $in['reply_to']) { $n['thread'][] = ['who' => 'vitor', 'text' => $text, 'at' => gmdate('c')]; $n['status'] = 'novo'; } }
+    unset($n);
   } else {
     $text = trim((string)($in['text'] ?? ''));
     if ($text === '' || mb_strlen($text) > 5000) { http_response_code(400); echo '{"error":"empty"}'; exit; }
@@ -91,6 +96,7 @@ if ($a === 'note' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // ideas / topic
     array_unshift($cur, ['id' => bin2hex(random_bytes(6)), 'text' => $text, 'tag' => $tag, 'at' => gmdate('c'), 'status' => 'novo']);
   }
   write_store("$store/inbox.json.php", $cur);
+  kick_robot();
   echo json_encode(['ok' => true, 'inbox' => $cur], JSON_UNESCAPED_UNICODE);
   exit;
 }

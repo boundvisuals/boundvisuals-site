@@ -315,7 +315,7 @@ def build(out):
     stats = json.load(open("reports/meta/stats.json")) if os.path.exists("reports/meta/stats.json") else {}
     followers = json.load(open("reports/meta/followers.json")) if os.path.exists("reports/meta/followers.json") else {}
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "timeline": timeline[:60], "stats": stats, "followers": followers,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "decisions": (yaml.safe_load(open("docs/decisions.yml", encoding="utf-8")) or []) if os.path.exists("docs/decisions.yml") else [], "timeline": timeline[:60], "stats": stats, "followers": followers,
             "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
             "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}

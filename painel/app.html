@@ -114,6 +114,8 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.reply.me{border-left-color:var(--ok);margin-left:24px}
+.rbox{display:flex;gap:8px;margin-top:10px}.rbox .sinput{flex:1;min-width:0}
 .btn.sm{padding:4px 10px;font-size:12px;border-radius:8px}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .scard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -443,15 +445,23 @@ function seenReply(id){try{return (JSON.parse(localStorage.getItem("bv_seen")||"
 function markSeen(){try{const ids=(D.inbox||[]).filter(n=>(D.replies||{})[n.id]).map(n=>n.id);localStorage.setItem("bv_seen",JSON.stringify(ids))}catch(e){}}
 let noteTag="ideia";
 const TAGS=[["ideia","Ideia"],["debater","Para debater"],["conteudo","Conteúdo"],["tarefa","Tarefa"],["outro","Outro"]];
+function thread(n,R){const cl=R[n.id];const cls=(Array.isArray(cl)?cl:(cl?[{text:cl,at:n.at}]:[])).map(x=>({who:"claude",text:typeof x==="string"?x:x.text,at:(x&&x.at)||n.at}));
+  const all=[...cls,...(n.thread||[])].sort((a,b)=>String(a.at).localeCompare(String(b.at)));
+  const last=all[all.length-1];
+  return all.map(m=>m.who==="claude"?`<div class="reply"><small>Claude</small>${esc(m.text)}</div>`:`<div class="reply me"><small>Tu · ${ago(m.at)}</small>${esc(m.text)}</div>`).join("")+(last&&last.who==="vitor"?`<div class="sub" style="margin-top:6px">⏳ Respondo na próxima ronda (de hora a hora) ou quando falarmos no chat.</div>`:"")}
 function renderIdeias(){const N=D.inbox||[],R=D.replies||{};const keep=$("#noteText")?$("#noteText").value:"";
   $("#v-ideias").innerHTML=`<div class="card compose"><h2>Escreve aqui o que te passar pela cabeça</h2>
    <textarea id="noteText" placeholder="Uma ideia, um assunto para debatermos, algo a não esquecer…"></textarea>
    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><div class="tags">${TAGS.map(([k,l])=>`<button class="${noteTag===k?"on":""}" data-tag="${k}">${l}</button>`).join("")}</div><button class="btn pri" id="noteSave">Guardar</button></div>
    <div class="sub">Fica guardado no teu servidor. Eu leio e respondo aqui na próxima vez que falarmos.</div></div>
-   <div class="card" style="margin-top:14px">${N.length?N.map(n=>`<div class="note"><div class="nt">${esc(n.text)}</div><div class="nm"><span class="pill">${esc((TAGS.find(t=>t[0]===n.tag)||[0,n.tag])[1])}</span><span>${ago(n.at)}</span><button class="del" data-del="${esc(n.id)}">apagar</button></div>${R[n.id]?`<div class="reply"><small>Claude</small>${esc(R[n.id])}</div>`:""}</div>`).join(""):`<div class="empty">Ainda não há nada. Escreve a primeira ideia acima.</div>`}</div>`;
+   ${(D.decisions||[]).length?`<div class="card" style="margin-top:14px"><h2>Decidido nas nossas conversas</h2>${D.decisions.slice(0,12).map(d=>`<div class="mini"><div>${esc(d.text)}</div><span>${esc(d.date||"")}</span></div>`).join("")}</div>`:""}
+   <div class="card" style="margin-top:14px">${N.length?N.map(n=>`<div class="note"><div class="nt">${esc(n.text)}</div><div class="nm"><span class="pill">${esc((TAGS.find(t=>t[0]===n.tag)||[0,n.tag])[1])}</span><span>${ago(n.at)}</span><button class="del" data-del="${esc(n.id)}">apagar</button></div>${thread(n,R)}<div class="rbox"><input class="sinput" style="font-size:14px;padding:10px" placeholder="Responder…" data-rin="${esc(n.id)}"><button class="btn" data-rsend="${esc(n.id)}">Enviar</button></div></div>`).join(""):`<div class="empty">Ainda não há nada. Escreve a primeira ideia acima.</div>`}</div>`;
   $("#v-ideias").querySelectorAll("[data-tag]").forEach(b=>b.onclick=()=>{noteTag=b.dataset.tag;$("#v-ideias").querySelectorAll("[data-tag]").forEach(x=>x.classList.toggle("on",x===b))});
   $("#noteSave").onclick=async()=>{const t=$("#noteText").value.trim();if(!t)return;const b=$("#noteSave");b.disabled=true;
     try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:t,tag:noteTag})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;toast("Guardado ✓");renderIdeias()}catch(e){b.disabled=false;toast("Não consegui guardar")}};
+  $("#v-ideias").querySelectorAll("[data-rsend]").forEach(b=>b.onclick=async()=>{const id=b.dataset.rsend,inp=$(`[data-rin="${id}"]`);const t=inp.value.trim();if(!t)return;b.disabled=true;
+    try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({reply_to:id,text:t})});const j=await r.json();if(!j.ok)throw 0;D.inbox=j.inbox;renderIdeias();toast("Enviado ✓")}catch(e){b.disabled=false;toast("Sem ligação")}});
+  $("#v-ideias").querySelectorAll("[data-rin]").forEach(i=>i.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();$(`[data-rsend="${i.dataset.rin}"]`).click()}});
   $("#v-ideias").querySelectorAll("[data-del]").forEach(b=>b.onclick=async()=>{if(b.dataset.confirm!=="1"){b.dataset.confirm="1";b.textContent="tens a certeza?";return}
     try{const r=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({delete:b.dataset.del})});const j=await r.json();const gone=(D.inbox||[]).find(n=>n.id===b.dataset.del);D.inbox=j.inbox;renderIdeias();
       undoBar("Ideia apagada",async()=>{const r2=await fetch("api.php?a=note",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:gone.text,tag:gone.tag})});const j2=await r2.json();D.inbox=j2.inbox;renderIdeias()})}catch(e){toast("Sem ligação")}});

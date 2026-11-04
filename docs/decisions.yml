@@ -1,0 +1,12 @@
+# Decisions from Vítor ↔ Claude chats, newest first (shown in Painel → Ideias). Claude appends after each conversation.
+- { date: "04/11", text: "Recortes: aceitar ou editar é obrigatório antes de aprovar cada post; 'Aprovar tudo' fica (risco do Vítor)." }
+- { date: "04/11", text: "Tudo na app tem de ter forma de voltar atrás (Anular / Desaprovar / repor recortes)." }
+- { date: "04/11", text: "Desaprovado tudo exceto 3 nov; o Vítor revê e aprova um a um." }
+- { date: "04/11", text: "Stories em ecrã inteiro 9:16, todos editáveis no enquadramento." }
+- { date: "04/11", text: "Mínimo 2 h entre posts (era 20 h)." }
+- { date: "04/11", text: "Enquanto a Meta bloquear legendas por API: post sai sem legenda, o Vítor cola a legenda à mão." }
+- { date: "04/11", text: "Identificações (14 @) desligadas das legendas até o bloqueio levantar." }
+- { date: "04/11", text: "Ideias = conversa: respostas do Claude de hora a hora (tarefa agendada no plano Claude, sem API paga)." }
+- { date: "04/11", text: "Próximo: seletor PT/EN, reels mais avançados (2 estilos para escolher), editar legendas na app." }
+- { date: "03/11", text: "App (Painel) no servidor do Vítor, divisão Vítor Hugo / Bound Visuals; sem custos além do plano Claude." }
+- { date: "03/11", text: "Nunca mais testes repetidos à API do Instagram; publicação direta." }
