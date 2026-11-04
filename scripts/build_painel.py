@@ -323,7 +323,29 @@ def apply_crops(path):
         print(p)
 
 
+def sync_slides():
+    """Queue slides follow the files actually generated (crop count can change in the editor)."""
+    n = 0
+    for f in sorted(glob.glob("queue/week-*.yml")):
+        txt = open(f, encoding="utf-8").read()
+        head = "".join(l for l in txt.splitlines(True) if l.startswith("#"))
+        items = yaml.safe_load(txt) or []
+        ch = False
+        for it in items:
+            if not it.get("slides"):
+                continue
+            stem = re.sub(r"-\d\d(-full)?\.jpg$", "", it["slides"][0])
+            real = sorted(os.path.basename(x) for x in glob.glob(f"reports/{it['project']}/ig/{glob.escape(stem)}-[0-9][0-9]*.jpg"))
+            if real and real != it["slides"]:
+                it["slides"] = real; ch = True; n += 1
+        if ch:
+            open(f, "w", encoding="utf-8").write(head + yaml.safe_dump(items, allow_unicode=True, sort_keys=False, width=240))
+    print(n)
+
+
 if __name__ == "__main__":
+    if sys.argv[1] == "sync-slides":
+        sync_slides(); sys.exit()
     if sys.argv[1] == "apply":
         apply(sys.argv[2])
     elif sys.argv[1] == "apply-crops":
