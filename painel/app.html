@@ -489,7 +489,7 @@ let pfF="Tudo";
 function renderPortfolio(){const P=D.portfolio||[];const projs=[...new Set(P.map(x=>x.project_title))];
   const fl=["Tudo","Exterior","Interior",...projs];const list=P.filter(x=>pfF==="Tudo"||x.cat===pfF||x.project_title===pfF);
   $("#v-portfolio").innerHTML=`<div class="seg">${fl.map(f=>`<button class="${pfF===f?"on":""}" data-pf="${esc(f)}">${esc(f)}</button>`).join("")}</div>
-  <div class="sub" style="margin:-4px 0 12px">${list.length} imagens · o PDF do portfólio, gerado sozinho, chega já a seguir</div>
+  <div class="cbar" style="margin:-4px 0 12px;justify-content:space-between"><span class="sub">${list.length} imagens</span><a class="btn pri" href="files/Vitor-Hugo-Bound-Visuals-Portfolio.pdf?v=${esc(D.generated_at||"")}" target="_blank" rel="noopener">⬇ Portfólio PDF (sempre atualizado)</a></div>
   <div class="pgrid">${list.map((x,n)=>`<figure data-lg="${esc(x.lg)}" data-t="${esc(x.project_title)}"><img loading="lazy" src="${esc(x.sm)}" alt="${esc(x.project_title)}"><figcaption>${esc(x.project_title)} · ${esc(x.cat)}</figcaption></figure>`).join("")}</div>`;
   $("#v-portfolio").querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{pfF=b.dataset.pf;renderPortfolio()});
   $("#v-portfolio").querySelectorAll("figure").forEach(f=>f.onclick=()=>{$("#mbox").innerHTML=`<div class="mhead"><b>${esc(f.dataset.t)}</b><button class="x" id="mx">×</button></div><img src="${esc(f.dataset.lg)}" style="width:100%;border-radius:10px" alt="">`;$("#modal").classList.add("on");$("#mx").onclick=closeModal});
