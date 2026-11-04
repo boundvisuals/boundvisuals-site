@@ -149,22 +149,16 @@ def load(src_dir, crops):
 
 # ---------- style A: editorial ----------
 def style_a(imgs, crops, title, out, tmp):
-    SH, XF = 4.2, 0.6
+    SH, XF = 6.5, 0.45                      # long holds, short dissolve (Vítor: images must stay longer)
     shots = []
-    moves = ["travel", "push", "pull", "travel_r", "push"]
-    for k, (stem, im) in enumerate(imgs[:5]):
+    for k, (stem, im) in enumerate(imgs[:4]):
         iw, ih = im.size; c = crops[stem][0]
-        full = box916(iw, ih, c[0], 0.5, 1.0)
-        det = box916(iw, ih, c[0], c[1], max(0.45, c[2] * 0.75))
-        m = moves[k % len(moves)]
-        if m.startswith("travel") and iw / ih > 0.7:
-            a = box916(iw, ih, 0.3, 0.5, 1.0); b = box916(iw, ih, 0.7, 0.5, 1.0)
-            if m == "travel_r":
+        if iw / ih > 0.75 and k % 2 == 0:  # landscape: very slow lateral travelling across the whole image
+            a = box916(iw, ih, 0.38, 0.5, 1.0); b = box916(iw, ih, 0.62, 0.5, 1.0)
+            if k % 4 == 2:
                 a, b = b, a
-        elif m == "pull":
-            a, b = det, full
-        else:
-            a = full; b = box916(iw, ih, c[0], c[1], 0.8)
+        else:                              # gentle push-in, max 8 %, centred on the main subject
+            a = box916(iw, ih, c[0], 0.5, 1.0); b = box916(iw, ih, c[0], 0.5, 0.92)
         shots.append((im, a, b))
     total = len(shots) * SH - (len(shots) - 1) * XF + 2.4
     wav = tmp / "a.wav"; write_wav(wav, *pad(total))
