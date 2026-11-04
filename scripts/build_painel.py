@@ -385,6 +385,51 @@ def apply_captions(path):
     print(n)
 
 
+REEL_CAP = {
+    "apartamentos-gondomar-2": ("Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms.", "Apartamentos Gondomar 2, devagar: fachada, salas e quartos."),
+    "vivendas-duas-igrejas": ("Duas Igrejas, slowly: garden, timber and light. Penafiel.", "Duas Igrejas, devagar: jardim, madeira e luz. Penafiel."),
+    "vivendas-cete": ("Vivendas Cête, slowly, from the street to the rooms. Penafiel.", "Vivendas Cête, devagar, da rua até às divisões. Penafiel."),
+    "gold-village": ("Gold Village, slowly: timber, green balconies and calm interiors.", "Gold Village, devagar: madeira, varandas verdes e interiores calmos."),
+}
+
+
+def sync_reels():
+    """Every generated reel gets a slot: unscheduled reels are appended at 12:30 every 2 days after the last reel (unapproved)."""
+    import datetime as dt
+    files = sorted(glob.glob("queue/social-week-*.yml"))
+    allit = []
+    for f in files:
+        allit += yaml.safe_load(open(f, encoding="utf-8")) or []
+    have = {(x["project"], x["file"]) for x in allit if x.get("type") == "reel"}
+    reels = sorted(glob.glob("reports/*/reel/*-reel*.mp4"))
+    new = [(r.split("/")[1], os.path.basename(r)) for r in reels if (r.split("/")[1], os.path.basename(r)) not in have]
+    if not new:
+        print(0); return
+    last = max([dt.date.fromisoformat(str(x["date"])) for x in allit if x.get("type") == "reel"] or [dt.date.today()])
+    # interleave projects
+    byp = {}
+    for p_, f_ in new:
+        byp.setdefault(p_, []).append(f_)
+    order = []
+    while any(byp.values()):
+        for p_ in list(byp):
+            if byp[p_]:
+                order.append((p_, byp[p_].pop(0)))
+    extra = []
+    for k, (p_, f_) in enumerate(order):
+        d = last + dt.timedelta(days=2 * (k + 1))
+        n = re.search(r"-reel-(\d+)\.mp4$", f_)
+        part = f" (part {int(n.group(1))})" if n else ""
+        en, pt = REEL_CAP.get(p_, (TITLES.get(p_, p_), TITLES.get(p_, p_)))
+        extra.append({"date": d.isoformat(), "time": "12:30", "type": "reel", "project": p_, "file": f_, "cover": f_[:-4] + "-cover.jpg",
+                      "caption_en": en + part, "caption_pt": pt + part.replace("part", "parte"), "approved": False})
+    fx = "queue/social-week-90-reels.yml"
+    cur = (yaml.safe_load(open(fx, encoding="utf-8")) or []) if os.path.exists(fx) else []
+    open(fx, "w", encoding="utf-8").write("# Extra reels scheduled automatically (all project images covered). Unapproved.\n"
+                                         + yaml.safe_dump(cur + extra, allow_unicode=True, sort_keys=False, width=240))
+    print(len(extra))
+
+
 def sync_slides():
     """Queue slides follow the files actually generated (crop count can change in the editor)."""
     n = 0
@@ -408,6 +453,8 @@ def sync_slides():
 if __name__ == "__main__":
     if sys.argv[1] == "apply-captions":
         apply_captions(sys.argv[2]); sys.exit()
+    if sys.argv[1] == "sync-reels":
+        sync_reels(); sys.exit()
     if sys.argv[1] == "sync-slides":
         sync_slides(); sys.exit()
     if sys.argv[1] == "apply":

@@ -79,7 +79,9 @@ jobs:
           fi
       - name: Queue follows regenerated slides
         run: |
+          r=$(python3 scripts/build_painel.py sync-reels)
           n=$(python3 scripts/build_painel.py sync-slides)
+          [ "$r" != "0" ] && n="$n+$r reels"
           if [ "$n" != "0" ]; then
             git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
             git add queue && git commit -qm "Queue slides synced ($n)"
