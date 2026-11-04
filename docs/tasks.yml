@@ -119,6 +119,11 @@
 - id: c-video-reels
   owner: claude
   title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"
+  detail: "Ferramenta pronta (04/11): robô 'Reel from Vítor's videos' (video-reel.yml + scripts/video_reel.py). Ordem = nome dos ficheiros; horizontais aparecem inteiros sobre fundo desfocado (nunca cortados); título no 1.º clip; cartão final com assinatura; música gerada ou som dos clips. Falta: os primeiros clips do Vítor para montar o 1.º reel a sério."
+- id: v-video-clips
+  owner: vitor
+  title: "Quando tiveres animações (LTX/Seedance/Kling): põe-nas numa subpasta 'video' do projeto no MEGA, numeradas 01, 02, 03… e manda-me o link"
+  detail: "Eu monto o reel (ordem pelos números, título, assinatura, música). Se quiseres o som dos próprios vídeos, diz 'com som'."
 - id: v-site-vh-review
   owner: vitor
   title: "Ver o site pessoal boundvisuals.com/vitorhugo e dizer OK (está noindex até aprovares)"

@@ -1,0 +1,46 @@
+name: Reel from Vítor's videos
+# Builds ONE reel from the clips in a "video"/"anim" subfolder of a MEGA folder (LTX / Seedance / Kling exports):
+# natural file order, title on the first clip, signature end card, generated pad (or the clips' own sound).
+# Output: reports/<project>/reel/<project>-video-reel.mp4 (+ cover + .txt). Does NOT schedule or publish anything.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id: { description: "Project id (e.g. gold-village or daily-study-004)", required: true }
+      mega_link: { description: "Public MEGA link to the project / shot folder (clips inside video/anim are taken)", required: true }
+      title: { description: "Title on the reel (e.g. Gold Village)", required: true }
+      audio: { description: "pad = generated music, keep = clips' own sound, mix = both", required: false, default: "pad" }
+      fit: { description: "auto = vertical fills, horizontal shown whole on blur; cover = always fill; blur = always whole", required: false, default: "auto" }
+      max_clip: { description: "Max seconds per clip", required: false, default: "8" }
+
+permissions:
+  contents: write
+
+jobs:
+  reel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MEGAcmd + ffmpeg + Python deps
+        run: |
+          wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
+          sudo apt-get update -qq && sudo apt-get install -y -qq ./megacmd.deb ffmpeg
+          pip install -q pillow pyyaml numpy
+      - name: Download clips
+        env: { LINK: "${{ inputs.mega_link }}" }
+        run: bash scripts/fetch_videos.sh "$LINK" clips
+      - name: Assemble reel
+        env:
+          PID: ${{ inputs.project_id }}
+          TITLE: ${{ inputs.title }}
+          AUDIO: ${{ inputs.audio }}
+          FIT: ${{ inputs.fit }}
+          MAXC: ${{ inputs.max_clip }}
+        run: python scripts/video_reel.py clips "reports/$PID/reel" "$PID" "$TITLE" --audio "$AUDIO" --fit "$FIT" --max-clip "$MAXC"
+      - name: Commit
+        env: { PID: "${{ inputs.project_id }}" }
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add "reports/$PID/reel" && git commit -qm "Video reel: $PID" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done
+          exit 1
