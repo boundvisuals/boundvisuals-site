@@ -121,6 +121,14 @@ def crop_info(it, out):
     return {"stem": stem, "orig": lg, "orig_ratio": w / h, "crops": CROPS.get(stem, []), "story_crops": sc}
 
 
+def fhash(p):
+    import hashlib
+    try:
+        return hashlib.sha1(open(p, "rb").read()).hexdigest()[:10]
+    except OSError:
+        return "0"
+
+
 def story_info(it, out):
     """Story → its source image + index, so the 9:16 crop can be edited in the panel."""
     if it.get("type") != "story":
@@ -171,7 +179,7 @@ def build(out):
                 "key": feed_key(it), "type": "feed", "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "status": st, "link": link,
-                "full": [f"{FILA}/{it['project']}/{quote(x)}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
+                "full": [f"{FILA}/{it['project']}/{quote(x)}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/ig/{x}')}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
                 **crop_info(it, out),
                 "note": errs.get(pkey, "")})
     for f in sorted(glob.glob("queue/social-week-*.yml")):

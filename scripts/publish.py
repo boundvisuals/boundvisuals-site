@@ -74,8 +74,18 @@ def wait_ready(cid, tries=30):
     raise RuntimeError(f"container {cid} not ready")
 
 
+def vurl(path_in_repo, url):
+    """Version the public URL with the file hash: Instagram caches media by URL, so a re-cropped slide must get a new URL."""
+    import hashlib
+    try:
+        h = hashlib.sha1(open(path_in_repo, "rb").read()).hexdigest()[:10]
+    except OSError:
+        return url
+    return f"{url}?v={h}"
+
+
 def ig_container(item, with_caption=True, tries=3):
-    urls = [f"{BASE}/{item['project']}/{urllib.parse.quote(s)}" for s in item["slides"]]
+    urls = [vurl(f"reports/{item['project']}/ig/{s}", f"{BASE}/{item['project']}/{urllib.parse.quote(s)}") for s in item["slides"]]
     cap = {"caption": caption(item)} if with_caption else {}
     last = None
     for attempt in range(tries):
@@ -117,13 +127,13 @@ def social_items():
 def publish_social(it, n):
     """Story (image, no caption) or reel (mp4 + cover + caption). Files are uploaded to /bv-fila/<project>/<type>/ by the workflow."""
     typ, proj, fn = it["type"], it["project"], it["file"]
-    url = f"{BASE}/{proj}/{typ}/{urllib.parse.quote(fn)}"
+    url = vurl(f"reports/{proj}/{typ}/{fn}", f"{BASE}/{proj}/{typ}/{urllib.parse.quote(fn)}")
     rec = {}
     if typ == "story":
         c = new_container(image_url=url, media_type="STORIES")
         wait_ready(c)
     else:
-        cover = f"{BASE}/{proj}/{typ}/{urllib.parse.quote(it['cover'])}"
+        cover = vurl(f"reports/{proj}/{typ}/{it['cover']}", f"{BASE}/{proj}/{typ}/{urllib.parse.quote(it['cover'])}")
         c = new_container(media_type="REELS", video_url=url, cover_url=cover, caption=caption(it), share_to_feed="true")
         wait_ready(c, tries=90)
     mid = api("POST", f"{IG}/media_publish", creation_id=c)["id"]
