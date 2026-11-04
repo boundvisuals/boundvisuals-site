@@ -3,7 +3,7 @@
 projects) in a new editorial design (A4 portrait, brand colours, Visby CF). Rebuilt automatically by .github/workflows/portfolio.yml.
 
 usage: build_portfolio.py <out_dir> <assets_dir>
-Outputs: CV_Vitor_Hugo_Long.pdf · CV_Vitor_Hugo_Short.pdf · Portfolio_All.pdf · Portfolio_3D_Architecture_Visualization.pdf · Portfolio_AI.pdf
+Outputs: CV_Vitor_Hugo_Long.pdf · CV_Vitor_Hugo_Short.pdf · Cover_Letter_EN.pdf · Carta_Apresentacao_PT.pdf · Portfolio_All.pdf · Portfolio_3D_Architecture_Visualization.pdf · Portfolio_AI.pdf
 """
 import sys, os, glob, base64, html, pathlib, yaml
 from PIL import Image
@@ -309,6 +309,33 @@ def back():
     return P("end", f'<div class="kicker">Contact</div><h1>Let’s work together.</h1><p class="tt">{e(CV["name"])} · {e(CV["location"])}</p><div class="crs">{rows}</div>', sid="contact")
 
 
+def letter_page(L):
+    """One-page cover letter (docs/profile.yml → cover_letters with a pdf: key). Placeholders are neutralised for the generic PDF."""
+    import datetime, re
+    pt = L.get("lang") == "pt"
+    t = L["text"].replace("a [Empresa]", "a sua empresa").replace("[Empresa]", "a sua empresa").replace("[Company]", "your team")
+    t = re.sub(r"\[[^\]]+\]", "", t)
+    paras = [x.strip() for x in t.split("\n\n") if x.strip()]
+    sign = paras.pop() if paras and paras[-1].count("\n") >= 1 else ""
+    body = ""
+    for x in paras:
+        lines = x.split("\n")
+        if all(l.startswith("•") for l in lines[1:]) and len(lines) > 1:
+            body += f'<p>{e(lines[0])}</p><ul>' + "".join(f"<li>{e(l.lstrip('• '))}</li>" for l in lines[1:]) + "</ul>"
+        else:
+            body += f"<p>{'<br>'.join(e(l) for l in lines)}</p>"
+    close = sign.split("\n")[0] if sign else ""
+    d = datetime.date.today()
+    mpt = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+    date = f"{d.day} de {mpt[d.month - 1]} de {d.year}" if pt else d.strftime("%B %-d, %Y")
+    head = (f'<div class="lh"><div><h1>Vítor Hugo</h1><div class="tt">{e(CV["title"])}</div></div>'
+            f'<div class="ci">{e(CV["location"])}<br>{contact_list()}</div></div>')
+    subj = re.sub(r" ?\[[^\]]+\]", "", L.get("subject", "")).rstrip(" —")
+    sub = f'<div class="lm"><span>{e(date)}</span><b>{e(subj)}</b></div>'
+    sig = f'<div class="sg"><p>{e(close)}</p><div class="s1">Vítor Hugo</div><div class="s2">{e(CV["name"])}</div></div>'
+    return P("letter", head + sub + f'<div class="lb">{body}</div>' + sig, num=False, sid="top")
+
+
 def index_page(entries):
     li = "".join(f'<li><a href="#{sid}">{e(x)}</a><span class="pn">@@{sid}@@</span></li>' for x, sid in entries)
     return P("idx", f'<div class="kicker">Index</div><h3>Contents</h3><ol>{li}</ol>')
@@ -358,6 +385,10 @@ img.whole{{display:block;max-width:100%;height:auto;margin:0 auto}}
 .idx ol{{list-style:none;padding:0;margin:0;counter-reset:i}}.idx li{{counter-increment:i;font-size:16pt;font-weight:500;padding:4mm 0;border-top:.3mm solid #c5c1b7;display:flex;gap:8mm}}
 .idx li::before{{content:counter(i,decimal-leading-zero);font-size:9pt;color:#8f8b82;padding-top:2mm;width:10mm}}.idx li a{{flex:1}}.pn{{font-size:10pt;color:#8f8b82;padding-top:1.5mm}}.idx li a::after{{content:"  →";color:#8f8b82}}
 .end h1{{font-weight:700;font-size:44pt;margin:70mm 0 4mm;letter-spacing:-.02em}}.end .tt{{font-size:11pt;margin-bottom:12mm}}
+.letter .lh{{display:flex;justify-content:space-between;align-items:flex-end;gap:10mm;border-bottom:.3mm solid #0b0c0c;padding-bottom:5mm}}.letter h1{{font-weight:700;font-size:30pt;margin:0;letter-spacing:-.02em;line-height:1}}.letter .tt{{font-size:8.6pt;font-weight:500;color:#55534e;margin-top:2mm}}.letter .ci{{font-size:8pt;line-height:1.7;font-weight:300;text-align:right}}
+.lm{{display:flex;justify-content:space-between;gap:8mm;margin:7mm 0 6mm;font-size:8.6pt}}.lm span{{color:#8f8b82;order:2;white-space:nowrap}}.lm b{{font-weight:600;font-size:10pt}}
+.lb p,.lb li{{font-size:9.4pt;line-height:1.55;margin:0 0 3mm}}.lb ul{{margin:-1mm 0 3mm}}.lb li{{margin:0 0 1mm}}
+.sg{{margin-top:4mm}}.sg p{{font-size:9.4pt;font-weight:300;margin:0 0 4mm}}.sg .s1{{font-weight:700;font-size:15pt;letter-spacing:-.01em}}.sg .s2{{font-size:8pt;color:#8f8b82;margin-top:1mm}}
 .cr{{display:grid;grid-template-columns:32mm 1fr;padding:3.5mm 0;border-top:.3mm solid #0b0c0c;font-size:12pt;font-weight:500}}.cr span{{font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:#8f8b82;padding-top:1mm}}
 '''
 
@@ -389,6 +420,12 @@ def render(name, pages):
 
 cv_long = [cover("CV")] + [about()] + experience_pages() + skills_page(True) + recos() + [back()]
 cv_short = [about()] + experience_pages(short=True, tags=["3d", "ai", "ads", "design", "marketing", "web", "video", "photo"])[:1] + skills_page(False)
+PROFILE = yaml.safe_load(open("docs/profile.yml", encoding="utf-8")) or {}
+for L in PROFILE.get("cover_letters", []):
+    if L.get("pdf"):
+        render(L["pdf"], [letter_page(L)])
+if os.environ.get("ONLY_LETTERS"):   # quick local test of the cover letters
+    sys.exit(0)
 render("CV_Vitor_Hugo_Long.pdf", cv_long)
 render("CV_Vitor_Hugo_Short.pdf", cv_short)
 td, ai = three_d_pages(), ai_pages()

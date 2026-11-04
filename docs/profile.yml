@@ -96,3 +96,119 @@ linkedin:
     - "Behance · Bound Visuals (link)"
     - "Instagram @vitorhugo_boundvisuals (link)"
     - "O teu melhor projeto (ex.: Vivendas Cête) como imagem + link para a página do projeto"
+
+# Base cover letters (task c-brand-docs, 2026-11-04). 1st person, new positioning, facts only from docs/cv.yml.
+# [Placeholders] are replaced per opportunity in docs/kits/<id>.md. Shown in Painel → Vítor Hugo → Perfil; the two
+# "general" ones are also rendered as PDFs (Cover_Letter_EN.pdf, Carta_Apresentacao_PT.pdf) by scripts/build_portfolio.py.
+cover_letters:
+  - id: general_en
+    title: "Geral · EN (vaga 3D/ArchViz com AI)"
+    lang: en
+    pdf: Cover_Letter_EN.pdf
+    subject: "Application — 3D Artist (ArchViz & AI)"
+    text: |-
+      Dear Hiring Team,
+
+      I'm Vítor Hugo, a 3D artist from Portugal. I build architectural and product images in 3ds Max, Corona and Unreal Engine, and I finish them with AI without losing the craft. I'm writing because I'd like to bring that combination to [Company].
+
+      Since 2021 I've run Bound Visuals, my own 3D studio for architecture and product: photoreal exteriors and interiors, lookdev, lighting, post-production and cinematic shots for developers, architects and international studios, usually on tight deadlines. Every project is delivered with clean versioning and organised asset libraries, because the next change request always comes.
+
+      Since 2024 I've also worked as a Performance Ads Designer for GrowthHit, a US growth agency, producing static, motion and UGC creatives for Meta, LinkedIn, Reddit and Google. That job taught me speed, weekly iteration and decisions based on real data, not taste alone.
+
+      What makes me different is how I use AI. In my pipeline it isn't a shortcut, it's a set of controlled tools: ComfyUI workflows with ControlNet, inpainting, upscaling and artefact cleanup on top of a real 3D base, so every angle of a project stays coherent. I also produce AI video (Kling, Veo 3, Seedance) when a still isn't enough.
+
+      What I'd bring to your team:
+      • Photoreal ArchViz from model to final image, with my own post-production.
+      • AI integrated into production in a way that saves time without lowering quality.
+      • Fast, clear communication in English (C2) and a calm way of working under deadlines.
+      • Openness to relocating (French- or German-speaking Switzerland) or working remotely with international teams.
+
+      My portfolio is attached and at boundvisuals.com. I publish new work every day on Instagram (@vitorhugo_boundvisuals). I'm happy to do an art test or a short proof of concept.
+
+      Thank you for your time. I'd be glad to talk.
+
+      Best regards,
+      Vítor Hugo
+  - id: general_pt
+    title: "Geral · PT (vaga 3D/ArchViz com AI)"
+    lang: pt
+    pdf: Carta_Apresentacao_PT.pdf
+    subject: "Candidatura — Artista 3D (ArchViz e AI)"
+    text: |-
+      Caro(a) responsável pelo recrutamento,
+
+      Sou o Vítor Hugo, artista 3D em Portugal. Crio imagens de arquitetura e de produto em 3ds Max, Corona e Unreal Engine e finalizo-as com AI, sem perder o rigor do ofício. Escrevo-lhe porque gostava de trazer essa combinação para a [Empresa].
+
+      Desde 2021 dirijo a Bound Visuals, o meu estúdio de 3D para arquitetura e produto: exteriores e interiores fotorrealistas, lookdev, iluminação, pós-produção e planos cinematográficos para promotores, arquitetos e estúdios internacionais, quase sempre com prazos apertados. Entrego cada projeto com versões organizadas e bibliotecas de assets limpas, porque o próximo pedido de alteração chega sempre.
+
+      Desde 2024 trabalho também como Performance Ads Designer na GrowthHit, uma agência de crescimento dos EUA, onde produzo criativos estáticos, em movimento e UGC para Meta, LinkedIn, Reddit e Google. Esse trabalho ensinou-me rapidez, iteração semanal e decisões com base em dados reais, não só em gosto.
+
+      O que me distingue é a forma como uso a AI. No meu processo não é um atalho: é um conjunto de ferramentas controladas — workflows em ComfyUI com ControlNet, inpainting, upscaling e limpeza de artefactos sobre uma base 3D real — para que todos os ângulos de um projeto fiquem coerentes. Faço também vídeo com AI (Kling, Veo 3, Seedance) quando uma imagem não chega.
+
+      O que trago para a sua equipa:
+      • ArchViz fotorrealista do modelo à imagem final, com pós-produção minha.
+      • AI integrada na produção de forma a poupar tempo sem baixar a qualidade.
+      • Comunicação rápida e clara (português nativo, inglês C2) e calma perante prazos.
+      • Disponibilidade para trabalho remoto com equipas internacionais ou mudança para a Suíça.
+
+      O meu portfólio segue em anexo e está em boundvisuals.com. Publico trabalho novo todos os dias no Instagram (@vitorhugo_boundvisuals). Faço com gosto um teste ou uma pequena prova de conceito.
+
+      Obrigado pelo seu tempo. Terei todo o gosto em conversar.
+
+      Com os melhores cumprimentos,
+      Vítor Hugo
+  - id: ai_en
+    title: "Vaga AI (ComfyUI / AI Power User) · EN"
+    lang: en
+    subject: "Application — [Role]"
+    text: |-
+      Dear Hiring Team,
+
+      I'm applying for the [Role] position at [Company]. I'm a 3D artist who has spent the last years building AI into real production: not demos, but images and videos that go to clients and ad accounts.
+
+      My daily tools are ComfyUI (ControlNet, inpainting, enhancement, upscaling, restoration), Kling, Veo 3, Seedance, Nano Banana, FloraAI and Runway. I design workflows that are modular and repeatable, so the result doesn't depend on luck: the same input gives the same quality every time, and a team can use them without me in the room.
+
+      At GrowthHit (US, since 2024) I produce performance creatives for Meta, LinkedIn, Reddit and Google, including AI video with photoreal characters and accurate lip-sync, in weekly sprints with A/B testing and CTR/CPA learnings. At Bound Visuals, my 3D studio since 2021, I combine a real 3D base (3ds Max, Corona, Unreal) with AI post-production, keeping full coherence between angles. I've also built confidential AI–CGI workflows for brand campaigns under NDA.
+
+      What I'd bring:
+      • Production-grade ComfyUI workflows, documented and reusable.
+      • The eye of a 3D artist: lighting, materials and composition, so AI output looks right, not just impressive.
+      • Speed with control: fast prototypes, short iteration loops, controlled delivery.
+      • English C2 and experience working remotely with international teams.
+
+      Portfolio: boundvisuals.com (AI section attached). I'm glad to do a practical test with your material.
+
+      Best regards,
+      Vítor Hugo
+  - id: client_en
+    title: "Cliente (arquiteto / promotor / marca) · EN"
+    lang: en
+    subject: "3D visualisation for [Project]"
+    text: |-
+      Hi [Name],
+
+      I'm Vítor Hugo, the 3D artist behind Bound Visuals. I create architectural and product images that help projects sell before they're built: calm, believable, photoreal images where every angle belongs to the same project.
+
+      How I work: you send me drawings or a model and a few references; I send first camera views within days; we adjust in short rounds; you receive high-resolution finals ready for brochures, websites and social media. I model and render in 3ds Max and Corona and finish with AI-assisted post-production, which keeps the realism high and the timing short. When a still isn't enough, I also make short animations and AI video.
+
+      You can see recent work at boundvisuals.com and on Instagram (@vitorhugo_boundvisuals). If you have a project coming up, I'd be glad to send a proposal with options and a clear timeline.
+
+      Best regards,
+      Vítor Hugo
+      +351 913 215 170 · vitorhugobs@hotmail.com
+  - id: client_pt
+    title: "Cliente (arquiteto / promotor / marca) · PT"
+    lang: pt
+    subject: "Visualização 3D para [Projeto]"
+    text: |-
+      Olá [Nome],
+
+      Sou o Vítor Hugo, o artista 3D por trás da Bound Visuals. Crio imagens de arquitetura e de produto que ajudam a vender projetos antes de estarem construídos: imagens calmas, credíveis e fotorrealistas, em que todos os ângulos pertencem ao mesmo projeto.
+
+      Como trabalho: envia-me as plantas ou o modelo e algumas referências; em poucos dias mostro-lhe as primeiras câmaras; ajustamos em rondas curtas; recebe as imagens finais em alta resolução, prontas para brochuras, site e redes sociais. Modelo e faço o render em 3ds Max e Corona e finalizo com pós-produção apoiada em AI, o que mantém o realismo alto e os prazos curtos. Quando uma imagem não chega, faço também pequenas animações e vídeo com AI.
+
+      Pode ver trabalho recente em boundvisuals.com e no Instagram (@vitorhugo_boundvisuals). Se tiver um projeto a caminho, terei todo o gosto em enviar uma proposta com opções e prazos claros.
+
+      Com os melhores cumprimentos,
+      Vítor Hugo
+      +351 913 215 170 · vitorhugobs@hotmail.com

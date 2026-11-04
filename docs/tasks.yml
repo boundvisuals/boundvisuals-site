@@ -84,7 +84,7 @@
 - id: c-brand-docs
   owner: claude
   title: Reescrever documentos de marca, portfólio e CV em 1.ª pessoa
-  detail: "Feito: CV e portfólios (PDF no Painel), textos do site (docs/textos-1a-pessoa.md), LinkedIn, orçamento PT na 1.ª pessoa + versão EN completa (docs/orcamento-1a-pessoa.md, 04/11; 7 erros do PDF atual assinalados). Falta: carta de apresentação geral e Manual de identidade (só .ai/.pdf)."
+  detail: "Feito: CV e portfólios (PDF no Painel), textos do site (docs/textos-1a-pessoa.md), LinkedIn, orçamento PT na 1.ª pessoa + versão EN completa (docs/orcamento-1a-pessoa.md, 04/11; 7 erros do PDF atual assinalados). Cartas de apresentação base (04/11): geral EN + PT (também em PDF, Cover_Letter_EN.pdf / Carta_Apresentacao_PT.pdf), vaga AI EN, cliente EN + PT — docs/profile.yml → cover_letters, Painel → Perfil. Falta: Manual de identidade (só .ai/.pdf)."
 - id: c-portfolio-auto
   owner: claude
   title: Portfólio vivo (PDF 3D/AI/All atualizado sozinho a cada projeto publicado)
