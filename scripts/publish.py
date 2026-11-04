@@ -142,10 +142,12 @@ def main(mode):
     now = datetime.now(TZ)
     log = []
     cool = state.get("_cooldown_until")
-    if mode == "run" and cool and now < datetime.fromisoformat(cool):
-        print(f"cooling down until {cool} after an Instagram error: no API calls this run")
-        return
-    halt = False
+    feed_cooling = mode == "run" and cool and now < datetime.fromisoformat(cool)
+    scool = state.get("_cooldown_social_until")
+    social_cooling = scool and now < datetime.fromisoformat(scool)
+    halt = bool(feed_cooling)
+    if feed_cooling:
+        log.append(f"feed cooling down until {cool}")
     for n, it in enumerate(items):
         if halt:
             break
@@ -189,7 +191,7 @@ def main(mode):
             log.append(f"ERR {key}: {e}")
             halt = True
             state["_cooldown_until"] = (now + timedelta(hours=3)).isoformat()
-    if mode == "run" and not halt:
+    if mode == "run" and not social_cooling:
         for n, it in enumerate(social_items()):
             key = f"{it['date']}_{it['time']}_{it['type']}_{it['file']}"
             when = datetime.fromisoformat(f"{it['date']}T{it['time']}").replace(tzinfo=TZ)
@@ -199,13 +201,15 @@ def main(mode):
                 state[key] = {"at": now.isoformat(), "skipped": "missed window"}
                 log.append(f"SKIPPED {key}: missed window")
                 continue
+            if it["type"] == "reel" and halt:                 # captions currently refused → hold reels, keep stories going
+                continue
             try:
                 rec = publish_social(it, n)
                 rec["at"] = now.isoformat(); state[key] = rec
                 log.append(f"PUBLISHED {key}: {rec}")
             except Exception as e:
                 log.append(f"ERR {key}: {e}")
-                state["_cooldown_until"] = (now + timedelta(hours=3)).isoformat()
+                state["_cooldown_social_until"] = (now + timedelta(hours=3)).isoformat()
                 json.dump(state, open(STATE_F, "w"), indent=1)
                 break
             json.dump(state, open(STATE_F, "w"), indent=1)
