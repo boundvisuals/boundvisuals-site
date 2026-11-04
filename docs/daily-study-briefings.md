@@ -288,4 +288,191 @@ Upscale (SeedVR2). Cuidado com o ruído no céu e com banding no gradiente azul:
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais 31 ideias no dossier, calendarizadas por mim.
+## #010 · Uma cadeira, 3 materiais (quinta, 26 nov)
+
+**Ideia:** o mesmo desenho de cadeira em madeira, aço e betão. Produto puro, três personalidades. Carrossel natural.
+
+**1. Modelo 3D (20 min, desenho teu)**
+- Cadeira de linhas simples desenhada por ti: assento 45 × 45 cm a 45 cm do chão, costas inclinadas 8°, quatro pernas quadradas de 3 × 3 cm (ou uma base em consola, se preferires).
+- Três cópias lado a lado na cena para render, cada uma com o seu material: carvalho natural oleado; aço escovado com assento em couro castanho; betão afagado (versão "escultura").
+- Fundo infinito (cyclorama) em #e5e5e3, chão igual ao fundo.
+
+**2. Câmaras (3), 4:5, a mesma para cada material**
+- A: três quartos, 85 mm, altura 0,7 m (a câmara ao nível do assento).
+- B: pormenor do encontro perna-assento, 100 mm macro.
+- C: as três cadeiras juntas, frontal, 50 mm (imagem de abertura do carrossel).
+
+**3. Luz:** estúdio. Uma softbox grande em cima e ligeiramente atrás (luz de tecto suave), uma tira de luz lateral à esquerda para desenhar a aresta, sombra de contacto suave no chão.
+
+**4. Render base:** 2000 px, um render por material e câmara (7 renders). Guardar "0 - clay" e "0 - mask id" (pernas / assento / costas / chão).
+
+**5. AI (Nano Banana, um prompt por material, sempre a mesma estrutura)**
+```
+High-end furniture product photograph, same object, same geometry and camera as the reference image. A minimal contemporary chair made of [natural oiled oak with visible straight grain | brushed stainless steel frame with a cognac leather seat | smooth cast concrete with tiny air pockets], seamless off-white studio background, large soft overhead light, a thin rim light from the left tracing the edges, soft contact shadow, crisp material detail, minimal and calm, no text, no logos, no people.
+```
+Cola só uma das três opções entre parênteses retos de cada vez. Upscale (SeedVR2). O betão tem de parecer pesado e o aço não pode ter reflexos de estúdio estranhos: se aparecer, pede "soft diffuse reflections only".
+
+**6. Entrega:** 7 finais em "#010 - Cadeira 3 materiais / final". Eu monto o carrossel (C primeiro, depois A e B de cada material) e um reel com transição de material sobre a mesma cadeira.
+
+**Legenda**
+- EN: "Daily Study #010. One chair, three materials. Oak is warm, steel is precise, concrete is stubborn."
+- PT: "Daily Study #010. Uma cadeira, três materiais. O carvalho é quente, o aço é exato, o betão é teimoso."
+
+---
+
+## #011 · Casas de Portugal #1: Douro (sábado, 28 nov)
+
+**Ideia:** início da série "Casas de Portugal" (uma por região). Uma casa contemporânea nos socalcos do Douro, entre vinhas.
+
+**1. Modelo 3D (25 min)**
+- Terreno em socalcos: 3 patamares de 3 m de altura cada, muros de xisto (só caixas, a AI faz a pedra).
+- Casa de um piso, 18 × 6 m, encaixada no patamar do meio, cobertura plana ajardinada, fachada para o rio toda em vidro recuado 1,5 m (sombra profunda).
+- Paredes laterais em betão pigmentado cor de terra; um terraço em consola de 4 m sobre o patamar de baixo.
+- Linhas de vinha em proxies (cilindros finos) nos patamares; o rio é um plano ao fundo.
+
+**2. Câmaras (3), 4:5**
+- A: vista do vale, 50 mm, a casa pequena na paisagem (os socalcos são o assunto).
+- B: três quartos a partir do patamar de baixo, 28 mm, terraço em consola por cima.
+- C: interior para fora: da sala para o rio, 24 mm, caixilho a emoldurar o vale.
+
+**3. Luz:** fim de tarde de outono (vindima acabada): folhas da vinha amarelas e vermelhas, sol baixo vindo de jusante, neblina leve no rio.
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - mask id" (casa / socalcos / vinha / rio / céu).
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary single-storey house embedded in the terraced vineyards of the Douro Valley, Portugal, earth-toned pigmented concrete walls, deeply recessed full-height glazing, a cantilevered terrace over the lower terrace, dry-stone schist terrace walls, autumn vineyards in yellow, rust and red, the Douro river below with a light mist, low warm late-afternoon sun, quiet and timeless, fine film grain, no people.
+```
+Upscale (SeedVR2). Coerência: as cores da vinha têm de ser as mesmas nas 3 câmaras (se uma sair mais verde, refaz com "same autumn colours as the other views").
+
+**6. Entrega:** 3 finais em "#011 - Casas de Portugal Douro / final". Para reel: câmara A animada 5 s (LTX 2.5, neblina a mover-se devagar no rio).
+
+**Legenda**
+- EN: "Daily Study #011 · Houses of Portugal #1: Douro. A house that steps into the vineyards instead of standing on them."
+- PT: "Daily Study #011 · Casas de Portugal #1: Douro. Uma casa que entra nos socalcos em vez de se pôr em cima deles."
+
+---
+
+## #012 · Macro: a textura é a protagonista (terça, 1 dez)
+
+**Ideia:** três materiais tão perto que quase parecem abstratos. Rápido de fazer, muito forte no feed (e ótimo para stories).
+
+**1. Modelo 3D (10 min)**
+- Três planos de 40 × 40 cm, cada um com um material: granito amarelo (amaciado), madeira de pinho queimada (shou sugi ban), betão de cofragem em tábua.
+- Displacement real no material (é aqui que o 3D ganha à AI): mapa de altura forte, subdivisão alta.
+- Em cada plano, um elemento pequeno para dar escala: um parafuso, uma gota de água, uma folha seca.
+
+**2. Câmaras (3, uma por material), 4:5**
+- 100 mm macro, a 25 cm do material, inclinada 20° (para a luz rasar o relevo). Profundidade de campo curta (f/2.8), foco no elemento de escala.
+
+**3. Luz:** uma única luz dura muito rasante (quase paralela à superfície), quente 3500 K. Nada de luz de enchimento: sombras pretas a sério.
+
+**4. Render base:** 2400 px (macro pede detalhe), denoise ligado mas suave. Guardar "0 - clay".
+
+**5. AI (Nano Banana, um prompt por material)**
+```
+Extreme macro photograph, same surface, same geometry and camera as the reference image. Close-up of [honed yellow Portuguese granite with mica sparkles | charred shou sugi ban pine with deep alligator cracks | board-formed concrete with fine wood grain imprint], a single tiny [steel screw | water droplet | dry oak leaf] in sharp focus, very shallow depth of field, one hard grazing warm light revealing every relief, deep black shadows, tactile and abstract, crisp detail, no text, no people.
+```
+Upscale (SeedVR2) com cuidado: o granulado não pode ficar "pintado". Compara a 100% com o render base.
+
+**6. Entrega:** 3 finais em "#012 - Macro texturas / final". Para reel: slow zoom (eu faço, sem animação AI).
+
+**Legenda**
+- EN: "Daily Study #012. Get closer. Granite, burnt pine and concrete, where architecture starts."
+- PT: "Daily Study #012. Mais perto. Granito, pinho queimado e betão, onde a arquitetura começa."
+
+---
+
+## #013 · A mesma sala, do nascer ao pôr do sol (quinta, 3 dez)
+
+**Ideia:** uma câmara fixa, cinco horas do dia. Carrossel de 5 e um reel time-lapse feito de stills.
+
+**1. Modelo 3D (15 min)**
+- Sala 6 × 4 m, pé-direito 3 m, uma parede inteira em vidro virada a sul, outra com uma janela alta a nascente.
+- Chão em microcimento claro, paredes em cal branca, um sofá baixo, uma mesa de centro, uma planta grande (proxy).
+
+**2. Câmara (1, fixa), 4:5**
+- Do canto oposto ao vidro, 24 mm, altura 1,3 m. Não mexer na câmara entre renders.
+
+**3. Luz:** 5 renders com o sol do Corona (sistema solar com data 21 de junho, Porto): 07:00 (nascer, rosa e frio), 10:00 (luz limpa), 13:00 (sol a pique, sombras curtas), 17:00 (quente, sombras longas no chão), 20:30 (pôr do sol, laranja e depois azul).
+
+**4. Render base:** 1600 px, a mesma exposição base e depois acertada à mão em cada hora (para não ficar tudo igual). Guardar "0 - clay".
+
+**5. AI (Nano Banana, o mesmo prompt nas 5 imagens, só muda a hora)**
+```
+Photorealistic interior photograph, same room, same geometry, same camera and same sunlight direction as the reference image. A calm minimal living room with a full-height south-facing glass wall, pale microcement floor, white lime-washed walls, a low linen sofa, an oak coffee table and a large olive tree in a clay pot, [soft pink sunrise light | clean morning light | harsh midday sun with short shadows | warm late-afternoon light with long shadows | orange sunset turning into blue dusk], quiet and lived-in, fine film grain, no people.
+```
+A AI não pode mudar nada na sala entre horas: se mudar a planta ou o sofá, refaz. Se possível usa a imagem das 10:00 como referência de conteúdo nas outras.
+
+**6. Entrega:** 5 finais em "#013 - Sala dia inteiro / final" com a hora no nome ("07h00", "10h00"…). Eu faço o reel com dissolve entre horas.
+
+**Legenda**
+- EN: "Daily Study #013. One room, one camera, one day. Architecture is just a way to hold the light."
+- PT: "Daily Study #013. Uma sala, uma câmara, um dia. A arquitetura é só uma maneira de segurar a luz."
+
+---
+
+## #014 · Um café que não existe (sábado, 5 dez)
+
+**Ideia:** interior comercial imaginário: um café de bairro no Porto, pequeno, quente, com marca inventada (sem logótipos reais).
+
+**1. Modelo 3D (25 min)**
+- Loja de rua 5 × 9 m, pé-direito 3,5 m, montra para a rua com caixilho em madeira escura.
+- Balcão em pedra (lioz ou mármore rosa de Estremoz) com frente em réguas de madeira, máquina de café em caixa simples (a AI faz o resto), 3 mesas pequenas redondas e um banco corrido na parede.
+- Parede do fundo em azulejo verde (só a cor e a grelha 14 × 14 cm; a AI faz o vidrado).
+- Candeeiros pendentes em esfera opalina sobre o balcão.
+
+**2. Câmaras (3), 4:5**
+- A: da porta para dentro, 24 mm, balcão à esquerda, azulejo ao fundo.
+- B: atrás do balcão para a rua, 35 mm, montra com a rua desfocada.
+- C: pormenor de uma mesa com chávena e croissant, 85 mm.
+
+**3. Luz:** manhã de inverno: luz fria a entrar pela montra, pendentes acesos 2700 K. Contraste quente dentro / frio fora.
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - mask id" (balcão / azulejo / mobiliário / montra).
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same space, same geometry and camera as the reference image. A small neighbourhood café in Porto, Portugal, on a winter morning, a pink Estremoz marble counter with a dark oak slatted front, glossy handmade green ceramic wall tiles, round opal glass pendant lights glowing warm, small round marble tables and a built-in upholstered bench, cool daylight through a dark timber shopfront, a blurred cobbled street outside, cosy and refined, no readable text, no logos, fine film grain, no people.
+```
+Para C acrescenta: "an espresso cup and a croissant on the table, shallow depth of field". O azulejo tem de ter a mesma cor nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#014 - Cafe Porto / final". Opcional: versão com pessoas para o #015.
+
+**Legenda**
+- EN: "Daily Study #014. A café in Porto that doesn't exist (yet). Green tiles, pink marble, a cold morning outside."
+- PT: "Daily Study #014. Um café no Porto que (ainda) não existe. Azulejo verde, mármore rosa, uma manhã fria lá fora."
+
+---
+
+## #015 · Vazio vs com vida (terça, 8 dez)
+
+**Ideia:** a mesma imagem duas vezes: o espaço vazio (como a arquitetura gosta) e cheio de gente (como a vida é). Reaproveita o café do #014, por isso é rápido.
+
+**1. Modelo 3D (5 min)**
+- A mesma cena do #014. Não é preciso modelar nada: só garantir que há espaço livre para pessoas (afastar uma mesa se for preciso).
+
+**2. Câmaras (2), 4:5**
+- A: a mesma câmara A do #014.
+- B: nova, rasante ao nível das mesas, 35 mm, para as pessoas ficarem em primeiro plano desfocado.
+
+**3. Luz:** a mesma do #014, mas meio da manhã (um pouco mais de sol a entrar).
+
+**4. Render base:** 1600 px (A já existe; render só da B). Guardar "0 - clay".
+
+**5. AI (Nano Banana, 2 passos)**
+Primeiro, a versão vazia é a final do #014. Depois, por cima dela:
+```
+Same photograph, same space, same lighting and camera, unchanged architecture and furniture. Add a few natural, candid people: a barista behind the counter, two friends talking at a table, an older man reading a newspaper by the window, one person entering with a coat, slight motion blur on the person walking, nobody looking at the camera, realistic proportions and hands, everyday clothing in muted winter tones, fine film grain.
+```
+Revê mãos, caras e sombras das pessoas a 100% (é onde a AI falha). Se alguma pessoa ficar estranha, apaga-a com máscara e regenera só essa zona.
+
+**6. Entrega:** 4 finais em "#015 - Vazio vs vida / final" ("A vazio", "A vida", "B vazio", "B vida"). Eu monto o carrossel e um reel com wipe vazio → vida.
+
+**Legenda**
+- EN: "Daily Study #015. Empty for the architect, full for everyone else. Which one would you post?"
+- PT: "Daily Study #015. Vazio para o arquiteto, cheio para toda a gente. Qual publicavas?"
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #016–#021 até 6 dez).
