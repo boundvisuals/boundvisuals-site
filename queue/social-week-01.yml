@@ -5,7 +5,7 @@
   type: story
   project: vivendas-duas-igrejas
   file: root_1_-_Front___webp_+_Seedvr2_bravo-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-04'
   time: '12:30'
   type: reel
@@ -14,55 +14,55 @@
   cover: vivendas-duas-igrejas-reel-cover.jpg
   caption_en: 'Duas Igrejas in 14 seconds: pergola, garden, living room. Row houses in Penafiel.'
   caption_pt: 'Duas Igrejas em 14 segundos: pérgola, jardim e sala. Moradias em banda em Penafiel.'
-  approved: true
+  approved: false
 - date: '2026-11-04'
   time: '14:30'
   type: story
   project: vivendas-cete
   file: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-04'
   time: '18:00'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-04'
   time: '21:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_1_-_Front___webp_+_Seedvr2_bravo-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-05'
   time: 09:30
   type: story
   project: vivendas-cete
   file: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-05'
   time: '14:30'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-05'
   time: '18:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-05'
   time: '21:30'
   type: story
   project: vivendas-cete
   file: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-06'
   time: 09:30
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-06'
   time: '12:30'
   type: reel
@@ -71,55 +71,55 @@
   cover: vivendas-cete-reel-cover.jpg
   caption_en: Vivendas Cête, from the cobblestone drive to the kitchen light. Penafiel.
   caption_pt: Vivendas Cête, da calçada de entrada à luz da cozinha. Penafiel.
-  approved: true
+  approved: false
 - date: '2026-11-06'
   time: '14:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_1_-_Front___webp_+_Seedvr2_bravo-s03.jpg
-  approved: true
+  approved: false
 - date: '2026-11-06'
   time: '18:00'
   type: story
   project: vivendas-cete
   file: 5-exterior1_5-exterior1-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-06'
   time: '21:30'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s03.jpg
-  approved: true
+  approved: false
 - date: '2026-11-07'
   time: 09:30
   type: story
   project: vivendas-duas-igrejas
   file: root_2_-_Back_webp_+_Seedvr2_bravo-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-07'
   time: '14:30'
   type: story
   project: vivendas-cete
   file: 5-exterior1_5-exterior1-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-07'
   time: '18:00'
   type: story
   project: gold-village
   file: 2_-_exterior2_2-exterior2-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-07'
   time: '21:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_2_-_Back_webp_+_Seedvr2_bravo-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-08'
   time: 09:30
   type: story
   project: vivendas-cete
   file: 5-exterior1_5-exterior1-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-08'
   time: '12:30'
   type: reel
@@ -128,46 +128,46 @@
   cover: gold-village-reel-cover.jpg
   caption_en: 'Gold Village: timber, dark cladding and gardens in the air.'
   caption_pt: 'Gold Village: madeira, revestimento escuro e jardins no ar.'
-  approved: true
+  approved: false
 - date: '2026-11-08'
   time: '14:30'
   type: story
   project: gold-village
   file: 2_-_exterior2_2-exterior2-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-08'
   time: '18:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_2_-_Back_webp_+_Seedvr2_bravo-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-08'
   time: '21:30'
   type: story
   project: gold-village
   file: 2_-_exterior2_2-exterior2-s02.jpg
-  approved: true
+  approved: false
 - date: '2026-11-09'
   time: 09:30
   type: story
   project: vivendas-duas-igrejas
   file: root_3-interior1_webp-s00.jpg
-  approved: true
+  approved: false
 - date: '2026-11-09'
   time: '14:30'
   type: story
   project: gold-village
   file: 2_-_exterior2_2-exterior2-s03.jpg
-  approved: true
+  approved: false
 - date: '2026-11-09'
   time: '18:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_3-interior1_webp-s01.jpg
-  approved: true
+  approved: false
 - date: '2026-11-09'
   time: '21:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_3-interior1_webp-s02.jpg
-  approved: true
+  approved: false

@@ -171,8 +171,8 @@ def main(mode):
             continue
         last_feed = max([datetime.fromisoformat(v["at"]) for k2, v in state.items()
                          if isinstance(v, dict) and v.get("ig") and not k2.count("_") > 1] or [datetime(2000, 1, 1, tzinfo=TZ)])
-        if (now - last_feed).total_seconds() < 20 * 3600:  # late items never burst: max one feed post per ~day, schedule slides
-            log.append(f"WAIT {key}: last feed post {last_feed:%d/%m %H:%M}, next allowed 20 h later")
+        if (now - last_feed).total_seconds() < 2 * 3600:   # never two feed posts within 2 h
+            log.append(f"WAIT {key}: last feed post {last_feed:%d/%m %H:%M}, next allowed 2 h later")
             break
         rec = {"at": now.isoformat()}
         try:

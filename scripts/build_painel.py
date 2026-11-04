@@ -66,6 +66,9 @@ def social_key(it):
 
 def apply(path):
     appr = read_store(path)
+    reset = open("queue/approvals_reset.txt").read().strip() if os.path.exists("queue/approvals_reset.txt") else ""
+    if reset:   # approvals made before a reset (e.g. "desaprova tudo") are ignored
+        appr = {k: v for k, v in appr.items() if (v.get("at", "") if isinstance(v, dict) else v) >= reset}
     n = 0
     for f in sorted(glob.glob("queue/week-*.yml")) + sorted(glob.glob("queue/social-week-*.yml")):
         txt = open(f, encoding="utf-8").read()
