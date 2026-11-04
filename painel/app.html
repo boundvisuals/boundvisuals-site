@@ -114,6 +114,9 @@ nav.bottom{display:none}
 .caps div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;color:var(--warm)}
 .caps small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .clickable{cursor:pointer}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.doc{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);text-decoration:none;font-size:14px}
+.doc b{font-weight:500}.doc span{color:var(--warm);font-size:12px;white-space:nowrap}
 .nsel{background:var(--panel2);border:1px solid var(--line);color:var(--fg);border-radius:8px;font:inherit;font-size:12px;padding:3px 6px}
 .reply.me{border-left-color:var(--ok);margin-left:24px}
 .rbox{display:flex;gap:8px;margin-top:10px}.rbox .sinput{flex:1;min-width:0}
@@ -490,7 +493,8 @@ let pfF="Tudo";
 function renderPortfolio(){const P=D.portfolio||[];const projs=[...new Set(P.map(x=>x.project_title))];
   const fl=["Tudo","Exterior","Interior",...projs];const list=P.filter(x=>pfF==="Tudo"||x.cat===pfF||x.project_title===pfF);
   $("#v-portfolio").innerHTML=`<div class="seg">${fl.map(f=>`<button class="${pfF===f?"on":""}" data-pf="${esc(f)}">${esc(f)}</button>`).join("")}</div>
-  <div class="cbar" style="margin:-4px 0 12px;justify-content:space-between"><span class="sub">${list.length} imagens</span><a class="btn pri" href="files/Vitor-Hugo-Bound-Visuals-Portfolio.pdf?v=${esc(D.generated_at||"")}" target="_blank" rel="noopener">⬇ Portfólio PDF (sempre atualizado)</a></div>
+  <div class="cbar" style="margin:-4px 0 12px;justify-content:space-between"><span class="sub">${list.length} imagens</span></div>
+  <div class="card" style="margin-bottom:14px"><h2>CV e portfólios (sempre atualizados, no teu estilo)</h2><div class="docs">${[["CV_Vitor_Hugo_Long.pdf","CV · versão longa"],["CV_Vitor_Hugo_Short.pdf","CV · versão curta"],["Cover_Letter.pdf","Carta de apresentação"],["Portfolio_All.pdf","CV + Portfólio · ALL"],["Portfolio_3D_Architecture_Visualization.pdf","CV + Portfólio · 3D Architecture Visualization"],["Portfolio_AI.pdf","CV + Portfólio · AI"]].map(([f,l])=>`<a class="doc" href="files/${f}?v=${esc((D.generated_at||"").slice(0,13))}" target="_blank" rel="noopener"><b>${l}</b><span>PDF ↗</span></a>`).join("")}</div><div class="sub" style="margin-top:8px">Os projetos novos entram sozinhos nos portfólios 3D e ALL. Marketing e Design: manda-me os teus PDFs antigos dessas áreas para eu os juntar.</div></div>
   <div class="pgrid">${list.map((x,n)=>`<figure data-lg="${esc(x.lg)}" data-t="${esc(x.project_title)}"><img loading="lazy" src="${esc(x.sm)}" alt="${esc(x.project_title)}"><figcaption>${esc(x.project_title)} · ${esc(x.cat)}</figcaption></figure>`).join("")}</div>`;
   $("#v-portfolio").querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{pfF=b.dataset.pf;renderPortfolio()});
   $("#v-portfolio").querySelectorAll("figure").forEach(f=>f.onclick=()=>{$("#mbox").innerHTML=`<div class="mhead"><b>${esc(f.dataset.t)}</b><button class="x" id="mx">×</button></div><img src="${esc(f.dataset.lg)}" style="width:100%;border-radius:10px" alt="">`;$("#modal").classList.add("on");$("#mx").onclick=closeModal});

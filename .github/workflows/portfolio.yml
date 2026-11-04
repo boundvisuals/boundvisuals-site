@@ -1,9 +1,9 @@
 name: portfolio
-# Rebuilds the portfolio PDF whenever project images or the profile change; uploads it next to the Painel.
+# CV + portfolio PDFs in Vítor's InDesign style, rebuilt whenever projects/images/profile change; uploaded next to the Painel.
 on:
   push:
     branches: [main]
-    paths: ["reports/*/preview/**", "docs/profile.yml", "projects/registry.yml", "scripts/build_portfolio.py"]
+    paths: ["reports/*/preview/**", "docs/profile.yml", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml"]
   workflow_dispatch:
 concurrency: { group: portfolio, cancel-in-progress: true }
 jobs:
@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml playwright && python -m playwright install --with-deps chromium >/dev/null
-      - run: python scripts/build_portfolio.py out
+      - uses: actions/checkout@v4
+        with: { ref: assets, path: assets, sparse-checkout: "brand/cv\nbrand/portfolio-3d\nbrand/portfolio-ai\nbrand/portfolio-all\nbrand/cover-letter\nbrand/fontes" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
+      - run: python scripts/build_portfolio.py out assets
       - env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
         run: |
-          date -u +%Y-%m-%dT%H:%M:%SZ > out/portfolio-updated.txt
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/files; put -O /public_html/painel/files out/Vitor-Hugo-Bound-Visuals-Portfolio.pdf; put -O /public_html/painel/files out/portfolio-updated.txt; bye" "$H"
+          date -u +%Y-%m-%dT%H:%M:%SZ > out/updated.txt
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/files; mput -O /public_html/painel/files out/*.pdf out/updated.txt; bye" "$H"
