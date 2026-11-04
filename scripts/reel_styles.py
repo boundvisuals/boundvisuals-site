@@ -149,13 +149,13 @@ def load(src_dir, crops):
 
 # ---------- style A: editorial ----------
 def style_a(imgs, crops, title, out, tmp):
-    SH, XF = 6.5, 0.45                      # long holds, short dissolve (Vítor: images must stay longer)
+    SH, XF = 7.5, 0.45                      # long holds, short dissolve (Vítor: images must stay longer)
     shots = []
     for k, (stem, im) in enumerate(imgs[:4]):
         iw, ih = im.size; c = crops[stem][0]
-        if iw / ih > 0.75 and k % 2 == 0:  # landscape: very slow lateral travelling across the whole image
-            a = box916(iw, ih, 0.38, 0.5, 1.0); b = box916(iw, ih, 0.62, 0.5, 1.0)
-            if k % 4 == 2:
+        if iw / ih > 0.75:                 # every landscape image: slow pan across the WHOLE width (edge to edge)
+            a = box916(iw, ih, 0.0, 0.5, 1.0); b = box916(iw, ih, 1.0, 0.5, 1.0)
+            if k % 2 == 1:
                 a, b = b, a
         else:                              # gentle push-in, max 8 %, centred on the main subject
             a = box916(iw, ih, c[0], 0.5, 1.0); b = box916(iw, ih, c[0], 0.5, 0.92)
