@@ -1,7 +1,7 @@
 # Week 1 — feed posts (Instagram carousel + Facebook mirror). Times Europe/Lisbon.
 # approved: true until Vítor says so. Slides = files in reports/<project>/ig.
 # Crops redone by hand 2026-11-03 (config/crops.yml), composition-first; Vítor reviews before approving.
-- date: 2026-11-03
+- date: '2026-11-06'
   time: '19:00'
   project: vivendas-duas-igrejas
   slides:
@@ -11,7 +11,7 @@
   caption_en: Late light, open carport, a garden that grows over the pergola. Row houses in Duas Igrejas, Penafiel.
   caption_pt: Luz de fim de tarde, carport aberto e um jardim que sobe pela pérgola. Moradias em banda em Duas Igrejas, Penafiel.
   approved: true
-- date: 2026-11-04
+- date: '2026-11-07'
   time: '19:00'
   project: vivendas-cete
   slides:
@@ -21,7 +21,7 @@
   caption_en: Cobblestone, hedges and a quiet morning walk home. Vivendas Cête, Penafiel.
   caption_pt: Calçada, sebes e uma caminhada tranquila de manhã. Vivendas Cête, Penafiel.
   approved: false
-- date: 2026-11-05
+- date: '2026-11-08'
   time: '19:00'
   project: gold-village
   slides:
@@ -32,7 +32,7 @@
   caption_en: Timber, dark cladding and balconies that become gardens. Gold Village.
   caption_pt: Madeira, revestimento escuro e varandas que se tornam jardins. Gold Village.
   approved: false
-- date: 2026-11-06
+- date: '2026-11-09'
   time: '19:00'
   project: vivendas-duas-igrejas
   slides:
@@ -42,7 +42,7 @@
   caption_en: The back garden on a Sunday afternoon. This is what the plans were really about.
   caption_pt: O jardim das traseiras numa tarde de domingo. Era isto que as plantas queriam dizer.
   approved: false
-- date: 2026-11-07
+- date: '2026-11-10'
   time: '19:00'
   project: vivendas-cete
   slides:
@@ -52,7 +52,7 @@
   caption_en: Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête.
   caption_pt: Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête.
   approved: false
-- date: 2026-11-08
+- date: '2026-11-11'
   time: '19:00'
   project: gold-village
   slides:
@@ -63,7 +63,7 @@
   caption_en: First light through the curtains. A bedroom designed to slow the morning down. Gold Village.
   caption_pt: A primeira luz pelas cortinas. Um quarto pensado para abrandar a manhã. Gold Village.
   approved: false
-- date: 2026-11-09
+- date: '2026-11-12'
   time: '19:00'
   project: vivendas-duas-igrejas
   slides:
