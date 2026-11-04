@@ -268,6 +268,10 @@ def build(out):
         {"group": "Ferramentas", "title": "Meta Business Suite", "url": "https://business.facebook.com/latest/home"},
         {"group": "Ferramentas", "title": "Robôs (GitHub)", "url": "https://github.com/boundvisuals/boundvisuals-site/actions"},
         {"group": "Ferramentas", "title": "Repositório", "url": "https://github.com/boundvisuals/boundvisuals-site"},
+        {"group": "Capas dos destaques (Instagram)", "title": "Pré-visualização das 3 cores", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/reports/highlights/preview.png"},
+        {"group": "Capas dos destaques (Instagram)", "title": "Escuras (preto + ícone claro)", "url": "https://github.com/boundvisuals/boundvisuals-site/tree/main/reports/highlights/dark"},
+        {"group": "Capas dos destaques (Instagram)", "title": "Cinza quente", "url": "https://github.com/boundvisuals/boundvisuals-site/tree/main/reports/highlights/grey"},
+        {"group": "Capas dos destaques (Instagram)", "title": "Claras", "url": "https://github.com/boundvisuals/boundvisuals-site/tree/main/reports/highlights/light"},
         {"group": "Pastas MEGA", "title": "Daily Study - 2026", "url": "https://mega.nz/folder/b64hGZTD#IheHOIoJhFdssIbmGt5mUg"},
     ]
     for p in reg:

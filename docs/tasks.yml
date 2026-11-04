@@ -76,6 +76,11 @@
 - id: c-highlights
   owner: claude
   title: Capas dos destaques do Instagram
+  done: true
+  detail: "10 capas (Archviz, Product, AI, Video, Daily Study, Process, Lab, Services, Info, Clients) em 3 cores da marca, 1080×1920, em reports/highlights/ (script scripts/make_highlights.py). Links no Painel → Links."
+- id: v-highlights
+  owner: vitor
+  title: "Escolher a cor das capas dos destaques e pô-las no Instagram (ou pedir outros ícones/nomes em Ideias)"
 - id: c-brand-docs
   owner: claude
   title: Reescrever documentos de marca, portfólio e CV em 1.ª pessoa
