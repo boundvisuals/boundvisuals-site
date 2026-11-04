@@ -169,7 +169,11 @@ def project_pages(title, client, year, images, sid=""):
     imgs = list(images)
     land = [x for x in imgs if ratio(x) >= 1.15]
     first = (land or imgs)[0]
-    meta = f'<div class="meta"><h2>{e(title)}</h2><span>{("Client: " + e(client) + " · ") if client else ""}{e(year)} · 3D + AI · by Vítor Hugo</span></div>'
+    ext = sum(1 for x in imgs if ratio(x) >= 1.15)
+    kinds = "exteriors & interiors" if 0 < ext < len(imgs) else ("exteriors" if ext else "interiors")
+    facts = [("Client", client or "—"), ("Year", year), ("Images", f"{len(imgs)} · {kinds}"), ("Role", "3D modelling, lighting, render, AI finishing, post")]
+    fx = "".join(f'<div><span>{k}</span>{e(v)}</div>' for k, v in facts)
+    meta = f'<div class="meta"><h2>{e(title)}</h2><div class="facts">{fx}</div><p class="how">Built in 3ds Max + Corona, then finished with AI (ComfyUI · Nano Banana · SeedVR2 upscale) keeping full coherence between angles.</p></div>'
     out = [P("proj hero", f'<div class="kicker">Project</div>{meta}<img class="whole" src="{img(first, 2400)}">', sid=sid)]
     return out + gallery(title, [x for x in imgs if x != first])
 
@@ -216,7 +220,7 @@ def back():
 
 
 def index_page(entries):
-    li = "".join(f'<li><a href="#{sid}">{e(x)}</a></li>' for x, sid in entries)
+    li = "".join(f'<li><a href="#{sid}">{e(x)}</a><span class="pn">@@{sid}@@</span></li>' for x, sid in entries)
     return P("idx", f'<div class="kicker">Index</div><h3>Contents</h3><ol>{li}</ol>')
 
 
@@ -251,7 +255,7 @@ img.whole{{display:block;max-width:100%;height:auto;margin:0 auto}}
 .divider h1{{font-weight:700;font-size:40pt;margin:60mm 0 5mm;line-height:1.05;letter-spacing:-.02em}}.divider .dl{{font-size:11pt;max-width:150mm;color:#3c3b38}}
 .dimg{{margin-top:12mm;height:120mm;display:flex;align-items:flex-start}}.dimg img{{max-height:120mm;width:auto}}
 .proj.hero .meta h2{{font-weight:700;font-size:26pt;margin:0 0 2mm;letter-spacing:-.01em}}.meta span{{font-size:9pt;color:#55534e;letter-spacing:.03em}}.proj.hero .meta{{margin-bottom:9mm}}
-.proj.hero img.whole{{max-height:205mm;width:auto}}
+.facts{{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;border-top:.3mm solid #0b0c0c;padding-top:3mm;font-size:8.8pt;font-weight:500}}.facts span{{display:block;font-size:6.8pt;letter-spacing:.2em;text-transform:uppercase;color:#8f8b82;margin-bottom:1mm}}.how{{font-size:9pt;color:#3c3b38;margin:4mm 0 0;max-width:150mm}}.proj.hero img.whole{{max-height:175mm;width:auto}}.x{{max-height:205mm;width:auto}}
 .ptop{{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:6mm}}
 .gl{{display:flex;flex-direction:column;gap:6mm}}.gl img{{width:100%;height:auto;display:block}}
 .gp{{display:flex;gap:6mm;align-items:flex-start;justify-content:center}}.gp img{{width:calc(50% - 3mm);height:auto;max-height:240mm;object-fit:contain;display:block}}.gp.n1 img{{width:auto;max-width:100%;max-height:240mm}}
@@ -262,13 +266,25 @@ img.whole{{display:block;max-width:100%;height:auto;margin:0 auto}}
 .ba figcaption{{align-self:flex-start;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-top:2mm}}
 .prompt{{margin-top:6mm;padding:1mm 0 1mm 5mm;border-left:.6mm solid #0b0c0c;font-size:8.6pt;line-height:1.5;font-weight:300}}.prompt span{{display:block;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8f8b82;margin-bottom:1.5mm}}
 .idx ol{{list-style:none;padding:0;margin:0;counter-reset:i}}.idx li{{counter-increment:i;font-size:16pt;font-weight:500;padding:4mm 0;border-top:.3mm solid #c5c1b7;display:flex;gap:8mm}}
-.idx li::before{{content:counter(i,decimal-leading-zero);font-size:9pt;color:#8f8b82;padding-top:2mm;width:10mm}}.idx li a::after{{content:"  →";color:#8f8b82}}
+.idx li::before{{content:counter(i,decimal-leading-zero);font-size:9pt;color:#8f8b82;padding-top:2mm;width:10mm}}.idx li a{{flex:1}}.pn{{font-size:10pt;color:#8f8b82;padding-top:1.5mm}}.idx li a::after{{content:"  →";color:#8f8b82}}
 .end h1{{font-weight:700;font-size:44pt;margin:70mm 0 4mm;letter-spacing:-.02em}}.end .tt{{font-size:11pt;margin-bottom:12mm}}
 .cr{{display:grid;grid-template-columns:32mm 1fr;padding:3.5mm 0;border-top:.3mm solid #0b0c0c;font-size:12pt;font-weight:500}}.cr span{{font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:#8f8b82;padding-top:1mm}}
 '''
 
 
+def number_index(pages):
+    import re
+    out = []
+    for p in pages:
+        for sid in re.findall(r"@@([\w-]+)@@", p):
+            n = next((i + 1 for i, q in enumerate(pages) if f'id="{sid}"' in q), 0)
+            p = p.replace(f"@@{sid}@@", f"{n:02d}")
+        out.append(p)
+    return out
+
+
 def render(name, pages):
+    pages = number_index(pages)
     from playwright.sync_api import sync_playwright
     h = OUT / f"_{name}.html"
     h.write_text(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{"".join(pages)}</body></html>', encoding="utf-8")
