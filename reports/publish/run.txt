@@ -1,2 +1,3 @@
-2026-11-04T09:23:37.168558+00:00
-ERR 2026-11-03_vivendas-duas-igrejas: container 18090887180679564 ERROR: {"id": "18090887180679564", "status": "Error: Media upload has failed with error code 2207032", "status_code": "ERROR"}
+2026-11-04T09:41:16.971714+00:00
+ERR 2026-11-03_vivendas-duas-igrejas: container 18090888848679564 ERROR: {"id": "18090888848679564", "status": "Error: Media upload has failed with error code 2207032", "status_code": "ERROR"}
+PUBLISHED 2026-11-04_09:30_story_root_1_-_Front___webp_+_Seedvr2_bravo-s00.jpg: {'ig': '18113222447177359', 'at': '2026-11-04T09:41:16.971714+00:00'}
