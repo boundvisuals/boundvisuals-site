@@ -1,9 +1,10 @@
 name: portfolio
+# Also builds + deploys Vítor's personal site to /public_html/vitorhugo (boundvisuals.com/vitorhugo).
 # CV + portfolio PDFs in Vítor's InDesign style, rebuilt whenever projects/images/profile change; uploaded next to the Painel.
 on:
   push:
     branches: [main]
-    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml"]
+    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py"]
   workflow_dispatch:
 concurrency: { group: portfolio, cancel-in-progress: true }
 jobs:
@@ -14,8 +15,8 @@ jobs:
       - uses: actions/checkout@v4
         with: { ref: assets, path: assets, sparse-checkout: "brand/fontes" }
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
-      - run: python scripts/build_portfolio.py out assets
+      - run: python scripts/build_portfolio.py out assets && python scripts/build_vitorhugo.py site assets && mkdir -p site/files && cp out/*.pdf site/files/
       - env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
         run: |
           date -u +%Y-%m-%dT%H:%M:%SZ > out/updated.txt
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/files; mput -O /public_html/painel/files out/*.pdf out/updated.txt; bye" "$H"
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/files; mput -O /public_html/painel/files out/*.pdf out/updated.txt; mirror -R --only-newer --parallel=4 site /public_html/vitorhugo; bye" "$H"
