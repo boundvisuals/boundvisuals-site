@@ -475,4 +475,192 @@ Revê mãos, caras e sombras das pessoas a 100% (é onde a AI falha). Se alguma 
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #016–#021 até 6 dez).
+## #016 · Uma fachada, 4 estações (quinta, 10 dez)
+
+**Ideia:** a mesma casa e a mesma câmara em primavera, verão, outono e inverno. Carrossel de 4 e um reel com dissolve entre estações.
+
+**1. Modelo 3D (15 min)**
+- Casa de dois pisos, 12 × 8 m, volumes simples, reboco branco e base em granito (só cor, a AI faz a pedra).
+- Uma árvore de folha caduca grande à frente, a 6 m da fachada (proxy simples: tronco + copa em esfera). É ela que conta as estações.
+- Jardim com relva e um caminho de lajes até à porta; muro baixo à frente.
+
+**2. Câmara (1, fixa), 4:5**
+- Frontal ligeiramente de lado (15°), 35 mm, altura 1,6 m, a árvore no terço esquerdo. Não mexer na câmara entre renders.
+
+**3. Luz:** 4 renders com o sol do Corona em datas diferentes (Porto, 16:00): 21 abril (luz limpa), 21 julho (sol alto, sombras curtas), 21 outubro (sol baixo e quente), 21 janeiro (céu encoberto, luz fria).
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - mask id" (casa / árvore / jardim / céu).
+
+**5. AI (Nano Banana, o mesmo prompt nas 4 imagens, só muda a estação)**
+```
+Photorealistic architectural photograph, same building, same geometry, same camera and same sun direction as the reference image. A two-storey contemporary house with white lime render and a honed granite base in northern Portugal, a large deciduous tree in front, a stone slab path across the lawn, a low wall in the foreground, [spring: fresh light green leaves and small wildflowers in the grass | summer: dense dark green canopy, dry golden grass, strong sun | autumn: orange and rust leaves on the tree and on the lawn, warm low sun | winter: bare branches, wet path, frost on the grass, soft overcast light], quiet and timeless, fine film grain, no people.
+```
+A casa não pode mudar entre estações (janelas, portas, granito iguais). Usa a imagem da primavera como referência de conteúdo nas outras três.
+
+**6. Entrega:** 4 finais em "#016 - Quatro estacoes / final" com a estação no nome ("1 primavera", "2 verao"…). Eu faço o reel com dissolve.
+
+**Legenda**
+- EN: "Daily Study #016. One house, one camera, four seasons. The architecture stays, the tree does all the talking."
+- PT: "Daily Study #016. Uma casa, uma câmara, quatro estações. A arquitetura fica, a árvore é que fala."
+
+---
+
+## #017 · Packaging para uma marca portuguesa inventada (sábado, 12 dez)
+
+**Ideia:** produto e CGI: uma lata de sardinhas e uma garrafa de azeite de uma marca fictícia ("Maré Alta", inventada; antes de publicar confirmo que não é marca registada e, se for, troco o nome). Mostra que fazes produto de anúncio, não só arquitetura.
+
+**1. Modelo 3D (20 min)**
+- Lata retangular de conserva 10,5 × 7,5 × 2,5 cm com abertura de anel (a tampa meio enrolada para mostrar as sardinhas: 3 cilindros achatados chegam, a AI faz o resto).
+- Garrafa de azeite quadrada 500 ml, vidro escuro, rolha de cortiça.
+- Base: uma laje de pedra lioz e um pano de linho dobrado atrás.
+- Rótulo: só um retângulo com a cor (azul petróleo #1f4e5a e creme). O texto "MARÉ ALTA" faço eu no Photoshop por cima no fim, não peças texto à AI.
+
+**2. Câmaras (3), 4:5**
+- A: herói, 85 mm, a lata aberta à frente e a garrafa atrás, ligeiramente de cima (15°).
+- B: top-down 90°, 50 mm, composição flat lay com pão, limão e sal grosso.
+- C: macro da lata aberta, 100 mm, f/2.8, foco no brilho do azeite nas sardinhas.
+
+**3. Luz:** estúdio com luz de janela grande à esquerda (softbox 2 × 2 m), um contraluz fino para o brilho do vidro e do metal, fundo cor de areia.
+
+**4. Render base:** 2000 px. Guardar "0 - clay" e "0 - mask id" (lata / garrafa / rótulos / pedra / adereços).
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Premium product advertising photograph, same objects, same geometry and camera as the reference image. A rectangular Portuguese sardine tin with the ring-pull lid half rolled back revealing glossy sardines in golden olive oil, a square dark-glass olive oil bottle with a natural cork stopper, plain petrol-blue and cream paper labels with no readable text, on a honed pale limestone slab with folded natural linen behind, soft large window light from the left, a thin rim light catching the glass and the tin, sand-coloured background, rich and appetising, crisp detail, no text, no logos, no people.
+```
+Para B acrescenta: "flat lay from above with a slice of rustic bread, half a lemon and coarse sea salt". Os rótulos ficam lisos; o logótipo entra em pós (3 imagens com o mesmo tipo de letra, eu faço o layout se me mandares as finais).
+
+**6. Entrega:** 3 finais em "#017 - Packaging Mare Alta / final" (sem texto) + eu ponho o nome da marca. Para reel: câmara A em slow push-in (LTX 2.5, 5 s, só o reflexo do azeite a mexer).
+
+**Legenda**
+- EN: "Daily Study #017. A Portuguese brand that doesn't exist: Maré Alta. Sardines, olive oil and limestone, product CGI from scratch."
+- PT: "Daily Study #017. Uma marca portuguesa que não existe: Maré Alta. Sardinhas, azeite e lioz, CGI de produto do zero."
+
+---
+
+## #018 · Minimalismo extremo: um espaço, 3 elementos (terça, 15 dez)
+
+**Ideia:** um quarto vazio com só três coisas lá dentro. Rápido de modelar, muito forte no feed: a luz e a proporção fazem tudo.
+
+**1. Modelo 3D (10 min)**
+- Volume 5 × 5 m, pé-direito 4 m, paredes e chão no mesmo material (betão claro afagado).
+- Elemento 1: uma abertura vertical estreita (0,6 × 3,5 m) numa parede.
+- Elemento 2: um banco em pedra maciça (2 × 0,45 × 0,45 m) encostado à parede oposta.
+- Elemento 3: uma oliveira pequena num rasgo no chão (proxy: tronco + copa).
+
+**2. Câmaras (2), 4:5**
+- A: frontal simétrica, 28 mm, altura 1,2 m, a abertura ao centro.
+- B: de lado, 50 mm, a faixa de sol a cair sobre o banco.
+
+**3. Luz:** só o sol a entrar pela abertura (inverno, 11:00): uma faixa de luz dura no chão e no banco, o resto em luz rebatida suave. Nada de luzes artificiais.
+
+**4. Render base:** 1600 px, com o GI a sério (é a luz rebatida que faz a imagem). Guardar "0 - clay".
+
+**5. AI (Nano Banana, o mesmo prompt nas 2 câmaras)**
+```
+Photorealistic architectural photograph, same space, same geometry and camera as the reference image. An extreme minimalist room entirely in pale smooth concrete, one tall narrow vertical opening letting in a single blade of hard winter sunlight, a solid monolithic stone bench, a small olive tree growing from a slot in the floor, soft bounced light filling the rest of the room, silent and contemplative, subtle concrete texture and pores, fine film grain, no people, no other objects.
+```
+Se a AI acrescentar objetos (vasos, livros, quadros), refaz com "nothing else in the room". A faixa de sol tem de ficar no mesmo sítio que no render.
+
+**6. Entrega:** 2 finais em "#018 - Tres elementos / final". Para reel: câmara A animada 5 s (LTX 2.5, poeira a flutuar na faixa de sol).
+
+**Legenda**
+- EN: "Daily Study #018. Three things: a slot of light, a stone bench, a tree. Nothing else needed."
+- PT: "Daily Study #018. Três coisas: uma fenda de luz, um banco de pedra, uma árvore. Não é preciso mais nada."
+
+---
+
+## #019 · Exploded view: uma lanterna em peças (quinta, 17 dez)
+
+**Ideia:** produto a flutuar desmontado peça a peça (exploded view), o tipo de imagem onde o 3D ganha à AI. Uma lanterna de mesa desenhada por ti (madeira, vidro, latão), boa para a época.
+
+**1. Modelo 3D (25 min)**
+- Lanterna 12 × 12 × 28 cm: base em carvalho, cilindro de vidro, suporte da vela em latão, tampa em latão com pega em couro, uma vela de cera.
+- Duas versões da mesma cena: montada, e explodida na vertical (cada peça separada 4–6 cm, alinhadas no mesmo eixo, ligeira rotação de 5° em 2 peças para dar vida).
+- Fundo infinito cor de pedra quente.
+
+**2. Câmaras (2), 4:5**
+- A: a 3/4, 70 mm, a lanterna montada com a vela acesa.
+- B: a mesma câmara, a versão explodida (vela apagada, para se verem as peças).
+
+**3. Luz:** estúdio, softbox grande por cima e à direita, um contraluz para o contorno do vidro, sombra suave no chão. Em A, a chama da vela a 1800 K como luz extra.
+
+**4. Render base:** 2000 px. Guardar "0 - clay" e "0 - mask id" (madeira / vidro / latão / couro / vela). Para o reel, guarda também uma animação simples em 3ds Max (120 frames, montada → explodida) se tiveres tempo; senão eu faço com as duas imagens.
+
+**5. AI (Nano Banana, o mesmo prompt nas 2 câmaras, depois só o que muda)**
+```
+Premium product photograph, same objects, same geometry and camera as the reference image. A handcrafted table lantern with a solid oak base, a clear glass cylinder, a brushed brass candle holder and brass lid with a stitched leather handle, a natural beeswax candle, on a seamless warm stone-coloured background, large soft key light from above right, a thin rim light outlining the glass, soft contact shadows, crisp materials and fine wood grain, no text, no logos, no people.
+```
+A: acrescenta "the candle is lit, warm flame glow on the glass and brass". B: acrescenta "exploded view, every part floating apart along the same vertical axis, perfectly aligned, the candle unlit". A AI não pode juntar nem inventar peças: se o fizer, usa o render base com mask id e aplica só nos materiais.
+
+**6. Entrega:** 2 finais em "#019 - Lanterna exploded / final" ("A montada", "B explodida") + "anim" se fizeres a animação. Eu monto o reel montada → explodida → montada.
+
+**Legenda**
+- EN: "Daily Study #019. Every object is a small building. One lantern, taken apart: oak, glass, brass and leather."
+- PT: "Daily Study #019. Cada objeto é um pequeno edifício. Uma lanterna desmontada: carvalho, vidro, latão e couro."
+
+---
+
+## #020 · Casas de Portugal #2: Serra da Estrela (sábado, 19 dez)
+
+**Ideia:** segunda casa da série. Um refúgio de montanha em granito, noite de inverno com neve, janelas acesas. A imagem de Natal do feed, sem clichés.
+
+**1. Modelo 3D (25 min)**
+- Terreno inclinado com rochas grandes (esferas e caixas deformadas, a AI faz o granito).
+- Casa de um piso e meio, 14 × 7 m, cobertura de duas águas muito inclinada (45°) em zinco escuro, paredes em granito grosso, um volume em vidro de canto virado ao vale.
+- Uma chaminé em granito, um alpendre em madeira com lenha empilhada.
+- Pinheiros (proxies) atrás e de lado; neve: deixa os planos horizontais brancos no render (a AI completa).
+
+**2. Câmaras (3), 4:5**
+- A: de longe, 50 mm, a casa pequena na encosta, céu de hora azul.
+- B: três quartos a 15 m, 28 mm, o canto envidraçado aceso a dominar.
+- C: interior para fora: da lareira para o canto envidraçado, 24 mm, neve lá fora.
+
+**3. Luz:** hora azul (20 min depois do pôr do sol): céu azul profundo, interior a 2700 K, lareira acesa (luz laranja extra no interior). Contraste forte quente/frio.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (casa / vidro / terreno / árvores / céu) e "0 - render base" (vai servir para o #021).
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary mountain refuge in Serra da Estrela, Portugal, thick rough-hewn grey granite walls, a steep dark zinc gable roof, a large corner glass volume glowing with warm interior light and a lit fireplace, a timber porch with stacked firewood, fresh snow on the ground, on the roof and on the pine trees, large granite boulders, deep blue hour sky, cold blue snow against warm golden windows, calm and silent, fine film grain, no people.
+```
+Para C acrescenta: "interior view from the fireplace towards the corner glazing, snowy landscape outside". A neve tem de ter a mesma quantidade nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#020 - Casas de Portugal Serra da Estrela / final". Para reel: câmara B animada 5 s (LTX 2.5, neve a cair devagar, fumo da chaminé).
+
+**Legenda**
+- EN: "Daily Study #020 · Houses of Portugal #2: Serra da Estrela. Granite outside, fire inside, snow on everything."
+- PT: "Daily Study #020 · Casas de Portugal #2: Serra da Estrela. Granito por fora, lume por dentro, neve em tudo."
+
+---
+
+## #021 · O mesmo prompt, 3 ferramentas (terça, 22 dez)
+
+**Ideia:** conteúdo de processo, muito partilhável: o mesmo render base do #020 (câmara B) e o mesmo prompt em Nano Banana, FloraAI e ComfyUI. Sem modelar nada: rápido para a semana do Natal.
+
+**1. Modelo 3D (0 min)**
+- Usa o "0 - render base" da câmara B do #020. Não mexer no render.
+
+**2. Imagens (4), 4:5**
+- 1: render base (sem AI).
+- 2: Nano Banana. 3: FloraAI (o modelo de imagem que usas lá por defeito). 4: ComfyUI (o teu workflow habitual com ControlNet de profundidade/linhas a partir do render).
+
+**3. Luz:** a do #020, não muda.
+
+**4. Regras do teste:** o mesmo prompt exatamente, a mesma resolução de saída, sem retoques no Photoshop, sem upscale (para ser justo). Anota o tempo e o número de tentativas de cada ferramenta (vai para a legenda).
+
+**5. AI (o mesmo prompt nas 3 ferramentas)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary mountain refuge in Serra da Estrela, Portugal, thick rough-hewn grey granite walls, a steep dark zinc gable roof, a large corner glass volume glowing with warm interior light, fresh snow on the ground, on the roof and on the pine trees, deep blue hour sky, cold blue snow against warm golden windows, fine film grain, no people.
+```
+Escolhe tu a vencedora e diz porquê numa linha (fidelidade à geometria, materiais, luz). É essa opinião que faz o post.
+
+**6. Entrega:** 4 imagens em "#021 - Mesmo prompt 3 ferramentas / final" ("1 render", "2 nano banana", "3 flora", "4 comfyui") + uma linha num ficheiro "notas.txt" com tempos, tentativas e a vencedora. Eu faço o carrossel com o nome da ferramenta em cada slide e um reel com wipe entre as 3.
+
+**Legenda**
+- EN: "Daily Study #021. Same render, same prompt, three tools: Nano Banana, FloraAI, ComfyUI. My pick is in the last slide. Yours?"
+- PT: "Daily Study #021. O mesmo render, o mesmo prompt, três ferramentas: Nano Banana, FloraAI, ComfyUI. A minha escolha está no último slide. E a tua?"
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #022–#027, 24 dez–5 jan, até 20 dez).
