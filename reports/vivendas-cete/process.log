@@ -1,7 +1,13 @@
 ok  ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp  6880x3840  ig:carousel  11.4MB -> 11.4MB lossless  crops:manual
 ok  2-interior2.png  4640x5760  ig:single  61.1MB -> 28.5MB lossless  crops:AUTO (unreviewed)
-ok  3-interior3.png  6880x3840  ig:carousel  54.1MB -> 24.4MB lossless  crops:AUTO (unreviewed)
+ok  2-interior2.webp  4640x5760  ig:single  2.0MB -> 2.0MB lossless  crops:AUTO (unreviewed)
+ok  3-interior3.webp  6880x3840  ig:carousel  0.8MB -> 0.8MB lossless  crops:AUTO (unreviewed)
+ok  4-interior4.webp  4640x5760  ig:single  2.5MB -> 2.5MB lossless  crops:AUTO (unreviewed)
+ok  5-exterior1.webp  6880x3840  ig:carousel  2.2MB -> 2.2MB lossless  crops:AUTO (unreviewed)
+ok  6-exterior2.webp  6880x3840  ig:carousel  1.7MB -> 1.7MB lossless  crops:AUTO (unreviewed)
+ok  ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp  6880x3840  ig:carousel  2.4MB -> 2.4MB lossless  crops:AUTO (unreviewed)
+ok  3-interior3.png  6880x3840  ig:carousel  54.1MB -> 24.4MB lossless  crops:manual
 ok  4-interior4.png  4640x5760  ig:single  64.6MB -> 30.4MB lossless  crops:AUTO (unreviewed)
 ok  5-exterior1.png  6880x3840  ig:carousel  59.6MB -> 29.1MB lossless  crops:manual
-ok  6-exterior2.png  6880x3840  ig:carousel  59.6MB -> 27.8MB lossless  crops:AUTO (unreviewed)
-6 image(s) processed for vivendas-cete
+ok  6-exterior2.png  6880x3840  ig:carousel  59.6MB -> 27.8MB lossless  crops:manual
+12 image(s) processed for vivendas-cete

@@ -50,6 +50,156 @@
       "full_bytes": 28488980
     },
     {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/2-interior2.webp",
+      "sha1": "752986e57d5de08a3d60b80886edf1ef583d7173",
+      "size": [
+        4640,
+        5760
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_2-interior2.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 1995760,
+      "full_bytes": 1995760
+    },
+    {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/3-interior3.webp",
+      "sha1": "3b3d2cb2f64efc022b6c42e8d729fb8be6b2d2e7",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_3-interior3.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-01.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-02.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-03.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 785390,
+      "full_bytes": 785390
+    },
+    {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/4-interior4.webp",
+      "sha1": "412f53d6159630bb503f5e07bde09880a6cfe225",
+      "size": [
+        4640,
+        5760
+      ],
+      "orientation": "portrait",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_4-interior4.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2516876,
+      "full_bytes": 2516876
+    },
+    {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/5-exterior1.webp",
+      "sha1": "830a9ad89453a86f4d49e824309e6db4a7277c40",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-01.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-02.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-03.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2223418,
+      "full_bytes": 2223418
+    },
+    {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/6-exterior2.webp",
+      "sha1": "8af9a83f05ded69cfc02fe23217d1487156632e4",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-01.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-02.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-03.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 1661164,
+      "full_bytes": 1661164
+    },
+    {
+      "source": "2026_-_FINAIS_edit_for_bound_visuals/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
+      "sha1": "c823eebe04a187eaac4e3577f1a231a0646249b8",
+      "size": [
+        6880,
+        3840
+      ],
+      "orientation": "landscape",
+      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
+      "lossless_verified": true,
+      "web_grid": [
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-800.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-1600.webp",
+        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-2400.webp"
+      ],
+      "ig_slides": [
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03.jpg",
+        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2378240,
+      "full_bytes": 2378240
+    },
+    {
       "source": "3-interior3/3-interior3.png",
       "sha1": "707f2713a0664d4aeb347e85863989289922b8a6",
       "size": [
@@ -71,7 +221,7 @@
         "out/ig/3-interior3_3-interior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
+      "crops": "manual",
       "source_bytes": 54142951,
       "full_bytes": 24382138
     },
@@ -145,7 +295,7 @@
         "out/ig/6-exterior2_6-exterior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
+      "crops": "manual",
       "source_bytes": 59615254,
       "full_bytes": 27765562
     }
