@@ -663,4 +663,191 @@ Escolhe tu a vencedora e diz porquê numa linha (fidelidade à geometria, materi
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #022–#027, 24 dez–5 jan, até 20 dez).
+## #022 · Desafio 15 minutos: a lanterna na janela (quinta, 24 dez)
+
+**Ideia:** véspera de Natal, por isso o mais rápido de todos: 15 minutos de 3D com cronómetro, reaproveitando a lanterna do #019. Uma imagem calma, sem árvores de Natal nem clichés. O cronómetro faz parte do post.
+
+**1. Modelo 3D (15 min, cronometrado)**
+- Importa a lanterna montada do #019 (vela acesa).
+- Um parapeito largo em pedra (caixa 1,2 × 0,4 m) e uma janela de guilhotina em madeira pintada (só caixilho + vidro), parede grossa à volta (60 cm, é uma casa antiga).
+- Lá fora: um plano e 3–4 proxies de árvores; a AI faz a noite e a neblina.
+- Grava o ecrã dos 15 minutos (OBS ou Win+Alt+R) para o reel acelerado.
+
+**2. Câmara (1), 4:5**
+- A: de dentro, ao nível do parapeito, 50 mm, lanterna no terço da direita, janela a ocupar o fundo.
+
+**3. Luz:** só a vela (1800 K) dentro e uma luz azul muito fraca de fora (noite de inverno, 8000 K). Deixa o quarto quase escuro: o contraste é a imagem.
+
+**4. Render base:** 1600 px, sem perder tempo com ruído (a AI limpa). Guardar "0 - clay".
+
+**5. AI (Nano Banana)**
+```
+Photorealistic interior photograph, same objects, same geometry and camera as the reference image. A handcrafted oak, glass and brass lantern with a lit beeswax candle on the deep stone windowsill of an old Portuguese house, a painted timber sash window, outside a quiet winter night with soft mist and bare trees, cold blue darkness outside against the warm candle glow on the glass, the stone and the thick wall, still and silent, fine film grain, no text, no people.
+```
+Se a AI mudar a lanterna, usa o mask id do #019 e aplica só no fundo e na pedra.
+
+**6. Entrega:** 1 final em "#022 - Desafio 15 min lanterna / final" + a gravação de ecrã em "video". Eu faço o reel: 15 minutos em 12 segundos → imagem final, com um contador no canto.
+
+**Legenda**
+- EN: "Daily Study #022 · 15-minute challenge. One lantern, one window, one quiet night. Merry Christmas."
+- PT: "Daily Study #022 · Desafio de 15 minutos. Uma lanterna, uma janela, uma noite calma. Feliz Natal."
+
+---
+
+## #023 · Antes e agora: um render meu antigo, refeito hoje (sábado, 26 dez)
+
+**Ideia:** pilar "Antes e agora". Escolhes um render teu antigo (2019–2021, o que te fizer mais impressão hoje) e refazes a mesma câmara com o teu processo atual: 3D + AI. Zero modelação nova, ótimo para a semana do Natal. Mostra quanto evoluíste sem dizer nada.
+
+**1. Modelo 3D (10 min)**
+- Abre a cena antiga. Não mexas na geometria nem na câmara (é a regra do jogo).
+- Só atualiza o que é técnico: Corona atual, exposição, gama, mapas em falta. Nada de novos objetos.
+- Se a cena já não abrir, usa a imagem antiga diretamente como referência (passo 5).
+
+**2. Câmara (1), 4:5 ou o formato original**
+- A mesma câmara do render antigo, exatamente. Se o original não for 4:5, eu faço o carrossel com a imagem inteira em branco.
+
+**3. Luz:** decide tu o que mudarias hoje (normalmente: luz mais suave, menos saturação, sol mais baixo). Anota numa linha o que mudaste: entra na legenda.
+
+**4. Render base:** 1600 px. Guardar a imagem antiga em "0 - antes" (com o ano no nome) e o render novo em "0 - render base".
+
+**5. AI (Nano Banana, sobre o render novo)**
+```
+Photorealistic architectural photograph, same building, same geometry, same camera and composition as the reference image. Keep every wall, opening and object exactly where it is. Refine materials to be physically accurate and subtly imperfect, soft natural light with gentle falloff, believable vegetation, calm muted colour palette, natural exposure without crushed blacks or blown highlights, fine film grain, no added objects, no people.
+```
+Ajusta 2–3 palavras ao teu projeto (materiais, hora do dia). A composição tem de bater certo com a antiga ao píxel: é isso que faz o slider funcionar.
+
+**6. Entrega:** em "#023 - Antes e agora / final": "1 antes AAAA" e "2 agora 2026" + uma linha em "notas.txt" (ano, o que mudaste). Eu faço o carrossel antes → agora e um reel com slider a varrer da esquerda para a direita.
+
+**Legenda**
+- EN: "Daily Study #023 · Then vs now. Same scene, same camera, [YEAR] vs 2026. What changed is everything I learned in between."
+- PT: "Daily Study #023 · Antes e agora. A mesma cena, a mesma câmara, [ANO] vs 2026. O que mudou é tudo o que aprendi entretanto."
+
+---
+
+## #024 · Do esboço à imagem (terça, 29 dez)
+
+**Ideia:** processo puro, muito partilhável: um esboço à mão de 2 minutos → volumetria 3D em 15 minutos → imagem final. Carrossel de 3 (esboço, clay, final) que mostra que a ideia vem antes da ferramenta.
+
+**1. Esboço (2 min)**
+- Papel e caneta (ou iPad). Uma casa pequena num lote inclinado: um volume em consola, uma parede de pedra a segurar o terreno, um pátio.
+- Fotografa o esboço de cima, com luz do dia, sem sombras (vai ser o slide 1).
+
+**2. Modelo 3D (15 min)**
+- Segue o esboço à letra, mesmo o que estiver "errado": a graça é a fidelidade.
+- Volume em consola 10 × 5 m (betão ou madeira, tu escolhes), muro de pedra 1,2 m de altura, pátio com uma árvore (proxy), terreno com um declive simples.
+
+**3. Câmara (1), 4:5**
+- A mesma perspetiva do esboço (põe o esboço como fundo da viewport e acerta a câmara por cima). 28–35 mm.
+
+**4. Luz:** fim de tarde de inverno, sol baixo de lado (raking light) para o muro de pedra ganhar textura.
+
+**5. Render base:** 1600 px. Guardar "0 - esboço" (foto), "0 - clay" e "0 - render base".
+
+**6. AI (Nano Banana)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small contemporary house on a sloping site in northern Portugal, a cantilevered [board-formed concrete | dark charred timber] volume over a dry-stone granite retaining wall, a small gravel courtyard with a single cork oak, low winter sun grazing the stone wall and casting long shadows, dry winter grass, soft pale sky, calm and precise, fine film grain, no people.
+```
+Escolhe um dos materiais entre [ ]. A AI não pode tirar a consola nem baixar o muro: é o que liga a imagem ao esboço.
+
+**7. Entrega:** em "#024 - Esboço à imagem / final": "1 esboço", "2 clay", "3 final". Eu monto o carrossel e um reel esboço → clay → final com dissolve (8 s).
+
+**Legenda**
+- EN: "Daily Study #024. Two minutes of pen, fifteen of 3D, then light. The idea always comes before the tool."
+- PT: "Daily Study #024. Dois minutos de caneta, quinze de 3D e depois luz. A ideia vem sempre antes da ferramenta."
+
+---
+
+## #025 · Último do ano: terraço sobre o Porto (quinta, 31 dez)
+
+**Ideia:** a última imagem de 2026. Um terraço de cobertura no Porto, noite de passagem de ano, fogo de artifício ao longe sobre o rio. Cena noturna, simples de modelar: o céu e a cidade são da AI.
+
+**1. Modelo 3D (15 min)**
+- Terraço 8 × 5 m: deck em madeira, guarda em vidro com corrimão fino em latão, um banco corrido em betão com almofadas, 2 copos e uma garrafa num tabuleiro (caixas e cilindros chegam).
+- Parede de fundo do volume de acesso em reboco claro com uma porta de vidro acesa.
+- A cidade: só um plano lá em baixo e uns blocos ao longe para a perspetiva (a AI faz o Porto).
+
+**2. Câmaras (2), 4:5**
+- A: das costas do banco para o rio, 28 mm, guarda de vidro a atravessar a imagem, fogo de artifício no terço superior.
+- B: pormenor do tabuleiro com os copos e as luzes da cidade desfocadas atrás, 85 mm.
+
+**3. Luz:** noite: céu azul-escuro (não preto), luz quente da porta de vidro (2700 K), uma fita LED escondida debaixo do banco. O fogo de artifício é luz da AI, não modeles.
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - mask id" (terraço / vidro / céu / cidade).
+
+**5. AI (Nano Banana, o mesmo prompt nas 2 câmaras)**
+```
+Photorealistic architectural night photograph, same space, same geometry and camera as the reference image. A rooftop terrace in Porto, Portugal, on New Year's Eve, an oak deck, a frameless glass balustrade with a thin brass handrail, a built-in concrete bench with linen cushions, a tray with two champagne glasses and a bottle, warm light from a glass door behind, the old city of Porto and the Douro river below with glowing streetlights, distant golden fireworks over the river reflected in the water, deep navy blue sky, festive but calm, fine film grain, no readable text, no people.
+```
+Para B acrescenta: "close-up of the tray and glasses, city lights as soft bokeh behind". O fogo de artifício tem de estar do mesmo lado nas 2 câmaras.
+
+**6. Entrega:** 2 finais em "#025 - Terraço passagem de ano / final". Para reel: câmara A animada 5 s (LTX 2.5, fogo de artifício a rebentar devagar, reflexo no rio).
+
+**Legenda**
+- EN: "Daily Study #025. Last image of 2026. Thank you for watching all year. See you on the other side."
+- PT: "Daily Study #025. A última imagem de 2026. Obrigado por acompanharem o ano todo. Vemo-nos do outro lado."
+
+---
+
+## #026 · Uma divisão, 4 estilos (sábado, 2 jan)
+
+**Ideia:** o primeiro do ano. A mesma sala, a mesma câmara, a mesma luz, e quatro estilos: suíço, japandi, brutalista, mediterrânico. Carrossel de 4 + pergunta aos seguidores (gera comentários).
+
+**1. Modelo 3D (15 min)**
+- Sala 5 × 4 m, pé-direito 2,8 m, uma janela grande a toda a largura de uma parede, uma porta.
+- Só volumes neutros: um sofá (caixa), uma mesa baixa, uma estante baixa, um candeeiro de pé. Tudo em material cinzento: os estilos são da AI.
+
+**2. Câmara (1, fixa), 4:5**
+- Do canto, 24 mm, altura 1,2 m, janela à esquerda. Não mexer entre versões.
+
+**3. Luz:** manhã de inverno, luz suave pela janela, sem sol direto (para os 4 estilos serem comparáveis).
+
+**4. Render base:** 1600 px, clay. Guardar "0 - clay" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt base, só muda a parte entre [ ])**
+```
+Photorealistic interior photograph, same room, same geometry, same furniture positions, same camera and same soft window light as the reference image. A calm living room in [Swiss minimalist style: white oak, pale lime plaster, light grey linen, precise details | Japandi style: light ash wood, paper lamp, warm beige linen, low furniture, a bonsai | brutalist style: board-formed concrete walls, dark walnut, black leather, a sculptural stone lamp | Mediterranean style: whitewashed curved plaster, terracotta floor, rattan, olive branches in a clay vase], soft winter morning light, quiet and lived-in, fine film grain, no people.
+```
+Regra: o sofá, a mesa, a estante e o candeeiro têm de ficar no mesmo sítio e tamanho nas 4. Se a AI mexer, usa o render base + mask id dos móveis.
+
+**6. Entrega:** 4 finais em "#026 - Uma divisão 4 estilos / final" ("1 suico", "2 japandi", "3 brutalista", "4 mediterranico"). Eu faço o carrossel com o nome do estilo em cada slide e um reel com wipe entre os 4.
+
+**Legenda**
+- EN: "Daily Study #026. One room, one camera, four styles: Swiss, Japandi, brutalist, Mediterranean. Which one would you live in? 1, 2, 3 or 4?"
+- PT: "Daily Study #026. Uma divisão, uma câmara, quatro estilos: suíço, japandi, brutalista, mediterrânico. Em qual vivias? 1, 2, 3 ou 4?"
+
+---
+
+## #027 · Casas de Portugal #3: Alentejo (terça, 5 jan)
+
+**Ideia:** terceira casa da série. Um monte alentejano contemporâneo, cal branca e barras azuis, campos verdes de inverno, sobreiros, luz baixa e limpa de janeiro. Depois do Douro (terra) e da Serra (neve), o Alentejo (luz).
+
+**1. Modelo 3D (20 min)**
+- Terreno quase plano com uma ondulação suave.
+- Casa térrea comprida 30 × 6 m, cobertura de duas águas baixa em telha (só o volume), paredes grossas (50 cm), poucos vãos pequenos e fundos, uma chaminé alentejana grande e quadrada.
+- Um alpendre em consola de betão numa ponta, virado a sul, e um tanque de rega retangular (piscina) à frente.
+- Sobreiros (proxies) espalhados, 3–4.
+
+**2. Câmaras (3), 4:5**
+- A: muito de longe, 85 mm, a casa como uma linha branca na paisagem, céu a ocupar metade.
+- B: três quartos a 20 m, 35 mm, alpendre e tanque em primeiro plano.
+- C: debaixo do alpendre para a planície, 24 mm, sombra forte no chão.
+
+**3. Luz:** meio da manhã de janeiro, sol baixo e limpo, céu azul com poucas nuvens altas. Sombras longas e nítidas; a cal tem de "queimar" um pouco sem perder textura.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (casa / tanque / terreno / árvores / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary Alentejo farmhouse in southern Portugal, a long single-storey volume with thick whitewashed walls and a faded blue painted base, a low terracotta tile gable roof, a large square Alentejo chimney, small deep-set windows, a cantilevered concrete porch and a rectangular water tank reflecting the sky, gently rolling bright green winter fields, scattered cork oaks with dark trunks, low clear January sun with long crisp shadows, pale blue sky with a few high clouds, quiet and timeless, fine film grain, no people.
+```
+Para C acrescenta: "view from under the porch towards the plains, strong shadow on the floor". A barra azul e a chaminé têm de ser iguais nas 3.
+
+**6. Entrega:** 3 finais em "#027 - Casas de Portugal Alentejo / final". Para reel: câmara A em zoom lento (eu faço) ou câmara B animada 5 s (LTX 2.5, reflexo da água e nuvens a passar).
+
+**Legenda**
+- EN: "Daily Study #027 · Houses of Portugal #3: Alentejo. Lime, light and a lot of horizon."
+- PT: "Daily Study #027 · Casas de Portugal #3: Alentejo. Cal, luz e muito horizonte."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #028–#033, 7–19 jan, até 3 jan).
