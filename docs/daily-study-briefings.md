@@ -1230,4 +1230,194 @@ Regra: se o vídeo deformar a porta ou as paredes, encurta para 5 s ou usa o cla
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #040–#045, 4–16 fev, até 31 jan).
+## #040 · Desafio de cor #2: a cor que vocês escolheram (quinta, 4 fev)
+
+**Ideia:** cumprir a promessa do #033 ("a cor do próximo mês é vossa"). Usa a cor mais pedida nos comentários do #033; se não houver votos claros, usa verde-salva (sage). Mesma regra do #1: uma divisão, uma cor em tudo, um raio de sol.
+
+**1. Modelo 3D (15 min)**
+- Reaproveita a divisão do #033 (mesmas paredes, mesma janela) → a série fica comparável lado a lado.
+- Troca só os objetos: uma chaise longue simples (caixas com Chamfer), uma mesa baixa redonda, uma jarra.
+- Paredes, chão, teto e móveis: tudo na mesma cor (variar só o brilho: parede mate, móvel acetinado, jarra brilhante).
+
+**2. Câmaras (3), 4:5**
+- A: geral, 28 mm, frontal, simétrica (a mesma do #033, para o "lado a lado").
+- B: a 45°, 40 mm, a chaise com o raio de sol a cair no assento.
+- C: pormenor da jarra e da sombra na parede, 85 mm.
+
+**3. Luz:** sol baixo (~12°) por uma janela pequena, a desenhar uma mancha nítida na parede; resto da sala em luz refletida da própria cor (é isso que dá o "banho" de cor).
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (paredes / chão / móveis / jarra) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras; troca SAGE GREEN pela cor escolhida)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A monochrome room entirely in SAGE GREEN: walls, floor, ceiling and furniture all in the same hue with different finishes, matte lime-wash walls, a satin upholstered chaise longue, a round low table, a glossy ceramic vase, one sharp patch of low warm sunlight on the wall from a small window, the rest of the room lit by soft bounced coloured light, calm editorial interior photography, fine film grain, no people, no text.
+```
+Regra: a cor tem de ser exatamente a mesma nas 3 (confirma com o conta-gotas no Photoshop; corrige com Hue/Saturation só na máscara das paredes).
+
+**6. Entrega:** 3 finais em "#040 - Desafio de cor 2 / final". Eu faço o carrossel extra "#033 vs #040" (mesma câmara A, lado a lado) e a story com "obrigado por votarem".
+
+**Legenda**
+- EN: "Daily Study #040 · Colour challenge #2: you chose it, I built it. One room, one colour, one ray of sun. Next colour? Comments."
+- PT: "Daily Study #040 · Desafio de cor #2: vocês escolheram, eu construí. Uma divisão, uma cor, um raio de sol. Próxima cor? Comentários."
+
+---
+
+## #041 · Abecedário arquitetónico #1: A de Arco (sábado, 6 fev)
+
+**Ideia:** começa uma série nova e fácil de continuar (26 letras = meses de conteúdo). Cada letra é um elemento de arquitetura mostrado sozinho, limpo, quase escultura. A = Arco.
+
+**1. Modelo 3D (15 min)**
+- Uma galeria de 5 arcos de volta perfeita em reboco branco (vão 2,4 m, altura 3,6 m, pilares 0,5 m), em linha, sobre um pátio de lajes de pedra.
+- Atrás dos arcos: uma parede lisa (ou um céu, decide a AI).
+- Nada mais.
+
+**2. Câmaras (3), 4:5**
+- A: frontal, simétrica, 35 mm, todos os arcos.
+- B: em fuga, por dentro da galeria, 24 mm, a ver os arcos a repetirem-se e as sombras no chão.
+- C: um só arco de perto, 50 mm, com a luz a recortar a curva.
+
+**3. Luz:** sol de meio da manhã, lateral (~35°), para as sombras dos arcos desenharem curvas no chão.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (arcos / chão / fundo) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same geometry and camera as the reference image. A quiet arcade of five white lime-plaster semicircular arches over a pale limestone courtyard, Mediterranean light, crisp curved shadows of the arches drawn across the stone floor, subtle plaster texture with hand-made imperfections, clear soft blue sky, minimal and sculptural, architectural photography in the style of a design magazine, fine film grain, no people, no text.
+```
+Regra: o número de arcos e a proporção não podem mudar (conta-os nas 3 imagens).
+
+**6. Entrega:** 3 finais em "#041 - Abecedario A Arco / final". Eu ponho um "A" discreto na tipografia da marca (Visby CF) no canto do 1.º slide, igual em todas as letras da série.
+
+**Legenda**
+- EN: "Daily Study #041 · Architecture alphabet #1: A is for Arch. Five arches, one courtyard, the shadows do the rest. B next."
+- PT: "Daily Study #041 · Abecedário arquitetónico #1: A de Arco. Cinco arcos, um pátio, as sombras fazem o resto. A seguir, o B."
+
+---
+
+## #042 · O meu bairro #1: uma rua de Penafiel (terça, 9 fev)
+
+**Ideia:** (dia de Carnaval) levar o archviz para casa. Tira tu uma foto de uma rua ou largo de Penafiel (de dia, a direito, sem pessoas em primeiro plano) e reimagina-a: os mesmos edifícios, mas com a luz e o acabamento de uma imagem de concurso. Mostra que a tua técnica funciona sobre o mundo real.
+
+**1. Modelo 3D (20 min)**
+- Foto tua com o telemóvel (0,5× não; usa 1×), de pé, câmara direita (sem inclinar para cima).
+- No 3ds Max: põe a foto como fundo, faz o "camera match" (Perspective Match) e modela só caixas simples dos volumes principais (fachadas, passeio, rua). Não precisa de pormenor: serve para luz, sombras e máscaras.
+
+**2. Câmaras (2 + 1)**
+- A: a câmara da tua foto, 4:5.
+- B: a mesma rua 2 m ao lado, um pouco mais baixa (1,2 m), 4:5 — a AI completa a partir da A.
+- C: a foto original sem nada (para o slide "antes").
+
+**3. Luz:** fim de tarde de inverno, sol baixo a bater numa das fachadas, a outra em sombra azulada; candeeiros de rua a acender.
+
+**4. Render base:** 1600 px das caixas com sol (só para as sombras). Guardar "0 - raw" (a foto), "0 - clay", "0 - mask id" (fachadas / rua / céu) e "0 - render base".
+
+**5. AI (Nano Banana: foto + render das sombras como referências)**
+```
+Photorealistic architectural photograph, same street, same buildings, same geometry and camera as the first reference image. Use the second reference only for the direction of sunlight and shadows. A quiet street in a small historic town in northern Portugal at late winter afternoon, low golden sun on one granite and plaster façade, the opposite side in cool blue shade, wet cobblestones with soft reflections, street lamps just turning on, clean and calm, competition-quality architectural visualization, fine film grain, no people, no cars, no text, no shop signs.
+```
+Regra: os edifícios têm de ficar reconhecíveis (mesmas janelas, mesmos telhados). Se a AI inventar prédios, baixa a força ou usa a máscara das fachadas.
+
+**6. Entrega:** 2 finais + a foto original em "#042 - O meu bairro Penafiel / final". Eu faço o carrossel "antes → depois" e um reel slider (foto → imagem).
+
+**Legenda**
+- EN: "Daily Study #042 · My neighbourhood #1: Penafiel. A phone photo of my street, rebuilt in 3D and finished with AI. Same street, better light."
+- PT: "Daily Study #042 · O meu bairro #1: Penafiel. Uma foto da minha rua tirada com o telemóvel, refeita em 3D e acabada com AI. A mesma rua, com outra luz."
+
+---
+
+## #043 · Brief de concurso: uma capela no campo (quinta, 11 fev)
+
+**Ideia:** tratar o Daily Study como um concurso a sério (tipo CGArchitect / Render Awards): um programa curto, uma imagem forte. Uma capela pequena no meio de um campo de trigo, uma única fenda de luz no interior.
+
+**1. Modelo 3D (20 min)**
+- Volume único 6 × 12 m, 7 m de altura, cobertura de uma água, paredes em betão (ou taipa) sem janelas exceto uma fenda vertical de 15 cm atrás do altar e a porta.
+- Interior: um banco comprido de madeira e um bloco de pedra como altar.
+- Terreno: plano grande + caminho de terra até à porta.
+
+**2. Câmaras (3), 4:5**
+- A: exterior, 50 mm, longe, capela pequena no campo, muito céu.
+- B: interior, 24 mm, do fundo para o altar, a fenda de luz a cortar o escuro.
+- C: pormenor da luz a bater no altar de pedra, 85 mm.
+
+**3. Luz:** exterior ao pôr do sol com névoa baixa; interior quase escuro, só a fenda (sol rasante a entrar por ela) e a porta entreaberta.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (capela / campo / céu / interior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small minimalist chapel of board-marked concrete standing alone in a field of golden wheat at sunset, a dirt path leading to its single door, low mist over the field, vast soft sky; inside, near darkness with one thin vertical slit of warm sunlight falling on a rough stone altar and a long timber bench, visible light beam in the dusty air, silent contemplative atmosphere, award-winning architectural visualization, fine film grain, no people, no text, no religious symbols.
+```
+Regra: a fenda tem de estar no mesmo sítio nas 3 (atrás do altar); o interior fica MESMO escuro — não deixes a AI clarear.
+
+**6. Entrega:** 3 finais em "#043 - Capela no campo / final". Eu escrevo o "programa" no último slide (3 linhas, como num concurso) e guardo a câmara A como candidata a concurso.
+
+**Legenda**
+- EN: "Daily Study #043 · A competition brief: a chapel in a field. One volume, one slit of light, nothing else. Treated like an entry, made in an afternoon."
+- PT: "Daily Study #043 · Um brief de concurso: uma capela no campo. Um volume, uma fenda de luz, mais nada. Tratado como uma candidatura, feito numa tarde."
+
+---
+
+## #044 · Uma mesa para dois (sábado, 13 fev)
+
+**Ideia:** véspera do Dia dos Namorados, imagem de época sem clichés (nada de corações). Uma mesa posta para dois junto a uma janela grande, à noite, velas, a cidade desfocada lá fora. Também serve de amostra para restaurantes e hotelaria.
+
+**1. Modelo 3D (15 min)**
+- Canto de restaurante 5 × 4 m: janela de chão a teto, mesa pequena redonda (Ø 70 cm), duas cadeiras simples, um banco corrido encostado à parede.
+- Na mesa: 2 pratos, 2 copos, uma garrafa, 2 velas (cilindros). Toalha branca (plano com Cloth ou deixa para a AI).
+
+**2. Câmaras (3), 4:5**
+- A: geral, 35 mm, mesa + janela + cidade de noite.
+- B: a altura da mesa, 50 mm, os dois copos e as velas em primeiro plano.
+- C: macro da chama e do reflexo no copo, 100 mm.
+
+**3. Luz:** só velas (1800 K, 2 pontos fortes na mesa) + um candeeiro baixo quente ao fundo (2400 K); lá fora, azul de noite com luzes da cidade.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (mesa / vidro / sala / exterior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. An intimate table for two by a floor-to-ceiling window in a small restaurant at night, white linen tablecloth, two plates, two wine glasses, a dark glass bottle, two candles giving warm flickering light, a low warm lamp in the background, out-of-focus city lights and deep blue night sky outside, reflections of the candles in the window glass, elegant and quiet, fine dining hospitality photography, shallow depth of field, fine film grain, no people, no text, no hearts, no logos.
+```
+Regra: nada de corações, rosas ou texto; as chamas e os reflexos têm de estar nos mesmos sítios nas 3.
+
+**6. Entrega:** 3 finais em "#044 - Mesa para dois / final". Para reel: câmara B, 5 s, chamas a tremer devagar (LTX 2.5, câmara parada).
+
+**Legenda**
+- EN: "Daily Study #044 · A table for two. Two candles, a big window, the city out of focus. For tomorrow, without the hearts."
+- PT: "Daily Study #044 · Uma mesa para dois. Duas velas, uma janela grande, a cidade desfocada. Para amanhã, sem corações."
+
+---
+
+## #045 · Produto a flutuar: auscultadores sobre cor (terça, 16 fev)
+
+**Ideia:** anúncio de produto "de campanha": um objeto a levitar sobre um fundo de cor sólida, sombra suave no chão. Rápido de fazer e muito forte no feed. Sem marca (o produto é inventado por ti).
+
+**1. Modelo 3D (25 min)**
+- Auscultadores over-ear simples: arco (Spline com espessura), 2 conchas (cilindros com Chamfer + Turbosmooth), almofadas (Torus achatado). Sem logótipos.
+- Fundo infinito (curva) e chão da mesma cor.
+- Produto a 40 cm do chão, inclinado ~15°.
+
+**2. Câmaras (3), 4:5**
+- A: hero, 85 mm, frontal-3/4, produto ao centro, muita cor à volta.
+- B: de baixo, 50 mm, a ver o produto "por cima" do observador, sombra no chão visível.
+- C: macro da almofada e da costura, 100 mm.
+
+**3. Luz:** uma softbox grande por cima-lado (luz principal), um recorte por trás para separar do fundo, sombra suave no chão (é ela que "vende" o flutuar).
+
+**4. Render base:** 2000 px (produto). Materiais: plástico mate, alumínio anodizado no arco, pele sintética nas almofadas. Fundo cor terracota-clara ou azul-acinzentado (escolhe um). Guardar "0 - clay", "0 - mask id" (produto / fundo / sombra) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product advertising photograph, same object, same geometry and camera as the reference image. A pair of minimalist over-ear headphones floating in mid-air above a seamless solid-colour studio backdrop in muted dusty blue, matte plastic ear cups, anodized aluminium headband, soft synthetic leather cushions with fine stitching, one large soft key light from above, a subtle rim light separating the product from the background, a soft diffuse shadow on the floor below, clean premium campaign look, ultra sharp detail, no text, no logo, no brand name, no people.
+```
+Regra: o produto nunca pode mudar de forma (conchas, arco, almofadas iguais nas 3). Se mudar, aplica a AI só ao fundo e à sombra com o mask ID.
+
+**6. Entrega:** 3 finais em "#045 - Auscultadores a flutuar / final". Para reel: câmara A, 5 s, o produto a rodar 20° e a subir/descer muito pouco (animação no 3ds Max, sem AI no produto).
+
+**Legenda**
+- EN: "Daily Study #045 · Product in the air: headphones over colour. A model of my own, one soft light, one soft shadow. Campaign look in an afternoon."
+- PT: "Daily Study #045 · Produto no ar: auscultadores sobre cor. Um modelo meu, uma luz suave, uma sombra suave. Aspeto de campanha numa tarde."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #046–#051, 18 fev–2 mar, até 14 fev).
