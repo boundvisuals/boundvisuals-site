@@ -14,6 +14,13 @@ FILA = "https://www.boundvisuals.com/bv-fila"
 from urllib.parse import quote
 
 
+def opp_sources():
+    src = (yaml.safe_load(open("docs/opps-sources.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-sources.yml") else {}
+    auto = (yaml.safe_load(open("docs/opps-auto.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-auto.yml") else {}
+    src["leads"] = list(src.get("leads") or []) + list(auto.get("leads") or [])
+    return src
+
+
 def pt_claude_log():
     """[(datetime, short PT text)] from docs/inbox-replies.yml → claude-log (Claude's session notes, in PT)."""
     try:
@@ -407,7 +414,7 @@ def build(out):
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
             "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "kits": {os.path.basename(k)[:-3]: open(k, encoding="utf-8").read() for k in glob.glob("docs/kits/*.md")}, "decisions": (yaml.safe_load(open("docs/decisions.yml", encoding="utf-8")) or []) if os.path.exists("docs/decisions.yml") else [], "timeline": timeline[:60], "stats": stats, "followers": followers,
             "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
-            "opp_sources": (yaml.safe_load(open("docs/opps-sources.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-sources.yml") else {},
+            "opp_sources": opp_sources(), "watchdog": (json.load(open("docs/watchdog.json")) if os.path.exists("docs/watchdog.json") else {}),
             "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}
     with open(os.path.join(out, "store", "data.json.php"), "w", encoding="utf-8") as fh:

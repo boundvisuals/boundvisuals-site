@@ -114,6 +114,20 @@ def due_now(now):
             if datetime.timedelta(0) <= now - at <= datetime.timedelta(hours=12):
                 res.append({"id": f"reply-{key}-{m.get('at')}", "title": "Resposta em Ideias", "body": short(m.get("text"), 160), "url": "/painel/"})
     res += publish_events(now)
+    # robots (free): watchdog failures (once a day, 10:00+) and new job leads (09:00+)
+    try:
+        w = json.load(open("docs/watchdog.json", encoding="utf-8"))
+        bad = [c for c in w.get("checks", []) if not c.get("ok")]
+        if bad and h >= 10:
+            res.append({"id": f"wd-{today}-{len(bad)}", "title": "⚠️ Algo precisa de atenção",
+                        "body": short("; ".join(f"{c['name']}: {c['detail']}" for c in bad), 180), "url": "/painel/"})
+    except Exception:
+        pass
+    a = y("docs/opps-auto.yml", {}) or {}
+    fresh = [l for l in a.get("leads", []) if l.get("first_seen") == str(today)]
+    if fresh and h >= 9:
+        res.append({"id": f"leads-{today}", "title": f"{len(fresh)} oportunidade(s) nova(s) para ti",
+                    "body": short(" · ".join(f"{l['title']} ({l.get('org','')})" for l in fresh[:4]), 180), "url": "/painel/#v-opps"})
     return res
 
 

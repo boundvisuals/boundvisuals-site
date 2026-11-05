@@ -1,0 +1,53 @@
+name: robots
+# Free mechanical robots (no AI, no Claude credits):
+#  - job hunt from public feeds → docs/opps-auto.yml + a kit per lead (docs/kits/auto-*.md)   daily
+#  - watchdog: sites, links, PDFs, SSL, Meta token, queue horizon → docs/watchdog.json        twice a day
+#  - backup of the Painel data (no secrets) → backups/painel/                                Sundays
+#  - fresh PDFs + personal site rebuild                                                      Mondays
+# Phone alerts come from scripts/notify.py (painel robot) reading these files.
+on:
+  schedule:
+    - cron: "41 6 * * *"
+    - cron: "17 15 * * *"
+  workflow_dispatch:
+permissions: { contents: write, actions: write }
+concurrency: { group: robots, cancel-in-progress: false }
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pyyaml
+      - name: Job hunt (morning run)
+        if: github.event.schedule != '17 15 * * *'
+        run: python scripts/hunt_opps.py || true
+      - name: Watchdog
+        env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
+        run: python scripts/watchdog.py || true
+      - name: Backup Painel data (Sundays, no secrets)
+        if: github.event.schedule != '17 15 * * *'
+        env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
+        run: |
+          [ "$(date -u +%u)" = "7" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] || exit 0
+          sudo apt-get install -y -qq lftp >/dev/null
+          mkdir -p backups/painel
+          for f in approvals ticks inbox opps reviews captions crops crops_history ping; do
+            lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; get /public_html/painel/store/$f.json.php -o backups/painel/$f.json.php; bye" "$H" 2>/dev/null || true
+          done
+          for f in backups/painel/*.json.php; do [ -s "$f" ] && tail -n +2 "$f" > "${f%.php}"; rm -f "$f"; done
+          ls -la backups/painel
+      - name: Save
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add -A docs/opps-auto.yml docs/kits docs/watchdog.json backups 2>/dev/null || true
+          git commit -qm "Robots: leads, watchdog, backup" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done
+      - name: Mondays — rebuild PDFs + personal site
+        if: github.event.schedule == '41 6 * * *'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          [ "$(date -u +%u)" = "1" ] || exit 0
+          gh api -X POST repos/${{ github.repository }}/actions/workflows/portfolio.yml/dispatches -f ref=main
+      - name: Refresh the Painel now
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh api -X POST repos/${{ github.repository }}/actions/workflows/painel.yml/dispatches -f ref=main || true

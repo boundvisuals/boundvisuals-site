@@ -338,6 +338,7 @@ function renderHoje(){
   const queueDays=new Set(allItems().filter(i=>i.type==="feed"&&["approved","published"].includes(effStatus(i))&&i.date>=t).map(i=>i.date)).size;
   $("#v-hoje").innerHTML=`
   ${(D.alerts||[]).map(a=>`<div class="alert ${a.level}"><i></i><div>${esc(a.text)}</div></div>`).join("")}
+  ${(()=>{const W=D.watchdog||{};if(!W.checks)return "";const bad=W.checks.filter(c=>!c.ok);return `<details class="card" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">${bad.length?"⚠️ Robô de vigilância: "+bad.length+" problema(s)":"✅ Robô de vigilância: tudo bem"} <span class="sub" style="font-weight:400">· ${esc(W.checked||"")}</span></summary>${W.checks.map(c=>`<div style="display:flex;gap:10px;padding:6px 0;border-top:1px solid #eee;font-size:14px"><span>${c.ok?"✅":"⚠️"}</span><b style="min-width:0;flex:1">${esc(c.name)}</b><span class="sub">${esc(c.detail)}</span></div>`).join("")}</details>`})()}
   ${PUSH_OK&&Notification.permission==="default"?`<div class="alert info" id="pushAsk"><i></i><div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;width:100%"><span>Queres os lembretes no telemóvel? (domingo: semana a aprovar; véspera das tuas tarefas)</span><button class="btn pri" id="pushAskB">Ligar notificações</button></div></div>`:""}
   <div class="grid g4" style="margin:14px 0">
     <div class="card kpi"><b>${its.length}</b><span>publicações hoje</span></div>
