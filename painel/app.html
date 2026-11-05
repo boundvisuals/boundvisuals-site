@@ -197,6 +197,10 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
 .note .nm{display:flex;gap:10px;align-items:center;font-size:11px;color:var(--mut);margin-top:6px}
 .note .del{margin-left:auto;background:none;border:0;color:var(--mut);font-size:12px;padding:2px 4px}
 .reply{margin-top:10px;padding:12px 14px;border-left:2px solid var(--warm);background:var(--panel2);border-radius:0 10px 10px 0;font-size:14px;color:var(--warm);white-space:pre-wrap}
+.clog .ct{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.clog.open .ct{display:block;-webkit-line-clamp:unset}
+.clog.more{display:none}#v-hoje.clogall .clog.more{display:block}
+.reply a{color:var(--fg,inherit);text-decoration:underline;word-break:break-all}
 .reply small{display:block;font-size:11px;color:var(--mut);margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
 .pgrid{columns:3;column-gap:10px}@media (max-width:860px){.pgrid{columns:2;column-gap:8px}}
 .pgrid figure{margin:0 0 10px;break-inside:avoid;position:relative;border-radius:10px;overflow:hidden;cursor:zoom-in;background:var(--panel2)}
@@ -292,6 +296,7 @@ const TY={feed:"Post",story:"Story",reel:"Reel"};
 let D=null,cur="hoje",calF="todos",taskF="vitor",lastOk=0;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const linkify=t=>esc(t).replace(/https?:\/\/[^\s<"]+[^\s<".,;:)!?]/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u.replace(/^https?:\/\/(www\.)?/,"")}</a>`);
 const WD=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"],MO=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
 const fmtDay=d=>{const x=new Date(d+"T12:00:00");if(LANG==="en")return x.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});return `${WD[x.getDay()]} ${x.getDate()} ${MO[x.getMonth()]}`};
 const todayISO=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
@@ -352,10 +357,12 @@ function renderHoje(){
       <div class="card"><h2>Próximas tarefas tuas</h2>${(D.tasks||[]).filter(x=>x.owner==="vitor"&&!isDone(x)).slice(0,4).map(taskRow).join("")||`<div class="empty">Nada pendente.</div>`}</div>
     </div>
   </div>
-  ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().sort((a,b)=>String(b.at||"").localeCompare(String(a.at||""))).slice(0,6).map(m=>`<div class="reply"><small>${ago(m.at)}</small>${esc(m.text)}</div>`).join("")}</div>`:""}
+  ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().sort((a,b)=>String(b.at||"").localeCompare(String(a.at||""))).slice(0,12).map((m,n)=>`<div class="reply clog${n>2?" more":""}" title="Tocar para ler tudo"><small>${ago(m.at)}</small><div class="ct">${linkify(m.text)}</div></div>`).join("")}${D.replies["claude-log"].length>3?`<button class="btn" id="clogMore" style="margin-top:10px">Ver mais (${Math.min(12,D.replies["claude-log"].length)-3})</button>`:""}</div>`:""}
   <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${(D.timeline||[]).slice(0,18).map(t=>`<div class="tli ${t.kind}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div></div>
   <div class="card"><h2>Último robô de publicação</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div></div>`;
   const pab=$("#pushAskB");if(pab)pab.onclick=pushOn;
+  document.querySelectorAll("#v-hoje .clog .ct").forEach(c=>c.onclick=e=>{if(e.target.tagName!=="A")c.parentElement.classList.toggle("open")});
+  const cm=$("#clogMore");if(cm){const v=$("#v-hoje");if(v.classList.contains("clogall"))cm.textContent="Ver menos";cm.onclick=()=>{v.classList.toggle("clogall");cm.textContent=v.classList.contains("clogall")?"Ver menos":"Ver mais"}}
   bindTasks($("#v-hoje"));
 }
 function renderCal(){
