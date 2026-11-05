@@ -166,6 +166,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Reels: house style = scripts/reel_styles.py "series" (slow, 12 s per image, landscape pans edge to edge, whole project covered, 4 images per reel); new reels auto-scheduled (queue/social-week-90-reels.yml).
 - Scheduled tasks: "Painel: responder às Ideias" (hourly :56), "Painel: sessão de trabalho automática" (hourly :26), reminder 06/11 11:00 (end of stand-by), 06/11 10:00 plugins.
 - NOTIFICATIONS (05/11): Painel Web Push (painel/push.php, VAPID keys created on the server in store/vapid.json.php; empty pushes, SW fetches push.php?a=notif). Robot painel.yml runs scripts/notify.py → store/notify.json.php → calls push.php?a=run (each id sent once; quiet 23–08). Vítor enables per device (Início → Ligar notificações).
+- 05/11: notify.py also pushes "Publicado no Instagram: <projeto>" (last 6 h, from queue/published.json; says if it went without caption + where to copy it) and "Ainda não saiu" when an approved feed post is >45 min late. Ligar redes page = painel/ligar.php (OAuth tokens in store/oauth.json.php). Oportunidades: 'Onde procurar' + Claude leads in docs/opps-sources.yml; kits in docs/kits/<id>.md once Vítor adds opps (docs/opps.json pulled by painel.yml). Daily Study briefs written up to #039 (2 fev). 06/11 first post checked ready (3 slides 1080×1350, approved, publish.yml active).
 - Vítor will also make his own videos (LTX 2.5 / Seedance / Kling) in a "video"/"anim" subfolder → TODO: assemble into reels.
 
 ## PERSONAL SITE + PRINT PORTFOLIO (2026-11-04)

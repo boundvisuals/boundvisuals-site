@@ -7,6 +7,8 @@ Rules (quiet hours: nothing before 08:00 or after 23:00):
   - daily 10:00      prepared feed queue ends in < 7 days
   - daily 20:00      digest of what Claude did alone today (claude-log)
   - any time         a new Claude reply to one of his Ideias (last 12 h)
+  - any time         a feed post just went out on Instagram (last 6 h) — says if it went WITHOUT caption (paste it from the Painel)
+  - any time         an approved feed post is > 45 min late (Instagram refused / robot stopped)
 """
 import sys, os, re, glob, json, datetime
 from zoneinfo import ZoneInfo
@@ -111,7 +113,66 @@ def due_now(now):
                 continue
             if datetime.timedelta(0) <= now - at <= datetime.timedelta(hours=12):
                 res.append({"id": f"reply-{key}-{m.get('at')}", "title": "Resposta em Ideias", "body": short(m.get("text"), 160), "url": "/painel/"})
+    res += publish_events(now)
     return res
+
+
+def nice_project(slug):
+    return str(slug or "").replace("-", " ").title()
+
+
+def publish_events(now):
+    """Feed posts published in the last 6 h, and approved feed posts more than 45 min late."""
+    try:
+        state = json.load(open("queue/published.json", encoding="utf-8"))
+    except Exception:
+        return []
+    out = []
+    for key, rec in state.items():
+        if key.startswith("_") or key.count("_") != 1 or not isinstance(rec, dict) or not rec.get("ig"):
+            continue
+        try:
+            at = datetime.datetime.fromisoformat(str(rec.get("at"))).astimezone(TZ)
+        except Exception:
+            continue
+        if not datetime.timedelta(0) <= now - at <= datetime.timedelta(hours=6):
+            continue
+        proj = nice_project(key.split("_", 1)[1])
+        if str(rec.get("caption", "")).startswith("TO-FIX"):
+            body = ("Saiu SEM legenda (o Instagram ainda recusa legendas pela API). "
+                    "Painel → Bound Visuals → Calendário → este post → 'Legenda completa' → Copiar; no Instagram: ⋯ → Editar → colar → ✓.")
+            if rec.get("caption_comment") == "ok":
+                body += " Pus a legenda como 1.º comentário entretanto."
+        else:
+            body = "Saiu com legenda e hashtags. Nada a fazer."
+        if str(rec.get("fb", "")).startswith("ERR"):
+            body += " O Facebook falhou — vê o registo no Painel."
+        out.append({"id": f"pub-{key}", "title": f"Publicado no Instagram: {proj} ({at:%H:%M})", "body": body,
+                    "url": "/painel/"})
+    for f in sorted(glob.glob("queue/week-*.yml")):
+        for it in y(f, []) or []:
+            if not isinstance(it, dict) or not it.get("approved") or not it.get("date") or not it.get("project"):
+                continue
+            key = f"{it['date']}_{it['project']}"
+            if key in state:
+                continue
+            try:
+                when = datetime.datetime.fromisoformat(f"{it['date']}T{it.get('time', '19:00')}").replace(tzinfo=TZ)
+            except Exception:
+                continue
+            late = now - when
+            if datetime.timedelta(minutes=45) <= late <= datetime.timedelta(hours=8):
+                cool = state.get("_cooldown_until")
+                why = ""
+                try:
+                    if cool and datetime.datetime.fromisoformat(cool) > now:
+                        why = f" O robô está em pausa até {datetime.datetime.fromisoformat(cool).astimezone(TZ):%d/%m %H:%M} (o Instagram recusou)."
+                except Exception:
+                    pass
+                out.append({"id": f"late-{key}", "title": f"Ainda não saiu: {nice_project(it['project'])} ({it.get('time', '19:00')})",
+                            "body": "O post aprovado está atrasado." + why + " Não precisas de fazer nada agora; eu volto a tentar sozinho. Se quiseres, publica à mão (Painel → Bound Visuals → Calendário → 'Legenda completa' → Copiar).",
+                            "url": "/painel/"})
+    return out
 
 
 if __name__ == "__main__":
