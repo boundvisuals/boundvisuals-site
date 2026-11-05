@@ -238,7 +238,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
   .post{grid-template-columns:1fr}
   .post .act{justify-self:start}
 }
-</style>
+@media(max-width:600px){#pingbtn{padding:0 12px!important}#pingbtn .pl{display:none}}</style>
 </head>
 <body>
 <div class="app">
@@ -246,7 +246,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
   <main>
     <header class="top">
       <div style="min-width:0"><div class="mspace" id="mspace"></div><div class="sub" id="hello"></div><h1 id="title">Início</h1></div>
-      <div style="display:flex;gap:8px;align-items:center"><button class="x" id="lbtn" aria-label="Língua" style="font-size:12px;font-weight:600;width:auto;padding:0 12px;border-radius:20px"></button><button class="x" id="sbtn" aria-label="Pesquisar" style="display:grid;place-items:center"><span style="width:18px;height:18px;display:block" id="sico"></span></button><div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div></div>
+      <div style="display:flex;gap:8px;align-items:center"><button id="pingbtn" style="height:36px;padding:0 16px;border-radius:20px;border:0;background:#0b0c0c;color:#fff;font:600 13px inherit;cursor:pointer;white-space:nowrap">📣<span class="pl"> Avisar o Claude</span></button><button class="x" id="lbtn" aria-label="Língua" style="font-size:12px;font-weight:600;width:auto;padding:0 12px;border-radius:20px"></button><button class="x" id="sbtn" aria-label="Pesquisar" style="display:grid;place-items:center"><span style="width:18px;height:18px;display:block" id="sico"></span></button><div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div></div>
     </header>
     <section class="view on" id="v-hoje"></section>
     <section class="view" id="v-cal"></section>
@@ -696,6 +696,22 @@ cur=TABS[0][0];try{const t=localStorage.getItem("bv_tab");if(t&&TABS.some(x=>x[0
 nav();go(cur);load();setInterval(load,15000);setInterval(tick,5000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+<div id="pingdlg" hidden style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;display:grid;place-items:center;padding:16px">
+<div style="background:#fff;color:#0b0c0c;max-width:520px;width:100%;border-radius:16px;padding:22px;font-size:15px;line-height:1.5">
+<h3 style="margin:0 0 6px">📣 Avisar o Claude</h3>
+<p id="pingtxt" style="margin:0 0 12px;color:#555">O Claude vai ver tudo o que mudaste na app desde o último aviso (aprovações, recortes, legendas, ideias, tarefas, oportunidades). Se quiseres, escreve o que pedes:</p>
+<textarea id="pingnote" rows="4" style="width:100%;border:1px solid #ccc;border-radius:10px;padding:10px;font:inherit" placeholder="Ex.: aprovei a semana 2, mudei 3 recortes, vê a ideia #12…"></textarea>
+<div id="pingok" hidden style="margin-top:12px;padding:12px;background:#f2f1ee;border-radius:10px"><b>Feito ✓</b> Agora abre o chat do Claude (projeto BOUND VISUALS) e cola isto:<div id="pingmsg" style="margin:8px 0;padding:10px;background:#fff;border-radius:8px;font-family:monospace;font-size:13px;user-select:all">Tenho novidades no Painel.</div><button id="pingcopy" style="height:36px;padding:0 14px;border-radius:18px;border:1px solid #0b0c0c;background:#fff;font:600 13px inherit;cursor:pointer">Copiar mensagem</button> <a href="https://claude.ai" target="_blank" rel="noopener" style="margin-left:8px;font-weight:600">Abrir o Claude ↗</a></div>
+<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px"><button id="pingclose" style="height:38px;padding:0 16px;border-radius:19px;border:1px solid #ccc;background:#fff;font:600 13px inherit;cursor:pointer">Fechar</button><button id="pingsend" style="height:38px;padding:0 18px;border-radius:19px;border:0;background:#0b0c0c;color:#fff;font:600 13px inherit;cursor:pointer">Enviar aviso</button></div>
+</div></div>
+<script>
+(function(){const $=id=>document.getElementById(id),dl=$("pingdlg");
+$("pingbtn").onclick=()=>{$("pingok").hidden=true;$("pingsend").hidden=false;$("pingnote").value="";dl.hidden=false;dl.style.display="grid"};
+$("pingclose").onclick=()=>{dl.hidden=true;dl.style.display="none"};
+$("pingsend").onclick=async()=>{$("pingsend").disabled=true;try{const r=await fetch("api.php?a=ping",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({note:$("pingnote").value})});const j=await r.json();if(!j.ok)throw 0;
+$("pingmsg").textContent="Tenho novidades no Painel"+($("pingnote").value.trim()?": "+$("pingnote").value.trim():".");$("pingok").hidden=false;$("pingsend").hidden=true}catch(e){alert("Sem ligação, tenta outra vez")}$("pingsend").disabled=false};
+$("pingcopy").onclick=async()=>{try{await navigator.clipboard.writeText($("pingmsg").textContent);$("pingcopy").textContent="Copiado ✓"}catch(e){}};})();
 </script>
 </body>
 </html>

@@ -33,6 +33,15 @@ jobs:
               for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
             fi
           fi
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/ping.json.php -o ping.json.php; bye" "$H" 2>/dev/null || true
+          if [ -f in/ping.json.php ]; then
+            tail -n +2 in/ping.json.php > docs/claude-ping.json
+            if [ -n "$(git status --porcelain docs/claude-ping.json)" ]; then
+              git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+              git add docs/claude-ping.json && git commit -qm "Painel: aviso para o Claude" || true
+              for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+            fi
+          fi
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/opps.json.php -o opps.json.php; bye" "$H" 2>/dev/null || true
           if [ -f in/opps.json.php ]; then
             tail -n +2 in/opps.json.php > docs/opps.json

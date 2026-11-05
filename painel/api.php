@@ -62,6 +62,15 @@ if ($a === 'data') {
   exit;
 }
 $in = json_decode(file_get_contents('php://input'), true) ?? [];
+// "Avisar o Claude": Vítor marks a checkpoint (+ optional note). The robot copies it to docs/claude-ping.json;
+// the next Claude chat reads it and reviews everything changed since the previous checkpoint. No credits spent until he opens a chat.
+if ($a === 'ping' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+  $cur = read_store("$store/ping.json.php") ?? [];
+  $cur[] = ['at' => gmdate('c'), 'note' => mb_substr((string)($in['note'] ?? ''), 0, 4000), 'seen' => false];
+  write_store("$store/ping.json.php", array_slice($cur, -50));
+  echo json_encode(['ok' => true, 'robot' => kick_robot()]);
+  exit;
+}
 if ($a === 'approve' && $_SERVER['REQUEST_METHOD'] === 'POST') {
   $cur = read_store("$store/approvals.json.php") ?? [];
   $undo = isset($in['value']) && $in['value'] === false;          // "desaprovar" (undo)
