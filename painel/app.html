@@ -199,7 +199,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
 .reply{margin-top:10px;padding:12px 14px;border-left:2px solid var(--warm);background:var(--panel2);border-radius:0 10px 10px 0;font-size:14px;color:var(--warm);white-space:pre-wrap}
 .clog .ct{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .clog.open .ct{display:block;-webkit-line-clamp:unset}
-.clog.more{display:none}#v-hoje.clogall .clog.more{display:block}
+.tli.more{display:none}#v-hoje.tlall .tli.more{display:block}.clog.more{display:none}#v-hoje.clogall .clog.more{display:block}
 .reply a{color:var(--fg,inherit);text-decoration:underline;word-break:break-all}
 .reply small{display:block;font-size:11px;color:var(--mut);margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
 .pgrid{columns:3;column-gap:10px}@media (max-width:860px){.pgrid{columns:2;column-gap:8px}}
@@ -358,10 +358,11 @@ function renderHoje(){
     </div>
   </div>
   ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().sort((a,b)=>String(b.at||"").localeCompare(String(a.at||""))).slice(0,12).map((m,n)=>`<div class="reply clog${n>2?" more":""}" title="Tocar para ler tudo"><small>${ago(m.at)}</small><div class="ct">${linkify(m.text)}</div></div>`).join("")}${D.replies["claude-log"].length>3?`<button class="btn" id="clogMore" style="margin-top:10px">Ver mais (${Math.min(12,D.replies["claude-log"].length)-3})</button>`:""}</div>`:""}
-  <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${(D.timeline||[]).slice(0,18).map(t=>`<div class="tli ${t.kind}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div></div>
+  <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${tlItems().map((t,n)=>`<div class="tli ${t.kind}${n>7?" more":""}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div>${tlItems().length>8?`<button class="btn" id="tlMore" style="margin-top:10px">Ver mais</button>`:""}</div>
   <div class="card"><h2>Último robô de publicação</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div></div>`;
   const pab=$("#pushAskB");if(pab)pab.onclick=pushOn;
   document.querySelectorAll("#v-hoje .clog .ct").forEach(c=>c.onclick=e=>{if(e.target.tagName!=="A")c.parentElement.classList.toggle("open")});
+  const tm=$("#tlMore");if(tm){const v=$("#v-hoje");if(v.classList.contains("tlall"))tm.textContent="Ver menos";tm.onclick=()=>{v.classList.toggle("tlall");tm.textContent=v.classList.contains("tlall")?"Ver menos":"Ver mais"}}
   const cm=$("#clogMore");if(cm){const v=$("#v-hoje");if(v.classList.contains("clogall"))cm.textContent="Ver menos";cm.onclick=()=>{v.classList.toggle("clogall");cm.textContent=v.classList.contains("clogall")?"Ver menos":"Ver mais"}}
   bindTasks($("#v-hoje"));
 }
@@ -682,6 +683,7 @@ function applyLang(root){if(LANG!=="en")return;const w=document.createTreeWalker
   document.querySelectorAll("[placeholder]").forEach(e=>{const m={"Responder…":"Reply…","O que te veio à cabeça?":"What's on your mind?","Projeto, tarefa, ideia, legenda, link…":"Project, task, idea, caption, link…"}[e.placeholder];if(m)e.placeholder=m})}
 new MutationObserver(ms=>{if(LANG!=="en")return;for(const m of ms)for(const nd of m.addedNodes){if(nd.nodeType===1)applyLang(nd);else if(nd.nodeType===3&&nd.parentElement)applyLang(nd.parentElement)}}).observe(document.body,{childList:true,subtree:true});
 function setLang(l){LANG=l;try{localStorage.setItem("bv_lang",l)}catch(e){}location.reload()}
+function tlItems(){const seen=new Set();return (D.timeline||[]).filter(t=>{if(t.kind!=="robot")return true;if(seen.has(t.text))return false;seen.add(t.text);return true}).slice(0,18)}
 function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps();renderMarca()}
 async function load(){
   try{const r=await fetch("api.php?a=data",{cache:"no-store"});if(r.status===401){location.reload();return}
