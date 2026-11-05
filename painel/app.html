@@ -331,6 +331,7 @@ function renderHoje(){
   const queueDays=new Set(allItems().filter(i=>i.type==="feed"&&["approved","published"].includes(effStatus(i))&&i.date>=t).map(i=>i.date)).size;
   $("#v-hoje").innerHTML=`
   ${(D.alerts||[]).map(a=>`<div class="alert ${a.level}"><i></i><div>${esc(a.text)}</div></div>`).join("")}
+  ${PUSH_OK&&Notification.permission==="default"?`<div class="alert info" id="pushAsk"><i></i><div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;width:100%"><span>Queres os lembretes no telemóvel? (domingo: semana a aprovar; véspera das tuas tarefas)</span><button class="btn pri" id="pushAskB">Ligar notificações</button></div></div>`:""}
   <div class="grid g4" style="margin:14px 0">
     <div class="card kpi"><b>${its.length}</b><span>publicações hoje</span></div>
     <div class="card kpi"><b>${queueDays}</b><span>dias de posts aprovados</span></div>
@@ -349,9 +350,10 @@ function renderHoje(){
       <div class="card"><h2>Próximas tarefas tuas</h2>${(D.tasks||[]).filter(x=>x.owner==="vitor"&&!isDone(x)).slice(0,4).map(taskRow).join("")||`<div class="empty">Nada pendente.</div>`}</div>
     </div>
   </div>
-  ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().reverse().slice(0,6).map(m=>`<div class="reply"><small>${ago(m.at)}</small>${esc(m.text)}</div>`).join("")}</div>`:""}
+  ${((D.replies||{})["claude-log"]||[]).length?`<div class="card" style="margin-top:14px"><h2>O que o Claude fez sozinho</h2>${(D.replies["claude-log"]).slice().sort((a,b)=>String(b.at||"").localeCompare(String(a.at||""))).slice(0,6).map(m=>`<div class="reply"><small>${ago(m.at)}</small>${esc(m.text)}</div>`).join("")}</div>`:""}
   <div class="grid g2" style="margin-top:14px"><div class="card"><h2>Linha do tempo</h2><div class="tl">${(D.timeline||[]).slice(0,18).map(t=>`<div class="tli ${t.kind}">${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.text)} ↗</a>`:esc(t.text)}<span>${ago(t.at)} · ${({claude:"Claude",robot:"Robô",you:"Tu",pub:"Publicação"})[t.kind]||""}</span></div>`).join("")}</div></div>
   <div class="card"><h2>Último robô de publicação</h2><div class="log">${esc((D.log||[]).join("\n"))}</div></div></div>`;
+  const pab=$("#pushAskB");if(pab)pab.onclick=pushOn;
   bindTasks($("#v-hoje"));
 }
 function renderCal(){
@@ -511,6 +513,26 @@ function liCard(L){if(!L)return "";const n=t=>`<span class="sub" style="float:no
 function clCard(C){if(!C||!C.length)return "";
   return `<div class="card li"><h2>Cartas de apresentação (base)</h2><div class="sub" style="margin-bottom:8px">Em 1.ª pessoa, com a posição nova. Troca o que está entre [ ] (empresa, vaga, nome). Para cada oportunidade faço uma carta adaptada no kit. As gerais também existem em PDF: Portfólio → Carta de apresentação.</div>
   ${C.map(l=>cb(l.title+(l.subject?" — Assunto: "+l.subject:""),l.text||"")).join("")}</div>`}
+// Notificações (Web Push). Avisos: domingo (semana a aprovar), véspera de cada tarefa com data, fila curta, respostas do Claude.
+const PUSH_OK="serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
+const IOS=/iPhone|iPad|iPod/.test(navigator.userAgent),STANDALONE=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+function b64u2u8(s){const p="=".repeat((4-s.length%4)%4),b=atob((s+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(b,c=>c.charCodeAt(0))}
+async function pushSub(){if(!PUSH_OK)return null;const r=await navigator.serviceWorker.getRegistration();return r?r.pushManager.getSubscription():null}
+async function pushOn(){try{if(await Notification.requestPermission()!=="granted"){toast("Notificações bloqueadas no browser");return pushUI()}
+  const reg=await navigator.serviceWorker.register("sw.js");await navigator.serviceWorker.ready;const k=await (await fetch("push.php?a=key",{cache:"no-store"})).json();
+  let s=await reg.pushManager.getSubscription();if(!s)s=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u2u8(k.key)});
+  const r=await fetch("push.php?a=sub",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({sub:s.toJSON()})});if(!(await r.json()).ok)throw 0;
+  try{localStorage.setItem("bv_push_seen","1")}catch(e){}toast("Notificações ligadas ✓");pushUI();renderHoje()}catch(e){toast("Não consegui ligar as notificações");pushUI()}}
+async function pushOff(){try{const s=await pushSub();if(s){await fetch("push.php?a=unsub",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({endpoint:s.endpoint})});await s.unsubscribe()}toast("Notificações desligadas neste aparelho");pushUI()}catch(e){toast("Erro ao desligar")}}
+async function pushTest(b){b.disabled=true;try{const j=await (await fetch("push.php?a=test",{method:"POST"})).json();toast(j.ok?"Enviado ✓ deve chegar em segundos":"O serviço de notificações não aceitou")}catch(e){toast("Erro no envio")}b.disabled=false}
+async function pushUI(){const t=$("#pushTxt"),bx=$("#pushBtns");if(!t)return;
+  if(!PUSH_OK){t.textContent=IOS&&!STANDALONE?"No iPhone: primeiro instala o Painel (Safari → botão Partilhar → 'Adicionar ao ecrã principal'), abre-o pelo ícone e volta aqui.":"Este browser não suporta notificações. Usa o Chrome ou o Edge (ou o Painel instalado).";bx.innerHTML="";return}
+  const s=await pushSub(),perm=Notification.permission;
+  if(perm==="denied"){t.textContent="Bloqueadas neste browser. Toca no cadeado ao lado do endereço → Notificações → Permitir, e recarrega.";bx.innerHTML="";return}
+  if(s){t.innerHTML="<span style='color:var(--ok)'>Ligadas.</span> Avisos: domingo às 19:00 (semana a aprovar), na véspera de cada tarefa tua com data, quando a fila tiver menos de 7 dias e quando eu deixar uma resposta ou um relatório.";
+    bx.innerHTML=`<button class="btn" id="pTest">Enviar teste</button><button class="btn" id="pOff">Desligar</button>`;$("#pTest").onclick=e=>pushTest(e.currentTarget);$("#pOff").onclick=pushOff}
+  else{t.textContent="Liga para receberes os lembretes no telemóvel ou no PC (domingo: semana a aprovar; véspera das tuas tarefas; fila curta; respostas do Claude). Faz isto em cada aparelho.";
+    bx.innerHTML=`<button class="btn pri" id="pOn">Ligar notificações</button>`;$("#pOn").onclick=pushOn}}
 function renderSobre(){const p=D.profile||{};
   $("#v-sobre").innerHTML=`<div class="grid g2"><div class="card prof"><p class="big">${esc(p.display||"Vítor Hugo • Bound Visuals")}</p><div class="sub">${esc(p.headline_pt||"")}</div>
    <h2 style="margin-top:18px">Objetivos</h2><ul style="margin:0;padding-left:18px">${(p.goals||[]).map(g=>`<li style="margin:4px 0">${esc(g)}</li>`).join("")}</ul>
@@ -518,7 +540,9 @@ function renderSobre(){const p=D.profile||{};
    <h2 style="margin-top:18px">Ferramentas</h2><div class="chips">${(p.tools||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
    <h2 style="margin-top:18px">Links</h2><div class="links">${(p.links||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}<span>↗</span></a>`).join("")}</div></div>
    <div class="card"><h2>Robô imediato</h2>${D.robot_link?`<div class="sub" style="color:var(--ok)">Ligado: aprovações e recortes são aplicados na hora.</div>`:`<div class="sub">Cola aqui a chave do GitHub para o robô reagir na hora (passos no chat).</div><div style="display:flex;gap:8px;margin-top:8px"><input id="ghT" class="sinput" style="font-size:13px;padding:10px" placeholder="github_pat_…"><button class="btn pri" id="ghS">Ligar</button></div>`}</div>
+   <div class="card" id="pushCard" style="align-self:start"><h2>Notificações neste aparelho</h2><div class="sub" id="pushTxt">A verificar…</div><div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap" id="pushBtns"></div></div>
    <div class="card"><h2>Textos prontos a copiar</h2>${cb("Título EN",p.headline_en||"")}${cb("Bio curta EN",p.bio_short_en||"")}${cb("Bio curta PT",p.bio_short_pt||"")}${cb("Bio longa EN",p.bio_long_en||"")}${cb("Bio longa PT",p.bio_long_pt||"")}</div>${liCard(p.linkedin)}${clCard(p.cover_letters)}</div>`;
+  pushUI();
   const gs=$("#ghS");if(gs)gs.onclick=async()=>{try{const r=await fetch("api.php?a=ghtoken",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:$("#ghT").value.trim()})});const j=await r.json();if(!j.ok)throw 0;D.robot_link=true;toast(j.robot==="started"?"Ligado ✓ Robô a correr":"Guardado, mas o GitHub respondeu "+j.robot);renderSobre()}catch(e){toast("Chave inválida")}};
   $("#v-sobre").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
 }
