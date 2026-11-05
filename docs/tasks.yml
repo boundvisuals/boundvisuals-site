@@ -81,7 +81,7 @@
 - id: c-ds-next
   owner: claude
   title: "Briefings Daily Study #004 em diante"
-  detail: "#004–#051 escritos (12 nov–2 mar). Último lote #046–#051 (05/11): cozinha com ilha ao amanhecer (18 fev), Casas de Portugal #6: Algarve (20 fev), cliente imaginário #3: o músico (23 fev), quarto de hotel domingo de manhã (25 fev), Abecedário #2: B de Brise-soleil (27 fev), chuva à noite: entrada de prédio (2 mar). Próximo lote #052–#057 (4–16 mar) até 28 fev."
+  detail: "#004–#057 escritos (12 nov–16 mar). Último lote #052–#057 (05/11): escritório em casa com luz de norte (4 mar), Casas de Portugal #7: Minho com espigueiro (6 mar), azeite em contraluz (9 mar), Abecedário #3: C de Claustro (11 mar), desafio de cor #3: azul-azulejo (13 mar), concurso imaginário #2: abrigo na falésia (16 mar). Próximo lote #058–#063 (18–30 mar) até 15 mar."
 - id: c-dossier
   owner: claude
   title: Atualizar dossier e CLAUDE.md (bloqueio, semanas 2–4, painel)
@@ -138,6 +138,9 @@
   owner: claude
   title: "Kit por oportunidade: para cada entrada em docs/opps.json sem docs/kits/<id>.md, escrever o kit (carta EN+PT adaptada à vaga/cliente, 6-10 imagens do portfólio a enviar, versão do CV, data de follow-up)"
   detail: "05/11: kits feitos para as 5 pistas (Motus VFX, Creative Drawit Barcelos, Gonçalo Silva Lisboa, BIG Barcelona, Solid Eye Malta) em docs/kits/lead-*.md; botão 'Ver kit' em cada pista e o kit segue a pista quando o Vítor a adiciona. Contínuo: cada pista/oportunidade nova recebe kit na sessão seguinte."
+- id: c-palette-slide
+  owner: claude
+  title: "Slide de paleta de cores (5 cores tiradas de uma imagem final, 1080×1350, marca BV) para os carrosséis de 'Desafio de cor' (1.º uso: Daily Study #056, 13 mar)"
 - id: c-video-reels
   owner: claude
   title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"

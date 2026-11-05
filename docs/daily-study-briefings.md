@@ -1611,4 +1611,195 @@ Regra: os reflexos têm de corresponder às fontes de luz reais (átrio e poste)
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #052–#057, 4–16 mar, até 28 fev).
+## #052 · Escritório em casa com luz de norte (quinta, 4 mar)
+
+**Ideia:** o canto de trabalho que toda a gente quer depois de 2020: uma secretária comprida em frente a uma janela grande virada a norte, luz suave e igual o dia todo, estante de livros, uma planta. Interior calmo, de revista, e muito útil para promotores ("a casa onde se trabalha bem").
+
+**1. Modelo 3D (20 min)**
+- Divisão 4 × 3,5 m, pé-direito 2,8 m; janela de canto ou uma janela larga 2,4 × 1,6 m com peitoril baixo e banco embutido.
+- Secretária em madeira maciça 2,2 m encostada à janela, cadeira de escritório simples (modelo grátis 3D Warehouse/Sketchfab CC — confirma a licença), candeeiro de braço articulado.
+- Estante do chão ao teto numa parede (caixas simples; os livros podem ficar para a AI), tapete de lã, uma figueira-lira num vaso.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 28 mm, da porta, secretária + janela + estante.
+- B: ao nível dos olhos sentado, 40 mm, por trás da cadeira, o portátil fechado e a vista lá fora.
+- C: pormenor, 85 mm, caderno aberto, caneta e chávena com a luz suave a desenhar o volume.
+
+**3. Luz:** céu encoberto claro (luz de norte: sem sol direto), exposição para o interior, janela ligeiramente sobreexposta mas com a vista legível; candeeiro desligado (ou aceso, quente e fraco, para uma 2.ª versão "fim de tarde").
+
+**4. Render base:** 1600 px. Madeira de carvalho natural, paredes em branco-quente, chão em soalho largo. Guardar "0 - clay", "0 - mask id" (móveis / estante / janela-exterior / planta) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A calm contemporary home office, a long solid oak desk placed in front of a large window with soft even north light, a built-in window seat, a simple task chair, an articulated desk lamp, a floor-to-ceiling bookshelf filled with books and a few ceramics, a wool rug, a fiddle-leaf fig in a terracotta pot, an open notebook, a pen and a ceramic cup on the desk, a green garden and trees visible outside, warm white walls and wide oak floorboards, soft diffuse daylight, no direct sun, editorial interior photography, fine film grain, no people, no screens showing content, no text, no logos.
+```
+Regra: os livros e objetos da estante podem variar, mas a secretária, a janela e a planta ficam iguais nas 3 câmaras; nada de ecrãs com conteúdo.
+
+**6. Entrega:** 3 finais em "#052 - Escritório em casa / final". Para reel: câmara B, 6 s, push-in muito lento em direção à janela, folhas a mexer lá fora (LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #052 · Home office, north light. Soft light all day, one long desk and a view to rest the eyes."
+- PT: "Daily Study #052 · Escritório em casa, luz de norte. Luz suave o dia todo, uma secretária comprida e uma vista para descansar os olhos."
+
+---
+
+## #053 · Casas de Portugal #7: Minho (sábado, 6 mar)
+
+**Ideia:** a série chega ao norte, perto de casa. Casa contemporânea em granito e madeira escura no meio do verde do Minho, com um volume que reinterpreta o espigueiro (caixa elevada sobre pilares, com ripado). Chuva miúda acabada de passar, tudo húmido e muito verde.
+
+**1. Modelo 3D (30 min)**
+- Volume principal térreo em granito aparelhado (blocos grandes, juntas finas), cobertura de duas águas baixa em zinco escuro.
+- Volume "espigueiro": caixa de madeira ripada 6 × 2,5 m elevada 1,5 m sobre 4 pilares de granito com "mesas" (o capitel em disco típico) — é o quarto/escritório.
+- Socalco com muro de pedra seca, uma vinha em ramada ao lado (pérgola simples), milheiral ou relvado alto à frente (deixa para a AI).
+
+**2. Câmaras (3), 4:5**
+- A: exterior, 24 mm, do socalco de baixo, os dois volumes e a ramada.
+- B: 35 mm, debaixo do espigueiro, entre os pilares, a olhar para o vale.
+- C: pormenor, 85 mm, o pilar com a "mesa" de granito e gotas de água na madeira ripada.
+
+**3. Luz:** depois da chuva: céu encoberto com uma abertura de sol fraca ao fundo, granito escurecido pela água, névoa leve no vale.
+
+**4. Render base:** 1600 px. Granito cinzento com variação, madeira ripada castanho-escura, caixilharia preta fina. Guardar "0 - clay", "0 - mask id" (casa / espigueiro / vegetação / céu-vale) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary house in the Minho region of northern Portugal, a low main volume in large ashlar granite blocks with a dark zinc pitched roof, and a raised timber-slatted volume reinterpreting a traditional espigueiro granary, lifted on four granite pillars with round granite caps, a dry-stone terrace wall, a pergola vineyard (ramada) beside the house, lush green fields and wooded hills, just after rain: wet darkened granite, water droplets on the timber slats, soft overcast light with a faint break of sun in the distance, light mist in the valley, quiet and fresh, fine film grain, no people, no text.
+```
+Regra: os pilares com o disco de granito são a assinatura — mesmos 4 pilares, mesma altura nas 3 câmaras; AI só no verde, céu e humidade se a casa começar a mudar.
+
+**6. Entrega:** 3 finais em "#053 - Casas de Portugal 7 Minho / final". Para reel: câmara B, 6 s, névoa a mover-se devagar no vale e gotas a cair da madeira (Seedance), com som de pássaros e água.
+
+**Legenda**
+- EN: "Daily Study #053 · Houses of Portugal #7: Minho. Granite, green and an old granary lifted into a bedroom, right after the rain."
+- PT: "Daily Study #053 · Casas de Portugal #7: Minho. Granito, verde e um espigueiro transformado em quarto, logo depois da chuva."
+
+---
+
+## #054 · Produto em contraluz: uma garrafa de azeite (terça, 9 mar)
+
+**Ideia:** produto português, inventado por ti (sem marca real): uma garrafa de vidro de azeite com a luz por trás a acender o dourado-verde. Treina vidro + líquido + cáusticas — o tipo de imagem que marcas de gourmet pagam.
+
+**1. Modelo 3D (20 min)**
+- Garrafa de vidro alta e quadrada (6 × 6 × 28 cm), ombros arredondados, rolha de cortiça com selo de cera; rótulo em papel simples só com uma linha fina e um nome inventado (ex.: "Oliva · Trás-os-Montes") — ou rótulo em branco e a AI só respeita.
+- Base em pedra de xisto escura, um ramo de oliveira com 3 azeitonas, uma pequena taça de cerâmica com azeite.
+- Fundo infinito em cor de areia quente.
+
+**2. Câmaras (3), 4:5**
+- A: hero, 85 mm, garrafa centrada e ligeiramente de baixo, luz a atravessar o azeite.
+- B: 100 mm macro, a taça com a superfície do azeite a refletir a garrafa.
+- C: top-down, 50 mm, xisto + ramo + taça + sombra da garrafa (composição gráfica).
+
+**3. Luz:** contraluz forte (softbox atrás e um pouco acima), recorte lateral fino para desenhar as arestas do vidro, cáusticas douradas no xisto; frente com rebatimento fraco.
+
+**4. Render base:** 1600 px. Vidro com IOR 1,52 e espessura real; líquido com IOR 1,47 e absorção verde-dourada; ativar cáusticas (ou deixá-las para a AI). Guardar "0 - clay", "0 - mask id" (garrafa / líquido / rótulo / base / fundo) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic premium product photograph, same objects, same geometry and camera as the reference image. A tall square glass bottle of Portuguese extra virgin olive oil with rounded shoulders, a natural cork stopper sealed with dark green wax, a minimal paper label kept exactly as in the reference, strong backlight shining through the golden-green oil, thin rim lights tracing the glass edges, golden caustics falling on a dark slate stone base, an olive branch with three olives, a small ceramic dish of olive oil with a glossy surface, seamless warm sand-coloured background, luxury gourmet advertising, crisp detail, fine film grain, no extra text, no real brand logos.
+```
+Regra: o rótulo NÃO pode ser inventado pela AI (texto estranho) — usa mask ID e protege o rótulo, ou deixa-o em branco; o nível do azeite igual nas 3.
+
+**6. Entrega:** 3 finais em "#054 - Azeite em contraluz / final". Para reel: câmara B, 5 s, uma gota a cair na taça e ondas na superfície (Seedance), som de gota.
+
+**Legenda**
+- EN: "Daily Study #054 · Backlit olive oil. Light through glass and gold: an invented Portuguese brand, a real product shot."
+- PT: "Daily Study #054 · Azeite em contraluz. A luz a atravessar vidro e ouro: uma marca portuguesa inventada, uma fotografia de produto a sério."
+
+---
+
+## #055 · Abecedário arquitetónico #3: C de Claustro (quinta, 11 mar)
+
+**Ideia:** a série continua com o C. Um claustro contemporâneo: pátio quadrado rodeado por uma galeria de pilares finos em betão, uma oliveira ao centro, as sombras dos pilares a riscar o chão. Silêncio, ritmo, luz.
+
+**1. Modelo 3D (25 min)**
+- Pátio 12 × 12 m, galeria a toda a volta com 2,5 m de largura, pilares quadrados 25 × 25 cm a cada 2,4 m, laje fina por cima (30 cm).
+- Paredes interiores da galeria em reboco branco-quente, com 2–3 portas altas de madeira.
+- Centro: uma oliveira velha (proxy ou deixa para a AI) num quadrado de terra com gravilha, um banco de pedra.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 24 mm, do canto da galeria, a perspetiva dos pilares a fugir + o pátio.
+- B: frontal, 35 mm, simétrica, do lado oposto, a oliveira enquadrada entre dois pilares.
+- C: pormenor, 70 mm, o chão da galeria com as sombras dos pilares em riscas e uma porta de madeira.
+
+**3. Luz:** sol de fim de manhã a 40°, entrando de lado na galeria para fazer as riscas de sombra; céu limpo azul-claro.
+
+**4. Render base:** 1600 px. Betão claro liso nos pilares, chão em pedra calcária em lajes grandes, gravilha clara. Guardar "0 - clay", "0 - mask id" (pilares-laje / paredes / chão / oliveira / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary cloister, a square courtyard surrounded by a colonnade of slender square pale concrete columns supporting a thin flat slab, warm white lime-rendered walls with tall timber doors, large pale limestone floor slabs, an ancient olive tree in a square bed of light gravel at the centre with a simple stone bench, late-morning sun entering the gallery from the side and casting a rhythm of crisp striped column shadows across the floor, clear pale blue sky, serene and monastic, fine film grain, no people, no text.
+```
+Regra: o número e o espaçamento dos pilares são sagrados — conta-os em cada câmara; se a AI acrescentar ou tirar pilares, protege-os com o mask ID.
+
+**6. Entrega:** 3 finais em "#055 - Abecedario C Claustro / final". Para reel: câmara C, 6 s, sombras dos pilares a deslizar devagar no chão (timelapse curto, LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #055 · Architectural alphabet #3: C for Cloister. Columns, shadow, one old olive tree. Rhythm is a material too."
+- PT: "Daily Study #055 · Abecedário arquitetónico #3: C de Claustro. Pilares, sombra e uma oliveira velha. O ritmo também é um material."
+
+---
+
+## #056 · Desafio de cor #3: azul-azulejo (sábado, 13 mar)
+
+**Ideia:** a série das cores continua com o azul do azulejo português. Uma casa de banho (ou cozinha) onde uma parede inteira é em azulejo azul-cobalto contemporâneo (liso, brilhante, junta fina), tudo o resto branco e madeira. O carrossel termina com uma paleta de 5 cores tirada da imagem (pilar "paleta").
+
+**1. Modelo 3D (20 min)**
+- Casa de banho 3 × 2,5 m: parede do fundo toda em azulejo quadrado 10 × 10 cm (junta 2 mm), lavatório suspenso em madeira com bacia de pousar branca, espelho redondo, base de duche ao nível do chão com resguardo de vidro.
+- Janela alta estreita de lado; um banco de madeira com uma toalha de linho, um ramo de eucalipto.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 28 mm, da porta, a parede azul inteira em frente.
+- B: 50 mm, lavatório + espelho com o reflexo da janela.
+- C: macro, 100 mm, a superfície do azulejo com o brilho e uma gota de água a escorrer.
+
+**3. Luz:** luz natural de manhã pela janela lateral, rasante no azulejo para mostrar as pequenas irregularidades do vidrado; sem luz artificial.
+
+**4. Render base:** 1600 px. Azulejo com bump/normal ligeiro (cada peça um pouco diferente) e reflexo alto; madeira de carvalho; chão em microcimento branco. Guardar "0 - clay", "0 - mask id" (azulejo / madeira / louças / vidro) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A contemporary bathroom where the entire back wall is clad in glossy handmade cobalt-blue Portuguese square tiles with very thin joints and subtle variations in the glaze, a floating light oak vanity with a white vessel basin, a round mirror, a level walk-in shower with a clear glass screen, white microcement floor, a tall narrow side window with soft morning light grazing the tiles and revealing their texture, a linen towel on a small oak bench, a eucalyptus branch, calm and fresh, editorial interior photography, fine film grain, no people, no text, no logos.
+```
+Regra: o azul tem de ser o MESMO nas 3 (verifica com conta-gotas: aproximadamente #1f4fa0); se a AI o desviar, corrige em edição antes de tirar a paleta.
+
+**6. Entrega:** 3 finais em "#056 - Desafio de cor 3 azul / final" + 1 slide de paleta (eu faço-o a partir das tuas finais). Para reel: câmara C, 5 s, gota a escorrer no azulejo (Seedance).
+
+**Legenda**
+- EN: "Daily Study #056 · Colour challenge #3: azulejo blue. One wall, one colour, centuries of Portuguese tiles. Next colour? Tell me below."
+- PT: "Daily Study #056 · Desafio de cor #3: azul-azulejo. Uma parede, uma cor, séculos de azulejo português. Próxima cor? Diz-me aqui em baixo."
+
+---
+
+## #057 · Brief de concurso #2: abrigo num miradouro da costa (terça, 16 mar)
+
+**Ideia:** segundo "concurso imaginário". Um pequeno abrigo/miradouro numa falésia da costa vicentina: uma laje de betão em consola sobre o mar, um banco corrido e uma parede que corta o vento. Imagem de concurso: dramática, simples, com escala humana sugerida (sem pessoas — só uma mochila e um casaco no banco).
+
+**1. Modelo 3D (25 min)**
+- Laje de betão 8 × 3 m, 40 cm de espessura, 3 m em consola sobre a falésia; parede curva de betão 2,2 m de altura a abrigar do vento; banco corrido moldado na parede.
+- Falésia em xisto (displacement simples ou deixa para a AI), mar lá em baixo, vegetação rasteira (urze, esteva).
+- Um caminho de terra a chegar ao abrigo, uma mochila e um casaco no banco (escala).
+
+**2. Câmaras (3), 4:5**
+- A: aproximação, 24 mm, do caminho, o abrigo contra o horizonte.
+- B: de baixo, 35 mm, de uma rocha lateral, a consola a voar sobre o mar (a imagem do concurso).
+- C: pormenor, 70 mm, o banco com a mochila e o mar desfocado atrás.
+
+**3. Luz:** fim de tarde, sol a 10° quase de frente (contraluz quente), mar a brilhar, nuvens altas finas; segunda versão opcional: nevoeiro atlântico.
+
+**4. Render base:** 1600 px. Betão cofrado a tábua (marcas horizontais), xisto escuro, vegetação baixa verde-acinzentada. Guardar "0 - clay", "0 - mask id" (betão / falésia / vegetação / mar-céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural competition image, same structure, same geometry and camera as the reference image. A small coastal viewpoint shelter on a cliff of the Costa Vicentina, Portugal, a thick board-marked concrete slab cantilevering dramatically over the Atlantic Ocean, a curved concrete windbreak wall with a built-in continuous bench, dark schist cliffs, low wind-shaped heather and rockrose, a dirt path leading to the shelter, a backpack and a jacket resting on the bench for scale, late-afternoon low sun almost facing the camera, warm backlight, glittering sea far below, thin high clouds, powerful and quiet, fine film grain, no people, no text.
+```
+Regra: a consola tem de manter a espessura e o comprimento — é ela que faz a imagem; o mar e a falésia podem variar entre câmaras, o betão não.
+
+**6. Entrega:** 3 finais em "#057 - Concurso 2 Miradouro costa / final". Para reel: câmara B, 6 s, ondas a bater na falésia lá em baixo e nuvens a correr (Seedance), som de vento e mar.
+
+**Legenda**
+- EN: "Daily Study #057 · Imaginary competition #2: a cliff-top shelter. One concrete slab, the Atlantic, and a place to stop the wind."
+- PT: "Daily Study #057 · Concurso imaginário #2: um abrigo na falésia. Uma laje de betão, o Atlântico e um sítio para parar o vento."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #058–#063, 18–30 mar, até 15 mar).
