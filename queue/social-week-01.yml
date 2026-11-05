@@ -76,7 +76,7 @@
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-09'
   time: '12:30'
   type: reel
@@ -85,7 +85,7 @@
   cover: vivendas-cete-reel-cover.jpg
   caption_en: Vivendas Cête, from the cobblestone drive to the kitchen light. Penafiel.
   caption_pt: Vivendas Cête, da calçada de entrada à luz da cozinha. Penafiel.
-  approved: false
+  approved: true
 - date: '2026-11-09'
   time: '14:30'
   type: story
@@ -97,13 +97,13 @@
   type: story
   project: vivendas-cete
   file: 5-exterior1_5-exterior1-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-09'
   time: '21:30'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s03.jpg
-  approved: false
+  approved: true
 - date: '2026-11-10'
   time: 09:30
   type: story
