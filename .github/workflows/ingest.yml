@@ -36,7 +36,7 @@ jobs:
         with:
           name: ${{ inputs.project_id }}-processed
           path: out
-          retention-days: 14
+          retention-days: 1
       - name: Save report + Instagram slides + editor previews to repo
         if: always()
         run: |

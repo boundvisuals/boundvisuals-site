@@ -31,7 +31,7 @@ nav.side{position:sticky;top:0;height:100vh;padding:28px 18px;border-right:1px s
 .tab.on,.tab:hover{background:var(--panel2);color:var(--fg)}
 .tab .n{margin-left:auto;font-size:11px;background:var(--warm);color:#0b0c0c;border-radius:20px;padding:1px 7px;font-weight:500}
 .side .foot{margin-top:auto;font-size:11px;color:var(--mut);padding:0 12px}
-main{min-width:0;padding:calc(28px + var(--safe-t)) max(20px,env(safe-area-inset-right,0px)) 120px max(20px,env(safe-area-inset-left,0px));max-width:1180px;width:100%}
+main{min-width:0;padding:calc(28px + var(--safe-t)) max(20px,env(safe-area-inset-right,0px)) 120px max(20px,env(safe-area-inset-left,0px));max-width:none;width:100%}
 header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
 h1{font-weight:500;font-size:28px;margin:0;letter-spacing:-.01em}
 .sub{color:var(--mut);font-size:13px}
@@ -65,7 +65,16 @@ h1{font-weight:500;font-size:28px;margin:0;letter-spacing:-.01em}
 .net{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:14px}
 .net:first-of-type{border-top:0}
 .net span{color:var(--mut);font-size:12px;text-align:right}
-.day{margin-bottom:18px}
+.day{margin-bottom:22px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 16px 16px}
+.view:not(#v-cal){max-width:1500px}
+#v-cal .calwrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,640px),1fr));gap:18px;align-items:start}
+#v-cal .day{margin:0}#v-cal .dayh{background:var(--panel);border-radius:16px 16px 0 0}
+.trow{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.trow:first-of-type{border-top:0}
+.tlab{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 0;border-radius:6px;text-align:center}
+.tlab.feed{background:#2b4a7a;color:#dbe7ff}.tlab.reel{background:#6a3b7a;color:#f2ddff}.tlab.story{background:#2f5e47;color:#d6f5e5}
+#v-cal .post{margin:0 0 6px;background:var(--panel2,rgba(255,255,255,.03))}
+@media(max-width:600px){.trow{grid-template-columns:1fr}.tlab{justify-self:start;padding:4px 10px}}
 .dayh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 8px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:2}
 .dayh b{font-weight:500}
 .btn{border:1px solid var(--line);background:var(--panel2);padding:8px 14px;border-radius:10px;font-size:13px}
@@ -121,7 +130,7 @@ nav.bottom{display:none}
 .reply.me{border-left-color:var(--ok);margin-left:24px}
 .rbox{display:flex;gap:8px;margin-top:10px}.rbox .sinput{flex:1;min-width:0}
 .btn.sm{padding:4px 10px;font-size:12px;border-radius:8px}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,160px));gap:8px}
 .scard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .scard img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
 .sc-b{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:8px;font-size:11px;color:var(--mut)}
@@ -238,7 +247,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
   .post{grid-template-columns:1fr}
   .post .act{justify-self:start}
 }
-@media(max-width:600px){#pingbtn{padding:0 12px!important}#pingbtn .pl{display:none}}</style>
+</style>
 </head>
 <body>
 <div class="app">
@@ -246,7 +255,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t td,table.t th
   <main>
     <header class="top">
       <div style="min-width:0"><div class="mspace" id="mspace"></div><div class="sub" id="hello"></div><h1 id="title">Início</h1></div>
-      <div style="display:flex;gap:8px;align-items:center"><button id="pingbtn" style="height:36px;padding:0 16px;border-radius:20px;border:0;background:#0b0c0c;color:#fff;font:600 13px inherit;cursor:pointer;white-space:nowrap">📣<span class="pl"> Avisar o Claude</span></button><button class="x" id="lbtn" aria-label="Língua" style="font-size:12px;font-weight:600;width:auto;padding:0 12px;border-radius:20px"></button><button class="x" id="sbtn" aria-label="Pesquisar" style="display:grid;place-items:center"><span style="width:18px;height:18px;display:block" id="sico"></span></button><div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div></div>
+      <div style="display:flex;gap:8px;align-items:center"><button class="x" id="lbtn" aria-label="Língua" style="font-size:12px;font-weight:600;width:auto;padding:0 12px;border-radius:20px"></button><button class="x" id="sbtn" aria-label="Pesquisar" style="display:grid;place-items:center"><span style="width:18px;height:18px;display:block" id="sico"></span></button><div class="live"><span class="dot" id="dot"></span><span id="fresh">a carregar…</span></div></div>
     </header>
     <section class="view on" id="v-hoje"></section>
     <section class="view" id="v-cal"></section>
@@ -328,7 +337,7 @@ function effStatus(i){const a=D.pending_approvals&&D.pending_approvals[i.key];
 function reviewed(i){return i.type!=="feed"||!i.stem||!!(D.reviews&&D.reviews[i.key])}
 function pendingCount(){return D?allItems().filter(i=>effStatus(i)==="pending").length:0}
 function itemRow(i){
-  const st=effStatus(i);const th=i.thumb?`<img class="thumb ${i.type!=="feed"?"st":""}" loading="lazy" src="${esc(i.thumb)}" alt="">`:`<div class="thumb"></div>`;
+  const st=effStatus(i);const th=i.thumb?`<img class="thumb ${i.type!=="feed"?"st":""}" loading="lazy" src="${esc(LOCAL[i.key]||i.thumb)}" alt="">`:`<div class="thumb"></div>`;
   return `<div class="item clickable" data-open="${esc(i.key)}">${th}<div class="t"><b>${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</b><span>${esc(i.caption||i.note||"")}</span></div>${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${st}">${ST[st]||st}</span>`}</div>`
 }
 function renderHoje(){
@@ -377,18 +386,21 @@ function renderCal(){
     const pend=its.filter(i=>effStatus(i)==="pending");
     const feeds=its.filter(i=>i.type==="feed"),reels=its.filter(i=>i.type==="reel"),stories=its.filter(i=>i.type==="story");
     return `<div class="day"><div class="dayh"><b>${fmtDay(d.date)}</b>${pend.length?`<button class="btn pri" data-ap='${esc(JSON.stringify(pend.map(i=>i.key)))}'>Aprovar dia (${pend.length})</button>`:""}</div>
-    ${[...feeds,...reels].map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${(i.slides||[i.thumb]).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
+    ${feeds.length?`<div class="trow"><span class="tlab feed">Post</span><div>${feeds.map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${(i.slides||[i.thumb]).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
       <div><div class="meta">${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</div><p>${esc(i.caption||"")}</p></div>
-      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link&&i.type==="feed"?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}${actBtns(i)}</div></div>`).join("")}
-    ${stories.length?`<div class="sgrid">${stories.map(s=>`<div class="scard"><img class="clickable" data-open="${esc(s.key)}" loading="lazy" src="${esc(s.thumb)}" alt=""><div class="sc-b"><span>${esc(s.time)} · Story</span><span class="pill ${effStatus(s)}">${ST[effStatus(s)]}</span>${s.stem&&effStatus(s)!=="published"?`<button class="btn sm" data-scrop="${esc(s.key)}">✎</button>`:""}${actBtns(s)}</div></div>`).join("")}</div>`:""}
+      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link&&i.type==="feed"?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}${actBtns(i)}</div></div>`).join("")}</div></div>`:""}
+    ${reels.length?`<div class="trow"><span class="tlab reel">Reel</span><div>${reels.map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${(i.slides||[i.thumb]).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
+      <div><div class="meta">${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</div><p>${esc(i.caption||"")}</p></div>
+      <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link&&i.type==="feed"?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}${actBtns(i)}</div></div>`).join("")}</div></div>`:""}
+    ${stories.length?`<div class="trow"><span class="tlab story">Stories</span><div class="sgrid">${stories.map(s=>`<div class="scard"><img class="clickable" data-open="${esc(s.key)}" data-sk="${esc(s.key)}" loading="lazy" src="${esc(LOCAL[s.key]||s.thumb)}" alt=""><div class="sc-b"><span>${esc(s.time)} · Story</span><span class="pill ${effStatus(s)}">${ST[effStatus(s)]}</span>${s.stem&&effStatus(s)!=="published"?`<button class="btn sm" data-scrop="${esc(s.key)}">✎</button>`:""}${actBtns(s)}</div></div>`).join("")}</div></div>`:""}
     </div>`}).join("");
   const allPend=allItems().filter(i=>effStatus(i)==="pending").map(i=>i.key);
-  $("#v-cal").innerHTML=head+(allPend.length?`<div class="alert warn"><i></i><div style="flex:1">${allPend.length} publicações à espera do teu ✅.</div><button class="btn pri" data-ap='${esc(JSON.stringify(allPend))}'>Aprovar tudo</button></div>`:"")+(body||`<div class="empty">Nada neste filtro.</div>`);
+  $("#v-cal").innerHTML=head+(allPend.length?`<div class="alert warn"><i></i><div style="flex:1">${allPend.length} publicações à espera do teu ✅.</div><button class="btn pri" data-ap='${esc(JSON.stringify(allPend))}'>Aprovar tudo</button></div>`:"")+(body?`<div class="calwrap">${body}</div>`:`<div class="empty">Nada neste filtro.</div>`);fixThumbs($("#v-cal"));
   $("#v-cal").querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{calF=b.dataset.f;renderCal()});
   $("#v-cal").querySelectorAll("[data-ap]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve(JSON.parse(b.dataset.ap),b)});
   $("#v-cal").querySelectorAll("[data-un]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve([b.dataset.un],b,true)});
   $("#v-cal").querySelectorAll("[data-one]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.one);if(!reviewed(it)){openItem(it.key);toast("Primeiro aceita ou edita os recortes");return}approve([it.key],b)});
-  $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,"story",it.story_idx)});
+  $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,"story",it.story_idx||0,true)});
 }
 function actBtns(i){const st=effStatus(i);if(i.link||st==="published"||st==="skipped")return"";
   return st==="approved"?`<button class="btn sm" data-un="${esc(i.key)}" title="Desaprovar">↺ Desaprovar</button>`:`<button class="btn sm pri" data-one="${esc(i.key)}">✓ Aprovar</button>`}
@@ -398,6 +410,12 @@ async function approve(keys,btn,undo){if(btn)btn.disabled=true;
     if(!r.ok)throw 0;D.pending_approvals=D.pending_approvals||{};keys.forEach(k=>{D.pending_approvals[k]=undo?{v:false,at:new Date().toISOString()}:new Date().toISOString()});
     toast(undo?"Desaprovado ↺":"Aprovado ✓");renderAll();undoBar(undo?"Desaprovado":"Aprovado "+keys.length,()=>approve(keys,null,!undo))}catch(e){if(btn)btn.disabled=false;toast("Não consegui gravar. Tenta outra vez.")}}
 let undoT=null;
+const LOCAL={};  // key -> dataURL rendered in the browser right after a crop save (instant), until the robot's file arrives
+function cropURL(it,story){return new Promise(res=>{const c=story?(it.story_crops||[])[it.story_idx||0]:(it.crops||[])[0];if(!c||!it.orig)return res("");
+  const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{const AR=story?.5625:.8,W=im.naturalWidth,H=im.naturalHeight;let ch=Math.min(c[2]*H,H),cw=AR*ch;if(cw>W){cw=W;ch=cw/AR}
+    let x=Math.min(Math.max(c[0]*W-cw/2,0),W-cw),y=Math.min(Math.max(c[1]*H-ch/2,0),H-ch);const cv=document.createElement("canvas");cv.width=540;cv.height=Math.round(540/AR);
+    cv.getContext("2d").drawImage(im,x,y,cw,ch,0,0,cv.width,cv.height);try{res(cv.toDataURL("image/jpeg",.85))}catch(e){res("")}};im.onerror=()=>res("");im.src=it.orig})}
+function fixThumbs(root){root.querySelectorAll("img[data-sk]").forEach(img=>{img.onerror=async()=>{img.onerror=null;const it=allItems().find(x=>x.key===img.dataset.sk);const u=it&&await cropURL(it,true);if(u){LOCAL[it.key]=u;img.src=u}else img.style.visibility="hidden"}})}
 function undoBar(text,fn){const e=$("#toast");e.innerHTML=`${esc(text)} · <button style="background:none;border:0;font:inherit;font-weight:600;text-decoration:underline;color:inherit;pointer-events:auto" id="undoB">Anular</button>`;e.classList.add("on");e.style.pointerEvents="auto";
   $("#undoB").onclick=()=>{e.classList.remove("on");e.style.pointerEvents="none";fn()};clearTimeout(undoT);undoT=setTimeout(()=>{e.classList.remove("on");e.style.pointerEvents="none"},7000)}
 async function review(i,undo){try{const r=await fetch("api.php?a=review",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,how:"aceite",undo:!!undo})});const j=await r.json();if(!j.ok)throw 0;D.reviews=j.reviews;renderAll();openItem(i.key);if(!undo)undoBar("Recortes aceites",()=>review(i,true))}catch(e){toast("Sem ligação")}}
@@ -427,7 +445,7 @@ function renderLinks(){
   $("#v-links").innerHTML=`<div class="grid g2">${Object.entries(g).map(([k,ls])=>`<div class="card links"><h2>${esc(k)}</h2>${ls.map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}<span>↗</span></a>`).join("")}</div>`).join("")}</div>`;
 }
 function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;const st=effStatus(i);
-  const media=i.type==="reel"?`<video src="${esc(i.full[0])}" poster="${esc(i.thumb)}" controls playsinline preload="metadata"></video>`:(i.full||[]).map((u,n)=>`<img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt="">`).join("");
+  const media=i.type==="reel"?`<video src="${esc(i.full[0])}" poster="${esc(LOCAL[i.key]||i.thumb)}" controls playsinline preload="metadata"></video>`:(i.type==="story"&&LOCAL[i.key]?[LOCAL[i.key]]:(i.full||[])).map((u,n)=>`<img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt="">`).join("");
   const rv=reviewed(i),rinfo=D.reviews&&D.reviews[i.key];
   $("#mbox").innerHTML=`<div class="mhead"><div style="min-width:0"><div class="sub">${fmtDay(i.date)} · ${esc(i.time)} · ${TY[i.type]}</div><b>${esc(i.project_title)}</b></div><button class="x" id="mx" aria-label="fechar">×</button></div>
   <div class="cbar" style="margin:0 0 12px">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:`<span class="pill ${st}">${ST[st]}</span>`}
@@ -444,7 +462,7 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
   const cs=$("#cSave");if(cs)cs.onclick=async()=>{const old={en:i.caption,pt:i.caption_pt},nw={en:$("#cEN").value.trim(),pt:$("#cPT").value.trim()};cs.disabled=true;
     const save=async v=>{const r=await fetch("api.php?a=caption",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,...v})});if(!r.ok)throw 0;i.caption=v.en;i.caption_pt=v.pt};
     try{await save(nw);toast("Legenda guardada ✓");undoBar("Legenda guardada",()=>save(old).then(()=>toast("Legenda reposta ↺")))}catch(e){toast("Não consegui guardar")}cs.disabled=false};
-  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,"story",i.story_idx);
+  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,"story",i.story_idx||0,true);
   const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
   const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
 function closeModal(){$("#modal").classList.remove("on");document.body.style.overflow="";const v=$("#mbox video");if(v)v.pause()}
@@ -636,27 +654,27 @@ function renderMarca(){const st=D.stats||{},ac=st.account||{},M=st.media||[];con
     <div class="card kpi"><b>${fut.length}</b><span>posts na fila</span></div></div>
   ${st.error?`<div class="alert warn"><i></i><div>Números do Instagram indisponíveis: ${esc(st.error)}</div></div>`:""}
   <div class="grid g2"><div class="card"><h2>O teu feed: o que vem + o que já saiu</h2><div class="feedg">
-    ${fut.map(i=>`<div class="f clickable" data-open="${esc(i.key)}"><img loading="lazy" src="${esc(i.thumb)}" alt=""><span class="tag">${fmtDay(i.date)}</span></div>`).join("")}
+    ${fut.map(i=>`<div class="f clickable" data-open="${esc(i.key)}"><img loading="lazy" src="${esc(LOCAL[i.key]||i.thumb)}" alt=""><span class="tag">${fmtDay(i.date)}</span></div>`).join("")}
     ${M.map(m=>`<a href="${esc(m.permalink)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.img)}" alt=""></a>`).join("")}</div>
     <div class="sub" style="margin-top:8px">${st.at?`Instagram lido ${ago(st.at)}`:"Números chegam com o próximo robô de estatísticas."}</div></div>
    <div class="grid" style="align-content:start"><div class="card"><h2>Seguidores</h2>${spark(D.followers)||`<div class="empty">A curva aparece a partir do 2.º dia.</div>`}</div>
     <div class="card"><h2>Melhores posts recentes</h2>${M.slice().sort((a,b)=>((b.like_count||0)+(b.comments_count||0)*3)-((a.like_count||0)+(a.comments_count||0)*3)).slice(0,5).map(m=>`<div class="mini"><a href="${esc(m.permalink)}" target="_blank" rel="noopener" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.caption||"(sem legenda)")}</a><span>♥ ${m.like_count??0} · 💬 ${m.comments_count??0}</span></div>`).join("")||`<div class="empty">—</div>`}</div>
     <div class="card"><h2>Redes</h2>${(D.networks||[]).map(n=>`<div class="net"><div>${esc(n.name)}</div><span>${esc(n.status)}</span></div>`).join("")}</div></div></div>`}
-function cropEditor(it,mode,startSel){mode=mode||"post";const AR=mode==="story"?.5625:.8;
+function cropEditor(it,mode,startSel,single){mode=mode||"post";const AR=mode==="story"?.5625:.8;
   let C=((mode==="story"?it.story_crops:it.crops)||[]).map(c=>c.slice());if(!C.length)C=[[.5,.5,1]];let sel=Math.min(startSel||0,C.length-1);const R=it.orig_ratio;
-  $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${esc(it.project_title)} · grelha dos terços</div><b>Editar recortes</b></div><button class="x" id="mx">×</button></div>
-  <div class="seg"><button class="${mode==="post"?"on":""}" data-cm="post">Post 4:5</button><button class="${mode==="story"?"on":""}" data-cm="story">Stories 9:16</button></div>
+  $("#mbox").innerHTML=`<div class="mhead"><div><div class="sub">${esc(it.project_title)} · grelha dos terços</div><b>${single?"Editar enquadramento deste story":"Editar recortes"}</b></div><button class="x" id="mx">×</button></div>
+  <div class="seg" ${single?"style=\"display:none\"":""}><button class="${mode==="post"?"on":""}" data-cm="post">Post 4:5</button><button class="${mode==="story"?"on":""}" data-cm="story">Stories 9:16</button></div>
   <div class="ced" id="ced"><img id="cimg" src="${esc(it.orig)}" alt=""></div>
-  <div class="cbar"><span class="sub">Tamanho</span><input type="range" id="csz" min="0.25" max="1" step="0.005"><button class="btn" id="cadd">+ Recorte</button><button class="btn" id="cdel">Apagar este</button></div>
-  <div class="cprev" id="cprev"></div>
-  <div class="cbar" style="justify-content:space-between"><span class="sub">${mode==="story"?"Stories em ecrã inteiro: o 1.º é a abertura, os outros os pormenores.":"Arrasta a moldura. O último slide (imagem inteira em branco) é sempre acrescentado."}</span><button class="btn pri" id="csave">Guardar recortes</button></div>`;
+  <div class="cbar"><span class="sub">Tamanho</span><input type="range" id="csz" min="0.25" max="1" step="0.005">${single?"":`<button class="btn" id="cadd">+ Recorte</button><button class="btn" id="cdel">Apagar este</button>`}</div>
+  <div class="cprev" id="cprev" ${single?"style=\"display:none\"":""}></div>
+  <div class="cbar" style="justify-content:space-between"><span class="sub">${single?"Arrasta a moldura e ajusta o tamanho. Guardar atualiza logo este story.":mode==="story"?"Stories em ecrã inteiro: o 1.º é a abertura, os outros os pormenores.":"Arrasta a moldura. O último slide (imagem inteira em branco) é sempre acrescentado."}</span><button class="btn pri" id="csave">${single?"Guardar":"Guardar recortes"}</button></div>`;
   $("#modal").classList.add("on");$("#mx").onclick=closeModal;
   $("#mbox").querySelectorAll("[data-cm]").forEach(b=>b.onclick=()=>cropEditor(it,b.dataset.cm,mode==="story"?0:sel));
   const ced=$("#ced"),img=$("#cimg");
   const geom=c=>{const W=ced.clientWidth,H=W/R;let ch=Math.min(c[2]*H,H),cw=AR*ch;if(cw>W){cw=W;ch=Math.min(cw/AR,H)}
     let x=c[0]*W-cw/2,y=c[1]*H-ch/2;x=Math.min(Math.max(x,0),W-cw);y=Math.min(Math.max(y,0),H-ch);return{x,y,w:cw,h:ch,W,H}};
   const draw=()=>{ced.querySelectorAll(".cbox").forEach(b=>b.remove());
-    C.forEach((c,n)=>{const g=geom(c);const b=document.createElement("div");b.className="cbox"+(n===sel?" on":"");b.style.cssText=`left:${g.x}px;top:${g.y}px;width:${g.w}px;height:${g.h}px`;
+    C.forEach((c,n)=>{if(single&&n!==sel)return;const g=geom(c);const b=document.createElement("div");b.className="cbox"+(n===sel?" on":"");b.style.cssText=`left:${g.x}px;top:${g.y}px;width:${g.w}px;height:${g.h}px`;
       b.innerHTML=`<i class="v1"></i><i class="v2"></i><i class="h1"></i><i class="h2"></i><b>${n+1}</b>`;b.dataset.n=n;ced.appendChild(b)});
     $("#csz").value=C[sel][2];prev()};
   const prev=()=>{const pv=$("#cprev");pv.innerHTML="";C.forEach((c,n)=>{const g=geom(c),cv=document.createElement("canvas");cv.width=mode==="story"?135:192;cv.height=240;cv.style.width=mode==="story"?"68px":"96px";cv.className=n===sel?"on":"";
@@ -669,12 +687,14 @@ function cropEditor(it,mode,startSel){mode=mode||"post";const AR=mode==="story"?
     C[sel][0]=+(cx/g.W).toFixed(3);C[sel][1]=+(cy/g.H).toFixed(3);const b=ced.querySelector(`.cbox[data-n="${sel}"]`);const ng=geom(C[sel]);b.style.left=ng.x+"px";b.style.top=ng.y+"px"});
   ced.addEventListener("pointerup",()=>{if(drag){drag=null;prev()}});
   $("#csz").oninput=e=>{C[sel][2]=+(+e.target.value).toFixed(3);draw()};
-  $("#cadd").onclick=()=>{if(C.length>=6)return toast("Máximo 6 recortes");C.push([.5,.5,.6]);sel=C.length-1;draw()};
-  $("#cdel").onclick=()=>{if(C.length<=1)return toast("Fica pelo menos 1");C.splice(sel,1);sel=0;draw()};
+  if(!single)$("#cadd").onclick=()=>{if(C.length>=6)return toast("Máximo 6 recortes");C.push([.5,.5,.6]);sel=C.length-1;draw()};
+  if(!single)$("#cdel").onclick=()=>{if(C.length<=1)return toast("Fica pelo menos 1");C.splice(sel,1);sel=0;draw()};
   $("#csave").onclick=async()=>{const b=$("#csave");b.disabled=true;
     C=C.map(c=>{const g=geom(c);return[+((g.x+g.w/2)/g.W).toFixed(3),+((g.y+g.h/2)/g.H).toFixed(3),+(g.h/g.H).toFixed(3)]});
     try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C,kind:mode,item_key:it.key,previous:(mode==="story"?it.story_crops:it.crops)})});if(!r.ok)throw 0;const j=await r.json();
-      const prevC=(mode==="story"?it.story_crops:it.crops);if(mode==="story")it.story_crops=C;else it.crops=C;D.reviews=D.reviews||{};D.reviews[it.key]={how:"editado"};closeModal();renderAll();
+      const prevC=(mode==="story"?it.story_crops:it.crops);if(mode==="story")it.story_crops=C;else it.crops=C;D.reviews=D.reviews||{};D.reviews[it.key]={how:"editado"};
+      allItems().filter(x=>x.stem===it.stem&&x.project===it.project).forEach(x=>{if(mode==="story")x.story_crops=C;else x.crops=C});
+      closeModal();if(mode==="story"){const u=await cropURL(it,true);if(u)LOCAL[it.key]=u}renderAll();
       undoBar(j.robot==="started"?"Recortes guardados, robô a refazer":"Recortes guardados",async()=>{await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:prevC,kind:mode})});if(mode==="story")it.story_crops=prevC;else it.crops=prevC;toast("Recortes repostos ↺")})}catch(e){b.disabled=false;toast("Não consegui guardar")}};
   if(img.complete)draw();else img.onload=draw;window.addEventListener("resize",()=>{if($("#ced"))draw()},{once:true})}
 const EN={"Início": "Home", "Ideias": "Ideas", "Projetos pessoais": "Personal projects", "Portfólio": "Portfolio", "Oportunidades": "Opportunities", "Perfil": "Profile", "Tarefas": "Tasks", "Links": "Links", "Marca": "Brand", "Calendário": "Calendar", "Conteúdo": "Content", "Projetos": "Projects", "Estúdio": "Studio", "Mais": "More", "Tudo": "All", "Bom dia, Vítor": "Good morning, Vítor", "Boa tarde, Vítor": "Good afternoon, Vítor", "Boa noite, Vítor": "Good evening, Vítor", "Marca 3D": "3D brand", "publicações hoje": "posts today", "dias de posts aprovados": "days of approved posts", "por aprovar": "to approve", "tarefas tuas": "your tasks", "Projetos pessoais em curso": "Personal projects in progress", "Ideias recentes": "Recent ideas", "Oportunidades ativas": "Active opportunities", "Redes": "Networks", "Próximas tarefas tuas": "Your next tasks", "Linha do tempo": "Timeline", "Último robô de publicação": "Last publishing robot", "Posts": "Posts", "Stories": "Stories", "Reels": "Reels", "Por aprovar": "To approve", "Aprovar tudo": "Approve all", "Aprovado": "Approved", "Publicado": "Published", "Erro": "Error", "Saltado": "Skipped", "✓ Aprovar": "✓ Approve", "Aprovar": "Approve", "↺ Desaprovar": "↺ Unapprove", "✎ Editar recortes": "✎ Edit crops", "✓ Aceitar recortes": "✓ Accept crops", "✎ Editar enquadramento": "✎ Edit framing", "Recortes ✓": "Crops ✓", "Ver recortes": "Check crops", "Primeiro aceita ou edita os recortes": "Accept or edit the crops first", "Editar recortes": "Edit crops", "Tamanho": "Size", "+ Recorte": "+ Crop", "Apagar este": "Delete this", "Guardar recortes": "Save crops", "Post 4:5": "Post 4:5", "Stories 9:16": "Stories 9:16", "Guardar": "Save", "Enviar": "Send", "apagar": "delete", "Anular": "Undo", "Copiar": "Copy", "Pesquisar tudo": "Search everything", "Apontar": "Quick note", "Todas": "All", "Ideia": "Idea", "Para debater": "To discuss", "Tarefa": "Task", "Outro": "Other", "Abertas": "Open", "Novo": "New", "Em curso": "In progress", "Feito": "Done", "Arquivado": "Archived", "Tuas": "Yours", "Feitas": "Done", "Exterior": "Exterior", "Interior": "Interior", "Objetivos": "Goals", "Serviços": "Services", "Ferramentas": "Tools", "Textos prontos a copiar": "Copy-ready texts", "Robô imediato": "Instant robot", "Regras": "Rules", "Semana tipo": "Typical week", "Os 15 pilares de conteúdo": "The 15 content pillars", "Seguidores": "Followers", "Melhores posts recentes": "Best recent posts", "seguidores": "followers", "publicações no Instagram": "Instagram posts", "alcance 7 dias": "7-day reach", "posts na fila": "posts in queue", "Nova": "New", "+ Nova": "+ New", "Encontrada": "Found", "Enviada": "Sent", "Resposta": "Reply", "Entrevista": "Interview", "Proposta": "Proposal", "Ganha": "Won", "Perdida": "Lost", "A explorar": "Exploring", "Parado": "Paused", "Decidido nas nossas conversas": "Decided in our chats", "Nada encontrado.": "Nothing found.", "Nada neste filtro.": "Nothing in this filter.", "Nada agendado para hoje.": "Nothing scheduled today."};
@@ -698,21 +718,6 @@ nav();go(cur);load();setInterval(load,15000);setInterval(tick,5000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>
-<div id="pingdlg" hidden style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;display:grid;place-items:center;padding:16px">
-<div style="background:#fff;color:#0b0c0c;max-width:520px;width:100%;border-radius:16px;padding:22px;font-size:15px;line-height:1.5">
-<h3 style="margin:0 0 6px">📣 Avisar o Claude</h3>
-<p id="pingtxt" style="margin:0 0 12px;color:#555">O Claude vai ver tudo o que mudaste na app desde o último aviso (aprovações, recortes, legendas, ideias, tarefas, oportunidades). Se quiseres, escreve o que pedes:</p>
-<textarea id="pingnote" rows="4" style="width:100%;border:1px solid #ccc;border-radius:10px;padding:10px;font:inherit" placeholder="Ex.: aprovei a semana 2, mudei 3 recortes, vê a ideia #12…"></textarea>
-<div id="pingok" hidden style="margin-top:12px;padding:12px;background:#f2f1ee;border-radius:10px"><b>Feito ✓</b> Agora abre o chat do Claude (projeto BOUND VISUALS) e cola isto:<div id="pingmsg" style="margin:8px 0;padding:10px;background:#fff;border-radius:8px;font-family:monospace;font-size:13px;user-select:all">Tenho novidades no Painel.</div><button id="pingcopy" style="height:36px;padding:0 14px;border-radius:18px;border:1px solid #0b0c0c;background:#fff;font:600 13px inherit;cursor:pointer">Copiar mensagem</button> <a href="https://claude.ai" target="_blank" rel="noopener" style="margin-left:8px;font-weight:600">Abrir o Claude ↗</a></div>
-<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px"><button id="pingclose" style="height:38px;padding:0 16px;border-radius:19px;border:1px solid #ccc;background:#fff;font:600 13px inherit;cursor:pointer">Fechar</button><button id="pingsend" style="height:38px;padding:0 18px;border-radius:19px;border:0;background:#0b0c0c;color:#fff;font:600 13px inherit;cursor:pointer">Enviar aviso</button></div>
-</div></div>
-<script>
-(function(){const $=id=>document.getElementById(id),dl=$("pingdlg");
-$("pingbtn").onclick=()=>{$("pingok").hidden=true;$("pingsend").hidden=false;$("pingnote").value="";dl.hidden=false;dl.style.display="grid"};
-$("pingclose").onclick=()=>{dl.hidden=true;dl.style.display="none"};
-$("pingsend").onclick=async()=>{$("pingsend").disabled=true;try{const r=await fetch("api.php?a=ping",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({note:$("pingnote").value})});const j=await r.json();if(!j.ok)throw 0;
-$("pingmsg").textContent="Tenho novidades no Painel"+($("pingnote").value.trim()?": "+$("pingnote").value.trim():".");$("pingok").hidden=false;$("pingsend").hidden=true}catch(e){alert("Sem ligação, tenta outra vez")}$("pingsend").disabled=false};
-$("pingcopy").onclick=async()=>{try{await navigator.clipboard.writeText($("pingmsg").textContent);$("pingcopy").textContent="Copiado ✓"}catch(e){}};})();
-</script>
+
 </body>
 </html>
