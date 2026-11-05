@@ -1,0 +1,6 @@
+# Same angle rendered twice: horizontal (site) → vertical (Instagram). On Instagram the vertical is used,
+# the horizontal is never queued (feed or stories). Add pairs here: project: {horizontal_stem: vertical_stem}
+apartamentos-gondomar-2:
+  10_-_Interior_3_10-interior3_edit_0001: 11_-_Interior_4_11-interior4_edit_0001
+  14_-_Interior_7_14-interior7_edit_0001: 17_-_Interior_10_17-interior10_0001
+  8_-_Interior_1_8-interior1_edit_0001: 9_-_Interior_2_9-interior2_edit_0001

@@ -15,14 +15,6 @@
   caption_en: 'A balcony as an extra room: planters, a reading chair and the street below. Gold Village.'
   caption_pt: 'Uma varanda como mais uma divisão: floreiras, uma cadeira de leitura e a rua lá em baixo. Gold Village.'
   approved: false
-- date: '2026-12-06'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 11_-_Interior_4_11-interior4_edit_0001-01.jpg
-  caption_en: Soft grey, warm oak and a quiet moment on the sofa. Apartamentos Gondomar 2.
-  caption_pt: Cinzentos suaves, carvalho quente e um momento calmo no sofá. Apartamentos Gondomar 2.
-  approved: false
 - date: '2026-12-07'
   time: '19:00'
   project: apartamentos-gondomar-2
@@ -46,12 +38,4 @@
   - 6_-_exterior6_6-exterior6-01.jpg
   caption_en: A ground-floor terrace, a book and an afternoon outside. Gold Village.
   caption_pt: Um terraço no rés do chão, um livro e uma tarde cá fora. Gold Village.
-  approved: false
-- date: '2026-12-10'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 17_-_Interior_10_17-interior10_0001-01.jpg
-  caption_en: The sofa faces the window and the window faces the hills. Apartamentos Gondomar 2.
-  caption_pt: O sofá virado para a janela e a janela virada para as colinas. Apartamentos Gondomar 2.
   approved: false
