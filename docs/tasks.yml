@@ -85,7 +85,8 @@
 - id: c-dossier
   owner: claude
   title: Atualizar dossier e CLAUDE.md (bloqueio, semanas 2–4, painel)
-  detail: "05/11: CLAUDE.md atualizado (estado 05/11: notificações de publicação, Ligar redes, Oportunidades, Daily Study até #039). Falta: o Dossier (Claude Doc)."
+  detail: "05/11: CLAUDE.md atualizado (estado 05/11: notificações de publicação, Ligar redes, Oportunidades, Daily Study até #039). 05/11 (sessão automática): Dossier (Claude Doc) atualizado — Agora, tarefas do Claude, registo de decisões 03–05/11."
+  done: true
 - id: c-highlights
   owner: claude
   title: Capas dos destaques do Instagram
