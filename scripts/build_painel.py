@@ -14,6 +14,37 @@ FILA = "https://www.boundvisuals.com/bv-fila"
 from urllib.parse import quote
 
 
+def pt_claude_log():
+    """[(datetime, short PT text)] from docs/inbox-replies.yml → claude-log (Claude's session notes, in PT)."""
+    try:
+        d = yaml.safe_load(open("docs/inbox-replies.yml", encoding="utf-8")) or {}
+    except Exception:
+        return []
+    out = []
+    for e in d.get("claude-log") or []:
+        try:
+            at = datetime.datetime.fromisoformat(str(e["at"]).replace("Z", "+00:00"))
+        except Exception:
+            continue
+        t = re.sub(r"^Sessão automática(?: \([^)]*\))?:\s*", "", str(e.get("text", "")).strip())
+        t = re.sub(r"^\(?\d+\)\s*", "", t)
+        t = re.split(r"(?<=[.;—:])\s", t, maxsplit=1)[0].rstrip(":;— ")
+        if len(t) > 150:
+            t = t[:147].rsplit(" ", 1)[0] + "…"
+        out.append((at, t[:1].upper() + t[1:]))
+    return out
+
+
+def nearest_pt(at, pt_log, window=75 * 60):
+    """PT note written within ±75 min of a Claude commit (each session writes one note + commits)."""
+    try:
+        t = datetime.datetime.fromisoformat(at)
+    except Exception:
+        return None
+    best = min(((abs((t - a).total_seconds()), txt) for a, txt in pt_log), default=None)
+    return best[1] if best and best[0] <= window else None
+
+
 def studies():
     """Parse docs/daily-study-briefings.md into [{num,title,when,blocks:[{k,t}]}] for the Estúdio tab."""
     p = "docs/daily-study-briefings.md"
@@ -340,14 +371,18 @@ def build(out):
           (r"^Approved in the panel \((\d+)\)", "you", r"Aprovaste \1 publicações no painel"), (r"^Stats", "robot", "Números do Instagram atualizados"),
           (r"^Painel: ideas inbox", "you", "Nova ideia apontada"), (r"^Previews: (.+)", "robot", r"Pré-visualizações: \1"),
           (r"^Ingest|^Report: (.+)", "robot", "Imagens processadas"), (r"^Hand crops: (.+)", "claude", r"Recortes à mão: \1")]
-    raw = subprocess.run(["git", "log", "-80", "--format=%aI\t%an\t%s"], capture_output=True, text=True).stdout.strip().splitlines()
+    raw = subprocess.run(["git", "log", "-80", "--format=%aI%x1f%an%x1f%s%x1f%b%x1e"], capture_output=True, text=True).stdout.split("\x1e")
+    pt_log = pt_claude_log()
     timeline, seen_log = [], None
     for line in raw:
         try:
-            at, who, subj = line.split("\t", 2)
+            at, who, subj, body = line.strip("\n").split("\x1f", 3)
         except ValueError:
             continue
         kind, text = ("robot" if who == "bv-robot" else "claude"), subj
+        if kind == "claude":                      # Vítor reads PT: commit trailer "Painel: …" or the matching claude-log note
+            m = re.search(r"^Painel-PT:\s*(.+)$", body, re.M)
+            text = m.group(1).strip() if m else (nearest_pt(at, pt_log) or subj)
         for rx, k, t in FR:
             m = re.search(rx, subj)
             if m:
@@ -360,6 +395,8 @@ def build(out):
             if seen_log:
                 continue
             seen_log = True
+        if kind == "claude" and timeline and timeline[-1]["kind"] == "claude" and timeline[-1]["text"] == text:
+            continue                              # several commits of one session → one line
         timeline.append({"at": at, "kind": kind, "text": text})
     for k, v in state.items():
         if isinstance(v, dict) and v.get("ig"):
