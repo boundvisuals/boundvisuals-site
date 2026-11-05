@@ -176,3 +176,6 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 ## "AVISAR O CLAUDE" (05/11) — how Vítor wakes Claude now
 - Painel header button "📣 Avisar o Claude" → api.php?a=ping stores {at, note} → robot painel.yml copies to docs/claude-ping.json. Vítor then opens a chat in the Project and pastes "Tenho novidades no Painel…".
 - On that message: git pull; read docs/claude-ping.json (newest entry + previous `at`); `git log --since=<previous ping at>` to see everything he changed (approvals, crops, captions, inbox ideas → answer them in docs/inbox-replies.yml, opps → kits, tasks); do the work; reply short. No recurring Claude tasks unless he asks.
+
+## FREE ROBOTS (05/11, Vítor: "robôs mecânicos só, o máximo")
+- .github/workflows/robots.yml (06:41 + 15:17 UTC): scripts/hunt_opps.py (RemoteOK, Arbeitnow, Jobicy, Himalayas, WWR → docs/opps-auto.yml + docs/kits/auto-*.md templated kits; shown in Painel Oportunidades), scripts/watchdog.py (sites, personal-site links, PDFs, SSL, Meta token, queue horizon → docs/watchdog.json; card in Início), Sunday backup of Painel store (no secrets) → backups/painel/, Monday PDF/site rebuild. notify.py pushes watchdog failures + new leads. No AI in robots (Vítor declined GitHub Models).
