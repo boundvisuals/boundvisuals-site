@@ -141,6 +141,8 @@
 - id: c-palette-slide
   owner: claude
   title: "Slide de paleta de cores (5 cores tiradas de uma imagem final, 1080×1350, marca BV) para os carrosséis de 'Desafio de cor' (1.º uso: Daily Study #056, 13 mar)"
+  done: true
+  detail: "05/11: ferramenta pronta — scripts/make_palette.py <imagem> [saída] [--title ...] → slide 1080×1350 fundo #e5e5e3, imagem inteira (nunca cortada), 5 cores dominantes (k-means em Lab, cores distintas, escuro→claro) com HEX + RGB, assinatura Vítor Hugo / Bound Visuals. Testado em Vivendas Cête e Gold Village. Usar quando chegarem as finais do #056."
 - id: c-video-reels
   owner: claude
   title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"
