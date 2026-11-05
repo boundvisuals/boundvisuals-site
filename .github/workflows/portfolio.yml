@@ -21,7 +21,7 @@ jobs:
             brand/portfolio-3d/package
             brand/portfolio-ai/package
             brand/portfolio-all/package
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
+      - run: (timeout 180 sudo apt-get update -qq || true) && timeout 300 sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
       - name: Full-resolution originals from MEGA (finals of each project)
         run: |
           wget -q https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megacmd-xUbuntu_24.04_amd64.deb -O megacmd.deb
