@@ -1,0 +1,91 @@
+{
+    "root_1_-_Front___webp_+_Seedvr2_bravo": {
+        "project": "vivendas-duas-igrejas",
+        "crops": [
+            [
+                0.517,
+                0.5,
+                1
+            ],
+            [
+                0.74,
+                0.5,
+                1
+            ]
+        ],
+        "at": "2026-11-04T09:52:34+00:00"
+    },
+    "5-exterior1_5-exterior1": {
+        "project": "vivendas-cete",
+        "kind": "post",
+        "crops": [
+            [
+                0.333,
+                0.5,
+                1
+            ],
+            [
+                0.626,
+                0.5,
+                1
+            ]
+        ],
+        "at": "2026-11-05T15:47:37+00:00"
+    },
+    "story|1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT": {
+        "project": "vivendas-cete",
+        "kind": "story",
+        "crops": [
+            [
+                0.29,
+                0.5,
+                1
+            ],
+            [
+                0.543,
+                0.5,
+                1
+            ]
+        ],
+        "at": "2026-11-05T15:49:20+00:00"
+    },
+    "story|10_-_interior3_10-interior3": {
+        "project": "gold-village",
+        "kind": "story",
+        "crops": [
+            [
+                0.623,
+                0.5,
+                1
+            ],
+            [
+                0.157,
+                0.5,
+                1
+            ],
+            [
+                0.447,
+                0.5,
+                1
+            ]
+        ],
+        "at": "2026-11-05T15:52:24+00:00"
+    },
+    "story|root_1_-_Front___webp_+_Seedvr2_bravo": {
+        "project": "vivendas-duas-igrejas",
+        "kind": "story",
+        "crops": [
+            [
+                0.532,
+                0.5,
+                1
+            ],
+            [
+                0.756,
+                0.5,
+                1
+            ]
+        ],
+        "at": "2026-11-05T15:55:33+00:00"
+    }
+}
