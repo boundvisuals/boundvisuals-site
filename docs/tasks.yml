@@ -136,6 +136,7 @@
 - id: c-opp-kits
   owner: claude
   title: "Kit por oportunidade: para cada entrada em docs/opps.json sem docs/kits/<id>.md, escrever o kit (carta EN+PT adaptada à vaga/cliente, 6-10 imagens do portfólio a enviar, versão do CV, data de follow-up)"
+  detail: "05/11: kits feitos para as 5 pistas (Motus VFX, Creative Drawit Barcelos, Gonçalo Silva Lisboa, BIG Barcelona, Solid Eye Malta) em docs/kits/lead-*.md; botão 'Ver kit' em cada pista e o kit segue a pista quando o Vítor a adiciona. Contínuo: cada pista/oportunidade nova recebe kit na sessão seguinte."
 - id: c-video-reels
   owner: claude
   title: "Montar reels a partir dos vídeos do Vítor (subpasta video/anim no MEGA): ordem, música, título, assinatura"

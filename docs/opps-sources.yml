@@ -1,5 +1,5 @@
 # Where to look for jobs / clients (shown in Painel → Vítor Hugo → Oportunidades → "Onde procurar").
-# Written by Claude; links are saved searches (open in a new tab). leads = concrete postings found by Claude,
+# Written by Claude; links are saved searches (open in a new tab). leads = concrete postings found by Claude (id → docs/kits/<id>.md),
 # always with the date checked — Vítor confirms they're still open before sending anything.
 checked: "05/11/2026"
 sources:
@@ -50,26 +50,31 @@ sources:
 leads:
   - title: "Gen AI Artist (VFX híbrido, ComfyUI)"
     org: "Motus VFX"
+    id: lead-motus-genai
     kind: vaga
     url: "https://animationandvfxjobs.com/motus-vfx-hiring-gen-ai-artist-comfyui-stable-diffusion/"
     notes: "Remoto, só para quem vive na Europa; freelance por projeto. Pedem ComfyUI + Stable Diffusion e base de VFX/CG. Candidatura: email harry@motusvfx.com com portfólio (usar o portfólio AI). Anúncio de 29/01/2026, sem data de fecho: confirmar se ainda está aberta antes de enviar."
   - title: "Archviz / 3D Artist (M/F)"
     org: "Creative Drawit (via Espaço de Arquitetura)"
+    id: lead-drawit-barcelos
     kind: vaga
     url: "https://espacodearquitetura.com/empregos/archviz-3d-artist-m-f-abade-de-neiva"
     notes: "Abade de Neiva (Barcelos), presencial — a vaga archviz mais perto de ti que encontrei. Visto em architecturejobs.eu a 05/11; não consegui abrir o anúncio completo, por isso confirma requisitos, data e forma de candidatura antes de enviar. Usar o portfólio 3D."
   - title: "Arquiteto(a) com vocação em Visualização 3D"
     org: "Gonçalo Silva Arquitectos Associados"
+    id: lead-gsilva-lisboa
     kind: vaga
     url: "https://www.ordemdosarquitectos.org/bolsa_emprego/goncalosilva_arquiteto3"
     notes: "Lisboa, presencial. Publicada na bolsa da Ordem dos Arquitectos: pode exigir formação/inscrição como arquiteto — confirma antes. Visto a 05/11, anúncio completo por confirmar."
   - title: "Visualization Specialist"
     org: "BIG – Bjarke Ingels Group (Barcelona)"
+    id: lead-big-barcelona
     kind: vaga
     url: "https://bjarkeingelsgroup.careers.hibob.com/jobs/d08999c6-8fb0-41e5-b28e-97bd77ec24f6/apply"
     notes: "Barcelona, presencial. Gabinete de topo mundial: aposta alta, mas o teu portfólio 3D + IA encaixa num departamento de visualização. Visto a 05/11; confirma requisitos e prazo na página."
   - title: "3D Visualiser"
     org: "Solid Eye Limited"
+    id: lead-solideye-malta
     kind: vaga
     url: "https://europa.eu/eures/portal/jv-se/jv-details/NDUwNDE2IDEwMQ"
     notes: "Valletta (Malta), via EURES (portal europeu de emprego). Visto a 05/11; confirma se aceita remoto/relocalização e o prazo."
