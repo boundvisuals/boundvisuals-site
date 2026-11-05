@@ -1420,4 +1420,195 @@ Regra: o produto nunca pode mudar de forma (conchas, arco, almofadas iguais nas 
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #046–#051, 18 fev–2 mar, até 14 fev).
+## #046 · Cozinha com ilha ao amanhecer (quinta, 18 fev)
+
+**Ideia:** a imagem que mais vende num empreendimento: a cozinha. Uma ilha em pedra, luz fria e limpa do primeiro sol a entrar de lado, tudo arrumado mas vivido (uma chávena, uma tábua com pão). Serve diretamente de amostra para promotores.
+
+**1. Modelo 3D (25 min)**
+- Cozinha em open space 6 × 4 m: parede de armários altos (frentes lisas, sem puxadores), ilha 2,6 × 1,0 m com tampo de 4 cm e uma ponta em cascata até ao chão, 3 bancos altos.
+- Janela larga baixa (faixa horizontal) por cima da bancada lateral; porta de vidro para o jardim ao fundo.
+- Adereços simples: chávena, tábua de madeira, taça com limões, um vaso com um ramo de oliveira.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 28 mm, a 1,10 m de altura, ilha em diagonal, janela visível.
+- B: ao nível do tampo, 50 mm, a ponta em cascata e a luz rasante na pedra.
+- C: pormenor, 85 mm, chávena + limões com o sol a bater.
+
+**3. Luz:** sol baixo da manhã (altura 8–10°, quase paralelo à janela), céu frio claro; nenhuma luz artificial ligada, ou só uma fita LED quente por baixo dos armários altos (fraca).
+
+**4. Render base:** 1600 px. Materiais: tampo em pedra clara com veio suave, frentes em carvalho claro ou verde-sálvia mate, chão em microcimento. Guardar "0 - clay", "0 - mask id" (ilha / armários / chão / exterior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A contemporary open-plan kitchen at sunrise, a large kitchen island in honed pale natural stone with a waterfall edge to the floor, handleless light oak cabinetry, pale microcement floor, three slim bar stools, a wide horizontal window with low cool morning sun entering from the side and grazing the stone surface, long soft shadows, a ceramic cup, a wooden bread board and a bowl of lemons on the island, a small olive branch in a vase, a garden glimpsed through a glass door, fresh and calm, real estate editorial photography, fine film grain, no people, no text, no logos.
+```
+Regra: a direção do sol e as sombras dos bancos têm de bater certo nas 3; os limões e a chávena nos mesmos sítios.
+
+**6. Entrega:** 3 finais em "#046 - Cozinha ao amanhecer / final". Para reel: câmara A, 6 s, travelling lateral lento ao longo da ilha (LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #046 · Kitchen at sunrise. The first light of the day, one stone island and nothing out of place. The image that sells the house."
+- PT: "Daily Study #046 · Cozinha ao amanhecer. A primeira luz do dia, uma ilha em pedra e nada fora do sítio. A imagem que vende a casa."
+
+---
+
+## #047 · Casas de Portugal #6: Algarve (sábado, 20 fev)
+
+**Ideia:** a série continua no sul. Casa contemporânea que reinterpreta a casa algarvia: volumes brancos cúbicos, açoteia (terraço no telhado), uma chaminé algarvia rendilhada reinventada em betão, buganvília, céu muito azul.
+
+**1. Modelo 3D (30 min)**
+- 3 volumes cúbicos brancos encaixados (3 m de altura cada, um com 2 pisos), açoteia com murete e escada exterior.
+- Uma chaminé alta e esguia com padrão vazado (Boolean de pequenos rectângulos num prisma), o "ex-líbris" da imagem.
+- Pátio com piso em tijoleira, uma alfarrobeira (proxy ou deixa para a AI), muro baixo caiado com portão de madeira.
+
+**2. Câmaras (3), 4:5**
+- A: exterior, 24 mm, do portão, volumes + chaminé contra o céu.
+- B: na açoteia, 35 mm, olhar para o mar ao longe por cima do murete.
+- C: pormenor, 85 mm, a chaminé vazada com o sol a passar pelos furos.
+
+**3. Luz:** fim de tarde de verão (sol a 20°, quente), sombras nítidas e longas, céu azul profundo sem nuvens.
+
+**4. Render base:** 1600 px. Cal branca ligeiramente irregular, caixilharia em verde-escuro, portão em madeira gasta. Guardar "0 - clay", "0 - mask id" (casa / chaminé / vegetação / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary house in the Algarve, Portugal, reinterpreting traditional Algarvian architecture, interlocking white cubic volumes in slightly irregular lime render, a flat roof terrace (açoteia) with a low parapet and an external stair, a tall slender perforated concrete chimney inspired by Algarvian lace chimneys, dark green window frames, a weathered timber gate in a whitewashed garden wall, terracotta floor tiles, a carob tree and magenta bougainvillea, warm late-afternoon summer sun with long crisp shadows, deep blue cloudless sky, the sea far in the distance, fine film grain, no people, no text.
+```
+Regra: a chaminé é a protagonista — o padrão vazado não pode mudar entre câmaras; se mudar, mask ID e AI só à vegetação e ao céu.
+
+**6. Entrega:** 3 finais em "#047 - Casas de Portugal 6 Algarve / final". Para reel: câmara C, 5 s, sol a passar pelos furos da chaminé e sombra a mover-se devagar.
+
+**Legenda**
+- EN: "Daily Study #047 · Houses of Portugal #6: Algarve. White cubes, a roof terrace and the old lace chimney, redrawn in concrete."
+- PT: "Daily Study #047 · Casas de Portugal #6: Algarve. Cubos brancos, uma açoteia e a velha chaminé rendilhada, redesenhada em betão."
+
+---
+
+## #048 · Casa para um cliente imaginário #3: o músico (terça, 23 fev)
+
+**Ideia:** a série dos clientes imaginários continua. Um contrabaixista de jazz quer uma sala de escuta em casa: madeira por todo o lado (acústica), um piano, discos, uma poltrona. Interior quente de noite.
+
+**1. Modelo 3D (25 min)**
+- Sala 6 × 5 m, pé-direito 3,5 m. Paredes e teto em ripado vertical de madeira (painéis acústicos com ritmos diferentes); uma parede com estante baixa cheia de discos (caixas finas repetidas com variação).
+- Piano de cauda (modelo grátis do 3D Warehouse ou Sketchfab CC — confirma a licença e credita), contrabaixo encostado à parede (pode ser só silhueta para a AI), poltrona de leitura, tapete grosso.
+- Uma janela alta estreita com a noite lá fora.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 28 mm, piano + parede ripada + estante.
+- B: a partir da poltrona, 50 mm, o contrabaixo e o gira-discos em primeiro plano.
+- C: macro, 100 mm, agulha do gira-discos sobre o vinil.
+
+**3. Luz:** noite; 2 candeeiros de pé quentes (2400 K) e uma luz de leitura sobre a poltrona; a madeira a "brilhar" quente; nada de luz de teto.
+
+**4. Render base:** 1600 px. Madeira de nogueira escura no ripado, carvalho no chão, piano preto lacado. Guardar "0 - clay", "0 - mask id" (ripado / piano / estante / mobiliário) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A private music listening room for a jazz double bass player at night, walls and ceiling clad in vertical dark walnut acoustic slats with varying rhythm, a black lacquered grand piano, an upright double bass leaning against the wall, a low shelf full of vinyl records, a turntable, a worn leather reading armchair on a thick wool rug, two warm floor lamps and a reading light creating pools of golden light, a tall narrow window with deep blue night outside, intimate and warm, fine film grain, no people, no text, no logos, no readable album covers.
+```
+Regra: capas de discos sem texto legível nem arte de terceiros (se a AI inventar, desfoca ou repinta).
+
+**6. Entrega:** 3 finais em "#048 - Cliente imaginário 3 músico / final". Para reel: câmara C, 5 s, o vinil a rodar devagar (animação simples no 3ds Max ou LTX 2.5), com som de vinil.
+
+**Legenda**
+- EN: "Daily Study #048 · A house for an imaginary client #3: the musician. A room made of wood so the double bass sounds right. Built for listening."
+- PT: "Daily Study #048 · Casa para um cliente imaginário #3: o músico. Uma sala feita de madeira para o contrabaixo soar bem. Feita para ouvir."
+
+---
+
+## #049 · Quarto de hotel, domingo de manhã (quinta, 25 fev)
+
+**Ideia:** hotelaria é um cliente direto para archviz. Um quarto de hotel boutique logo de manhã: cortinas de linho a filtrar a luz, cama desfeita com elegância, um tabuleiro de pequeno-almoço. Calmo e caro.
+
+**1. Modelo 3D (20 min)**
+- Quarto 5 × 4,5 m: cama king com cabeceira estofada alta (caixa com Chamfer), 2 mesas de cabeceira, poltrona, banco aos pés da cama.
+- Janela de chão a teto com cortinas de linho (planos com Cloth ou só ondulação com Noise), varanda insinuada lá fora.
+- Lençóis: deixa a cama "feita" no 3D; a AI desfaz com elegância. Tabuleiro com café e croissant em cima da cama.
+
+**2. Câmaras (3), 4:5**
+- A: geral, 24 mm, do canto da porta, cama + janela.
+- B: lateral à cama, 50 mm, o tabuleiro e a luz no lençol.
+- C: pormenor, 85 mm, cortina com o sol a atravessar o tecido.
+
+**3. Luz:** sol da manhã difuso pelas cortinas (luz quente suave, sem sombras duras), um candeeiro de cabeceira ainda aceso (fraco).
+
+**4. Render base:** 1600 px. Paleta: bege, branco-quente, castanho de nogueira, um toque de verde-azeitona. Guardar "0 - clay", "0 - mask id" (cama / cortinas / mobiliário / exterior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A boutique hotel bedroom on a Sunday morning, a king bed with a tall upholstered headboard and softly rumpled white linen sheets, a breakfast tray with coffee, a croissant and orange juice on the bed, walnut bedside tables, a bouclé armchair, sheer natural linen curtains glowing with warm diffused morning sunlight, one bedside lamp still softly on, a balcony glimpsed behind the curtains, beige, warm white and olive palette, calm luxury hospitality photography, fine film grain, no people, no text, no logos.
+```
+Regra: os lençóis podem variar ligeiramente, mas a cama, a cabeceira e o tabuleiro ficam no mesmo sítio nas 3.
+
+**6. Entrega:** 3 finais em "#049 - Quarto de hotel / final". Para reel: câmara C, 5 s, cortina a mexer com uma brisa leve (LTX 2.5, câmara parada).
+
+**Legenda**
+- EN: "Daily Study #049 · Hotel room, Sunday morning. Linen curtains, soft light, coffee in bed. Nobody wants to check out."
+- PT: "Daily Study #049 · Quarto de hotel, domingo de manhã. Cortinas de linho, luz suave, café na cama. Ninguém quer fazer check-out."
+
+---
+
+## #050 · Abecedário arquitetónico #2: B de Brise-soleil (sábado, 27 fev)
+
+**Ideia:** a série do abecedário continua. Uma fachada com lâminas verticais (brise-soleil) e a sombra riscada que elas desenham no interior. Exterior e interior do mesmo edifício.
+
+**1. Modelo 3D (20 min)**
+- Edifício de 3 pisos, fachada com lâminas verticais de 10 × 40 cm a cada 30 cm, ligeiramente rodadas (rodar 15–25° com variação suave de baixo para cima).
+- Atrás das lâminas: varanda corrida e vidro. Um interior simples no 2.º piso (chão, uma mesa, uma cadeira) para a câmara C.
+
+**2. Câmaras (3), 4:5**
+- A: exterior, 35 mm, de baixo em diagonal, o ritmo das lâminas.
+- B: exterior frontal, 85 mm, compressão: só lâminas a encher a imagem, abstrato.
+- C: interior, 28 mm, as riscas de sombra no chão e na mesa.
+
+**3. Luz:** sol de inverno a meio da tarde (25°, lateral), céu limpo; no interior, só a luz do sol filtrada.
+
+**4. Render base:** 1600 px. Lâminas em betão claro ou madeira de lariço (escolhe uma), caixilharia escura, chão interior em betão polido. Guardar "0 - clay", "0 - mask id" (lâminas / vidro / céu / interior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A three-storey contemporary building with a facade of slender vertical pale concrete brise-soleil fins, gradually rotating from bottom to top, a continuous balcony and dark-framed glazing behind the fins, low winter afternoon sunlight from the side creating a strong rhythm of light and shadow, inside a striped pattern of sun and shadow falling across a polished concrete floor and a simple oak table, clear pale blue sky, precise and calm, architectural magazine photography, fine film grain, no people, no text.
+```
+Regra: número e rotação das lâminas iguais nas 3; as riscas no interior têm de vir da mesma direção do sol do exterior.
+
+**6. Entrega:** 3 finais em "#050 - Abecedario B Brise-soleil / final". Para reel: câmara C, 6 s, timelapse das riscas de sombra a atravessarem a mesa (anima o sol no 3ds Max, render baixo + AI frame a frame só se ficar coerente; senão, LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #050 · Architectural alphabet #2: B for Brise-soleil. Vertical fins, a winter sun, and a room full of stripes."
+- PT: "Daily Study #050 · Abecedário arquitetónico #2: B de Brise-soleil. Lâminas verticais, um sol de inverno e uma sala cheia de riscas."
+
+---
+
+## #051 · Chuva à noite: entrada de prédio (terça, 2 mar)
+
+**Ideia:** variação de ambiente (pilar "mood"): a entrada de um prédio de habitação numa noite de chuva — passeio molhado, reflexos, o átrio quente iluminado. Mostra que a mesma arquitetura pode ser vendida com emoção, não só com sol.
+
+**1. Modelo 3D (20 min)**
+- Base de prédio: piso térreo recuado com átrio envidraçado (pé-direito 4 m), pala em betão sobre a entrada, porta de vidro pivotante.
+- Passeio em calçada/pedra e lancil, uma árvore de rua, um poste de luz, um banco no átrio e uma parede de madeira lá dentro.
+- Podes reaproveitar um dos teus projetos (ex.: Gondomar 2) — fica também como "variação de ambiente" do projeto real, se o cliente autorizar.
+
+**2. Câmaras (3), 4:5**
+- A: rua, 28 mm, do outro lado do passeio, entrada inteira + reflexos no chão.
+- B: baixa, 35 mm, a 30 cm do chão, poça em primeiro plano a refletir o átrio.
+- C: pormenor, 85 mm, gotas a cair da pala com o átrio desfocado atrás.
+
+**3. Luz:** noite azul; átrio muito quente (2700 K) a ser a fonte principal; poste de rua mais frio (4000 K); chão molhado = reflexos fortes.
+
+**4. Render base:** 1600 px. Chão com material refletivo molhado (glossiness alta + mapa de poças). Guardar "0 - clay", "0 - mask id" (edifício / chão / átrio / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural night photograph, same building, same geometry and camera as the reference image. The ground-floor entrance of a contemporary residential building on a rainy night, a recessed fully glazed double-height lobby glowing with warm 2700K light, a timber-clad wall and a simple bench inside, a thick concrete canopy over the entrance with raindrops falling from its edge, wet stone pavement with puddles and strong reflections of the warm lobby and a cool street lamp, a street tree, light rain visible in the lamp light, deep blue night, moody and cinematic, fine film grain, no people, no text, no logos.
+```
+Regra: os reflexos têm de corresponder às fontes de luz reais (átrio e poste); a chuva vê-se só onde há luz.
+
+**6. Entrega:** 3 finais em "#051 - Chuva à noite / final". Para reel: câmara B, 6 s, chuva a cair nas poças com reflexos a tremer (Seedance ou LTX 2.5), com som de chuva.
+
+**Legenda**
+- EN: "Daily Study #051 · Rain at night. Same architecture, different feeling: wet stone, warm glass, and a reason to come home."
+- PT: "Daily Study #051 · Chuva à noite. A mesma arquitetura, outra emoção: pedra molhada, vidro quente e uma razão para chegar a casa."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #052–#057, 4–16 mar, até 28 fev).
