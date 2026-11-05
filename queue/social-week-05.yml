@@ -13,13 +13,6 @@
   file: teaser-2026-12-05-b.jpg
   teaser: b
   approved: false
-- date: '2026-12-06'
-  time: '20:30'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-06-b.jpg
-  teaser: b
-  approved: false
 - date: '2026-12-07'
   time: '20:30'
   type: story
@@ -39,12 +32,5 @@
   type: story
   project: gold-village
   file: teaser-2026-12-09-b.jpg
-  teaser: b
-  approved: false
-- date: '2026-12-10'
-  time: '20:30'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-10-b.jpg
   teaser: b
   approved: false
