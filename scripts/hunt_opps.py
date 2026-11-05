@@ -19,7 +19,7 @@ AXES = {
            r"ai[- ]generated (video|content)", r"\bflux\b", r"midjourney", r"runway", r"kling", r"veo ?3", r"seedance"],
     "ads": [r"performance creative", r"ad creative", r"\bugc\b", r"motion designer", r"creative strategist", r"paid social designer", r"video editor.*ads"],
 }
-BAD = [r"senior software", r"backend", r"frontend engineer", r"data engineer", r"devops", r"sales representative", r"account executive"]
+BAD = [r"counsel", r"lawyer", r"paid search", r"\bseo\b", r"accountant", r"recruiter", r"senior software", r"backend", r"frontend engineer", r"data engineer", r"devops", r"sales representative", r"account executive"]
 
 
 def get(url, kind="json"):
@@ -142,7 +142,9 @@ def main():
         if not j.get("title") or not j.get("url"):
             continue
         ax, sc = axis(j)
-        if not ax or sc < 2:
+        tl = (j["title"] or "").lower()
+        title_hit = any(re.search(p, tl) for ps in AXES.values() for p in ps) or re.search(r"3d|visuali[sz]|render|motion|video|designer|creative|artist", tl)
+        if not ax or sc < 2 or not title_hit:
             continue
         lid = "auto-" + hashlib.sha1(j["url"].encode()).hexdigest()[:10]
         if lid in have:
