@@ -232,6 +232,25 @@ def build(out):
         end = datetime.date.fromisoformat(max(feed_days))
         if (end - now.date()).days < 21:
             alerts.append({"level": "warn", "text": f"A fila de posts acaba a {end:%d/%m}. Preciso de projetos novos: envia links MEGA (Tarefas) ou faz Daily Studies."})
+    # Rotation check (A, B, C…): warn when the same project fills 3+ feed days in a row.
+    feed_seq = sorted((d["date"], i["project"], i["project_title"]) for d in cal for i in d["items"]
+                      if i["type"] == "feed" and i["status"] != "published" and d["date"] >= today)
+    runs, cur = [], []
+    for row in feed_seq:
+        if cur and row[1] == cur[-1][1]:
+            cur.append(row)
+        else:
+            if len(cur) >= 3:
+                runs.append(cur)
+            cur = [row]
+    if len(cur) >= 3:
+        runs.append(cur)
+    if runs:
+        first = datetime.date.fromisoformat(runs[0][0][0])
+        longest = max(runs, key=len)
+        alerts.append({"level": "warn", "text": f"A partir de {first:%d/%m} a fila repete o mesmo projeto em dias seguidos "
+                       f"(ex.: {longest[0][2]}, {len(longest)} dias de {datetime.date.fromisoformat(longest[0][0]):%d/%m} a {datetime.date.fromisoformat(longest[-1][0]):%d/%m}). "
+                       "Com mais projetos (links MEGA em Tarefas) ou Daily Studies volto a alternar A, B, C."})
     pend = sum(1 for d in cal for i in d["items"] if i["status"] == "pending")
     if pend:
         alerts.append({"level": "info", "text": f"{pend} publicações à espera do teu ✅ no Calendário."})

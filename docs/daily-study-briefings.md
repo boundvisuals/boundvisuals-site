@@ -850,4 +850,193 @@ Para C acrescenta: "view from under the porch towards the plains, strong shadow 
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #028–#033, 7–19 jan, até 3 jan).
+## #028 · Do clay ao final em 4 passos (quinta, 7 jan)
+
+**Ideia:** mostrar o processo, que é o que mais gente guarda. Uma casa-pátio pequena e o mesmo enquadramento em 4 fases: clay → render base → AI → final editado. Carrossel de 4 + reel com wipe.
+
+**1. Modelo 3D (15 min)**
+- Casa-pátio térrea 12 × 12 m com um pátio central 5 × 5 m; muros altos (3 m) sem janelas para fora.
+- Para o pátio: uma parede toda em vidro com caixilho fino, um banco em pedra corrido, uma oliveira (proxy) no centro, chão em lajes grandes.
+- Uma abertura no muro (porta pivotante) para se perceber a entrada.
+
+**2. Câmara (1, fixa), 4:5**
+- Dentro do pátio, de um canto, 24 mm, altura 1,5 m: oliveira no terço direito, parede de vidro ao fundo, céu em cima. Não mexer entre fases.
+
+**3. Luz:** fim de manhã de inverno, sol baixo a entrar por cima do muro: metade do pátio ao sol, metade à sombra (a linha de sombra no chão é a imagem).
+
+**4. Render base:** 1600 px. Guardar "0 - clay" (material branco, a mesma luz), "0 - render base" (materiais simples) e "0 - mask id" (muros / vidro / chão / árvore / céu).
+
+**5. AI (Nano Banana, sobre o render base)**
+```
+Photorealistic architectural photograph, same building, same geometry, same camera and same sunlight as the reference image. A small contemporary courtyard house in northern Portugal, tall lime-plastered walls in warm off-white, a full-height glass wall with slim bronze frames, a long built-in granite bench, large pale limestone floor slabs, a single old olive tree in the centre, low winter sun cutting a sharp diagonal shadow across the floor, clear pale sky, calm and quiet, fine film grain, no people.
+```
+Depois edita (Photoshop/Lightroom): corrige verticais, um pouco de contraste local na sombra, grão final igual ao das outras séries.
+
+**6. Entrega:** 4 imagens em "#028 - Clay ao final / final", com nomes "1 clay", "2 render base", "3 ai", "4 final". Eu faço o carrossel com a etiqueta de cada passo e um reel com wipe da esquerda para a direita entre as 4.
+
+**Legenda**
+- EN: "Daily Study #028. Clay → base render → AI → final. Same camera, four steps. The 3D does the geometry and the light; the AI and the edit do the rest."
+- PT: "Daily Study #028. Clay → render base → AI → final. A mesma câmara, quatro passos. O 3D faz a geometria e a luz; a AI e a edição fazem o resto."
+
+---
+
+## #029 · Casa para um cliente imaginário: o surfista (sábado, 9 jan)
+
+**Ideia:** início de uma mini-série "Clientes imaginários". Uma casa pequena na Ericeira para um surfista: garagem/oficina para as pranchas, duche exterior, vista para o mar. Contar a história do cliente na legenda.
+
+**1. Modelo 3D (20 min)**
+- Terreno em encosta suave virado ao mar (um plano inclinado + um plano de água ao fundo).
+- Dois volumes: em baixo, um embasamento em betão (oficina, portão largo aberto); em cima, uma caixa em madeira 10 × 5 m com um vão a toda a largura virado ao mar e um terraço.
+- Duche exterior encostado ao betão (um tubo e uma base), uma prateleira com 3 pranchas (caixas finas e compridas).
+
+**2. Câmaras (3), 4:5**
+- A: da praia/encosta, 35 mm, a casa inteira com o mar à direita.
+- B: o portão da oficina aberto com as pranchas, 28 mm, à altura dos olhos.
+- C: do terraço para o mar, 24 mm, guarda baixa e horizonte a um terço.
+
+**3. Luz:** fim de tarde de janeiro, sol baixo vindo do mar, contraluz suave; um pouco de neblina do mar (humidade) para dar profundidade.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (betão / madeira / pranchas / terreno / mar / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small surfer's house in Ericeira on the Portuguese Atlantic coast: a raw board-formed concrete base with a wide open workshop door, three surfboards on a wooden rack, an outdoor shower against the concrete, above it a timber box clad in weathered vertical pine boards with a full-width window facing the ocean, a terrace with a low railing, dune grass and coastal shrubs on a gentle slope, the Atlantic ocean with soft waves, low late-afternoon winter sun from the sea, light sea mist, warm and relaxed, fine film grain, no people.
+```
+Para B acrescenta: "close view of the open workshop with surfboards, wetsuit hanging, sand on the floor". As pranchas têm de ter as mesmas cores nas 3.
+
+**6. Entrega:** 3 finais em "#029 - Cliente surfista / final". Para reel: câmara C animada 5 s (LTX 2.5, ondas a rebentar, neblina a passar).
+
+**Legenda**
+- EN: "Daily Study #029 · Imaginary clients #1: the surfer. Up at six, in the water by seven. A workshop for the boards below, a timber box for the view above. Ericeira, Portugal."
+- PT: "Daily Study #029 · Clientes imaginários #1: o surfista. Acorda às seis, está na água às sete. Em baixo, uma oficina para as pranchas; em cima, uma caixa de madeira para a vista. Ericeira."
+
+---
+
+## #030 · Uma planta simples → interior completo (terça, 12 jan)
+
+**Ideia:** mostrar que leio uma planta e a transformo em espaço. Um T1 de 45 m² desenhado em 2 minutos (planta a preto e branco) → 3 imagens do interior. O 1.º slide é a própria planta, com as câmaras marcadas.
+
+**1. Planta (5 min, no 3ds Max ou à mão)**
+- T1 retangular 9 × 5 m: entrada a meio do lado comprido; à esquerda sala + cozinha em linha (5 × 5 m); à direita quarto (4 × 3 m) e casa de banho (4 × 2 m).
+- Uma janela grande na sala, uma no quarto. Exporta a planta como imagem limpa (linhas pretas em fundo branco) e marca as câmaras A, B, C com setas.
+
+**2. Modelo 3D (15 min)**
+- Extrusão das paredes a 2,7 m, vãos, cozinha em linha (caixas), sofá, mesa de jantar redonda, cama, um armário de parede inteira entre sala e quarto.
+
+**3. Câmaras (3), 4:5**
+- A: da entrada para a sala e janela, 24 mm.
+- B: da sala para a cozinha em linha, 28 mm.
+- C: no quarto, da porta para a cama e janela, 24 mm.
+
+**4. Luz:** manhã, sol a entrar pela janela da sala em ângulo (manchas no chão), quarto em luz suave.
+
+**5. Render base:** 1600 px. Guardar "0 - clay", "0 - render base" e a planta em "0 - planta".
+
+**6. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same apartment, same geometry, same furniture layout and camera as the reference image. A compact one-bedroom flat in Lisbon, white walls, a warm oak herringbone floor, a linear kitchen in pale oak with a thin stone worktop, a round oak dining table with four chairs, a low linen sofa, a full-height built-in oak wardrobe between living room and bedroom, morning sun entering at an angle and drawing patches of light on the floor, a few books and a ceramic vase, calm and lived-in, fine film grain, no people.
+```
+Regra: o soalho e a madeira da cozinha e do armário têm de ser os mesmos nas 3 (usa a mask id dos móveis se a AI mudar).
+
+**7. Entrega:** a planta + 3 finais em "#030 - Planta ao interior / final" ("0 planta", "A sala", "B cozinha", "C quarto"). Eu faço o carrossel com a planta primeiro e a seta da câmara em cada slide.
+
+**Legenda**
+- EN: "Daily Study #030. A 45 m² plan drawn in two minutes, then walked through in 3D. Plan first, three cameras after. Small flats deserve good light too."
+- PT: "Daily Study #030. Uma planta de 45 m² desenhada em dois minutos e depois percorrida em 3D. Primeiro a planta, depois três câmaras. As casas pequenas também merecem boa luz."
+
+---
+
+## #031 · Uma pintura como espaço: a luz de Vermeer (quinta, 14 jan)
+
+**Ideia:** pegar na luz de uma pintura em domínio público ("A Leiteira", Vermeer, c. 1658) e fazer um interior contemporâneo com a mesma luz: janela à esquerda, luz fria do norte, parede caiada, sombras suaves. Não é copiar o quadro: é o ambiente. No carrossel, uma referência à pintura no texto (sem pôr a imagem do quadro).
+
+**1. Modelo 3D (15 min)**
+- Canto de cozinha 4 × 3 m, pé-direito 3 m: uma janela de madeira com caixilho em quadrícula na parede esquerda, alta, perto do canto.
+- Uma mesa de madeira maciça junto à janela, um banco, uma prateleira simples na parede do fundo.
+- Objetos: um jarro, uma taça, um pão (cilindros e esferas chegam).
+
+**2. Câmaras (2), 4:5**
+- A: frontal à parede do fundo, 50 mm, janela a entrar pela esquerda, mesa no terço inferior.
+- B: pormenor da mesa com o jarro e a luz a rasar, 85 mm.
+
+**3. Luz:** só a janela. Luz do norte, fria e difusa, sem sol direto; caindo da esquerda e a morrer para a direita. Nada de luz artificial. A parede do fundo tem de ter gradação (clara junto à janela, escura do outro lado).
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 2 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A quiet contemporary kitchen corner with the light of a seventeenth-century Dutch interior painting: a tall wooden window with small square panes on the left, cool diffuse north light falling across a rough lime-washed wall that fades from bright to deep shadow, a heavy worn oak table with a ceramic jug, an earthenware bowl and a loaf of bread, a simple wooden shelf, muted palette of ochre, ultramarine blue and warm white, deep soft shadows, stillness, fine film grain, no people.
+```
+Para B acrescenta: "close-up of the jug and bread, grazing window light revealing the texture of the table". A janela tem de estar sempre à esquerda.
+
+**6. Entrega:** 2 finais em "#031 - Luz de Vermeer / final". Para reel: câmara A em zoom lento (eu faço), quase parada.
+
+**Legenda**
+- EN: "Daily Study #031. Borrowing the light of Vermeer's The Milkmaid (c. 1658): one north window, a lime wall, nothing else. Some light is 360 years old and still works."
+- PT: "Daily Study #031. A luz d'A Leiteira de Vermeer (c. 1658) emprestada a uma cozinha de hoje: uma janela a norte, uma parede caiada e mais nada. Há luz com 360 anos que continua a funcionar."
+
+---
+
+## #032 · Casas de Portugal #4: Gerês (sábado, 16 jan)
+
+**Ideia:** quarta casa da série. Depois do Douro, Serra da Estrela e Alentejo: o Gerês. Granito, musgo, nevoeiro, um rio de montanha. Uma casa de pedra contemporânea meio enterrada na encosta, num dia de chuva fina.
+
+**1. Modelo 3D (20 min)**
+- Encosta com socalcos de pedra (2–3 degraus de terreno) e grandes blocos de granito (esferas/caixas deformadas).
+- Casa: volume comprido 16 × 5 m encaixado no socalco, paredes em pedra (só o volume), cobertura plana verde (relva), um vão grande a toda a altura num topo, virado ao vale.
+- Um caminho de lajes até à porta, um muro de pedra seca.
+
+**2. Câmaras (3), 4:5**
+- A: do vale para cima, 50 mm, a casa pequena na encosta, nevoeiro a cortar a montanha atrás.
+- B: três quartos junto ao caminho de lajes, 28 mm, pedra molhada em primeiro plano.
+- C: de dentro, pelo vão grande, para o vale com nevoeiro, 24 mm, uma lareira acesa fora de campo (só a luz quente).
+
+**3. Luz:** dia de chuva fina, céu branco-cinza, sem sombras duras; dentro, luz quente da lareira (2400 K). É uma imagem de ambiente, não de sol.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (casa / pedra / terreno / vegetação / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary stone house in the Gerês mountains of northern Portugal, a long low volume of rough grey granite set into terraced hillside, a green grass roof, one full-height window facing the valley with warm firelight inside, a path of wet granite slabs, dry-stone walls covered in moss, huge granite boulders, ferns and oak trees, low clouds and mist drifting across the mountains, fine drizzle, wet reflective surfaces, soft overcast light, deep greens and greys, quiet and remote, fine film grain, no people.
+```
+Para C acrescenta: "view from inside through the large window towards the misty valley, warm interior light on the window frame". O nevoeiro tem de vir do mesmo lado nas 3.
+
+**6. Entrega:** 3 finais em "#032 - Casas de Portugal Geres / final". Para reel: câmara A animada 5 s (LTX 2.5, nevoeiro a passar devagar, chuva fina).
+
+**Legenda**
+- EN: "Daily Study #032 · Houses of Portugal #4: Gerês. Granite, moss and a fire inside while the mountain disappears in the fog."
+- PT: "Daily Study #032 · Casas de Portugal #4: Gerês. Granito, musgo e uma lareira acesa enquanto a serra desaparece no nevoeiro."
+
+---
+
+## #033 · Desafio de cor #1: terracota (terça, 19 jan)
+
+**Ideia:** nova mini-série, uma cor por mês. Um espaço monocromático todo em terracota: paredes, chão, banco, até a luz puxa para o quente. Termina com pergunta aos seguidores: qual a próxima cor (voto nos comentários → eu ponho no Painel).
+
+**1. Modelo 3D (15 min)**
+- Divisão 5 × 5 m com um nicho arqueado numa parede, um banco embutido em curva, uma claraboia redonda no teto.
+- Um vaso grande e uma bacia (formas simples). Nada mais.
+
+**2. Câmaras (2), 4:5**
+- A: frontal ao nicho, 35 mm, o círculo de luz da claraboia no chão em primeiro plano.
+- B: pormenor do banco curvo e do vaso, 70 mm.
+
+**3. Luz:** sol a entrar pela claraboia, círculo de luz nítido no chão; o resto em luz rebatida quente (a própria cor ilumina o espaço).
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 2 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A monochrome room entirely in terracotta: smooth terracotta lime plaster walls, an arched niche, a curved built-in bench, a polished terracotta tile floor, a large unglazed clay vessel and a shallow clay basin, all in the same burnt-orange family, a round skylight casting a sharp circle of sunlight on the floor, warm bounced light filling the room, subtle tonal variations, serene and sculptural, fine film grain, no people.
+```
+Regra: tudo na mesma família de cor; se a AI meter branco, cinza ou madeira, repete com "no white, no grey, no wood".
+
+**6. Entrega:** 2 finais em "#033 - Cor terracota / final". Eu faço o carrossel com uma amostra da cor (nome + código HEX tirado da imagem) no último slide.
+
+**Legenda**
+- EN: "Daily Study #033 · Colour challenge #1: terracotta. One room, one colour, one circle of sun. Next month's colour is yours: write it in the comments."
+- PT: "Daily Study #033 · Desafio de cor #1: terracota. Uma divisão, uma cor, um círculo de sol. A cor do próximo mês é vossa: escrevam-na nos comentários."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #034–#039, 21 jan–2 fev, até 17 jan).
