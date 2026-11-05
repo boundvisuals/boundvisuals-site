@@ -210,14 +210,23 @@ def build(out):
     now = datetime.datetime.now(TZ)
     today = now.date().isoformat()
     alerts = []
+    WD_PT = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]
     cool = state.get("_cooldown_until")
     if cool and now < datetime.datetime.fromisoformat(cool):
-        alerts.append({"level": "err", "text": f"Instagram recusou a última publicação. O robô volta a tentar sozinho às {datetime.datetime.fromisoformat(cool).astimezone(TZ):%H:%M}."})
+        cd = datetime.datetime.fromisoformat(cool).astimezone(TZ)
+        when = f"{cd:%H:%M}" if cd.date() == now.date() else f"{WD_PT[cd.weekday()]} {cd:%d/%m} às {cd:%H:%M}"
+        nxt = next(((d["date"], i) for d in cal for i in d["items"] if i["type"] == "feed" and i["status"] == "approved"
+                    and f'{d["date"]} {i["time"]}' >= f"{cd:%Y-%m-%d %H:%M}"), None)
+        txt = f"Pausa no Instagram: nada publica até {when} (a seguir o robô retoma sozinho)."
+        if nxt:
+            nd = datetime.date.fromisoformat(nxt[0])
+            txt += f" Próximo post aprovado: {WD_PT[nd.weekday()]} {nd:%d/%m} às {nxt[1]['time']} · {nxt[1]['project_title']}."
+        alerts.append({"level": "err", "text": txt})
     elif errs:
         alerts.append({"level": "err", "text": "Última tentativa no Instagram falhou (bloqueio temporário da Meta às legendas via API). O robô volta a tentar sozinho."})
     approved_days = {d["date"] for d in cal for i in d["items"] if i["type"] == "feed" and i["status"] in ("approved", "published") and d["date"] >= today}
     if len(approved_days) < 7:
-        alerts.append({"level": "warn", "text": f"Só há {len(approved_days)} dias de posts aprovados à frente. Aprova no Calendário."})
+        alerts.append({"level": "warn", "text": (f"Só há {len(approved_days)} dia de posts aprovados à frente. Aprova no Calendário." if len(approved_days) == 1 else f"Só há {len(approved_days)} dias de posts aprovados à frente. Aprova no Calendário." if approved_days else "Não há posts aprovados à frente. Aprova no Calendário.")})
     feed_days = [d["date"] for d in cal for i in d["items"] if i["type"] == "feed"]
     if feed_days:
         end = datetime.date.fromisoformat(max(feed_days))
@@ -229,7 +238,9 @@ def build(out):
 
     ig_ok = any(v.get("ig") for v in state.values() if isinstance(v, dict))
     networks = [
-        {"name": "Instagram", "status": "a publicar" if ig_ok and not errs else ("bloqueio temporário" if errs else "ligado"), "level": "err" if errs else ""},
+        {"name": "Instagram", "status": (f"em pausa até {datetime.datetime.fromisoformat(cool).astimezone(TZ):%d/%m %H:%M}" if cool and now < datetime.datetime.fromisoformat(cool)
+                                         else "a publicar" if ig_ok and not errs else ("bloqueio temporário" if errs else "ligado")),
+         "level": "err" if errs or (cool and now < datetime.datetime.fromisoformat(cool)) else ""},
         {"name": "Facebook (página)", "status": "espelho do Instagram"},
         {"name": "Pinterest", "status": "por ligar"},
         {"name": "YouTube Shorts", "status": "por ligar"},
