@@ -1039,4 +1039,195 @@ Regra: tudo na mesma família de cor; se a AI meter branco, cinza ou madeira, re
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #034–#039, 21 jan–2 fev, até 17 jan).
+## #034 · A sombra é a protagonista: parede de tijolo vazado (quinta, 21 jan)
+
+**Ideia:** uma parede de tijolo vazado (cobogó / tijolo em grelha, muito português dos anos 60–70) e o desenho de luz que projeta num corredor branco. A arquitetura é a sombra.
+
+**1. Modelo 3D (15 min)**
+- Corredor exterior coberto 8 × 2,2 m, pé-direito 2,6 m, paredes e chão em branco/betão claro.
+- Um dos lados todo em tijolo vazado: grelha de blocos 20 × 20 × 10 cm com furo quadrado ou em cruz (um bloco, depois Array).
+- Ao fundo, uma porta de madeira e um vaso com uma planta alta.
+
+**2. Câmaras (3), 4:5**
+- A: ao longo do corredor, 28 mm, altura 1,5 m, o padrão de sombra a correr no chão e na parede.
+- B: frontal à grelha, de dentro, 50 mm, o sol recortado nos furos.
+- C: pormenor do padrão no chão com um pé de vaso a entrar no plano, 85 mm.
+
+**3. Luz:** Corona Sun, elevação ~35°, azimute rasante à grelha (o padrão estica em losangos). Céu limpo. Contraste forte, sombras nítidas.
+
+**4. Render base:** 1600 px. Guardar "0 - clay" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A covered outdoor corridor with one side made of a white ceramic breeze-block screen wall, mid-century Portuguese style, strong late-morning sun projecting a sharp repeating geometric shadow pattern across a pale polished concrete floor and a white lime-plaster wall, a natural wood door at the end, one tall potted plant, crisp high-contrast light, clean and graphic, fine film grain, no people.
+```
+Regra: o padrão de sombra tem de bater certo com a geometria da grelha nas 3 imagens; se a AI inventar outro desenho, baixa a força (denoise) e repete.
+
+**6. Entrega:** 3 finais em "#034 - Tijolo vazado / final". Para reel: câmara A em timelapse 5 s (o padrão a deslizar no chão, LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #034 · The shadow is the architecture. A breeze-block wall, a white corridor and the sun drawing on the floor."
+- PT: "Daily Study #034 · A sombra é a arquitetura. Uma parede de tijolo vazado, um corredor branco e o sol a desenhar no chão."
+
+---
+
+## #035 · Casa para um cliente imaginário #2: a ceramista (sábado, 23 jan)
+
+**Ideia:** segunda da série "clientes imaginários". Uma ceramista em Barcelos: casa pequena + atelier com forno, ligados por um pátio. Tudo gira à volta das mãos e do barro.
+
+**1. Modelo 3D (20 min)**
+- Dois volumes de um piso (casa 10 × 6 m, atelier 6 × 6 m) com cobertura de duas águas em telha, ligados por um pátio de 6 × 6 m com uma oliveira (ou deixas a árvore para a AI).
+- Atelier: janelão a norte, bancada comprida, prateleiras com peças (cilindros e esferas simples), um forno (caixa com porta).
+- Paredes caiadas, caixilharia em madeira escura.
+
+**2. Câmaras (3), 4:5**
+- A: exterior, do pátio para o atelier, 35 mm, oliveira em primeiro plano.
+- B: dentro do atelier, 28 mm, bancada e prateleiras cheias de peças, luz de norte.
+- C: pormenor das prateleiras com peças por cozer, 70 mm, profundidade de campo curta.
+
+**3. Luz:** fim de tarde de inverno, sol baixo no exterior; no atelier luz difusa de norte (sem sol direto), muito suave.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (edifício / pátio / peças / vegetação) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small house and ceramics studio for a potter in northern Portugal, two whitewashed single-storey volumes with clay tile pitched roofs and dark timber windows around a gravel courtyard with an old olive tree, inside the studio a long worktable with clay dust, a potter's wheel, wooden shelves full of unfired grey and terracotta pots and bowls, a small kiln, soft north light, handmade, warm and lived-in, fine film grain, no people.
+```
+Para C acrescenta: "close-up of the shelves, shallow depth of field, fingerprints visible on the raw clay". As peças nas prateleiras têm de ser as mesmas em B e C.
+
+**6. Entrega:** 3 finais em "#035 - Cliente ceramista / final". Eu escrevo no último slide o "programa" da cliente (3 linhas), como num concurso.
+
+**Legenda**
+- EN: "Daily Study #035 · Imaginary client #2: a potter in Barcelos. A small house, a studio with north light and a courtyard to dry the pieces in the sun."
+- PT: "Daily Study #035 · Cliente imaginário #2: uma ceramista em Barcelos. Uma casa pequena, um atelier com luz de norte e um pátio para secar as peças ao sol."
+
+---
+
+## #036 · Produto na natureza: um relógio numa pedra molhada (terça, 26 jan)
+
+**Ideia:** um anúncio de produto sem estúdio. Um relógio de pulso pousado numa laje de pedra junto a um ribeiro, gotas de água, luz da manhã. Mostra o lado "Product CGI" do portfólio.
+
+**1. Modelo 3D (20 min)**
+- Relógio simples: caixa cilíndrica 40 mm, aro, mostrador liso com 3 ponteiros e índices (Chamfer em tudo), bracelete em pele (2 caixas curvadas com Bend). Sem marcas nem logótipos.
+- Laje de pedra irregular (caixa com Noise) e uma segunda pedra desfocada atrás.
+
+**2. Câmaras (3)**
+- A: hero, 100 mm macro, baixa e quase rasante, relógio a 3/4, 4:5.
+- B: de cima (flat lay), 85 mm, relógio + pedra + folhas, 4:5.
+- C: macro do mostrador com gotas, 100 mm, f/2.8 no Corona, 4:5.
+
+**3. Luz:** sol de manhã, baixo, por trás e de lado (contraluz) para brilhos no vidro e no metal; um rebatedor branco do lado da câmara.
+
+**4. Render base:** 2000 px (é produto, precisa de nitidez). Materiais: aço escovado, vidro de safira com reflexo, pele castanha. Guardar "0 - clay", "0 - mask id" (relógio / pedra / fundo) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic luxury product photograph, same object, same geometry and camera as the reference image. A minimalist steel wristwatch with a plain dial and brown leather strap resting on a wet dark river stone beside a mountain stream, small water droplets on the sapphire crystal and the stone, low morning backlight creating crisp highlights on the brushed steel, soft out-of-focus water and green moss in the background, high-end advertising look, ultra sharp detail, no text, no logo, no brand name, no people.
+```
+Regra: o relógio nunca pode mudar (nº de índices, ponteiros, coroa). Se mudar, faz a AI só ao fundo com o mask ID e mantém o relógio do render.
+
+**6. Entrega:** 3 finais em "#036 - Relogio na pedra / final". Para reel: câmara A com água a correr atrás, 5 s (Seedance, câmara parada).
+
+**Legenda**
+- EN: "Daily Study #036 · Product out of the studio. A watch, a wet stone and the first light of the morning. 3D model, AI world around it."
+- PT: "Daily Study #036 · Produto fora do estúdio. Um relógio, uma pedra molhada e a primeira luz da manhã. Modelo 3D, o mundo à volta em AI."
+
+---
+
+## #037 · Casa de banho em pedra: um spa em casa (quinta, 28 jan)
+
+**Ideia:** um interior que vende sempre. Casa de banho toda em pedra clara (travertino), banheira de pedra maciça, janela para um jardim pequeno. Silêncio, vapor, luz suave.
+
+**1. Modelo 3D (20 min)**
+- Divisão 4 × 3,5 m, pé-direito 2,7 m. Banheira monolítica 1,7 × 0,8 m (caixa com Boolean e cantos arredondados) junto a uma janela baixa e larga.
+- Bancada flutuante com lavatório em pedra, espelho redondo, um banco de madeira.
+- Lá fora: um muro e uma árvore pequena (ou jardim pela AI).
+
+**2. Câmaras (3), 4:5**
+- A: geral, 24 mm, banheira em primeiro plano e janela ao fundo.
+- B: lavatório e espelho, 50 mm, de frente.
+- C: pormenor da borda da banheira com toalha dobrada e vapor, 85 mm.
+
+**3. Luz:** dia nublado claro; luz entra só pela janela, suave e lateral; uma pequena luz quente escondida por baixo da bancada (2700 K).
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (pedra / madeira / vidro / exterior) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same geometry and camera as the reference image. A serene bathroom entirely in honed cream travertine: walls, floor and a solid monolithic stone bathtub under a wide low window looking onto a small green walled garden, a floating travertine vanity with a carved stone basin, a round mirror, a simple oak stool, a folded linen towel, a thin wisp of steam above the water, soft diffused daylight from the window, a faint warm glow under the vanity, calm spa atmosphere, natural stone texture with visible pores, fine film grain, no people.
+```
+Regra: o veio e os poros do travertino têm de ser os mesmos nas 3; se a AI trocar de pedra, refaz só com o mask ID da pedra.
+
+**6. Entrega:** 3 finais em "#037 - Casa de banho travertino / final". Para reel: câmara C, 5 s, vapor a subir devagar (LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #037 · A stone bathroom as a spa. Travertine everywhere, one window, a little steam. 3D base, AI finish."
+- PT: "Daily Study #037 · Uma casa de banho em pedra como um spa. Travertino em tudo, uma janela, um pouco de vapor. Base 3D, acabamento AI."
+
+---
+
+## #038 · Casas de Portugal #5: Açores (sábado, 30 jan)
+
+**Ideia:** quinta casa da série. Depois do Douro, Estrela, Alentejo e Gerês: São Miguel. Basalto negro, paredes brancas, hortênsias, muros de pedra negra a dividir pastos verdes e o Atlântico ao fundo.
+
+**1. Modelo 3D (20 min)**
+- Terreno inclinado para o mar, com muros baixos de pedra a dividir parcelas (caixas compridas).
+- Casa: dois volumes simples 12 × 5 m e 6 × 5 m em L, paredes brancas com cunhais e molduras em basalto (faixas escuras), cobertura de duas águas em telha.
+- Um grande vão envidraçado virado ao mar no volume maior.
+
+**2. Câmaras (3), 4:5**
+- A: geral desde o pasto acima da casa, 35 mm, casa + muros + oceano no horizonte.
+- B: três quartos junto ao muro de basalto com hortênsias em primeiro plano, 28 mm.
+- C: de dentro, pelo vão, para o mar, 24 mm.
+
+**3. Luz:** típico açoriano: céu com nuvens grandes e rasgos de sol, luz que muda; sol a sair de trás de uma nuvem, mar a brilhar.
+
+**4. Render base:** 1600 px. Guardar "0 - clay", "0 - mask id" (casa / basalto / terreno / vegetação / céu / mar) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A contemporary farmhouse on São Miguel island in the Azores, white lime walls with black volcanic basalt corners and window frames, clay tile pitched roof, one large window facing the Atlantic ocean, low black basalt dry-stone walls dividing bright green pastures down to the sea, blue and violet hydrangea hedges, dramatic sky with big cumulus clouds and breaks of sunlight, the ocean glittering on the horizon, fresh humid air, deep greens, fine film grain, no people.
+```
+Regra: as nuvens e o sol do mesmo lado nas 3; hortênsias sempre azuis/violeta (são as dos Açores).
+
+**6. Entrega:** 3 finais em "#038 - Casas de Portugal Acores / final". Para reel: câmara A animada 5 s, sombras das nuvens a passar pelos pastos (LTX 2.5).
+
+**Legenda**
+- EN: "Daily Study #038 · Houses of Portugal #5: Azores. White walls, black basalt, blue hydrangeas and the whole Atlantic in front."
+- PT: "Daily Study #038 · Casas de Portugal #5: Açores. Paredes brancas, basalto negro, hortênsias azuis e o Atlântico inteiro à frente."
+
+---
+
+## #039 · Um plano, 10 segundos: entrar pela porta (terça, 2 fev)
+
+**Ideia:** o primeiro Daily Study pensado como VÍDEO. Uma câmara que avança devagar do exterior, passa a porta e revela a sala. Mostra o lado "AI Video" (o reel é o produto principal; as imagens são frames).
+
+**1. Modelo 3D (20 min)**
+- Reaproveita a casa de um Daily Study anterior (sugestão: #029 surfista ou #035 ceramista) → menos trabalho e cria continuidade na série.
+- Porta de entrada aberta, hall curto, sala com janela grande ao fundo.
+
+**2. Câmara (1 animada) + 3 stills**
+- Animação no 3ds Max: câmara a 1,6 m, 24 mm, percurso reto de 6 m durante 10 s (a passar a porta aos ~4 s), velocidade constante, sem rotação. Render só a 1.ª e a última frame em 1600 px (16:9 e 9:16).
+- Stills 4:5: frame inicial (exterior), frame do meio (na porta), frame final (sala).
+
+**3. Luz:** fim de tarde, sol a entrar pela janela do fundo (a sala "acende-se" quando a câmara entra).
+
+**4. Render base:** primeira e última frame + clay da animação (playblast) para guiar o vídeo. Guardar em "0 - render base" e "0 - clay"; o vídeo final em "anim".
+
+**5. AI**
+- Stills: Nano Banana com o prompt da casa original (mesmo texto do Daily Study que reaproveitares) + "golden late afternoon light".
+- Vídeo: Seedance (primeira + última frame já tratadas pela AI) ou LTX 2.5 com o playblast como guia:
+```
+Slow steady dolly forward, camera at eye height, moving from the garden through the open front door into the living room, constant speed, no rotation, no cuts, warm late afternoon sun streaming through the large window at the end of the room, dust particles in the light, photorealistic architectural film, fine film grain, no people.
+```
+Regra: se o vídeo deformar a porta ou as paredes, encurta para 5 s ou usa o clay como controlo (ComfyUI).
+
+**6. Entrega:** vídeo em "#039 - Entrar pela porta / anim" (16:9 e 9:16) + 3 stills em "final". Eu monto o reel (som, título, assinatura) com o robô de vídeo e o carrossel das 3 frames.
+
+**Legenda**
+- EN: "Daily Study #039 · One shot, ten seconds: walking in. 3D camera path, AI light and film. Sound on."
+- PT: "Daily Study #039 · Um plano, dez segundos: entrar em casa. Percurso de câmara em 3D, luz e filme em AI. Com som."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #040–#045, 4–16 fev, até 31 jan).
