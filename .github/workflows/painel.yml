@@ -101,9 +101,9 @@ jobs:
       - name: Build panel
         run: |
           mkdir -p out
-          cp painel/app.html painel/api.php painel/index.php painel/config.php painel/manifest.webmanifest painel/sw.js painel/icon.svg painel/icon-192.png painel/icon-512.png out/
+          cp painel/app.html painel/api.php painel/ligar.php painel/index.php painel/config.php painel/manifest.webmanifest painel/sw.js painel/icon.svg painel/icon-192.png painel/icon-512.png out/
           printf 'User-agent: *\nDisallow: /\n' > out/robots.txt
           python3 scripts/build_painel.py build out
       - name: Upload
         run: |
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/store; mirror -R --ignore-time out/thumbs /public_html/painel/thumbs; put -O /public_html/painel/store out/store/data.json.php; mput -O /public_html/painel out/app.html out/api.php out/index.php out/config.php out/manifest.webmanifest out/sw.js out/icon.svg out/icon-192.png out/icon-512.png out/robots.txt; bye" "$H"
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/store; mirror -R --ignore-time out/thumbs /public_html/painel/thumbs; put -O /public_html/painel/store out/store/data.json.php; mput -O /public_html/painel out/app.html out/api.php out/ligar.php out/index.php out/config.php out/manifest.webmanifest out/sw.js out/icon.svg out/icon-192.png out/icon-512.png out/robots.txt; bye" "$H"

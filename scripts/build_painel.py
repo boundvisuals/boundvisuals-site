@@ -271,6 +271,7 @@ def build(out):
         {"group": "Planos e documentos", "title": "Kit de lançamento (site/Behance/CG)", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/kit-lancamento-3-projetos.md"},
         {"group": "Planos e documentos", "title": "Orçamento na 1.ª pessoa (PT + EN)", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/orcamento-1a-pessoa.md"},
         {"group": "Planos e documentos", "title": "Textos do site na 1.ª pessoa", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/textos-1a-pessoa.md"},
+        {"group": "Ferramentas", "title": "Ligar redes (Pinterest, LinkedIn, YouTube)", "url": "/painel/ligar.php"},
         {"group": "Ferramentas", "title": "wp-admin", "url": "https://www.boundvisuals.com/wp-admin/"},
         {"group": "Ferramentas", "title": "Meta Business Suite", "url": "https://business.facebook.com/latest/home"},
         {"group": "Ferramentas", "title": "Robôs (GitHub)", "url": "https://github.com/boundvisuals/boundvisuals-site/actions"},

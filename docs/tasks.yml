@@ -60,6 +60,10 @@
 - id: c-integrations
   owner: claude
   title: Ligar Pinterest, YouTube Shorts e LinkedIn (com passos clique a clique)
+  detail: "05/11: página Painel → Links → 'Ligar redes' (/painel/ligar.php) — guardas as chaves de cada app e carregas em Ligar; tokens ficam no teu servidor (store/oauth.json.php). Passos clique a clique na própria página. Falta: o Vítor criar as 3 apps e ligar; depois eu faço o robô que publica (Pinterest pin → URL do projeto, YouTube Shorts dos reels, LinkedIn 2–3/semana), renovação de tokens e aviso dos 60 dias do LinkedIn."
+- id: v-connect-networks
+  owner: vitor
+  title: "Ligar Pinterest, LinkedIn e YouTube no Painel (Links → 'Ligar redes'; ~10 min por rede, passos na página)"
 - id: c-reminders
   owner: claude
   title: "Lembretes no telemóvel: domingo (semana a aprovar), seg/qua/sex (briefing do Daily Study), fila < 7 dias"
