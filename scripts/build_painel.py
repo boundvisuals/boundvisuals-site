@@ -370,6 +370,7 @@ def build(out):
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
             "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "kits": {os.path.basename(k)[:-3]: open(k, encoding="utf-8").read() for k in glob.glob("docs/kits/*.md")}, "decisions": (yaml.safe_load(open("docs/decisions.yml", encoding="utf-8")) or []) if os.path.exists("docs/decisions.yml") else [], "timeline": timeline[:60], "stats": stats, "followers": followers,
             "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
+            "opp_sources": (yaml.safe_load(open("docs/opps-sources.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-sources.yml") else {},
             "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
             "log": (["Último robô de publicação:"] + log[-6:] + ["", "Últimas ações:"] + gitlog)}
     with open(os.path.join(out, "store", "data.json.php"), "w", encoding="utf-8") as fh:

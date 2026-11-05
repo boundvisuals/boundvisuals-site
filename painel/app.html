@@ -173,6 +173,8 @@ nav.bottom{display:none}
 @media (max-width:860px){.mspace{display:flex}}
 .kan{display:grid;grid-template-columns:repeat(5,minmax(220px,1fr));max-width:100%;gap:12px;overflow-x:auto;padding-bottom:8px}
 .kan .col h2{display:flex;justify-content:space-between}
+.osrc{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}@media(min-width:1000px){.osrc{grid-template-columns:1fr 1fr;align-items:start}}
+.osl{display:block;color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px}.osl:hover{border-color:var(--warm)}.osl b{font-weight:500;font-size:14px;display:block}.osl .ar{font-size:11px;color:var(--warm);letter-spacing:.06em;text-transform:uppercase}.osl p{margin:6px 0 0;font-size:12px;color:var(--mut)}
 .pc{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px}
 .pc b{font-weight:500;font-size:14px;display:block}.pc .ar{font-size:11px;color:var(--warm);letter-spacing:.06em;text-transform:uppercase}
 .pc p{margin:6px 0 0;font-size:12px;color:var(--mut)}
@@ -579,6 +581,11 @@ function oppForm(o){o=o||{};$("#mbox").innerHTML=`<div class="mhead"><b>${o.id?"
 function renderOpps(){const O=D.opps||[];
   $("#v-opps").innerHTML=`<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><p class="sub" style="margin:0">Vagas e clientes, do primeiro contacto ao fecho. Para cada uma preparo o portfólio, o CV e a carta certos.</p><button class="btn pri" id="oNew">+ Nova</button></div>
   <div class="ostages">${OST.map(([k,l])=>{const it=O.filter(o=>o.stage===k);return `<div class="card"><h2 style="display:flex;justify-content:space-between"><span>${l}</span><span>${it.length}</span></h2>${it.map(o=>`<div class="pc clickable" data-opp="${esc(o.id)}"><span class="ar">${o.kind==="cliente"?"Cliente":"Vaga"}</span><b>${esc(o.title)}</b><p>${esc(o.org||"")}</p></div>`).join("")||`<div class="empty">—</div>`}</div>`}).join("")}</div>`;
+  const S=D.opp_sources||{},OL=(S.leads||[]).filter(l=>!O.some(o=>o.url&&o.url===l.url));
+  if((S.sources||[]).length||OL.length)$("#v-opps").insertAdjacentHTML("beforeend",`<div class="osrc">
+   ${OL.length?`<div class="card"><h2>Pistas encontradas pelo Claude</h2><p class="sub" style="margin-top:0">Verificadas a ${esc(S.checked||"")}. Confirma que ainda estão abertas antes de enviar.</p>${OL.map((l,i)=>`<div class="pc"><span class="ar">${l.kind==="cliente"?"Cliente":"Vaga"}</span><b>${esc(l.title)}</b><p>${esc(l.org||"")} · ${esc(l.notes||"")}</p><div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">Abrir anúncio</a><button class="btn pri" data-lead="${i}">+ Adicionar às minhas</button></div></div>`).join("")}</div>`:""}
+   <div class="card"><h2>Onde procurar</h2><p class="sub" style="margin-top:0">Pesquisas já feitas, abrem num separador novo. Encontraste uma boa? Carrega em <b>+ Nova</b> e cola o link: eu preparo o kit.</p>${(S.sources||[]).map(s=>`<a class="osl" href="${esc(s.url)}" target="_blank" rel="noopener"><span class="ar">${s.kind==="cliente"?"Clientes":"Vagas"}</span><b>${esc(s.name)} ↗</b><p>${esc(s.why||"")}</p></a>`).join("")}</div></div>`);
+  $("#v-opps").querySelectorAll("[data-lead]").forEach(b=>b.onclick=()=>{const l=OL[+b.dataset.lead];oppForm({kind:l.kind,stage:"encontrada",title:l.title,org:l.org,url:l.url,notes:l.notes})});
   $("#oNew").onclick=()=>oppForm();
   $("#v-opps").querySelectorAll("[data-opp]").forEach(c=>c.onclick=()=>oppForm(O.find(o=>o.id===c.dataset.opp)))}
 function search(){$("#mbox").innerHTML=`<div class="mhead"><b>Pesquisar tudo</b><button class="x" id="mx">×</button></div><input class="sinput" id="sq" placeholder="Projeto, tarefa, ideia, legenda, link…" autocomplete="off"><div class="sres" id="sr"></div>`;

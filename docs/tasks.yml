@@ -57,6 +57,7 @@
 - id: c-painel-v2
   owner: claude
   title: "Painel v2: separador Portfólio (PDF sempre atualizado), Oportunidades (vagas/clientes), números das redes, notificações no telemóvel"
+  detail: "Feito: Portfólio (PDF), Oportunidades, números do Instagram, notificações. 05/11: Oportunidades → 'Onde procurar' (10 pesquisas prontas: LinkedIn PT/UE archviz, ComfyUI/AI, ads; CG Connect; quadros AI; Behance; clientes = empreendimentos em construção) + 'Pistas encontradas pelo Claude' com botão '+ Adicionar às minhas' (docs/opps-sources.yml). Falta: atualizar as pistas de tempos a tempos."
 - id: c-integrations
   owner: claude
   title: Ligar Pinterest, YouTube Shorts e LinkedIn (com passos clique a clique)

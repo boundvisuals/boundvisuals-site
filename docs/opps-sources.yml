@@ -1,0 +1,51 @@
+# Where to look for jobs / clients (shown in Painel → Vítor Hugo → Oportunidades → "Onde procurar").
+# Written by Claude; links are saved searches (open in a new tab). leads = concrete postings found by Claude,
+# always with the date checked — Vítor confirms they're still open before sending anything.
+checked: "05/11/2026"
+sources:
+  - name: "LinkedIn · Archviz em Portugal (última semana)"
+    kind: vaga
+    why: "Estúdios e gabinetes portugueses que pedem 3ds Max/Corona. Ativa o alerta (sino 'Definir alerta') para receber por email."
+    url: "https://www.linkedin.com/jobs/search/?keywords=archviz%20OR%20%223D%20visualizer%22&location=Portugal&f_TPR=r604800"
+  - name: "LinkedIn · 3D visualizer remoto (UE)"
+    kind: vaga
+    why: "Vagas remotas na Europa (filtro 'Remoto' já ligado). É onde aparece a maior parte das vagas archviz."
+    url: "https://www.linkedin.com/jobs/search/?keywords=%223D%20visualizer%22%20OR%20%22architectural%20visualization%22&location=European%20Union&f_WT=2&f_TPR=r604800"
+  - name: "LinkedIn · ComfyUI / AI artist remoto (UE)"
+    kind: vaga
+    why: "Para o perfil 'AI Power User': ComfyUI, AI image/video. Poucas vagas mas pouca concorrência real."
+    url: "https://www.linkedin.com/jobs/search/?keywords=ComfyUI%20OR%20%22AI%20artist%22%20OR%20%22generative%20AI%20designer%22&location=European%20Union&f_WT=2"
+  - name: "LinkedIn · Performance creative / ads em Portugal"
+    kind: vaga
+    why: "Agências e marcas que procuram criativos de anúncios (o teu 3.º eixo)."
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22performance%20creative%22%20OR%20%22creative%20designer%22%20ads&location=Portugal&f_TPR=r604800"
+  - name: "Chaos CG Connect · Jobs (ex-CGArchitect)"
+    kind: vaga
+    why: "O quadro de vagas de referência em archviz no mundo. Filtra por 'Remote' e 'Europe'."
+    url: "https://cgconnect.chaos.com/jobs"
+  - name: "Animation & VFX Jobs · secção AI"
+    kind: vaga
+    why: "Vagas Gen AI / ComfyUI em estúdios de VFX e animação, muitas remotas e freelance."
+    url: "https://animationandvfxjobs.com/ai-artist-animation-graphics/"
+  - name: "AI Artist Jobs"
+    kind: vaga
+    why: "Quadro só de vagas para artistas de IA (vídeo generativo, ComfyUI)."
+    url: "https://aiartistjobs.co/"
+  - name: "Remote Rocketship · 3D remoto a partir de Portugal"
+    kind: vaga
+    why: "Agrega vagas remotas abertas a quem vive em Portugal (mais jogos/motion, às vezes 3D generalist)."
+    url: "https://www.remoterocketship.com/country/portugal/jobs/3d-artist/"
+  - name: "Behance · Jobs"
+    kind: vaga
+    why: "Freelance e full-time criativos; o teu Behance já está lá, candidatas-te com 1 clique."
+    url: "https://www.behance.net/joblist"
+  - name: "Clientes · empreendimentos em construção (Norte)"
+    kind: cliente
+    why: "Promotores com obras a começar precisam de imagens para vender em planta. Procura os que têm renders fracos no site/anúncio: são os melhores contactos (envia 3 imagens + orçamento)."
+    url: "https://www.google.com/search?q=empreendimento+%22em+constru%C3%A7%C3%A3o%22+apartamentos+Porto+OR+Braga+OR+Gondomar"
+leads:
+  - title: "Gen AI Artist (VFX híbrido, ComfyUI)"
+    org: "Motus VFX"
+    kind: vaga
+    url: "https://animationandvfxjobs.com/motus-vfx-hiring-gen-ai-artist-comfyui-stable-diffusion/"
+    notes: "Remoto, só para quem vive na Europa; freelance por projeto. Pedem ComfyUI + Stable Diffusion e base de VFX/CG. Candidatura: email harry@motusvfx.com com portfólio (usar o portfólio AI). Anúncio de 29/01/2026, sem data de fecho: confirmar se ainda está aberta antes de enviar."
