@@ -1,24 +1,10 @@
 # Week 5 social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py
 - date: '2026-12-04'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-04-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-04'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-04-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-05'
-  time: '10:00'
-  type: story
-  project: gold-village
-  file: teaser-2026-12-05-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-05'
   time: '20:30'
@@ -28,25 +14,11 @@
   teaser: b
   approved: false
 - date: '2026-12-06'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-06-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-06'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-06-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-07'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-07-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-07'
   time: '20:30'
@@ -56,13 +28,6 @@
   teaser: b
   approved: false
 - date: '2026-12-08'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-08-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-08'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
@@ -70,25 +35,11 @@
   teaser: b
   approved: false
 - date: '2026-12-09'
-  time: '10:00'
-  type: story
-  project: gold-village
-  file: teaser-2026-12-09-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-09'
   time: '20:30'
   type: story
   project: gold-village
   file: teaser-2026-12-09-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-10'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-10-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-10'
   time: '20:30'

@@ -227,7 +227,7 @@ def build(out):
             days.setdefault(it["date"], []).append({
                 "key": feed_key(it), "type": "feed", "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
-                "thumb": sl[0] if sl else None, "slides": sl, "status": st, "link": link,
+                "thumb": sl[0] if sl else None, "slides": sl, "slide_files": list(it["slides"]), "status": st, "link": link,
                 "full": [f"{FILA}/{it['project']}/{quote(x)}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/ig/{x}')}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
                 **crop_info(it, out), **copy_texts(it, feed_n),
                 "note": errs.get(pkey, "")})

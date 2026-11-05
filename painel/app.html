@@ -71,6 +71,7 @@ h1{font-weight:500;font-size:28px;margin:0;letter-spacing:-.01em}
 #v-cal .day{margin:0}#v-cal .dayh{background:var(--panel);border-radius:16px 16px 0 0}
 .trow{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
 .trow:first-of-type{border-top:0}
+.gslide{position:relative;flex:none}.gslide img{display:block}.gdel{position:absolute;top:10px;right:10px;border:0;border-radius:18px;height:34px;padding:0 12px;background:rgba(0,0,0,.65);color:#fff;font-size:15px;cursor:pointer}.gdel:hover{background:#b3261e}
 .tlab{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 0;border-radius:6px;text-align:center}
 .tlab.feed{background:#2b4a7a;color:#dbe7ff}.tlab.reel{background:#6a3b7a;color:#f2ddff}.tlab.story{background:#2f5e47;color:#d6f5e5}
 #v-cal .post{margin:0 0 6px;background:var(--panel2,rgba(255,255,255,.03))}
@@ -330,7 +331,8 @@ function go(k){cur=k;if(k==="ideias"&&D){markSeen()}try{localStorage.setItem("bv
 function ago(iso){if(!iso)return"—";const s=Math.max(0,(Date.now()-new Date(iso))/1000);
   if(s<60)return"agora mesmo";if(s<3600)return`há ${Math.round(s/60)} min`;if(s<86400)return`há ${Math.round(s/3600)} h`;return`há ${Math.round(s/86400)} dias`}
 function isDone(t){const k=D.ticks&&D.ticks[t.id];return k?k.done:!!t.done}
-function allItems(){return (D.calendar||[]).flatMap(d=>d.items.map(i=>{const o={...i,date:d.date};if(o.stem){const p=LC[o.project+"|"+o.stem+"|post"],q=LC[o.project+"|"+o.stem+"|story"];if(p)o.crops=p.c;if(q)o.story_crops=q.c}return o}))}
+function allItems(){return (D.calendar||[]).flatMap(d=>d.items.filter(i=>!DEL.keys.includes(i.key)).map(i=>{const o={...i,date:d.date};
+  const ds=DEL.slides[o.key];if(ds&&ds.length){const keep=(o.slide_files||[]).map((f,n)=>ds.includes(f)?-1:n).filter(n=>n>=0);if(o.slide_files){o.slides=keep.map(n=>(i.slides||[])[n]).filter(Boolean);o.full=keep.map(n=>(i.full||[])[n]).filter(Boolean);o.slide_files=keep.map(n=>i.slide_files[n])}}if(o.stem){const p=LC[o.project+"|"+o.stem+"|post"],q=LC[o.project+"|"+o.stem+"|story"];if(p)o.crops=p.c;if(q)o.story_crops=q.c}return o}))}
 function effStatus(i){const a=D.pending_approvals&&D.pending_approvals[i.key];
   if(a&&typeof a==="object"&&a.v===false)return(i.status==="approved"||i.status==="pending")?"pending":i.status;
   if(i.status==="pending"&&a)return"approved";return i.status}
@@ -392,7 +394,7 @@ function renderCal(){
     ${reels.length?`<div class="trow"><span class="tlab reel">Reel</span><div>${reels.map(i=>`<div class="post clickable" data-open="${esc(i.key)}"><div class="slides">${((LSL[i.project+"|"+i.stem]||[]).length?LSL[i.project+"|"+i.stem]:(i.slides||[i.thumb])).filter(Boolean).slice(0,4).map(s=>`<img loading="lazy" src="${esc(s)}" alt="">`).join("")}</div>
       <div><div class="meta">${esc(i.time)} · ${TY[i.type]} · ${esc(i.project_title)}</div><p>${esc(i.caption||"")}</p></div>
       <div class="act" style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver ↗</a>`:`<span class="pill ${effStatus(i)}">${ST[effStatus(i)]}</span>`}${i.stem&&!i.link&&i.type==="feed"?(reviewed(i)?`<span class="pill approved">Recortes ✓</span>`:`<span class="pill pending">Ver recortes</span>`):""}${actBtns(i)}</div></div>`).join("")}</div></div>`:""}
-    ${stories.length?`<div class="trow"><span class="tlab story">Stories</span><div class="sgrid">${stories.map(s=>`<div class="scard"><img class="clickable" data-open="${esc(s.key)}" data-sk="${esc(s.key)}" loading="lazy" src="${esc(LOCAL[s.key]||s.thumb)}" alt=""><div class="sc-b"><span>${esc(s.time)} · Story</span><span class="pill ${effStatus(s)}">${ST[effStatus(s)]}</span>${s.stem&&effStatus(s)!=="published"?`<button class="btn sm" data-scrop="${esc(s.key)}">✎</button>`:""}${actBtns(s)}</div></div>`).join("")}</div></div>`:""}
+    ${stories.length?`<div class="trow"><span class="tlab story">Stories</span><div class="sgrid">${stories.map(s=>`<div class="scard"><img class="clickable" data-open="${esc(s.key)}" data-sk="${esc(s.key)}" loading="lazy" src="${esc(LOCAL[s.key]||s.thumb)}" alt=""><div class="sc-b"><span>${esc(s.time)} · Story</span><span class="pill ${effStatus(s)}">${ST[effStatus(s)]}</span>${s.stem&&effStatus(s)!=="published"?`<button class="btn sm" data-scrop="${esc(s.key)}">✎</button><button class="btn sm" data-sdel="${esc(s.key)}" title="Apagar este story">🗑</button>`:""}${actBtns(s)}</div></div>`).join("")}</div></div>`:""}
     </div>`}).join("");
   const allPend=allItems().filter(i=>effStatus(i)==="pending").map(i=>i.key);
   $("#v-cal").innerHTML=head+(allPend.length?`<div class="alert warn"><i></i><div style="flex:1">${allPend.length} publicações à espera do teu ✅.</div><button class="btn pri" data-ap='${esc(JSON.stringify(allPend))}'>Aprovar tudo</button></div>`:"")+(body?`<div class="calwrap">${body}</div>`:`<div class="empty">Nada neste filtro.</div>`);fixThumbs($("#v-cal"));
@@ -400,6 +402,7 @@ function renderCal(){
   $("#v-cal").querySelectorAll("[data-ap]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve(JSON.parse(b.dataset.ap),b)});
   $("#v-cal").querySelectorAll("[data-un]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve([b.dataset.un],b,true)});
   $("#v-cal").querySelectorAll("[data-one]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.one);if(!reviewed(it)){openItem(it.key);toast("Primeiro aceita ou edita os recortes");return}approve([it.key],b)});
+  $("#v-cal").querySelectorAll("[data-sdel]").forEach(b=>b.onclick=e=>{e.stopPropagation();delItem(b.dataset.sdel)});
   $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,"story",it.story_idx||0,true)});
 }
 function actBtns(i){const st=effStatus(i);if(i.link||st==="published"||st==="skipped")return"";
@@ -411,6 +414,12 @@ async function approve(keys,btn,undo){if(btn)btn.disabled=true;
     toast(undo?"Desaprovado ↺":"Aprovado ✓");renderAll();undoBar(undo?"Desaprovado":"Aprovado "+keys.length,()=>approve(keys,null,!undo))}catch(e){if(btn)btn.disabled=false;toast("Não consegui gravar. Tenta outra vez.")}}
 let undoT=null;
 const LOCAL={};const LSL={};  // LSL: stem -> rendered post slides (instant) after a crop save
+let DEL={keys:[],slides:{}};try{DEL=JSON.parse(localStorage.getItem("bv_del")||"null")||DEL}catch(e){}
+function saveDEL(){try{localStorage.setItem("bv_del",JSON.stringify(DEL))}catch(e){}}
+async function delItem(key,slide,undo){
+  if(slide){const l=DEL.slides[key]||[];DEL.slides[key]=undo?l.filter(x=>x!==slide):[...new Set([...l,slide])]}else{DEL.keys=undo?DEL.keys.filter(x=>x!==key):[...new Set([...DEL.keys,key])]}
+  saveDEL();try{await fetch("api.php?a=delete",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key,slide,undo:!!undo})})}catch(e){}
+  renderAll();if(!undo)undoBar(slide?"Imagem apagada do post":"Apagado — não vai ser publicado",()=>delItem(key,slide,true))}
 let LC={};try{LC=JSON.parse(localStorage.getItem("bv_lc")||"{}")}catch(e){}
 function saveLC(){try{localStorage.setItem("bv_lc",JSON.stringify(LC))}catch(e){}}
 function applyLC(){if(!D)return;let dirty=false;Object.entries(LC).forEach(([k,v])=>{const [pr,st,mode]=k.split("|");let seen=false,same=true;
@@ -454,19 +463,22 @@ function renderLinks(){
   $("#v-links").innerHTML=`<div class="grid g2">${Object.entries(g).map(([k,ls])=>`<div class="card links"><h2>${esc(k)}</h2>${ls.map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}<span>↗</span></a>`).join("")}</div>`).join("")}</div>`;
 }
 function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;const st=effStatus(i);
-  const media=i.type==="reel"?`<video src="${esc(i.full[0])}" poster="${esc(LOCAL[i.key]||i.thumb)}" controls playsinline preload="metadata"></video>`:(i.type==="story"&&LOCAL[i.key]?[LOCAL[i.key]]:(LSL[i.project+"|"+i.stem]&&LSL[i.project+"|"+i.stem].length?[...LSL[i.project+"|"+i.stem],...(i.full||[]).slice(-1)]:(i.full||[]))).map((u,n)=>`<img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt="">`).join("");
+  const media=i.type==="reel"?`<video src="${esc(i.full[0])}" poster="${esc(LOCAL[i.key]||i.thumb)}" controls playsinline preload="metadata"></video>`:(i.type==="story"&&LOCAL[i.key]?[LOCAL[i.key]]:(LSL[i.project+"|"+i.stem]&&LSL[i.project+"|"+i.stem].length?[...LSL[i.project+"|"+i.stem],...(i.full||[]).slice(-1)]:(i.full||[]))).map((u,n)=>i.type==="feed"&&st!=="published"&&(i.slide_files||[])[n]?`<div class="gslide"><img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt=""><button class="gdel" data-dslide="${esc(i.slide_files[n])}" title="Apagar esta imagem do post">🗑</button></div>`:`<img src="${esc(u)}" onerror="this.src='${esc((i.slides||[i.thumb])[n]||i.thumb)}'" alt="">`).join("");
   const rv=reviewed(i),rinfo=D.reviews&&D.reviews[i.key];
   $("#mbox").innerHTML=`<div class="mhead"><div style="min-width:0"><div class="sub">${fmtDay(i.date)} · ${esc(i.time)} · ${TY[i.type]}</div><b>${esc(i.project_title)}</b></div><button class="x" id="mx" aria-label="fechar">×</button></div>
   <div class="cbar" style="margin:0 0 12px">${i.link?`<a class="pill published" href="${esc(i.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:`<span class="pill ${st}">${ST[st]}</span>`}
    ${i.type==="story"&&i.stem&&st!=="published"?`<button class="btn" id="mCropS">✎ Editar enquadramento</button>`:""}
    ${i.type==="feed"&&i.stem&&st!=="published"?`<button class="btn" id="mCrop">✎ Editar recortes</button>${rv?`<span class="pill approved">Recortes ${esc(rinfo.how)} ✓</span><button class="btn" id="mRevUndo">↺</button>`:`<button class="btn" id="mAccept">✓ Aceitar recortes</button>`}`:""}
    ${st==="pending"?`<button class="btn pri" id="mApprove" ${rv?"":"disabled title='Primeiro aceita ou edita os recortes'"}>Aprovar</button>${rv?"":`<span class="sub">Primeiro aceita ou edita os recortes</span>`}`:""}
-   ${st==="approved"?`<button class="btn" id="mUnapprove">↺ Desaprovar</button>`:""}</div>
+   ${st==="approved"?`<button class="btn" id="mUnapprove">↺ Desaprovar</button>`:""}
+   ${st!=="published"?`<button class="btn" id="mDel" style="margin-left:auto;color:#ff8a80;border-color:#5a2b2b">🗑 Apagar ${i.type==="story"?"story":i.type==="reel"?"reel":"post"}</button>`:""}</div>
   <div class="gal">${media}</div>
   ${(i.type==="feed"||i.type==="reel")&&st!=="published"?`<div class="card" style="margin-top:14px"><h2>Legenda (editável)</h2><div class="compose"><small class="sub">EN</small><textarea id="cEN">${esc(i.caption||"")}</textarea><small class="sub">PT</small><textarea id="cPT">${esc(i.caption_pt||"")}</textarea><div style="display:flex;justify-content:flex-end"><button class="btn pri" id="cSave">Guardar legenda</button></div></div></div>`:""}
   ${i.copy_caption?`<div class="caps">${cb("Legenda completa (o que vai para o Instagram)",i.copy_caption)}${(i.copy_comments||[]).map((c,n)=>cb(`Comentário ${n+1} · hashtags`,c)).join("")}</div>`:(i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:"")}
   ${i.note?`<div class="alert err" style="margin-top:14px"><i></i><div>${esc(i.note)}</div></div>`:""}`;
   $("#modal").classList.add("on");document.body.style.overflow="hidden";
+  const md=$("#mDel");if(md)md.onclick=()=>{closeModal();delItem(i.key)};
+  $("#mbox").querySelectorAll("[data-dslide]").forEach(b=>b.onclick=e=>{e.stopPropagation();const left=(i.slide_files||[]).length-1;if(left<1){closeModal();delItem(i.key);return}delItem(i.key,b.dataset.dslide);openItem(i.key)});
   $("#mbox").querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copiado ✓")}catch(e){toast("Seleciona e copia à mão")}});
   const cs=$("#cSave");if(cs)cs.onclick=async()=>{const old={en:i.caption,pt:i.caption_pt},nw={en:$("#cEN").value.trim(),pt:$("#cPT").value.trim()};cs.disabled=true;
     const save=async v=>{const r=await fetch("api.php?a=caption",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,...v})});if(!r.ok)throw 0;i.caption=v.en;i.caption_pt=v.pt};

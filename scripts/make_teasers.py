@@ -90,7 +90,7 @@ def main():
             if not slides:
                 continue
             det = [s for s in slides[1:] if not s.endswith("-full.jpg")]
-            for k, src in (("a", (det or slides)[0]), ("b", slides[0])):
+            for k, src in (("b", slides[0]),):   # one teaser per post (Vítor 05/11: nothing repeated)
                 fn = f"teaser-{d}-{k}.jpg"
                 if save_if_changed(frame(f"reports/{p['project']}/ig/{src}", k, T.get(p["project"], p["project"]), str(p.get("time", "19:00"))),
                                    f"reports/{p['project']}/story/{fn}"):

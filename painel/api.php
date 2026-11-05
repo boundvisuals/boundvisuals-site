@@ -81,6 +81,27 @@ if ($a === 'approve' && $_SERVER['REQUEST_METHOD'] === 'POST') {
   echo json_encode(['ok' => true, 'count' => count($cur), 'robot' => kick_robot()]);
   exit;
 }
+// Apagar: a whole item (key) or one slide of a feed post (key + slide). undo:true restores.
+if ($a === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+  $cur = read_store("$store/deleted.json.php") ?? ['keys' => [], 'slides' => new stdClass()];
+  $cur['keys'] = $cur['keys'] ?? []; $sl = (array)($cur['slides'] ?? []);
+  $k = (string)($in['key'] ?? ''); $slide = isset($in['slide']) ? (string)$in['slide'] : '';
+  $undo = !empty($in['undo']);
+  if ($k !== '' && strlen($k) < 300) {
+    if ($slide === '') {
+      $cur['keys'] = array_values(array_filter($cur['keys'], fn($x) => $x !== $k));
+      if (!$undo) $cur['keys'][] = $k;
+    } else {
+      $list = array_values(array_filter((array)($sl[$k] ?? []), fn($x) => $x !== $slide));
+      if (!$undo) $list[] = $slide;
+      if ($list) $sl[$k] = $list; else unset($sl[$k]);
+    }
+  }
+  $cur['slides'] = $sl ?: new stdClass();
+  write_store("$store/deleted.json.php", $cur);
+  echo json_encode(['ok' => true, 'robot' => kick_robot()]);
+  exit;
+}
 if ($a === 'task' && $_SERVER['REQUEST_METHOD'] === 'POST') {
   $cur = read_store("$store/ticks.json.php") ?? [];
   $id = $in['id'] ?? '';

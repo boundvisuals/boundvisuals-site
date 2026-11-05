@@ -34,6 +34,14 @@ jobs:
               for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
             fi
           fi
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/deleted.json.php -o deleted.json.php; bye" "$H" 2>/dev/null || true
+          [ -f in/deleted.json.php ] && tail -n +2 in/deleted.json.php > docs/deleted.json
+          python scripts/dedupe_queue.py || true
+          if [ -n "$(git status --porcelain docs/deleted.json queue)" ]; then
+            git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+            git add docs/deleted.json queue && git commit -qm "Painel: deletions + no repeats" || true
+            for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && break; sleep $((RANDOM % 15 + 5)); done
+          fi
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/ping.json.php -o ping.json.php; bye" "$H" 2>/dev/null || true
           if [ -f in/ping.json.php ]; then
             tail -n +2 in/ping.json.php > docs/claude-ping.json

@@ -1,24 +1,10 @@
 # Week 6 social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py
 - date: '2026-12-11'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-11-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-11'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-11-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-12'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-12-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-12'
   time: '20:30'
@@ -28,25 +14,11 @@
   teaser: b
   approved: false
 - date: '2026-12-13'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-13-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-13'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-13-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-14'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-14-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-14'
   time: '20:30'
@@ -56,25 +28,11 @@
   teaser: b
   approved: false
 - date: '2026-12-15'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-15-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-15'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-15-b.jpg
   teaser: b
-  approved: false
-- date: '2026-12-16'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-16-a.jpg
-  teaser: a
   approved: false
 - date: '2026-12-16'
   time: '20:30'
