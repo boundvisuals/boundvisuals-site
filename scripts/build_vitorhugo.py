@@ -74,6 +74,56 @@ EN = {
 }
 DOC_FILES = ["CV_Vitor_Hugo_Long.pdf", "CV_Vitor_Hugo_Short.pdf", "Portfolio_All.pdf", "Portfolio_3D_Architecture_Visualization.pdf", "Portfolio_AI.pdf"]
 
+HIRES = pathlib.Path(os.environ.get("HIRES_DIR", "hires"))
+(OUT / "v").mkdir(exist_ok=True)
+
+
+def _stem(rel):
+    return "_".join(pathlib.Path(rel).with_suffix("").parts).replace(" ", "_")
+
+
+def best_src(prev, pid):
+    root = HIRES / pid
+    if root.exists():
+        for f in root.rglob("*"):
+            if f.is_file() and _stem(f.relative_to(root)) == pathlib.Path(prev).stem:
+                return f
+    return pathlib.Path(prev)
+
+
+try:
+    CROPORDER = list(((yaml.safe_load(open("config/crops.yml")) or {}).get("crops") or {}).keys())
+except Exception:
+    CROPORDER = []
+
+
+def web_reel(pid):
+    import subprocess
+    reels = sorted(glob.glob(f"reports/{pid}/reel/*.mp4"))
+    if not reels or not shutil.which("ffmpeg"):
+        return None
+    out = OUT / "v" / f"{pid}.mp4"; poster = OUT / "v" / f"{pid}.jpg"
+    if not out.exists():
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reels[0], "-t", "30", "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
+                        "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", str(out)], check=False)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1", "-i", str(out), "-frames:v", "1", "-q:v", "3", str(poster)], check=False)
+    return (f"v/{pid}.mp4", f"v/{pid}.jpg") if out.exists() else None
+
+
+import re as _re
+STUDIES = _re.findall(r"^## (#\d{3}) · ([^(\n]+)", open("docs/daily-study-briefings.md", encoding="utf-8").read(), _re.M)[:8] if os.path.exists("docs/daily-study-briefings.md") else []
+PROJ = []
+for p in reg:
+    prev = [x for x in sorted(glob.glob(f"reports/{p['id']}/preview/*.jpg")) if not os.path.basename(x).startswith("2026_-_FINAIS")]
+    if not prev:
+        continue
+    prev.sort(key=lambda x: (CROPORDER.index(pathlib.Path(x).stem) if pathlib.Path(x).stem in CROPORDER else 999, x))
+    land = [x for x in prev if Image.open(x).width / Image.open(x).height > 1.2]
+    if land:
+        prev.remove(land[0]); prev.insert(0, land[0])
+    PROJ.append({"id": p["id"], "title": p.get("title", p["id"]), "client": p.get("client"), "year": p.get("year"),
+                 "imgs": [best_src(x, p["id"]) for x in prev], "reel": web_reel(p["id"])})
+
 archi_src = []
 for p in reg:
     prev = [x for x in sorted(glob.glob(f"reports/{p['id']}/preview/*.jpg")) if not os.path.basename(x).startswith("2026_-_FINAIS")]
@@ -87,21 +137,15 @@ def build(lang):
     if lang == "pt":
         T.update({k: v for k, v in PT.items() if v})
     pre = "../" if lang == "pt" else ""
-    secs = T.get("ai_sections") or {}
-    ai_blocks = []
-    for s in AI["sections"]:
-        name, lead = secs.get(s["name"], [s["name"], s["lead"]])
-        figs = []
-        for it in s["items"]:
-            if "pair" in it:
-                a, b = it["pair"]
-                figs.append(f'<figure class="ba">{tag(M / a, T["before"] + " — " + name, 1100)}{tag(M / b, T["after"] + " — " + name, 1100)}<figcaption><span>{e(T["before"])}</span><span>{e(T["after"])}</span></figcaption></figure>')
-            elif "triple" in it:
-                figs.append('<figure class="ba t3">' + "".join(tag(M / x, name, 900) for x in it["triple"]) + f'<figcaption><span>{e(T["reference"])}</span><span>{e(T["before"])}</span><span>{e(T["after"])}</span></figcaption></figure>')
-            else:
-                figs += [f'<figure>{tag(M / x, name, 1400)}</figure>' for x in it["img"]]
-        ai_blocks.append(f'<div class="aisec"><div class="aih"><h3>{e(name)}</h3><p>{e(lead)}</p></div><div class="aig">{"".join(figs)}</div></div>')
-
+    projs = []
+    for P in PROJ:
+        meta = " · ".join(x for x in [str(P["client"] or ""), str(P["year"] or ""), "3D + AI", f'{len(P["imgs"])} {T.get("images", "images")}'] if x)
+        strip = ""
+        if P["reel"]:
+            strip += f'<video src="{pre}{P["reel"][0]}" poster="{pre}{P["reel"][1]}" muted loop playsinline autoplay preload="none" aria-label="Reel {e(P["title"])}"></video>'
+        strip += "".join(tag(x, P["title"], 2400) for x in P["imgs"])
+        projs.append(f'<article class="proj"><div class="ph"><h3>{e(P["title"])}</h3><span>{e(meta)}</span></div><div class="strip">{strip}</div></article>')
+    hero_src = PROJ[0]["imgs"][0] if PROJ else M / "portrait.jpg"
     archi = "".join(f'<a class="tile" href="{BV}" target="_blank" rel="noopener">{tag(src, t, 1000)}<span>{e(t)} ↗</span></a>' for src, t in archi_src)
     exp = "".join(f'<li><span class="d">{e(d)}</span><b>{e(r)}</b><span class="o">{e(o)}</span></li>' for d, r, o in T["experience"])
     recos = "".join(f'<blockquote><p>“{e(str(r["text"]).split(chr(10))[0])}”</p><cite><b>{e(r["who"])}</b> {e(r["role"])}</cite></blockquote>' for r in CV["recommendations"])
@@ -113,9 +157,9 @@ def build(lang):
              (lab[4], CV["instagram"], "https://www.instagram.com/" + CV["instagram"].lstrip("@")),
              (lab[5], "boundvisuals.com", BV)]
     contact = "".join(f'<a href="{h}"><span>{l}</span>{e(t)}</a>' for l, t, h in links)
-    hero_img = tag(M / "ai-006-001.jpg", "Vítor Hugo — AI", 1800, "heroimg").replace("loading=\"lazy\"", "fetchpriority=\"high\"")
+    hero_img = tag(hero_src, "Vítor Hugo — 3D + AI", 2800, "heroimg").replace("loading=\"lazy\"", "fetchpriority=\"high\"")
     portrait = tag(M / "portrait.jpg", "Vítor Hugo", 600, "portrait")
-    hrefs = ["#ai", BV, "#ads", "#ads", "#lab"]
+    hrefs = ["#projects", BV, "#ads", "#ads", "#lab"]
     dhtml = "".join(f'<a class="disc" href="{h}"{" target=_blank rel=noopener" if h.startswith("http") else ""}><span class="n">0{i+1}</span><b>{e(t)}{" ↗" if h.startswith("http") else ""}</b><p>{e(d)}</p></a>'
                     for i, ((t, d), h) in enumerate(zip(T["disc"], hrefs)))
     ads_list = "".join(f"<li>{e(x)}</li>" for x in T["deliver"])
@@ -129,7 +173,7 @@ def build(lang):
 <meta name="robots" content="noindex">
 <link rel="canonical" href="{BV}/vitorhugo/{"pt/" if lang == "pt" else ""}">
 <link rel="alternate" hreflang="en" href="{BV}/vitorhugo/"><link rel="alternate" hreflang="pt-PT" href="{BV}/vitorhugo/pt/"><link rel="alternate" hreflang="x-default" href="{BV}/vitorhugo/">
-<meta property="og:title" content="{e(T["title"])}"><meta property="og:image" content="{BV}/vitorhugo/i/ai-006-001.jpg">
+<meta property="og:title" content="{e(T["title"])}"><meta property="og:image" content="{BV}/vitorhugo/{pic(hero_src, 2800)[0]}">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Person","name":"Vítor Hugo","jobTitle":"3D Artist · AI Image & Video Specialist","url":"{BV}/vitorhugo/","email":"{CV["email"]}","telephone":"{CV["phone"]}","sameAs":["https://www.linkedin.com/in/{CV["linkedin"]}","https://www.behance.net/{CV["behance"]}","https://www.instagram.com/{ig}","{BV}"]}}</script>
 <style>
 @font-face{{font-family:V;src:url(f/VisbyCF-Light.woff2) format("woff2");font-weight:300;font-display:swap}}
@@ -144,10 +188,15 @@ header{{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.88);backdro
 header .w{{display:flex;justify-content:space-between;align-items:center;height:58px;gap:20px}}header b{{font-weight:700;letter-spacing:-.01em}}
 nav{{display:flex;gap:22px;font-size:14px;font-weight:500}}nav a:hover{{color:var(--mute)}}@media(max-width:760px){{nav a.h{{display:none}}}}
 .k{{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--mute)}}
-.hero{{padding-block:9vh 5vh;display:grid;grid-template-columns:1.1fr 1fr;gap:5vw;align-items:end}}@media(max-width:900px){{.hero{{grid-template-columns:1fr}}}}
+.hero{{padding-block:8vh 5vh;display:grid;grid-template-columns:1.4fr 1fr;gap:5vw;align-items:end}}@media(max-width:900px){{.hero{{grid-template-columns:1fr}}}}
 h1{{font-weight:700;font-size:clamp(56px,11vw,190px);line-height:.88;letter-spacing:-.045em;margin:18px 0 26px}}
 .lead{{font-size:clamp(19px,1.8vw,26px);font-weight:500;line-height:1.3;max-width:24ch;margin:0}}
-.heroimg{{width:100%}}
+.heroimg{{width:100%;height:auto}}.herof{{padding-inline:var(--g);max-width:2000px;margin:0 auto}}
+.proj{{padding-block:7vh 0}}.ph{{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding-inline:var(--g);max-width:1600px;margin:0 auto 22px;border-top:1px solid var(--ink);padding-top:16px}}
+.ph h3{{font-weight:700;font-size:clamp(26px,3.2vw,48px);letter-spacing:-.03em;margin:0}}.ph span{{color:var(--mute);font-size:14px;font-weight:500;letter-spacing:.04em}}
+.strip{{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding-inline:var(--g);scrollbar-width:thin;padding-bottom:10px}}
+.strip img,.strip video{{height:min(72vh,780px);width:auto;max-width:none;flex:none;scroll-snap-align:start;background:#f2f1ee}}
+.strip video{{aspect-ratio:9/16}}@media(max-width:760px){{.strip img,.strip video{{height:52vh}}}}
 .tick{{border-block:1px solid var(--ink);overflow:hidden;white-space:nowrap;font-weight:600;font-size:clamp(18px,2.2vw,30px);padding:14px 0;margin-top:6vh}}
 .tick div{{display:inline-block;animation:t 38s linear infinite}}@keyframes t{{to{{transform:translateX(-50%)}}}}@media(prefers-reduced-motion:reduce){{.tick div{{animation:none}}}}
 section{{padding-block:12vh 0}}h2{{font-weight:700;font-size:clamp(38px,6vw,96px);letter-spacing:-.035em;line-height:.95;margin:12px 0 5vh}}
@@ -170,16 +219,17 @@ blockquote p{{font-size:16px;margin:0 0 14px}}cite{{font-style:normal;font-size:
 .contact a span{{color:var(--mute);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;align-self:center}}
 .big{{font-weight:700;font-size:clamp(48px,9vw,150px);letter-spacing:-.045em;line-height:.9;margin:0 0 6vh}}
 footer{{padding-block:10vh 40px;font-size:13px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}}
+.studies{{margin-top:24px}}.studies li{{display:flex;gap:16px;font-weight:500}}.studies span{{color:var(--mute);min-width:48px}}
 .lang{{color:var(--mute);font-weight:600;letter-spacing:.08em}}.lang:hover{{color:var(--ink)}}</style></head><body>
-<header><div class="w"><b>Vítor Hugo</b><nav><a class="h" href="#work">{N["work"]}</a><a class="h" href="#ai">{N["ai"]}</a><a href="{BV}" target="_blank" rel="noopener">3D ↗</a><a class="h" href="#about">{N["about"]}</a><a href="#contact">{N["contact"]}</a><a class="lang" href="{other[1]}" hreflang="{other[2]}" lang="{other[2]}">{other[0]}</a></nav></div></header>
+<header><div class="w"><b>Vítor Hugo</b><nav><a class="h" href="#work">{N["work"]}</a><a class="h" href="#projects">{T.get("nav_proj", "Projects")}</a><a href="{BV}" target="_blank" rel="noopener">3D ↗</a><a class="h" href="#about">{N["about"]}</a><a href="#contact">{N["contact"]}</a><a class="lang" href="{other[1]}" hreflang="{other[2]}" lang="{other[2]}">{other[0]}</a></nav></div></header>
 <main>
-<div class="w hero"><div><div class="k">{e(T["where"])}</div><h1>Vítor<br>Hugo</h1><p class="lead">{e(T["lead"])}</p></div><div>{hero_img}</div></div>
+<div class="w hero"><div><div class="k">{e(T["where"])}</div><h1>Vítor Hugo</h1></div><p class="lead">{e(T["lead"])}</p></div><div class="herof">{hero_img}</div>
 <div class="tick"><div>{tick}</div></div>
 <section class="w" id="work"><div class="k">{e(T["work_k"])}</div><h2>{T["work_h"]}</h2><div class="discs">{dhtml}</div></section>
-<section class="w" id="ai"><div class="k">{e(T["ai_k"])}</div><h2>{T["ai_h"]}</h2>{"".join(ai_blocks)}</section>
-<section class="w" id="arch"><div class="k">{e(T["arch_k"])}</div><h2>{T["arch_h"]}</h2><div class="tiles">{archi}</div><a class="btn" href="{BV}" target="_blank" rel="noopener">{e(T["arch_btn"])}</a></section>
+<section id="projects"><div class="w"><div class="k">{e(T.get("proj_k", "Selected work · 2026"))}</div><h2>{T.get("proj_h", "Recent projects,<br>3D + AI.")}</h2></div>{"".join(projs)}</section>
+<div class="w"><a class="btn" href="{BV}" target="_blank" rel="noopener">{e(T["arch_btn"])}</a></div>
 <section class="w two" id="ads"><div><div class="k">{e(T["ads_k"])}</div><h2>{T["ads_h"]}</h2></div><ul class="x">{ads_list}</ul></section>
-<section class="w two" id="lab"><div><div class="k">Lab</div><h2>{e(T["lab_h"])}</h2></div><div><p class="lead" style="max-width:none">{e(T["lab_p"])}</p><a class="btn" href="https://www.instagram.com/{ig}" target="_blank" rel="noopener">{e(T["lab_btn"])}</a></div></section>
+<section class="w two" id="lab"><div><div class="k">Lab</div><h2>{e(T["lab_h"])}</h2></div><div><p class="lead" style="max-width:none">{e(T["lab_p"])}</p><ul class="x studies">{"".join(f'<li><span>{n}</span>{e(t.strip())}</li>' for n, t in STUDIES)}</ul><a class="btn" href="https://www.instagram.com/{ig}" target="_blank" rel="noopener">{e(T["lab_btn"])}</a></div></section>
 <section class="w two" id="about"><div>{portrait}<div class="k">{e(T["about_k"])}</div><h2>{T["about_h"]}</h2><p>{e(T["presentation"])}</p><p>{e(T["how_i_work"])}</p></div><div><div class="k" style="margin-bottom:14px">{e(T["exp_k"])}</div><ul class="exp">{exp}</ul><div class="docs" style="margin-top:6vh"><div class="k" style="margin-bottom:14px">{e(T["docs_k"])}</div>{dl}</div></div></section>
 <section class="w"><div class="k">{e(T["recos_k"].format(n=len(CV["recommendations"])))}</div><h2>{e(T["recos_h"])}</h2><div class="q">{recos}</div></section>
 <section class="w" id="contact"><div class="k">{e(T["contact_k"])}</div><p class="big">{T["contact_big"]}</p><div class="contact">{contact}</div></section>

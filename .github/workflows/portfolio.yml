@@ -4,7 +4,7 @@ name: portfolio
 on:
   push:
     branches: [main]
-    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py", "docs/vitorhugo-pt.yml"]
+    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py", "reports/*/reel/*.mp4", "docs/vitorhugo-pt.yml"]
   workflow_dispatch:
 concurrency: { group: portfolio, cancel-in-progress: true }
 jobs:
@@ -32,6 +32,7 @@ jobs:
           print('\n'.join(f\"{p['id']} {p['mega']}\" for p in r if p.get('mega') and p['id']!='daily-study-2026'))" > megas.txt
           while read id link; do mkdir -p "hires/$id"; (cd /tmp && bash "$GITHUB_WORKSPACE/scripts/fetch_finals.sh" "$link" "$GITHUB_WORKSPACE/hires/$id" | tail -2) || echo "fetch failed $id"; find "hires/$id" -iname '*.mp4' -o -iname '*.mov' | xargs -r rm; done < megas.txt
           du -sh hires/* || true
+      - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null)
       - run: python scripts/build_portfolio.py out assets && PDF_MAXPX=1800 PDF_JPGQ=85 PDF_SUFFIX=_light python scripts/build_portfolio.py out assets && python scripts/build_vitorhugo.py site assets && mkdir -p site/files && cp out/*.pdf site/files/
       - env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
         run: |
