@@ -65,25 +65,25 @@ def listing(link):
     res = api({"a": "f", "c": 1, "ca": 1, "r": 1}, handle)
     nodes = {}
     for n in res["f"]:
-        k = n.get("k", "")
-        parts = [x.split(":", 1) for x in k.split("/") if ":" in x]
-        if not parts:
-            continue
-        enc_s = next((v for o, v in parts if o == handle), parts[0][1])   # "owner:key/owner2:key2" — take the shared folder's
-        try:
-            enc = b64d(enc_s)
-            raw = dec_key(enc[: len(enc) // 16 * 16], key)
-        except Exception:
-            continue
-        if n["t"] == 0:                                    # file: 32-byte key
-            w = a32(raw)
-            fkey = to_bytes([w[0] ^ w[4], w[1] ^ w[5], w[2] ^ w[6], w[3] ^ w[7]])
-            iv = to_bytes([w[4], w[5]])
-            name = attrs(n["a"], fkey).get("n", n["h"])
-            nodes[n["h"]] = dict(h=n["h"], p=n["p"], t=0, name=name, key=fkey, iv=iv, size=n.get("s", 0))
-        else:
-            name = attrs(n["a"], raw[:16]).get("n", n["h"])
-            nodes[n["h"]] = dict(h=n["h"], p=n["p"], t=n["t"], name=name)
+        parts = [x.split(":", 1)[1] for x in n.get("k", "").split("/") if ":" in x]
+        got = None
+        for enc_s in parts:                 # "owner:key/owner2:key2": use the one the folder key can open
+            try:
+                enc = b64d(enc_s); raw = dec_key(enc[: len(enc) // 16 * 16], key)
+            except Exception:
+                continue
+            if n["t"] == 0 and len(raw) >= 32:
+                w = a32(raw[:32])
+                fkey = to_bytes([w[0] ^ w[4], w[1] ^ w[5], w[2] ^ w[6], w[3] ^ w[7]])
+                at = attrs(n["a"], fkey)
+                if at:
+                    got = dict(h=n["h"], p=n["p"], t=0, name=at.get("n", n["h"]), key=fkey, iv=to_bytes([w[4], w[5]]), size=n.get("s", 0)); break
+            elif n["t"] != 0:
+                at = attrs(n["a"], raw[:16])
+                if at:
+                    got = dict(h=n["h"], p=n["p"], t=n["t"], name=at.get("n", n["h"])); break
+        if got:
+            nodes[n["h"]] = got
     def path(h):
         parts = []
         while h in nodes:
