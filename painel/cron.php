@@ -80,6 +80,7 @@ $delSlides = (array)($del['slides'] ?? []);
 $now = time();
 $cool = isset($state['_cooldown_until']) ? strtotime($state['_cooldown_until']) : 0;
 $scool = isset($state['_cooldown_social_until']) ? strtotime($state['_cooldown_social_until']) : 0;
+$rcool = isset($state['_cooldown_reel_until']) ? strtotime($state['_cooldown_reel_until']) : 0;
 
 $items = [];
 foreach ($data['calendar'] ?? [] as $day) foreach ($day['items'] as $it) { $it['date'] = $day['date']; $items[] = $it; }
@@ -133,22 +134,34 @@ foreach ($items as $it) {
       if ($now < $scool) continue;
       if ($now - $when > 6 * 3600) { $state[$pk] = ['at' => date('c'), 'skipped' => 'missed window']; continue; }
       $url = $it['full'][0] ?? null; if (!$url) continue;
+      $noCap = false;
       if ($it['type'] === 'story') { $c = container(['image_url' => $url, 'media_type' => 'STORIES']); ready($c); }
       else {
-        if ($now < $cool) continue;                                          // captions refused → hold reels
-        $c = container(['media_type' => 'REELS', 'video_url' => $url, 'cover_url' => $it['cover_url'] ?? '', 'caption' => $it['pub']['caption'] ?? '', 'share_to_feed' => 'true']);
-        ready($c, 50);
+        if ($now < $cool || $now < $rcool) continue;                         // feed/reel error cooldown → hold reels
+        $rp = ['media_type' => 'REELS', 'video_url' => $url, 'cover_url' => $it['cover_url'] ?? '', 'share_to_feed' => 'true'];
+        try { $c = container($rp + ['caption' => $it['pub']['caption'] ?? '']); ready($c, 50); }
+        catch (Exception $e) {                                               // same fallback as feed: no caption, caption as 1st comment
+          logline("reel caption refused ({$e->getMessage()}), posting without");
+          $c = container($rp); ready($c, 50); $noCap = true;
+        }
       }
       $mid = api('POST', "$IG/media_publish", ['creation_id' => $c])['id'];
       $state[$pk] = ['at' => date('c'), 'ig' => $mid];
-      if ($it['type'] === 'reel') { try { $state[$pk]['ig_link'] = api('GET', $mid, ['fields' => 'permalink'])['permalink'] ?? null; } catch (Exception $e) {} }
+      if ($it['type'] === 'reel') {
+        try { $state[$pk]['ig_link'] = api('GET', $mid, ['fields' => 'permalink'])['permalink'] ?? null; } catch (Exception $e) {}
+        if ($noCap) {
+          $state[$pk]['caption'] = 'TO-FIX: posted as 1st comment';
+          try { api('POST', "$mid/comments", ['message' => $it['pub']['plain'] ?? '']); $state[$pk]['caption_comment'] = 'ok'; } catch (Exception $e) { $state[$pk]['caption_comment'] = 'ERR ' . substr($e->getMessage(), 0, 120); }
+        }
+      }
       $published[] = $it;
     }
     ws("$store/published.json.php", $state);
     logline("PUBLISHED {$pk}");
   } catch (Exception $e) {
     logline("ERR {$pk}: " . $e->getMessage());
-    if ($it['type'] === 'feed') $state['_cooldown_until'] = date('c', $now + 3 * 3600); else $state['_cooldown_social_until'] = date('c', $now + 3 * 3600);
+    $ck = $it['type'] === 'feed' ? '_cooldown_until' : ($it['type'] === 'reel' ? '_cooldown_reel_until' : '_cooldown_social_until');   // a reel error no longer stops stories
+    $state[$ck] = date('c', $now + 3 * 3600);
     ws("$store/published.json.php", $state);
     break;
   }

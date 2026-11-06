@@ -2,9 +2,9 @@
 # owner: vitor | claude | parked. Ticks made in the Painel are stored on the server (store/ticks.json.php).
 - id: v-gh-minutes
   owner: vitor
-  title: "URGENTE: os robôs do GitHub pararam (minutos grátis do mês esgotados)"
-  detail: "Desde 05/11 23:40 nenhum robô corre (publicar, Painel, números). Escolhe 1: (1) github.com/settings/billing → 'Budgets and alerts' → orçamento de Actions de 5 € e cartão válido (com os novos horários deve custar ~1–2 €/mês); (2) tornar o repositório público (Settings → General → Danger Zone → Change visibility; grátis, mas CV/planos ficam visíveis); (3) esperar pelo novo ciclo (data em github.com/settings/billing/usage). Se publicares o post de 06/11 à mão, avisa o Claude antes de os robôs voltarem, para não sair repetido."
-  due: hoje 06/11 antes das 19:00
+  title: "Robôs do GitHub sem minutos grátis — RESOLVIDO (já não precisas de fazer nada)"
+  detail: "06/11 ~10:00: o relógio passou para o teu servidor (PTServidor, cron do cPanel a cada minuto) — publicar, Painel, números e MEGA correm lá, sem GitHub Actions e sem custos. Não é preciso orçamento, nem tornar o repositório público."
+  done: true
 - id: v-ig-check
   owner: vitor
   title: Ver o estado da conta no Instagram
@@ -58,7 +58,7 @@
 - id: c-ig-day1
   owner: claude
   title: Publicar o post de 3 nov (Duas Igrejas) assim que o Instagram aceitar
-  detail: "Bloqueio temporário da Meta às legendas via API. Robô tenta sozinho com pausas de 3 h. 06/11: BLOQUEADO — minutos grátis do GitHub Actions esgotados (ver v-gh-minutes). Horários dos robôs reduzidos (publish só nas horas da fila; Painel 4×/dia + depois de publicar + ações no Painel; números 1×/dia). Rever horas do publish na hora de verão (29 mar)."
+  detail: "Bloqueio temporário da Meta às legendas via API. Robô tenta sozinho com pausas de 3 h. 06/11: desbloqueado — publica o robô do servidor (painel/cron.php, cada minuto), já não depende do GitHub. 1.º post aprovado para 06/11 19:00. Se o Instagram recusar a legenda, sai sem legenda + legenda no 1.º comentário (o mesmo vale agora para os reels)."
 - id: c-painel
   owner: claude
   title: Painel v1 (este) a funcionar e atualizado pelos robôs
