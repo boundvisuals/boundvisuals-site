@@ -11,6 +11,7 @@
    Manual run from a browser is refused (CLI only), except ?k=<cron key> for a dry check. */
 if (PHP_SAPI !== 'cli') { http_response_code(403); exit('cli only'); }
 set_time_limit(280);
+ini_set('memory_limit', '1024M');
 date_default_timezone_set('Europe/Lisbon');
 $store = __DIR__ . '/store';
 $G = 'https://graph.facebook.com/v21.0';
@@ -22,7 +23,12 @@ function logline($s) { global $store; file_put_contents("$store/cron.log", date(
 $lock = fopen("$store/cron.lock", 'c'); if (!flock($lock, LOCK_EX | LOCK_NB)) exit;   // never two runs at once
 $meta = rs("$store/meta.json.php");                 // {token, ig, page} — uploaded by the robot from GitHub secrets
 $data = rs("$store/data.json.php");
-if (!$meta || !$data) { logline('missing meta or data'); exit; }
+if (!$meta || !$data) {
+  $why = [];
+  foreach (['meta', 'data'] as $n) { $f = "$store/$n.json.php"; $t = is_file($f) ? file_get_contents($f) : ''; $p = strpos($t, "\n");
+    json_decode($p === false ? $t : substr($t, $p + 1), true); $why[] = "$n: " . strlen($t) . ' bytes, ' . json_last_error_msg() . ', starts ' . json_encode(substr($t, 0, 20)); }
+  logline('missing meta or data · ' . implode(' | ', $why)); exit;
+}
 $TOKEN = $meta['token']; $IG = $meta['ig']; $PAGE = $meta['page'];
 
 function api($method, $path, $params = [], $token = null) {
