@@ -1,0 +1,24 @@
+name: site-check
+# Read-only health check of key pages on the live site.
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set +e; mkdir -p reports/site
+          {
+          for u in "" info/ portfolio_page/vivendascete/ portfolio_page/goldvillage/ portfolio_page/vivendasduasigrejas/; do
+            code=$(curl -s -o p.html -w "%{http_code}" -A "Mozilla/5.0" "https://www.boundvisuals.com/$u")
+            t=$(grep -o "<title>[^<]*" p.html | head -1 | sed 's/<title>//')
+            err=$(grep -ciE "critical error|fatal error|warning:" p.html)
+            arts=$(grep -c "<article" p.html); imgs=$(grep -o "<img" p.html | wc -l)
+            echo "$code | /$u | $t | articles=$arts imgs=$imgs errors=$err"
+          done
+          } > reports/site/check.txt
+          cat reports/site/check.txt
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add reports && git commit -qm "Report: site-check" && (git pull --rebase -q && git push) || true
