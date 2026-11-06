@@ -1994,4 +1994,196 @@ Regra: as fachadas e a igreja ficam iguais entre câmaras; a AI pode variar folh
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #064–#069, 1–13 abr, até 29 mar).
+## #064 · Casa para um cliente imaginário #5: a fotógrafa (quinta, 1 abr)
+
+**Ideia:** quinto cliente imaginário: uma fotógrafa que vive e trabalha numa antiga garagem convertida. Espaço único, claraboia a todo o comprimento, parede branca para fundo de fotografia, mesa de trabalho e prateleiras com caixas de arquivo. Imagem de ambiente calma, quase de revista.
+
+**1. Modelo 3D (25 min)**
+- Volume 9 × 5 m, pé-direito 4 m, claraboia linear de 1 m de largura ao longo do eixo; piso em betão polido; parede branca contínua com um rolo de papel de fundo cinzento no canto.
+- Mesa comprida em carvalho com dois monitores e uma lâmpada; prateleiras metálicas com caixas de arquivo; um tripé e um rebatedor encostados à parede.
+- Pequena zona de estar: sofá baixo e uma planta grande (ficus).
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, do fundo, o espaço inteiro com a claraboia a riscar o teto.
+- B: 40 mm, a mesa de trabalho em ângulo, luz lateral.
+- C: 70 mm, o tripé e o rebatedor com a parede branca desfocada.
+
+**3. Luz:** dia de céu encoberto luminoso, luz zenital difusa e suave pela claraboia, sem sombras duras; só o brilho dos monitores como luz quente.
+
+**4. Render base:** Render 1600 px; betão polido com reflexo ténue, carvalho natural, metal pintado de cinzento. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same furniture and camera as the reference image. A photographer's studio in a converted garage, polished concrete floor, a long linear skylight spilling soft diffused overcast daylight, a long oak work table with two monitors, grey metal shelves with archive boxes, a tripod and a reflector leaning on a white wall, a grey paper backdrop roll in the corner, a large ficus plant, calm editorial atmosphere, fine film grain, no people, no readable text.
+```
+Regra: a claraboia tem de ficar com a mesma largura e posição nas 3 câmaras; a AI pode variar objetos pequenos nas prateleiras, não a arquitetura.
+
+**6. Entrega:** 3 finais em "#064 - Cliente imaginario 5 fotografa / final". Para reel: câmara A, 6 s, nuvens a passarem na claraboia e a luz a variar devagar (Seedance), som de estúdio silencioso.
+
+**Legenda**
+- EN: "Daily Study #064 · Imaginary client #5: the photographer. One skylight, one white wall, a studio that lets the light do the work."
+- PT: "Daily Study #064 · Cliente imaginário #5: a fotógrafa. Uma claraboia, uma parede branca, um estúdio que deixa a luz trabalhar."
+
+---
+
+## #065 · Casas de Portugal #9: monte alentejano (sábado, 3 abr)
+
+**Ideia:** nono episódio de 'Casas de Portugal': um monte alentejano caiado de branco com barra azul-cobalto, chaminé cónica, sobreiros e uma planície dourada. Imagem de verão: calor, silêncio, sombra.
+
+**1. Modelo 3D (25 min)**
+- Volume térreo em L, 18 × 8 m, paredes caiadas, barra azul de 60 cm junto ao chão; telhado de telha de canudo; chaminé alentejana cónica.
+- Alpendre com pilares quadrados e uma mesa de madeira; poço circular caiado no pátio; muro baixo de pedra solta.
+- 3 sobreiros e uma oliveira velha; terreno plano com restolho dourado.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, o monte inteiro com a planície e o céu.
+- B: 40 mm, alpendre e mesa à sombra, com a luz branca no pátio.
+- C: 85 mm, a chaminé cónica contra o céu azul.
+
+**3. Luz:** início da tarde de agosto, sol alto e duro, sombras curtas e nítidas, céu azul profundo com um fiapo de nuvem; contraste forte entre cal e sombra.
+
+**4. Render base:** Render 1600 px; cal branca com ligeira textura, azul-cobalto na barra, telha em tons de barro, restolho amarelo-palha. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same geometry and camera as the reference image. A traditional whitewashed Alentejo farmhouse in Portugal with a cobalt-blue baseboard stripe, a conical chimney, an L-shaped plan with a shaded porch and a wooden table, a whitewashed round well in the courtyard, a low dry-stone wall, old cork oaks and an olive tree, golden stubble fields to the horizon, bright high midday summer sun, crisp short shadows, deep blue sky, silent and warm, fine film grain, no people, no text.
+```
+Regra: o desenho do monte e a barra azul ficam iguais; a AI pode variar a vegetação e o céu, não os volumes.
+
+**6. Entrega:** 3 finais em "#065 - Casas de Portugal 9 Alentejo / final". Para reel: câmara A, 6 s, vento a mexer no restolho e sombras das nuvens a deslizar (Seedance), som de cigarras.
+
+**Legenda**
+- EN: "Daily Study #065 · Houses of Portugal #9: an Alentejo farmhouse. White walls, a blue stripe, and nothing but sky."
+- PT: "Daily Study #065 · Casas de Portugal #9: um monte alentejano. Paredes brancas, uma barra azul e mais nada além do céu."
+
+---
+
+## #066 · Abecedário arquitetónico #5: E de Empena (terça, 6 abr)
+
+**Ideia:** quinto episódio do 'Abecedário arquitetónico': E de Empena (a parede triangular de topo do telhado). Uma fila de casas geminadas só com as empenas a recortarem o céu, num bairro de rua inclinada. Imagem gráfica, quase uma ilustração em 3D realista.
+
+**1. Modelo 3D (25 min)**
+- Rua inclinada de 6 m de largura; 5 casas geminadas de 3 pisos, cada uma com empena diferente em largura mas todas com telhado de duas águas; fachadas em rebocos de cores suaves (creme, rosa-seco, verde-água, ocre, cinza-quente).
+- Janelas pequenas e portas em madeira; chaminés de tijolo; um fio de roupa entre duas janelas.
+- Calçada em granito.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, a rua em perspetiva descendente, empenas em fila.
+- B: 50 mm, frontal às empenas, quase plana, ritmo e cor.
+- C: 85 mm, duas empenas e o céu, contraste de cores.
+
+**3. Luz:** manhã clara de céu limpo, sol baixo de lado a rasar as fachadas, sombras longas e nítidas nos beirais.
+
+**4. Render base:** Render 1600 px; reboco liso com mancha ligeira, telha cerâmica, tijolo à vista nas chaminés. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same street, same houses and camera as the reference image. A row of narrow terraced houses on a gently sloping cobbled street, each with a different gable end against a clear sky, soft plaster colours in cream, dusty pink, sage green, ochre and warm grey, small timber windows, brick chimneys, a clothesline between two windows, low raking morning sun, crisp long shadows under the eaves, graphic and calm, fine film grain, no people, no readable text.
+```
+Regra: as larguras e as alturas das empenas têm de ser as mesmas nas 3 câmaras — a graça é o ritmo da silhueta.
+
+**6. Entrega:** 3 finais em "#066 - Abecedario 5 E de Empena / final". Para reel: câmara C, 5 s, sombra a deslizar pelas fachadas (Seedance), som de rua de manhã.
+
+**Legenda**
+- EN: "Daily Study #066 · Architectural alphabet #5: E for Empena (gable). Five roofs, five colours, one skyline."
+- PT: "Daily Study #066 · Abecedário arquitetónico #5: E de Empena. Cinco telhados, cinco cores, um só horizonte."
+
+---
+
+## #067 · Produto numa pedra clara: um frasco de perfume (quinta, 8 abr)
+
+**Ideia:** episódio de produto: um frasco de perfume de vidro sobre travertino, com cáusticas de água e sombra de uma folha. Fotografia de produto de campanha, minimalista, sem marca real (rótulo inventado, ilegível).
+
+**1. Modelo 3D (25 min)**
+- Frasco paralelepipédico de vidro grosso 6 × 3 × 9 cm com tampa de latão fosco e líquido âmbar; bloco de travertino com bordas arredondadas; plano de fundo curvo em bege.
+- Um ramo de oliveira (2 folhas) a fazer sombra; uma poça rasa de água ao lado.
+- Rótulo branco sem texto legível.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, o frasco centrado com a pedra, ligeiramente de baixo.
+- B: 100 mm, três quartos, a tampa de latão com reflexo.
+- C: macro 120 mm, o líquido âmbar e a refração no vidro.
+
+**3. Luz:** luz dura lateral de projetor (spot) a 35° para sombras definidas + preenchimento suave oposto; cáusticas de água projetadas na pedra.
+
+**4. Render base:** Render 1600 px; vidro com refração real (IOR 1.5), travertino com furos pequenos e veios, latão escovado. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic luxury product photograph, same bottle, same stone and camera as the reference image. A thick glass perfume bottle with an amber liquid and a matte brushed-brass cap, resting on a rounded block of cream travertine, soft water caustics dancing on the stone, the crisp shadow of an olive branch, a shallow puddle beside it, warm beige curved backdrop, hard directional studio light with soft fill, subtle glass refraction, minimal campaign style, fine film grain, blank unreadable label, no logos, no text.
+```
+Regra: as proporções do frasco e o âmbar do líquido têm de ser iguais; a AI não pode inventar texto no rótulo.
+
+**6. Entrega:** 3 finais em "#067 - Produto perfume travertino / final". Para reel: câmara B, 5 s, cáusticas a mexer na pedra e uma gota a cair na poça (Seedance), som suave de água.
+
+**Legenda**
+- EN: "Daily Study #067 · Product study: perfume on travertine. Glass, stone, water, and one olive branch of shadow."
+- PT: "Daily Study #067 · Estudo de produto: perfume sobre travertino. Vidro, pedra, água e uma sombra de oliveira."
+
+---
+
+## #068 · Desafio de cor #5: verde-oliveira (sábado, 10 abr)
+
+**Ideia:** quinto desafio de cor: uma cozinha/sala de jantar pequena em que domina o verde-oliveira (cinzento-esverdeado, fosco, não folha de bananeira), com madeira clara e cerâmica branca. O carrossel termina com a paleta de 5 cores tirada da imagem.
+
+**1. Modelo 3D (25 min)**
+- Cozinha 3,5 × 3 m: armários de baixo e de cima lacados em verde-oliveira mate, bancada em pedra clara, torneira de latão; prateleira aberta com louça branca e uma tábua de madeira.
+- Parede em azulejo branco liso 10 × 10; piso em madeira clara; uma mesinha redonda com dois bancos de carvalho.
+- Janela pequena com vaso de ervas aromáticas.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a cozinha inteira, verde em primeiro plano.
+- B: 50 mm, bancada e prateleira em ângulo.
+- C: macro 100 mm, a porta do armário verde com a luz a roçar a superfície.
+
+**3. Luz:** manhã de luz lateral suave pela janela; sem luz artificial; sombras longas e macias.
+
+**4. Render base:** Render 1600 px; lacado mate com micro-textura (bump muito leve), pedra clara, azulejo com juntas finas. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same kitchen, same cabinets and camera as the reference image. A small kitchen with matte olive-green lacquered cabinets, a pale stone countertop, a brushed brass tap, an open shelf with white ceramics and a wooden chopping board, plain white square tiles, a light oak floor, a small round table with two oak stools, a window with herb pots, soft raking morning light, olive green as the single dominant colour, editorial interior photography, fine film grain, no people, no text.
+```
+Regra: o verde tem de ser o MESMO nas 3 (conta-gotas: aproximadamente #6b7254); corrige em edição antes de tirar a paleta.
+
+**6. Entrega:** 3 finais em "#068 - Desafio de cor 5 verde oliveira / final". Para reel: câmara C, 5 s, a luz a deslizar pela superfície do armário (Seedance).
+
+**Legenda**
+- EN: "Daily Study #068 · Colour challenge #5: olive green. One kitchen, one colour, one slow morning. Next colour? Tell me below."
+- PT: "Daily Study #068 · Desafio de cor #5: verde-oliveira. Uma cozinha, uma cor, uma manhã devagar. Próxima cor? Diz-me aqui em baixo."
+
+---
+
+## #069 · Brief de concurso #3: uma biblioteca de rua (terça, 13 abr)
+
+**Ideia:** terceiro 'concurso imaginário': um pequeno pavilhão-biblioteca de rua para uma praça. Estrutura leve em madeira e vidro, prateleiras viradas para fora, banco e bolsa de sombra. Imagem de concurso: simples, convidativa, escala humana.
+
+**1. Modelo 3D (25 min)**
+- Pavilhão 4 × 3 m, cobertura plana em consola com 60 cm de beiral; estrutura de pilares de madeira de 12 cm; paredes laterais em vidro; prateleiras exteriores em carvalho com livros (blocos simples coloridos).
+- Banco corrido em redor; piso em lajes de granito; uma árvore (tília) ao lado.
+- Uma bicicleta encostada para escala.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a praça com o pavilhão em segundo plano.
+- B: 35 mm, de frente, as prateleiras e o banco (a imagem do concurso).
+- C: 70 mm, os livros e a luz no vidro, bicicleta desfocada.
+
+**3. Luz:** fim de manhã, sol de lado a 40°, céu azul com nuvens baixas e macias; reflexos no vidro.
+
+**4. Render base:** Render 1600 px; carvalho claro com veio, vidro com reflexo ligeiro, granito claro. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural competition image, same pavilion, same geometry and camera as the reference image. A tiny street library pavilion in a European square, a slim timber post structure with a flat overhanging roof, glass side walls, open oak bookshelves filled with books on the outside, a continuous built-in bench, light granite paving, a linden tree beside it, a bicycle leaning for scale, late-morning sun from the side, soft clouds, reflections on the glass, inviting and light, fine film grain, no people, no readable text.
+```
+Regra: a cobertura em consola e a espessura dos pilares ficam iguais entre câmaras; os livros podem variar.
+
+**6. Entrega:** 3 finais em "#069 - Concurso 3 Biblioteca de rua / final". Para reel: câmara B, 6 s, sombras da tília a mexer sobre as prateleiras (Seedance), som de praça ao fundo.
+
+**Legenda**
+- EN: "Daily Study #069 · Imaginary competition #3: a street library. A roof, some shelves, and a reason to stop in the square."
+- PT: "Daily Study #069 · Concurso imaginário #3: uma biblioteca de rua. Um telhado, umas prateleiras e uma razão para parar na praça."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #070–#075, 15–27 abr, até 12 abr).
