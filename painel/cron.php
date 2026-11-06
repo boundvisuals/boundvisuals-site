@@ -188,20 +188,7 @@ if (($st['day'] ?? '') !== date('Y-m-d') && (int)date('G') >= 7) {
   } catch (Exception $e) { logline('stats ERR ' . substr($e->getMessage(), 0, 120)); }
 }
 
-// start the GitHub robot (re-renders crops, applies approvals to the repo) once, 5 min after the last click in the Painel
-$dirty = "$store/robot_dirty";
-if (is_file($dirty) && time() - filemtime($dirty) >= 300) {
-  $t = (rs("$store/gh.json.php") ?? [])['token'] ?? '';
-  if ($t !== '') {
-    $ch = curl_init('https://api.github.com/repos/boundvisuals/boundvisuals-site/actions/workflows/painel.yml/dispatches');
-    curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => '{"ref":"main"}', CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 15,
-      CURLOPT_HTTPHEADER => ["Authorization: Bearer $t", 'Accept: application/vnd.github+json', 'User-Agent: bv-painel', 'Content-Type: application/json']]);
-    curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
-    if ($code === 204) { unlink($dirty); logline('robot started'); } else logline("robot start error $code");
-  }
-}
-// same after something was published, so the repo + Painel catch up
-if ($published) @touch($dirty);
+
 
 // ---------------------------------------------------------------- LinkedIn (personal profile)
 // Tue/Thu/Sat from 12:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.

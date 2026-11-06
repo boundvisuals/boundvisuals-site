@@ -29,10 +29,12 @@ function write_store($f, $data) {
 }
 
 // Wakes the panel robot at once (GitHub workflow_dispatch) when Vítor saved a token in the panel settings.
-function kick_robot() {   // batched: the server cron starts the GitHub robot once, 5 min after the last click (saves Actions minutes)
-  global $store;
-  @touch("$store/robot_dirty");
-  return 'queued';
+function kick_robot() {   // apply the change right now: start the server robot in the background (no wait for the next minute)
+  $home = dirname(__DIR__, 2);
+  $sh = "$home/bv/repo/scripts/server_run.sh";
+  if (!is_file($sh) || !function_exists('exec')) return 'queued';
+  @exec('nohup bash ' . escapeshellarg($sh) . ' >> ' . escapeshellarg("$home/bv/run.log") . ' 2>&1 &');
+  return 'started';
 }
 function kick_robot_now() {
   global $store;
