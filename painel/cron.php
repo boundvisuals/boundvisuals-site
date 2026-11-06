@@ -202,3 +202,65 @@ if (is_file($dirty) && time() - filemtime($dirty) >= 300) {
 }
 // same after something was published, so the repo + Painel catch up
 if ($published) @touch($dirty);
+
+// ---------------------------------------------------------------- LinkedIn (personal profile)
+// Tue/Thu/Sat from 12:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.
+$oa = rs("$store/oauth.json.php") ?? [];
+$li = $oa['linkedin'] ?? [];
+if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30'
+    && ($li['expires_at'] ?? PHP_INT_MAX) > time()) {
+  $lst = rs("$store/linkedin.json.php") ?? [];
+  if (($lst['last_day'] ?? '') !== date('Y-m-d')) {
+    $cand = null;
+    foreach (array_reverse($items) as $it) {
+      if ($it['type'] !== 'feed' || empty($state[$it['pkey']]['ig']) || isset($lst['done'][$it['pkey']])) continue;
+      $cand = $it; break;
+    }
+    if ($cand) {
+      $V = '202509';
+      $H = ["Authorization: Bearer {$li['access_token']}", "LinkedIn-Version: $V", 'X-Restli-Protocol-Version: 2.0.0', 'Content-Type: application/json'];
+      $req = function ($method, $url, $body = null, $headers = null) use ($H) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [CURLOPT_CUSTOMREQUEST => $method, CURLOPT_RETURNTRANSFER => true, CURLOPT_HEADER => true, CURLOPT_TIMEOUT => 120,
+          CURLOPT_HTTPHEADER => $headers ?? $H]);
+        if ($body !== null) curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+        $raw = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); $hs = curl_getinfo($ch, CURLINFO_HEADER_SIZE); curl_close($ch);
+        return [$code, substr((string)$raw, 0, $hs), json_decode(substr((string)$raw, $hs), true)];
+      };
+      try {
+        $ids = [];
+        $files = array_values(array_filter($cand['slide_files'] ?? [], fn($f) => !str_ends_with($f, '-full.jpg')));
+        foreach (array_slice($files, 0, 4) as $f) {
+          $path = dirname(__DIR__) . "/bv-fila/{$cand['project']}/$f";
+          if (!is_file($path)) continue;
+          [$c1, , $j] = $req('POST', 'https://api.linkedin.com/rest/images?action=initializeUpload', json_encode(['initializeUploadRequest' => ['owner' => $li['person_urn']]]));
+          if ($c1 >= 300) throw new Exception("init $c1 " . json_encode($j));
+          [$c2] = $req('PUT', $j['value']['uploadUrl'], file_get_contents($path), ["Authorization: Bearer {$li['access_token']}", 'Content-Type: image/jpeg']);
+          if ($c2 >= 300) throw new Exception("upload $c2");
+          $ids[] = $j['value']['image'];
+        }
+        if (!$ids) throw new Exception('no images');
+        $esc = fn($t) => preg_replace('/([\\|{}@\[\]()<>#*_~])/', '\\$1', $t);
+        $tags = implode(' ', array_map(fn($t) => '{hashtag|\\#|' . $t . '}', ['archviz', '3dvisualization', 'architecture', 'coronarenderer', 'ai']));
+        $text = $esc(trim((string)($cand['caption'] ?? '')) . "\n\nMore of my work: https://www.boundvisuals.com") . "\n\n" . $tags;
+        $content = count($ids) === 1 ? ['media' => ['id' => $ids[0]]] : ['multiImage' => ['images' => array_map(fn($i) => ['id' => $i], $ids)]];
+        $post = ['author' => $li['person_urn'], 'commentary' => $text, 'visibility' => 'PUBLIC',
+                 'distribution' => ['feedDistribution' => 'MAIN_FEED', 'targetEntities' => [], 'thirdPartyDistributionChannels' => []],
+                 'content' => $content, 'lifecycleState' => 'PUBLISHED', 'isReshareDisabledByAuthor' => false];
+        [$c3, $hdr, $j3] = $req('POST', 'https://api.linkedin.com/rest/posts', json_encode($post, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+        if ($c3 >= 300) throw new Exception("post $c3 " . json_encode($j3));
+        preg_match('/x-restli-id:\s*(\S+)/i', $hdr, $m);
+        $lst['done'][$cand['pkey']] = ['at' => date('c'), 'id' => $m[1] ?? ''];
+        $lst['last_day'] = date('Y-m-d');
+        logline("LINKEDIN posted {$cand['pkey']}");
+        $n = rs("$store/notify.json.php") ?? [];
+        $n[] = ['id' => 'li-' . md5($cand['pkey']), 'title' => 'Publicado no LinkedIn: ' . ($cand['project_title'] ?? $cand['project']), 'body' => count($ids) . ' imagens + legenda', 'url' => '/painel/'];
+        ws("$store/notify.json.php", $n);
+      } catch (Exception $e) {
+        $lst['last_day'] = date('Y-m-d'); $lst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
+        logline('LINKEDIN ERR ' . substr($e->getMessage(), 0, 200));
+      }
+      ws("$store/linkedin.json.php", $lst);
+    }
+  }
+}
