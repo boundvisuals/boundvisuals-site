@@ -245,7 +245,7 @@ def build(out):
             it["date"] = str(it["date"])
             pkey = f"{it['date']}_{it['time']}_{it['type']}_{it['file']}"
             st, link = status(it.get("approved"), pkey)
-            src = f"reports/{it['project']}/{it['type']}/{it['cover'] if it['type'] == 'reel' else it['file']}"
+            src = f"reports/{it['project']}/{it['type']}/{it['cover'] if it.get('cover') else it['file']}"
             th = thumb(src, out, f"{it['project']}/{it['type']}/{os.path.basename(src)}", (180, 320))
             days.setdefault(it["date"], []).append({
                 "key": social_key(it), "pkey": pkey, "type": it["type"], "time": it["time"], "project": it["project"],

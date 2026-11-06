@@ -130,7 +130,7 @@ def main():
     def pool(pr):
         if pr not in pools:
             fs = sorted(os.path.basename(f) for f in glob.glob(f"reports/{pr}/story/*.jpg")
-                        if not os.path.basename(f).startswith("teaser-"))
+                        if not os.path.basename(f).startswith(("teaser-", "palette-", "motion-")))
             pools[pr] = fs
         return pools[pr]
 
@@ -177,6 +177,16 @@ def main():
                 if (pr, f) in used or src_of_story(f) in day_src or not fresh(pr, f):
                     continue
                 mids.append((f, False)); day_src.add(src_of_story(f)); used.add((pr, f))
+            # then motion stories (slow pan / push-in videos rendered on the server from full-res finals)
+            if len(mids) < 3:
+                for mv in sorted(glob.glob(f"reports/{pr}/story/motion-*.mp4")):
+                    if len(mids) >= 3:
+                        break
+                    f = os.path.basename(mv); stem = f[7:-4]
+                    if (pr, f) in used or stem in post_src or stem in day_src or stem in (TW.get(pr, {}) or {}):
+                        continue
+                    o = old.get((d, f))
+                    mids.append((f, bool(o and o.get("approved")))); day_src.add(stem); used.add((pr, f))
             # not enough real crops left → colour-palette stories (pillar 'paleta'), one per image, ever
             if len(mids) < 3:
                 for prev in sorted(glob.glob(f"reports/{pr}/preview/*.jpg")):
@@ -199,7 +209,10 @@ def main():
                     o = old.get((d, f))
                     mids.append((f, bool(o and o.get("approved")))); day_src.add(stem); used.add((pr, f))
             for t, (f, ap) in zip(MID_TIMES, mids):
-                keep.append({"date": d, "time": t, "type": "story", "project": pr, "file": f, "approved": ap})
+                e = {"date": d, "time": t, "type": "story", "project": pr, "file": f, "approved": ap}
+                if f.endswith(".mp4"):
+                    e["cover"] = f[:-4] + ".jpg"
+                keep.append(e)
         keep.sort(key=lambda x: (x["date"], str(x["time"])))
         out = head + (yaml.safe_dump(keep, allow_unicode=True, sort_keys=False, width=240) if keep else "[]\n")
         if out != stxt:

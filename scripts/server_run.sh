@@ -32,7 +32,7 @@ for o in "$B"/outbox/*; do
   [ -d "$o" ] || continue; case "$o" in *.part) continue;; esac
   pid=$(basename "$o"); D="reports/$pid"; mkdir -p "$D"
   [ -d "$o/ig" ] && { rm -rf "$D/ig" "$D/preview"; cp -r "$o/ig" "$o/preview" "$D/"; cp "$o"/*.log "$o"/manifest.json "$D/" 2>/dev/null; }
-  [ -d "$o/story" ] && { find "$D/story" -name "*.jpg" ! -name "teaser-*" -delete 2>/dev/null; mkdir -p "$D/story"; cp "$o"/story/* "$D/story/" 2>/dev/null; }
+  [ -d "$o/story" ] && { find "$D/story" -name "*.jpg" ! -name "teaser-*" ! -name "palette-*" ! -name "motion-*" -delete 2>/dev/null; mkdir -p "$D/story"; cp "$o"/story/* "$D/story/" 2>/dev/null; }
   [ -d "$o/reel" ] && { rm -rf "$D/reel"; cp -r "$o/reel" "$D/"; }
   rm -rf "$o"
 done
@@ -64,6 +64,8 @@ fi
 $PY scripts/dedupe_queue.py >/dev/null || true
 $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py sync-slides >/dev/null
 $PY scripts/make_teasers.py >/dev/null || true
+# motion stories: render 1 missing video per run in the background (lock → never two at once; untracked, survives git reset)
+( flock -n 9 || exit 0; cd "$R" && nice -n 15 $PY scripts/make_motion.py 1 >> "$B/motion.log" 2>&1 ) 9>"$B/motion.lock" &
 
 # rebuild the Painel in place
 mkdir -p "$B/out"

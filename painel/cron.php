@@ -135,7 +135,10 @@ foreach ($items as $it) {
       if ($now - $when > 6 * 3600) { $state[$pk] = ['at' => date('c'), 'skipped' => 'missed window']; continue; }
       $url = $it['full'][0] ?? null; if (!$url) continue;
       $noCap = false;
-      if ($it['type'] === 'story') { $c = container(['image_url' => $url, 'media_type' => 'STORIES']); ready($c); }
+      if ($it['type'] === 'story') {
+        if (preg_match('/\.mp4(\?|$)/', $url)) { $c = container(['video_url' => $url, 'media_type' => 'STORIES']); ready($c, 50); }
+        else { $c = container(['image_url' => $url, 'media_type' => 'STORIES']); ready($c); }
+      }
       else {
         if ($now < $cool || $now < $rcool) continue;                         // feed/reel error cooldown → hold reels
         $rp = ['media_type' => 'REELS', 'video_url' => $url, 'cover_url' => $it['cover_url'] ?? '', 'share_to_feed' => 'true'];
