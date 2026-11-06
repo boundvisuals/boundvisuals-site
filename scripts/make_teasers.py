@@ -66,57 +66,117 @@ def save_if_changed(img, path):
     return True
 
 
+MID_TIMES = ["12:00", "15:00", "17:30"]
+
+
+def src_of_story(fn):
+    return fn.rsplit("-s", 1)[0]
+
+
+def src_of_slide(fn):
+    return re.sub(r"-\d+(-full)?\.jpg$", "", fn)
+
+
 def main():
-    since = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
+    """Fixed daily story rule (Vítor 2026-11-06), for every day AFTER today that has a feed post:
+    10:00 'TONIGHT · 19:00' (detail of the post; the post image when it has no detail slide)
+    12:00 / 15:00 / 17:30  up to 3 stories of the SAME project, each from a different image, never the post's image,
+                           each crop used once in the whole calendar
+    19:00 the post · 20:30 'NEW ON THE FEED'.
+    Stories of other projects on post days are removed. Reels are untouched. Today is never touched."""
+    since = sys.argv[1] if len(sys.argv) > 1 else (datetime.date.today() + datetime.timedelta(days=1)).isoformat()
     T = titles()
     changed = 0
+    weeks = []
     for wf in sorted(glob.glob("queue/week-*.yml")):
         nn = re.search(r"week-(\d+)\.yml$", wf).group(1)
         feed = yaml.safe_load(open(wf, encoding="utf-8")) or []
         sf = f"queue/social-week-{nn}.yml"
         stxt = open(sf, encoding="utf-8").read() if os.path.exists(sf) else ""
-        head = "".join(l for l in stxt.splitlines(True) if l.startswith("#")) or \
-            f"# Week {int(nn)} social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py\n"
-        social = yaml.safe_load(stxt) or [] if stxt else []
+        social = (yaml.safe_load(stxt) or []) if stxt else []
         for it in social:
-            it["date"] = str(it["date"])
-        real_story_days = {it["date"] for it in social if it["type"] == "story" and not it.get("teaser")}
-        want = {}
+            it["date"] = str(it["date"]); it["time"] = str(it["time"])
+        weeks.append((nn, feed, sf, stxt, social))
+    # crops already used (past days and kept entries) are never reused
+    used = set()
+    for _, _, _, _, social in weeks:
+        for it in social:
+            if it["type"] == "story" and not it.get("teaser") and it["date"] < since:
+                used.add((it["project"], it.get("file")))
+    pools = {}
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from dedupe_queue import img_hash, load_twins
+    TW = load_twins()
+    hashes = []
+
+    def fresh(pr, f, add=True):
+        """False when dedupe_queue would drop it (horizontal twin or visually identical to an earlier story)."""
+        if src_of_story(f) in (TW.get(pr, {}) or {}):
+            return False
+        h = img_hash(f"reports/{pr}/story/{f}")
+        if h is not None and any(bin(h ^ o).count("1") <= 10 for o in hashes):
+            return False
+        if add and h is not None:
+            hashes.append(h)
+        return True
+
+    for _, _, _, _, social in weeks:
+        for it in sorted(social, key=lambda x: (x["date"], x["time"])):
+            if it["type"] == "story" and it["date"] < since:
+                fresh(it["project"], it["file"])
+
+    def pool(pr):
+        if pr not in pools:
+            fs = sorted(os.path.basename(f) for f in glob.glob(f"reports/{pr}/story/*.jpg")
+                        if not os.path.basename(f).startswith("teaser-"))
+            pools[pr] = fs
+        return pools[pr]
+
+    for nn, feed, sf, stxt, social in weeks:
+        head = "".join(l for l in stxt.splitlines(True) if l.startswith("#")) or \
+            f"# Week {int(nn)} social (stories + reels). approved only after Vítor's OK. Stories by scripts/make_teasers.py\n"
+        days = {}
         for p in feed:
             d = str(p["date"])
-            if d < since or d in real_story_days or not p.get("slides"):
+            if d < since or not p.get("slides"):
                 continue
             slides = [s for s in p["slides"] if os.path.exists(f"reports/{p['project']}/ig/{s}")]
-            if not slides:
-                continue
+            if slides:
+                days[d] = (p, slides)
+        keep = [it for it in social if it["date"] not in days or it["type"] != "story"]
+        old = {(it["date"], it.get("teaser") or it.get("file")): it for it in social if it["date"] in days and it["type"] == "story"}
+        for d, (p, slides) in sorted(days.items()):
+            pr = p["project"]
             det = [s for s in slides[1:] if not s.endswith("-full.jpg")]
-            for k, src in ((("a", det[0]),) if det else ()) + (("b", slides[0]),):   # "a" only when a real detail slide exists (never the same image twice)
-                fn = f"teaser-{d}-{k}.jpg"
-                if save_if_changed(frame(f"reports/{p['project']}/ig/{src}", k, T.get(p["project"], p["project"]), str(p.get("time", "19:00"))),
-                                   f"reports/{p['project']}/story/{fn}"):
-                    changed += 1
-                want[(d, k)] = {"date": d, "time": TIMES[k], "type": "story", "project": p["project"], "file": fn,
-                                "teaser": k, "approved": False}
-        keep, have, dirty = [], set(), False
-        for it in social:
-            if it.get("teaser"):
-                key = (it["date"], it["teaser"])
-                if key not in want:
-                    if it.get("approved"):
-                        keep.append(it)          # never drop something Vítor approved
-                    else:
-                        dirty = True
+            post_src = {src_of_slide(s) for s in slides}
+            # 'a' = a detail of tonight's post: 2nd slide, else the post image's own 9:16 story crop
+            a_src = f"reports/{pr}/ig/{det[0]}" if det else next(
+                (f"reports/{pr}/story/{f}" for f in pool(pr) if src_of_story(f) in post_src), None)
+            for k, src in (("a", a_src), ("b", f"reports/{pr}/ig/{slides[0]}")):
+                if not src:
                     continue
-                w = want[key]
-                if it["project"] != w["project"]:   # feed post of that day changed project: follow it, keep the flag
-                    it["project"] = w["project"]; dirty = True
-                have.add(key)
-            keep.append(it)
-        for key, w in want.items():
-            if key not in have:
-                keep.append(w); dirty = True
-        if not dirty:
-            continue
+                fn = f"teaser-{d}-{k}.jpg"
+                if save_if_changed(frame(src, k, T.get(pr, pr), str(p.get("time", "19:00"))),
+                                   f"reports/{pr}/story/{fn}"):
+                    changed += 1
+                if not fresh(pr, fn):
+                    continue
+                o = old.get((d, k))
+                keep.append({"date": d, "time": TIMES[k], "type": "story", "project": pr, "file": fn, "teaser": k,
+                             "approved": bool(o and o.get("approved") and o["project"] == pr)})
+            day_src, mids = set(post_src), []
+            # keep this day's existing same-project stories that still fit the rule (approval kept)
+            for (dd, f), o in sorted(old.items()):
+                if dd == d and not o.get("teaser") and o["project"] == pr and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
+                    mids.append((f, bool(o.get("approved")))); day_src.add(src_of_story(f)); used.add((pr, f))
+            for f in pool(pr):
+                if len(mids) >= 3:
+                    break
+                if (pr, f) in used or src_of_story(f) in day_src or not fresh(pr, f):
+                    continue
+                mids.append((f, False)); day_src.add(src_of_story(f)); used.add((pr, f))
+            for t, (f, ap) in zip(MID_TIMES, mids):
+                keep.append({"date": d, "time": t, "type": "story", "project": pr, "file": f, "approved": ap})
         keep.sort(key=lambda x: (x["date"], str(x["time"])))
         out = head + (yaml.safe_dump(keep, allow_unicode=True, sort_keys=False, width=240) if keep else "[]\n")
         if out != stxt:
