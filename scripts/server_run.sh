@@ -12,16 +12,27 @@ B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; S="$W/painel/store"
 export PATH="$B/env/bin:$PATH"; PY=python3
 exec 9>"$B/run.lock"; flock -n 9 || exit 0
 cd "$R" || exit 1
+[ -f "$B/.deps2" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge pycryptodome >/dev/null 2>&1 && touch "$B/.deps2"; }
 export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
 
 stamp_now=$(cat "$S"/approvals.json.php "$S"/deleted.json.php "$S"/captions.json.php "$S"/crops.json.php "$S"/inbox.json.php "$S"/opps.json.php 2>/dev/null | md5sum | cut -c1-12)
 git fetch -q origin main 2>/dev/null
 remote=$(git rev-parse origin/main 2>/dev/null); local_=$(git rev-parse HEAD)
 pubstamp=$(md5sum "$S/published.json.php" 2>/dev/null | cut -c1-12)
-if [ "$stamp_now" = "$(cat "$B/stamp" 2>/dev/null)" ] && [ "$remote" = "$local_" ] && [ "$pubstamp" = "$(cat "$B/pubstamp" 2>/dev/null)" ] && [ -z "${FORCE:-}" ]; then
+if [ "$stamp_now" = "$(cat "$B/stamp" 2>/dev/null)" ] && [ "$remote" = "$local_" ] && [ "$pubstamp" = "$(cat "$B/pubstamp" 2>/dev/null)" ] && [ -z "${FORCE:-}" ] && [ ! -f "$B/force" ] && [ -z "$(ls -A "$B/outbox" 2>/dev/null)" ]; then
   php -q "$W/painel/cron.php"; exit 0
 fi
 git reset -q --hard origin/main
+rm -f "$B/force"
+# results of server_ingest.sh (new project or crop re-render) → repo
+for o in "$B"/outbox/*; do
+  [ -d "$o" ] || continue; case "$o" in *.part) continue;; esac
+  pid=$(basename "$o"); D="reports/$pid"; mkdir -p "$D"
+  [ -d "$o/ig" ] && { rm -rf "$D/ig" "$D/preview"; cp -r "$o/ig" "$o/preview" "$D/"; cp "$o"/*.log "$o"/manifest.json "$D/" 2>/dev/null; }
+  [ -d "$o/story" ] && { find "$D/story" -name "*.jpg" ! -name "teaser-*" -delete 2>/dev/null; mkdir -p "$D/story"; cp "$o"/story/* "$D/story/" 2>/dev/null; }
+  [ -d "$o/reel" ] && { rm -rf "$D/reel"; cp -r "$o/reel" "$D/"; }
+  rm -rf "$o"
+done
 
 strip() { [ -s "$1" ] && tail -n +2 "$1"; }
 put() { local t; t=$(strip "$1") && [ -n "$t" ] && printf '%s' "$t" > "$2"; return 0; }
@@ -45,7 +56,7 @@ put "$S/deleted.json.php" docs/deleted.json
 [ -f "$S/captions.json.php" ] && $PY scripts/build_painel.py apply-captions "$S/captions.json.php" >/dev/null
 if [ -f "$S/crops.json.php" ]; then
   $PY scripts/build_painel.py apply-crops "$S/crops.json.php" > "$B/in/changed.txt"
-  while read -r pid; do [ -n "$pid" ] && bash scripts/server_rerender.sh "$pid"; done < "$B/in/changed.txt"
+  while read -r pid; do [ -n "$pid" ] && (nohup bash "$R/scripts/server_rerender.sh" "$pid" >> "$B/ingest.log" 2>&1 &); done < "$B/in/changed.txt"
 fi
 $PY scripts/dedupe_queue.py >/dev/null || true
 $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py sync-slides >/dev/null
@@ -79,8 +90,25 @@ PY
 
 php -q "$W/painel/cron.php"
 
+# new projects: registry entry with a MEGA link but no slides yet → ingest in the background (one at a time)
+$PY - <<'PY' | head -1 | while read -r pid; do (nohup bash "$R/scripts/server_ingest.sh" "$pid" >> "$B/ingest.log" 2>&1 &); done
+import yaml, os
+r = yaml.safe_load(open("projects/registry.yml")); r = r.get("projects", r) if isinstance(r, dict) else r
+for p in r:
+    if p.get("mega") and p["id"] != "daily-study-2026" and not os.path.isdir(f"reports/{p['id']}/ig") and not os.path.exists(os.path.expanduser(f"~/bv/ingest-{p['id']}.failed")):
+        print(p["id"])
+PY
+
+# once a day (after 07:00): job hunt + watchdog; Mondays: PDFs + personal site
+if [ "$(cat "$B/daily" 2>/dev/null)" != "$(date +%F)" ] && [ "$(date +%H)" -ge 7 ]; then
+  date +%F > "$B/daily"
+  $PY scripts/hunt_opps.py >> "$B/daily.log" 2>&1
+  META_TOKEN=$($PY -c "import json;print(json.loads(open('$S/meta.json.php').read().split(chr(10),1)[1])['token'])" 2>/dev/null) $PY scripts/watchdog.py >> "$B/daily.log" 2>&1
+  [ "$(date +%u)" = "1" ] && (nohup bash "$R/scripts/server_portfolio.sh" >> "$B/portfolio.log" 2>&1 &)
+fi
+
 # back to GitHub (code vault)
-git add -A queue docs/inbox.json docs/opps.json docs/deleted.json config reports 2>/dev/null
+git add -A queue docs/inbox.json docs/opps.json docs/deleted.json docs/opps-auto.yml docs/kits docs/watchdog.json config reports 2>/dev/null
 if ! git diff --cached --quiet; then
   git -c user.name=bv-server -c user.email=robot@boundvisuals.com commit -qm "Server robot: Painel changes" && git push -q origin HEAD:main 2>/dev/null || { git pull -q --rebase origin main && git push -q origin HEAD:main; }
 fi
