@@ -6,8 +6,6 @@ name: robots
 #  - fresh PDFs + personal site rebuild                                                      Mondays
 # Phone alerts come from scripts/notify.py (painel robot) reading these files.
 on:
-  schedule:
-    - cron: "41 6 * * *"
   workflow_dispatch:
 permissions: { contents: write, actions: write }
 concurrency: { group: robots, cancel-in-progress: false }

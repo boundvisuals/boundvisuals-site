@@ -1,10 +1,8 @@
 name: painel
+# RETIRED 06/11: the Painel is built on the server (scripts/server_run.sh, cPanel cron every minute). Manual dispatch only.
 # Keeps https://www.boundvisuals.com/painel/ up to date (no Claude credits):
 # reads approvals/ticks made in the panel → applies approvals to queue/*.yml → rebuilds data + thumbs → uploads.
 on:
-  push:
-    branches: [main]
-    paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/decisions.yml", "docs/kits/**", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
   # No schedule: the clock work (publishing, stats, notifications) runs on the server (painel/cron.php, cPanel cron).
   # This robot only runs when something changes (repo push, or a click in the Painel via api.php).
   workflow_dispatch:
