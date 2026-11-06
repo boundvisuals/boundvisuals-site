@@ -21,7 +21,7 @@ W, H = 1080, 1920
 BLACK, GREY, LIGHT = (11, 12, 12), (197, 193, 183), (229, 229, 227)
 FONTS = pathlib.Path(__file__).resolve().parent / "fonts"
 TIMES = {"a": "10:00", "b": "20:30"}
-TEXT = {"a": ("TONIGHT · {t}", "HOJE · {t}"), "b": ("NEW ON THE FEED", "NOVO NO FEED")}
+TEXT = {"a": ("TONIGHT · {t}", "HOJE · {t}"), "b": ("NEW ON THE FEED", "NOVO NO FEED"), "p": ("COLOUR PALETTE", "PALETA DE COR")}
 
 
 def font(name, size):
@@ -36,7 +36,7 @@ def titles():
 
 def frame(slide_path, kind, title, t="19:00"):
     """4:5 slide (1080x1350) scaled to 936 wide (downscale only) between a kicker and the signature."""
-    im = Image.open(slide_path).convert("RGB")
+    im = slide_path if isinstance(slide_path, Image.Image) else Image.open(slide_path).convert("RGB")
     iw = 936
     ih = round(im.height * iw / im.width)
     if ih > 1180:                       # unusually tall slide: fit height instead
@@ -46,6 +46,8 @@ def frame(slide_path, kind, title, t="19:00"):
     top = 350 + (1180 - ih) // 2
     c.paste(im, ((W - iw) // 2, top))
     d = ImageDraw.Draw(c)
+    if kind == "p":                     # palette slide already carries its own title + signature
+        return c
     en, pt = (x.format(t=t) for x in TEXT[kind])
     d.text((W // 2, 292), en, font=font("Poppins-Medium.ttf", 34), fill=LIGHT, anchor="mm")
     d.text((W // 2, 334), pt, font=font("Poppins-Light.ttf", 24), fill=GREY, anchor="mm")
@@ -167,7 +169,7 @@ def main():
             day_src, mids = set(post_src), []
             # keep this day's existing same-project stories that still fit the rule (approval kept)
             for (dd, f), o in sorted(old.items()):
-                if dd == d and not o.get("teaser") and o["project"] == pr and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
+                if dd == d and not o.get("teaser") and o["project"] == pr and os.path.exists(f"reports/{pr}/story/{f}") and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
                     mids.append((f, bool(o.get("approved")))); day_src.add(src_of_story(f)); used.add((pr, f))
             for f in pool(pr):
                 if len(mids) >= 3:
@@ -175,6 +177,27 @@ def main():
                 if (pr, f) in used or src_of_story(f) in day_src or not fresh(pr, f):
                     continue
                 mids.append((f, False)); day_src.add(src_of_story(f)); used.add((pr, f))
+            # not enough real crops left → colour-palette stories (pillar 'paleta'), one per image, ever
+            if len(mids) < 3:
+                for prev in sorted(glob.glob(f"reports/{pr}/preview/*.jpg")):
+                    if len(mids) >= 3:
+                        break
+                    stem = os.path.basename(prev)[:-4]
+                    f = f"palette-{stem}.jpg"
+                    if (pr, f) in used or stem in post_src or stem in day_src or stem in (TW.get(pr, {}) or {}):
+                        continue
+                    out = f"reports/{pr}/story/{f}"
+                    if not os.path.exists(out):
+                        try:
+                            from make_palette import slide as pal_slide
+                            save_if_changed(frame(pal_slide(prev, T.get(pr, pr))[0].convert("RGB"), "p", T.get(pr, pr)), out)
+                            changed += 1
+                        except Exception as e:
+                            print("palette failed", prev, e, file=sys.stderr); continue
+                    if not fresh(pr, f):
+                        continue
+                    o = old.get((d, f))
+                    mids.append((f, bool(o and o.get("approved")))); day_src.add(stem); used.add((pr, f))
             for t, (f, ap) in zip(MID_TIMES, mids):
                 keep.append({"date": d, "time": t, "type": "story", "project": pr, "file": f, "approved": ap})
         keep.sort(key=lambda x: (x["date"], str(x["time"])))

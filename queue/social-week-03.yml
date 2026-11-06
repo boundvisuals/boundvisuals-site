@@ -76,10 +76,16 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s03.jpg
+  file: palette-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
   approved: false
 - date: '2026-11-22'
   time: '15:00'
+  type: story
+  project: vivendas-duas-igrejas
+  file: root_3-interior1_webp-s03.jpg
+  approved: false
+- date: '2026-11-22'
+  time: '17:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_6-interior3_webp-s00.jpg
@@ -120,6 +126,12 @@
   file: 8_-_interior1_8-interior1-s02.jpg
   approved: false
 - date: '2026-11-23'
+  time: '17:30'
+  type: story
+  project: gold-village
+  file: palette-1_-_exterior1_1-exterior1.jpg
+  approved: false
+- date: '2026-11-23'
   time: '20:30'
   type: story
   project: gold-village
@@ -137,6 +149,12 @@
   type: story
   project: apartamentos-gondomar-2
   file: 5_-_Exterior5_5-exterior5_edit_0001-s03.jpg
+  approved: false
+- date: '2026-11-24'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
   approved: false
 - date: '2026-11-24'
   time: '20:30'
@@ -161,6 +179,18 @@
   caption_pt: 'Gold Village: madeira, varandas verdes e interiores calmos.'
   approved: false
 - date: '2026-11-25'
+  time: '15:00'
+  type: story
+  project: vivendas-cete
+  file: palette-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
+  approved: false
+- date: '2026-11-25'
+  time: '17:30'
+  type: story
+  project: vivendas-cete
+  file: palette-2026_-_FINAIS_edit_for_bound_visuals_3-interior3.jpg
+  approved: false
+- date: '2026-11-25'
   time: '20:30'
   type: story
   project: vivendas-cete
@@ -171,13 +201,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_6-interior3_webp-s02.jpg
+  file: palette-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
   approved: false
 - date: '2026-11-26'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_7-interior4_webp-s00.jpg
+  file: root_6-interior3_webp-s02.jpg
+  approved: false
+- date: '2026-11-26'
+  time: '17:30'
+  type: story
+  project: vivendas-duas-igrejas
+  file: root_7-interior4_webp-s02.jpg
   approved: false
 - date: '2026-11-26'
   time: '20:30'

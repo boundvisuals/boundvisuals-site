@@ -15,6 +15,7 @@ export PATH="$B/env/bin:$PATH"; PY=python3
 exec 9>"$B/run.lock"; flock -n 9 || exit 0
 cd "$R" || exit 1
 [ -f "$B/.deps2" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge pycryptodome >/dev/null 2>&1 && touch "$B/.deps2"; }
+[ -f "$B/.deps3" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge numpy >/dev/null 2>&1 && touch "$B/.deps3"; }
 export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
 
 stamp_now=$(cat "$S"/approvals.json.php "$S"/deleted.json.php "$S"/captions.json.php "$S"/crops.json.php "$S"/inbox.json.php "$S"/opps.json.php 2>/dev/null | md5sum | cut -c1-12)

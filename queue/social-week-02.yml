@@ -28,6 +28,12 @@
   file: 5_-_Exterior5_5-exterior5_edit_0001-s00.jpg
   approved: false
 - date: '2026-11-13'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: palette-11_-_Interior_4_11-interior4_edit_0001.jpg
+  approved: false
+- date: '2026-11-13'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
@@ -45,7 +51,7 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_1_-_Front___webp_+_Seedvr2_bravo-s01.jpg
+  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
   approved: false
 - date: '2026-11-14'
   time: '15:00'
@@ -168,6 +174,12 @@
   file: 1_-_Exterior1_1-exterior1_edit_0001-s00.jpg
   approved: false
 - date: '2026-11-17'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: palette-12_-_Interior_5_12-interior5_0001.jpg
+  approved: false
+- date: '2026-11-17'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
@@ -185,19 +197,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
+  file: root_3-interior1_webp-s02.jpg
   approved: false
 - date: '2026-11-18'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s02.jpg
+  file: root_4_-_exterior_frente_webp-s03.jpg
   approved: false
 - date: '2026-11-18'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s03.jpg
+  file: root_7-interior4_webp-s00.jpg
   approved: false
 - date: '2026-11-18'
   time: '20:30'
