@@ -51,7 +51,7 @@ $PY scripts/make_teasers.py >/dev/null || true
 
 # rebuild the Painel in place
 mkdir -p "$B/out"
-$PY scripts/build_painel.py build "$B/out" >/dev/null && {
+$PY scripts/build_painel.py build "$B/out" > "$B/build.log" 2>&1 && {
   cp painel/app.html painel/api.php painel/push.php painel/ligar.php painel/index.php painel/config.php painel/manifest.webmanifest painel/sw.js painel/icon.svg painel/icon-192.png painel/icon-512.png painel/cron.php "$W/painel/" 2>/dev/null
   rsync -a "$B/out/thumbs/" "$W/painel/thumbs/" 2>/dev/null || cp -r "$B/out/thumbs/." "$W/painel/thumbs/"
   $PY scripts/notify.py "$B/out/store/notify.json.php" >/dev/null 2>&1 && cp "$B/out/store/notify.json.php" "$S/"
