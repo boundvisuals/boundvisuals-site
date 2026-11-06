@@ -1,11 +1,9 @@
 name: publish
+# RETIRED as the clock (06/11): publishing runs on the server (painel/cron.php via cPanel cron). Manual dispatch only.
 # At the queue slots only (2 min after each time used in queue/*.yml), to fit the free 2000 Actions min/month.
 # Times are UTC = Lisbon in winter. SUMMER TIME (from 29 Mar 2026-27): move every hour 1 earlier.
 # Then: upload queued images to the server, publish approved posts that are due, wake the painel robot if something was published.
 on:
-  schedule:
-    - cron: "2 10,18,19 * * *"
-    - cron: "32 9,12,14,20,21 * * *"
   workflow_dispatch:
     inputs:
       mode: { description: "run | check (check = private test, publishes nothing)", default: run }

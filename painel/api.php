@@ -29,7 +29,12 @@ function write_store($f, $data) {
 }
 
 // Wakes the panel robot at once (GitHub workflow_dispatch) when Vítor saved a token in the panel settings.
-function kick_robot() {
+function kick_robot() {   // batched: the server cron starts the GitHub robot once, 5 min after the last click (saves Actions minutes)
+  global $store;
+  @touch("$store/robot_dirty");
+  return 'queued';
+}
+function kick_robot_now() {
   global $store;
   $t = read_store("$store/gh.json.php")['token'] ?? '';
   if ($t === '') return 'no-token';
@@ -52,6 +57,15 @@ if ($a === 'ghtoken' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($a === 'data') {
   $d = read_store("$store/data.json.php") ?? ['error' => 'no data yet'];
   $d['pending_approvals'] = read_store("$store/approvals.json.php") ?? [];
+  $pubst = read_store("$store/published.json.php") ?? [];                 // server publisher (cron.php): show status instantly
+  if (!empty($d['calendar'])) foreach ($d['calendar'] as &$day) foreach ($day['items'] as &$it) {
+    $r = $pubst[$it['pkey'] ?? ''] ?? null;
+    if (is_array($r) && !empty($r['ig'])) { $it['status'] = 'published'; $it['link'] = $r['ig_link'] ?? ($it['link'] ?? null); }
+    elseif (is_array($r) && !empty($r['skipped'])) $it['status'] = 'skipped';
+  }
+  unset($day, $it);
+  $d['server_cron'] = is_file("$store/cron.log") ? date('c', filemtime("$store/cron.log")) : null;
+  $d['ig_live'] = read_store("$store/ig_stats.json.php");
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['opps'] = read_store("$store/opps.json.php") ?? [];

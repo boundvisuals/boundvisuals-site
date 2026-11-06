@@ -14,6 +14,15 @@ FILA = "https://www.boundvisuals.com/bv-fila"
 from urllib.parse import quote
 
 
+def pub_text(it, n):
+    """Exact caption + extra hashtag comments the server publisher (painel/cron.php) posts."""
+    import importlib.util, os as _os
+    _os.environ.setdefault("META_TOKEN", "x")
+    spec = importlib.util.spec_from_file_location("pubmod", "scripts/publish.py"); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    it2 = dict(it); it2["_n"] = max(n, 0); it2.setdefault("caption_en", ""); it2.setdefault("caption_pt", "")
+    return {"caption": m.caption(it2), "plain": f"{it2['caption_en']}\n—\n{it2['caption_pt']}", "comments": m.extra_hashtag_comments(max(n, 0)) if m.INS.get("hashtags_extra_comments") else []}
+
+
 def opp_sources():
     src = (yaml.safe_load(open("docs/opps-sources.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-sources.yml") else {}
     auto = (yaml.safe_load(open("docs/opps-auto.yml", encoding="utf-8")) or {}) if os.path.exists("docs/opps-auto.yml") else {}
@@ -225,7 +234,7 @@ def build(out):
             sl = [thumb(f"reports/{it['project']}/ig/{s}", out, f"{it['project']}/ig/{s}", (240, 300)) for s in it["slides"]]
             sl = [s for s in sl if s]
             days.setdefault(it["date"], []).append({
-                "key": feed_key(it), "type": "feed", "time": it["time"], "project": it["project"],
+                "key": feed_key(it), "pkey": pkey, "pub": pub_text(it, feed_n), "type": "feed", "time": it["time"], "project": it["project"],
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "slide_files": list(it["slides"]), "status": st, "link": link,
                 "full": [f"{FILA}/{it['project']}/{quote(x)}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/ig/{x}')}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
@@ -239,10 +248,12 @@ def build(out):
             src = f"reports/{it['project']}/{it['type']}/{it['cover'] if it['type'] == 'reel' else it['file']}"
             th = thumb(src, out, f"{it['project']}/{it['type']}/{os.path.basename(src)}", (180, 320))
             days.setdefault(it["date"], []).append({
-                "key": social_key(it), "type": it["type"], "time": it["time"], "project": it["project"],
+                "key": social_key(it), "pkey": pkey, "type": it["type"], "time": it["time"], "project": it["project"],
+                "pub": pub_text(it, 0) if it["type"] == "reel" else None,
+                "cover_url": f"{FILA}/{it['project']}/{it['type']}/{quote(it['cover'])}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/{it[chr(116)+chr(121)+chr(112)+chr(101)]}/{it[chr(99)+chr(111)+chr(118)+chr(101)+chr(114)]}')}" if it.get("cover") else None,
                 "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
                 "thumb": th, "status": st, "link": link, "note": errs.get(pkey, ""), "caption_pt": it.get("caption_pt", ""),
-                "full": [f"{FILA}/{it['project']}/{it['type']}/{quote(it['file'])}"], **story_info(it, out)})
+                "full": [f"{FILA}/{it['project']}/{it['type']}/{quote(it['file'])}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/{it[chr(116)+chr(121)+chr(112)+chr(101)]}/{it[chr(102)+chr(105)+chr(108)+chr(101)]}')}"], **story_info(it, out)})
     cal = [{"date": d, "items": sorted(v, key=lambda x: x["time"])} for d, v in sorted(days.items())]
 
     now = datetime.datetime.now(TZ)

@@ -185,3 +185,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 ## NO REPEATS + APAGAR (05/11 23:00, Vítor)
 - RULE (corrected 23:15): never publish IDENTICAL things — feed: same image never posted twice; stories: no visually identical story (dhash) and not the same image twice in one day; stories MAY reuse images from posts. Twins horizontal→vertical in config/twins.yml (Gondomar 2: 10→11, 14→17, 8→9): vertical used, horizontal never on IG. Teaser 'a' only when a real detail slide exists.
 - Apagar: Painel 🗑 on posts/stories/reels and per slide → api.php?a=delete → store/deleted.json.php → docs/deleted.json → dedupe_queue.py removes from queue (undo supported).
+
+## SERVER CLOCK (06/11) — publishing moved OFF GitHub Actions
+- painel/cron.php runs on PTServidor via cPanel cron every 5 min (php -q /home/boundvis/public_html/painel/cron.php): publishes approved+due items from store/data.json.php (+ live approvals/deletions), IG feed (caption, fallback no-caption + 1st comment) + FB mirror, stories, reels, spaced extra hashtag comments, push notification, daily IG numbers (store/ig_stats.json.php), and starts the GitHub painel robot once 5 min after the last Painel click (store/robot_dirty). State store/published.json.php → merged into queue/published.json by painel.yml. api.php overlays server publish status.
+- GitHub schedules removed (publish/painel/stats); robots.yml 1×/day. painel.yml uploads store/meta.json.php (token from secret), bv-fila media and cron.php.

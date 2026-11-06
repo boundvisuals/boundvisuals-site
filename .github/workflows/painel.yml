@@ -5,8 +5,8 @@ on:
   push:
     branches: [main]
     paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/decisions.yml", "docs/kits/**", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
-  # 4×/day fallback (free Actions minutes); panel actions start it instantly via api.php, publish wakes it after a post.
-  schedule: [{ cron: "7 8,13,18,22 * * *" }]
+  # No schedule: the clock work (publishing, stats, notifications) runs on the server (painel/cron.php, cPanel cron).
+  # This robot only runs when something changes (repo push, or a click in the Painel via api.php).
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,11 +16,26 @@ jobs:
   painel:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
-    env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}" }
+    env: { H: "${{ secrets.FTP_HOST }}", U: "${{ secrets.FTP_USER }}", P: "${{ secrets.FTP_PASS }}", META_TOKEN: "${{ secrets.META_TOKEN }}" }
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 20 }
       - run: (timeout 180 sudo apt-get update -qq || true) && timeout 300 sudo apt-get install -y -qq lftp && pip install -q pyyaml pillow
+      - name: Merge what the server published (painel/cron.php) into the repo
+        run: |
+          mkdir -p in
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; lcd in; get /public_html/painel/store/published.json.php -o srvpub.json.php; bye" "$H" 2>/dev/null || true
+          if [ -f in/srvpub.json.php ]; then
+            python3 - <<'PY'
+          import json
+          srv = json.loads(open("in/srvpub.json.php").read().split("\n", 1)[1])
+          st = json.load(open("queue/published.json"))
+          for k, v in srv.items():
+              if k.startswith("_"): st[k] = v
+              elif k not in st or (isinstance(v, dict) and v.get("ig") and not st[k].get("ig")): st[k] = v
+          json.dump(st, open("queue/published.json", "w"), indent=1)
+          PY
+          fi
       - name: Read approvals made in the panel
         run: |
           mkdir -p in
@@ -125,6 +140,24 @@ jobs:
           python3 scripts/notify.py out/store/notify.json.php || printf '<?php exit; ?>\n[]' > out/store/notify.json.php
       - name: Upload
         run: |
+          python3 - <<'PY'
+          import json, os, yaml, glob, shutil
+          cfg = yaml.safe_load(open("config/program.yml"))
+          open("out/store/meta.json.php", "w").write("<?php exit; ?>\n" + json.dumps({"token": os.environ["META_TOKEN"], "ig": cfg["meta"]["ig_user_id"], "page": cfg["meta"]["page_id"]}))
+          os.makedirs("fila", exist_ok=True)
+          open("fila/.htaccess", "w").write("Options -Indexes\n<IfModule mod_headers.c>\nHeader set X-Robots-Tag \"noindex, nofollow\"\n</IfModule>\n")
+          for f in glob.glob("queue/week-*.yml"):
+              for it in yaml.safe_load(open(f)) or []:
+                  d = f"fila/{it['project']}"; os.makedirs(d, exist_ok=True)
+                  for x in it["slides"]:
+                      if os.path.exists(f"reports/{it['project']}/ig/{x}"): shutil.copy(f"reports/{it['project']}/ig/{x}", d)
+          for f in glob.glob("queue/social-week-*.yml"):
+              for it in yaml.safe_load(open(f)) or []:
+                  d = f"fila/{it['project']}/{it['type']}"; os.makedirs(d, exist_ok=True)
+                  for x in [it["file"], it.get("cover")]:
+                      if x and os.path.exists(f"reports/{it['project']}/{it['type']}/{x}"): shutil.copy(f"reports/{it['project']}/{it['type']}/{x}", d)
+          PY
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mirror -R --only-newer fila /public_html/bv-fila; put -O /public_html/painel/store out/store/meta.json.php; put -O /public_html/painel painel/cron.php; bye" "$H"
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 2; mkdir -p -f /public_html/painel/store; mirror -R --ignore-time out/thumbs /public_html/painel/thumbs; put -O /public_html/painel/store out/store/data.json.php; put -O /public_html/painel/store out/store/notify.json.php; mput -O /public_html/painel out/app.html out/api.php out/push.php out/ligar.php out/index.php out/config.php out/manifest.webmanifest out/sw.js out/icon.svg out/icon-192.png out/icon-512.png out/robots.txt; bye" "$H"
       - name: Send due reminders (Web Push; each id once)
         run: curl -sS --max-time 40 "https://www.boundvisuals.com/painel/push.php?a=run" || true

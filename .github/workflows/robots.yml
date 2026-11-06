@@ -8,7 +8,6 @@ name: robots
 on:
   schedule:
     - cron: "41 6 * * *"
-    - cron: "17 15 * * *"
   workflow_dispatch:
 permissions: { contents: write, actions: write }
 concurrency: { group: robots, cancel-in-progress: false }

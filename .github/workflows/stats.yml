@@ -1,7 +1,6 @@
 name: stats
 # Read-only Instagram numbers for the Painel, once a day (free Actions minutes). Commits reports/meta/stats.json → painel rebuilds.
 on:
-  schedule: [{ cron: "17 7 * * *" }]
   workflow_dispatch:
 permissions:
   contents: write
