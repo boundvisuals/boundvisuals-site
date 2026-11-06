@@ -321,3 +321,49 @@ if (!empty($yt['refresh_token']) || !empty($yt['access_token'])) {
     ws("$store/youtube.json.php", $yst);
   }
 }
+
+// ---------------------------------------------------------------- Threads
+// Every feed post that went out on Instagram is mirrored to Threads (up to 10 images, caption ≤500 chars), one per run.
+$th = $oa['threads'] ?? [];
+if (!empty($th['access_token']) && !empty($th['user_id'])) {
+  $tst = rs("$store/threads.json.php") ?? [];
+  if (($th['expires_at'] ?? 0) < time() + 10 * 86400) {                                    // keep the 60-day token alive
+    $ch = curl_init('https://graph.threads.net/refresh_access_token?' . http_build_query(['grant_type' => 'th_refresh_token', 'access_token' => $th['access_token']]));
+    curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20]); $j = json_decode((string)curl_exec($ch), true); curl_close($ch);
+    if (!empty($j['access_token'])) { $th['access_token'] = $j['access_token']; $th['expires_at'] = time() + (int)($j['expires_in'] ?? 5184000); $oa['threads'] = $th; ws("$store/oauth.json.php", $oa); }
+  }
+  $cand = null;
+  foreach ($items as $it) {
+    if ($it['type'] !== 'feed' || empty($state[$it['pkey']]['ig']) || isset($tst['done'][$it['pkey']])) continue;
+    if (($tst['fail'][$it['pkey']] ?? 0) >= 3 || $now - strtotime($state[$it['pkey']]['at']) < 600) continue;   // 10 min after Instagram
+    $cand = $it; break;
+  }
+  if ($cand) {
+    $T = 'https://graph.threads.net/v1.0';
+    $tp = function ($path, $params) use ($T, $th) {
+      $ch = curl_init("$T/$path"); $params['access_token'] = $th['access_token'];
+      curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => http_build_query($params), CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 60]);
+      $j = json_decode((string)curl_exec($ch), true); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+      if ($code >= 300 || empty($j['id'])) throw new Exception("$path $code " . json_encode($j)); return $j['id'];
+    };
+    try {
+      $urls = array_slice($cand['full'] ?? [], 0, 10);
+      $text = mb_substr(trim((string)($cand['caption'] ?? '')) . "\n\nboundvisuals.com", 0, 490);
+      $uid = $th['user_id'];
+      if (count($urls) === 1) $cid = $tp("$uid/threads", ['media_type' => 'IMAGE', 'image_url' => $urls[0], 'text' => $text]);
+      else {
+        $kids = []; foreach ($urls as $u) $kids[] = $tp("$uid/threads", ['media_type' => 'IMAGE', 'image_url' => $u, 'is_carousel_item' => 'true']);
+        sleep(20);
+        $cid = $tp("$uid/threads", ['media_type' => 'CAROUSEL', 'children' => implode(',', $kids), 'text' => $text]);
+      }
+      sleep(25);
+      $mid = $tp("$uid/threads_publish", ['creation_id' => $cid]);
+      $tst['done'][$cand['pkey']] = ['at' => date('c'), 'id' => $mid];
+      logline("THREADS posted {$cand['pkey']}");
+    } catch (Exception $e) {
+      $tst['fail'][$cand['pkey']] = ($tst['fail'][$cand['pkey']] ?? 0) + 1; $tst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
+      logline('THREADS ERR ' . substr($e->getMessage(), 0, 200));
+    }
+    ws("$store/threads.json.php", $tst);
+  }
+}

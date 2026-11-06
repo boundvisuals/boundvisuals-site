@@ -30,6 +30,11 @@ $NETS = [
     'auth' => 'https://www.linkedin.com/oauth/v2/authorization', 'token' => 'https://www.linkedin.com/oauth/v2/accessToken',
     'scope' => 'openid profile w_member_social', 'basic' => false,
   ],
+  'threads' => [
+    'name' => 'Threads', 'console' => 'https://developers.facebook.com/apps/',
+    'auth' => 'https://threads.net/oauth/authorize', 'token' => 'https://graph.threads.net/oauth/access_token',
+    'scope' => 'threads_basic,threads_content_publish', 'basic' => false,
+  ],
   'youtube' => [
     'name' => 'YouTube (Shorts)', 'console' => 'https://console.cloud.google.com/apis/credentials',
     'auth' => 'https://accounts.google.com/o/oauth2/v2/auth', 'token' => 'https://oauth2.googleapis.com/token',
@@ -102,6 +107,13 @@ if (isset($_GET['state']) && (isset($_GET['code']) || isset($_GET['error']))) {
       if ($n === 'linkedin') { [$k, $u] = http_get('https://api.linkedin.com/v2/userinfo', $c['access_token']);
         if ($k === 200 && !empty($u['sub'])) { $c['person_urn'] = 'urn:li:person:' . $u['sub']; $c['account'] = $u['name'] ?? ''; } }
       if ($n === 'pinterest') { [$k, $u] = http_get('https://api.pinterest.com/v5/user_account', $c['access_token']); if ($k === 200) $c['account'] = $u['username'] ?? ''; }
+      if ($n === 'threads') {                          // short-lived (1 h) → long-lived (60 days, refreshed by the server)
+        $tu = 'https://graph.threads.net/access_token?' . http_build_query(['grant_type' => 'th_exchange_token', 'client_secret' => $c['client_secret'], 'access_token' => $c['access_token']]);
+        $ch = curl_init($tu); curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20]); $lj = json_decode((string)curl_exec($ch), true); curl_close($ch);
+        if (!empty($lj['access_token'])) { $c['access_token'] = $lj['access_token']; $c['expires_at'] = time() + (int)($lj['expires_in'] ?? 5184000); }
+        if (!empty($j['user_id'])) $c['user_id'] = (string)$j['user_id'];
+        [$k, $u] = http_get('https://graph.threads.net/v1.0/me?fields=id,username', $c['access_token']);
+        if ($k === 200) { $c['user_id'] = $u['id'] ?? ($c['user_id'] ?? ''); $c['account'] = '@' . ($u['username'] ?? ''); } }
       if ($n === 'youtube') { [$k, $u] = http_get('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', $c['access_token']);
         if ($k === 200) $c['account'] = $u['items'][0]['snippet']['title'] ?? ''; }
       $all[$n] = $c; wr($F, $all); $msg = $cfg['name'] . ' ligado ✓' . (!empty($c['account']) ? ' — conta: ' . h($c['account']) : '');
@@ -157,6 +169,13 @@ details summary{cursor:pointer;color:var(--mut);margin-top:10px}
 <li>Separador <b>Auth</b> → «Authorized redirect URLs for your app» → lápis ✎ → <b>Add redirect URL</b> → cola o endereço de retorno → <b>Update</b>.</li>
 <li>No mesmo separador copia <b>Client ID</b> e <b>Primary Client Secret</b> para os campos acima → <b>Guardar chaves</b> → <b>Ligar</b> → <b>Allow</b>.</li>
 <li>A ligação dura 60 dias; eu aviso-te uma semana antes para carregares outra vez em «Voltar a ligar» (10 segundos).</li></ol>
+<?php elseif ($n === 'threads'): ?><ol>
+<li>Abre <a href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">developers.facebook.com/apps</a> → <b>Create app</b> (uma app nova, só para o Threads).</li>
+<li>Nome <code>Vitor Hugo Threads</code> → em «Use cases» escolhe <b>Access the Threads API</b> → <b>Next</b> → sem portfólio de negócio → <b>Create app</b>.</li>
+<li>No menu da app: <b>Use cases</b> → <b>Access the Threads API</b> → <b>Customize</b> → <b>Permissions</b>: confirma <code>threads_basic</code> e <code>threads_content_publish</code> → <b>Settings</b> do Threads: em «Redirect Callback URLs», «Uninstall» e «Delete» cola o endereço de retorno → <b>Save</b>.</li>
+<li><b>App roles</b> → <b>Roles</b> → <b>Add people</b> → <b>Threads Tester</b> → escreve o teu username do Threads → depois no telemóvel/web do Threads: Definições → Conta → Websites → <b>Convites</b> → <b>Aceitar</b>.</li>
+<li>Em <b>Use cases → Access the Threads API → Settings</b> copia o <b>Threads app ID</b> e o <b>Threads app secret</b> para os campos acima → <b>Guardar chaves</b> → <b>Ligar</b> → <b>Permitir</b>.</li>
+<li>Deves ver «Threads ligado ✓ — conta: @…». Como és o dono da app, não precisa de revisão da Meta.</li></ol>
 <?php else: ?><ol>
 <li>Abre <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">console.cloud.google.com/projectcreate</a> com a conta Google do teu canal YouTube → Project name <code>Bound Visuals Publisher</code> → <b>Create</b>.</li>
 <li>Abre <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" rel="noopener">YouTube Data API v3</a> (confirma que no topo está o projeto novo) → <b>Enable</b>.</li>
