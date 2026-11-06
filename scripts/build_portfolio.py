@@ -415,7 +415,8 @@ def render(name, pages):
     h = OUT / f"_{name}{SUFFIX}.html"
     h.write_text(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{"".join(pages)}</body></html>', encoding="utf-8")
     with sync_playwright() as pw:
-        b = pw.chromium.launch(); pg = b.new_page()
+        low = ["--single-process", "--no-zygote", "--disable-gpu", "--renderer-process-limit=1", "--disable-dev-shm-usage"] if os.environ.get("PW_LOWPROC") else []
+        b = pw.chromium.launch(args=low); pg = b.new_page()
         pg.goto(f"file://{h.resolve()}", timeout=0); pg.wait_for_timeout(1500)
         pg.pdf(path=str(OUT / (name.replace(".pdf", SUFFIX + ".pdf"))), width="210mm", height="297mm", print_background=True)
         b.close()

@@ -4,6 +4,8 @@
 # 1) finals from MEGA → $HOME/bv/src/<id>/ (cached, resumable)   2) Instagram slides (reports/<id>/ig) + editor previews
 # 3) stories + house-style reels   4) committed + pushed by the next server_run.sh
 set -u
+# the shared server caps processes/threads per account: keep every library single-threaded
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PW_LOWPROC=1 MALLOC_ARENA_MAX=2
 pid="$1"; B="$HOME/bv"; R="$B/repo"; export PATH="$B/env/bin:$PATH"
 exec 8>"$B/ingest-$pid.lock"; flock -n 8 || exit 0
 cd "$R" || exit 1

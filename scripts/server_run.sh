@@ -6,6 +6,8 @@
 #           → push the changes back to GitHub (GitHub = code vault only).
 # Fast path: if nothing changed since the last run, only the publisher runs (a few ms).
 set -u
+# the shared server caps processes/threads per account: keep every library single-threaded
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PW_LOWPROC=1 MALLOC_ARENA_MAX=2
 # run from a private copy: git reset below rewrites this file while bash is still reading it
 [ -z "${BV_SELF:-}" ] && { cp "$0" "$HOME/bv/.run.sh"; BV_SELF=1 exec bash "$HOME/bv/.run.sh" "$@"; }
 B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; S="$W/painel/store"

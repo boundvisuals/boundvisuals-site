@@ -1,6 +1,8 @@
 #!/bin/bash
 # Server version of portfolio.yml: CV + portfolio PDFs (HQ + light) and the personal site boundvisuals.com/vitorhugo.
 set -u
+# the shared server caps processes/threads per account: keep every library single-threaded
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PW_LOWPROC=1 MALLOC_ARENA_MAX=2
 B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; export PATH="$B/env/bin:$PATH"
 exec 7>"$B/portfolio.lock"; flock -n 7 || exit 0
 echo "$(date '+%F %T') portfolio start"
