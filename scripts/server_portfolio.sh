@@ -13,6 +13,16 @@ else (cd "$B/assets" && git pull -q); fi
 if [ ! -f "$B/.chromium" ]; then
   pip install -q playwright pypdf >/dev/null 2>&1 && python3 -m playwright install chromium >/dev/null 2>&1 && touch "$B/.chromium" || echo "chromium install failed"
 fi
+# system libraries Chromium needs (the shared server lacks them) → from conda-forge into our own env
+if [ ! -f "$B/.chromelibs" ]; then
+  for pkg in nss nspr atk-1.0 at-spi2-atk at-spi2-core libxkbcommon xorg-libxcomposite xorg-libxdamage xorg-libxrandr xorg-libxfixes xorg-libxext xorg-libx11 xorg-libxcb libdrm libgbm mesalib alsa-lib cups pango cairo expat dbus glib; do
+    "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge "$pkg" >/dev/null 2>&1 || echo "  (no conda package $pkg)"
+  done
+  touch "$B/.chromelibs"
+fi
+export LD_LIBRARY_PATH="$B/env/lib:${LD_LIBRARY_PATH:-}"
+CH=$(ls -d "$HOME"/.cache/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-linux64/chrome-headless-shell 2>/dev/null | tail -1)
+[ -n "$CH" ] && { miss=$(ldd "$CH" | grep "not found"); [ -n "$miss" ] && echo "chromium still misses: $miss"; }
 T="$B/pf"; rm -rf "$T"; mkdir -p "$T/out" "$T/site"
 cd "$R"
 export HIRES_DIR="$B/src"
