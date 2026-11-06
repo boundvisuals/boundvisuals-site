@@ -1802,4 +1802,196 @@ Regra: a consola tem de manter a espessura e o comprimento — é ela que faz a 
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #058–#063, 18–30 mar, até 15 mar).
+## #058 · Casa para um cliente imaginário #4: o padeiro (quinta, 18 mar)
+
+**Ideia:** quarto cliente imaginário. Um padeiro artesanal quer morar por cima da sua padaria numa vila do Douro: forno a lenha no piso 0, casa no piso 1. Imagem principal: a padaria ao nascer do dia, com a montra iluminada e a casa às escuras por cima.
+
+**1. Modelo 3D (25 min)**
+- Volume de 2 pisos 6 × 9 m, fachada em reboco claro, montra larga em madeira ao nível da rua com balcão, cobertura de telha de duas águas.
+- Porta lateral da casa, janela alta no piso 1, uma chaminé de tijolo a fumegar (aqui a AI ajuda).
+- Rua em calçada, um banco, sacos de farinha à porta, um carrinho de madeira (escala e história).
+
+**2. Câmaras (3), 4:5**
+- A: rua, 28 mm, a fachada inteira na hora azul antes do sol, montra acesa.
+- B: 50 mm, a montra e o balcão com pães, vistos da rua.
+- C: 85 mm, pormenor da porta lateral com os sacos de farinha e a calçada molhada.
+
+**3. Luz:** antes do nascer do sol (hora azul), montra com luz quente de 2700 K, a casa no piso 1 às escuras; luz da rua fraca. Versão opcional: já de dia, sol rasante.
+
+**4. Render base:** Render 1600 px; reboco claro rugoso, madeira escura na montra, telha antiga, calçada de granito. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small two-storey artisan bakery with a family home above, in a village of the Douro valley, Portugal, pale lime-plaster facade, a wide dark timber shopfront glowing with warm light and loaves of bread on a wooden counter, a smoking brick chimney, old terracotta roof, granite cobblestone street slightly wet, flour sacks by the side door, blue hour just before sunrise, quiet and intimate, fine film grain, no people, no text, no logos.
+```
+Regra: o letreiro fica SEM texto (não inventes nome); a montra é a fonte de luz e tem de ser igual nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#058 - Cliente imaginário 4 padeiro / final". Para reel: câmara A, 5 s, fumo da chaminé e luz da montra a tremer ligeiramente (Seedance).
+
+**Legenda**
+- EN: "Daily Study #058 · Imaginary client #4: the baker. A bakery downstairs, a home upstairs, and a light that is always on before the town wakes up."
+- PT: "Daily Study #058 · Cliente imaginário #4: o padeiro. Uma padaria em baixo, a casa em cima e uma luz que está sempre acesa antes de a vila acordar."
+
+---
+
+## #059 · Casas de Portugal #8: aldeia de xisto da Beira (sábado, 20 mar)
+
+**Ideia:** oitava casa da série: uma casa recuperada numa aldeia de xisto da Serra da Lousã/Beira, paredes de xisto, janelas pequenas, telhado de lousa, vista para o vale com nevoeiro de manhã.
+
+**1. Modelo 3D (20 min)**
+- Casa 5 × 8 m, 2 pisos, paredes de xisto em aparelho irregular (textura de pedra por bump), cobertura de lousa cinzenta, 2 janelas pequenas com caixilho de madeira, varanda de madeira estreita.
+- Muro de xisto, escada de pedra, um castanheiro e lenha empilhada à porta.
+- Ao fundo, o vale (planos de silhueta, sem detalhe).
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, do caminho, a casa com o vale atrás.
+- B: 50 mm, a janela e a lenha empilhada.
+- C: 85 mm, a varanda de madeira com uma manta e uma caneca fumegante.
+
+**3. Luz:** manhã de outono com nevoeiro no vale, luz difusa e fria vinda de trás da casa; uma só janela com luz quente por dentro.
+
+**4. Render base:** Render 1600 px; xisto cinza-azulado com variações, lousa fosca, madeira escurecida, folhas de castanheiro no chão. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same geometry and camera as the reference image. A restored traditional house in a schist village in the mountains of central Portugal, rough grey-blue schist walls, slate roof, small timber-framed windows, a narrow wooden balcony with a blanket and a steaming mug, stacked firewood by the door, a chestnut tree with autumn leaves, a valley full of morning mist behind, soft cold diffused light with one warm lit window, quiet and timeless, fine film grain, no people, no text.
+```
+Regra: a pedra e a lousa não mudam de cor entre câmaras; só o nevoeiro pode variar.
+
+**6. Entrega:** 3 finais em "#059 - Casas de Portugal 8 Beira / final". Para reel: câmara A, 6 s, o nevoeiro a mover-se no vale (Seedance).
+
+**Legenda**
+- EN: "Daily Study #059 · Houses of Portugal #8: a schist village in the Beira mountains. Stone that has held for centuries, mist that comes every morning."
+- PT: "Daily Study #059 · Casas de Portugal #8: uma aldeia de xisto na Beira. Pedra que aguenta há séculos, nevoeiro que chega todas as manhãs."
+
+---
+
+## #060 · Natureza-morta à Morandi (terça, 23 mar)
+
+**Ideia:** um exercício de produto/ambiente com quase nada: 5 objetos cerâmicos simples (garrafas, copo, taça) em tons terrosos sobre uma mesa, luz de janela lateral, à maneira das pinturas de Morandi. Imagem calma, muito vendável como arte.
+
+**1. Modelo 3D (15 min)**
+- Mesa de madeira clara 1,2 × 0,6 m, parede lisa cor areia atrás.
+- 5 objetos em torno: 2 garrafas altas, 1 jarro baixo, 1 taça, 1 copo (formas por revolução, 2 min cada); cores terra, creme, verde-sálvia.
+- Objetos muito próximos uns dos outros, alturas escalonadas.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, frontal, o grupo todo.
+- B: 100 mm, ligeiramente de cima, dois objetos e as sombras.
+- C: macro 135 mm, o rebordo de uma garrafa com a luz.
+
+**3. Luz:** luz de janela lateral à esquerda, suave, com a sombra de cada objeto a tocar no vizinho; sem luz de preenchimento.
+
+**4. Render base:** Render 1600 px; cerâmica mate com ligeira variação de esmalte, madeira de carvalho, parede em estuque areia. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic still life photograph, same objects, same arrangement and camera as the reference image. A quiet Morandi-style arrangement of five matte ceramic vessels in muted earth, cream and sage tones on a pale oak table against a sand-coloured plaster wall, soft side light from a window on the left with long gentle overlapping shadows, subtle glaze variations, calm and meditative, fine film grain, no people, no text, no logos.
+```
+Regra: o arranjo (posição e proporção dos objetos) é igual nas 3 câmaras; só muda o enquadramento.
+
+**6. Entrega:** 3 finais em "#060 - Natureza-morta Morandi / final". Para reel: câmara A, 5 s, a sombra a deslizar lentamente pela parede (Seedance).
+
+**Legenda**
+- EN: "Daily Study #060 · Still life, Morandi style: five vessels, one window, no noise. Sometimes the whole image is just light."
+- PT: "Daily Study #060 · Natureza-morta à Morandi: cinco peças, uma janela, zero ruído. Às vezes a imagem toda é só luz."
+
+---
+
+## #061 · Abecedário arquitetónico #4: D de Degrau (quinta, 25 mar)
+
+**Ideia:** quarto da série A–Z. Uma escadaria exterior larga em pedra que também é bancada e praça: degraus onde se sobe, se senta e se encontra alguém. Imagem de cidade, simples e gráfica.
+
+**1. Modelo 3D (20 min)**
+- Escadaria em granito de 12 m de largura com 14 degraus de 16 cm de altura, patamar a meio com um banco corrido de pedra.
+- Muros laterais baixos, um candeeiro alto, uma árvore em vaso no patamar.
+- Fundo: fachadas simplificadas (volumes) em tons claros.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, de baixo, a escadaria inteira em perspetiva.
+- B: 50 mm, de lado, o ritmo dos degraus em diagonal.
+- C: 85 mm, o banco do patamar com a árvore e a sombra.
+
+**3. Luz:** fim de tarde, sol rasante de lado que marca cada degrau com uma linha de sombra; céu limpo.
+
+**4. Render base:** Render 1600 px; granito de grão fino com juntas visíveis, ligeiro desgaste nos rebordos. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same staircase, same geometry and camera as the reference image. A wide outdoor granite staircase with a mid-landing and a long stone bench in a calm European city square, each step edged by a crisp line of low late-afternoon sun and shadow, a single tall lamp post, a potted tree on the landing, pale simplified facades behind, clear sky, graphic and serene, fine film grain, no people, no text.
+```
+Regra: o número de degraus e a altura são iguais nas 3 câmaras (a AI tende a inventar degraus a mais: conta-os).
+
+**6. Entrega:** 3 finais em "#061 - Abecedario 4 D Degrau / final". Para reel: câmara B, 5 s, sombra a subir pelos degraus (Seedance).
+
+**Legenda**
+- EN: "Daily Study #061 · Architectural alphabet #4: D for Steps. The simplest way to build a public square."
+- PT: "Daily Study #061 · Abecedário arquitetónico #4: D de Degrau. A forma mais simples de construir uma praça."
+
+---
+
+## #062 · Desafio de cor #4: amarelo-açafrão (sábado, 27 mar)
+
+**Ideia:** a série das cores continua: um escritório/canto de leitura em que uma só cor domina, amarelo-açafrão (quente, não limão), com madeira e branco. O carrossel termina com a paleta de 5 cores tirada da imagem.
+
+**1. Modelo 3D (20 min)**
+- Canto de leitura 3 × 3 m: poltrona baixa estofada em amarelo-açafrão, um tapete redondo creme, estante de carvalho embutida, candeeiro de chão em latão.
+- Parede do fundo pintada em branco quente; uma pequena mesa lateral com uma chávena.
+- Janela com cortina de linho.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, geral, a poltrona no centro do enquadramento.
+- B: 50 mm, poltrona + estante em ângulo.
+- C: macro 100 mm, a textura do tecido amarelo com a luz.
+
+**3. Luz:** luz da tarde pela janela, quente, suave; sem luz artificial de dia.
+
+**4. Render base:** Render 1600 px; tecido com bump de trama, carvalho claro, latão com reflexo leve. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same furniture and camera as the reference image. A calm reading corner with a low armchair upholstered in saffron-yellow woven fabric, a round cream rug, built-in light oak shelves with a few books, a brass floor lamp, warm white walls, linen curtains, soft warm afternoon window light, saffron yellow as the single dominant colour, editorial interior photography, fine film grain, no people, no text.
+```
+Regra: o amarelo tem de ser o MESMO nas 3 (conta-gotas: aproximadamente #e0a21b); corrige em edição antes de tirar a paleta.
+
+**6. Entrega:** 3 finais em "#062 - Desafio de cor 4 acafrao / final" + 1 slide de paleta (eu faço-o a partir das tuas finais, scripts/make_palette.py). Para reel: câmara C, 5 s, poeira a flutuar na luz (Seedance).
+
+**Legenda**
+- EN: "Daily Study #062 · Colour challenge #4: saffron yellow. One chair, one colour, one warm afternoon. Next colour? Tell me below."
+- PT: "Daily Study #062 · Desafio de cor #4: amarelo-açafrão. Uma poltrona, uma cor, uma tarde quente. Próxima cor? Diz-me aqui em baixo."
+
+---
+
+## #063 · O meu bairro #2: uma praça ao fim da tarde (terça, 30 mar)
+
+**Ideia:** segundo episódio de 'O meu bairro': uma praça pequena de uma vila do Tâmega/Penafiel imaginada a partir do que conheces — igreja, café, jardim, coreto. Imagem de ambiente, humana e quente.
+
+**1. Modelo 3D (25 min)**
+- Praça 40 × 30 m em calçada, uma igreja simples de fachada branca com cunhais em granito e torre sineira, café de esquina com esplanada, coreto octogonal, 4 árvores (plátanos), bancos.
+- Edifícios de 2–3 pisos nas laterais, em cores claras.
+- Candeeiros de ferro, um fontanário.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, de uma esquina, a praça inteira com a igreja ao fundo.
+- B: 40 mm, esplanada do café com cadeiras e a luz nos plátanos.
+- C: 70 mm, o coreto com a igreja desfocada atrás.
+
+**3. Luz:** fim de tarde, sol baixo a 12° atravessando as folhas dos plátanos; candeeiros acesos a começar; céu limpo a ficar rosa.
+
+**4. Render base:** Render 1600 px; calçada de granito e calcário, reboco branco, telhas, folhagem verde-dourada. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same square, same buildings and camera as the reference image. A small village square in northern Portugal at golden hour, granite and limestone cobblestones, a simple white church with granite corner stones and a bell tower, a corner café with a terrace of wooden chairs, an octagonal bandstand, four plane trees filtering low warm sunlight, wrought-iron street lamps just turning on, pale two- and three-storey houses around the square, a soft pink sky, welcoming and unhurried, fine film grain, no people, no readable text or signs.
+```
+Regra: as fachadas e a igreja ficam iguais entre câmaras; a AI pode variar folhagem e céu, não o desenho dos edifícios.
+
+**6. Entrega:** 3 finais em "#063 - O meu bairro 2 praca / final". Para reel: câmara A, 6 s, sombras das folhas a mexer e sol a baixar (Seedance), som ambiente de praça.
+
+**Legenda**
+- EN: "Daily Study #063 · My neighbourhood #2: a village square at the end of the afternoon. The best architecture is the kind that makes you stay."
+- PT: "Daily Study #063 · O meu bairro #2: uma praça ao fim da tarde. A melhor arquitetura é a que nos faz ficar."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #064–#069, 1–13 abr, até 29 mar).
