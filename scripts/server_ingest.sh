@@ -13,7 +13,29 @@ title=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml
 SRC="$B/src/$pid"; O="$B/tmp/$pid"; D="$B/outbox/$pid.part"; rm -rf "$D"; mkdir -p "$SRC" "$D"
 # results go to an outbox (server_run.sh resets the repo every run); server_run.sh moves them into reports/<id>/
 echo "$(date '+%F %T') ingest $pid"
-python3 scripts/mega_public.py "$link" "$SRC" > "$B/ingest-$pid.log" 2>&1 || { echo "download failed, see $B/ingest-$pid.log"; exit 1; }
+if [ -z "$(ls -A "$SRC" 2>/dev/null)" ]; then
+  DL="$B/dl/$pid"; rm -rf "$DL"
+  python3 scripts/mega_public.py "$link" "$DL" > "$B/ingest-$pid.log" 2>&1 || { echo "download failed, see $B/ingest-$pid.log"; exit 1; }
+  # keep a compact cache: JPEG q95, max 5000 px (plenty for Instagram 1080 and the 3600 px portfolio); originals stay in MEGA
+  python3 - "$DL" "$SRC" <<'PY'
+import pathlib, sys, shutil
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
+dl, src = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+for p in dl.rglob("*"):
+    if not p.is_file(): continue
+    out = src / p.relative_to(dl)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp"}:
+        im = Image.open(p); im.load(); im = im.convert("RGB")
+        if max(im.size) > 5000:
+            s = 5000 / max(im.size); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
+        im.save(out, "JPEG", quality=95, subsampling=0)   # same file name (stems unchanged), JPEG data
+    else:
+        shutil.copy2(p, out)
+PY
+  rm -rf "$DL"
+fi
 rm -rf "$O"; mkdir -p "$O"
 python3 scripts/process_media.py "$SRC" "$O" "$pid" config/program.yml > "$O/process.log" 2>&1
 rm -rf "$D/ig" "$D/preview"; mkdir -p "$D/ig" "$D/preview"

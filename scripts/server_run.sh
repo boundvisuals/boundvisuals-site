@@ -114,3 +114,9 @@ if ! git diff --cached --quiet; then
 fi
 echo "$stamp_now" > "$B/stamp"; md5sum "$S/published.json.php" 2>/dev/null | cut -c1-12 > "$B/pubstamp"
 date '+%F %T full run'
+# weekly housekeeping (Sundays): package cache, temp files, git garbage
+if [ "$(date +%u)" = "7" ] && [ "$(cat "$B/clean" 2>/dev/null)" != "$(date +%F)" ]; then
+  date +%F > "$B/clean"
+  "$B/bin/micromamba" clean -a -y -q -r "$B/mamba" >/dev/null 2>&1; rm -rf "$B/tmp" "$B/pf" "$B/dl" /tmp/teste
+  git gc -q --prune=now 2>/dev/null
+fi
