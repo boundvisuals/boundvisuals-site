@@ -103,10 +103,15 @@ def web_reel(pid):
     if not reels or not shutil.which("ffmpeg"):
         return None
     out = OUT / "v" / f"{pid}.mp4"; poster = OUT / "v" / f"{pid}.jpg"
-    if not out.exists():
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reels[0], "-t", "30", "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
-                        "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", str(out)], check=False)
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1", "-i", str(out), "-frames:v", "1", "-q:v", "3", str(poster)], check=False)
+    if not out.exists() or out.stat().st_size < 10000:
+        tmp = out.with_suffix(".tmp.mp4")
+        r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reels[0], "-t", "30", "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
+                            "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", str(tmp)], check=False)
+        if r.returncode == 0 and tmp.exists():
+            tmp.replace(out)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1", "-i", str(out), "-frames:v", "1", "-q:v", "3", str(poster)], check=False)
+        else:
+            tmp.unlink(missing_ok=True); print("  reel skipped (bad source):", reels[0])
     return (f"v/{pid}.mp4", f"v/{pid}.jpg") if out.exists() else None
 
 
