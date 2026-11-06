@@ -117,6 +117,6 @@ date '+%F %T full run'
 # weekly housekeeping (Sundays): package cache, temp files, git garbage
 if [ "$(date +%u)" = "7" ] && [ "$(cat "$B/clean" 2>/dev/null)" != "$(date +%F)" ]; then
   date +%F > "$B/clean"
-  "$B/bin/micromamba" clean -a -y -q -r "$B/mamba" >/dev/null 2>&1; rm -rf "$B/tmp" "$B/pf" "$B/dl" /tmp/teste
+  "$B/bin/micromamba" -r "$B/mamba" clean -a -y -q >/dev/null 2>&1; rm -rf "$B/tmp" "$B/pf" "$B/dl" /tmp/teste
   git gc -q --prune=now 2>/dev/null
 fi

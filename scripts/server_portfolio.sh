@@ -26,10 +26,10 @@ CH=$(ls -d "$HOME"/.cache/ms-playwright/chromium_headless_shell-*/chrome-headles
 T="$B/pf"; rm -rf "$T"; mkdir -p "$T/out" "$T/site"
 cd "$R"
 export HIRES_DIR="$B/src"
-python3 scripts/build_portfolio.py "$T/out" "$B/assets" && PDF_MAXPX=1800 PDF_JPGQ=85 PDF_SUFFIX=_light python3 scripts/build_portfolio.py "$T/out" "$B/assets" || echo "PDF build failed"
+python3 scripts/build_portfolio.py "$T/out" "$B/assets"; PDF_MAXPX=1800 PDF_JPGQ=85 PDF_SUFFIX=_light python3 scripts/build_portfolio.py "$T/out" "$B/assets" || echo "PDF build failed"
 python3 scripts/build_vitorhugo.py "$T/site" "$B/assets" || echo "site build failed"
 mkdir -p "$W/painel/files" "$W/vitorhugo/files"
-cp "$T"/out/*.pdf "$W/painel/files/" 2>/dev/null && cp "$T"/out/*.pdf "$W/vitorhugo/files/" 2>/dev/null
+rm -rf "$T/out/_img"; cp "$T"/out/*.pdf "$W/painel/files/" 2>/dev/null && cp "$T"/out/*.pdf "$W/vitorhugo/files/" 2>/dev/null
 date '+%F %T' > "$W/painel/files/updated.txt"
 [ -f "$T/site/index.html" ] && cp -r "$T"/site/. "$W/vitorhugo/"
 echo "$(date '+%F %T') portfolio done: $(ls "$T"/out/*.pdf 2>/dev/null | wc -l) PDFs"

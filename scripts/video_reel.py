@@ -91,7 +91,7 @@ def normalise(src, info, dst, fit, seconds, keep_audio, title=None, title_path=N
         inputs += ["-f", "lavfi", "-t", f"{seconds:.3f}", "-i", "anullsrc=r=44100:cl=stereo"]
         af, amap = "", ["-map", f"{2 if title else 1}:a"]
     run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", vf + af, "-map", "[v]", *amap,
-         "-t", f"{seconds:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "12", "-c:a", "pcm_s16le", str(dst)])
+         "-t", f"{seconds:.3f}", "-c:v", "libx264", "-threads", "2", "-preset", "medium", "-crf", "12", "-c:a", "pcm_s16le", str(dst)])
     return mode
 
 
@@ -134,7 +134,7 @@ def main():
     endv = tmp / "end.mov"
     run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-t", f"{END_S}", "-i", str(tmp / "end.png"),
          "-f", "lavfi", "-t", f"{END_S}", "-i", "anullsrc=r=44100:cl=stereo", "-vf", f"fps={FPS},format=yuv420p,setsar=1",
-         "-c:v", "libx264", "-crf", "12", "-c:a", "pcm_s16le", str(endv)])
+         "-c:v", "libx264", "-threads", "2", "-crf", "12", "-c:a", "pcm_s16le", str(endv)])
     parts.append((endv, END_S))
 
     # xfade / acrossfade chain
@@ -153,11 +153,11 @@ def main():
     length = off
     joined = tmp / "joined.mov"
     run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(fc), "-map", f"[{vlast}]", "-map", f"[{alast}]",
-         "-c:v", "libx264", "-preset", "medium", "-crf", "12", "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", str(joined)])
+         "-c:v", "libx264", "-threads", "2", "-preset", "medium", "-crf", "12", "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", str(joined)])
 
     # final audio
     mp4 = out / f"{a.pid}-video-reel.mp4"
-    enc = ["-c:v", "libx264", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p", "-profile:v", "high",
+    enc = ["-c:v", "libx264", "-threads", "2", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p", "-profile:v", "high",
            "-movflags", "+faststart", "-c:a", "aac", "-b:a", "192k"]
     if a.audio == "keep":
         run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(joined), *enc, str(mp4)])

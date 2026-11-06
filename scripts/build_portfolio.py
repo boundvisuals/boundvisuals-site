@@ -118,8 +118,13 @@ def img(p, maxw=None):
     lim = QMAX if maxw is None else min(QMAX, max(maxw * 2, 1400))
     if max(im.size) > lim:
         s = lim / max(im.size); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
-    b = io.BytesIO(); im.save(b, "JPEG", quality=QJPG, subsampling=0, optimize=True)
-    return "data:image/jpeg;base64," + base64.b64encode(b.getvalue()).decode()
+    # images as files next to the HTML (not base64): far less memory for Chromium on the shared server
+    import hashlib
+    d = OUT / "_img"; d.mkdir(exist_ok=True)
+    fn = d / (hashlib.sha1(f"{src}|{lim}|{QJPG}".encode()).hexdigest()[:16] + ".jpg")
+    if not fn.exists():
+        im.save(fn, "JPEG", quality=QJPG, subsampling=0, optimize=True)
+    return fn.resolve().as_uri()
 
 
 def ratio(p):

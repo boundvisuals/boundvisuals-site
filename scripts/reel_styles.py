@@ -117,7 +117,7 @@ def end_card(title):
 class Enc:
     def __init__(self, out, wav):
         self.p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
-                                   "-i", "-", "-i", str(wav), "-c:v", "libx264", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p",
+                                   "-i", "-", "-i", str(wav), "-c:v", "libx264", "-threads", "2", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p",
                                    "-profile:v", "high", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], stdin=subprocess.PIPE)
         self.n = 0
 

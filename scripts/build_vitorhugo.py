@@ -105,7 +105,7 @@ def web_reel(pid):
     out = OUT / "v" / f"{pid}.mp4"; poster = OUT / "v" / f"{pid}.jpg"
     if not out.exists() or out.stat().st_size < 10000:
         tmp = out.with_suffix(".tmp.mp4")
-        r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reels[0], "-t", "30", "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
+        r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reels[0], "-t", "30", "-vf", "scale=720:-2", "-c:v", "libx264", "-threads", "2", "-preset", "veryfast", "-crf", "24",
                             "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", str(tmp)], check=False)
         if r.returncode == 0 and tmp.exists():
             tmp.replace(out)

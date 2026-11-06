@@ -131,7 +131,7 @@ def make_reel(shots, title, out_mp4, cover_jpg, tmp):
     total = len(shots) * SHOT_S + END_S
     wav = tmp / "pad.wav"; synth_audio(wav, total)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
-           "-i", "-", "-i", str(wav), "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p",
+           "-i", "-", "-i", str(wav), "-c:v", "libx264", "-threads", "2", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p",
            "-profile:v", "high", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4)]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     base = Image.new("RGB", (W, H), BLACK)
