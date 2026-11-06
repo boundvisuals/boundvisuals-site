@@ -31,9 +31,13 @@
   title: Colar no site os textos em 1.ª pessoa
 - id: v-plugins
   owner: vitor
-  title: Apagar 8 plugins antigos no wp-admin
-  detail: "WPBakery, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer."
-  due: sex 6 nov 10:00
+  title: Apagar 11 plugins desativados no wp-admin (site verificado OK desde 2 nov)
+  detail: "1) Abre www.boundvisuals.com/wp-admin e entra. 2) Menu esquerdo → Plugins. 3) Por cima da lista, clica em 'Inativos'. 4) Marca a caixa de cada um: WPBakery Page Builder, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer, GA Google Analytics, Simple Social Icons, Health Check & Troubleshooting. NÃO marques mais nenhum. 5) Menu 'Ações em massa' → 'Eliminar' → 'Aplicar' → confirma 'Sim, eliminar estes ficheiros'. 6) Abre a página inicial e um projeto: devem estar iguais."
+  due: quando puderes (esta semana)
+- id: v-novo
+  owner: vitor
+  title: "Apagar a cópia de teste /novo (liberta ~3 GB) — diz 'sim' ao Claude"
+  detail: "Já não é precisa (o site fica como está). Se disseres que sim: cPanel → Softaculous → WordPress → Instalações → na linha boundvisuals.com/novo clica no X vermelho (Remover) → deixa marcadas as caixas de ficheiros e base de dados → 'Remover instalação'. A instalação principal (boundvisuals.com sem /novo) não se toca."
 - id: v-ds-001
   owner: vitor
   title: "Daily Study #001 · Janelas: a luz de uma tarde"
