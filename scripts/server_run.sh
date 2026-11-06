@@ -6,6 +6,8 @@
 #           → push the changes back to GitHub (GitHub = code vault only).
 # Fast path: if nothing changed since the last run, only the publisher runs (a few ms).
 set -u
+# run from a private copy: git reset below rewrites this file while bash is still reading it
+[ -z "${BV_SELF:-}" ] && { cp "$0" "$HOME/bv/.run.sh"; BV_SELF=1 exec bash "$HOME/bv/.run.sh" "$@"; }
 B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; S="$W/painel/store"
 export PATH="$B/env/bin:$PATH"; PY=python3
 exec 9>"$B/run.lock"; flock -n 9 || exit 0
