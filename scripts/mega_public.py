@@ -66,10 +66,15 @@ def listing(link):
     nodes = {}
     for n in res["f"]:
         k = n.get("k", "")
-        if ":" not in k:
+        parts = [x.split(":", 1) for x in k.split("/") if ":" in x]
+        if not parts:
             continue
-        enc = b64d(k.split(":", 1)[1])
-        raw = dec_key(enc, key)
+        enc_s = next((v for o, v in parts if o == handle), parts[0][1])   # "owner:key/owner2:key2" — take the shared folder's
+        try:
+            enc = b64d(enc_s)
+            raw = dec_key(enc[: len(enc) // 16 * 16], key)
+        except Exception:
+            continue
         if n["t"] == 0:                                    # file: 32-byte key
             w = a32(raw)
             fkey = to_bytes([w[0] ^ w[4], w[1] ^ w[5], w[2] ^ w[6], w[3] ^ w[7]])
