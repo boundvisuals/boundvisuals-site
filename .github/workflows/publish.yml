@@ -1,13 +1,17 @@
 name: publish
-# Every 30 min: upload queued images to the server, then publish approved posts that are due.
+# At the queue slots only (2 min after each time used in queue/*.yml), to fit the free 2000 Actions min/month.
+# Times are UTC = Lisbon in winter. SUMMER TIME (from 29 Mar 2026-27): move every hour 1 earlier.
+# Then: upload queued images to the server, publish approved posts that are due, wake the painel robot if something was published.
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "2 10,18,19 * * *"
+    - cron: "32 9,12,14,20,21 * * *"
   workflow_dispatch:
     inputs:
       mode: { description: "run | check (check = private test, publishes nothing)", default: run }
 permissions:
   contents: write
+  actions: write
 concurrency: { group: publish, cancel-in-progress: false }
 jobs:
   publish:
@@ -49,12 +53,13 @@ jobs:
         env: { META_TOKEN: "${{ secrets.META_TOKEN }}" }
         run: python3 scripts/publish.py "${{ inputs.mode || 'run' }}"
       - if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
           git add queue/published.json reports/publish 2>/dev/null
           git commit -qm "Publish log" || exit 0
           for i in 1 2 3 4 5 6 7 8; do
-            git pull --rebase -q && git push -q && exit 0
+            git pull --rebase -q && git push -q && { gh workflow run painel.yml -R "$GITHUB_REPOSITORY" || true; exit 0; }
             sleep $((RANDOM % 15 + 5))
           done
           echo "LOG PUSH FAILED"; exit 1

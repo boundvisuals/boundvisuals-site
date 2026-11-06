@@ -5,8 +5,8 @@ on:
   push:
     branches: [main]
     paths: ["queue/**", "reports/**", "docs/tasks.yml", "docs/profile.yml", "docs/content-plan.yml", "docs/personal-projects.yml", "docs/inbox-replies.yml", "docs/decisions.yml", "docs/kits/**", "docs/daily-study-briefings.md", "painel/**", "projects/registry.yml", "scripts/build_painel.py"]
-  schedule: [{ cron: "*/10 * * * *" }]
-  workflow_run: { workflows: ["publish"], types: [completed] }
+  # 4×/day fallback (free Actions minutes); panel actions start it instantly via api.php, publish wakes it after a post.
+  schedule: [{ cron: "7 8,13,18,22 * * *" }]
   workflow_dispatch:
 permissions:
   contents: write

@@ -177,6 +177,8 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - "Avisar o Claude" button REMOVED. Scheduled tasks back on: "responder às Ideias" hourly :56 on Sonnet (cheap); "sessão automática" every 3 h (08–23 Lisbon, :26) on Opus. Keep each run lean; stop early if nothing to do.
 - Actions storage hit 90% (artifacts): ingest artifacts now kept 1 day; all old artifacts deleted 05/11.
 
+## ACTIONS MINUTES (06/11) — free 2000 min/month EXHAUSTED 05/11 23:40 (≈2280 used; private repo). All jobs fail "spending limit". Vítor asked to pick: small budget / public repo / wait for cycle (task v-gh-minutes). Crons cut: publish only at queue slots (UTC = Lisbon winter; shift 1 h earlier on 29 Mar), painel 4×/day + dispatched by publish and api.php, stats 1×/day. Keep new robots minute-cheap.
+
 ## FREE ROBOTS (05/11, Vítor: "robôs mecânicos só, o máximo")
 - .github/workflows/robots.yml (06:41 + 15:17 UTC): scripts/hunt_opps.py (RemoteOK, Arbeitnow, Jobicy, Himalayas, WWR → docs/opps-auto.yml + docs/kits/auto-*.md templated kits; shown in Painel Oportunidades), scripts/watchdog.py (sites, personal-site links, PDFs, SSL, Meta token, queue horizon → docs/watchdog.json; card in Início), Sunday backup of Painel store (no secrets) → backups/painel/, Monday PDF/site rebuild. notify.py pushes watchdog failures + new leads. No AI in robots (Vítor declined GitHub Models).
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reminders for Vítor's phone (Painel Web Push). Runs inside the painel robot every ~10 min.
+"""Reminders for Vítor's phone (Painel Web Push). Runs inside the painel robot 4×/day + after each publish + on panel actions.
   notify.py <out.json.php>   → writes the notifications that are due RIGHT NOW (Lisbon time); push.php?a=run sends each id once.
 Rules (quiet hours: nothing before 08:00 or after 23:00):
   - Sunday 19:00     week ahead: posts/stories/reels still to approve + Vítor's tasks due that week
