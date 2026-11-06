@@ -2186,4 +2186,194 @@ Regra: a cobertura em consola e a espessura dos pilares ficam iguais entre câma
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #070–#075, 15–27 abr, até 12 abr).
+## #070 · Casa para um cliente imaginário #6: o apicultor (quinta, 15 abr)
+
+**Ideia:** sexto cliente imaginário: um apicultor que quer viver numa encosta com os seus colmeais. Dois volumes simples ligados por um alpendre: a casa e a "casa do mel" (sala de extração). Imagem calma de fim de tarde, com caixas de abelhas ao fundo.
+
+**1. Modelo 3D (25 min)**
+- Casa 8 × 4 m em alvenaria caiada, cobertura de uma água em chapa lacada cinzenta; anexo 4 × 4 m em madeira escura (casa do mel); alpendre coberto de 2,5 m entre os dois, com pilares de madeira.
+- Encosta em socalcos (3 degraus de terra com muros de pedra seca); 6 colmeias (caixas de madeira pintadas em branco, azul e amarelo) sobre estrados; um muro baixo e um caminho de terra batida.
+- Duas oliveiras e erva alta como blocos simples.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, de baixo da encosta, casa e colmeias em camadas.
+- B: 40 mm, o alpendre entre os dois volumes, banco de madeira e potes.
+- C: 85 mm, as colmeias coloridas com a casa desfocada atrás.
+
+**3. Luz:** fim de tarde, sol baixo de lado a 15°, luz dourada, sombras longas; céu limpo com um fio de nuvens.
+
+**4. Render base:** Render 1600 px; cal com micro-rugosidade, madeira queimada escura, pedra seca com juntas irregulares. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same buildings and camera as the reference image. A small whitewashed house with a grey standing-seam roof next to a dark charred-timber honey house, joined by a covered timber porch, on a terraced hillside with dry stone walls, six painted wooden beehives (white, blue, yellow) on low stands, two olive trees and tall dry grass, a dirt path, low golden evening sun from the side, long soft shadows, calm rural atmosphere, fine film grain, no people, no text.
+```
+Regra: o número e a posição das colmeias ficam iguais entre câmaras; a AI não acrescenta janelas nem altera o alpendre.
+
+**6. Entrega:** 3 finais em "#070 - Cliente imaginario 6 apicultor / final". Para reel: câmara C, 6 s, abelhas pequenas a voar à frente das colmeias e o capim a mexer (Seedance), som de zumbido suave.
+
+**Legenda**
+- EN: "Daily Study #070 · Imaginary client #6: the beekeeper. Two simple volumes, six hives, and a porch for the evening light."
+- PT: "Daily Study #070 · Cliente imaginário #6: o apicultor. Dois volumes simples, seis colmeias e um alpendre para a luz do fim de tarde."
+
+---
+
+## #071 · Casas de Portugal #10: Madeira, a casa de colmo de Santana (sábado, 17 abr)
+
+**Ideia:** décima 'Casas de Portugal': a casa tradicional de Santana, na Madeira, de telhado triangular de colmo até ao chão, paredes pintadas de vermelho, branco e azul, entre hortênsias e bananeiras. Casa pequena, forma muito simples: ideal para 3D rápido.
+
+**1. Modelo 3D (25 min)**
+- Casa em A: prisma triangular 5 m de largura × 6 m de profundidade × 5 m de altura; cobertura de colmo em dois planos até ao chão (textura de palha, espessura 25 cm); empena frontal em madeira com porta e uma janela pequena, pintada em vermelho e branco, com moldura azul.
+- Uma pequena chaminé em pedra; escada de 3 degraus em basalto; canteiro de hortênsias (blocos esféricos azuis/rosa); muro baixo em basalto escuro.
+- Fundo: encosta verde com árvores e névoa leve.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, a casa inteira de frente, ligeiramente de baixo.
+- B: 50 mm, três quartos, a empena com a porta e as hortênsias.
+- C: 85 mm, a textura do colmo com a luz rasante e um pouco da empena.
+
+**3. Luz:** manhã húmida, céu encoberto luminoso, luz suave e fria, névoa fina na encosta; cores saturadas mas elegantes.
+
+**4. Render base:** Render 1600 px; colmo com fibras (displacement leve), madeira pintada com ligeiro desgaste, basalto escuro húmido. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same thatched roof and camera as the reference image. A traditional triangular A-frame cottage from Santana, Madeira, with a steep thatched straw roof reaching almost to the ground, a painted timber gable in red and white with blue trim, a small door and window, a short basalt stone stair, blue and pink hydrangeas in front, a low dark basalt wall, lush green mountainside behind with light mist, soft overcast morning light, damp air, fine film grain, no people, no text.
+```
+Regra: a inclinação do telhado e a proporção da empena não mudam entre câmaras; o colmo tem de parecer palha de verdade, não relva.
+
+**6. Entrega:** 3 finais em "#071 - Casas de Portugal 10 Madeira / final". Para reel: câmara A, 6 s, a névoa a descer pela encosta atrás da casa (Seedance), som de vento e pássaros.
+
+**Legenda**
+- EN: "Daily Study #071 · Houses of Portugal #10: Madeira. A roof that reaches the ground, and the one house everyone recognises."
+- PT: "Daily Study #071 · Casas de Portugal #10: Madeira. Um telhado que chega ao chão, e a casa que toda a gente reconhece."
+
+---
+
+## #072 · Abecedário arquitetónico #6: F de Fresta (terça, 20 abr)
+
+**Ideia:** sexta letra: F de Fresta, a abertura estreita e vertical que deixa entrar um fio de luz. Interior de parede grossa em pedra ou taipa com três frestas de alturas diferentes e a luz a cair no chão. Imagem quase abstrata, de grande contraste.
+
+**1. Modelo 3D (20 min)**
+- Sala vazia 5 × 4 m, pé-direito 3,5 m; parede principal com 60 cm de espessura em pedra rebocada, com 3 frestas verticais (10 cm × 120 cm, 10 × 180 cm, 10 × 90 cm), com abas inclinadas para dentro (ombreira em funil).
+- Piso em lajes de calcário; um banco de pedra encostado à parede; um pequeno vaso de barro com um ramo seco.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, a parede inteira com as 3 frestas e o chão.
+- B: 70 mm, só uma fresta com a profundidade da parede visível.
+- C: 100 mm, a barra de luz no chão com o banco e o ramo.
+
+**3. Luz:** sol baixo a 25° a entrar pelas frestas, três lâminas de luz no chão; resto da sala em penumbra com um pouco de luz refletida.
+
+**4. Render base:** Render 1600 px; reboco áspero (bump forte), calcário com veios, partículas de poeira no ar (volumetria muito leve). Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same wall and camera as the reference image. A thick rough lime-plastered stone wall with three narrow vertical slit windows of different heights, splayed reveals, sharp blades of low golden sunlight falling across a limestone floor, a simple stone bench, a terracotta pot with a dry branch, deep soft shadows, fine dust in the beams, quiet and almost abstract, fine film grain, no people, no text.
+```
+Regra: as 3 frestas têm de manter alturas e posições; as lâminas de luz no chão têm de bater certo com as frestas da câmara A.
+
+**6. Entrega:** 3 finais em "#072 - Abecedario 6 F de Fresta / final". Para reel: câmara C, 5 s, a lâmina de luz a deslizar devagar no chão como um relógio de sol (Seedance), silêncio com um sino ao longe.
+
+**Legenda**
+- EN: "Daily Study #072 · Architectural alphabet #6: F is for Fresta. A slit in a thick wall, and the whole day arrives as a blade of light."
+- PT: "Daily Study #072 · Abecedário arquitetónico #6: F de Fresta. Uma fenda numa parede grossa, e o dia inteiro chega como uma lâmina de luz."
+
+---
+
+## #073 · Produto em penumbra: um candeeiro de vidro opalino (quinta, 22 abr)
+
+**Ideia:** episódio de produto: um candeeiro de mesa de vidro opalino (esfera sobre base fina de latão), aceso numa mesa de carvalho escuro, numa sala em penumbra ao fim do dia. O próprio produto é a fonte de luz. Marca e rótulo inexistentes.
+
+**1. Modelo 3D (20 min)**
+- Esfera de 22 cm de diâmetro em vidro opalino leitoso sobre haste de latão fino de 25 cm e base circular de 12 cm.
+- Mesa de carvalho escuro (bloco simples), um livro fechado e um copo com água; parede ao fundo em reboco cinzento-quente.
+- Cabo discreto por trás da base.
+
+**2. Câmaras (3), 4:5**
+- A: 70 mm, o candeeiro centrado, mesa e parede visíveis.
+- B: 100 mm, três quartos, o brilho no vidro e o latão a refletir.
+- C: macro 120 mm, a transição luz-sombra no vidro e na madeira.
+
+**3. Luz:** só a luz do próprio candeeiro (emissor quente 2700 K) + um tom frio muito ténue da janela (azul-escuro) a rebater na parede; ambiente em penumbra.
+
+**4. Render base:** Render 1600 px (poucas amostras extra por causa do emissor); vidro opalino com subsurface suave, latão escovado, carvalho escuro com veio. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same lamp, same table and camera as the reference image. An opal milk-glass globe table lamp on a thin brushed-brass stem, glowing warm 2700K, standing on a dark oak table beside a closed book and a glass of water, a warm-grey plaster wall behind, a faint cool blue dusk light from a window, intimate low-key atmosphere, soft glow falloff on the wall, subtle glass and brass reflections, fine film grain, no logos, no text.
+```
+Regra: a intensidade e a cor do brilho têm de ser iguais nas 3 câmaras; sem halos exagerados.
+
+**6. Entrega:** 3 finais em "#073 - Produto candeeiro opalino / final". Para reel: câmara B, 5 s, o candeeiro a acender devagar de 0 a 100% (Seedance ou fade em edição), som de interruptor e silêncio.
+
+**Legenda**
+- EN: "Daily Study #073 · Product study: an opal glass lamp. The only light in the room is the object itself."
+- PT: "Daily Study #073 · Estudo de produto: candeeiro de vidro opalino. A única luz da sala é o próprio objeto."
+
+---
+
+## #074 · Desafio de cor #6: rosa-velho (sábado, 24 abr)
+
+**Ideia:** sexto desafio de cor: um quarto de dormir com rosa-velho (um rosa poeirento, quase nude) dominante, com cinzento-quente e madeira clara. O carrossel termina com a paleta de 5 cores tirada da imagem.
+
+**1. Modelo 3D (25 min)**
+- Quarto 4 × 3,5 m: parede da cabeceira pintada em rosa-velho mate; cama baixa com roupa de cama em linho cru; cabeceira em carvalho claro; duas mesas de cabeceira redondas.
+- Cortina de linho em tom areia, janela alta; tapete cinzento-quente; um candeeiro de papel e um quadro abstrato grande (só cor, sem figuras).
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a cama de frente com a parede rosa inteira.
+- B: 50 mm, a mesa de cabeceira e o candeeiro em ângulo.
+- C: 85 mm, o linho da cama e a textura da parede.
+
+**3. Luz:** manhã de luz suave pela cortina, quente, sem sombras duras; ligeiro brilho no linho.
+
+**4. Render base:** Render 1600 px; tinta mate com micro-textura, linho com trama visível, carvalho claro. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same bedroom, same furniture and camera as the reference image. A calm bedroom with a matte dusty old-rose pink accent wall as the single dominant colour, a low bed with raw linen bedding and a light oak headboard, two round bedside tables, a sand linen curtain filtering soft morning light, a warm grey rug, a paper pendant lamp, a large abstract colour-field painting, editorial interior photography, fine film grain, no people, no text.
+```
+Regra: o rosa tem de ser o MESMO nas 3 (conta-gotas: aproximadamente #c9a49a); corrige em edição antes de tirar a paleta.
+
+**6. Entrega:** 3 finais em "#074 - Desafio de cor 6 rosa velho / final". Para reel: câmara C, 5 s, a cortina a mexer com a brisa e a luz a oscilar no linho (Seedance).
+
+**Legenda**
+- EN: "Daily Study #074 · Colour challenge #6: dusty rose. One bedroom, one colour, one soft morning. Next colour? Tell me below."
+- PT: "Daily Study #074 · Desafio de cor #6: rosa-velho. Um quarto, uma cor, uma manhã suave. Próxima cor? Diz-me aqui em baixo."
+
+---
+
+## #075 · O meu bairro #3: uma ruela com roupa estendida (terça, 27 abr)
+
+**Ideia:** terceiro 'O meu bairro': uma ruela estreita de casas baixas com cordas de roupa estendida de um lado ao outro. Cena do quotidiano, cores vivas nos panos, pedra e reboco gastos. Imagem alegre e humana, sem pessoas.
+
+**1. Modelo 3D (25 min)**
+- Ruela de 2,5 m de largura e 18 m de comprimento; casas de 2 pisos dos dois lados com fachadas rebocadas (branco-sujo, ocre, verde-água), portas de madeira, janelas com grades de ferro e vasos.
+- 4 cordas de varal de lado a lado com panos simples (retângulos de tecido com ligeira ondulação em cores vivas); piso de calçada irregular (pedra pequena); degrau à entrada; um gato em cima de um muro (bloco simples).
+- Um fio elétrico e uma lanterna de parede para realismo.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, ao centro da ruela a olhar para o fundo, perspectiva profunda com as cordas.
+- B: 50 mm, um conjunto de panos com a fachada ocre e uma porta.
+- C: 85 mm, ao nível do olhar, o gato e o degrau em primeiro plano, ruela desfocada.
+
+**3. Luz:** fim de manhã, sol alto a entrar na ruela só a meio (faixa de luz diagonal), o resto em sombra azulada; panos a brilhar à luz.
+
+**4. Render base:** Render 1600 px; reboco desgastado com manchas, calçada com variação, tecidos com translucência leve. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic street photograph, same alley, same buildings and camera as the reference image. A narrow whitewashed old-town alley with two-storey houses in off-white, ochre and sage plaster, wooden doors, iron window grilles with flower pots, four clotheslines strung across the alley with colourful hanging cloths, uneven small-stone paving, a cat sitting on a low wall, a diagonal band of late-morning sunlight with blue shade elsewhere, lived-in and cheerful, fine film grain, no people, no readable text.
+```
+Regra: o número de cordas e a posição dos panos têm de ser iguais entre câmaras; a AI não pode inventar pessoas nem letreiros.
+
+**6. Entrega:** 3 finais em "#075 - O meu bairro 3 ruela com roupa / final". Para reel: câmara A, 6 s, os panos a balançar ao vento ao longo da ruela (Seedance), som de rua, rádio ao longe.
+
+**Legenda**
+- EN: "Daily Study #075 · My neighbourhood #3: a laundry alley. Four lines, a patch of sun, and the street's whole palette hanging overhead."
+- PT: "Daily Study #075 · O meu bairro #3: uma ruela com roupa estendida. Quatro cordas, uma nesga de sol e toda a paleta da rua pendurada por cima."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #076–#081, 29 abr–11 mai, até 26 abr).
