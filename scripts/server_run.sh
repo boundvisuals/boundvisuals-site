@@ -106,6 +106,10 @@ if [ "$(cat "$B/daily" 2>/dev/null)" != "$(date +%F)" ] && [ "$(date +%H)" -ge 7
   date +%F > "$B/daily"
   $PY scripts/hunt_opps.py >> "$B/daily.log" 2>&1
   META_TOKEN=$($PY -c "import json;print(json.loads(open('$S/meta.json.php').read().split(chr(10),1)[1])['token'])" 2>/dev/null) $PY scripts/watchdog.py >> "$B/daily.log" 2>&1
+  # keep full-res finals cached for every project (crop re-renders + HQ portfolio), one at a time
+  for pid in $($PY -c "import yaml;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(' '.join(p['id'] for p in r if p.get('mega') and p['id']!='daily-study-2026'))"); do
+    [ -n "$(ls -A "$B/src/$pid" 2>/dev/null)" ] || { (ONLY_CACHE=1 nohup bash "$R/scripts/server_ingest.sh" "$pid" >> "$B/ingest.log" 2>&1 &); break; }
+  done
   [ "$(date +%u)" = "1" ] && (nohup bash "$R/scripts/server_portfolio.sh" >> "$B/portfolio.log" 2>&1 &)
 fi
 

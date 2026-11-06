@@ -38,6 +38,7 @@ for p in dl.rglob("*"):
 PY
   rm -rf "$DL"
 fi
+[ -n "${ONLY_CACHE:-}" ] && { echo "$(date '+%F %T') cache ready $pid"; exit 0; }
 rm -rf "$O"; mkdir -p "$O"
 python3 scripts/process_media.py "$SRC" "$O" "$pid" config/program.yml > "$O/process.log" 2>&1
 rm -rf "$D/ig" "$D/preview"; mkdir -p "$D/ig" "$D/preview"
