@@ -264,3 +264,60 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
     }
   }
 }
+
+// ---------------------------------------------------------------- YouTube Shorts
+// Every reel that went out on Instagram is uploaded to YouTube as a Short (one per run, resumable upload, token refresh).
+$yt = $oa['youtube'] ?? [];
+if (!empty($yt['refresh_token']) || !empty($yt['access_token'])) {
+  $yst = rs("$store/youtube.json.php") ?? [];
+  $cand = null;
+  foreach ($items as $it) {
+    if ($it['type'] !== 'reel' || empty($state[$it['pkey']]['ig']) || isset($yst['done'][$it['pkey']])) continue;
+    if (isset($yst['fail'][$it['pkey']]) && $yst['fail'][$it['pkey']] >= 3) continue;
+    $cand = $it; break;
+  }
+  if ($cand) {
+    try {
+      if (empty($yt['access_token']) || ($yt['expires_at'] ?? 0) < time() + 300) {          // refresh the 1-hour token
+        $ch = curl_init('https://oauth2.googleapis.com/token');
+        curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 30, CURLOPT_POSTFIELDS => http_build_query([
+          'grant_type' => 'refresh_token', 'refresh_token' => $yt['refresh_token'], 'client_id' => $yt['client_id'], 'client_secret' => $yt['client_secret']])]);
+        $j = json_decode((string)curl_exec($ch), true); curl_close($ch);
+        if (empty($j['access_token'])) throw new Exception('token refresh failed ' . json_encode($j));
+        $yt['access_token'] = $j['access_token']; $yt['expires_at'] = time() + (int)($j['expires_in'] ?? 3600);
+        $oa['youtube'] = $yt; ws("$store/oauth.json.php", $oa);
+      }
+      $file = basename(parse_url($cand['full'][0], PHP_URL_PATH));
+      $path = dirname(__DIR__) . "/bv-fila/{$cand['project']}/reel/" . rawurldecode($file);
+      if (!is_file($path)) throw new Exception("video file missing $path");
+      $cap = trim(explode("\n", (string)($cand['caption'] ?? ''))[0]);
+      $title = mb_substr($cap !== '' ? $cap : ($cand['project_title'] ?? 'Bound Visuals'), 0, 90) . ' #Shorts';
+      $desc = trim(($cand['pub']['plain'] ?? $cand['caption'] ?? '')) . "\n\nVítor Hugo · Bound Visuals — 3D architecture visualization + AI\nhttps://www.boundvisuals.com\n\n#archviz #3dvisualization #architecture #shorts";
+      $meta = ['snippet' => ['title' => $title, 'description' => mb_substr($desc, 0, 4900), 'tags' => ['archviz', 'architecture', '3d visualization', 'render', 'corona renderer', 'ai'], 'categoryId' => '22'],
+               'status' => ['privacyStatus' => 'public', 'selfDeclaredMadeForKids' => false]];
+      $ch = curl_init('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status');
+      curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_HEADER => true, CURLOPT_TIMEOUT => 60,
+        CURLOPT_POSTFIELDS => json_encode($meta, JSON_UNESCAPED_UNICODE), CURLOPT_HTTPHEADER => ["Authorization: Bearer {$yt['access_token']}",
+        'Content-Type: application/json; charset=UTF-8', 'X-Upload-Content-Type: video/mp4', 'X-Upload-Content-Length: ' . filesize($path)]]);
+      $raw = (string)curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+      if ($code !== 200 || !preg_match('/^location:\s*(\S+)/mi', $raw, $m)) throw new Exception("init $code " . substr($raw, -300));
+      $fh = fopen($path, 'rb');
+      $ch = curl_init(trim($m[1]));
+      curl_setopt_array($ch, [CURLOPT_PUT => true, CURLOPT_INFILE => $fh, CURLOPT_INFILESIZE => filesize($path), CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 240,
+        CURLOPT_HTTPHEADER => ["Authorization: Bearer {$yt['access_token']}", 'Content-Type: video/mp4']]);
+      $body = (string)curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch); fclose($fh);
+      $j = json_decode($body, true);
+      if ($code >= 300 || empty($j['id'])) throw new Exception("upload $code " . substr($body, 0, 300));
+      $yst['done'][$cand['pkey']] = ['at' => date('c'), 'id' => $j['id'], 'privacy' => $j['status']['privacyStatus'] ?? '?'];
+      logline("YOUTUBE uploaded {$cand['pkey']} -> {$j['id']}");
+      $n = rs("$store/notify.json.php") ?? [];
+      $n[] = ['id' => 'yt-' . md5($cand['pkey']), 'title' => 'Short no YouTube: ' . ($cand['project_title'] ?? $cand['project']), 'body' => 'https://youtube.com/shorts/' . $j['id'], 'url' => '/painel/'];
+      ws("$store/notify.json.php", $n);
+    } catch (Exception $e) {
+      $yst['fail'][$cand['pkey']] = ($yst['fail'][$cand['pkey']] ?? 0) + 1;
+      $yst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
+      logline('YOUTUBE ERR ' . substr($e->getMessage(), 0, 200));
+    }
+    ws("$store/youtube.json.php", $yst);
+  }
+}
