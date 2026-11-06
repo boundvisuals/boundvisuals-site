@@ -21,7 +21,8 @@ if [ "$stamp_now" = "$(cat "$B/stamp" 2>/dev/null)" ] && [ "$remote" = "$local_"
 fi
 git reset -q --hard origin/main
 
-strip() { [ -f "$1" ] && tail -n +2 "$1"; }
+strip() { [ -s "$1" ] && tail -n +2 "$1"; }
+put() { local t; t=$(strip "$1") && [ -n "$t" ] && printf '%s' "$t" > "$2"; return 0; }
 mkdir -p "$B/in"
 # server publish state → repo
 if [ -f "$S/published.json.php" ]; then
@@ -35,9 +36,9 @@ for k, v in srv.items():
 json.dump(st, open("queue/published.json", "w"), indent=1)
 PY
 fi
-strip "$S/inbox.json.php" > docs/inbox.json 2>/dev/null || true
-strip "$S/opps.json.php" > docs/opps.json 2>/dev/null || true
-strip "$S/deleted.json.php" > docs/deleted.json 2>/dev/null || true
+put "$S/inbox.json.php" docs/inbox.json
+put "$S/opps.json.php" docs/opps.json
+put "$S/deleted.json.php" docs/deleted.json
 [ -f "$S/approvals.json.php" ] && $PY scripts/build_painel.py apply "$S/approvals.json.php" >/dev/null
 [ -f "$S/captions.json.php" ] && $PY scripts/build_painel.py apply-captions "$S/captions.json.php" >/dev/null
 if [ -f "$S/crops.json.php" ]; then

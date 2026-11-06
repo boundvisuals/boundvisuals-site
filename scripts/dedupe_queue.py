@@ -74,7 +74,10 @@ def img_hash(path):
 
 
 def main():
-    deleted = json.load(open("docs/deleted.json")) if os.path.exists("docs/deleted.json") else {}
+    try:
+        deleted = json.load(open("docs/deleted.json"))
+    except (OSError, ValueError):
+        deleted = {}
     dkeys = set(deleted.get("keys", []))
     dslides = deleted.get("slides", {})
     pub = json.load(open(f"{QUEUE}/published.json")) if os.path.exists(f"{QUEUE}/published.json") else {}
