@@ -4,6 +4,7 @@
   owner: vitor
   title: "Variações de ambiente das imagens prontas (noite, chuva, neve, nevoeiro, pôr do sol…)"
   detail: "Ideia tua 06/11: pegar nas imagens finais de todos os projetos e fazer outras versões com pouco trabalho (modo noite, chuva, neve, etc.) para ter mais conteúdo e variações. Pilar 6 'mood variations'. Quando quiseres: eu preparo os prompts (inglês) e o fluxo rápido (Nano Banana/ComfyUI), e no MEGA basta uma pasta 'mood' ao lado de cada final — o robô agenda sozinho."
+  due: dom 15 nov
 - id: v-gh-minutes
   owner: vitor
   title: "Robôs do GitHub sem minutos grátis — RESOLVIDO (já não precisas de fazer nada)"
