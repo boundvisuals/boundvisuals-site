@@ -173,18 +173,25 @@ def main():
     per_image = []
     for src in sorted(p for p in src_dir.rglob("*") if p.suffix.lower() in EXTS):
         stem = "_".join(src.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
-        if stem not in crops:
+        sc = story_crops.get(stem)
+        if stem not in crops and not sc:
             print(f"skip (no reviewed crops): {src.name}")
             continue
         img = Image.open(src); img.load(); img = img.convert("RGB")
+        if stem not in crops:
+            # 4:5 final (single-slide post): stories only, from its hand-composed story crops; no reel shots
+            for k, spec in enumerate(sc):
+                frame_story(img, title, box916(img, spec)).save(out_dir / "story" / f"{stem}-s{k:02d}.jpg", quality=95, subsampling=0)
+            print(f"stories (story crops only): {stem} -> {len(sc)}")
+            continue
         bx = boxes_for(img, crops[stem])
-        sc = story_crops.get(stem)
         frame_story(img, title, box916(img, sc[0] if sc else [crops[stem][0][0], 0.5, 1.0])).save(out_dir / "story" / f"{stem}-s00.jpg", quality=95, subsampling=0)
-        for k, b in enumerate(bx, 1):
+        n = max(len(bx), len(sc) - 1 if sc else 0)      # every story crop is rendered, also beyond the post-crop count
+        for k in range(1, n + 1):
             spec = sc[k] if sc and k < len(sc) else crops[stem][k - 1]
             frame_story(img, title, box916(img, spec)).save(out_dir / "story" / f"{stem}-s{k:02d}.jpg", quality=95, subsampling=0)
         per_image.append((stem, img, bx))
-        print(f"stories: {stem} -> {1 + len(bx)}")
+        print(f"stories: {stem} -> {1 + n}")
     # reels: round-robin over images (crop 1 of each, then crop 2 ...), 4 shots per reel, project's best image first.
     # Reel 1 keeps the legacy name <pid>-reel.mp4; further reels are <pid>-reel-02.mp4 ... (max 3 per project).
     order = [k for k in crops if k in {s for s, _, _ in per_image}]

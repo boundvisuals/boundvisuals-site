@@ -1,4 +1,5 @@
 # Full-screen 9:16 story crops [cx, cy, h] (s00, s01, …), edited in the Painel. Missing → derived from post crops.
+# 06/11: 4:5 finals (no post detail crops) got 2-3 hand-composed story crops each (Claude, reviewed at full size).
 story_crops:
   1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT:
   - [0.29, 0.5, 1.0]
@@ -14,3 +15,74 @@ story_crops:
   - [0.367, 0.5, 1.0]
   - [0.333, 0.5, 1.0]
   - [0.626, 0.5, 1.0]
+  11_-_Interior_4_11-interior4_edit_0001:
+  - [0.5, 0.5, 1.0]
+  - [0.72, 0.6, 0.5]
+  - [0.3, 0.55, 0.55]
+  12_-_Interior_5_12-interior5_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.62, 0.62, 0.55]
+  13_-_Interior_6_13-interior6_edit_0001:
+  - [0.45, 0.5, 1.0]
+  - [0.8, 0.6, 0.55]
+  15_-_Interior_8_15-interior8_edit_0001:
+  - [0.5, 0.5, 1.0]
+  - [0.68, 0.55, 0.5]
+  - [0.25, 0.42, 0.4]
+  16_-_Interior_9_16-interior9_0001:
+  - [0.5, 0.5, 1.0]
+  - [0.45, 0.5, 0.5]
+  17_-_Interior_10_17-interior10_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.48, 0.5, 0.55]
+  - [0.65, 0.38, 0.4]
+  18_-_Interior_11_18-interior11_edit_0001:
+  - [0.4, 0.5, 1.0]
+  - [0.72, 0.5, 0.55]
+  2_-_Exterior2_2-exterior2_4SeedVR2Upscale:
+  - [0.5, 0.5, 1.0]
+  - [0.6, 0.45, 0.5]
+  - [0.8, 0.3, 0.5]
+  3_-_Exterior3_3-exterior3_edit_0001:
+  - [0.6, 0.5, 1.0]
+  - [0.65, 0.45, 0.5]
+  - [0.3, 0.3, 0.5]
+  4_-_Exterior4_4-exterior4_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.62, 0.55, 0.55]
+  - [0.22, 0.6, 0.5]
+  7_-_Exterior_7_7-exterior7_edit_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.4, 0.75, 0.45]
+  9_-_Interior_2_9-interior2_edit_0001:
+  - [0.5, 0.5, 1.0]
+  - [0.72, 0.55, 0.5]
+  - [0.25, 0.6, 0.55]
+  1_-_exterior1_1-exterior1:
+  - [0.5, 0.5, 1.0]
+  - [0.82, 0.72, 0.45]
+  - [0.4, 0.35, 0.45]
+  4_-_exterior4_4-exterior4:
+  - [0.6, 0.5, 1.0]
+  - [0.6, 0.55, 0.6]
+  - [0.78, 0.68, 0.4]
+  5_-_exterior5_5-exterior5:
+  - [0.5, 0.5, 1.0]
+  - [0.5, 0.5, 0.5]
+  - [0.25, 0.75, 0.4]
+  6_-_exterior6_6-exterior6:
+  - [0.4, 0.5, 1.0]
+  - [0.24, 0.7, 0.45]
+  - [0.35, 0.3, 0.5]
+  2-interior2_2-interior2:
+  - [0.6, 0.5, 1.0]
+  - [0.75, 0.45, 0.55]
+  - [0.22, 0.55, 0.5]
+  4-interior4_4-interior4:
+  - [0.55, 0.5, 1.0]
+  - [0.75, 0.6, 0.55]
+  - [0.23, 0.45, 0.55]
+  root_5-interior2_webp:
+  - [0.45, 0.5, 1.0]
+  - [0.33, 0.48, 0.45]
+  - [0.72, 0.5, 0.55]

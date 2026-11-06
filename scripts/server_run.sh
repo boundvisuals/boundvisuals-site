@@ -57,9 +57,31 @@ put "$S/opps.json.php" docs/opps.json
 put "$S/deleted.json.php" docs/deleted.json
 [ -f "$S/approvals.json.php" ] && $PY scripts/build_painel.py apply "$S/approvals.json.php" >/dev/null
 [ -f "$S/captions.json.php" ] && $PY scripts/build_painel.py apply-captions "$S/captions.json.php" >/dev/null
+rm -f "$B/in/changed.txt"
 if [ -f "$S/crops.json.php" ]; then
   $PY scripts/build_painel.py apply-crops "$S/crops.json.php" > "$B/in/changed.txt"
   while read -r pid; do [ -n "$pid" ] && (nohup bash "$R/scripts/server_rerender.sh" "$pid" >> "$B/ingest.log" 2>&1 &); done < "$B/in/changed.txt"
+fi
+# story crops changed in git (hand-composed by Claude) → re-render those projects' stories once, one after another
+if [ -f config/story_crops.yml ] && ! cmp -s config/story_crops.yml "$B/in/story_crops.last.yml"; then
+  $PY - "$B/in/story_crops.last.yml" "$B/in/changed.txt" > "$B/in/story_changed.txt" <<'PY'
+import os, sys, yaml
+old = (yaml.safe_load(open(sys.argv[1])) or {}).get("story_crops", {}) if os.path.exists(sys.argv[1]) else {}
+new = (yaml.safe_load(open("config/story_crops.yml")) or {}).get("story_crops", {})
+done = set(open(sys.argv[2]).read().split()) if os.path.exists(sys.argv[2]) else set()
+out = set()
+for stem in set(old) | set(new):
+    if old.get(stem) != new.get(stem):
+        for p in os.listdir("reports"):
+            if os.path.exists(f"reports/{p}/preview/{stem}.jpg") and p not in done:
+                out.add(p)
+print("\n".join(sorted(out)))
+PY
+  cp config/story_crops.yml "$B/in/story_crops.last.yml"
+  if [ -s "$B/in/story_changed.txt" ]; then
+    L="$B/in/story_changed.$$.txt"; mv "$B/in/story_changed.txt" "$L"
+    (nohup bash -c 'while read -r pid; do [ -n "$pid" ] && bash "$0" "$pid"; done < "$1"; rm -f "$1"' "$R/scripts/server_rerender.sh" "$L" >> "$B/ingest.log" 2>&1 &)
+  fi
 fi
 $PY scripts/dedupe_queue.py >/dev/null || true
 $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py sync-slides >/dev/null
