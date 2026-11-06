@@ -9,7 +9,7 @@
    3 h cooldown after an error, nothing unapproved, nothing deleted.
    Cron command (cPanel → Cron Jobs, every 5 minutes):  php -q /home/boundvis/public_html/painel/cron.php
    Manual run from a browser is refused (CLI only), except ?k=<cron key> for a dry check. */
-if (PHP_SAPI !== 'cli') { http_response_code(403); exit('cli only'); }
+if (PHP_SAPI !== 'cli' && !empty($_SERVER['REMOTE_ADDR'])) { http_response_code(403); exit('cli only'); }
 set_time_limit(280);
 ini_set('memory_limit', '1024M');
 date_default_timezone_set('Europe/Lisbon');
