@@ -210,10 +210,24 @@ if (($st['day'] ?? '') !== date('Y-m-d') && (int)date('G') >= 7) {
 // Tue/Thu/Sat from 12:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.
 $oa = rs("$store/oauth.json.php") ?? [];
 $li = $oa['linkedin'] ?? [];
+// Diagnostic: on LinkedIn days, say once per day why nothing was posted (and push it), instead of failing silently.
+if (in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30') {
+  $why = '';
+  if (empty($li['access_token']) || empty($li['person_urn'])) $why = 'LinkedIn não está ligado (Painel → Ligar redes → LinkedIn)';
+  elseif (($li['expires_at'] ?? PHP_INT_MAX) <= time()) $why = 'token do LinkedIn expirou (voltar a ligar)';
+  $dl = rs("$store/linkedin.json.php") ?? [];
+  if ($why && ($dl['diag_day'] ?? '') !== date('Y-m-d')) {
+    $dl['diag_day'] = date('Y-m-d'); $dl['last_error'] = date('c') . ' ' . $why; ws("$store/linkedin.json.php", $dl);
+    logline('LINKEDIN SKIP ' . $why);
+    $n = rs("$store/notify.json.php") ?? [];
+    $n[] = ['id' => 'li-skip-' . date('Ymd'), 'title' => 'LinkedIn não saiu', 'body' => $why, 'url' => '/painel/ligar.php'];
+    ws("$store/notify.json.php", $n);
+  }
+}
 if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30'
     && ($li['expires_at'] ?? PHP_INT_MAX) > time()) {
   $lst = rs("$store/linkedin.json.php") ?? [];
-  if (($lst['last_day'] ?? '') !== date('Y-m-d')) {
+  if (($lst['last_day'] ?? '') !== date('Y-m-d') && (time() - ($lst['err_ts'] ?? 0)) > 3600) {
     $cand = null;
     foreach (array_reverse($items) as $it) {
       if ($it['type'] !== 'feed' || empty($state[$it['pkey']]['ig']) || isset($lst['done'][$it['pkey']])) continue;
@@ -260,7 +274,7 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
         $n[] = ['id' => 'li-' . md5($cand['pkey']), 'title' => 'Publicado no LinkedIn: ' . ($cand['project_title'] ?? $cand['project']), 'body' => count($ids) . ' imagens + legenda', 'url' => '/painel/'];
         ws("$store/notify.json.php", $n);
       } catch (Exception $e) {
-        $lst['last_day'] = date('Y-m-d'); $lst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
+        $lst['err_ts'] = time(); $lst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
         logline('LINKEDIN ERR ' . substr($e->getMessage(), 0, 200));
       }
       ws("$store/linkedin.json.php", $lst);
