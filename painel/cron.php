@@ -338,6 +338,7 @@ if (!empty($yt['refresh_token']) || !empty($yt['access_token'])) {
       $n = rs("$store/notify.json.php") ?? [];
       $n[] = ['id' => 'yt-' . md5($cand['pkey']), 'title' => 'Short no YouTube: ' . ($cand['project_title'] ?? $cand['project']), 'body' => 'https://youtube.com/shorts/' . $j['id'], 'url' => '/painel/'];
       ws("$store/notify.json.php", $n);
+      @file_get_contents('https://www.boundvisuals.com/painel/push.php?a=run');
     } catch (Exception $e) {
       $yst['fail'][$cand['pkey']] = ($yst['fail'][$cand['pkey']] ?? 0) + 1;
       $yst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
