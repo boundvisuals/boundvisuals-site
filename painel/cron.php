@@ -234,6 +234,11 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
       if ($it['type'] !== 'feed' || empty($state[$it['pkey']]['ig']) || isset($lst['done'][$it['pkey']])) continue;
       $cand = $it; break;
     }
+    if (!$cand && (($lst['nocand_day'] ?? '') !== date('Y-m-d'))) {
+      $lst['nocand_day'] = date('Y-m-d'); ws("$store/linkedin.json.php", $lst);
+      $nf = 0; $ni = 0; foreach ($items as $it) { if ($it['type'] === 'feed') { $nf++; if (!empty($state[$it['pkey']]['ig'])) $ni++; } }
+      logline("LINKEDIN SKIP sem candidato (feed=$nf, com ig=$ni, já enviados=" . count($lst['done'] ?? []) . ')');
+    }
     if ($cand) {
       $V = '202610';
       $H = ["Authorization: Bearer {$li['access_token']}", "LinkedIn-Version: $V", 'X-Restli-Protocol-Version: 2.0.0', 'Content-Type: application/json'];
