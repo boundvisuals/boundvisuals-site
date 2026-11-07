@@ -2954,4 +2954,196 @@ Regra: 3 módulos fechados e 1 aberto, 4 espreguiçadeiras, em todas as câmaras
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #094–#099, 10–22 jun, até 7 jun).
+## #094 · Casa para um cliente imaginário #10: a violoncelista (quinta, 10 jun)
+
+**Ideia:** décimo cliente imaginário: uma violoncelista que ensaia em casa e precisa de uma sala de música com acústica calma. Casa baixa de um piso, paredes grossas, uma grande sala de ensaio com teto em madeira e um pátio com uma oliveira. Imagem silenciosa, de luz lateral e madeira.
+
+**1. Modelo 3D (25 min)**
+- Casa térrea em L de 14 × 9 m, paredes rebocadas branco-quente, telhado de uma água. Sala de ensaio de 6 × 5 m com pé-direito de 3,8 m, teto com ripado de carvalho e janela alta e comprida virada a norte.
+- Pátio fechado com uma oliveira (bloco simples), banco de pedra e piso de terra batida clara.
+- Mobiliário mínimo: uma cadeira de madeira, uma estante de partituras (sem texto), um violoncelo em caixa simples encostado à parede, um tapete grande de lã.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, a sala de ensaio de um canto, ripado do teto a fugir.
+- B: 50 mm, a cadeira e o violoncelo sob a luz da janela alta.
+- C: 35 mm, do pátio para a sala através da porta de vidro aberta.
+
+**3. Luz:** manhã, luz fria e suave de norte (6000 K) a entrar pela janela alta e a riscar a parede; pátio com sol lateral baixo e sombra da oliveira.
+
+**4. Render base:** Render 1600 px; reboco com grão, carvalho claro com veio, terra batida, lã com fuzz curto. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same house, same rehearsal room and camera as the reference image. A calm single-storey home for a cellist: thick whitewashed walls, a rehearsal room with an oak slatted ceiling, one long high north window throwing a soft band of light across the wall, a single wooden chair, a music stand, a cello resting against the wall and a large undyed wool rug, a quiet courtyard with an olive tree and a stone bench seen through an open glass door, soft cool morning light, serene and acoustic, fine film grain, no people, no readable text or sheet music.
+```
+Regra: um só violoncelo, uma só cadeira, uma só estante em todas as câmaras; a estante e as partituras sem notas legíveis (a AI inventa); janela alta sempre do mesmo lado.
+
+**6. Entrega:** 3 finais em "#094 - Cliente imaginario 10 violoncelista / final". Para reel: câmara A, 6 s, a faixa de luz a deslizar muito devagar pela parede (Seedance), som de uma nota longa de violoncelo a esvanecer.
+
+**Legenda**
+- EN: "Daily Study #094 · Imaginary client #10: a cellist. A tall quiet room, one band of north light and nothing else to listen to."
+- PT: "Daily Study #094 · Cliente imaginário #10: a violoncelista. Uma sala alta e calada, uma faixa de luz norte e mais nada para ouvir."
+
+---
+
+## #095 · Casas de Portugal #14: Carrasqueira, as cabanas de palafitas no estuário do Sado (sábado, 12 jun)
+
+**Ideia:** décima quarta 'Casas de Portugal': o cais palafítico da Carrasqueira, no estuário do Sado. Um cais de madeira sobre estacas com pequenas cabanas de colmo e tábua, barcos de pesca encostados e o arrozal ao longe. Imagem de fim de tarde, de cor baixa e água calma.
+
+**1. Modelo 3D (25 min)**
+- Cais de madeira de 24 m sobre estacas finas, cerca de 1,2 m acima de uma lama/água plana; 5 cabanas pequenas (2,5 × 3 m) em tábua desgastada e cobertura de colmo, cada uma com uma porta e uma janelinha.
+- Escada de madeira de acesso à margem, redes penduradas, 3 barcos de pesca de fundo chato (blocos simples), caixas de madeira empilhadas.
+- Fundo: junco, arrozal verde-claro e uma linha de pinheiros mansos.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, o cais a fugir em perspetiva com as cabanas.
+- B: 50 mm, duas cabanas e um barco, com o reflexo.
+- C: 85 mm, as estacas e a madeira desgastada à altura da água.
+
+**3. Luz:** fim de tarde, sol baixo e dourado (3800 K), céu pastel e água como espelho; ligeira névoa no arrozal.
+
+**4. Render base:** Render 1600 px; madeira cinzenta-prateada gasta, colmo seco, água com reflexo nítido, lama húmida com brilho. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic documentary photograph, same wooden pier, same huts and camera as the reference image. The palafitte fishing pier of Carrasqueira on the Sado estuary in Portugal: a long weathered timber walkway on thin stilts, five small huts of silver-grey planks with thatched roofs, nets drying, three flat-bottomed fishing boats moored, wooden crates, reeds and pale green rice fields behind, low golden late-afternoon light, pastel sky and a perfectly still mirror-like water, fine film grain, no people, no readable text.
+```
+Regra: 5 cabanas e 3 barcos em todas as câmaras; reflexo sempre coerente com a água calma; sem pessoas nem nomes nos barcos.
+
+**6. Entrega:** 3 finais em "#095 - Casas de Portugal 14 Carrasqueira / final". Para reel: câmara B, 6 s, o reflexo a tremer ao de leve e a névoa a mexer (Seedance), som de água a bater nas estacas e de gaivotas.
+
+**Legenda**
+- EN: "Daily Study #095 · Houses of Portugal #14: Carrasqueira. A pier that stands on pencils and still holds a whole village of boats."
+- PT: "Daily Study #095 · Casas de Portugal #14: Carrasqueira. Um cais que se aguenta em lápis e ainda segura uma aldeia inteira de barcos."
+
+---
+
+## #096 · Abecedário arquitetónico #10: J de Jardim de inverno (terça, 15 jun)
+
+**Ideia:** décima letra do abecedário: J de Jardim de inverno. Uma estufa de vidro e aço fino encostada à casa, com plantas grandes, piso de ladrilho e uma cadeira de verga. Imagem luminosa, verde e húmida, com a luz difusa de um dia nublado.
+
+**1. Modelo 3D (25 min)**
+- Volume de vidro de 5 × 3,5 m encostado a uma parede de pedra, estrutura de aço preto fino em águas, porta de duas folhas.
+- Interior: ladrilho hexagonal claro, bancada de pedra com 8 vasos, uma palmeira e uma árvore de folha grande (blocos simples), uma cadeira de verga e uma mesinha, uma cortina de linho recolhida.
+- Exterior: gravilha e um muro baixo.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, a estufa de fora, encostada à parede de pedra.
+- B: 35 mm, o interior de frente, plantas e a cadeira.
+- C: 85 mm, o pormenor do aço, do vidro com condensação e das folhas.
+
+**3. Luz:** dia de céu encoberto, luz muito difusa e fresca (6500 K) a atravessar o vidro, sem sombras duras; ligeira condensação no vidro.
+
+**4. Render base:** Render 1600 px; vidro com reflexos suaves e leve rugosidade (condensação), aço preto mate, ladrilho com juntas, folhas com translucidez. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same conservatory, same stone wall and camera as the reference image. A winter garden: a slim black-steel glass conservatory leaning against an old stone wall, light hexagonal tile floor, a stone potting bench with eight pots, a tall palm and a large-leaf tree, a wicker chair and a small table, linen curtain gathered to one side, soft diffused overcast light with light condensation on the glass, lush and quiet, fine film grain, no people, no readable text.
+```
+Regra: 8 vasos, uma palmeira, uma cadeira de verga em todas as câmaras; folhas nunca a tapar a estrutura de aço inteira; sem pessoas.
+
+**6. Entrega:** 3 finais em "#096 - Abecedario 10 J de Jardim de inverno / final". Para reel: câmara B, 5 s, a condensação a escorrer devagar e as folhas a mexer (Seedance), som de chuva leve no vidro.
+
+**Legenda**
+- EN: "Daily Study #096 · Architectural alphabet #10: J is for Jardim de inverno (winter garden). Glass, thin steel and a rainy-day green."
+- PT: "Daily Study #096 · Abecedário arquitetónico #10: J de Jardim de inverno. Vidro, aço fino e um verde de dia de chuva."
+
+---
+
+## #097 · Produto sob a luz de uma janela: um perfumador de vidro âmbar (quinta, 17 jun)
+
+**Ideia:** produto elegante e simples: um frasco de vidro âmbar com tampa de madeira, sobre uma bancada de pedra rugosa, com a sombra da janela a desenhar-se na parede de cal. Imagem quente, tátil e com vidro de verdade.
+
+**1. Modelo 3D (25 min)**
+- Frasco de 9 cm de altura em vidro âmbar espesso, base larga e gargalo curto, tampa cilíndrica de carvalho (modelo simples ou do 3D Warehouse/Sketchfab CC com licença conferida, a registar).
+- Bancada de pedra rugosa de 60 × 40 cm, parede de cal atrás; um ramo de alecrim seco ao lado.
+- Uma janela com vidros em quatro divisões, só a sombra e a luz entram em cena.
+
+**2. Câmaras (3), 4:5**
+- A: 70 mm, o frasco centrado, a sombra da janela na parede.
+- B: 100 mm, três quartos, a luz a atravessar o vidro âmbar.
+- C: 135 mm, macro da tampa de carvalho e do bordo do vidro.
+
+**3. Luz:** sol de manhã baixo e quente (3500 K) através de janela quadriculada, a riscar a bancada e a parede; o vidro âmbar a projetar uma mancha de luz laranja.
+
+**4. Render base:** Render 1600 px; vidro com refração e espessura (IOR 1,5), carvalho com veio, pedra rugosa, cal com grão. Guardar a refração limpa (sem ruído). Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same amber glass bottle, same stone surface and camera as the reference image. A thick amber-glass perfume bottle with a turned oak stopper on a rough pale stone counter against a limewashed wall, a sprig of dried rosemary beside it, warm low morning sun through a four-pane window casting a gridded shadow and a glowing amber caustic on the stone, tactile, quiet and premium, shallow depth of field, fine film grain, no people, no readable text or labels.
+```
+Regra: o frasco sem rótulo nem texto (a AI inventa marcas); a mancha âmbar sempre do mesmo lado; mesmo ramo de alecrim nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#097 - Produto frasco ambar janela / final". Para reel: câmara A, 5 s, a sombra da janela a deslizar devagar sobre o vidro (Seedance), som de um sino distante e de passos de gato muito baixo.
+
+**Legenda**
+- EN: "Daily Study #097 · Product study: an amber bottle in window light. The sun does the lighting, the glass does the talking."
+- PT: "Daily Study #097 · Estudo de produto: um frasco âmbar à luz de uma janela. O sol faz a iluminação, o vidro fala por si."
+
+---
+
+## #098 · Desafio de cor #10: azul-petróleo (sábado, 19 jun)
+
+**Ideia:** décimo desafio de cor: azul-petróleo. Uma sala de jantar pequena e densa, com as paredes e a marcenaria nessa cor, uma mesa de madeira clara e luz quente de um candeeiro. Imagem de contraste e de profundidade.
+
+**1. Modelo 3D (25 min)**
+- Sala de 4,5 × 5 m com as paredes, o rodapé e uma estante embutida pintados azul-petróleo mate; mesa de carvalho claro para 4, quatro cadeiras de madeira escura, um aparador baixo em carvalho e um grande espelho redondo com moldura fina.
+- Candeeiro pendente de latão e vidro opala sobre a mesa; cortina de linho cru; piso em madeira clara.
+- Pormenores: uma jarra de vidro com ramos secos, três livros no aparador (sem texto).
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, a sala de um canto, a mesa e a estante.
+- B: 50 mm, a mesa com o candeeiro pendente.
+- C: 40 mm, o aparador e o espelho redondo.
+
+**3. Luz:** final de tarde, luz de janela fria e baixa (5000 K) misturada com o candeeiro quente (2700 K); o petróleo a ficar profundo e a madeira clara a acender.
+
+**4. Render base:** Render 1600 px; tinta mate com ligeiro brilho no rodapé, carvalho com veio, latão escovado, opala difusa, espelho com reflexo da sala. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same dining room, same table and camera as the reference image. A small dense dining room with walls, skirting and built-in shelves in a deep matte petrol blue, a light oak table with four dark wooden chairs, a low oak sideboard, a large round mirror with a thin frame, a brass and opal glass pendant lamp glowing warm over the table, raw linen curtain, light timber floor, a glass jar of dried branches and three plain books, late-afternoon cool window light mixed with the warm lamp, rich and calm, fine film grain, no people, no readable text.
+```
+Regra: o azul-petróleo não vira azul-marinho nem verde; 4 cadeiras, 1 espelho, 1 candeeiro em todas as câmaras; livros sem título.
+
+**6. Entrega:** 3 finais em "#098 - Desafio de cor 10 azul-petroleo / final". Para o carrossel: slide da paleta com `scripts/make_palette.py` (petróleo, carvalho, latão, linho, quase-preto). Para reel: câmara B, 5 s, a luz do candeeiro a pulsar quase impercetível (Seedance), som de talheres e conversa baixa ao longe.
+
+**Legenda**
+- EN: "Daily Study #098 · Colour challenge #10: petrol blue. When the walls are this dark, the lamp becomes the room."
+- PT: "Daily Study #098 · Desafio de cor #10: azul-petróleo. Quando as paredes são tão escuras, o candeeiro passa a ser a sala."
+
+---
+
+## #099 · O meu bairro #5: a papelaria da rua, à hora da chuva (terça, 22 jun)
+
+**Ideia:** quinto 'O meu bairro': uma papelaria antiga numa rua molhada, com montra cheia de cadernos e lápis (sem texto legível), toldo, calçada com reflexos e um candeeiro aceso. Cena de refúgio, de fim de tarde e chuva fina.
+
+**1. Modelo 3D (25 min)**
+- Prédio de 3 pisos com papelaria no rés-do-chão: montra comprida com prateleiras de madeira, porta de vidro com puxador de latão, toldo bordô, placa em branco.
+- Rua: calçada portuguesa molhada, passeio com banco, um candeeiro de rua, um guarda-chuva pendurado numa grade, um poste de sinalização sem texto.
+- Interior: balcão, estantes com caixas e cadernos (blocos simples), lâmpada pendente quente.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a fachada inteira em ligeira diagonal.
+- B: 50 mm, a montra com os cadernos e o toldo.
+- C: 85 mm, os reflexos da montra e do candeeiro na calçada molhada.
+
+**3. Luz:** fim de tarde chuvoso, céu cinzento-azulado (7000 K), chuva muito fina; interior quente (2700 K) a sair pela montra e a refletir-se na calçada.
+
+**4. Render base:** Render 1600 px; calçada molhada com brilho forte e reflexos nítidos, vidro com gotas, toldo em tecido, madeira gasta. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic street photograph, same building, same stationery shop and camera as the reference image. An old neighbourhood stationery shop at a rainy dusk, a long shop window glowing warm and filled with notebooks and pencils, a burgundy awning with a blank sign, a brass door handle, wet Portuguese cobblestones reflecting the lit window and a street lamp, a bench, an umbrella hanging on a railing, fine rain, blue-grey sky, cosy and nostalgic, fine film grain, no people, no readable text.
+```
+Regra: sem texto na placa, nos cadernos ou no poste (a AI inventa); reflexos coerentes entre câmaras; mesmo guarda-chuva e mesmo banco.
+
+**6. Entrega:** 3 finais em "#099 - O meu bairro 5 papelaria / final". Para reel: câmara C, 6 s, a chuva fina e os reflexos a tremer na calçada (Seedance), som de chuva, passos longe e um sino de porta.
+
+**Legenda**
+- EN: "Daily Study #099 · My neighbourhood #5: the stationery shop in the rain. The shop window is the only warm page on the street."
+- PT: "Daily Study #099 · O meu bairro #5: a papelaria à hora da chuva. A montra é a única página quente da rua."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #100–#105, 24 jun–6 jul, até 21 jun).
