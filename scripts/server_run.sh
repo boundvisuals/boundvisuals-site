@@ -12,6 +12,8 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_TH
 [ -z "${BV_SELF:-}" ] && { cp "$0" "$HOME/bv/.run.sh"; BV_SELF=1 exec bash "$HOME/bv/.run.sh" "$@"; }
 B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; S="$W/painel/store"
 export PATH="$B/env/bin:$PATH"; PY=python3
+# publisher first, ALWAYS (own lock inside cron.php): a long render/ingest run must never delay posts or stories
+PATH="$B/env/bin:$PATH" timeout 55 php -q "$W/painel/cron.php" >/dev/null 2>&1
 exec 9>"$B/run.lock"; flock -n 9 || exit 0
 cd "$R" || exit 1
 [ -f "$B/.deps2" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge pycryptodome >/dev/null 2>&1 && touch "$B/.deps2"; }
