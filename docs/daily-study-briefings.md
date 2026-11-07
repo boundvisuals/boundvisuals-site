@@ -2760,4 +2760,198 @@ Regra: sem texto legível no toldo e no quadro (a AI costuma inventar); número 
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #088–#093, 27 mai–8 jun, até 24 mai).
+## #088 · Casa para um cliente imaginário #9: o tradutor (quinta, 27 mai)
+
+**Ideia:** nono cliente imaginário: um tradutor que passa o dia entre dicionários. Casa pequena de um piso com um escritório-biblioteca de pé-direito alto, uma única janela grande para um pátio verde e um canto de leitura. Luz calma e papel por todo o lado.
+
+**1. Modelo 3D (25 min)**
+- Volume de 6 × 9 m, 1 piso, telhado de uma água com clerestório estreito; paredes interiores em estuque cru, chão em tábua de pinho.
+- Estantes até ao teto em duas paredes (blocos de livros em 3 tons, sem texto), escada de biblioteca em madeira, secretária comprida em nogueira virada para a janela, candeeiro de mesa de metal.
+- Canto de leitura: poltrona de linho e mesa baixa; pátio com uma tília e um banco de pedra.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da porta, a sala inteira com a janela ao fundo.
+- B: 50 mm, a escada de biblioteca e as estantes em diagonal.
+- C: 85 mm, a secretária e o candeeiro, o pátio desfocado.
+
+**3. Luz:** manhã de céu limpo, luz suave e difusa pela janela (5500 K), claraboia estreita a deitar uma faixa de luz nas estantes; lâmpada de secretária quente (2700 K) discreta.
+
+**4. Render base:** Render 1600 px; nogueira com veio, estuque com micro-relevo, linho com trama. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same translator's study, same shelves and camera as the reference image. A calm single-storey home study with floor-to-ceiling bookshelves on two walls, a wooden library ladder, a long walnut desk facing a large window onto a green courtyard with a linden tree, a small linen armchair reading corner, raw plaster walls and pine floorboards, a narrow clerestory casting a strip of light on the shelves, soft diffuse morning daylight with a warm desk lamp, quiet and studious mood, fine film grain, no people, no readable text on the book spines.
+```
+Regra: sem texto nas lombadas (a AI inventa letras); a escada fica no mesmo sítio nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#088 - Cliente imaginario 9 tradutor / final". Para reel: câmara B, 5 s, a faixa de luz a descer devagar pelas estantes (Seedance), som de folhear de páginas.
+
+**Legenda**
+- EN: "Daily Study #088 · Imaginary client #9: the translator. A house that is mostly shelves, one big window and a strip of morning light."
+- PT: "Daily Study #088 · Cliente imaginário #9: o tradutor. Uma casa que é quase só estantes, uma janela grande e uma faixa de luz da manhã."
+
+---
+
+## #089 · Casas de Portugal #13: Trás-os-Montes, a casa de granito com balcão de madeira (sábado, 29 mai)
+
+**Ideia:** décima terceira casa de Portugal: uma casa transmontana de granito com escada exterior de pedra e balcão de madeira corrido no piso de cima. Em baixo a loja (adega e animais), em cima a habitação. Luz fria de fim de outono, fumo na chaminé.
+
+**1. Modelo 3D (25 min)**
+- Volume de 7 × 6 m, 2 pisos, paredes em blocos de granito cinzento (bump forte), telhado de 2 águas em telha de barro envelhecida com chaminé alta.
+- Escada exterior de pedra encostada à fachada até ao balcão; balcão (varanda) de madeira escurecida com guarda de prumos torneados; porta de dois batentes em baixo.
+- Terreiro de pedra, um muro baixo, um carro de bois simples (blocos) encostado, duas árvores nuas ao fundo e colina com giestas.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, a casa de frente-esquina com a escada e o balcão.
+- B: 50 mm, o balcão de madeira e a chaminé, em ligeira contrapicada.
+- C: 85 mm, o granito e a madeira da escada em detalhe, terreiro desfocado.
+
+**3. Luz:** fim de tarde de outono, sol baixo e frio (4800 K) a bater de lado no granito, céu azul-acinzentado com nuvens finas; um fio de fumo da chaminé.
+
+**4. Render base:** Render 1600 px; granito com líquen subtil, madeira queimada e rachada, telha irregular. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic photograph, same house, same stairs and camera as the reference image. A traditional Trás-os-Montes granite house, two storeys, rough grey granite walls with subtle lichen, an exterior stone staircase leading to a long weathered dark timber balcony with turned balusters, a tall chimney with a thin thread of smoke, aged terracotta roof tiles, a stone yard with a low wall and an old wooden ox cart, bare trees and broom-covered hills behind, low cold late-autumn sun raking across the stone, grey-blue sky, fine film grain, no people, no text.
+```
+Regra: número de degraus e prumos do balcão igual nas 3 câmaras; sem mais casas no fundo.
+
+**6. Entrega:** 3 finais em "#089 - Casas de Portugal 13 Tras-os-Montes / final". Para reel: câmara A, 6 s, o fumo a subir e a luz a escurecer (Seedance), som de vento e sinos ao longe.
+
+**Legenda**
+- EN: "Daily Study #089 · Houses of Portugal #13: Trás-os-Montes. Granite below, timber balcony above, a thread of smoke saying someone is home."
+- PT: "Daily Study #089 · Casas de Portugal #13: Trás-os-Montes. Granito em baixo, balcão de madeira em cima e um fio de fumo a dizer que está alguém em casa."
+
+---
+
+## #090 · Abecedário arquitetónico #9: I de Impluvium (terça, 1 jun)
+
+**Ideia:** nona letra: I de Impluvium, o tanque no centro do átrio que recolhe a água da chuva por uma abertura no teto. Pátio interior coberto com um buraco de céu, tanque raso de pedra e a luz a refletir-se no teto. Imagem simétrica, calma, quase de templo.
+
+**1. Modelo 3D (20 min)**
+- Átrio de 8 × 8 m, colunas simples nos quatro cantos, telhado inclinado para dentro com abertura (compluvium) de 3 × 3 m; paredes em estuque quente.
+- Tanque raso de pedra (3 × 3 m, 30 cm de fundo) sob a abertura, água plana; pavimento em lajes claras; uma planta grande num vaso num canto.
+- Duas portas escuras em arco na parede de fundo, um banco de pedra.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, do canto, o átrio inteiro com a abertura e o tanque.
+- B: 40 mm, à altura do olhar, o tanque com o reflexo do céu e das colunas.
+- C: 85 mm, o beiral da abertura com gotas de chuva a cair (fundo desfocado).
+
+**3. Luz:** dia nublado com sol a romper, um feixe quente (4500 K) a entrar pela abertura e a cair numa quina do tanque; resto do átrio em penumbra fria.
+
+**4. Render base:** Render 1600 px; água com reflexo e pequenas ondas, pedra molhada junto ao tanque, estuque com micro-relevo. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same atrium, same pool and camera as the reference image. A quiet covered courtyard with a square opening in the roof, a shallow stone impluvium pool beneath it reflecting the sky, four plain columns, warm plaster walls, pale stone floor, two dark arched doorways and a stone bench, a single beam of warm sunlight falling across one corner of the pool, cool shadow elsewhere, light rain drops falling through the opening, serene and symmetrical, fine film grain, no people, no text.
+```
+Regra: o tanque é quadrado e centrado; a abertura do teto tem sempre o mesmo tamanho nas 3 câmaras.
+
+**6. Entrega:** 3 finais em "#090 - Abecedario 9 I de Impluvium / final". Para reel: câmara B, 6 s, a chuva a cair no tanque e círculos na água (Seedance), som de chuva e eco.
+
+**Legenda**
+- EN: "Daily Study #090 · Architectural alphabet #9: I for Impluvium. A hole in the roof and a pool beneath it: the house that collects the sky."
+- PT: "Daily Study #090 · Abecedário arquitetónico #9: I de Impluvium. Um buraco no teto e um tanque por baixo: a casa que recolhe o céu."
+
+---
+
+## #091 · Produto ao sol duro: uns óculos de sol sobre um plinto de terracota (quinta, 3 jun)
+
+**Ideia:** produto de verão num estilo gráfico: uns óculos de sol de armação fina sobre um plinto de terracota, com sombras duras e nítidas que fazem parte da composição. Imagem solar, de grande contraste, quase de cartaz.
+
+**1. Modelo 3D (20 min)**
+- Óculos de sol (modelo gratuito ou feito com splines: armação de acetato escuro redonda, lentes verde-garrafa, hastes finas dobradas).
+- Dois plintos de terracota (cilindro baixo e bloco) e uma esfera de gesso como volumes de apoio; fundo: parede lisa em bege claro e chão do mesmo tom.
+- Um ramo de oliveira pequeno num canto (só folhas, para a sombra).
+
+**2. Câmaras (3), 4:5**
+- A: 50 mm, de frente, óculos no plinto, sombra longa para a direita.
+- B: 85 mm, três quartos, as lentes a refletir o céu.
+- C: 100 mm, a dobradiça e a haste, fundo desfocado.
+
+**3. Luz:** sol de meio da tarde (5600 K), duro e lateral (30° acima do horizonte), sombras muito definidas e alongadas; sem luz de preenchimento (ou muito fraca) para manter o contraste.
+
+**4. Render base:** Render 1600 px; acetato brilhante com reflexo, lentes com leve tom verde e reflexo, terracota porosa e gesso mate. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same sunglasses, same plinths and camera as the reference image. Round dark tortoiseshell acetate sunglasses with bottle-green lenses resting on a terracotta plinth beside a plaster sphere, bright hard afternoon sun from the side casting long razor-sharp shadows on a warm beige wall and floor, the shadow of olive leaves falling across the wall, high contrast, graphic and summery, subtle reflection of sky in the lenses, fine film grain, no people, no text, no logos.
+```
+Regra: a sombra das folhas é do ramo do modelo, não inventar objetos; sem logótipos na haste.
+
+**6. Entrega:** 3 finais em "#091 - Produto oculos de sol terracota / final". Para reel: câmara A, 5 s, a sombra a rodar devagar pela parede como um relógio de sol (edição ou Seedance), som de cigarras e brisa.
+
+**Legenda**
+- EN: "Daily Study #091 · Product in hard sun: sunglasses on terracotta. The shadow is half of the picture."
+- PT: "Daily Study #091 · Produto ao sol duro: óculos de sol sobre terracota. A sombra é metade da imagem."
+
+---
+
+## #092 · Desafio de cor #9: roxo-berinjela (sábado, 5 jun)
+
+**Ideia:** nono desafio de cor, e o mais ousado: o roxo-berinjela, quase preto, com reflexos avermelhados. Um bar ou sala de leitura íntima ao entardecer, onde o roxo muito escuro dá profundidade e calor, e o latão e o creme dão ponto de luz.
+
+**1. Modelo 3D (25 min)**
+- Sala de 4 × 6 m com paredes e teto pintados em roxo-berinjela fosco, rodapé alto em madeira escura, cortinas de veludo da mesma cor.
+- Balcão curto em mármore creme com tampo fino, 3 bancos de latão com assento de couro, prateleira de vidro com garrafas e copos (blocos simples, sem rótulos).
+- Candeeiro de parede em latão (2), tapete de lã creme, um sofá pequeno em veludo ocre.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a sala inteira em diagonal a partir da entrada.
+- B: 50 mm, o balcão com os candeeiros de latão.
+- C: 85 mm, o veludo e a parede roxa em detalhe com um candeeiro desfocado.
+
+**3. Luz:** entardecer a passar pela janela (3800 K) fraca e rasante, quase tudo iluminado pelos dois candeeiros de parede quentes (2400 K); sombras profundas, brilho nos latões.
+
+**4. Render base:** Render 1600 px; tinta fosca com leve brilho no rodapé, veludo com fresnel/fuzz, mármore creme polido, latão escovado. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same room, same bar and camera as the reference image. An intimate small bar-lounge with walls and ceiling painted a deep matte aubergine purple, velvet curtains in the same colour, a short cream marble counter with three brass stools, a glass shelf of unlabelled bottles and glasses, two warm brass wall lamps, a cream wool rug and a small ochre velvet sofa, low warm light at dusk with soft glints on the brass, deep soft shadows, moody and luxurious, fine film grain, no people, no readable text or labels.
+```
+Regra: o roxo não vira azul nem magenta (manter berinjela); só 3 bancos e 2 candeeiros em todas as câmaras; sem rótulos nas garrafas.
+
+**5b. Paleta:** cinco cores tiradas da imagem final com o conta-gotas (berinjela, creme, latão, ocre, quase-preto) para o slide da paleta.
+
+**6. Entrega:** 3 finais em "#092 - Desafio de cor 9 roxo-beringela / final". Para o carrossel: slide da paleta com `scripts/make_palette.py`. Para reel: câmara B, 5 s, o brilho dos candeeiros a pulsar muito devagar (Seedance), som de jazz baixo e gelo num copo.
+
+**Legenda**
+- EN: "Daily Study #092 · Colour challenge #9: aubergine. Nearly black, never flat: the brass does the shouting."
+- PT: "Daily Study #092 · Desafio de cor #9: berinjela. Quase preto, nunca chapado: o latão é que fala alto."
+
+---
+
+## #093 · Brief de concurso #5: um pavilhão de banhos na praia fluvial (terça, 8 jun)
+
+**Ideia:** quinto brief de concurso imaginário: um pavilhão de apoio a uma praia fluvial, com balneários, um bar e um miradouro sobre a água. Madeira clara e cobertura inclinada, em cima de uma plataforma de pedra, com o rio calmo e as montanhas ao fundo. Imagem de verão, limpa e convidativa.
+
+**1. Modelo 3D (25 min)**
+- Plataforma de pedra clara de 18 × 6 m ao nível da margem; sobre ela uma estrutura leve em madeira: 3 módulos fechados (balneários e arrumos) e um módulo aberto (bar) com balcão.
+- Cobertura única inclinada em chapa metálica cinza-claro, com beiral a avançar 1,5 m sobre uma esplanada e um deck em madeira que desce em degraus até à água.
+- Rio: plano de água com leve ondulação; margem de seixos, 4 espreguiçadeiras de madeira, 6 árvores (salgueiros) em blocos simples, colina ao fundo.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da margem oposta, o pavilhão inteiro com a água em primeiro plano.
+- B: 40 mm, a esplanada coberta e o bar de frente.
+- C: 85 mm, o deck a descer para a água com as espreguiçadeiras.
+
+**3. Luz:** início da tarde de verão, sol alto e suave (5600 K), ligeira névoa de calor na colina, céu azul-claro; reflexos na água.
+
+**4. Render base:** Render 1600 px; madeira clara com veio, chapa mate, pedra com juntas, água com reflexo e transparência. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same pavilion, same riverbank and camera as the reference image. A contemporary river-beach pavilion with a long pale stone platform, light timber modules and an open bar under a single sloping pale-grey metal roof with a deep overhang, a timber deck stepping down to the calm water, four wooden sun loungers, willow trees along a pebble bank, soft green hills behind, bright high early-afternoon summer sun, clear blue sky and gentle reflections on the water, clean and inviting, fine film grain, no people, no readable text.
+```
+Regra: 3 módulos fechados e 1 aberto, 4 espreguiçadeiras, em todas as câmaras; sem pessoas nem barcos extra.
+
+**6. Entrega:** 3 finais em "#093 - Brief concurso 5 pavilhao praia fluvial / final". Para reel: câmara A, 6 s, a água a cintilar e as folhas dos salgueiros a mexer (Seedance), som de rio, cigarras e crianças ao longe muito baixo.
+
+**Legenda**
+- EN: "Daily Study #093 · Competition brief #5: a river-beach pavilion. One long roof, a few timber boxes and a deck that walks down to the water."
+- PT: "Daily Study #093 · Brief de concurso #5: um pavilhão para a praia fluvial. Um telhado comprido, umas caixas de madeira e um deck que desce até à água."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #094–#099, 10–22 jun, até 7 jun).
