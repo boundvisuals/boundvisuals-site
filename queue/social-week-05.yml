@@ -3,16 +3,10 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-5_-_Exterior5_5-exterior5_edit_0001.jpg
-  approved: false
-- date: '2026-12-04'
-  time: '15:00'
-  type: story
-  project: apartamentos-gondomar-2
   file: palette-7_-_Exterior_7_7-exterior7_edit_0001.jpg
   approved: false
 - date: '2026-12-04'
-  time: '17:30'
+  time: '15:00'
   type: story
   project: apartamentos-gondomar-2
   file: palette-9_-_Interior_2_9-interior2_edit_0001.jpg

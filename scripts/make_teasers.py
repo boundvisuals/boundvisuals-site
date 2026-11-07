@@ -169,6 +169,11 @@ def main():
         old = {(it["date"], it.get("teaser") or it.get("file")): it for it in social if it["date"] in days and it["type"] == "story"}
         for d, (p, slides) in sorted(days.items()):
             pr = p["project"]
+            # approved stories are frozen (Vítor 07/11): kept exactly as they are, new ones only fill free slots
+            frozen = [o for (dd, _), o in old.items() if dd == d and o.get("approved")]
+            keep.extend(frozen)
+            fz_teaser = {o.get("teaser") for o in frozen if o.get("teaser")}
+            fz_times = {str(o["time"]) for o in frozen}
             det = [s for s in slides[1:] if not s.endswith("-full.jpg")]
             post_src = {src_of_slide(s) for s in slides}
             # 'a' = a detail of tonight's post: 2nd slide, else the post image's own 9:16 story crop
@@ -176,6 +181,19 @@ def main():
                 (f"reports/{pr}/story/{f}" for f in pool(pr) if src_of_story(f) in post_src), None)
             for k, src in (("a", a_src), ("b", f"reports/{pr}/ig/{slides[0]}")):
                 if not src:
+                    continue
+                if k in fz_teaser:          # approved: never replaced (only Vítor's own crop edit re-renders it)
+                    fn = f"teaser-{d}-{k}.jpg"; tc = TCROPS.get(fn[:-4])
+                    mark = f"reports/{pr}/story/.{fn}.crop"
+                    sig = json.dumps([tc, str(p.get("time", "19:00")), T.get(pr, pr)]) if tc else None
+                    if tc and not (os.path.exists(mark) and open(mark).read() == sig):
+                        try:
+                            if save_if_changed(frame(teaser_slide(pr, tc["stem"], tc["crop"]), k, T.get(pr, pr), str(p.get("time", "19:00"))), f"reports/{pr}/story/{fn}"):
+                                changed += 1
+                            open(mark, "w").write(sig)
+                        except Exception as e:
+                            print("teaser crop failed", fn, e, file=sys.stderr)
+                    fresh(pr, fn)
                     continue
                 fn = f"teaser-{d}-{k}.jpg"
                 tc = TCROPS.get(fn[:-4])
@@ -200,9 +218,13 @@ def main():
                 keep.append({"date": d, "time": TIMES[k], "type": "story", "project": pr, "file": fn, "teaser": k,
                              "approved": bool(o and o.get("approved") and o["project"] == pr)})
             day_src, mids = set(post_src), []
+            for o in frozen:
+                if not o.get("teaser"):
+                    day_src.add(src_of_story(o["file"]) if not o["file"].startswith(("palette-", "motion-")) else o["file"].split("-", 1)[1].rsplit(".", 1)[0])
+                    used.add((pr, o["file"])); fresh(pr, o["file"])
             # keep this day's existing same-project stories that still fit the rule (approval kept)
             for (dd, f), o in sorted(old.items()):
-                if dd == d and not o.get("teaser") and o["project"] == pr and os.path.exists(f"reports/{pr}/story/{f}") and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
+                if dd == d and not o.get("teaser") and not o.get("approved") and o["project"] == pr and os.path.exists(f"reports/{pr}/story/{f}") and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
                     mids.append((f, bool(o.get("approved")))); day_src.add(src_of_story(f)); used.add((pr, f))
             for f in pool(pr):
                 if len(mids) >= 3:
@@ -241,7 +263,8 @@ def main():
                         continue
                     o = old.get((d, f))
                     mids.append((f, bool(o and o.get("approved")))); day_src.add(stem); used.add((pr, f))
-            for t, (f, ap) in zip(MID_TIMES, mids):
+            free = [t for t in MID_TIMES if t not in fz_times][:max(0, 3 - sum(1 for o in frozen if not o.get("teaser")))]
+            for t, (f, ap) in zip(free, mids):
                 e = {"date": d, "time": t, "type": "story", "project": pr, "file": f, "approved": ap}
                 if f.endswith(".mp4"):
                     e["cover"] = f[:-4] + ".jpg"

@@ -97,7 +97,10 @@ def main():
     drop, rep = set(), {"deleted": 0, "slides_deleted": 0, "identical": 0, "same_day": 0, "to_vertical": 0, "horizontal_twin": 0}
     for _, d, _, f, it, k in allit:
         pubd = k in published_keys
-        if k in dkeys and not pubd:
+        if k in dkeys and not pubd:               # Vítor's own deletions always win
+            drop.add(id(it)); rep["deleted"] += 1; continue
+        pubd = pubd or bool(it.get("approved"))   # approved = frozen: robots never drop or change it (Vítor 07/11)
+        if False:
             drop.add(id(it)); rep["deleted"] += 1; continue
         p = it.get("project")
         tw = TW.get(p, {}) or {}
