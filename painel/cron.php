@@ -252,8 +252,9 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
       };
       try {
         $ids = [];
-        $files = array_values(array_filter($cand['slide_files'] ?? [], fn($f) => !str_ends_with($f, '-full.jpg')));
-        foreach (array_slice($files, 0, 4) as $f) {
+        $files = array_values($cand['slide_files'] ?? []);
+        if (count($files) > 4) $files = array_merge(array_slice($files, 0, 3), [end($files)]);   // keep the final whole-image slide
+        foreach ($files as $f) {
           $path = dirname(__DIR__) . "/bv-fila/{$cand['project']}/$f";
           if (!is_file($path)) continue;
           [$c1, , $j] = $req('POST', 'https://api.linkedin.com/rest/images?action=initializeUpload', json_encode(['initializeUploadRequest' => ['owner' => $li['person_urn']]]));
@@ -279,6 +280,7 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
         $n = rs("$store/notify.json.php") ?? [];
         $n[] = ['id' => 'li-' . md5($cand['pkey']), 'title' => 'Publicado no LinkedIn: ' . ($cand['project_title'] ?? $cand['project']), 'body' => count($ids) . ' imagens + legenda', 'url' => '/painel/'];
         ws("$store/notify.json.php", $n);
+        @file_get_contents('https://www.boundvisuals.com/painel/push.php?a=run');
       } catch (Exception $e) {
         $lst['err_ts'] = time(); $lst['last_error'] = date('c') . ' ' . substr($e->getMessage(), 0, 300);
         logline('LINKEDIN ERR ' . substr($e->getMessage(), 0, 200));
