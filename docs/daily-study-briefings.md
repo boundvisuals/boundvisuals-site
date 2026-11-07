@@ -2376,4 +2376,196 @@ Regra: o número de cordas e a posição dos panos têm de ser iguais entre câm
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #076–#081, 29 abr–11 mai, até 26 abr).
+## #076 · Casa para um cliente imaginário #7: a ceramista (quinta, 29 abr)
+
+**Ideia:** sétimo cliente imaginário: uma ceramista que precisa de casa e ateliê juntos. Um volume baixo de tijolo com um forno exterior em cúpula e um pátio de secagem. Imagem de manhã fresca, com tábuas de peças a secar ao sol.
+
+**1. Modelo 3D (25 min)**
+- Casa-ateliê 10 × 5 m em tijolo à vista (cor terra), cobertura plana com beiral fino; grande janela corrida para o ateliê; porta de madeira clara.
+- Pátio 5 × 5 m em terra batida e lajes, com 3 estantes de madeira (blocos simples) com peças (cilindros e esferas achatadas) a secar.
+- Forno exterior em cúpula (meia esfera de 1,8 m) em tijolo refratário claro com chaminé; um monte de lenha empilhada; uma figueira como bloco simples.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, fachada de tijolo com o forno em primeiro plano.
+- B: 50 mm, as estantes de secagem com a janela do ateliê atrás.
+- C: 85 mm, o forno em cúpula e a lenha, detalhe de tijolo.
+
+**3. Luz:** manhã fresca, sol baixo a 25° de lado, sombras suaves e longas; céu limpo, ligeiro azul frio nas sombras.
+
+**4. Render base:** Render 1600 px; tijolo com juntas em argamassa clara e variação de tom, barro cru nas peças, madeira clara. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same kiln and camera as the reference image. A low flat-roofed brick house and ceramics studio with a long timber-framed window and a light wooden door, a domed outdoor brick kiln with a short chimney, wooden drying shelves with unfired clay pots in a packed-earth courtyard, a stack of firewood, a fig tree, cool fresh morning light with a low side sun and soft long shadows, fine film grain, no people, no text.
+```
+Regra: o número de peças nas estantes e o desenho do forno têm de ser iguais entre câmaras; a AI não acrescenta janelas.
+
+**6. Entrega:** 3 finais em "#076 - Cliente imaginario 7 ceramista / final". Para reel: câmara B, 5 s, sombra a atravessar as estantes e um fio de fumo do forno (Seedance), som de pássaros e barro a ser trabalhado ao longe.
+
+**Legenda**
+- EN: "Daily Study #076 · Imaginary client #7: the ceramicist. A brick studio, a domed kiln and shelves of clay drying in the morning sun."
+- PT: "Daily Study #076 · Cliente imaginário #7: a ceramista. Um ateliê de tijolo, um forno em cúpula e prateleiras de barro a secar ao sol da manhã."
+
+---
+
+## #077 · Casas de Portugal #11: Açores, a casa de basalto (sábado, 1 mai)
+
+**Ideia:** décima primeira casa de Portugal: uma casa açoriana em pedra de basalto escura, com cantarias brancas nas janelas e portas, rodeada de hortênsias e muros de pedra. Névoa baixa e luz difusa.
+
+**1. Modelo 3D (25 min)**
+- Casa 9 × 6 m de 1 piso e sótão, paredes em basalto (textura escura rugosa), cantarias e cunhais brancos; telhado de 4 águas em telha cerâmica; chaminé larga.
+- Portada principal com moldura branca e duas janelas de guilhotina simétricas; um pequeno alpendre lateral.
+- Muro de pedra seca à frente (0,9 m) com portão de ferro; filas de hortênsias como bolas verdes e azuis (blocos simples); prado inclinado atrás e uma faixa de cedros.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, fachada de frente com o muro e as hortênsias.
+- B: 50 mm, a porta com a cantaria branca e o basalto.
+- C: 85 mm, hortênsias em primeiro plano e a casa desfocada atrás.
+
+**3. Luz:** céu encoberto com névoa baixa, luz difusa sem sombras duras; cores húmidas e saturadas (o verde e o azul das hortênsias).
+
+**4. Render base:** Render 1600 px; basalto com poros e humidade, cal branca limpa, telha envelhecida. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same garden and camera as the reference image. A traditional Azorean house in dark volcanic basalt stone with white lime-painted stone window surrounds and corner quoins, a hipped terracotta tile roof, a wide chimney, a low dry-stone wall with an iron gate, rows of blue and green hydrangeas, a green sloping meadow and a line of cedar trees behind, low mist and soft overcast diffuse light, damp saturated colours, fine film grain, no people, no text.
+```
+Regra: a cantaria branca tem de ficar nos mesmos sítios nas 3 câmaras; as hortênsias não podem tapar a porta.
+
+**6. Entrega:** 3 finais em "#077 - Casas de Portugal 11 Acores / final". Para reel: câmara A, 6 s, a névoa a deslizar devagar pela encosta atrás da casa (Seedance), som de vento e mar ao longe.
+
+**Legenda**
+- EN: "Daily Study #077 · Houses of Portugal #11: the Azores. Dark basalt, white stone trims and hydrangeas under low mist."
+- PT: "Daily Study #077 · Casas de Portugal #11: Açores. Basalto escuro, cantarias brancas e hortênsias sob a névoa baixa."
+
+---
+
+## #078 · Abecedário arquitetónico #7: G de Galeria (terça, 4 mai)
+
+**Ideia:** sétima letra do abecedário: G de Galeria, o corredor coberto que liga e abriga. Uma galeria longa com colunas finas e luz que entra de lado, em ritmo.
+
+**1. Modelo 3D (15 min)**
+- Galeria 24 m de comprimento × 3,2 m de largura × 4 m de altura; uma fila de 12 colunas quadradas finas (0,25 m) em betão claro; teto plano em madeira com juntas; piso de pedra clara polida.
+- Um dos lados totalmente aberto para um jardim (gravilha e uma árvore de folha caduca); o outro lado uma parede cega caiada com 3 bancos de madeira encastrados.
+- Sem objetos; só um vaso grande no fundo para dar escala.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, plano central ao longo da galeria, fuga simétrica.
+- B: 50 mm, as colunas e o jardim em ritmo, ligeiramente de ângulo.
+- C: 85 mm, banco e sombra de uma coluna na parede.
+
+**3. Luz:** sol baixo de fim de manhã entrando de lado pelas aberturas, a desenhar faixas de luz e sombra no piso e na parede; contraste forte mas limpo.
+
+**4. Render base:** Render 1600 px; betão claro com microtextura, madeira de pinho no teto, pedra polida com reflexo ténue. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same gallery, same columns and camera as the reference image. A long covered gallery with twelve slender square pale concrete columns, a flat timber-slat ceiling, a polished light stone floor, one side open to a gravel garden with a deciduous tree, the other a blank whitewashed wall with three built-in wooden benches, low late-morning side sun casting rhythmic stripes of light and shadow across floor and wall, serene, fine film grain, no people, no text.
+```
+Regra: o número de colunas e o ritmo das sombras têm de ser iguais; a AI não pode acrescentar pessoas nem mobiliário.
+
+**6. Entrega:** 3 finais em "#078 - Abecedario 7 G Galeria / final". Para reel: câmara A, 5 s, a luz a deslizar devagar ao longo do piso como se o sol andasse (time-lapse suave em edição), som de passos distantes.
+
+**Legenda**
+- EN: "Daily Study #078 · Architectural alphabet #7: G for Gallery. Twelve columns, one rhythm of light."
+- PT: "Daily Study #078 · Abecedário arquitetónico #7: G de Galeria. Doze colunas, um ritmo de luz."
+
+---
+
+## #079 · Produto numa bancada de pedra: uma chaleira de ferro fundido (quinta, 6 mai)
+
+**Ideia:** estudo de produto: uma chaleira japonesa de ferro fundido (tetsubin) sobre uma bancada de pedra, com vapor ténue e luz de janela lateral. Imagem sóbria, texturas fortes.
+
+**1. Modelo 3D (20 min)**
+- Chaleira: corpo redondo achatado (esfera deformada) de 18 cm, bico curto, tampa com pega pequena, asa em arco de ferro; relevo de pontos pequenos (bossas) por mapa de normal ou geometria simples.
+- Bancada de pedra escura (basalto ou ardósia) com bordo em bisel; um copo de cerâmica sem asa e uma colher de madeira.
+- Parede de fundo em cal cinzenta; janela fora de campo.
+
+**2. Câmaras (3), 4:5**
+- A: 70 mm, a chaleira centrada com a bancada e a parede.
+- B: 100 mm, três quartos, o bico e a asa.
+- C: macro 120 mm, a textura de bossas do ferro.
+
+**3. Luz:** luz suave de janela lateral (softbox grande à esquerda), contra-luz ténue atrás para recortar o vapor; ambiente discreto e frio-neutro.
+
+**4. Render base:** Render 1600 px; ferro escuro com rugosidade média e reflexo suave, pedra com poros, cerâmica mate. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same kettle, same stone counter and camera as the reference image. A Japanese cast-iron tetsubin kettle with fine raised dot texture on a dark slate counter beside a small handleless ceramic cup and a wooden spoon, a grey lime-plaster wall behind, a thin wisp of steam from the spout, soft window light from the left with a faint rim light behind, restrained and tactile, shallow depth of field, fine film grain, no logos, no text.
+```
+Regra: o padrão de bossas e o brilho do ferro têm de ser iguais nas 3 câmaras; o vapor só no plano A e B.
+
+**6. Entrega:** 3 finais em "#079 - Produto chaleira ferro / final". Para reel: câmara B, 5 s, o vapor a subir devagar em câmara lenta (Seedance), som de água a ferver baixinho.
+
+**Legenda**
+- EN: "Daily Study #079 · Product study: a cast-iron kettle. Dark metal, soft window light and a thread of steam."
+- PT: "Daily Study #079 · Estudo de produto: uma chaleira de ferro fundido. Metal escuro, luz suave de janela e um fio de vapor."
+
+---
+
+## #080 · Desafio de cor #7: terracota (sábado, 8 mai)
+
+**Ideia:** sétimo desafio de cor: terracota. Uma sala de estar com paredes e pavimento em terracota quente, madeira clara e linho cru. O carrossel termina com a paleta de 5 cores tirada da imagem.
+
+**1. Modelo 3D (25 min)**
+- Sala 5 × 4,5 m: parede principal em reboco terracota mate (microcimento), pavimento em ladrilho terracota hexagonal ou quadrado, rodapé simples.
+- Sofá baixo em linho cru, mesa de centro redonda em madeira clara, estante aberta em madeira com três vasos de cerâmica; uma janela alta com cortina de linho.
+- Uma planta grande (blocos simples) no canto; tapete em juta.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a sala inteira com parede e piso terracota.
+- B: 50 mm, o sofá e a mesa em ângulo.
+- C: 85 mm, a estante e os vasos, texturas do reboco.
+
+**3. Luz:** fim de tarde, sol dourado baixo entrando pela janela, quente, a bater na parede terracota; sombras suaves.
+
+**4. Render base:** Render 1600 px; microcimento com nuvens de tom, ladrilho com juntas, linho com trama. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same living room, same furniture and camera as the reference image. A warm living room with matte terracotta plaster walls and terracotta floor tiles as the single dominant colour, a low raw linen sofa, a round light oak coffee table, an open oak shelf with three ceramic vases, a linen curtain, a jute rug, a large green plant, golden late-afternoon sun from a tall window, editorial interior photography, fine film grain, no people, no text.
+```
+Regra: o terracota tem de ser o MESMO nas 3 (conta-gotas: aproximadamente #b86b4b); corrige em edição antes de tirar a paleta.
+
+**6. Entrega:** 3 finais em "#080 - Desafio de cor 7 terracota / final". Para reel: câmara A, 5 s, o sol dourado a deslocar-se devagar pela parede (edição ou Seedance), som de tarde calma.
+
+**Legenda**
+- EN: "Daily Study #080 · Colour challenge #7: terracotta. One room, one colour, one warm afternoon. Next colour? Tell me below."
+- PT: "Daily Study #080 · Desafio de cor #7: terracota. Uma sala, uma cor, uma tarde quente. Próxima cor? Diz-me aqui em baixo."
+
+---
+
+## #081 · Brief de concurso #4: um quiosque de música no parque (terça, 11 mai)
+
+**Ideia:** quarto brief de concurso imaginário: um coreto contemporâneo num parque urbano. Estrutura leve em madeira e aço, cobertura circular, banco corrido à volta. Imagem ao fim da tarde com as luzes a acender.
+
+**1. Modelo 3D (25 min)**
+- Plataforma circular de 8 m de diâmetro elevada 0,5 m, em betão claro; 8 pilares finos de aço (cor grafite) a sustentar uma cobertura circular de 9 m em lamelas de madeira clara, com beiral fino.
+- Banco corrido em madeira à volta da plataforma; 3 degraus de acesso; um piano de cauda simples (bloco) ao centro como escala.
+- Parque: relvado, caminhos de gravilha, 5 árvores altas (blocos simples), uma fila de candeeiros baixos.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, vista ao nível do olhar do caminho, o coreto inteiro com o parque.
+- B: 40 mm, vista para dentro, lamelas do teto e o piano.
+- C: 85 mm, um pilar fino de aço com o banco de madeira e as luzes ao fundo.
+
+**3. Luz:** golden hour a passar a azul, céu em degradé, luzes quentes (2700 K) acesas nas lamelas e nos candeeiros; contraste entre o interior quente e o parque azulado.
+
+**4. Render base:** Render 1600 px; madeira clara com veio, aço fosco grafite, betão polido. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same pavilion, same park and camera as the reference image. A contemporary circular park bandstand with a light timber-slat canopy on eight slender graphite steel columns, a raised pale concrete platform with a continuous wooden bench around it and a grand piano at the centre, warm 2700K light glowing from the canopy and low park lamps, a long grass lawn and tall trees, a dusk sky fading from gold to deep blue, atmospheric and welcoming, fine film grain, no people, no readable text.
+```
+Regra: oito pilares e a mesma posição do piano nas 3; a AI não adiciona pessoas nem instrumentos extra.
+
+**6. Entrega:** 3 finais em "#081 - Brief concurso 4 coreto parque / final". Para reel: câmara A, 6 s, as luzes a acender uma a uma ao entardecer (Seedance ou edição), som de uma melodia de piano suave.
+
+**Legenda**
+- EN: "Daily Study #081 · Competition brief #4: a bandstand for the park. Eight slim columns, a timber canopy and the lights coming on at dusk."
+- PT: "Daily Study #081 · Brief de concurso #4: um coreto para o parque. Oito pilares finos, uma cobertura de madeira e as luzes a acender ao entardecer."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #082–#087, 13–25 mai, até 10 mai).
