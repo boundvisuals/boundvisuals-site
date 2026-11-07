@@ -227,6 +227,11 @@ if (in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30') {
 if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30'
     && ($li['expires_at'] ?? PHP_INT_MAX) > time()) {
   $lst = rs("$store/linkedin.json.php") ?? [];
+  if (is_file("$store/linkedin.redo")) {   // Vítor deleted the post by hand and asked for a re-post: forget the last one once
+    $lk = trim((string)@file_get_contents("$store/linkedin.redo")); unlink("$store/linkedin.redo");
+    $last = array_key_last($lst['done'] ?? []); if ($last !== null) unset($lst['done'][$last]);
+    unset($lst['last_day'], $lst['err_ts']); ws("$store/linkedin.json.php", $lst); logline('LINKEDIN redo armed');
+  }
   if (($lst['v'] ?? '') !== '2') { unset($lst['last_day'], $lst['err_ts']); $lst['v'] = '2'; } // reset after API-version fix
   if (($lst['last_day'] ?? '') !== date('Y-m-d') && (time() - ($lst['err_ts'] ?? 0)) > 3600) {
     $cand = null;
