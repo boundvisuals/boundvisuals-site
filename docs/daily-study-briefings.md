@@ -2568,4 +2568,196 @@ Regra: oito pilares e a mesma posição do piano nas 3; a AI não adiciona pesso
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #082–#087, 13–25 mai, até 10 mai).
+## #082 · Casa para um cliente imaginário #8: o relojoeiro (quinta, 13 mai)
+
+**Ideia:** oitavo cliente imaginário: um relojoeiro que vive e trabalha no mesmo sítio. Casa-oficina estreita de dois pisos: bancada junto a uma janela virada a norte no piso térreo, habitação em cima. Luz fria e precisa, madeira escura e latão.
+
+**1. Modelo 3D (25 min)**
+- Volume de 5 × 10 m, 2 pisos, fachada em tijolo cinza-escuro com uma grande janela fixa no piso térreo; telhado plano com platibanda fina.
+- Oficina: bancada comprida em carvalho escuro encostada à janela, banco alto, candeeiro articulado em latão, 12 relógios de parede simples (círculos com ponteiros) numa parede de painéis; estante de gavetas pequenas.
+- Escada de ferro fino para o piso de cima; chão em microcimento escuro.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, da porta, a bancada junto à janela com a oficina inteira.
+- B: 50 mm, a parede de relógios em ligeira diagonal.
+- C: 85 mm, o candeeiro de latão e a bancada, fundo desfocado.
+
+**3. Luz:** luz de norte fria e difusa pela janela (5800 K), fraca luz quente (2700 K) só no candeeiro da bancada; contraste calmo, sombras suaves.
+
+**4. Render base:** Render 1600 px; carvalho escuro com veio, latão com reflexos escovados, tijolo fosco. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same watchmaker's workshop, same furniture and camera as the reference image. A narrow home-workshop with a long dark oak workbench under a large north-facing window, a brushed brass articulated lamp glowing warm, a wall of twelve simple round wall clocks, a small-drawer cabinet, a thin black iron stair, dark polished microcimento floor, cool soft diffuse daylight, quiet and precise mood, fine film grain, no people, no readable text.
+```
+Regra: os 12 relógios na mesma disposição nas 3 câmaras; a AI não inventa ferramentas nem pessoas.
+
+**6. Entrega:** 3 finais em "#082 - Cliente imaginario 8 relojoeiro / final". Para reel: câmara B, 5 s, os ponteiros a andar muito devagar (edição ou Seedance), som de tiquetaque suave.
+
+**Legenda**
+- EN: "Daily Study #082 · Imaginary client #8: the watchmaker. A workbench under north light and a wall of clocks keeping slightly different time."
+- PT: "Daily Study #082 · Cliente imaginário #8: o relojoeiro. Uma bancada à luz de norte e uma parede de relógios a marcar horas ligeiramente diferentes."
+
+---
+
+## #083 · Casas de Portugal #12: Ria de Aveiro, o palheiro às riscas (sábado, 15 mai)
+
+**Ideia:** décima segunda casa de Portugal: um palheiro da Costa Nova, casa de madeira sobre estacas pintada às riscas verticais, com a ria e o céu de verão. Cor viva e simples, geometria gráfica.
+
+**1. Modelo 3D (20 min)**
+- Casa de madeira 6 × 5 m sobre estacas baixas, 2 águas com telhado de telha; riscas verticais largas (3 cores: azul-turquesa, branco, vermelho-tijolo), portas e janelas com moldura branca; pequeno alpendre de degraus.
+- Prancha de madeira como passadiço, 2 barcos moliceiros simples (blocos curvos) à frente, canas e areia, uma bicicleta encostada.
+- Céu limpo; a ria como plano de água plano.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, a casa de frente com a ria ao lado.
+- B: 50 mm, as riscas e a porta, em diagonal.
+- C: 85 mm, as riscas em primeiro plano com a bicicleta desfocada.
+
+**3. Luz:** início da tarde de verão, sol forte mas ligeiramente lateral, sombras definidas nas tábuas; céu azul-claro com pouca nuvem.
+
+**4. Render base:** Render 1600 px; tinta desgastada com micro-fissuras, madeira com veio, água com pequenas ondas. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic photograph, same house, same boardwalk and camera as the reference image. A traditional Costa Nova striped wooden beach house on low stilts, wide vertical stripes in turquoise, white and brick red, white window frames, tiled gable roof, a wooden boardwalk, two moliceiro boats on calm water, reeds and sand, a bicycle leaning against the wall, bright clear early-afternoon summer sun, crisp shadows, fine film grain, no people, no readable text.
+```
+Regra: a ordem das riscas (turquesa, branco, vermelho) igual nas 3 câmaras; não inventar mais casas.
+
+**6. Entrega:** 3 finais em "#083 - Casas de Portugal 12 Aveiro / final". Para reel: câmara A, 6 s, água a mexer ligeiramente e um barco a deslizar (Seedance), som de gaivotas e brisa.
+
+**Legenda**
+- EN: "Daily Study #083 · Houses of Portugal #12: Aveiro. Stripes, stilts and a summer sky: a house built like a graphic poster."
+- PT: "Daily Study #083 · Casas de Portugal #12: Aveiro. Riscas, estacas e um céu de verão: uma casa que parece um cartaz."
+
+---
+
+## #084 · Abecedário arquitetónico #8: H de Hall (terça, 18 mai)
+
+**Ideia:** oitava letra: H de Hall, o átrio de entrada. Um hall pequeno mas generoso, com pé-direito duplo, escada escultural, uma única peça de arte e luz zenital. Entrar numa casa e sentir-se bem-vindo.
+
+**1. Modelo 3D (25 min)**
+- Hall de 4 × 5 m com pé-direito de 5,5 m; paredes em reboco branco quente, piso em pedra clara com junta fina, porta de entrada em madeira com moldura.
+- Escada reta em madeira clara junto a uma parede, corrimão fino em aço negro; banco baixo em pedra ao lado da porta; um grande espelho redondo.
+- Clarabóia estreita no teto (80 cm × 3 m) a lançar luz na parede.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, da porta, o hall com o pé-direito duplo e a escada.
+- B: 40 mm, a clarabóia a lançar a faixa de luz na parede.
+- C: 85 mm, o banco de pedra e o espelho redondo.
+
+**3. Luz:** luz zenital branca-quente a entrar pela clarabóia (faixa nítida na parede), resto em penumbra suave; um ponto quente num candeeiro de parede.
+
+**4. Render base:** Render 1600 px; reboco liso com micro-variação, pedra com poros, madeira com veio. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same entrance hall, same stair and camera as the reference image. A calm double-height entrance hall with warm white plaster walls, pale stone floor, a straight light-oak staircase with a thin black steel handrail, a low stone bench, a large round mirror, a narrow skylight casting a crisp band of warm daylight on the wall, soft shadow elsewhere, serene and welcoming, fine film grain, no people, no text.
+```
+Regra: a faixa de luz na mesma parede e inclinação nas 3 câmaras; sem objetos extra.
+
+**6. Entrega:** 3 finais em "#084 - Abecedario 8 H de Hall / final". Para reel: câmara B, 5 s, a faixa de luz a deslizar devagar pela parede (edição), som de silêncio com ligeiro eco de passos.
+
+**Legenda**
+- EN: "Daily Study #084 · Architectural alphabet #8: H for Hall. The first room you meet should already feel like a welcome."
+- PT: "Daily Study #084 · Abecedário arquitetónico #8: H de Hall. A primeira divisão que se encontra já devia parecer um acolhimento."
+
+---
+
+## #085 · Produto sobre mármore ao amanhecer: uma cafeteira moka (quinta, 20 mai)
+
+**Ideia:** produto quotidiano tratado como objeto de design: uma cafeteira moka de alumínio sobre uma bancada de mármore, vapor a subir, luz rasante de amanhecer pela janela. Imagem quente e íntima.
+
+**1. Modelo 3D (20 min)**
+- Cafeteira moka de 6 chávenas (modelo gratuito ou feito com revolução + extrusão: corpo octogonal, bico, pega preta); duas chávenas brancas de café com pires; colher pequena.
+- Bancada de mármore branco com veio cinzento (2 m), um pedaço de parede com azulejo branco e uma janela desfocada ao fundo.
+- Um pano de linho dobrado; fita fina de vapor (plano com textura, ou fazer na AI).
+
+**2. Câmaras (3), 4:5**
+- A: 50 mm, ligeiramente acima, cafeteira, chávenas e pano.
+- B: 85 mm, baixo, a cafeteira de lado com o reflexo no mármore.
+- C: 100 mm, detalhe da pega e do bico, fundo muito desfocado.
+
+**3. Luz:** sol baixo de amanhecer (3200 K) vindo da janela, rasante e lateral, sombras longas na bancada; vapor a captar a luz.
+
+**4. Render base:** Render 1600 px; alumínio escovado com anisotropia, mármore com veio e leve reflexo, cerâmica brilhante. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same moka pot, same cups and camera as the reference image. A brushed aluminium octagonal moka pot with a black handle on a white marble countertop with grey veining, two white espresso cups on saucers, a folded linen cloth, a thin wisp of steam catching the light, low warm sunrise light from a window raking across the surface, long soft shadows, white tile and a blurred window behind, intimate morning mood, fine film grain, no people, no text.
+```
+Regra: o mesmo número de chávenas e posição do pano; o vapor nunca tapa a pega.
+
+**6. Entrega:** 3 finais em "#085 - Produto moka marmore / final". Para reel: câmara A, 5 s, o vapor a subir e a luz a mudar de dourada para clara (Seedance), som de café a borbulhar.
+
+**Legenda**
+- EN: "Daily Study #085 · Product at sunrise: a moka pot on marble. The first light of the day does most of the design work."
+- PT: "Daily Study #085 · Produto ao amanhecer: uma cafeteira moka sobre mármore. A primeira luz do dia faz quase todo o trabalho de design."
+
+---
+
+## #086 · Desafio de cor #8: branco-cal (sábado, 22 mai)
+
+**Ideia:** oitavo desafio de cor, e o mais difícil: o branco. Um espaço caiado quase monocromático, onde só a luz, a textura e a sombra dão volume. Paleta de brancos e cremes (não existe um branco só).
+
+**1. Modelo 3D (25 min)**
+- Sala-pátio 5 × 5 m com paredes e abóbada em cal branca, um nicho curvo, um banco corrido em cal, uma porta de madeira branqueada.
+- Um vaso grande de cerâmica branca com um ramo de oliveira, um tapete de algodão cru; chão em ladrilho branco-creme.
+- Janela arqueada com vista para um pátio com uma figueira.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, a sala inteira com a abóbada.
+- B: 50 mm, o nicho e o banco.
+- C: 85 mm, o vaso e o ramo contra a parede.
+
+**3. Luz:** sol alto e duro, uma faixa de luz brilhante no chão e uma sombra azulada suave na parede; sem cores quentes fortes, só gradações.
+
+**4. Render base:** Render 1600 px; cal com micro-relevo (bump forte), ladrilho com junta, algodão com trama. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior photograph, same whitewashed room, same arch and camera as the reference image. A serene lime-washed room with a barrel-vaulted ceiling, curved niche and built-in bench, all in layered whites and creams, a bleached wooden door, a large white ceramic vase with an olive branch, a raw cotton rug, an arched window onto a courtyard with a fig tree, strong high sun casting a bright band of light on the floor and soft blue-grey shadows on the wall, textured plaster, tonal and quiet, fine film grain, no people, no text.
+```
+Regra: nada de cores saturadas; o único verde é a oliveira e a figueira. A paleta é tirada em edição com o conta-gotas (5 brancos distintos).
+
+**6. Entrega:** 3 finais em "#086 - Desafio de cor 8 branco-cal / final". Para o carrossel: slide da paleta com `scripts/make_palette.py`. Para reel: câmara A, 5 s, a faixa de sol a deslocar-se pelo chão, som de cigarras ao longe.
+
+**Legenda**
+- EN: "Daily Study #086 · Colour challenge #8: lime white. One colour that isn't one: five whites, one patch of sun."
+- PT: "Daily Study #086 · Desafio de cor #8: branco-cal. Uma cor que afinal são cinco: cinco brancos e uma nesga de sol."
+
+---
+
+## #087 · O meu bairro #4: o café de esquina às 7 da manhã (terça, 25 mai)
+
+**Ideia:** quarto 'O meu bairro': o café da esquina a abrir. Toldo, esplanada ainda vazia com cadeiras empilhadas, luz fria da manhã e o interior aceso. Cena de rotina, calma e nostálgica.
+
+**1. Modelo 3D (25 min)**
+- Prédio de esquina de 3 pisos com café no rés-do-chão: fachada em duas faces, grande montra, porta de vidro e madeira, toldo verde-escuro, letras sem texto legível (placa em branco).
+- Esplanada: 4 mesas redondas pequenas, cadeiras de madeira dobradas e encostadas, um quadro de giz; passeio em calçada portuguesa, um candeeiro de rua, um poste de sinalização sem texto.
+- Interior: balcão, máquina de café, luzes pendentes quentes (blocos simples).
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, esquina inteira em diagonal.
+- B: 50 mm, o toldo e a montra com o interior aceso.
+- C: 85 mm, mesas e cadeiras empilhadas em primeiro plano, café desfocado atrás.
+
+**3. Luz:** primeira luz da manhã, céu azul pálido (6500 K) com ligeira névoa, interior muito quente (2700 K) a sair pela montra; contraste frio/quente.
+
+**4. Render base:** Render 1600 px; vidro com reflexos suaves, calçada molhada com brilho, madeira gasta, toldo em tecido. Guardar "0 - clay", "0 - mask id" e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic street photograph, same corner building, same café and camera as the reference image. A quiet neighbourhood corner café opening at 7 a.m., a three-storey building, large shop window glowing warm from inside, a dark green awning with a blank sign, four small round tables and stacked wooden chairs on the terrace, a chalkboard, Portuguese cobblestone pavement slightly damp, a street lamp still lit, pale blue morning light with thin mist, nostalgic and calm, fine film grain, no people, no readable text.
+```
+Regra: sem texto legível no toldo e no quadro (a AI costuma inventar); número de mesas igual entre câmaras.
+
+**6. Entrega:** 3 finais em "#087 - O meu bairro 4 cafe de esquina / final". Para reel: câmara B, 6 s, o interior a acender-se e a névoa a levantar (Seedance), som de rua a acordar e de chávenas.
+
+**Legenda**
+- EN: "Daily Study #087 · My neighbourhood #4: the corner café at 7 a.m. Chairs still stacked, the window already warm."
+- PT: "Daily Study #087 · O meu bairro #4: o café da esquina às 7 da manhã. As cadeiras ainda empilhadas e a montra já quente."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #088–#093, 27 mai–8 jun, até 24 mai).
