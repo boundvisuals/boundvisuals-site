@@ -3146,4 +3146,194 @@ Regra: sem texto na placa, nos cadernos ou no poste (a AI inventa); reflexos coe
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #100–#105, 24 jun–6 jul, até 21 jun).
+## #100 · Casa para um cliente imaginário #11: o carpinteiro de barcos (quinta, 24 jun)
+
+**Ideia:** décimo primeiro cliente imaginário: um carpinteiro de barcos que vive junto ao rio e precisa de casa e oficina sob o mesmo teto. Edifício comprido de madeira e tijolo, oficina aberta de um lado, habitação do outro, e um casco de barco em construção ao centro. Imagem de matéria: madeira, pó de serra, luz rasante.
+
+**1. Modelo 3D (25 min)**
+- Volume comprido de 16 × 7 m, empena de telhado de duas águas em chapa lacada escura; metade nascente em tijolo burro (habitação), metade poente em ripas de pinho (oficina) com portão de correr de 4 m.
+- Dentro da oficina: um casco de barco de madeira em cavaletes (bloco simples, 5 m), uma bancada, ferramentas penduradas na parede (sem pormenor).
+- Exterior: cais de tábuas até ao rio, um barco pequeno amarrado, caniço na margem.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, da margem, o edifício comprido com o cais em primeiro plano.
+- B: 35 mm, de dentro da oficina para o portão aberto, o casco em silhueta.
+- C: 70 mm, pormenor da bancada, serradura e uma plaina sobre a madeira.
+
+**3. Luz:** fim de tarde, sol rasante de poente através do portão aberto a riscar o chão de serradura; rio a refletir o céu em dourado.
+
+**4. Render base:** 1600 px. Pinho com veio e variação de cor, tijolo burro, chapa mate, água com reflexo ligeiro. Guardar "0 - clay", "0 - mask id" (madeira / tijolo / chapa / água) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A long riverside workshop-house for a boat builder: one half in exposed brick (the home), the other half clad in weathered pine slats with a large sliding door (the workshop), dark matte metal gable roof, a half-built wooden boat hull on trestles inside, sawdust on the floor, tools hanging on the wall, a timber jetty reaching the calm river with a small moored boat, warm low evening sun raking through the open door, honest and handmade, fine film grain, no people, no readable text.
+```
+Regra: o casco tem sempre o mesmo tamanho e o mesmo lado virado para a porta; uma só bancada; ferramentas sem forma reconhecível específica (a AI multiplica-as).
+
+**6. Entrega:** 3 finais em "#100 - Cliente imaginario 11 carpinteiro de barcos / final". Para reel: câmara B, 6 s, pó de serra a flutuar na faixa de sol (Seedance), som de plaina na madeira e água a bater no cais.
+
+**Legenda**
+- EN: "Daily Study #100 · Imaginary client #11: a boat builder. A workshop that opens onto the river, and a home that smells of pine."
+- PT: "Daily Study #100 · Cliente imaginário #11: o carpinteiro de barcos. Uma oficina que abre para o rio e uma casa que cheira a pinho."
+
+---
+
+## #101 · Casas de Portugal #15: Monsanto, a casa entre penedos (sábado, 26 jun)
+
+**Ideia:** a aldeia de Monsanto, na Beira Baixa, onde as casas nascem entre blocos de granito gigantes: uma parede é rocha, o telhado encosta-se a ela. Estudo da relação entre construção e pedra, sem copiar nenhuma casa concreta.
+
+**1. Modelo 3D (25 min)**
+- Dois penedos de granito arredondados (esculpe com displacement ou usa blocos deformados) de 4 e 5 m, com um vão de 2,5 m entre eles.
+- Casa de pedra de 5 × 4 m encaixada no vão: uma parede lateral é a própria rocha; as outras em granito aparelhado irregular, telhado de uma água em telha de canudo, porta de madeira baixa e uma janela pequena com grade.
+- Calçada de granito a subir em degraus, um vaso com sardinheira, uma videira a trepar.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, de baixo da rua, a casa entalada entre os dois penedos.
+- B: 50 mm, a porta e o encontro da parede com a rocha.
+- C: 85 mm, textura: liquen sobre granito e a junção da telha com a pedra.
+
+**3. Luz:** manhã limpa, sol lateral a 30°, sombras duras entre os blocos; céu azul profundo da Beira.
+
+**4. Render base:** 1600 px. Granito com liquen amarelo e cinzento, telha antiga com musgo, madeira desbotada. Guardar "0 - clay", "0 - mask id" (rocha / parede / telha / madeira / vegetação) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same house, same boulders and camera as the reference image. A small stone house wedged between two enormous rounded granite boulders in a village of the Beira Baixa, Portugal, one wall of the house is the living rock itself, irregular dressed granite walls, a single-pitch old terracotta roof with moss, a low faded wooden door and one small barred window, yellow and grey lichen on the stone, a stepped granite cobbled lane, a geranium pot and a vine, clear morning sun from the side with crisp shadows, deep blue sky, timeless and sturdy, fine film grain, no people, no text.
+```
+Regra: os dois penedos têm de manter a forma e a posição em todas as câmaras (são a assinatura); a junção da parede com a rocha tem de ficar pensada, não colada.
+
+**6. Entrega:** 3 finais em "#101 - Casas de Portugal 15 Monsanto / final". Para reel: câmara A, 5 s, nuvens muito altas a passar sobre os penedos (Seedance), som de vento e um sino distante.
+
+**Legenda**
+- EN: "Daily Study #101 · Houses of Portugal #15: Monsanto. Where the wall is the mountain and the roof leans on a boulder."
+- PT: "Daily Study #101 · Casas de Portugal #15: Monsanto. Onde a parede é a montanha e o telhado se encosta a um penedo."
+
+---
+
+## #102 · Abecedário arquitetónico #11: K de Kiosk (terça, 29 jun)
+
+**Ideia:** o quiosque de jardim: pequeno edifício autónomo em ferro e vidro, como os quiosques de refresco dos jardins portugueses do século XIX. Elemento de arquitetura minúscula, quase joia. Fundo verde, luz filtrada.
+
+**1. Modelo 3D (20 min)**
+- Planta octogonal de 4 m de diâmetro, base de pedra a 40 cm do chão, oito colunas finas de ferro fundido, cobertura em cúpula baixa de zinco com remate em pináculo.
+- Painéis de vidro com caixilharia fina em quatro lados, balcão de madeira num deles, ornamento simples de lambrequim recortado no beiral.
+- Envolvente: gravilha clara, três bancos de ferro, tílias e um canteiro de hortênsias.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, frontal, o quiosque centrado contra o verde.
+- B: 50 mm, de três quartos, o octógono e a cúpula.
+- C: 85 mm, pormenor do lambrequim e da coluna com o jardim desfocado.
+
+**3. Luz:** fim de manhã, sol a atravessar as folhas das tílias com manchas de luz no quiosque e na gravilha.
+
+**4. Render base:** 1600 px. Ferro verde-escuro com patina leve, zinco mate, madeira pintada de creme, vidro limpo com reflexo suave. Guardar "0 - clay", "0 - mask id" (ferro / zinco / vidro / madeira / vegetação) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same pavilion, same geometry and camera as the reference image. A small octagonal 19th-century garden kiosk with slender dark-green cast-iron columns, a low zinc dome with a finial, glazed panels with thin frames, a cream-painted timber counter, delicate cut-out valance under the eaves, pale gravel, three iron benches, linden trees and a bed of hydrangeas, dappled late-morning light filtering through the leaves, intimate and precious like a jewel box, fine film grain, no people, no text, no signs.
+```
+Regra: oito lados e oito colunas em todas as câmaras (a AI perde a conta); sem letreiros nem preços no balcão.
+
+**6. Entrega:** 3 finais em "#102 - Abecedario 11 K de Kiosk / final". Para reel: câmara B, 5 s, manchas de luz a mexer sobre o zinco e a gravilha (Seedance), som de folhas e pardais.
+
+**Legenda**
+- EN: "Daily Study #102 · Architectural alphabet #11: K is for Kiosk. The smallest building in the park, and the one everyone remembers."
+- PT: "Daily Study #102 · Abecedário arquitetónico #11: K de Kiosk. O edifício mais pequeno do jardim e aquele de que todos se lembram."
+
+---
+
+## #103 · Produto em betão ao fim da tarde: uma câmara analógica (quinta, 1 jul)
+
+**Ideia:** produto sobre betão cofrado com luz quente e baixa, para mostrar textura e sombra comprida. Uma câmara analógica de corpo metálico e pele preta, com uma lente curta. Imagem de objeto, com tom de arquitetura.
+
+**1. Modelo 3D (20 min)**
+- Câmara de corpo rectangular (bloco com chanfros), pele texturada, topo metálico, lente cilíndrica com anéis; usa um modelo livre simples ou faz o bloco tu.
+- Plano de betão cofrado de 80 × 50 cm com marcas de tábua e um degrau; um rolo de filme e uma folha seca de oliveira como escala.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, de três quartos, a câmara toda com o degrau de betão por trás.
+- B: 100 mm, macro, os anéis da lente e o topo metálico.
+- C: 50 mm, rasante ao plano, a sombra comprida da câmara no betão.
+
+**3. Luz:** sol de fim de tarde a 8° pela esquerda, quente (3500 K), sombra muito comprida; sombra do lado oposto levemente azulada.
+
+**4. Render base:** 1600 px. Betão com poros e marcas de tábua, metal escovado, pele com micro-granulação. Guardar "0 - clay", "0 - mask id" (corpo / lente / metal / betão) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same object, same geometry and camera as the reference image. A vintage-style 35mm film camera with black textured leatherette, brushed metal top plate and a short lens with knurled rings, resting on board-marked cast concrete with a small step, a roll of film and a dry olive leaf beside it, low warm late-afternoon raking sun from the left, long soft shadows, subtle cool shadow fill, tactile and quiet, shallow depth of field, fine film grain, no readable text, no logos, no brand engraving.
+```
+Regra: sem gravação nem marca na câmara (a AI inventa logótipos); a mesma lente nas três; a sombra comprida tem de apontar para o mesmo lado.
+
+**6. Entrega:** 3 finais em "#103 - Produto 4 camara analogica / final". Para reel: câmara C, 5 s, a sombra a crescer devagar no betão (Seedance), som de obturador a disparar uma vez no fim.
+
+**Legenda**
+- EN: "Daily Study #103 · Product study: an analogue camera on raw concrete. Low sun, long shadow, one frame left on the roll."
+- PT: "Daily Study #103 · Estudo de produto: uma câmara analógica em betão bruto. Sol baixo, sombra comprida, uma fotografia por tirar no rolo."
+
+---
+
+## #104 · Desafio de cor #11: vinho-bordeaux (sábado, 3 jul)
+
+**Ideia:** décimo primeiro desafio de cor: um interior em tons de vinho, madeira escura e luz quente, para um carrossel com paleta. Uma sala de provas de vinho pequena, com parede lacada bordeaux, adega à vista e balcão de nogueira.
+
+**1. Modelo 3D (20 min)**
+- Sala de 5 × 4 m: parede do fundo com lacado bordeaux profundo brilhante, rodapé e portas de nogueira, balcão corrido de nogueira com tampo de pedra escura, três bancos altos de couro.
+- Adega envidraçada embutida numa parede lateral com garrafas deitadas (instâncias simples), três copos e uma garrafa no balcão; candeeiro pendente de latão.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da porta, a parede bordeaux inteira com o balcão.
+- B: 50 mm, balcão com copos e a adega ao lado.
+- C: 100 mm, o tampo de pedra com o reflexo da luz e o vinho no copo.
+
+**3. Luz:** noite, só luz quente (2700 K) do candeeiro e da adega, parede lacada a refletir em degradé suave.
+
+**4. Render base:** 1600 px. Lacado brilhante com reflexo difuso, nogueira escura com veio, couro com vinco, vidro da adega com reflexo ténue. Guardar "0 - clay", "0 - mask id" (parede / madeira / pedra / vidro / couro) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A small intimate wine-tasting room with a deep glossy burgundy lacquered back wall, dark walnut joinery and counter with a dark stone top, three tall leather stools, a built-in glazed wine cellar with bottles lying on their sides, a brass pendant lamp, three glasses and one bottle on the counter, warm 2700K light only, rich reflections, sensual and calm, fine film grain, no people, no readable labels, no text.
+```
+Regra: o bordeaux tem de ser o MESMO nas três (conta-gotas, aproximadamente #5a1a2b); sem rótulos legíveis nas garrafas.
+
+**6. Entrega:** 3 finais em "#104 - Desafio de cor 11 vinho-bordeaux / final" + 1 slide de paleta (faço-o eu a partir das tuas finais). Para reel: câmara C, 5 s, a luz a deslizar no tampo e o vinho a girar no copo (Seedance).
+
+**Legenda**
+- EN: "Daily Study #104 · Colour challenge #11: burgundy. A wall the colour of a good red, and nothing in the room to argue with it."
+- PT: "Daily Study #104 · Desafio de cor #11: vinho-bordeaux. Uma parede da cor de um bom tinto e nada na sala que a contrarie."
+
+---
+
+## #105 · Brief de concurso #6: um refúgio de montanha na Serra da Estrela (terça, 6 jul)
+
+**Ideia:** sexto "concurso imaginário": um refúgio para oito pessoas a 1800 m, em granito e madeira, pensado para o inverno: volume baixo, telhado coberto de neve e uma janela corrida virada ao vale. Imagem de concurso, pura e dramática.
+
+**1. Modelo 3D (25 min)**
+- Volume compacto de 10 × 6 m, base de granito aparelhado até 1,2 m, o resto em madeira de lariço escura; telhado de duas águas com pouca inclinação.
+- Janela corrida de 5 m virada ao vale, alpendre lateral lenhado, chaminé de pedra.
+- Terreno em encosta com pedras soltas e urze rasteira (displacement); neve em cima do telhado e nas pedras (camada branca); trilho marcado.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, de baixo, o refúgio pequeno sobre a encosta com o vale ao fundo.
+- B: 35 mm, do alpendre, a janela corrida com a luz quente de dentro.
+- C: 70 mm, o canto granito/madeira com neve e a lenha.
+
+**3. Luz:** hora azul ao fim do dia: céu azul profundo, luz quente das janelas, neve com reflexo frio; versão opcional ao amanhecer.
+
+**4. Render base:** 1600 px. Granito escuro, lariço tratado mate, neve com subsurface leve. Guardar "0 - clay", "0 - mask id" (granito / madeira / neve / céu / janela) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural competition image, same building, same geometry and camera as the reference image. A small mountain refuge in the Serra da Estrela, Portugal, with a granite base and dark larch timber walls, a low gabled roof covered in snow, a long horizontal window glowing warm from inside, a stone chimney with a thin plume of smoke, stacked firewood, windswept heather and boulders dusted with snow, a faint footpath, deep blue hour sky over a distant valley, quiet and powerful, fine film grain, no people, no text.
+```
+Regra: janela corrida do mesmo comprimento e do mesmo lado em todas as câmaras; a neve a cobrir igualmente; um só fumo, fino.
+
+**6. Entrega:** 3 finais em "#105 - Concurso 6 Refugio de montanha / final". Para reel: câmara A, 6 s, fumo da chaminé e neve a cair muito de leve (Seedance), som de vento e lume a crepitar.
+
+**Legenda**
+- EN: "Daily Study #105 · Imaginary competition #6: a mountain refuge. A warm window, eight beds and a very long way down."
+- PT: "Daily Study #105 · Concurso imaginário #6: um refúgio de montanha. Uma janela quente, oito camas e um vale muito lá em baixo."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #106–#111, 8–20 jul, até 5 jul).
