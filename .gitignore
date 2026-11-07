@@ -4,3 +4,4 @@ __pycache__/
 reports/*/story/motion-*.mp4
 reports/*/story/motion-*.jpg
 reports/*/story/motion-*.part.mp4
+reports/*/story/.*.crop

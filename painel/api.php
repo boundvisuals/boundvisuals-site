@@ -198,12 +198,13 @@ if ($a === 'crops' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // crop editor:
     if (is_array($c) && count($c) === 3) $cr[] = array_map(fn($v) => round(max(0, min(1, (float)$v)), 3), $c);
   }
   if ($stem === '' || strlen($stem) > 200 || $proj === '' || count($cr) < 1 || count($cr) > 9) { http_response_code(400); echo '{"error":"bad crops"}'; exit; }
-  $kind = ($in['kind'] ?? '') === 'story' ? 'story' : 'post';
-  $ck = ($kind === 'story' ? 'story|' : '') . $stem;
+  $kind = in_array(($in['kind'] ?? ''), ['story', 'teaser'], true) ? $in['kind'] : 'post';
+  $ck = ($kind === 'post' ? '' : "$kind|") . $stem;
   $hist = read_store("$store/crops_history.json.php") ?? [];
   $hist[$ck] = array_slice(array_merge([$in['previous'] ?? null], $hist[$ck] ?? []), 0, 10);   // undo stack
   write_store("$store/crops_history.json.php", $hist);
   $cur[$ck] = ['project' => $proj, 'kind' => $kind, 'crops' => $cr, 'at' => gmdate('c')];
+  if ($kind === 'teaser') $cur[$ck]['src_stem'] = substr((string)($in['src_stem'] ?? ''), 0, 200);
   if (!empty($in['item_key'])) { $rv = read_store("$store/reviews.json.php") ?? []; $rv[(string)$in['item_key']] = ['how' => 'editado', 'at' => gmdate('c')]; write_store("$store/reviews.json.php", $rv); }
   write_store("$store/crops.json.php", $cur);
   echo json_encode(['ok' => true, 'robot' => kick_robot()]);

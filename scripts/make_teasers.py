@@ -13,7 +13,7 @@ disappeared and they were never approved).
 
 usage: python scripts/make_teasers.py [YYYY-MM-DD from]   → prints number of changed queue files/images
 """
-import sys, os, re, glob, datetime, pathlib, io
+import json, sys, os, re, glob, datetime, pathlib, io
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
@@ -69,6 +69,26 @@ def save_if_changed(img, path):
 
 
 MID_TIMES = ["12:00", "15:00", "17:30"]
+TCROPS = (yaml.safe_load(open("config/teaser_crops.yml")) or {}).get("teaser_crops", {}) if os.path.exists("config/teaser_crops.yml") else {}
+
+
+def teaser_slide(pr, stem, crop):
+    """Vítor's own 4:5 framing (Painel) → 1080x1350 from the full-res final on the server (preview only as fallback)."""
+    import pathlib
+    src = None
+    d = pathlib.Path(os.path.expanduser(f"~/bv/src/{pr}"))
+    if d.exists():
+        for p in d.rglob("*"):
+            if p.is_file() and "_".join(p.relative_to(d).with_suffix("").parts).replace(" ", "_") == stem:
+                src = p; break
+    im = Image.open(src or f"reports/{pr}/preview/{stem}.jpg").convert("RGB")
+    W, H = im.size
+    cx, cy, h = crop
+    ch = h * H; cw = ch * 0.8
+    if cw > W:
+        cw = W; ch = cw / 0.8
+    x0 = min(max(cx * W - cw / 2, 0), W - cw); y0 = min(max(cy * H - ch / 2, 0), H - ch)
+    return im.crop((round(x0), round(y0), round(x0 + cw), round(y0 + ch))).resize((1080, 1350), Image.LANCZOS)
 
 
 def src_of_story(fn):
@@ -86,7 +106,7 @@ def main():
                            each crop used once in the whole calendar
     19:00 the post · 20:30 'NEW ON THE FEED'.
     Stories of other projects on post days are removed. Reels are untouched. Today is never touched."""
-    since = sys.argv[1] if len(sys.argv) > 1 else (datetime.date.today() + datetime.timedelta(days=1)).isoformat()
+    since = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
     T = titles()
     changed = 0
     weeks = []
@@ -158,7 +178,20 @@ def main():
                 if not src:
                     continue
                 fn = f"teaser-{d}-{k}.jpg"
-                if save_if_changed(frame(src, k, T.get(pr, pr), str(p.get("time", "19:00"))),
+                tc = TCROPS.get(fn[:-4])
+                mark = f"reports/{pr}/story/.{fn}.crop"
+                sig = json.dumps([tc, str(p.get("time", "19:00")), T.get(pr, pr)]) if tc else None
+                if tc and os.path.exists(mark) and open(mark).read() == sig and os.path.exists(f"reports/{pr}/story/{fn}"):
+                    pass                                    # Vítor's framing already rendered (full-res) → keep it
+                elif tc:
+                    try:
+                        if save_if_changed(frame(teaser_slide(pr, tc["stem"], tc["crop"]), k, T.get(pr, pr), str(p.get("time", "19:00"))),
+                                           f"reports/{pr}/story/{fn}"):
+                            changed += 1
+                        open(mark, "w").write(sig)
+                    except Exception as e:
+                        print("teaser crop failed", fn, e, file=sys.stderr)
+                elif save_if_changed(frame(src, k, T.get(pr, pr), str(p.get("time", "19:00"))),
                                    f"reports/{pr}/story/{fn}"):
                     changed += 1
                 if not fresh(pr, fn):

@@ -403,7 +403,7 @@ function renderCal(){
   $("#v-cal").querySelectorAll("[data-un]").forEach(b=>b.onclick=e=>{e.stopPropagation();approve([b.dataset.un],b,true)});
   $("#v-cal").querySelectorAll("[data-one]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.one);if(!reviewed(it)){openItem(it.key);toast("Primeiro aceita ou edita os recortes");return}approve([it.key],b)});
   $("#v-cal").querySelectorAll("[data-sdel]").forEach(b=>b.onclick=e=>{e.stopPropagation();delItem(b.dataset.sdel)});
-  $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,"story",it.story_idx||0,true)});
+  $("#v-cal").querySelectorAll("[data-scrop]").forEach(b=>b.onclick=e=>{e.stopPropagation();const it=allItems().find(x=>x.key===b.dataset.scrop);cropEditor(it,it.teaser?"teaser":"story",it.story_idx||0,true)});
 }
 function actBtns(i){const st=effStatus(i);if(i.link||st==="published"||st==="skipped")return"";
   return st==="approved"?`<button class="btn sm" data-un="${esc(i.key)}" title="Desaprovar">↺ Desaprovar</button>`:`<button class="btn sm pri" data-one="${esc(i.key)}">✓ Aprovar</button>`}
@@ -483,7 +483,7 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
   const cs=$("#cSave");if(cs)cs.onclick=async()=>{const old={en:i.caption,pt:i.caption_pt},nw={en:$("#cEN").value.trim(),pt:$("#cPT").value.trim()};cs.disabled=true;
     const save=async v=>{const r=await fetch("api.php?a=caption",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,...v})});if(!r.ok)throw 0;i.caption=v.en;i.caption_pt=v.pt};
     try{await save(nw);toast("Legenda guardada ✓");undoBar("Legenda guardada",()=>save(old).then(()=>toast("Legenda reposta ↺")))}catch(e){toast("Não consegui guardar")}cs.disabled=false};
-  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,"story",i.story_idx||0,true);
+  $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,i.teaser?"teaser":"story",i.story_idx||0,true);
   const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
   const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
 function closeModal(){$("#modal").classList.remove("on");document.body.style.overflow="";const v=$("#mbox video");if(v)v.pause()}
@@ -712,7 +712,7 @@ function cropEditor(it,mode,startSel,single){mode=mode||"post";const AR=mode==="
   if(!single)$("#cdel").onclick=()=>{if(C.length<=1)return toast("Fica pelo menos 1");C.splice(sel,1);sel=0;draw()};
   $("#csave").onclick=async()=>{const b=$("#csave");b.disabled=true;
     C=C.map(c=>{const g=geom(c);return[+((g.x+g.w/2)/g.W).toFixed(3),+((g.y+g.h/2)/g.H).toFixed(3),+(g.h/g.H).toFixed(3)]});
-    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,crops:C,kind:mode,item_key:it.key,previous:(mode==="story"?it.story_crops:it.crops)})});if(!r.ok)throw 0;const j=await r.json();
+    try{const r=await fetch("api.php?a=crops",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project:it.project,stem:it.stem,src_stem:it.src_stem||"",crops:C,kind:mode,item_key:it.key,previous:(mode==="story"?it.story_crops:it.crops)})});if(!r.ok)throw 0;const j=await r.json();
       const prevC=(mode==="story"?it.story_crops:it.crops);if(mode==="story")it.story_crops=C;else it.crops=C;D.reviews=D.reviews||{};D.reviews[it.key]={how:"editado"};
       allItems().filter(x=>x.stem===it.stem&&x.project===it.project).forEach(x=>{if(mode==="story")x.story_crops=C;else x.crops=C});
       LC[it.project+"|"+it.stem+"|"+mode]={c:C,t:Date.now()};saveLC();

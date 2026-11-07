@@ -151,6 +151,7 @@ def last_log():
     return open(p, encoding="utf-8").read().strip().splitlines() if os.path.exists(p) else []
 
 
+TCROPS = (yaml.safe_load(open("config/teaser_crops.yml")) or {}).get("teaser_crops", {}) if os.path.exists("config/teaser_crops.yml") else {}
 SCROPS = (yaml.safe_load(open("config/story_crops.yml")) or {}).get("story_crops", {}) if os.path.exists("config/story_crops.yml") else {}
 CROPS = (yaml.safe_load(open("config/crops.yml")) or {}).get("crops", {}) if os.path.exists("config/crops.yml") else {}
 
@@ -189,6 +190,28 @@ def story_info(it, out):
     """Story → its source image + index, so the 9:16 crop can be edited in the panel."""
     if it.get("type") != "story":
         return {}
+    t = re.match(r"(teaser-(\d{4}-\d\d-\d\d)-([ab]))\.jpg$", it["file"])
+    if t:   # 'HOJE' / 'NOVO NO FEED' story → its own 4:5 framing of the post image (edited in the Painel)
+        tid, d = t.group(1), t.group(2)
+        tc = TCROPS.get(tid)
+        if tc:
+            stem, crop = tc["stem"], tc["crop"]
+        else:
+            post = next((p for f in sorted(glob.glob("queue/week-*.yml")) for p in (yaml.safe_load(open(f)) or [])
+                         if str(p["date"]) == d and p.get("project") == it["project"]), None)
+            sl = [x for x in (post or {}).get("slides", []) if not x.endswith("-full.jpg")]
+            if not sl:
+                return {}
+            x = sl[1] if t.group(3) == "a" and len(sl) > 1 else sl[0]
+            stem = re.sub(r"-\d+\.jpg$", "", x); n = int(re.search(r"-(\d+)\.jpg$", x).group(1)) - 1
+            pc = CROPS.get(stem, [])
+            crop = pc[n] if n < len(pc) else [0.5, 0.5, 1.0]
+        src = f"reports/{it['project']}/preview/{stem}.jpg"
+        if not os.path.exists(src):
+            return {}
+        w, h = Image.open(src).size
+        lg = thumb(src, out, f"portfolio/{it['project']}/lg_{stem}.jpg", (1400, 1400))
+        return {"stem": tid, "src_stem": stem, "teaser": True, "story_idx": 0, "orig": lg, "orig_ratio": w / h, "crops": [crop]}
     m = re.match(r"(.+)-s(\d\d)\.jpg$", it["file"])
     if not m:
         return {}
@@ -445,6 +468,16 @@ def apply_crops(path):
     changed, story_changed = set(), False
     for key, e in edits.items():
         new = [[round(float(v), 3) for v in c] for c in e.get("crops", [])]
+        if key.startswith("teaser|"):
+            tid = key[7:]
+            tcfg = (yaml.safe_load(open("config/teaser_crops.yml")) or {}) if os.path.exists("config/teaser_crops.yml") else {}
+            tcr = tcfg.setdefault("teaser_crops", {})
+            src_stem = e.get("src_stem") or (tcr.get(tid) or {}).get("stem")
+            if new and src_stem and (tcr.get(tid) or {}).get("crop") != new[0]:
+                tcr[tid] = {"stem": src_stem, "crop": new[0]}
+                open("config/teaser_crops.yml", "w").write("# 4:5 framing of the HOJE/NOVO NO FEED stories, edited in the Painel (make_teasers renders them from the full-res final).\n"
+                                                           + yaml.safe_dump(tcfg, allow_unicode=True, sort_keys=False, default_flow_style=None, width=200))
+            continue
         if key.startswith("story|"):
             stem = key[6:]
             if new and scr.get(stem) != new:
