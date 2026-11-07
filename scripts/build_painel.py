@@ -138,12 +138,12 @@ def thumb(src, out_dir, rel, size):
     dst = os.path.join(out_dir, "thumbs", rel)
     if not os.path.exists(src):
         return None
-    if not os.path.exists(dst):
+    if not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst):   # re-made after crop edits
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         im = Image.open(src).convert("RGB")
         im.thumbnail(size)
         im.save(dst, quality=78, optimize=True, progressive=True)
-    return "thumbs/" + rel
+    return "thumbs/" + rel + "?v=" + str(int(os.path.getmtime(dst)))
 
 
 def last_log():
