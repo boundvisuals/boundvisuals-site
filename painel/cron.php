@@ -227,6 +227,7 @@ if (in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30') {
 if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30'
     && ($li['expires_at'] ?? PHP_INT_MAX) > time()) {
   $lst = rs("$store/linkedin.json.php") ?? [];
+  if (($lst['v'] ?? '') !== '2') { unset($lst['last_day'], $lst['err_ts']); $lst['v'] = '2'; } // reset after API-version fix
   if (($lst['last_day'] ?? '') !== date('Y-m-d') && (time() - ($lst['err_ts'] ?? 0)) > 3600) {
     $cand = null;
     foreach (array_reverse($items) as $it) {
@@ -234,7 +235,7 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)da
       $cand = $it; break;
     }
     if ($cand) {
-      $V = '202509';
+      $V = '202610';
       $H = ["Authorization: Bearer {$li['access_token']}", "LinkedIn-Version: $V", 'X-Restli-Protocol-Version: 2.0.0', 'Content-Type: application/json'];
       $req = function ($method, $url, $body = null, $headers = null) use ($H) {
         $ch = curl_init($url);
