@@ -143,7 +143,20 @@ def publish_events(now):
         return []
     out = []
     for key, rec in state.items():
-        if key.startswith("_") or key.count("_") != 1 or not isinstance(rec, dict) or not rec.get("ig"):
+        if key.startswith("_") or not isinstance(rec, dict):
+            continue
+        if rec.get("inflight") and not rec.get("ig"):          # reserved before media_publish but never confirmed
+            try:
+                age = now - datetime.datetime.fromisoformat(str(rec.get("at"))).astimezone(TZ)
+            except Exception:
+                continue
+            if datetime.timedelta(minutes=10) <= age <= datetime.timedelta(hours=24):
+                out.append({"id": f"uncertain-{key}", "title": f"Verifica o Instagram: {nice_project(key.split('_', 1)[-1])}",
+                            "body": "O robô começou a publicar mas não recebeu confirmação" + (f" ({rec['inflight_error'][:80]})" if rec.get("inflight_error") else "") +
+                                    ". Abre o Instagram: se o post lá está, não faças nada; se não está, diz-me em Ideias e eu libero a reserva. Não publica de novo sozinho, para não duplicar.",
+                            "url": "/painel/"})
+            continue
+        if key.count("_") != 1 or not rec.get("ig"):
             continue
         try:
             at = datetime.datetime.fromisoformat(str(rec.get("at"))).astimezone(TZ)

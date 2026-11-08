@@ -166,6 +166,7 @@ foreach ($items as $it) {
     logline("PUBLISHED {$pk}");
   } catch (Exception $e) {
     logline("ERR {$pk}: " . $e->getMessage());
+    if (!empty($state[$pk]['inflight'])) $state[$pk]['inflight_error'] = substr($e->getMessage(), 0, 160);   // stays reserved (no double post); notify.py asks Vítor to check Instagram
     $ck = $it['type'] === 'feed' ? '_cooldown_until' : ($it['type'] === 'reel' ? '_cooldown_reel_until' : '_cooldown_social_until');   // a reel error no longer stops stories
     $state[$ck] = date('c', $now + 3 * 3600);
     ws("$store/published.json.php", $state);
