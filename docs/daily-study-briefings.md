@@ -3336,4 +3336,193 @@ Regra: janela corrida do mesmo comprimento e do mesmo lado em todas as câmaras;
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #106–#111, 8–20 jul, até 5 jul).
+## #106 · Casa para um cliente imaginário #12: a astrónoma amadora (quinta, 8 jul)
+
+**Ideia:** décimo segundo "cliente imaginário": uma professora reformada que passa as noites a observar o céu. Casa pequena de um piso numa encosta sem poluição luminosa, com uma plataforma-terraço no telhado para o telescópio e um quarto virado ao céu.
+
+**1. Modelo 3D (25 min)**
+- Volume de 12 × 6 m em reboco areado, telhado plano com acesso por escada exterior metálica estreita.
+- Plataforma-terraço de 4 × 4 m com guarda baixa em aço escuro e uma pequena cúpula (meia esfera, 1,8 m) metálica fosca.
+- Janela alta e estreita virada a norte (sala), clarabóia redonda no quarto; muro de pedra baixo à volta e três oliveiras (instâncias simples).
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, do caminho, a casa baixa com a cúpula no telhado e o céu a escurecer.
+- B: 35 mm, do terraço, o telescópio apontado ao céu com a escada em primeiro plano.
+- C: 50 mm, a clarabóia redonda vista de fora, com luz âmbar a sair.
+
+**3. Luz:** hora azul tardia, depois do pôr do sol: céu azul-marinho com as primeiras estrelas, só luz quente de dentro e uma pequena lanterna vermelha no terraço (para não estragar a visão noturna).
+
+**4. Render base:** 1600 px. Reboco areado mate, aço escuro, pedra do muro. Guardar "0 - clay", "0 - mask id" (reboco / metal / pedra / vidro / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural twilight photograph, same building, same geometry and camera as the reference image. A small single-storey sand-plastered house on a quiet hillside, a flat roof terrace with a slim dark steel stair, a small matte metal observing dome and a telescope pointed at the sky, a tall narrow window and a round skylight glowing amber from inside, a low dry-stone wall and three olive trees, deep navy sky with the first stars appearing, a tiny red lantern on the terrace, calm and dark, fine film grain, no people, no text.
+```
+Regra: a cúpula no mesmo sítio e do mesmo tamanho em todas as câmaras; as estrelas discretas (nada de Via Láctea exagerada); só um ponto de luz vermelha.
+
+**6. Entrega:** 3 finais em "#106 - Cliente imaginario 12 a astronoma / final". Para reel: câmara B, 6 s, as estrelas a surgirem devagar e a cúpula a rodar um pouco (Seedance), som de grilos e silêncio.
+
+**Legenda**
+- EN: "Daily Study #106 · Imaginary client #12: the amateur astronomer. A house that keeps the lights low, so the sky can have the evening."
+- PT: "Daily Study #106 · Cliente imaginário #12: a astrónoma amadora. Uma casa que mantém as luzes baixas para o céu ficar com a noite."
+
+---
+
+## #107 · Casas de Portugal #16: Lezíria do Tejo, a casa do campino (sábado, 10 jul)
+
+**Ideia:** décima sexta "Casa de Portugal": a casa baixa e comprida de campino na lezíria ribatejana, caiada de branco com faixa amarela, chaminé grande, telhado de telha antiga e um curral de cavalos ao lado. Planície, horizonte baixo e céu enorme.
+
+**1. Modelo 3D (20 min)**
+- Corpo de 14 × 5 m, um piso, paredes caiadas com rodapé amarelo-ocre (faixa de 0,9 m); telhado de duas águas com beiral curto.
+- Chaminé larga e alta de secção quadrada com remate; portas e janelas pequenas em madeira azul-ferrete.
+- Anexo aberto (alpendre) com colunas de madeira; curral com cerca de troncos e dois cavalos (modelo simples ou silhuetas); terreno plano com tufos de erva alta e um sobreiro isolado.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, baixa, a casa comprida a ocupar a imagem com o horizonte a um terço de baixo.
+- B: 50 mm, a chaminé e o canto da casa com o rodapé amarelo.
+- C: 85 mm, a porta azul com o alpendre e os cavalos desfocados atrás.
+
+**3. Luz:** fim de tarde de verão, sol baixo e dourado a bater de lado, sombras muito longas, céu limpo com uma ou duas nuvens altas.
+
+**4. Render base:** 1600 px. Cal com micro-irregularidade, telha envelhecida, madeira lavada. Guardar "0 - clay", "0 - mask id" (cal / rodapé / telha / madeira / terra / erva) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A long low whitewashed campino house on the flat Tejo floodplain in Portugal, a warm ochre-yellow band along the base of the walls, a wide square chimney, aged clay roof tiles, small dark-blue wooden doors and windows, an open timber porch, a log-fence paddock with two horses, tall dry grass, a single cork oak, huge low-horizon sky with a few high clouds, golden late-afternoon light with long shadows, calm and rural, fine film grain, no text.
+```
+Regra: a faixa amarela com a mesma altura nas três; só dois cavalos, sempre os mesmos, longe da câmara em A e B.
+
+**6. Entrega:** 3 finais em "#107 - Casas de Portugal 16 Lezíria / final". Para reel: câmara A, 6 s, vento na erva alta e as sombras a esticarem (Seedance), som de campo e cavalos ao longe.
+
+**Legenda**
+- EN: "Daily Study #107 · Houses of Portugal #16: the Lezíria. A house as low as the horizon and a sky that does the rest."
+- PT: "Daily Study #107 · Casas de Portugal #16: Lezíria do Tejo. Uma casa tão baixa como o horizonte e um céu que faz o resto."
+
+---
+
+## #108 · Abecedário arquitetónico #12: L de Loggia (terça, 13 jul)
+
+**Ideia:** décima segunda letra: **L de Loggia**, a galeria coberta aberta de um lado, entre o dentro e o fora. Uma loggia de dois pisos numa casa urbana, com arcos de tijolo, luz rasante e um banco corrido.
+
+**1. Modelo 3D (20 min)**
+- Loggia de 9 × 3 m, dois pisos, cinco arcos de tijolo à vista (raio 1 m) em cada piso, pilares quadrados; piso em lajes de pedra clara; teto abobadado simples.
+- Banco corrido em pedra de um lado, vasos de barro com limoeiros, uma escada estreita ao fundo, parede do fundo caiada.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, frontal, o ritmo dos arcos nos dois pisos.
+- B: 35 mm, em perspetiva ao longo da galeria, linhas de fuga até à escada.
+- C: 85 mm, um arco com o banco e o limoeiro, a luz a riscar o piso.
+
+**3. Luz:** fim de manhã, sol alto a entrar de lado e a desenhar arcos de luz no piso, interior em sombra suave.
+
+**4. Render base:** 1600 px. Tijolo cozido com juntas claras, pedra clara, cal. Guardar "0 - clay", "0 - mask id" (tijolo / pedra / cal / vaso / folhagem) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A two-storey loggia with five exposed red-brick round arches on each level, square brick piers, pale stone floor, a simple barrel-vaulted ceiling, a long stone bench, terracotta pots with lemon trees, a whitewashed back wall, a narrow stair at the far end, late-morning sun casting crisp arched shadows across the floor, calm and quiet, fine film grain, no people, no text.
+```
+Regra: cinco arcos por piso em todas as câmaras; a sombra dos arcos coerente com o sol vindo da mesma direção.
+
+**6. Entrega:** 3 finais em "#108 - Abecedario 12 L de Loggia / final". Para reel: câmara B, 5 s, os arcos de luz a deslizarem no piso (Seedance), som de passos distantes e pássaros.
+
+**Legenda**
+- EN: "Daily Study #108 · Architectural alphabet #12: L is for Loggia. Neither inside nor outside, which is the best place to be at noon."
+- PT: "Daily Study #108 · Abecedário arquitetónico #12: L de Loggia. Nem dentro nem fora, que é o melhor sítio para estar ao meio-dia."
+
+---
+
+## #109 · Produto em luz lateral: um despertador de latão sobre carvalho (quinta, 15 jul)
+
+**Ideia:** produto simples e muito fotográfico: um despertador mecânico clássico em latão escovado sobre uma tábua de carvalho, com luz rasante de manhã. Textura, reflexos controlados e profundidade de campo curta.
+
+**1. Modelo 3D (15 min)**
+- Corpo cilíndrico de 9 cm com aro em chanfro, mostrador branco com números simples, dois sinos pequenos no topo e martelo; dois pés curtos.
+- Superfície: tábua de carvalho (60 × 40 cm) com veio; fundo plano em parede de cal cinzenta clara a 40 cm.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, ¾ de cima, o relógio inteiro na tábua com a parede ao fundo.
+- B: 100 mm, macro do aro de latão com o reflexo da janela.
+- C: 135 mm, os sinos e o martelo, o resto desfocado.
+
+**3. Luz:** uma janela larga à esquerda, luz suave e rasante de manhã (5200 K), cartão branco à direita para abrir sombras; sombra alongada do relógio sobre o carvalho.
+
+**4. Render base:** 1800 px. Latão escovado com anisotropia leve, vidro do mostrador com reflexo ténue, carvalho mate. Guardar "0 - clay", "0 - mask id" (latão / mostrador / madeira / parede) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same object, same geometry and camera as the reference image. A classic mechanical alarm clock in brushed brass with a white dial, simple black numerals and two small bells on top, standing on an oak board with visible grain, a pale grey limewashed wall behind, soft raking morning light from the left with a long gentle shadow, shallow depth of field, calm and tactile, fine film grain, no text other than the clock numerals.
+```
+Regra: os números do mostrador limpos e iguais nas três; a hora a marcar sempre 6:50; sem marca nem logótipo.
+
+**6. Entrega:** 3 finais em "#109 - Produto 7 despertador / final". Para reel: câmara B, 4 s, o ponteiro dos segundos a avançar e a luz a subir devagar (Seedance), som de tique-taque.
+
+**Legenda**
+- EN: "Daily Study #109 · Product, raking light: a brass alarm clock. Ten minutes before it rings, the room is already awake."
+- PT: "Daily Study #109 · Produto em luz lateral: um despertador de latão. Dez minutos antes de tocar, a sala já está acordada."
+
+---
+
+## #110 · Desafio de cor #12: verde-garrafa (sábado, 17 jul)
+
+**Ideia:** décimo segundo desafio de cor: uma biblioteca privada pequena com estantes e portas em verde-garrafa profundo, latão e couro castanho, para um carrossel com paleta.
+
+**1. Modelo 3D (20 min)**
+- Sala de 4,5 × 4 m: estantes embutidas lacadas em verde-garrafa do chão ao teto numa parede inteira, escada de biblioteca em madeira, secretária de carvalho escuro, poltrona de couro castanho.
+- Lombadas simples (caixas com cores sóbrias), candeeiro de mesa em latão com cúpula verde, tapete liso, janela estreita com cortina fina.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da porta, a parede de estantes inteira e a poltrona.
+- B: 50 mm, secretária com candeeiro e livros.
+- C: 100 mm, as lombadas e o puxador de latão da escada.
+
+**3. Luz:** fim de tarde de inverno, luz quente do candeeiro (2700 K) com claridade fria da janela, verde a brilhar nas zonas de luz e a quase preto nas sombras.
+
+**4. Render base:** 1600 px. Lacado verde acetinado, madeira escura, couro com vinco, latão escovado. Guardar "0 - clay", "0 - mask id" (lacado / madeira / couro / latão / livros) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A small private library with built-in floor-to-ceiling bookshelves lacquered deep bottle green, a rolling wooden library ladder, a dark oak desk with a brass desk lamp and green shade, a worn brown leather armchair, rows of muted book spines, a narrow window with a sheer curtain letting in cool winter light, warm lamp glow, rich and quiet, fine film grain, no people, no readable text.
+```
+Regra: o verde-garrafa é o MESMO nas três (conta-gotas, aproximadamente #1f3d33); lombadas sem texto legível.
+
+**6. Entrega:** 3 finais em "#110 - Desafio de cor 12 verde-garrafa / final" + 1 slide de paleta (faço-o eu a partir das tuas finais). Para reel: câmara A, 5 s, o pó a flutuar na luz da janela (Seedance), som de página a virar.
+
+**Legenda**
+- EN: "Daily Study #110 · Colour challenge #12: bottle green. A room that has read everything and says nothing."
+- PT: "Daily Study #110 · Desafio de cor #12: verde-garrafa. Uma sala que leu tudo e não diz nada."
+
+---
+
+## #111 · O meu bairro #6: a barbearia da esquina ao fim da tarde (terça, 20 jul)
+
+**Ideia:** sexta cena do "meu bairro": a barbearia pequena de esquina, com tabuleta antiga, cadeira de couro vermelho e a luz a acender-se à hora de fecho. Cena familiar, quente, com reflexos no passeio.
+
+**1. Modelo 3D (25 min)**
+- Esquina de dois pisos: loja ao nível da rua com montra grande e porta de madeira, painel em azulejo verde até 1 m, tabuleta em letras recortadas (sem texto legível) e candeeiro de parede.
+- Dentro (visível pela montra): uma cadeira de barbeiro em couro vermelho, espelho comprido, prateleira com frascos; no passeio, calçada portuguesa, bicicleta encostada e um poste de rua.
+- Andar de cima com duas janelas de guilhotina e estendal pequeno.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da outra esquina da rua, o conjunto da loja e do passeio.
+- B: 50 mm, a montra com a cadeira e o espelho iluminados.
+- C: 85 mm, a bicicleta e o azulejo verde com o reflexo da luz da montra.
+
+**3. Luz:** hora azul no fim do dia, após uma chuvada leve: montra e candeeiro quentes, passeio molhado com reflexos, céu azul-acinzentado.
+
+**4. Render base:** 1600 px. Calçada molhada com reflexo, azulejo vidrado, couro vermelho, vidro da montra com leve reflexo. Guardar "0 - clay", "0 - mask id" (azulejo / madeira / vidro / couro / calçada) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic street photograph at blue hour after light rain, same building, same geometry and camera as the reference image. A small corner barbershop in a Portuguese town, green glazed tile base, a large shop window glowing warm with a red leather barber chair and a long mirror, an old cut-out lettering sign with no readable words, a wall lamp, wet cobblestone pavement with soft reflections, a bicycle leaning against the wall, a two-window upper floor with a small clothesline, calm and familiar, fine film grain, no people, no readable text.
+```
+Regra: a cadeira vermelha no mesmo sítio em A e B; tabuleta sem texto legível; a bicicleta sempre do mesmo lado.
+
+**6. Entrega:** 3 finais em "#111 - O meu bairro 6 barbearia / final". Para reel: câmara A, 6 s, as luzes a acenderem-se uma a uma e a chuva fina a parar (Seedance), som de rua molhada e um carro ao longe.
+
+**Legenda**
+- EN: "Daily Study #111 · My neighbourhood #6: the corner barbershop. The last customer of the day gets the best light."
+- PT: "Daily Study #111 · O meu bairro #6: a barbearia da esquina. O último cliente do dia apanha a melhor luz."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #112–#117, 22 jul–3 ago, até 19 jul).
