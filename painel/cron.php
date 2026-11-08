@@ -115,8 +115,10 @@ foreach ($items as $it) {
       $rec = ['at' => date('c')]; $noCap = false;
       try { $c = feed_container($urls, $it['pub']['caption'] ?? ''); }
       catch (Exception $e) { logline("caption refused ({$e->getMessage()}), posting without"); $c = feed_container($urls, null); $noCap = true; }
+      $state[$pk] = ['at' => date('c'), 'inflight' => true]; ws("$store/published.json.php", $state);   // reserve: never publish twice
       $mid = api('POST', "$IG/media_publish", ['creation_id' => $c])['id'];
       $rec['ig'] = $mid;
+      $state[$pk] = $rec; ws("$store/published.json.php", $state);
       try { $rec['ig_link'] = api('GET', $mid, ['fields' => 'permalink'])['permalink'] ?? null; } catch (Exception $e) {}
       if ($noCap) {
         $rec['caption'] = 'TO-FIX: posted as 1st comment';
@@ -148,8 +150,9 @@ foreach ($items as $it) {
           $c = container($rp); ready($c, 50); $noCap = true;
         }
       }
+      $state[$pk] = ['at' => date('c'), 'inflight' => true]; ws("$store/published.json.php", $state);   // reserve: never publish twice
       $mid = api('POST', "$IG/media_publish", ['creation_id' => $c])['id'];
-      $state[$pk] = ['at' => date('c'), 'ig' => $mid];
+      $state[$pk] = ['at' => date('c'), 'ig' => $mid]; ws("$store/published.json.php", $state);
       if ($it['type'] === 'reel') {
         try { $state[$pk]['ig_link'] = api('GET', $mid, ['fields' => 'permalink'])['permalink'] ?? null; } catch (Exception $e) {}
         if ($noCap) {
