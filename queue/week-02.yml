@@ -11,21 +11,26 @@
   approved: false
 - date: '2026-11-11'
   time: '19:00'
-  project: vivendas-cete
+  project: apartamentos-gondomar-2
   slides:
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg
-  caption_en: Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête.
-  caption_pt: Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête.
+  - 1_-_Exterior1_1-exterior1_edit_0001-01.jpg
+  - 1_-_Exterior1_1-exterior1_edit_0001-02.jpg
+  - 1_-_Exterior1_1-exterior1_edit_0001-03-full.jpg
+  - 1_-_Exterior1_1-exterior1_edit_0001-03.jpg
+  - 1_-_Exterior1_1-exterior1_edit_0001-04-full.jpg
+  caption_en: Dark cladding, planted balconies and a quiet path to the door. Apartamentos Gondomar 2.
+  caption_pt: Revestimento escuro, varandas com plantas e um caminho calmo até à porta. Apartamentos Gondomar 2.
   approved: false
 - date: '2026-11-12'
   time: '19:00'
-  project: school-building
+  project: vivendas-duas-igrejas
   slides:
-  - Renders_finais_3-exterior5-01.jpg
-  caption_en: Rain on the playground, timber eaves and children under the canopy. School Building, Switzerland.
-  caption_pt: Chuva no recreio, beirados em madeira e crianças debaixo da pala. School Building, Suíça.
+  - root_3-interior1_webp-01.jpg
+  - root_3-interior1_webp-02.jpg
+  - root_3-interior1_webp-03.jpg
+  - root_3-interior1_webp-04-full.jpg
+  caption_en: A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas.
+  caption_pt: Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas.
   approved: false
 - date: '2026-11-13'
   time: '19:00'
@@ -40,28 +45,30 @@
   approved: false
 - date: '2026-11-14'
   time: '19:00'
-  project: school-building
+  project: vivendas-cete
   slides:
-  - Renders_finais_14-interior3_edit_0001-01.jpg
-  caption_en: 'A library that is also a street: shelves, steps and long tables in the light. School Building, Switzerland.'
-  caption_pt: 'Uma biblioteca que é também uma rua: estantes, degraus e mesas compridas à luz. School Building, Suíça.'
+  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg
+  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg
+  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg
+  caption_en: Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête.
+  caption_pt: Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête.
   approved: false
 - date: '2026-11-15'
   time: '19:00'
-  project: vivendas-duas-igrejas
+  project: school-building
   slides:
-  - root_3-interior1_webp-01.jpg
-  - root_3-interior1_webp-02.jpg
-  - root_3-interior1_webp-03.jpg
-  - root_3-interior1_webp-04-full.jpg
-  caption_en: A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas.
-  caption_pt: Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas.
+  - Renders_finais_3-exterior5-01.jpg
+  caption_en: Rain on the playground, timber eaves and children under the canopy. School Building, Switzerland.
+  caption_pt: Chuva no recreio, beirados em madeira e crianças debaixo da pala. School Building, Suíça.
   approved: false
 - date: '2026-11-16'
   time: '19:00'
-  project: school-building
+  project: apartamentos-gondomar-2
   slides:
-  - Renders_finais_1-exterior1-01.jpg
-  caption_en: 'The school from across the street: a calm facade, bikes and the morning walk in. School Building, Switzerland.'
-  caption_pt: 'A escola vista do outro lado da rua: uma fachada calma, bicicletas e a chegada da manhã. School Building, Suíça.'
+  - 5_-_Exterior5_5-exterior5_edit_0001-01.jpg
+  - 5_-_Exterior5_5-exterior5_edit_0001-02.jpg
+  - 5_-_Exterior5_5-exterior5_edit_0001-03.jpg
+  - 5_-_Exterior5_5-exterior5_edit_0001-04-full.jpg
+  caption_en: Six floors, one calm facade. Rhythm, shade and a meadow in front. Apartamentos Gondomar 2.
+  caption_pt: Seis pisos, uma fachada calma. Ritmo, sombra e um prado à frente. Apartamentos Gondomar 2.
   approved: false

@@ -1,60 +1,57 @@
 # Week 6 (2026-12-08 to 2026-12-14). Rebuilt 09/11 with School Building mixed in; approved only after Vítor's OK.
 - date: '2026-12-08'
   time: '19:00'
-  project: apartamentos-gondomar-2
+  project: school-building
   slides:
-  - 9_-_Interior_2_9-interior2_edit_0001-01.jpg
-  caption_en: Stools, a breakfast bar and a living room that never feels far away. Apartamentos Gondomar 2.
-  caption_pt: Bancos, um balcão de pequeno-almoço e uma sala que nunca fica longe. Apartamentos Gondomar 2.
+  - Renders_finais_10-exterior8_edit_0001-01.jpg
+  caption_en: 'Pick-up time at dusk: warm windows and parents at the door. School Building, Switzerland.'
+  caption_pt: 'Hora da saída ao anoitecer: janelas quentes e pais à porta. School Building, Suíça.'
   approved: false
 - date: '2026-12-09'
   time: '19:00'
-  project: vivendas-cete
+  project: apartamentos-gondomar-2
   slides:
-  - 2-interior2_2-interior2-01.jpg
-  caption_en: Up the stairs, past the timber slats and into the light. Vivendas Cête, Penafiel.
-  caption_pt: Escadas acima, ao lado do ripado de madeira e para dentro da luz. Vivendas Cête, Penafiel.
+  - 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-01.jpg
+  caption_en: Planters and railings along the ground floor. Detail first. Apartamentos Gondomar 2.
+  caption_pt: Floreiras e guardas ao longo do piso térreo. O pormenor primeiro. Apartamentos Gondomar 2.
   approved: false
 - date: '2026-12-10'
   time: '19:00'
-  project: vivendas-duas-igrejas
+  project: gold-village
   slides:
-  - root_5-interior2_webp-01.jpg
-  caption_en: A long hallway with a runner and a morning on the stairs. Duas Igrejas, Penafiel.
-  caption_pt: Um corredor comprido com passadeira e uma manhã nas escadas. Duas Igrejas, Penafiel.
+  - 4_-_exterior4_4-exterior4-01.jpg
+  caption_en: A balcony above the road, a chair and a quiet moment outside. Gold Village.
+  caption_pt: Uma varanda sobre a estrada, uma cadeira e um momento calmo cá fora. Gold Village.
   approved: false
 - date: '2026-12-11'
   time: '19:00'
-  project: gold-village
+  project: school-building
   slides:
-  - 11_-_interior4_11-interior4-01.jpg
-  - 11_-_interior4_11-interior4-02.jpg
-  - 11_-_interior4_11-interior4-03.jpg
-  - 11_-_interior4_11-interior4-04-full.jpg
-  caption_en: Black marble, a white robe and a morning that starts slowly. Gold Village.
-  caption_pt: Mármore preto, um roupão branco e uma manhã que começa devagar. Gold Village.
+  - Renders_finais_16-interior5_Edit_0001-01.jpg
+  caption_en: 'The sports hall: timber ceiling, full-height glass and a game in progress. School Building, Switzerland.'
+  caption_pt: 'O pavilhão: teto em madeira, vidro de alto a baixo e um jogo a decorrer. School Building, Suíça.'
   approved: false
 - date: '2026-12-12'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
-  - 17_-_Interior_10_17-interior10_0001-01.jpg
-  caption_en: The view from the sofa. Hills, rooftops and a quiet afternoon. Apartamentos Gondomar 2.
-  caption_pt: A vista do sofá. Colinas, telhados e uma tarde calma. Apartamentos Gondomar 2.
+  - 4_-_Exterior4_4-exterior4_0001-01.jpg
+  caption_en: Morning coffee on a balcony full of flowers, with the hills in the distance. Apartamentos Gondomar 2.
+  caption_pt: Pequeno-almoço numa varanda cheia de flores, com as colinas ao fundo. Apartamentos Gondomar 2.
   approved: false
 - date: '2026-12-13'
   time: '19:00'
-  project: vivendas-cete
+  project: gold-village
   slides:
-  - 4-interior4_4-interior4-01.jpg
-  caption_en: A bathroom in pale stone, clean lines and a soft rug. Vivendas Cête, Penafiel.
-  caption_pt: Uma casa de banho em pedra clara, linhas limpas e um tapete suave. Vivendas Cête, Penafiel.
+  - 5_-_exterior5_5-exterior5-01.jpg
+  caption_en: 'A balcony as an extra room: planters, a reading chair and the street below. Gold Village.'
+  caption_pt: 'Uma varanda como mais uma divisão: floreiras, uma cadeira de leitura e a rua lá em baixo. Gold Village.'
   approved: false
 - date: '2026-12-14'
   time: '19:00'
-  project: gold-village
+  project: school-building
   slides:
-  - 1_-_exterior1_1-exterior1-01.jpg
-  caption_en: Five floors of timber and planters, seen from the street. Gold Village.
-  caption_pt: Cinco pisos de madeira e floreiras, vistos da rua. Gold Village.
+  - Renders_finais_2-exterior2_edit_0001-01.jpg
+  caption_en: Scooters, school bags and the long shadows of an autumn afternoon. School Building, Switzerland.
+  caption_pt: Trotinetes, mochilas e as sombras compridas de uma tarde de outono. School Building, Suíça.
   approved: false

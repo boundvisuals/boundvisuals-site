@@ -1,35 +1,35 @@
 # Week 8 (2026-12-22 to 2026-12-28). Rebuilt 09/11 with School Building mixed in; approved only after Vítor's OK.
 - date: '2026-12-22'
   time: '19:00'
-  project: gold-village
-  slides:
-  - 6_-_exterior6_6-exterior6-01.jpg
-  caption_en: A ground-floor terrace, a book and an afternoon outside. Gold Village.
-  caption_pt: Um terraço no rés do chão, um livro e uma tarde cá fora. Gold Village.
-  approved: false
-- date: '2026-12-23'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 12_-_Interior_5_12-interior5_0001-01.jpg
-  caption_en: Dining table, shelves and the living room beyond. Apartamentos Gondomar 2.
-  caption_pt: Mesa de jantar, estantes e a sala logo a seguir. Apartamentos Gondomar 2.
-  approved: false
-- date: '2026-12-24'
-  time: '19:00'
   project: apartamentos-gondomar-2
   slides:
   - 7_-_Exterior_7_7-exterior7_edit_0001-01.jpg
   caption_en: A corner terrace with a hedge, and a neighbour at the door. Apartamentos Gondomar 2.
   caption_pt: Um terraço de esquina com sebe, e uma vizinha à porta. Apartamentos Gondomar 2.
   approved: false
-- date: '2026-12-25'
+- date: '2026-12-23'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_9-exterior7_edit_0001-01.jpg
+  caption_en: Blossom in the courtyard and chalk lines on the playground. School Building, Switzerland.
+  caption_pt: Flores no pátio e linhas de giz no recreio. School Building, Suíça.
+  approved: false
+- date: '2026-12-24'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
   - 16_-_Interior_9_16-interior9_0001-01.jpg
   caption_en: Marble island, light curtains and a balcony full of plants. Apartamentos Gondomar 2.
   caption_pt: Ilha em mármore, cortinas leves e uma varanda cheia de plantas. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-25'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_6-exterior3_edit_0001-01.jpg
+  caption_en: Late light on the facade and the walk home past the planters. School Building, Switzerland.
+  caption_pt: Luz de fim de tarde na fachada e o regresso a casa ao lado das floreiras. School Building, Suíça.
   approved: false
 - date: '2026-12-26'
   time: '19:00'

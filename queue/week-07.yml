@@ -3,58 +3,55 @@
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
-  - 19_-_Interior_12_19-interior12_0001-01.jpg
-  - 19_-_Interior_12_19-interior12_0001-02.jpg
-  - 19_-_Interior_12_19-interior12_0001-03.jpg
-  - 19_-_Interior_12_19-interior12_0001-04-full.jpg
-  caption_en: A bedroom with a wardrobe, an arched mirror and a book on the nightstand. Apartamentos Gondomar 2.
-  caption_pt: Um quarto com roupeiro, espelho em arco e um livro na mesa de cabeceira. Apartamentos Gondomar 2.
+  - 3_-_Exterior3_3-exterior3_edit_0001-01.jpg
+  caption_en: 'Coming home: the stairs, the planters and the dark facade. Apartamentos Gondomar 2.'
+  caption_pt: 'Chegar a casa: as escadas, as floreiras e a fachada escura. Apartamentos Gondomar 2.'
   approved: false
 - date: '2026-12-16'
   time: '19:00'
   project: gold-village
   slides:
-  - 4_-_exterior4_4-exterior4-01.jpg
-  caption_en: A balcony above the road, a chair and a quiet moment outside. Gold Village.
-  caption_pt: Uma varanda sobre a estrada, uma cadeira e um momento calmo cá fora. Gold Village.
+  - 6_-_exterior6_6-exterior6-01.jpg
+  caption_en: A ground-floor terrace, a book and an afternoon outside. Gold Village.
+  caption_pt: Um terraço no rés do chão, um livro e uma tarde cá fora. Gold Village.
   approved: false
 - date: '2026-12-17'
   time: '19:00'
-  project: apartamentos-gondomar-2
+  project: school-building
   slides:
-  - 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-01.jpg
-  caption_en: Planters and railings along the ground floor. Detail first. Apartamentos Gondomar 2.
-  caption_pt: Floreiras e guardas ao longo do piso térreo. O pormenor primeiro. Apartamentos Gondomar 2.
+  - Renders_finais_12-interior2_edit_0001-01.jpg
+  caption_en: A double-height entrance with seating steps and coats on the hooks. School Building, Switzerland.
+  caption_pt: Uma entrada em pé-direito duplo com degraus para sentar e casacos nos cabides. School Building, Suíça.
   approved: false
 - date: '2026-12-18'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 4_-_Exterior4_4-exterior4_0001-01.jpg
-  caption_en: Morning coffee on a balcony full of flowers, with the hills in the distance. Apartamentos Gondomar 2.
-  caption_pt: Pequeno-almoço numa varanda cheia de flores, com as colinas ao fundo. Apartamentos Gondomar 2.
-  approved: false
-- date: '2026-12-19'
-  time: '19:00'
-  project: gold-village
-  slides:
-  - 5_-_exterior5_5-exterior5-01.jpg
-  caption_en: 'A balcony as an extra room: planters, a reading chair and the street below. Gold Village.'
-  caption_pt: 'Uma varanda como mais uma divisão: floreiras, uma cadeira de leitura e a rua lá em baixo. Gold Village.'
-  approved: false
-- date: '2026-12-20'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 3_-_Exterior3_3-exterior3_edit_0001-01.jpg
-  caption_en: 'Coming home: the stairs, the planters and the dark facade. Apartamentos Gondomar 2.'
-  caption_pt: 'Chegar a casa: as escadas, as floreiras e a fachada escura. Apartamentos Gondomar 2.'
-  approved: false
-- date: '2026-12-21'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
   - 13_-_Interior_6_13-interior6_edit_0001-01.jpg
   caption_en: Timber slats frame the view from the hall to the kitchen and the window. Apartamentos Gondomar 2.
   caption_pt: Ripas de madeira enquadram a vista do hall para a cozinha e a janela. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-19'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_11-exterior9_edit_0001-01.jpg
+  caption_en: 'The view from a neighbour''s balcony: the school, the crossing and the town waking up. School Building, Switzerland.'
+  caption_pt: 'A vista da varanda de um vizinho: a escola, a passadeira e a cidade a acordar. School Building, Suíça.'
+  approved: false
+- date: '2026-12-20'
+  time: '19:00'
+  project: apartamentos-gondomar-2
+  slides:
+  - 12_-_Interior_5_12-interior5_0001-01.jpg
+  caption_en: Dining table, shelves and the living room beyond. Apartamentos Gondomar 2.
+  caption_pt: Mesa de jantar, estantes e a sala logo a seguir. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-21'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_7-exterior4_edit_0001-01.jpg
+  caption_en: Timber eaves, a long ramp and pupils on the steps between classes. School Building, Switzerland.
+  caption_pt: Beirados em madeira, uma rampa comprida e alunos nos degraus entre aulas. School Building, Suíça.
   approved: false
