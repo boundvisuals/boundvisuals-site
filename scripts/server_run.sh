@@ -91,6 +91,9 @@ $PY scripts/make_teasers.py >/dev/null || true
 # motion stories: render 1 missing video per run in the background (lock → never two at once; untracked, survives git reset)
 ( flock -n 9 || exit 0; cd "$R" && nice -n 15 $PY scripts/make_motion.py 1 >> "$B/motion.log" 2>&1 ) 9>"$B/motion.lock" &
 
+# PNG -> WebP jobs (config/webp_jobs.txt), background, one at a time
+( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
+
 # rebuild the Painel in place
 mkdir -p "$B/out"
 $PY scripts/build_painel.py build "$B/out" > "$B/build.log" 2>&1 && {
