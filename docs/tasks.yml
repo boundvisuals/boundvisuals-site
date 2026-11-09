@@ -182,6 +182,7 @@
   owner: claude
   title: "School Building: ingest (só PNG), enquadramentos à mão, kit das plataformas manuais, refazer o calendário a partir de 10/11 e desaprovar o que ainda não saiu"
   detail: "Link recebido 09/11 11:41. Ingest no servidor em curso. Verificação automática marcada para as 12:04."
+  done: true
 - id: v-school-manual
   owner: vitor
   title: "School Building: publicar no site, Behance, Chaos CG Connect e Indústria Criativa (tu fazes tudo à mão, sem kits)"
