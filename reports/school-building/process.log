@@ -7,7 +7,7 @@ ok  14-interior3_edit_0001.png  4028x5000  ig:single  10.8MB -> 10.8MB lossless 
 ok  16-interior5_Edit_0001.png  4028x5000  ig:single  8.8MB -> 8.8MB lossless  crops:AUTO (unreviewed)
 ok  2-exterior2_edit_0001.png  4028x5000  ig:single  9.6MB -> 9.6MB lossless  crops:AUTO (unreviewed)
 ok  3-exterior5.png  4028x5000  ig:single  13.2MB -> 13.2MB lossless  crops:AUTO (unreviewed)
-ok  5-exterior11_edit_0001.png  5000x2791  ig:carousel  7.5MB -> 7.5MB lossless  crops:AUTO (unreviewed)
+ok  5-exterior11_edit_0001.png  5000x2791  ig:carousel  7.5MB -> 7.5MB lossless  crops:manual
 ok  6-exterior3_edit_0001.png  4028x5000  ig:single  8.9MB -> 8.9MB lossless  crops:AUTO (unreviewed)
 ok  7-exterior4_edit_0001.png  4028x5000  ig:single  11.0MB -> 11.0MB lossless  crops:AUTO (unreviewed)
 ok  8-exterior6_edit_0001.png  4028x5000  ig:single  7.3MB -> 7.3MB lossless  crops:AUTO (unreviewed)
