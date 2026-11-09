@@ -1327,7 +1327,7 @@ Regra: os edifícios têm de ficar reconhecíveis (mesmas janelas, mesmos telhad
 
 ## #043 · Brief de concurso: uma capela no campo (quinta, 11 fev)
 
-**Ideia:** tratar o Daily Study como um concurso a sério (tipo CGArchitect / Render Awards): um programa curto, uma imagem forte. Uma capela pequena no meio de um campo de trigo, uma única fenda de luz no interior.
+**Ideia:** tratar o Daily Study como um concurso a sério (tipo concurso de render): um programa curto, uma imagem forte. Uma capela pequena no meio de um campo de trigo, uma única fenda de luz no interior.
 
 **1. Modelo 3D (20 min)**
 - Volume único 6 × 12 m, 7 m de altura, cobertura de uma água, paredes em betão (ou taipa) sem janelas exceto uma fenda vertical de 15 cm atrás do altar e a porta.

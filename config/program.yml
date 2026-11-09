@@ -40,7 +40,7 @@ web:
   lightbox: lossless_original   # pixel-identical, verified
   grid_widths: [800, 1600, 2400]
 publish_order:
-  first: [website, behance, cgarchitect, chaos_cgconnect, industriacriativa]
+  first: [website, behance, chaos_cgconnect, industriacriativa]
   then: [instagram, facebook, pinterest, linkedin, youtube]
 meta:
   page_id: "102995032197827"        # Facebook Page: Bound Visuals

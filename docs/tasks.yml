@@ -29,7 +29,7 @@
   title: "Dizer sim/não: agendar o Facebook pela API e usar o Business Suite como plano B do Instagram"
 - id: v-mega-links
   owner: vitor
-  title: Enviar links MEGA dos projetos em falta
+  title: Enviar links MEGA dos projetos em falta (10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte — o School Building já chegou a 09/11)
   detail: "School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte."
 - id: v-site-texts
   owner: vitor
@@ -58,12 +58,14 @@
   due: ter 10 nov
 - id: v-manual-kit
   owner: vitor
-  title: Publicar o kit manual dos 3 projetos (site, Behance, CGArchitect, Chaos CG Connect, Indústria Criativa)
+  title: Publicar o kit manual dos 3 projetos (site, Behance, Chaos CG Connect, Indústria Criativa)
   detail: "Textos em docs/kit-lancamento-3-projetos.md."
+  done: true
 - id: c-ig-day1
   owner: claude
   title: Publicar o post de 3 nov (Duas Igrejas) assim que o Instagram aceitar
   detail: "Bloqueio temporário da Meta às legendas via API. Robô tenta sozinho com pausas de 3 h. 06/11: desbloqueado — publica o robô do servidor (painel/cron.php, cada minuto), já não depende do GitHub. 1.º post aprovado para 06/11 19:00. Se o Instagram recusar a legenda, sai sem legenda + legenda no 1.º comentário (o mesmo vale agora para os reels)."
+  done: true
 - id: c-painel
   owner: claude
   title: Painel v1 (este) a funcionar e atualizado pelos robôs
@@ -80,6 +82,7 @@
   owner: vitor
   title: "Ligar as notificações do Painel no telemóvel e no PC (Início → 'Ligar notificações' → Permitir; depois Perfil → 'Enviar teste')"
   detail: "iPhone: primeiro Safari → Partilhar → 'Adicionar ao ecrã principal' e abrir o Painel pelo ícone. Android/PC: Chrome ou Edge, direto."
+  done: true
 - id: v-connect-networks
   owner: vitor
   title: "Ligar Pinterest, LinkedIn e YouTube no Painel (Links → 'Ligar redes'; ~10 min por rede, passos na página)"
@@ -173,3 +176,14 @@
   owner: claude
   title: "Site pessoal v2: secções Ads/Design/Video com trabalhos reais (precisa de material do Vítor), Lab com os Daily Study, versão PT"
   detail: "04/11: versão PT feita (boundvisuals.com/vitorhugo/pt/, botão PT/EN no menu, hreflang; textos em docs/vitorhugo-pt.yml). Falta: Ads/Design/Video com trabalhos reais (material do Vítor) e Lab com os primeiros Daily Study prontos."
+- id: c-school-building
+  owner: claude
+  title: "School Building: ingest (só PNG), enquadramentos à mão, kit das plataformas manuais, refazer o calendário a partir de 10/11 e desaprovar o que ainda não saiu"
+  detail: "Link recebido 09/11 11:41. Ingest no servidor em curso. Verificação automática marcada para as 12:04."
+- id: v-school-manual
+  owner: vitor
+  title: "School Building: publicar no site, Behance, Chaos CG Connect e Indústria Criativa (kit em Projetos → 📦)"
+  due: seg 9 nov
+- id: v-approve-new-calendar
+  owner: vitor
+  title: "Aprovar o calendário refeito com o School Building (Calendário → Aprovar tudo)"
