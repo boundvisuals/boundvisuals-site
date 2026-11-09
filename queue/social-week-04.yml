@@ -73,6 +73,13 @@
   approved: false
   cover: motion-Renders_finais_3-exterior5.jpg
 - date: '2026-11-26'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: motion-Renders_finais_5-exterior11_edit_0001.mp4
+  approved: false
+  cover: motion-Renders_finais_5-exterior11_edit_0001.jpg
+- date: '2026-11-26'
   time: '20:30'
   type: story
   project: school-building
