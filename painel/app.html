@@ -458,7 +458,7 @@ function renderProjetos(){
   $("#v-projetos").innerHTML=`<div class="grid g2">${(D.projects||[]).map(p=>{const tot=p.posts_total||0,pub=p.posts_published||0;
   return `<div class="card proj">${p.cover?`<img src="${esc(p.cover)}" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px">`:""}
   <div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b style="font-weight:500">${esc(p.title)}</b><span class="pill ${p.level||""}">${esc(p.status)}</span></div>
-  <div class="stats"><span><b>${p.images??"—"}</b> imagens</span><span><b>${p.stories??0}</b> stories</span><span><b>${p.reels??0}</b> reels</span><span><b>${pub}/${tot}</b> posts publicados</span></div>
+  <div class="stats"><span><b>${p.images??"—"}</b> imagens</span><span><b>${p.stories??0}</b> stories</span><span><b>${p.reels??0}</b> reels</span><span><b>${pub}</b> já saíram</span><span><b>${Math.max(0,tot-pub)}</b> por sair</span></div>
   <div class="bar"><i style="width:${tot?Math.round(pub/tot*100):0}%"></i></div>
   ${p.mega?`<a class="sub" href="${esc(p.mega)}" target="_blank" rel="noopener">Pasta MEGA ↗</a>`:`<span class="sub">À espera do link MEGA</span>`}</div>`}).join("")}</div>`;
 }

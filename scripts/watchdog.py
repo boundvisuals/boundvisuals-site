@@ -86,6 +86,26 @@ if last:
     left = (datetime.date.fromisoformat(last) - NOW.date()).days
     ok("Fila de posts", left >= 7, f"posts preparados até {last} ({left} dias)")
 
+
+# calendar integrity: every final of every project is scheduled/published exactly once (twins excepted), no repeats
+try:
+    import glob as _g, re as _re, collections as _c, yaml as _y
+    _st = lambda x: _re.sub(r"-\d\d(-full)?\.jpg$", "", x)
+    _tw = (_y.safe_load(open("config/twins.yml")) or {}) if os.path.exists("config/twins.yml") else {}
+    _used = _c.defaultdict(list)
+    for _f in sorted(_g.glob("queue/week-*.yml")):
+        for _i in _y.safe_load(open(_f, encoding="utf-8")) or []:
+            _used[_i["project"]].append(_st(_i["slides"][0]))
+    _bad = []
+    for _p, _l in _used.items():
+        _all = {_st(os.path.basename(x)) for x in _g.glob(f"reports/{_p}/ig/*.jpg")} - set((_tw.get(_p) or {}).keys())
+        _d = [k for k, v in _c.Counter(_l).items() if v > 1]
+        _m = sorted(_all - set(_l))
+        if _d or _m: _bad.append(f"{_p}: repetidas {len(_d)}, por agendar {len(_m)}")
+    ok("Calendário: sem repetidas e todas as imagens agendadas", not _bad, "; ".join(_bad) or "tudo certo")
+except Exception as _e:
+    ok("Calendário: sem repetidas e todas as imagens agendadas", False, str(_e)[:80])
+
 json.dump({"checked": NOW.strftime("%Y-%m-%d %H:%M UTC"), "all_ok": all(r["ok"] for r in res), "checks": res},
           open("docs/watchdog.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print("\n".join(("OK  " if r["ok"] else "FAIL") + f" {r['name']}: {r['detail']}" for r in res))
