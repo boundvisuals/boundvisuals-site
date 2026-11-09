@@ -6,6 +6,10 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_TH
 B="$HOME/bv"; R="$B/repo"; W="$HOME/public_html"; export PATH="$B/env/bin:$PATH"
 exec 7>"$B/portfolio.lock"; flock -n 7 || exit 0
 echo "$(date '+%F %T') portfolio start"
+# hard stop: a hung Chromium once held 56 threads for 5 h and blocked every other job (shared host cap = 64) → kill everything after 45 min
+( sleep 2700; pkill -u "$(id -u)" -f "chrome-headless-shell|playwright/driver|build_portfolio.py" ) >/dev/null 2>&1 &
+WD=$!
+trap 'kill $WD 2>/dev/null' EXIT
 # brand assets (fonts + InDesign originals) from the 'assets' branch, sparse
 if [ ! -d "$B/assets/.git" ]; then
   git clone -q --depth 1 --filter=blob:none --sparse -b assets git@github.com:boundvisuals/boundvisuals-site.git "$B/assets" &&
