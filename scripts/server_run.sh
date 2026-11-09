@@ -151,9 +151,10 @@ if [ -f config/portfolio_request.txt ] && [ "$(cat config/portfolio_request.txt)
 fi
 
 # back to GitHub (code vault)
-git add -A queue docs/inbox.json docs/opps.json docs/deleted.json docs/opps-auto.yml docs/kits docs/watchdog.json config reports 2>/dev/null
+# add only paths that exist: ONE missing pathspec made "git add" add nothing at all → server results were never pushed and then wiped by the next reset
+for p in queue docs/inbox.json docs/opps.json docs/deleted.json docs/opps-auto.yml docs/kits docs/watchdog.json config reports; do [ -e "$p" ] && git add -A "$p"; done
 if ! git diff --cached --quiet; then
-  git -c user.name=bv-server -c user.email=robot@boundvisuals.com commit -qm "Server robot: Painel changes" && git push -q origin HEAD:main 2>/dev/null || { git pull -q --rebase origin main && git push -q origin HEAD:main; }
+  git -c user.name=bv-server -c user.email=robot@boundvisuals.com commit -qm "Server robot: Painel changes" && git push -q origin HEAD:main 2>>"$B/push.err" || { git pull -q --rebase origin main && git push -q origin HEAD:main; }
 fi
 echo "$stamp_now" > "$B/stamp"; md5sum "$S/published.json.php" 2>/dev/null | cut -c1-12 > "$B/pubstamp"
 date '+%F %T full run'
