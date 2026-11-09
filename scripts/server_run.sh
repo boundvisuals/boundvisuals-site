@@ -24,7 +24,7 @@ export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
 grep -qv "^#" "$R/config/webp_jobs.txt" 2>/dev/null && grep -v "^#" "$R/config/webp_jobs.txt" | grep -q . && ( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
 
 stamp_now=$(cat "$S"/approvals.json.php "$S"/deleted.json.php "$S"/captions.json.php "$S"/crops.json.php "$S"/inbox.json.php "$S"/opps.json.php 2>/dev/null | md5sum | cut -c1-12)
-git fetch -q origin main 2>/dev/null
+git fetch -q --depth 1 origin main 2>/dev/null   # shallow: the history of every image is never needed on the server (saved ~3 GB)
 remote=$(git rev-parse origin/main 2>/dev/null); local_=$(git rev-parse HEAD)
 pubstamp=$(md5sum "$S/published.json.php" 2>/dev/null | cut -c1-12)
 if [ "$stamp_now" = "$(cat "$B/stamp" 2>/dev/null)" ] && [ "$remote" = "$local_" ] && [ "$pubstamp" = "$(cat "$B/pubstamp" 2>/dev/null)" ] && [ -z "${FORCE:-}" ] && [ ! -f "$B/force" ] && [ -z "$(ls -A "$B/outbox" 2>/dev/null)" ]; then

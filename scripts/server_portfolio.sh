@@ -39,3 +39,5 @@ rm -rf "$T/out/_img"; cp "$T"/out/*.pdf "$W/painel/files/" 2>/dev/null && cp "$T
 date '+%F %T' > "$W/painel/files/updated.txt"
 [ -f "$T/site/index.html" ] && cp -r "$T"/site/. "$W/vitorhugo/"
 echo "$(date '+%F %T') portfolio done: $(ls "$T"/out/*.pdf 2>/dev/null | wc -l) PDFs"
+# disk: PDFs are made only on request → drop the heavy tools afterwards (re-installed next time, ~3 min)
+rm -rf "$B/assets" "$T" "$HOME/.cache/ms-playwright" "$HOME/.cache/pip" "$B/.chromium"
