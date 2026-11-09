@@ -1,6 +1,6 @@
 # Kit de lançamento — Vivendas Duas Igrejas · Vivendas Cête · Gold Village
 
-Para publicares hoje no site, Behance (boundvisuals + cruzar crédito com criativovitorhugo), CGArchitect, Chaos CG Connect e Indústria Criativa.
+Para publicares hoje no site, Behance (boundvisuals + cruzar crédito com criativovitorhugo), Chaos CG Connect e Indústria Criativa.
 Textos na 1.ª pessoa. Copia e cola; em cada plataforma usa a versão EN (e PT onde houver campo ou se o público for português, ex. Indústria Criativa).
 
 **Imagens:** usa os teus originais (as pastas finais). Para o Behance, exporta JPG sRGB qualidade máxima com 3200 px de largura (o Behance mostra a 1400 px, mas guarda mais detalhe no zoom). Capa: escolhe a imagem indicada como "Capa" e recorta no próprio Behance.
@@ -38,5 +38,5 @@ Textos na 1.ª pessoa. Copia e cola; em cada plataforma usa a versão EN (e PT o
 ## Ordem recomendada hoje
 1. **Site** (WordPress): cria/atualiza a página de cada projeto como fazes sempre. O título e a descrição para o Google já saem sozinhos.
 2. **Behance boundvisuals** → um projeto por obra, com o título, texto EN e tags acima; em "Créditos" junta a conta criativovitorhugo.
-3. **CGArchitect** (galeria), **Chaos CG Connect**, **Indústria Criativa** → mesmo título + texto EN (Indústria Criativa: PT).
+3. **Chaos CG Connect**, **Indústria Criativa** → mesmo título + texto EN (Indústria Criativa: PT).
 4. Manda-me os links de cada publicação → eu meto-os nas legendas do Instagram/Facebook ("full project on Behance").

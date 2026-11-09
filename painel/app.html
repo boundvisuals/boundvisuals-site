@@ -454,13 +454,15 @@ function renderTarefas(){
   $("#v-tarefas").querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{taskF=b.dataset.g;renderTarefas()});
   bindTasks($("#v-tarefas"));
 }
+function projKit(p){const K=D.project_kits||{};const k=Object.keys(K).find(t=>{const a=t.toLowerCase(),b=(p.title||"").toLowerCase();return a&&b&&(a.includes(b)||b.includes(a))});if(!k)return "";
+ return `<details style="margin-top:10px"><summary style="cursor:pointer">📦 Kit para publicar (site · Behance · Chaos CG Connect · Indústria Criativa)</summary><pre style="white-space:pre-wrap;font:13px/1.45 system-ui;margin:8px 0;user-select:all">${esc(K[k])}</pre><button class="btn" onclick="navigator.clipboard.writeText(decodeURIComponent('${encodeURIComponent(K[k])}'));this.textContent='Copiado ✓'">Copiar tudo</button></details>`}
 function renderProjetos(){
   $("#v-projetos").innerHTML=`<div class="grid g2">${(D.projects||[]).map(p=>{const tot=p.posts_total||0,pub=p.posts_published||0;
   return `<div class="card proj">${p.cover?`<img src="${esc(p.cover)}" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px">`:""}
   <div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b style="font-weight:500">${esc(p.title)}</b><span class="pill ${p.level||""}">${esc(p.status)}</span></div>
   <div class="stats"><span><b>${p.images??"—"}</b> imagens</span><span><b>${p.stories??0}</b> stories</span><span><b>${p.reels??0}</b> reels</span><span><b>${pub}/${tot}</b> posts publicados</span></div>
   <div class="bar"><i style="width:${tot?Math.round(pub/tot*100):0}%"></i></div>
-  ${p.mega?`<a class="sub" href="${esc(p.mega)}" target="_blank" rel="noopener">Pasta MEGA ↗</a>`:`<span class="sub">À espera do link MEGA</span>`}</div>`}).join("")}</div>`;
+  ${p.mega?`<a class="sub" href="${esc(p.mega)}" target="_blank" rel="noopener">Pasta MEGA ↗</a>`:`<span class="sub">À espera do link MEGA</span>`}${projKit(p)}</div>`}).join("")}</div>`;
 }
 function renderLinks(){
   const g={};(D.links||[]).forEach(l=>(g[l.group]=g[l.group]||[]).push(l));
