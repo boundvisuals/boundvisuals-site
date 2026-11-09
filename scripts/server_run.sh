@@ -20,6 +20,9 @@ cd "$R" || exit 1
 [ -f "$B/.deps3" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge numpy >/dev/null 2>&1 && touch "$B/.deps3"; }
 export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
 
+# PNG -> WebP jobs (config/webp_jobs.txt), background, one at a time
+( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
+
 stamp_now=$(cat "$S"/approvals.json.php "$S"/deleted.json.php "$S"/captions.json.php "$S"/crops.json.php "$S"/inbox.json.php "$S"/opps.json.php 2>/dev/null | md5sum | cut -c1-12)
 git fetch -q origin main 2>/dev/null
 remote=$(git rev-parse origin/main 2>/dev/null); local_=$(git rev-parse HEAD)
@@ -90,9 +93,6 @@ $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py s
 $PY scripts/make_teasers.py >/dev/null || true
 # motion stories: render 1 missing video per run in the background (lock → never two at once; untracked, survives git reset)
 ( flock -n 9 || exit 0; cd "$R" && nice -n 15 $PY scripts/make_motion.py 1 >> "$B/motion.log" 2>&1 ) 9>"$B/motion.lock" &
-
-# PNG -> WebP jobs (config/webp_jobs.txt), background, one at a time
-( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
 
 # rebuild the Painel in place
 mkdir -p "$B/out"
