@@ -203,3 +203,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 ## RULE 09/11 (Vítor, explicit): NEW PROJECT ⇒ REBUILD THE CALENDAR
 - Whenever Vítor hands over a new project (MEGA link), Claude ingests it, hand-composes crops, then REBUILDS everything not yet published from the next day (inclusive) so all projects are mixed in rotation (A,B,C,D…). Claude itself UNAPPROVES the affected future items (this overrides "APPROVED = FROZEN" only for this case, on Vítor's explicit standing order); Vítor then re-approves in the Painel. Never touch anything already published; today's remaining slots only if Vítor says so.
 - School Building (Swiss-German part, WebP finals) announced 09/11 10:26: starts 10/11 as soon as the MEGA link arrives; if link arrives late, start at the next free day.
+
+## RULE 09/11 (Vítor): PORTFOLIO PDFs ONLY ON REQUEST
+- The weekly Monday portfolio rebuild is REMOVED for good (a hung Chromium blocked the server 5 h). When Vítor asks to update the portfolio/CV, Claude writes a new value (date/time) into config/portfolio_request.txt and pushes → server_run.sh runs server_portfolio.sh once (45-min hard stop).
+- Before stopping any other recurring task Claude considers redundant, ask Vítor first (he said so 09/11).

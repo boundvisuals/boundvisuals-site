@@ -143,7 +143,11 @@ if [ "$(cat "$B/daily" 2>/dev/null)" != "$(date +%F)" ] && [ "$(date +%H)" -ge 7
   for pid in $($PY -c "import yaml;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(' '.join(p['id'] for p in r if p.get('mega') and p['id']!='daily-study-2026'))"); do
     [ -n "$(ls -A "$B/src/$pid" 2>/dev/null)" ] || { (ONLY_CACHE=1 nohup bash "$R/scripts/server_ingest.sh" "$pid" >> "$B/ingest.log" 2>&1 &); break; }
   done
-  [ "$(date +%u)" = "1" ] && (nohup bash "$R/scripts/server_portfolio.sh" >> "$B/portfolio.log" 2>&1 &)
+fi
+# portfolio PDFs: ONLY on request (Vítor 09/11). Claude bumps config/portfolio_request.txt → runs once here. No weekly job.
+if [ -f config/portfolio_request.txt ] && [ "$(cat config/portfolio_request.txt)" != "$(cat "$B/portfolio.last" 2>/dev/null)" ]; then
+  cat config/portfolio_request.txt > "$B/portfolio.last"
+  (nohup bash "$R/scripts/server_portfolio.sh" >> "$B/portfolio.log" 2>&1 &)
 fi
 
 # back to GitHub (code vault)
