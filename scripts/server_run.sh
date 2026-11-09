@@ -21,7 +21,7 @@ cd "$R" || exit 1
 export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
 
 # PNG -> WebP jobs (config/webp_jobs.txt), background, one at a time
-( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
+grep -qv "^#" "$R/config/webp_jobs.txt" 2>/dev/null && grep -v "^#" "$R/config/webp_jobs.txt" | grep -q . && ( flock -n 9 || exit 0; cd "$R" && nice -n 10 $PY scripts/make_webp.py >> "$B/webp.log" 2>&1 ) 9>"$B/webp.lock" &
 
 stamp_now=$(cat "$S"/approvals.json.php "$S"/deleted.json.php "$S"/captions.json.php "$S"/crops.json.php "$S"/inbox.json.php "$S"/opps.json.php 2>/dev/null | md5sum | cut -c1-12)
 git fetch -q origin main 2>/dev/null
@@ -92,7 +92,10 @@ $PY scripts/dedupe_queue.py >/dev/null || true
 $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py sync-slides >/dev/null
 $PY scripts/make_teasers.py >/dev/null || true
 # motion stories: render 1 missing video per run in the background (lock → never two at once; untracked, survives git reset)
-( flock -n 9 || exit 0; cd "$R" && nice -n 15 $PY scripts/make_motion.py 1 >> "$B/motion.log" 2>&1 ) 9>"$B/motion.lock" &
+# never while an ingest is running or the account is near its process cap (shared host: fork failures block ingests)
+if ! pgrep -u "$(id -u)" -f "server_ingest.sh|server_rerender.sh" >/dev/null && [ "$(ps -u "$(id -u)" -L --no-headers 2>/dev/null | wc -l)" -lt 60 ]; then
+  ( flock -n 9 || exit 0; cd "$R" && nice -n 15 $PY scripts/make_motion.py 1 >> "$B/motion.log" 2>&1 ) 9>"$B/motion.lock" &
+fi
 
 # rebuild the Painel in place
 mkdir -p "$B/out"
