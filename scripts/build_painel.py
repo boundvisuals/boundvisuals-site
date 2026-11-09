@@ -334,10 +334,10 @@ def build(out):
                                          else "a publicar" if ig_ok and not errs else ("bloqueio temporário" if errs else "ligado")),
          "level": "err" if errs or (cool and now < datetime.datetime.fromisoformat(cool)) else ""},
         {"name": "Facebook (página)", "status": "espelho do Instagram"},
-        {"name": "Pinterest", "status": "por ligar"},
+        {"name": "Pinterest", "status": "por ligar"},   # replaced live by api.php from the server OAuth store
         {"name": "YouTube Shorts", "status": "por ligar"},
         {"name": "LinkedIn", "status": "por ligar"},
-        {"name": "Site · Behance · CG", "status": "manual (kit pronto)"},
+        {"name": "Site · Behance · CG", "status": "manual (tratas tu)"},
     ]
 
     reg = yaml.safe_load(open("projects/registry.yml")) or {}
@@ -371,7 +371,7 @@ def build(out):
         {"group": "Planos e documentos", "title": "Dossier vivo", "url": "https://claude.ai/artifact/SSokUsyAh7x3PpswQvWo6k"},
         {"group": "Planos e documentos", "title": "Plano mestre", "url": "https://claude.ai/artifact/CiMZbhepRpkE2qYCfgMwCw"},
         {"group": "Planos e documentos", "title": "Briefings Daily Study", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/daily-study-briefings.md"},
-        {"group": "Planos e documentos", "title": "Kit de lançamento (site/Behance/CG)", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/kit-lancamento-3-projetos.md"},
+        {"group": "Planos e documentos", "title": "Textos do site na 1.ª pessoa (atual → novo)", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/textos-1a-pessoa.md"},
         {"group": "Planos e documentos", "title": "Orçamento na 1.ª pessoa (PT + EN)", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/orcamento-1a-pessoa.md"},
         {"group": "Planos e documentos", "title": "Textos do site na 1.ª pessoa", "url": "https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/textos-1a-pessoa.md"},
         {"group": "Ferramentas", "title": "Ligar redes (Pinterest, LinkedIn, YouTube)", "url": "/painel/ligar.php"},

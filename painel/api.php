@@ -68,6 +68,46 @@ if ($a === 'data') {
   unset($day, $it);
   $d['server_cron'] = is_file("$store/cron.log") ? date('c', filemtime("$store/cron.log")) : null;
   $d['ig_live'] = read_store("$store/ig_stats.json.php");
+  // LIVE overlays (server state beats the last built snapshot): Instagram numbers + connected networks
+  $igs = $d['ig_live'] ?? null;
+  if (is_array($igs) && !empty($igs['now'])) {
+    $d['stats'] = array_merge($d['stats'] ?? [], ['at' => $igs['at'] ?? null, 'account' => array_merge(($d['stats']['account'] ?? []), $igs['now'])]);
+    if (isset($igs['media'])) $d['stats']['media'] = $igs['media'];
+    if (isset($igs['reach_7d'])) $d['stats']['reach_7d'] = $igs['reach_7d'];
+    if (empty($igs['error'])) unset($d['stats']['error']);
+    $d['followers'] = array_merge($d['followers'] ?? [], $igs['history'] ?? []);
+  }
+  $oa = read_store("$store/oauth.json.php") ?? [];
+  $lis = read_store("$store/linkedin.json.php") ?? [];
+  $yts = read_store("$store/youtube.json.php") ?? [];
+  $nets = [];
+  foreach (($d['networks'] ?? []) as $n) {
+    if (in_array($n['name'], ['Pinterest', 'YouTube Shorts', 'LinkedIn', 'Site · Behance · CG'], true)) continue;
+    if ($n['name'] === 'Instagram' && !empty($igs['now']['followers_count']) && ($n['level'] ?? '') !== 'err') $n['status'] = ($n['status'] === 'ligado' ? 'a publicar' : $n['status']) . ' · ' . $igs['now']['followers_count'] . ' seguidores';
+    $nets[] = $n;
+  }
+  $left = function ($c) { return !empty($c['expires_at']) ? max(0, (int)floor(($c['expires_at'] - time()) / 86400)) : null; };
+  foreach (['linkedin' => 'LinkedIn (pessoal)', 'youtube' => 'YouTube Shorts', 'pinterest' => 'Pinterest', 'threads' => 'Threads'] as $k => $nm) {
+    $c = $oa[$k] ?? [];
+    if (!empty($c['access_token'])) {
+      $days = $left($c); $extra = '';
+      if ($k === 'linkedin' && !empty($lis['last_day'])) $extra = ' · último post ' . $lis['last_day'];
+      if ($k === 'youtube' && !empty($yts)) $extra = ' · ' . count(array_filter($yts, 'is_array')) . ' Shorts';
+      $warn = $days !== null && $days <= 7;
+      $nets[] = ['name' => $nm, 'status' => 'ligado' . (!empty($c['account']) ? ' · ' . $c['account'] : '') . $extra . ($days !== null ? " · token {$days} dias" : ''), 'level' => $warn ? 'err' : ''];
+    } else if ($k !== 'threads') $nets[] = ['name' => $nm, 'status' => !empty($c['client_id']) ? 'chaves guardadas · falta ligar' : 'por ligar'];
+  }
+  $nets[] = ['name' => 'Site · Behance · CG', 'status' => 'manual (tratas tu)'];
+  $d['networks'] = $nets;
+  // live publisher log (cron.php) instead of the old GitHub-runner log baked into the snapshot
+  if (is_file("$store/cron.log")) {
+    $tail = array_values(array_filter(array_map('trim', array_slice(file("$store/cron.log"), -40)), function ($l) { return $l !== ''; }));
+    $keep = array_values(array_filter($tail, function ($l) { return !preg_match('/missing meta|nothing due|idle/i', $l); }));
+    $show = array_slice($keep ?: $tail, -8);
+    $old = $d['log'] ?? [];
+    $i = array_search('Últimas ações:', $old);
+    $d['log'] = array_merge(['Último robô de publicação (servidor, ' . date('d/m H:i', filemtime("$store/cron.log")) . '):'], $show, [''], $i !== false ? array_slice($old, $i) : []);
+  }
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['opps'] = read_store("$store/opps.json.php") ?? [];

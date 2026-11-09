@@ -158,7 +158,8 @@ for p in r:
 PY
 
 # once a day (after 07:00): job hunt + watchdog; Mondays: PDFs + personal site
-if [ "$(cat "$B/daily" 2>/dev/null)" != "$(date +%F)" ] && [ "$(date +%H)" -ge 7 ]; then
+WD_OLD=0; [ -n "$(find docs/watchdog.json -mmin +1200 2>/dev/null)" ] && WD_OLD=1
+if { [ "$(cat "$B/daily" 2>/dev/null)" != "$(date +%F)" ] || [ "$WD_OLD" = 1 ]; } && [ "$(date +%H)" -ge 7 ]; then
   date +%F > "$B/daily"
   $PY scripts/hunt_opps.py >> "$B/daily.log" 2>&1
   META_TOKEN=$($PY -c "import json;print(json.loads(open('$S/meta.json.php').read().split(chr(10),1)[1])['token'])" 2>/dev/null) $PY scripts/watchdog.py >> "$B/daily.log" 2>&1

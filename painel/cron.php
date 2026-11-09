@@ -198,17 +198,25 @@ if ($published) {
   @file_get_contents('https://www.boundvisuals.com/painel/push.php?a=run');
 }
 
-// daily Instagram numbers (once a day, after 07:00)
+// Instagram numbers: refreshed at most once an hour (account, last 24 media, 7-day reach, follower history) -> store/ig_stats.json.php
 $st = rs("$store/ig_stats.json.php") ?? [];
-if (($st['day'] ?? '') !== date('Y-m-d') && (int)date('G') >= 7) {
+if (empty($st['ts']) || time() - (int)$st['ts'] > 3300) {
   try {
-    $u = api('GET', $IG, ['fields' => 'followers_count,media_count,username']);
-    $st['day'] = date('Y-m-d'); $st['now'] = $u; $st['history'][date('Y-m-d')] = $u['followers_count'] ?? null;
+    $u = api('GET', $IG, ['fields' => 'followers_count,follows_count,media_count,username']);
+    $st['ts'] = time(); $st['at'] = gmdate('c'); $st['day'] = date('Y-m-d'); $st['now'] = $u; unset($st['error']);
+    $st['history'][date('Y-m-d')] = $u['followers_count'] ?? null;
+    try {
+      $m = api('GET', "$IG/media", ['fields' => 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,like_count,comments_count', 'limit' => 24])['data'] ?? [];
+      $st['media'] = array_map(function ($x) { return ['id' => $x['id'], 'media_type' => $x['media_type'] ?? '', 'permalink' => $x['permalink'] ?? '', 'timestamp' => $x['timestamp'] ?? '',
+        'like_count' => $x['like_count'] ?? 0, 'comments_count' => $x['comments_count'] ?? 0, 'img' => $x['thumbnail_url'] ?? ($x['media_url'] ?? ''), 'caption' => mb_substr($x['caption'] ?? '', 0, 140)]; }, $m);
+    } catch (Exception $e) { logline('stats media ERR ' . substr($e->getMessage(), 0, 120)); }
+    try {
+      $in = api('GET', "$IG/insights", ['metric' => 'reach', 'period' => 'day', 'metric_type' => 'total_value', 'since' => time() - 7 * 86400, 'until' => time()]);
+      $st['reach_7d'] = $in['data'][0]['total_value']['value'] ?? null;
+    } catch (Exception $e) { logline('stats reach ERR ' . substr($e->getMessage(), 0, 120)); }
     ws("$store/ig_stats.json.php", $st);
-  } catch (Exception $e) { logline('stats ERR ' . substr($e->getMessage(), 0, 120)); }
+  } catch (Exception $e) { logline('stats ERR ' . substr($e->getMessage(), 0, 120)); $st['ts'] = time() - 2400; $st['error'] = substr($e->getMessage(), 0, 200); ws("$store/ig_stats.json.php", $st); }
 }
-
-
 
 // ---------------------------------------------------------------- LinkedIn (personal profile)
 // Tue/Thu/Sat from 12:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.
