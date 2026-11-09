@@ -52,6 +52,13 @@
   teaser: b
   approved: false
 - date: '2026-11-26'
+  time: '12:00'
+  type: story
+  project: school-building
+  file: motion-Renders_finais_16-interior5_Edit_0001.mp4
+  approved: false
+  cover: motion-Renders_finais_16-interior5_Edit_0001.jpg
+- date: '2026-11-26'
   time: '20:30'
   type: story
   project: school-building
