@@ -13,7 +13,7 @@ usage: process_media.py <input_dir> <output_dir> <project_id> [config/program.ym
               then the whole image on white as the last slide.
 - manifest.json describing everything.
 """
-import json, sys, pathlib, hashlib, shutil
+import os, json, sys, pathlib, hashlib, shutil
 from PIL import Image, ImageOps
 
 try:
@@ -186,7 +186,8 @@ def main():
         img = Image.open(src)
         img.load()
         stem = "_".join(src.relative_to(src_dir).with_suffix("").parts).replace(" ", "_")
-        full = lossless_full(img, stem, out_dir / "web" / "full", src)
+        lite = os.environ.get("BV_LITE") == "1"   # shared server: low memory → only the Instagram slides (web/full + grid are never used there)
+        full = src if lite else lossless_full(img, stem, out_dir / "web" / "full", src)
         manual = manual_all.get(stem)
         slides, mode = instagram_post(img, stem, out_dir / "ig", cfg["feed_size"], cfg["frame_color"], manual=manual)
         items.append({
@@ -194,13 +195,14 @@ def main():
             "sha1": hashlib.sha1(src.read_bytes()).hexdigest(),
             "size": list(img.size),
             "orientation": "landscape" if img.width > img.height else "portrait" if img.height > img.width else "square",
-            "web_full": str(full), "lossless_verified": True,
-            "web_grid": grid_versions(img, stem, out_dir / "web" / "grid", cfg["grid_widths"]),
+            "web_full": str(full), "lossless_verified": not lite,
+            "web_grid": [] if lite else grid_versions(img, stem, out_dir / "web" / "grid", cfg["grid_widths"]),
             "ig_slides": slides, "ig_mode": mode, "crops": "manual" if manual else "auto-unreviewed",
             "source_bytes": src.stat().st_size, "full_bytes": full.stat().st_size,
         })
         print(f"ok  {src.name}  {img.size[0]}x{img.size[1]}  ig:{mode}  "
               f"{src.stat().st_size/1e6:.1f}MB -> {full.stat().st_size/1e6:.1f}MB lossless  crops:{'manual' if manual else 'AUTO (unreviewed)'}")
+        img.close(); del img; import gc; gc.collect()
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "manifest.json").write_text(json.dumps({"project": pid, "items": items}, indent=2))
     print(f"{len(items)} image(s) processed for {pid}")
