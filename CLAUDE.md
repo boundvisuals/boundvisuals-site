@@ -207,3 +207,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 ## RULE 09/11 (Vítor): PORTFOLIO PDFs ONLY ON REQUEST
 - The weekly Monday portfolio rebuild is REMOVED for good (a hung Chromium blocked the server 5 h). When Vítor asks to update the portfolio/CV, Claude writes a new value (date/time) into config/portfolio_request.txt and pushes → server_run.sh runs server_portfolio.sh once (45-min hard stop).
 - Before stopping any other recurring task Claude considers redundant, ask Vítor first (he said so 09/11).
+
+## RULE 09/11 14:49 (Vítor): NO MORE PUBLISHING KITS
+- Vítor does ALL manual-platform work himself (site, Behance, Chaos CG Connect, Indústria Criativa, LinkedIn company page). Claude no longer prepares kits, texts or image sets for them and does not offer to. Project kit files and the Painel "Kit para publicar" block were deleted. (Opportunity kits in docs/kits/ for the Oportunidades tab are a separate feature, untouched.)
+- Earlier mentions of "Vítor says project X is ready → robot prepares the kit" are VOID. When he sends a MEGA link, Claude only ingests, hand-crops and rebuilds the calendar.

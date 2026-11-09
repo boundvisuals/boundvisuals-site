@@ -61,16 +61,6 @@ def nearest_pt(at, pt_log, window=75 * 60):
     return best[1] if best and best[0] <= window else None
 
 
-def project_kits():
-    """docs/kit-*.md: common header + one '## N. Title' section per project -> {title: text}. Shown in the Painel under Projetos."""
-    out = {}
-    for f in sorted(glob.glob("docs/kit-*.md")):
-        t = open(f, encoding="utf-8").read()
-        head = t.split("\n## ", 1)[0]
-        for m in re.finditer(r"^## \d+\.\s*(.+?)\n(.*?)(?=^## |^---\s*$|\Z)", t, re.S | re.M):
-            out[m.group(1).strip()] = head.strip() + "\n\n## " + m.group(1).strip() + "\n" + m.group(2).strip()
-    return out
-
 
 def studies():
     """Parse docs/daily-study-briefings.md into [{num,title,when,blocks:[{k,t}]}] for the Estúdio tab."""
@@ -457,7 +447,7 @@ def build(out):
     stats = json.load(open("reports/meta/stats.json")) if os.path.exists("reports/meta/stats.json") else {}
     followers = json.load(open("reports/meta/followers.json")) if os.path.exists("reports/meta/followers.json") else {}
     data = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "alerts": alerts, "networks": networks,
-            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "project_kits": project_kits(), "kits": {os.path.basename(k)[:-3]: open(k, encoding="utf-8").read() for k in glob.glob("docs/kits/*.md")}, "decisions": (yaml.safe_load(open("docs/decisions.yml", encoding="utf-8")) or []) if os.path.exists("docs/decisions.yml") else [], "timeline": timeline[:60], "stats": stats, "followers": followers,
+            "calendar": cal, "tasks": tasks, "studies": studies(), "profile": profile, "kits": {os.path.basename(k)[:-3]: open(k, encoding="utf-8").read() for k in glob.glob("docs/kits/*.md")}, "decisions": (yaml.safe_load(open("docs/decisions.yml", encoding="utf-8")) or []) if os.path.exists("docs/decisions.yml") else [], "timeline": timeline[:60], "stats": stats, "followers": followers,
             "content_plan": yaml.safe_load(open("docs/content-plan.yml", encoding="utf-8")) if os.path.exists("docs/content-plan.yml") else {},
             "opp_sources": opp_sources(), "watchdog": (json.load(open("docs/watchdog.json")) if os.path.exists("docs/watchdog.json") else {}),
             "personal": yaml.safe_load(open("docs/personal-projects.yml", encoding="utf-8")) if os.path.exists("docs/personal-projects.yml") else [], "replies": replies or {}, "portfolio": portfolio, "projects": projects, "links": links,
