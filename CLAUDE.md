@@ -44,7 +44,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - 1 image post/day, reel every other day, 3–5 stories/day. Queue ~2 weeks; warn when < 7 days.
 - Daily approval page before anything publishes.
 - Publish order on launch day: site + Behance + CG platforms first, then Instagram/Facebook/Pinterest/LinkedIn linking back.
-- Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa, LinkedIn company page until API approval.
+- Auto via API: Instagram, Facebook, Pinterest, YouTube, LinkedIn personal. Manual kit (Vítor uploads): Behance, Chaos CG Connect (CGArchitect/CG Awards no longer exist, 09/11), Indústria Criativa, LinkedIn company page until API approval.
 
 ## Brand architecture (decided 2026-10-31)
 - Bound Visuals = 3D (all 3D, as since day one). Vítor Hugo = the person behind it all: all 3D of any kind + literally everything else (AI image/video, performance ads, image, video, film…) (confirmed 2026-11-02).
@@ -52,7 +52,7 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - Instagram is Vítor's (person-first bio, mentions the studio).
 
 ## Publishing model (decided 2026-11-02)
-- MANUAL by Vítor, whenever a project is ready (robot prepares a kit): website, Behance, CGArchitect/CG Awards, Chaos CG Connect, Indústria Criativa (+ LinkedIn company page until API approval).
+- MANUAL by Vítor, whenever a project is ready (robot prepares a kit): website, Behance, Chaos CG Connect (CGArchitect/CG Awards no longer exist, 09/11), Indústria Criativa (+ LinkedIn company page until API approval).
 - AUTOMATIC (robot, after one-time connections): Instagram (1 post/day, reel every 2 days, 3–5 stories/day, hashtags in first comment), Facebook Page (mirror), Pinterest (pin → project URL), YouTube Shorts (reels), LinkedIn personal (2–3/week). Staggered best times, not simultaneous.
 - Vítor says "project X is ready" → robot automatically prepares the manual-platform kit (images per platform + texts) and notifies him; he publishes on site/Behance/CG platforms himself.
 - Something must go out EVERY day (at least a story). Need an endless-content plan (quick images/projects, series).
