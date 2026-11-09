@@ -149,7 +149,7 @@ PY
 php -q "$W/painel/cron.php"
 
 # new projects: registry entry with a MEGA link but no slides yet → ingest in the background (one at a time)
-$PY - <<'PY' | head -1 | while read -r pid; do (nohup bash "$R/scripts/server_ingest.sh" "$pid" >> "$B/ingest.log" 2>&1 &); done
+true <<'PY'   # new-project ingest now runs on GitHub (heavy.yml)
 import yaml, os
 r = yaml.safe_load(open("projects/registry.yml")); r = r.get("projects", r) if isinstance(r, dict) else r
 for p in r:

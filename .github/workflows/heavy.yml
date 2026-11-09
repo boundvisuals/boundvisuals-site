@@ -1,0 +1,69 @@
+name: heavy (new projects, crop re-renders, reels)
+# All heavy media work runs here (public repo = free, plenty of memory). The PTServidor only publishes + serves the Painel.
+on:
+  push:
+    branches: [main]
+    paths: ["projects/registry.yml", "config/crops.yml", "config/story_crops.yml"]
+  workflow_dispatch:
+    inputs:
+      projects: { description: "project ids separated by spaces (empty = auto)", required: false, default: "" }
+      reels: { description: "1 = also rebuild reels", required: false, default: "0" }
+permissions: { contents: write }
+concurrency: { group: heavy, cancel-in-progress: false }
+jobs:
+  heavy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          pip install -q pillow pyyaml numpy pycryptodome
+      - name: Which projects
+        id: which
+        env: { MANUAL: "${{ inputs.projects }}", BEFORE: "${{ github.event.before }}" }
+        run: |
+          python3 - > /tmp/plan.txt <<'PY'
+          import os, subprocess, yaml
+          reg = yaml.safe_load(open("projects/registry.yml")); reg = reg.get("projects", reg)
+          ids = [p["id"] for p in reg if p.get("mega") and p["id"] != "daily-study-2026"]
+          out = {}
+          if os.environ.get("MANUAL", "").strip():
+              for p in os.environ["MANUAL"].split(): out[p] = "full"
+          else:
+              for p in ids:                                    # new project: no slides yet → full (with reel)
+                  if not os.path.isdir(f"reports/{p}/ig"): out[p] = "full"
+              def old(f):
+                  try: return yaml.safe_load(subprocess.run(["git","show",f"HEAD~1:{f}"],capture_output=True,text=True).stdout) or {}
+                  except Exception: return {}
+              for f, key in (("config/crops.yml","crops"),("config/story_crops.yml","story_crops")):
+                  a = (old(f) or {}).get(key, {}) or {}; b = (yaml.safe_load(open(f)) or {}).get(key, {}) or {}
+                  for stem in set(a) | set(b):
+                      if a.get(stem) != b.get(stem):
+                          for p in ids:
+                              if os.path.exists(f"reports/{p}/preview/{stem}.jpg"): out.setdefault(p, "crops")
+          for p, m in out.items(): print(p, m)
+          PY
+          cat /tmp/plan.txt
+      - name: Process
+        env: { REELS_ALL: "${{ inputs.reels }}" }
+        run: |
+          B="$HOME/bv"; mkdir -p "$B"; ln -sfn "$GITHUB_WORKSPACE" "$B/repo"
+          while read -r pid mode; do
+            [ -n "$pid" ] || continue
+            R=0; [ "$mode" = full ] && R=1; [ "$REELS_ALL" = 1 ] && R=1
+            REELS=$R bash scripts/server_ingest.sh "$pid" || echo "FAILED $pid"
+            o="$B/outbox/$pid"; D="reports/$pid"; [ -d "$o" ] || continue; mkdir -p "$D"
+            [ -d "$o/ig" ] && { rm -rf "$D/ig" "$D/preview"; cp -r "$o/ig" "$o/preview" "$D/"; cp "$o"/*.log "$o"/manifest.json "$D/" 2>/dev/null; }
+            [ -d "$o/story" ] && { find "$D/story" -name "*.jpg" ! -name "teaser-*" ! -name "palette-*" ! -name "motion-*" -delete 2>/dev/null; mkdir -p "$D/story"; cp "$o"/story/* "$D/story/" 2>/dev/null; }
+            [ -d "$o/reel" ] && ls "$o"/reel/*.mp4 >/dev/null 2>&1 && { rm -rf "$D/reel"; cp -r "$o/reel" "$D/"; }
+            rm -rf "$o"
+          done < /tmp/plan.txt
+      - name: Save
+        run: |
+          git config user.name "bv-robot"; git config user.email "robot@boundvisuals.com"
+          git add -A reports && git commit -qm "Heavy robot: $(tr '\n' ' ' < /tmp/plan.txt)" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done
+          exit 1

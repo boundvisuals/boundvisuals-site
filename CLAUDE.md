@@ -211,3 +211,10 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 ## RULE 09/11 14:49 (Vítor): NO MORE PUBLISHING KITS
 - Vítor does ALL manual-platform work himself (site, Behance, Chaos CG Connect, Indústria Criativa, LinkedIn company page). Claude no longer prepares kits, texts or image sets for them and does not offer to. Project kit files and the Painel "Kit para publicar" block were deleted. (Opportunity kits in docs/kits/ for the Oportunidades tab are a separate feature, untouched.)
 - Earlier mentions of "Vítor says project X is ready → robot prepares the kit" are VOID. When he sends a MEGA link, Claude only ingests, hand-crops and rebuilds the calendar.
+
+## 09/11 16:00 — REPO PUBLIC + HEAVY WORK ON GITHUB (Vítor approved)
+- Repo is PUBLIC (Vítor accepted images/captions visible; history scanned: no secrets). Actions minutes are free/unlimited now.
+- .github/workflows/heavy.yml = new projects (registry entry with MEGA link and no reports/<p>/ig), post/story crop changes (push of config/crops.yml or story_crops.yml, incl. Painel edits pushed by the server) and on-demand reels: runs scripts/server_ingest.sh on the runner and commits reports/. Dispatch: projects="id id" reels=1.
+- PTServidor keeps ONLY: publishing (cron.php), Painel build + api, teaser/motion/palette stories (need ~/bv/src + env). server_rerender.sh is a no-op; server no longer auto-ingests. Server repo clone is shallow (--depth 1).
+- Removed workflows: publish, meta-check, probe, stats, audit-site, painel, ingest, make-social, preview-finals. portfolio.yml is dispatch-only.
+- Server crash causes fixed 09/11: git add with a missing pathspec (server never pushed), OOM in process_media (BV_LITE=1), hung Chromium 5 h (45-min cap, portfolio on request only).

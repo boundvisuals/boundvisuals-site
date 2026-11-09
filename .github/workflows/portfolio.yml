@@ -2,9 +2,6 @@ name: portfolio
 # Also builds + deploys Vítor's personal site to /public_html/vitorhugo (boundvisuals.com/vitorhugo).
 # CV + portfolio PDFs in Vítor's InDesign style, rebuilt whenever projects/images/profile change; uploaded next to the Painel.
 on:
-  push:
-    branches: [main]
-    paths: ["reports/*/preview/**", "docs/profile.yml", "docs/cv.yml", "docs/ai-portfolio.yml", "docs/projects-archive.yml", "docs/cv-source/media/**", "projects/registry.yml", "scripts/build_portfolio.py", "config/crops.yml", "scripts/build_vitorhugo.py", "reports/*/reel/*.mp4", "docs/vitorhugo-pt.yml"]
   workflow_dispatch:
 concurrency: { group: portfolio, cancel-in-progress: true }
 jobs:

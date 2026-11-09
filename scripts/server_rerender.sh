@@ -1,4 +1,4 @@
 #!/bin/bash
-# After a crop edit in the Painel: rebuild that project's slides + stories from the cached finals (no reels).
-pid="$1"; B="$HOME/bv"
-STORIES=1 REELS=0 bash "$B/repo/scripts/server_ingest.sh" "$pid"
+# Crop re-renders now run on GitHub (.github/workflows/heavy.yml, triggered by the push of config/crops.yml / story_crops.yml).
+# Kept as a no-op so older callers in server_run.sh do nothing.
+exit 0
