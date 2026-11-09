@@ -1,17 +1,31 @@
-# 4:5 framing of the HOJE/NOVO NO FEED stories, edited in the Painel (make_teasers renders them from the full-res final).
 teaser_crops:
   teaser-2026-11-08-a:
     stem: 2_-_exterior2_2-exterior2
-    crop: [0.636, 0.505, 0.619]
+    crop:
+    - 0.636
+    - 0.505
+    - 0.619
   teaser-2026-11-09-a:
     stem: root_2_-_Back_webp_+_Seedvr2_bravo
-    crop: [0.631, 0.5, 1.0]
+    crop:
+    - 0.631
+    - 0.5
+    - 1.0
   teaser-2026-11-09-b:
     stem: root_2_-_Back_webp_+_Seedvr2_bravo
-    crop: [0.529, 0.575, 0.465]
+    crop:
+    - 0.529
+    - 0.575
+    - 0.465
   teaser-2026-11-10-b:
     stem: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT
-    crop: [0.29, 0.539, 0.73]
+    crop:
+    - 0.29
+    - 0.539
+    - 0.73
   teaser-2026-11-11-a:
     stem: 10_-_interior3_10-interior3
-    crop: [0.415, 0.5, 1.0]
+    crop:
+    - 0.415
+    - 0.5
+    - 1.0

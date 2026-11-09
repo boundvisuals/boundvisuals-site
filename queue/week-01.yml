@@ -1,6 +1,4 @@
 # Week 1 — feed posts (Instagram carousel + Facebook mirror). Times Europe/Lisbon.
-# approved: true until Vítor says so. Slides = files in reports/<project>/ig.
-# Crops redone by hand 2026-11-03 (config/crops.yml), composition-first; Vítor reviews before approving.
 - date: '2026-11-06'
   time: '19:00'
   project: vivendas-duas-igrejas
@@ -41,36 +39,4 @@
   - root_2_-_Back_webp_+_Seedvr2_bravo-03-full.jpg
   caption_en: The back garden on a Sunday afternoon. This is what the plans were really about.
   caption_pt: O jardim das traseiras numa tarde de domingo. Era isto que as plantas queriam dizer.
-  approved: true
-- date: '2026-11-10'
-  time: '19:00'
-  project: vivendas-cete
-  slides:
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg
-  - 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg
-  caption_en: Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête.
-  caption_pt: Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête.
-  approved: true
-- date: '2026-11-11'
-  time: '19:00'
-  project: gold-village
-  slides:
-  - 10_-_interior3_10-interior3-01.jpg
-  - 10_-_interior3_10-interior3-02.jpg
-  - 10_-_interior3_10-interior3-03.jpg
-  - 10_-_interior3_10-interior3-04-full.jpg
-  caption_en: First light through the curtains. A bedroom designed to slow the morning down. Gold Village.
-  caption_pt: A primeira luz pelas cortinas. Um quarto pensado para abrandar a manhã. Gold Village.
-  approved: true
-- date: '2026-11-12'
-  time: '19:00'
-  project: vivendas-duas-igrejas
-  slides:
-  - root_3-interior1_webp-01.jpg
-  - root_3-interior1_webp-02.jpg
-  - root_3-interior1_webp-03.jpg
-  - root_3-interior1_webp-04-full.jpg
-  caption_en: A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas.
-  caption_pt: Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas.
   approved: true

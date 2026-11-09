@@ -88,6 +88,29 @@ PY
     (nohup bash -c 'while read -r pid; do [ -n "$pid" ] && bash "$0" "$pid"; done < "$1"; rm -f "$1"' "$R/scripts/server_rerender.sh" "$L" >> "$B/ingest.log" 2>&1 &)
   fi
 fi
+# POST crops changed in git (hand-composed by Claude) → re-render those projects once
+# first time: seed the baseline WITHOUT the School Building aerial so only that project re-renders (not all of them)
+[ -f "$B/in/crops.last.yml" ] || $PY -c "import yaml;d=yaml.safe_load(open('config/crops.yml'));d['crops'].pop('Renders_finais_5-exterior11_edit_0001',None);yaml.safe_dump(d,open('$B/in/crops.last.yml','w'))"
+if [ -f config/crops.yml ] && ! cmp -s config/crops.yml "$B/in/crops.last.yml"; then
+  $PY - "$B/in/crops.last.yml" "$B/in/changed.txt" > "$B/in/post_changed.txt" <<'PY'
+import os, sys, yaml
+old = (yaml.safe_load(open(sys.argv[1])) or {}).get("crops", {}) if os.path.exists(sys.argv[1]) else {}
+new = (yaml.safe_load(open("config/crops.yml")) or {}).get("crops", {})
+done = set(open(sys.argv[2]).read().split()) if os.path.exists(sys.argv[2]) else set()
+out = set()
+for stem in set(old) | set(new):
+    if old.get(stem) != new.get(stem):
+        for p in os.listdir("reports"):
+            if os.path.exists(f"reports/{p}/preview/{stem}.jpg") and p not in done:
+                out.add(p)
+print("\n".join(sorted(out)))
+PY
+  cp config/crops.yml "$B/in/crops.last.yml"
+  if [ -s "$B/in/post_changed.txt" ]; then
+    L="$B/in/post_changed.$$.txt"; mv "$B/in/post_changed.txt" "$L"
+    (nohup bash -c 'while read -r pid; do [ -n "$pid" ] && bash "$0" "$pid"; done < "$1"; rm -f "$1"' "$R/scripts/server_rerender.sh" "$L" >> "$B/ingest.log" 2>&1 &)
+  fi
+fi
 $PY scripts/dedupe_queue.py >/dev/null || true
 $PY scripts/build_painel.py sync-reels >/dev/null; $PY scripts/build_painel.py sync-slides >/dev/null
 $PY scripts/make_teasers.py >/dev/null || true

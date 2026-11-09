@@ -1,41 +1,66 @@
-# Week 5. approved only after Vítor's OK (crops reviewed in the panel first).
-- date: '2026-12-04'
+# Week 5 (2026-12-01 to 2026-12-07). Rebuilt 09/11 with School Building mixed in; approved only after Vítor's OK.
+- date: '2026-12-01'
+  time: '19:00'
+  project: vivendas-cete
+  slides:
+  - 3-interior3_3-interior3-01.jpg
+  - 3-interior3_3-interior3-02.jpg
+  - 3-interior3_3-interior3-03.jpg
+  - 3-interior3_3-interior3-04-full.jpg
+  caption_en: A bedroom in soft grey and white, with a little warmth from the floor. Vivendas Cête, Penafiel.
+  caption_pt: Um quarto em cinzentos suaves e branco, com um pouco de calor vindo do chão. Vivendas Cête, Penafiel.
+  approved: false
+- date: '2026-12-02'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_7-exterior4_edit_0001-01.jpg
+  caption_en: Timber eaves, a long ramp and pupils on the steps between classes. School Building, Switzerland.
+  caption_pt: Beirados em madeira, uma rampa comprida e alunos nos degraus entre aulas. School Building, Suíça.
+  approved: false
+- date: '2026-12-03'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
-  - 4_-_Exterior4_4-exterior4_0001-01.jpg
-  caption_en: Morning coffee on a balcony full of flowers, with the hills in the distance. Apartamentos Gondomar 2.
-  caption_pt: Pequeno-almoço numa varanda cheia de flores, com as colinas ao fundo. Apartamentos Gondomar 2.
+  - 11_-_Interior_4_11-interior4_edit_0001-01.jpg
+  caption_en: Coffee on the sofa and a kitchen that stays out of the way. Apartamentos Gondomar 2.
+  caption_pt: Café no sofá e uma cozinha que não se intromete. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-04'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_9-exterior7_edit_0001-01.jpg
+  caption_en: Blossom in the courtyard and chalk lines on the playground. School Building, Switzerland.
+  caption_pt: Flores no pátio e linhas de giz no recreio. School Building, Suíça.
   approved: false
 - date: '2026-12-05'
   time: '19:00'
-  project: gold-village
+  project: vivendas-duas-igrejas
   slides:
-  - 5_-_exterior5_5-exterior5-01.jpg
-  caption_en: 'A balcony as an extra room: planters, a reading chair and the street below. Gold Village.'
-  caption_pt: 'Uma varanda como mais uma divisão: floreiras, uma cadeira de leitura e a rua lá em baixo. Gold Village.'
+  - root_7-interior4_webp-01.jpg
+  - root_7-interior4_webp-02.jpg
+  - root_7-interior4_webp-03.jpg
+  - root_7-interior4_webp-04-full.jpg
+  caption_en: 'Looking down the stairwell: timber, white walls and a plant catching the light. Duas Igrejas, Penafiel.'
+  caption_pt: 'A olhar para a caixa de escadas: madeira, paredes brancas e uma planta a apanhar luz. Duas Igrejas, Penafiel.'
+  approved: false
+- date: '2026-12-06'
+  time: '19:00'
+  project: school-building
+  slides:
+  - Renders_finais_6-exterior3_edit_0001-01.jpg
+  caption_en: Late light on the facade and the walk home past the planters. School Building, Switzerland.
+  caption_pt: Luz de fim de tarde na fachada e o regresso a casa ao lado das floreiras. School Building, Suíça.
   approved: false
 - date: '2026-12-07'
   time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 3_-_Exterior3_3-exterior3_edit_0001-01.jpg
-  caption_en: 'Coming home: the stairs, the planters and the dark facade. Apartamentos Gondomar 2.'
-  caption_pt: 'Chegar a casa: as escadas, as floreiras e a fachada escura. Apartamentos Gondomar 2.'
-  approved: false
-- date: '2026-12-08'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 13_-_Interior_6_13-interior6_edit_0001-01.jpg
-  caption_en: Timber slats frame the view from the hall to the kitchen and the window. Apartamentos Gondomar 2.
-  caption_pt: Ripas de madeira enquadram a vista do hall para a cozinha e a janela. Apartamentos Gondomar 2.
-  approved: false
-- date: '2026-12-09'
-  time: '19:00'
   project: gold-village
   slides:
-  - 6_-_exterior6_6-exterior6-01.jpg
-  caption_en: A ground-floor terrace, a book and an afternoon outside. Gold Village.
-  caption_pt: Um terraço no rés do chão, um livro e uma tarde cá fora. Gold Village.
+  - 9_-_interior2_9-interior2-01.jpg
+  - 9_-_interior2_9-interior2-02.jpg
+  - 9_-_interior2_9-interior2-03.jpg
+  - 9_-_interior2_9-interior2-04-full.jpg
+  caption_en: Two pendants, a breakfast bar and someone reading in the corner. Gold Village.
+  caption_pt: Dois candeeiros suspensos, um balcão de pequeno-almoço e alguém a ler no canto. Gold Village.
   approved: false

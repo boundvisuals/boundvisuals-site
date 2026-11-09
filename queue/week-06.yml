@@ -1,41 +1,60 @@
-# Week 6. approved only after Vítor's OK (crops reviewed in the panel first).
-- date: '2026-12-11'
+# Week 6 (2026-12-08 to 2026-12-14). Rebuilt 09/11 with School Building mixed in; approved only after Vítor's OK.
+- date: '2026-12-08'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
-  - 12_-_Interior_5_12-interior5_0001-01.jpg
-  caption_en: Dining table, shelves and the living room beyond. Apartamentos Gondomar 2.
-  caption_pt: Mesa de jantar, estantes e a sala logo a seguir. Apartamentos Gondomar 2.
+  - 9_-_Interior_2_9-interior2_edit_0001-01.jpg
+  caption_en: Stools, a breakfast bar and a living room that never feels far away. Apartamentos Gondomar 2.
+  caption_pt: Bancos, um balcão de pequeno-almoço e uma sala que nunca fica longe. Apartamentos Gondomar 2.
+  approved: false
+- date: '2026-12-09'
+  time: '19:00'
+  project: vivendas-cete
+  slides:
+  - 2-interior2_2-interior2-01.jpg
+  caption_en: Up the stairs, past the timber slats and into the light. Vivendas Cête, Penafiel.
+  caption_pt: Escadas acima, ao lado do ripado de madeira e para dentro da luz. Vivendas Cête, Penafiel.
+  approved: false
+- date: '2026-12-10'
+  time: '19:00'
+  project: vivendas-duas-igrejas
+  slides:
+  - root_5-interior2_webp-01.jpg
+  caption_en: A long hallway with a runner and a morning on the stairs. Duas Igrejas, Penafiel.
+  caption_pt: Um corredor comprido com passadeira e uma manhã nas escadas. Duas Igrejas, Penafiel.
+  approved: false
+- date: '2026-12-11'
+  time: '19:00'
+  project: gold-village
+  slides:
+  - 11_-_interior4_11-interior4-01.jpg
+  - 11_-_interior4_11-interior4-02.jpg
+  - 11_-_interior4_11-interior4-03.jpg
+  - 11_-_interior4_11-interior4-04-full.jpg
+  caption_en: Black marble, a white robe and a morning that starts slowly. Gold Village.
+  caption_pt: Mármore preto, um roupão branco e uma manhã que começa devagar. Gold Village.
   approved: false
 - date: '2026-12-12'
   time: '19:00'
   project: apartamentos-gondomar-2
   slides:
-  - 7_-_Exterior_7_7-exterior7_edit_0001-01.jpg
-  caption_en: A corner terrace with a hedge, and a neighbour at the door. Apartamentos Gondomar 2.
-  caption_pt: Um terraço de esquina com sebe, e uma vizinha à porta. Apartamentos Gondomar 2.
+  - 17_-_Interior_10_17-interior10_0001-01.jpg
+  caption_en: The view from the sofa. Hills, rooftops and a quiet afternoon. Apartamentos Gondomar 2.
+  caption_pt: A vista do sofá. Colinas, telhados e uma tarde calma. Apartamentos Gondomar 2.
   approved: false
 - date: '2026-12-13'
   time: '19:00'
-  project: apartamentos-gondomar-2
+  project: vivendas-cete
   slides:
-  - 16_-_Interior_9_16-interior9_0001-01.jpg
-  caption_en: Marble island, light curtains and a balcony full of plants. Apartamentos Gondomar 2.
-  caption_pt: Ilha em mármore, cortinas leves e uma varanda cheia de plantas. Apartamentos Gondomar 2.
+  - 4-interior4_4-interior4-01.jpg
+  caption_en: A bathroom in pale stone, clean lines and a soft rug. Vivendas Cête, Penafiel.
+  caption_pt: Uma casa de banho em pedra clara, linhas limpas e um tapete suave. Vivendas Cête, Penafiel.
   approved: false
-- date: '2026-12-15'
+- date: '2026-12-14'
   time: '19:00'
-  project: apartamentos-gondomar-2
+  project: gold-village
   slides:
-  - 15_-_Interior_8_15-interior8_edit_0001-01.jpg
-  caption_en: Open plan, low sofa and the balcony door left open. Apartamentos Gondomar 2.
-  caption_pt: Espaço aberto, sofá baixo e a porta da varanda aberta. Apartamentos Gondomar 2.
-  approved: false
-- date: '2026-12-16'
-  time: '19:00'
-  project: apartamentos-gondomar-2
-  slides:
-  - 18_-_Interior_11_18-interior11_edit_0001-01.jpg
-  caption_en: A bathroom in marble and oak, with a round mirror and soft light. Apartamentos Gondomar 2.
-  caption_pt: Uma casa de banho em mármore e carvalho, com espelho redondo e luz suave. Apartamentos Gondomar 2.
+  - 1_-_exterior1_1-exterior1-01.jpg
+  caption_en: Five floors of timber and planters, seen from the street. Gold Village.
+  caption_pt: Cinco pisos de madeira e floreiras, vistos da rua. Gold Village.
   approved: false
