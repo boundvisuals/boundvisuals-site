@@ -26,3 +26,30 @@
   caption_en: School Building
   caption_pt: School Building
   approved: false
+- date: '2026-12-05'
+  time: '12:30'
+  type: reel
+  project: school-building
+  file: school-building-reel-02.mp4
+  cover: school-building-reel-02-cover.jpg
+  caption_en: School Building (part 2)
+  caption_pt: School Building (parte 2)
+  approved: false
+- date: '2026-12-07'
+  time: '12:30'
+  type: reel
+  project: school-building
+  file: school-building-reel-03.mp4
+  cover: school-building-reel-03-cover.jpg
+  caption_en: School Building (part 3)
+  caption_pt: School Building (parte 3)
+  approved: false
+- date: '2026-12-09'
+  time: '12:30'
+  type: reel
+  project: school-building
+  file: school-building-reel-04.mp4
+  cover: school-building-reel-04-cover.jpg
+  caption_en: School Building (part 4)
+  caption_pt: School Building (parte 4)
+  approved: false
