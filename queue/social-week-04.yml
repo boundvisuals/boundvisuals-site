@@ -6,6 +6,13 @@
   file: Renders_finais_5-exterior11_edit_0001-s02.jpg
   approved: false
 - date: '2026-11-24'
+  time: '15:00'
+  type: story
+  project: school-building
+  file: motion-Renders_finais_14-interior3_edit_0001.mp4
+  approved: false
+  cover: motion-Renders_finais_14-interior3_edit_0001.jpg
+- date: '2026-11-24'
   time: '20:30'
   type: story
   project: school-building
