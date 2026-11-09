@@ -3525,4 +3525,196 @@ Regra: a cadeira vermelha no mesmo sítio em A e B; tabuleta sem texto legível;
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #112–#117, 22 jul–3 ago, até 19 jul).
+## #112 · Casa para um cliente imaginário #13: o queijeiro da serra (quinta, 22 jul)
+
+**Ideia:** décimo terceiro "cliente imaginário": um queijeiro que faz queijo de ovelha numa aldeia de montanha. Casa de pedra com a queijaria no piso de baixo, uma câmara de cura semienterrada e a habitação por cima, com varanda de madeira para o vale.
+
+**1. Modelo 3D (25 min)**
+- Volume de 11 × 7 m em dois pisos: base de granito aparelhado (queijaria e cura, com porta larga e duas frestas), piso superior em reboco caiado e varanda de madeira de 7 × 1,5 m.
+- Telhado de duas águas em telha de barro envelhecida; chaminé baixa de pedra.
+- Terreno em declive com muro de pedra solta, uma ovelha só como forma simples (opcional) e um tanque de pedra à porta.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, do caminho, a casa inteira encaixada na encosta.
+- B: 35 mm, a porta larga da queijaria aberta, com prateleiras de queijos lá dentro.
+- C: 85 mm, o tanque de pedra com a água a correr e a parede de granito molhada.
+
+**3. Luz:** manhã fria de montanha, sol baixo de lado (4800 K), neblina leve no vale ao fundo e luz quente a sair da porta da queijaria.
+
+**4. Render base:** 1600 px. Granito com junta funda, cal ligeiramente suja, madeira cinzenta, telha. Guardar "0 - clay", "0 - mask id" (pedra / cal / madeira / telha / água) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A two-storey mountain village house with a rough granite base housing a small cheese dairy with a wide open wooden door and shelves of round sheep cheeses glowing warm inside, a limewashed upper floor with a weathered grey timber balcony, an aged clay-tile gabled roof with a low stone chimney, a stone water trough with running water by the door, dry-stone walls on a steep slope, cold morning light with soft mist in the valley behind, authentic and quiet, fine film grain, no people, no readable text.
+```
+Regra: a porta da queijaria do mesmo tamanho e no mesmo sítio nas três; queijos todos redondos e sem marcas legíveis; a neblina só ao fundo, nunca a tapar a casa.
+
+**6. Entrega:** 3 finais em "#112 - Cliente imaginario 13 o queijeiro / final". Para reel: câmara B, 5 s, a luz quente a pulsar à porta e a água do tanque a correr (Seedance), som de água e sinos de ovelhas ao longe.
+
+**Legenda**
+- EN: "Daily Study #112 · Imaginary client #13: the cheesemaker. A house built around a cellar, because the best part of the day happens downstairs, slowly."
+- PT: "Daily Study #112 · Cliente imaginário #13: o queijeiro da serra. Uma casa construída à volta de uma cura, porque o melhor do dia acontece lá em baixo, devagar."
+
+---
+
+## #113 · Casas de Portugal #17: Algarve, a casa de açoteia e chaminé rendilhada (sábado, 24 jul)
+
+**Ideia:** décima sétima "casa de Portugal": a casa tradicional algarvia, toda branca, de telhado plano (açoteia), com a platibanda recortada e a chaminé rendilhada que a identifica a quilómetros. Luz do sul, sombras duras e muito céu.
+
+**1. Modelo 3D (25 min)**
+- Volume térreo de 10 × 7 m em dois corpos de alturas diferentes, ambos com açoteia (telhado plano com ligeira inclinação para a platibanda).
+- Platibanda com recorte em degraus de 40 cm; chaminé cilíndrica de 1,6 m com rendilhado em dois andares (cilindro + cone baixo com furos simples, feitos com booleano).
+- Portas e janelas pequenas com moldura azul-clara de 12 cm, soleira de pedra, banco de alvenaria rente à parede; figueira e alfarrobeira (instâncias simples).
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da rua, a casa inteira com o céu e a açoteia a contrastar.
+- B: 70 mm, a chaminé rendilhada contra o azul.
+- C: 50 mm, a porta azul-clara com o banco e a sombra da figueira.
+
+**3. Luz:** fim da tarde de verão, sol a 25° e quente (4200 K), sombras longas e nítidas, céu limpo e profundo.
+
+**4. Render base:** 1600 px. Cal com micro-relevo, moldura pintada mate, pedra da soleira com desgaste. Guardar "0 - clay", "0 - mask id" (cal / moldura / pedra / folhagem / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A traditional Algarve house in Portugal, whitewashed lime walls, flat terrace roof with a stepped cut-out parapet, a tall lace-pattern cylindrical chimney, small door and windows framed in pale blue, a masonry bench along the wall, a fig tree casting a sharp shadow, warm late afternoon summer sun, deep clean blue sky, crisp shadows, quiet and sunlit, fine film grain, no people, no text.
+```
+Regra: a chaminé igual (mesmo rendilhado) nas câmaras A e B; o azul da moldura é sempre o mesmo azul-claro; sem antenas, sem painéis solares, sem candeeiros modernos.
+
+**6. Entrega:** 3 finais em "#113 - Casas de Portugal 17 Algarve / final". Para reel: câmara A, 5 s, a sombra da figueira a mexer e o céu quase parado (Seedance), som de cigarras.
+
+**Legenda**
+- EN: "Daily Study #113 · Houses of Portugal #17: the Algarve. White lime, a stepped parapet and a chimney like lace, all under a sky that needs no help."
+- PT: "Daily Study #113 · Casas de Portugal #17: Algarve. Cal branca, uma platibanda em degraus e uma chaminé como renda, tudo sob um céu que dispensa ajuda."
+
+---
+
+## #114 · Abecedário arquitetónico #13: M de Mirante (terça, 27 jul)
+
+**Ideia:** a letra M é de mirante: um pequeno volume feito só para olhar. Uma plataforma elevada, uma moldura de aço e madeira e uma paisagem que se encaixa lá dentro como um quadro.
+
+**1. Modelo 3D (15 min)**
+- Plataforma octogonal de 3 m de largura sobre quatro pilares esbeltos de betão, a 3,2 m do chão; escada exterior em aço de dois lanços.
+- Guarda contínua de vidro com corrimão de madeira clara; cobertura plana fina (12 cm) em aço escuro, a sobressair 40 cm.
+- Banco corrido interior em madeira; pavimento em tábuas largas; terreno com muro baixo e erva alta.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, de baixo, o mirante inteiro no ar contra o céu.
+- B: 35 mm, de dentro, o banco e a paisagem a enquadrar-se na cobertura.
+- C: 85 mm, o encontro do pilar com o pavimento e o corrimão de madeira.
+
+**3. Luz:** hora dourada, sol baixo vindo de trás do mirante para recortar a silhueta, com um bocado de céu rosado no horizonte.
+
+**4. Render base:** 1600 px. Betão com cofragem de tábua, aço escuro mate, vidro com reflexo ténue, madeira clara. Guardar "0 - clay", "0 - mask id" (betão / aço / vidro / madeira / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same structure, same geometry and camera as the reference image. A slender viewing platform lookout raised on four board-marked concrete piers above tall grass, an octagonal platform with a continuous glass balustrade and a light timber handrail, a thin dark steel flat roof overhanging, a simple steel stair, a built-in timber bench inside, golden hour backlight with a soft pink horizon, quiet and elegant, fine film grain, no people, no text.
+```
+Regra: sempre quatro pilares e a mesma cobertura nas três; o mesmo tom de madeira; paisagem ao fundo sem outras construções.
+
+**6. Entrega:** 3 finais em "#114 - Abecedario 13 M de Mirante / final". Para reel: câmara B, 5 s, a luz a deslizar no banco e a erva a mexer lá fora (Seedance), som de vento.
+
+**Legenda**
+- EN: "Daily Study #114 · Architectural alphabet #13: M for Mirante. A building whose only job is to frame what's already there."
+- PT: "Daily Study #114 · Abecedário arquitetónico #13: M de Mirante. Um edifício cuja única missão é enquadrar o que já lá estava."
+
+---
+
+## #115 · Produto em bloco de cor: um rádio portátil creme sobre fundo azul (quinta, 29 jul)
+
+**Ideia:** produto gráfico, pop e muito limpo: um rádio portátil dos anos 70 em plástico creme, com grelha circular e puxador, sobre um plano de cor azul-cobalto. Luz dura e sombra nítida, quase de cartaz.
+
+**1. Modelo 3D (15 min)**
+- Caixa arredondada de 22 × 14 × 8 cm, grelha circular de colunas finas (array de furos), dial rectangular com ponteiro e dois botões redondos.
+- Puxador em arco no topo; antena telescópica dobrada ao lado.
+- Cenário: fundo contínuo (curva suave) em azul-cobalto e um cubo baixo de plástico branco como plinto.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, frontal ligeiramente de cima, o rádio inteiro com o fundo azul.
+- B: 100 mm, a grelha circular com a sombra dura dos furos.
+- C: 135 mm, o dial e os botões com a escala numerada desfocada.
+
+**3. Luz:** uma única fonte dura (sol de estúdio) a 35° vinda da esquerda, sombra definida e inclinada para a direita; sem enchimento.
+
+**4. Render base:** 1800 px. Plástico ABS creme com brilho médio, metal escovado no dial, borracha nos botões. Guardar "0 - clay", "0 - mask id" (plástico / metal / borracha / fundo) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same object, same geometry and camera as the reference image. A vintage 1970s portable radio in cream plastic with a round speaker grille, a small rectangular tuning dial with a thin red needle, two round knobs and an arched carry handle, standing on a white block against a seamless saturated cobalt blue background, a single hard studio light from the left casting a crisp diagonal shadow, graphic and playful, fine grain, no brand name, no readable text or numbers on the dial.
+```
+Regra: o azul-cobalto idêntico nas três (conta-gotas); o dial sem texto legível; o ponteiro vermelho sempre na mesma posição.
+
+**6. Entrega:** 3 finais em "#115 - Produto 8 radio creme / final". Para reel: câmara C, 4 s, o ponteiro do dial a deslizar devagar com a luz fixa (Seedance), som de rádio a sintonizar e um acorde de piano.
+
+**Legenda**
+- EN: "Daily Study #115 · Product, colour block: a cream radio on cobalt. One hard light, one loud background, one small red needle."
+- PT: "Daily Study #115 · Produto em bloco de cor: um rádio creme sobre azul-cobalto. Uma luz dura, um fundo que grita e um ponteiro vermelho."
+
+---
+
+## #116 · Desafio de cor #13: preto-carvão (sábado, 31 jul)
+
+**Ideia:** o desafio contrário aos anteriores: quase tudo preto. Uma sala de leitura toda em carvão, onde só a textura e o reflexo separam as superfícies: lacado, pedra polida, veludo, madeira queimada.
+
+**1. Modelo 3D (20 min)**
+- Sala de 5 × 4 m com paredes lacadas a preto mate, teto liso a preto e pavimento em pedra polida preta.
+- Estante embutida em madeira queimada (shou sugi ban) até ao teto, uma poltrona de veludo preto e um candeeiro de leitura articulado em latão escurecido.
+- Uma janela estreita e alta com cortina de linho cinzento escuro; mesa baixa com um livro e uma chávena.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da porta, a sala toda com a poltrona e a estante.
+- B: 50 mm, a poltrona de veludo com o candeeiro e o halo de luz no livro.
+- C: 100 mm, a pedra polida com o reflexo do candeeiro e o grão da madeira queimada.
+
+**3. Luz:** noite; só o candeeiro de leitura (2700 K) e um fio de luz fria da janela; tudo o resto em sombra profunda com reflexos controlados.
+
+**4. Render base:** 1600 px. Lacado mate, pedra polida com reflexo nítido, veludo (fuzz leve), madeira queimada com textura. Guardar "0 - clay", "0 - mask id" (parede / pedra / veludo / madeira / latão) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural interior photograph, same room, same geometry and camera as the reference image. A monochrome charcoal-black reading room: matte black lacquered walls and ceiling, polished black stone floor with sharp reflections, a built-in shou sugi ban charred-timber bookshelf, a black velvet armchair, an articulated blackened-brass reading lamp casting a small warm pool of light on an open book and a cup on a low table, a narrow tall window with dark grey linen curtain letting in a thin cold line of light, deep shadows, tactile and moody, fine film grain, no people, no readable text.
+```
+Regra: o preto NÃO pode ficar chapado: tem de se ver a diferença entre mate, brilho, veludo e queimado nas três; sem cores novas (só o âmbar do candeeiro); texto do livro ilegível.
+
+**6. Entrega:** 3 finais em "#116 - Desafio de cor 13 preto-carvao / final" + 1 slide de paleta (faço-o eu a partir das tuas finais). Para reel: câmara B, 5 s, o halo de luz a respirar de leve e a poeira a flutuar no feixe (Seedance), som de página a virar.
+
+**Legenda**
+- EN: "Daily Study #116 · Colour challenge #13: charcoal. A black room is never one black: it's five textures that took turns not to disappear."
+- PT: "Daily Study #116 · Desafio de cor #13: preto-carvão. Uma sala preta nunca é um só preto: são cinco texturas que se revezam para não desaparecer."
+
+---
+
+## #117 · Brief de concurso #7: uma torre de observação de aves no estuário do Tejo (terça, 3 ago)
+
+**Ideia:** sétimo "concurso imaginário": uma torre de observação de aves no sapal, em madeira, com rampa em vez de escadas e uma sala-caixa no topo com fendas de visão a todas as alturas. Imagem de concurso, quieta e gráfica, ao nascer do dia.
+
+**1. Modelo 3D (25 min)**
+- Torre de 9 m em ripado de madeira (tábuas verticais de 8 cm com espaços de 2 cm), planta quadrada de 3,5 m no topo, afunilando para 2,5 m na base.
+- Rampa em espiral exterior de 1,2 m de largura com guarda de cabo de aço; sala-caixa no topo com fendas horizontais a 1,1 m e a 1,6 m de altura (para adultos e crianças).
+- Sapal: plano de água rasa com reflexo, lamas, tufos de juncos (instâncias) e passadiço de tábuas até à torre.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, do passadiço, a torre inteira com o céu e o reflexo no sapal.
+- B: 35 mm, a rampa a subir, vista de baixo, em perspetiva.
+- C: 85 mm, a sala-caixa com as fendas de visão e a luz a atravessar o ripado.
+
+**3. Luz:** nascer do sol, neblina baixa sobre o sapal, céu rosa e dourado com luz rasante no ripado.
+
+**4. Render base:** 1600 px. Madeira de pinho tratada cinzenta, água com reflexo, lama húmida, juncos. Guardar "0 - clay", "0 - mask id" (madeira / água / lama / juncos / céu) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural competition image, same structure, same geometry and camera as the reference image. A tall slatted timber bird observation tower in the Tagus estuary salt marsh, a spiral exterior ramp with thin steel cable guardrails, a timber box room at the top with long horizontal viewing slits, a boardwalk crossing shallow still water that mirrors the tower, reed tufts and wet mud, a few distant flamingos as tiny shapes, sunrise with low mist and a pink and gold sky, quiet and graphic, fine film grain, no people, no text.
+```
+Regra: o ripado com o mesmo ritmo em todas as câmaras; o reflexo coerente com a luz; no máximo cinco flamingos minúsculos, só na câmara A.
+
+**6. Entrega:** 3 finais em "#117 - Concurso 7 Torre de aves / final". Para reel: câmara A, 6 s, a neblina a deslizar sobre a água e dois flamingos a levantarem voo ao longe (Seedance), som de aves e água.
+
+**Legenda**
+- EN: "Daily Study #117 · Imaginary competition #7: a bird tower. Nine metres of slats, a ramp for every height, and one very patient morning."
+- PT: "Daily Study #117 · Concurso imaginário #7: uma torre de aves. Nove metros de ripas, uma rampa para todas as alturas e uma manhã muito paciente."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #118–#123, 5–17 ago, até 2 ago).
