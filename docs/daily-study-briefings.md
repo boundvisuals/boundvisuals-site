@@ -3717,4 +3717,194 @@ Regra: o ripado com o mesmo ritmo em todas as câmaras; o reflexo coerente com a
 
 ---
 
-Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #118–#123, 5–17 ago, até 2 ago).
+## #118 · Casa para um cliente imaginário #14: o afinador de pianos (quinta, 5 ago)
+
+**Ideia:** décimo quarto cliente imaginário: um afinador de pianos itinerante que vive e trabalha numa casa térrea com oficina anexa. Pede silêncio, luz estável e paredes que não ecoem. Imagem quieta, de interior e exterior, em tons de madeira clara e cal.
+
+**1. Modelo 3D (30 min)**
+- Casa térrea de 9 × 6 m em reboco de cal, telhado de duas águas com beiral curto; anexo-oficina de 4 × 4 m ligado por um pátio coberto.
+- Oficina: bancada longa em carvalho, painel de ferramentas na parede, um piano vertical aberto (modelo simples da 3D Warehouse ou Sketchfab CC), janela alta a norte.
+- Sala: tecto com painéis de madeira ripada (acústicos), estante baixa, um cadeirão e tapete de lã.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, exterior, a casa e a oficina com o pátio coberto entre as duas.
+- B: 35 mm, interior da oficina, o piano aberto e a bancada em perspetiva.
+- C: 50 mm, a sala com o ripado do tecto e o cadeirão, luz suave da janela.
+
+**3. Luz:** manhã de céu encoberto e claro, luz difusa e constante, sem sombras duras; interiores neutros e ligeiramente quentes.
+
+**4. Render base:** 1600 px. Cal rugosa, carvalho com veio, lã, teclas de marfim sintético, vidro da janela com reflexo suave. Guardar "0 - clay", "0 - mask id" (cal / madeira / metal / tecido / vidro) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small whitewashed single-storey house with a detached workshop for a piano tuner, a covered courtyard between them, an open upright piano on a long oak workbench, slatted timber acoustic ceiling in the living room, a worn armchair and a wool rug, soft overcast morning light, calm and quiet, natural materials, fine film grain, no people, no text.
+```
+Regra: o mesmo piano e a mesma bancada em A e B; o ripado do tecto com o mesmo ritmo; sem pessoas.
+
+**6. Entrega:** 3 finais em "#118 - Cliente imaginário 14 afinador / final". Para reel: câmara B, 6 s, um lento avanço na direção das teclas com a luz da janela a mudar ligeiramente (Seedance), som de uma única nota a ressoar.
+
+**Legenda**
+- EN: "Daily Study #118 · Imaginary client #14: the piano tuner. A house where the most important material is silence."
+- PT: "Daily Study #118 · Cliente imaginário #14: o afinador de pianos. Uma casa onde o material mais importante é o silêncio."
+
+---
+
+## #119 · Casas de Portugal #18: Alto Minho, o sequeiro e a casa de lavoura (sábado, 7 ago)
+
+**Ideia:** dezoitava casa da série "Casas de Portugal": uma casa de lavoura do Alto Minho em granito, com varanda de madeira ao nível do primeiro piso, eira empedrada em frente e vinha de enforcado ao fundo. Imagem de fim de tarde, com mais textura do que cor.
+
+**1. Modelo 3D (30 min)**
+- Casa de dois pisos de 12 × 7 m em granito aparelhado, soco largo, telhado de telha de canudo de quatro águas suaves; varanda corrida em madeira a 3 m com guarda de balaústres.
+- Eira de lajes de granito de 8 × 8 m com um muro baixo, canastro de madeira ao lado (modelo simples), escadaria exterior em pedra.
+- Vinha de enforcado: fiadas de árvores jovens com videiras trepadeiras (instâncias), muro de xisto ao fundo.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, do fundo da eira, a casa e a varanda inteiras com a vinha à direita.
+- B: 35 mm, a escadaria de pedra e a varanda de madeira em perspetiva.
+- C: 85 mm, pormenor de granito, balaústres e telha com a luz rasante.
+
+**3. Luz:** fim de tarde, sol baixo vindo de lado, luz dourada na pedra, sombras longas na eira, céu azul claro com poucas nuvens.
+
+**4. Render base:** 1600 px. Granito com variação e líquenes leves, madeira envelhecida, telha com tons mistos, lajes com juntas de erva. Guardar "0 - clay", "0 - mask id" (granito / madeira / telha / erva / vinha) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A traditional Alto Minho stone farmhouse in rough granite with a long timber balcony on the first floor, an exterior stone staircase, a paved threshing yard in front, a small timber grain store, trained vines on posts and a dry stone wall behind, low golden late afternoon light, lichen on the granite, weathered wood, real rural Portugal, fine film grain, no people, no text.
+```
+Regra: o mesmo número de aberturas na fachada nas três câmaras; sem alterar a forma da varanda; não acrescentar animais nem veículos.
+
+**6. Entrega:** 3 finais em "#119 - Casas de Portugal 18 Alto Minho / final". Para reel: câmara A, 6 s, a luz dourada a descer pela fachada e a sombra da casa a esticar-se na eira (Seedance), som de vento nas videiras.
+
+**Legenda**
+- EN: "Daily Study #119 · Houses of Portugal #18: Alto Minho. Granite, a wooden balcony and a yard built for work."
+- PT: "Daily Study #119 · Casas de Portugal #18: Alto Minho. Granito, uma varanda de madeira e uma eira feita para o trabalho."
+
+---
+
+## #120 · Abecedário arquitetónico #14: N de Nave (terça, 10 ago)
+
+**Ideia:** décima quarta letra do abecedário: N de Nave. Um espaço longo e alto, simples, com ritmo de pilares e luz lateral. Uma nave de antiga fábrica transformada em espaço de trabalho, sem excessos: a graça está na proporção.
+
+**1. Modelo 3D (20 min)**
+- Nave de 30 × 12 m e 8 m de altura, estrutura de pilares em betão a cada 5 m e vigas à vista; telhado em dente de serra com claraboias viradas a norte.
+- Chão em betão polido, paredes em tijolo caiado, uma fila de mesas longas em madeira ao centro (modelo simples) e algumas plantas grandes em vasos.
+- Janelas altas em ferro com divisões pequenas na parede lateral.
+
+**2. Câmaras (3), 4:5**
+- A: 24 mm, ao nível dos olhos, ao centro, a perspetiva de toda a nave com o ritmo dos pilares.
+- B: 35 mm, as claraboias do dente de serra com os feixes de luz.
+- C: 50 mm, uma mesa em primeiro plano e os pilares a recuar.
+
+**3. Luz:** meio da manhã, luz clara a entrar pelas claraboias a norte e pelas janelas laterais, poeira leve no ar, tons frios e neutros com madeira quente.
+
+**4. Render base:** 1600 px. Betão polido com reflexo suave, tijolo caiado, madeira escura, ferro pintado. Guardar "0 - clay", "0 - mask id" (betão / tijolo / madeira / ferro / vidro) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic interior architectural photograph, same space, same geometry and camera as the reference image. A converted former factory hall, a long nave with a rhythm of concrete columns and exposed beams, a sawtooth roof with north-facing rooflights, polished concrete floor with soft reflections, limewashed brick walls, long oak tables, large leafy plants, daylight shafts with fine dust in the air, calm, proportioned and quiet, fine film grain, no people, no text.
+```
+Regra: o número de pilares e de claraboias igual em todas as câmaras; os feixes de luz coerentes com a direção das claraboias.
+
+**6. Entrega:** 3 finais em "#120 - Abecedário 14 N de Nave / final". Para reel: câmara A, 6 s, um lento avanço ao longo da nave com os feixes de luz a deslocarem-se (Seedance), som de espaço amplo e passos distantes.
+
+**Legenda**
+- EN: "Daily Study #120 · Architecture alphabet #14: N for Nave. A long hall, a steady rhythm and light from the side."
+- PT: "Daily Study #120 · Abecedário arquitetónico #14: N de Nave. Um salão longo, um ritmo constante e luz de lado."
+
+---
+
+## #121 · Produto em sombra recortada: um candeeiro de mesa em cerâmica verde (quinta, 12 ago)
+
+**Ideia:** produto simples e gráfico: um candeeiro de mesa com base de cerâmica vidrada verde-musgo e quebra-luz branco, sobre uma mesa de madeira clara, com a sombra de uma janela recortada na parede atrás. O desafio é a sombra: dura, nítida e bonita.
+
+**1. Modelo 3D (15 min)**
+- Base em forma de ânfora de 22 cm, vidrado com pequenas variações; quebra-luz cónico branco de 28 cm; cabo fino a sair pela parte de trás.
+- Mesa em madeira clara (60 × 40 cm) e parede de cal a 50 cm; uma janela de 4 painéis fora de campo, a projetar a sombra na parede.
+
+**2. Câmaras (3), 4:5**
+- A: 85 mm, o candeeiro inteiro, centrado, com a sombra da janela na parede.
+- B: 100 mm, a base de cerâmica com o brilho do vidrado.
+- C: 70 mm, o quebra-luz com a luz suave que atravessa o tecido.
+
+**3. Luz:** sol direto de lado, duro e quente; sombras nítidas da janela; reflexos controlados no vidrado.
+
+**4. Render base:** 1600 px. Vidrado com reflexo, tecido translúcido, madeira com veio fino, cal. Guardar "0 - clay", "0 - mask id" (cerâmica / tecido / madeira / parede) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic product photograph, same object, same geometry and camera as the reference image. A table lamp with a moss-green glazed ceramic amphora base and a white conical fabric shade on a pale oak table, hard direct sunlight from the side casting a crisp window-pane shadow across a limewashed wall, subtle glaze variations, translucent shade glowing softly, minimal, graphic and calm, fine film grain, no people, no text, no logo.
+```
+Regra: a sombra da janela com a mesma inclinação nas três câmaras; sem marca nem texto; vidrado sem reflexos de câmara.
+
+**6. Entrega:** 3 finais em "#121 - Produto candeeiro cerâmica verde / final". Para reel: câmara A, 6 s, a sombra da janela a deslizar lentamente pela parede (Seedance), som baixo de cerâmica e sala silenciosa.
+
+**Legenda**
+- EN: "Daily Study #121 · Product: a ceramic lamp and a borrowed window. The shadow is half the object."
+- PT: "Daily Study #121 · Produto: um candeeiro de cerâmica e uma janela emprestada. A sombra é metade do objeto."
+
+---
+
+## #122 · Desafio de cor #14: ocre-amarelo (sábado, 14 ago)
+
+**Ideia:** décimo quarto desafio de cor: ocre-amarelo, a cor das paredes antigas do sul. Uma cena pequena, uma casa de esquina com fachada ocre e caixilharia branca, para ver como uma cor quente e baça se comporta com sombra e céu limpo. O carrossel acaba com o slide de paleta (ferramenta pronta: scripts/make_palette.py).
+
+**1. Modelo 3D (20 min)**
+- Casa de esquina de dois pisos, fachada em reboco ocre, cunhais e socos brancos, caixilharia branca com portadas por abrir, algeroz de zinco, pequeno beiral em telha.
+- Rua estreita em calçada clara, um banco de pedra, uma figueira pequena num vaso grande.
+
+**2. Câmaras (3), 4:5**
+- A: 35 mm, da esquina oposta, a fachada ocre inteira com o céu.
+- B: 50 mm, a janela com portadas e o cunhal branco.
+- C: 85 mm, o banco e a figueira com a parede ocre atrás.
+
+**3. Luz:** meio da tarde, sol alto e claro, céu azul limpo; sombras curtas e nítidas; ocre com ligeira variação de tom.
+
+**4. Render base:** 1600 px. Reboco com leve irregularidade e manchas, calçada clara, madeira pintada, zinco. Guardar "0 - clay", "0 - mask id" (reboco / madeira / pedra / zinco / planta) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic architectural photograph, same building, same geometry and camera as the reference image. A small corner house with a faded ochre-yellow rendered facade, white window frames and corner stones, closed wooden shutters, a zinc gutter, light cobblestone street, a stone bench and a small fig tree in a large pot, clear blue sky, strong midday sun with short crisp shadows, subtle plaster stains, calm and warm, fine film grain, no people, no text.
+```
+Regra: o ocre sempre o mesmo tom nas três câmaras (comparar amostras no Photoshop); sem outras cores fortes na cena para a cor dominar.
+
+**6. Entrega:** 3 finais em "#122 - Desafio de cor 14 ocre / final". Slide final com a paleta feita por mim a partir da câmara A. Para reel: câmara A, 6 s, a sombra do beiral a deslizar pela fachada (Seedance), som de cigarras ao longe.
+
+**Legenda**
+- EN: "Daily Study #122 · Colour challenge #14: ochre yellow. Warm, dusty and a little bit of the south. Palette on the last slide."
+- PT: "Daily Study #122 · Desafio de cor #14: ocre-amarelo. Quente, empoeirado e um bocadinho de sul. Paleta no último slide."
+
+---
+
+## #123 · O meu bairro #7: a mercearia da esquina, de manhã cedo (terça, 17 ago)
+
+**Ideia:** sétima cena do "meu bairro": uma mercearia pequena que abre às 7 h, com caixas de fruta à porta, toldo às riscas e a luz do nascer do sol a bater de frente. Cena familiar e generosa, cheia de pequenos pormenores.
+
+**1. Modelo 3D (25 min)**
+- Rés-do-chão em esquina com montra e porta de vidro e madeira, toldo de lona às riscas verdes e brancas, tabuleta em letras recortadas (sem texto legível).
+- À porta: três caixas de madeira com fruta (instâncias simples), um escadote, uma bicicleta de carga encostada; passeio em calçada portuguesa.
+- Andar de cima com duas varandas pequenas e roupa estendida.
+
+**2. Câmaras (3), 4:5**
+- A: 28 mm, da rua, a esquina da mercearia com o toldo e o passeio.
+- B: 50 mm, as caixas de fruta e a porta aberta.
+- C: 85 mm, o toldo às riscas contra o céu e a varanda.
+
+**3. Luz:** nascer do sol baixo e dourado, de frente para a fachada, sombras compridas no passeio, ar fresco e limpo.
+
+**4. Render base:** 1600 px. Lona translúcida, madeira com verniz gasto, calçada com juntas, vidro da montra com reflexo do sol. Guardar "0 - clay", "0 - mask id" (lona / madeira / fruta / calçada / vidro) e "0 - render base".
+
+**5. AI (Nano Banana, o mesmo prompt nas 3 câmaras)**
+```
+Photorealistic street photograph at sunrise, same building, same geometry and camera as the reference image. A small corner grocery shop in a Portuguese town, green and white striped canvas awning, wooden crates of fruit by the door, a wooden stepladder and a cargo bicycle leaning on the wall, cobblestone pavement with long soft shadows, a cut-out lettering sign with no readable words, two small balconies with a clothesline above, warm golden low sun, fresh morning air, fine film grain, no people, no readable text.
+```
+Regra: as caixas de fruta no mesmo sítio em A e B; o toldo com o mesmo número de riscas; tabuleta sem texto legível.
+
+**6. Entrega:** 3 finais em "#123 - O meu bairro 7 mercearia / final". Para reel: câmara A, 6 s, o toldo a balançar com a brisa e o sol a subir (Seedance), som de rua a acordar e uma bicicleta a passar.
+
+**Legenda**
+- EN: "Daily Study #123 · My neighbourhood #7: the corner grocer. Opens at seven, smells like oranges."
+- PT: "Daily Study #123 · O meu bairro #7: a mercearia da esquina. Abre às sete, cheira a laranjas."
+
+---
+
+Lembretes: briefing do dia seguinte enviado segunda, quarta e sexta à noite. Mais ideias no dossier e em docs/content-plan.yml, calendarizadas por mim (próximo lote #124–#129, 19–31 ago, até 16 ago).
