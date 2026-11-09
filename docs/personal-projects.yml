@@ -3,17 +3,17 @@
   title: "Rebrand Vítor Hugo • Bound Visuals"
   stage: em-curso
   area: Marca
-  next: "Painel, conteúdo diário a sair, integrações Pinterest/LinkedIn/YouTube"
+  next: "Conteúdo diário a sair (Instagram, Facebook, LinkedIn, YouTube ligados); falta Pinterest e mais projetos MEGA"
 - id: painel
   title: "Esta app (Painel / hub)"
   stage: em-curso
   area: Ferramentas
-  next: "Portfólio PDF automático, Oportunidades, notificações, números das redes"
+  next: "Feito: Portfólio PDF a pedido, Oportunidades, notificações, números do Instagram e estado das redes em direto"
 - id: portfolio-docs
   title: "Portfólio, CV e carta em 1.ª pessoa (3D / AI / All)"
-  stage: explorar
+  stage: feito
   area: Carreira
-  next: "Reescrever com o novo posicionamento a partir dos pacotes InDesign"
+  next: "PDFs no Painel → Portfólio; refazem-se quando me pedes. Falta o Manual de identidade (só .ai/.pdf)"
 - id: ai-build-lab
   title: "AI Build Lab (120 ideias)"
   stage: parado
@@ -53,4 +53,4 @@
   title: "LinkedIn: título, sobre, experiência"
   stage: parado
   area: Carreira
-  next: "Textos no plano mestre §7"
+  next: "Textos no plano mestre §7 (posts do LinkedIn já saem sozinhos)"

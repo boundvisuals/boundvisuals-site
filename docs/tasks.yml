@@ -15,15 +15,6 @@
   title: Ver o estado da conta no Instagram
   detail: "Perfil → ☰ → Estado da conta. Se houver 'Ação bloqueada', tocar em 'Informa-nos se achas que cometemos um erro'. (Feito 3 nov: tudo verde.)"
   done: true
-- id: v-approve-w2-4
-  owner: vitor
-  title: Aprovar semanas 2, 3 e 4 (posts, stories, reels)
-  detail: "Separador Calendário → 'Aprovar tudo' ou dia a dia."
-  due: até dom 8 nov
-- id: v-integrations-order
-  owner: vitor
-  title: Escolher a ordem das integrações Pinterest, YouTube Shorts, LinkedIn
-  detail: "Sugestão: Pinterest → LinkedIn → YouTube. Depois dou-te os passos clique a clique."
 - id: v-fb-schedule
   owner: vitor
   title: "Dizer sim/não: agendar o Facebook pela API e usar o Business Suite como plano B do Instagram"
@@ -34,7 +25,8 @@
   detail: "School Building, 10 Moradias SFM, Corim, Vivendas Aveleda, Apartamentos Cete 2026, Casas Mouriz Respirar Arte."
 - id: v-site-texts
   owner: vitor
-  title: Colar no site os textos em 1.ª pessoa
+  title: Colar no site (Elementor) os textos em 1.ª pessoa
+  detail: "Prontos, com o texto ATUAL e o NOVO lado a lado: https://github.com/boundvisuals/boundvisuals-site/blob/main/docs/textos-1a-pessoa.md"
 - id: v-plugins
   owner: vitor
   title: Apagar 11 plugins desativados no wp-admin (site verificado OK desde 2 nov)
@@ -60,7 +52,7 @@
 - id: v-manual-kit
   owner: vitor
   title: Publicar o kit manual dos 3 projetos (site, Behance, Chaos CG Connect, Indústria Criativa)
-  detail: "Textos em docs/kit-lancamento-3-projetos.md."
+  detail: "Feito por ti (09/11: deixei de preparar kits; fazes tudo à mão)."
   done: true
 - id: c-ig-day1
   owner: claude
@@ -120,9 +112,9 @@
   detail: "Feito: CV e portfólios (PDF no Painel), textos do site (docs/textos-1a-pessoa.md), LinkedIn, orçamento PT na 1.ª pessoa + versão EN completa (docs/orcamento-1a-pessoa.md, 04/11; 7 erros do PDF atual assinalados). Cartas de apresentação base (04/11): geral EN + PT (também em PDF, Cover_Letter_EN.pdf / Carta_Apresentacao_PT.pdf), vaga AI EN, cliente EN + PT — docs/profile.yml → cover_letters, Painel → Perfil. Falta: Manual de identidade (só .ai/.pdf)."
 - id: c-portfolio-auto
   owner: claude
-  title: Portfólio vivo (PDF 3D/AI/All atualizado sozinho a cada projeto publicado)
+  title: Portfólio e CV em PDF (3D/AI/All) — só quando pedires
   done: true
-  detail: "Já funciona: o robô do portfólio refaz CV + PDFs (3D/AI/All, versões leves) sempre que um projeto novo é processado (pré-visualizações), quando mudam recortes ou o perfil. Painel → Vítor Hugo → Portfólio."
+  detail: "Desde 09/11 os PDFs só se refazem quando me pedes (a tarefa semanal foi removida). Pede-me e refaço na hora. Painel → Vítor Hugo → Portfólio."
 - id: c-linkedin
   owner: claude
   title: Textos finais do LinkedIn (título, sobre, experiência)
