@@ -1,5 +1,12 @@
 # Week 5 social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py
 - date: '2026-12-04'
+  time: '10:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: teaser-2026-12-04-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-04'
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
@@ -12,11 +19,24 @@
   file: palette-9_-_Interior_2_9-interior2_edit_0001.jpg
   approved: false
 - date: '2026-12-04'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 11_-_Interior_4_11-interior4_edit_0001-s00.jpg
+  approved: false
+- date: '2026-12-04'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-04-b.jpg
   teaser: b
+  approved: false
+- date: '2026-12-05'
+  time: '10:00'
+  type: story
+  project: gold-village
+  file: teaser-2026-12-05-a.jpg
+  teaser: a
   approved: false
 - date: '2026-12-05'
   time: '12:00'
@@ -44,6 +64,31 @@
   teaser: b
   approved: false
 - date: '2026-12-07'
+  time: '10:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: teaser-2026-12-07-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-07'
+  time: '12:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 11_-_Interior_4_11-interior4_edit_0001-s01.jpg
+  approved: false
+- date: '2026-12-07'
+  time: '15:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 12_-_Interior_5_12-interior5_0001-s00.jpg
+  approved: false
+- date: '2026-12-07'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 13_-_Interior_6_13-interior6_edit_0001-s00.jpg
+  approved: false
+- date: '2026-12-07'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
@@ -51,11 +96,43 @@
   teaser: b
   approved: false
 - date: '2026-12-08'
+  time: '10:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: teaser-2026-12-08-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-08'
+  time: '12:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 11_-_Interior_4_11-interior4_edit_0001-s02.jpg
+  approved: false
+- date: '2026-12-08'
+  time: '15:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 12_-_Interior_5_12-interior5_0001-s01.jpg
+  approved: false
+- date: '2026-12-08'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 15_-_Interior_8_15-interior8_edit_0001-s00.jpg
+  approved: false
+- date: '2026-12-08'
   time: '20:30'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-12-08-b.jpg
   teaser: b
+  approved: false
+- date: '2026-12-09'
+  time: '10:00'
+  type: story
+  project: gold-village
+  file: teaser-2026-12-09-a.jpg
+  teaser: a
   approved: false
 - date: '2026-12-09'
   time: '12:00'
@@ -68,6 +145,12 @@
   type: story
   project: gold-village
   file: palette-2026_-_FINAIS_edit_for_bound_visuals_9-interior2.jpg
+  approved: false
+- date: '2026-12-09'
+  time: '17:30'
+  type: story
+  project: gold-village
+  file: 11_-_interior4_11-interior4-s01.jpg
   approved: false
 - date: '2026-12-09'
   time: '20:30'

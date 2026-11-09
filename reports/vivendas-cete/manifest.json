@@ -3,301 +3,127 @@
   "items": [
     {
       "source": "1-interior1/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
-      "sha1": "523da18e03cbf9d6b9e5fcbca9417c5de3e40d74",
+      "sha1": "0140f56a442d456f65a6ff89966d9b3433c9da2f",
       "size": [
-        6880,
-        3840
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-800.webp",
-        "out/web/grid/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-1600.webp",
-        "out/web/grid/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/1-interior1/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
-        "out/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
-        "out/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 11428434,
-      "full_bytes": 11428434
+      "source_bytes": 5759774,
+      "full_bytes": 5759774
     },
     {
       "source": "2-interior2/2-interior2.png",
-      "sha1": "0411d1385dca5537e303667dc465bef757988a72",
+      "sha1": "c6cbcd933bd2a4406f1b4200b72316b8e14198aa",
       "size": [
-        4640,
-        5760
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/2-interior2_2-interior2.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2-interior2_2-interior2-800.webp",
-        "out/web/grid/2-interior2_2-interior2-1600.webp",
-        "out/web/grid/2-interior2_2-interior2-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/2-interior2/2-interior2.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/2-interior2_2-interior2-01.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/2-interior2_2-interior2-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 61118809,
-      "full_bytes": 28488980
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/2-interior2.webp",
-      "sha1": "752986e57d5de08a3d60b80886edf1ef583d7173",
-      "size": [
-        4640,
-        5760
-      ],
-      "orientation": "portrait",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_2-interior2.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_2-interior2-01.jpg"
-      ],
-      "ig_mode": "single",
-      "crops": "auto-unreviewed",
-      "source_bytes": 1995760,
-      "full_bytes": 1995760
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/3-interior3.webp",
-      "sha1": "3b3d2cb2f64efc022b6c42e8d729fb8be6b2d2e7",
-      "size": [
-        6880,
-        3840
-      ],
-      "orientation": "landscape",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_3-interior3.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-01.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-02.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-03.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_3-interior3-04-full.jpg"
-      ],
-      "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 785390,
-      "full_bytes": 785390
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/4-interior4.webp",
-      "sha1": "412f53d6159630bb503f5e07bde09880a6cfe225",
-      "size": [
-        4640,
-        5760
-      ],
-      "orientation": "portrait",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_4-interior4.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_4-interior4-01.jpg"
-      ],
-      "ig_mode": "single",
-      "crops": "auto-unreviewed",
-      "source_bytes": 2516876,
-      "full_bytes": 2516876
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/5-exterior1.webp",
-      "sha1": "830a9ad89453a86f4d49e824309e6db4a7277c40",
-      "size": [
-        6880,
-        3840
-      ],
-      "orientation": "landscape",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-01.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-02.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-03.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_5-exterior1-04-full.jpg"
-      ],
-      "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 2223418,
-      "full_bytes": 2223418
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/6-exterior2.webp",
-      "sha1": "8af9a83f05ded69cfc02fe23217d1487156632e4",
-      "size": [
-        6880,
-        3840
-      ],
-      "orientation": "landscape",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-01.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-02.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-03.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_6-exterior2-04-full.jpg"
-      ],
-      "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 1661164,
-      "full_bytes": 1661164
-    },
-    {
-      "source": "2026_-_FINAIS_edit_for_bound_visuals/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
-      "sha1": "c823eebe04a187eaac4e3577f1a231a0646249b8",
-      "size": [
-        6880,
-        3840
-      ],
-      "orientation": "landscape",
-      "web_full": "out/web/full/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-800.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-1600.webp",
-        "out/web/grid/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-2400.webp"
-      ],
-      "ig_slides": [
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03.jpg",
-        "out/ig/2026_-_FINAIS_edit_for_bound_visuals_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-04-full.jpg"
-      ],
-      "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 2378240,
-      "full_bytes": 2378240
+      "source_bytes": 7907919,
+      "full_bytes": 7907919
     },
     {
       "source": "3-interior3/3-interior3.png",
-      "sha1": "707f2713a0664d4aeb347e85863989289922b8a6",
+      "sha1": "1874bbd57b2dc1dc03428eb0f6d3256ff1643bc2",
       "size": [
-        6880,
-        3840
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/3-interior3_3-interior3.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/3-interior3_3-interior3-800.webp",
-        "out/web/grid/3-interior3_3-interior3-1600.webp",
-        "out/web/grid/3-interior3_3-interior3-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/3-interior3/3-interior3.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/3-interior3_3-interior3-01.jpg",
-        "out/ig/3-interior3_3-interior3-02.jpg",
-        "out/ig/3-interior3_3-interior3-03.jpg",
-        "out/ig/3-interior3_3-interior3-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 54142951,
-      "full_bytes": 24382138
+      "source_bytes": 3418631,
+      "full_bytes": 3418631
     },
     {
       "source": "4-interior4/4-interior4.png",
-      "sha1": "d109ac4fc4a269c895950ee48d7ec41c9d2bda84",
+      "sha1": "f7f3603c13ca43d17a5cb3abeb381b8ed282aea1",
       "size": [
-        4640,
-        5760
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/4-interior4_4-interior4.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/4-interior4_4-interior4-800.webp",
-        "out/web/grid/4-interior4_4-interior4-1600.webp",
-        "out/web/grid/4-interior4_4-interior4-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/4-interior4/4-interior4.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/4-interior4_4-interior4-01.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/4-interior4_4-interior4-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 64571580,
-      "full_bytes": 30442412
+      "source_bytes": 8229755,
+      "full_bytes": 8229755
     },
     {
       "source": "5-exterior1/5-exterior1.png",
-      "sha1": "f56f50ed213e957ea4fd0e07d90b5e1cc2166dba",
+      "sha1": "a66a1b6f8df0a3b435501303b3dde2b860d675f0",
       "size": [
-        6880,
-        3840
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/5-exterior1_5-exterior1.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/5-exterior1_5-exterior1-800.webp",
-        "out/web/grid/5-exterior1_5-exterior1-1600.webp",
-        "out/web/grid/5-exterior1_5-exterior1-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/5-exterior1/5-exterior1.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/5-exterior1_5-exterior1-01.jpg",
-        "out/ig/5-exterior1_5-exterior1-02.jpg",
-        "out/ig/5-exterior1_5-exterior1-03-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 59626364,
-      "full_bytes": 29101434
+      "source_bytes": 5581962,
+      "full_bytes": 5581962
     },
     {
       "source": "6-exterior2/6-exterior2.png",
-      "sha1": "f7773f860dd301a007520ad29e2ff44aa9423472",
+      "sha1": "2b1c6b874befd8025e46be05e10476443d9e7d8f",
       "size": [
-        6880,
-        3840
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/6-exterior2_6-exterior2.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/6-exterior2_6-exterior2-800.webp",
-        "out/web/grid/6-exterior2_6-exterior2-1600.webp",
-        "out/web/grid/6-exterior2_6-exterior2-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-cete/6-exterior2/6-exterior2.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/6-exterior2_6-exterior2-01.jpg",
-        "out/ig/6-exterior2_6-exterior2-02.jpg",
-        "out/ig/6-exterior2_6-exterior2-03.jpg",
-        "out/ig/6-exterior2_6-exterior2-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 59615254,
-      "full_bytes": 27765562
+      "source_bytes": 4503593,
+      "full_bytes": 4503593
     }
   ]
 }

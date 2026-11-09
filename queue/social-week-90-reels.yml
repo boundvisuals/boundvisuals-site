@@ -17,3 +17,12 @@
   caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 5)'
   caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 5)'
   approved: false
+- date: '2026-12-03'
+  time: '12:30'
+  type: reel
+  project: school-building
+  file: school-building-reel.mp4
+  cover: school-building-reel-cover.jpg
+  caption_en: School Building
+  caption_pt: School Building
+  approved: false

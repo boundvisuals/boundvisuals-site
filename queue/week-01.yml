@@ -62,7 +62,7 @@
   - 10_-_interior3_10-interior3-04-full.jpg
   caption_en: First light through the curtains. A bedroom designed to slow the morning down. Gold Village.
   caption_pt: A primeira luz pelas cortinas. Um quarto pensado para abrandar a manhã. Gold Village.
-  approved: false
+  approved: true
 - date: '2026-11-12'
   time: '19:00'
   project: vivendas-duas-igrejas
@@ -73,4 +73,4 @@
   - root_3-interior1_webp-04-full.jpg
   caption_en: A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas.
   caption_pt: Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas.
-  approved: false
+  approved: true

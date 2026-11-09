@@ -1,21 +1,11 @@
-ok  10-interior3.png  6880x3840  ig:carousel  54.2MB -> 23.6MB lossless  crops:manual
-ok  11-interior4.png  6880x3840  ig:carousel  49.7MB -> 21.7MB lossless  crops:manual
-ok  1-exterior1.png  5568x6912  ig:single  85.4MB -> 45.4MB lossless  crops:AUTO (unreviewed)
-ok  1-exterior1 copy.webp  5568x6912  ig:single  3.8MB -> 3.8MB lossless  crops:AUTO (unreviewed)
-ok  10-interior3.webp  6880x3840  ig:carousel  0.8MB -> 0.8MB lossless  crops:AUTO (unreviewed)
-ok  11-interior4.webp  6880x3840  ig:carousel  0.8MB -> 0.8MB lossless  crops:AUTO (unreviewed)
-ok  2-exterior2 copy.webp  6605x3686  ig:carousel  2.1MB -> 2.1MB lossless  crops:AUTO (unreviewed)
-ok  3_exterior3.webp  6605x3686  ig:carousel  2.4MB -> 2.4MB lossless  crops:AUTO (unreviewed)
-ok  4-exterior4.webp  5568x6912  ig:single  1.9MB -> 1.9MB lossless  crops:AUTO (unreviewed)
-ok  5-exterior5.webp  5568x6912  ig:single  3.3MB -> 3.3MB lossless  crops:AUTO (unreviewed)
-ok  6-exterior6.webp  5568x6912  ig:single  2.5MB -> 2.5MB lossless  crops:AUTO (unreviewed)
-ok  8-interior1.webp  6880x3840  ig:carousel  0.8MB -> 0.8MB lossless  crops:AUTO (unreviewed)
-ok  9-interior2.webp  6880x3840  ig:carousel  1.1MB -> 1.1MB lossless  crops:AUTO (unreviewed)
-ok  2-exterior2.png  6605x3686  ig:carousel  51.7MB -> 26.4MB lossless  crops:manual
-ok  3_exterior3.png  6605x3686  ig:carousel  54.3MB -> 27.6MB lossless  crops:manual
-ok  4-exterior4.png  5568x6912  ig:single  83.9MB -> 39.8MB lossless  crops:AUTO (unreviewed)
-ok  5-exterior5.png  5568x6912  ig:single  89.5MB -> 45.0MB lossless  crops:AUTO (unreviewed)
-ok  6-exterior6.png  5568x6912  ig:single  78.4MB -> 38.3MB lossless  crops:AUTO (unreviewed)
-ok  8-interior1.png  6880x3840  ig:carousel  56.1MB -> 25.6MB lossless  crops:manual
-ok  9-interior2.png  6880x3840  ig:carousel  55.4MB -> 25.3MB lossless  crops:manual
-20 image(s) processed for gold-village
+ok  10-interior3.png  5000x2791  ig:carousel  3.4MB -> 3.4MB lossless  crops:manual
+ok  11-interior4.png  5000x2791  ig:carousel  3.3MB -> 3.3MB lossless  crops:manual
+ok  1-exterior1.png  4028x5000  ig:single  10.6MB -> 10.6MB lossless  crops:AUTO (unreviewed)
+ok  2-exterior2.png  5000x2790  ig:carousel  5.9MB -> 5.9MB lossless  crops:manual
+ok  3_exterior3.png  5000x2790  ig:carousel  6.4MB -> 6.4MB lossless  crops:manual
+ok  4-exterior4.png  4028x5000  ig:single  6.7MB -> 6.7MB lossless  crops:AUTO (unreviewed)
+ok  5-exterior5.png  4028x5000  ig:single  9.1MB -> 9.1MB lossless  crops:AUTO (unreviewed)
+ok  6-exterior6.png  4028x5000  ig:single  7.3MB -> 7.3MB lossless  crops:AUTO (unreviewed)
+ok  8-interior1.png  5000x2791  ig:carousel  3.7MB -> 3.7MB lossless  crops:manual
+ok  9-interior2.png  5000x2791  ig:carousel  3.9MB -> 3.9MB lossless  crops:manual
+10 image(s) processed for gold-village

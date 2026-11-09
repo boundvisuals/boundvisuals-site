@@ -1,0 +1,274 @@
+{
+  "project": "school-building",
+  "items": [
+    {
+      "source": "Renders_finais/1-exterior1.png",
+      "sha1": "0ad8c67af7cc70f4875b0b7ae25db7c4cfeff930",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/1-exterior1.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_1-exterior1-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 11532765,
+      "full_bytes": 11532765
+    },
+    {
+      "source": "Renders_finais/10-exterior8_edit_0001.png",
+      "sha1": "d82f04aa569304852b2f4836f839eb926951de7d",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/10-exterior8_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_10-exterior8_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7621544,
+      "full_bytes": 7621544
+    },
+    {
+      "source": "Renders_finais/11-exterior9_edit_0001.png",
+      "sha1": "d103298905e36064de3c958d739650e40043cac4",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/11-exterior9_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_11-exterior9_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 9995399,
+      "full_bytes": 9995399
+    },
+    {
+      "source": "Renders_finais/12-interior1_edit_0001.png",
+      "sha1": "6314b7eba0a0d622891ead815bdc3e6988346e3a",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/12-interior1_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_12-interior1_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8176530,
+      "full_bytes": 8176530
+    },
+    {
+      "source": "Renders_finais/12-interior2_edit_0001.png",
+      "sha1": "fb8fa0ff7364ee89f5cd6a66423134d0bd1b1f53",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/12-interior2_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_12-interior2_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7658532,
+      "full_bytes": 7658532
+    },
+    {
+      "source": "Renders_finais/14-interior3_edit_0001.png",
+      "sha1": "00e9694978954d29fa83755855bd4628ac2d6aa7",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/14-interior3_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_14-interior3_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 10848027,
+      "full_bytes": 10848027
+    },
+    {
+      "source": "Renders_finais/16-interior5_Edit_0001.png",
+      "sha1": "683d842eede1398f1f5e1c074a0561739576a4ba",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/16-interior5_Edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_16-interior5_Edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8802601,
+      "full_bytes": 8802601
+    },
+    {
+      "source": "Renders_finais/2-exterior2_edit_0001.png",
+      "sha1": "5b5a29c3dc48ac8e20c0b4b67290e2c0dc804da1",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/2-exterior2_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_2-exterior2_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 9601050,
+      "full_bytes": 9601050
+    },
+    {
+      "source": "Renders_finais/3-exterior5.png",
+      "sha1": "d75e46c731a923dd7dcf82b4b9f5aa113e75e23e",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/3-exterior5.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_3-exterior5-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 13185388,
+      "full_bytes": 13185388
+    },
+    {
+      "source": "Renders_finais/5-exterior11_edit_0001.png",
+      "sha1": "b15cbd08ba841557fcff4955d9dd3c816678d879",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/5-exterior11_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_5-exterior11_edit_0001-01.jpg",
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_5-exterior11_edit_0001-02.jpg",
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_5-exterior11_edit_0001-03.jpg",
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_5-exterior11_edit_0001-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7526632,
+      "full_bytes": 7526632
+    },
+    {
+      "source": "Renders_finais/6-exterior3_edit_0001.png",
+      "sha1": "da3b415221da15aa686a43bac57a42f980d14755",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/6-exterior3_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_6-exterior3_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8888468,
+      "full_bytes": 8888468
+    },
+    {
+      "source": "Renders_finais/7-exterior4_edit_0001.png",
+      "sha1": "c8d441616122f8000d5530ba94b4f7cbe6d4e574",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/7-exterior4_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_7-exterior4_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 10962787,
+      "full_bytes": 10962787
+    },
+    {
+      "source": "Renders_finais/8-exterior6_edit_0001.png",
+      "sha1": "3122e1d656e9c48e15be0b80d972e860e689b78e",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/8-exterior6_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_8-exterior6_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7279590,
+      "full_bytes": 7279590
+    },
+    {
+      "source": "Renders_finais/9-exterior7_edit_0001.png",
+      "sha1": "60ee005ab81d060df09546eb964d818a7503cc54",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/boundvis/bv/src/school-building/Renders_finais/9-exterior7_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/boundvis/bv/tmp/school-building/ig/Renders_finais_9-exterior7_edit_0001-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8428546,
+      "full_bytes": 8428546
+    }
+  ]
+}

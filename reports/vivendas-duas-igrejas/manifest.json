@@ -3,180 +3,152 @@
   "items": [
     {
       "source": "root/1 - Front _ webp + Seedvr2 bravo.png",
-      "sha1": "04b4396c10bcd434788be543827f2a729df9bbd6",
+      "sha1": "50df5d656decb05b8a112a9b6bdf6cf232d2383c",
       "size": [
-        6720,
-        3776
+        5000,
+        2810
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_1_-_Front___webp_+_Seedvr2_bravo.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_1_-_Front___webp_+_Seedvr2_bravo-800.webp",
-        "out/web/grid/root_1_-_Front___webp_+_Seedvr2_bravo-1600.webp",
-        "out/web/grid/root_1_-_Front___webp_+_Seedvr2_bravo-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/1 - Front _ webp + Seedvr2 bravo.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg",
-        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-02.jpg",
-        "out/ig/root_1_-_Front___webp_+_Seedvr2_bravo-03-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_1_-_Front___webp_+_Seedvr2_bravo-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_1_-_Front___webp_+_Seedvr2_bravo-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_1_-_Front___webp_+_Seedvr2_bravo-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 53677895,
-      "full_bytes": 27834906
+      "source_bytes": 6557205,
+      "full_bytes": 6557205
     },
     {
       "source": "root/2 - Back_webp + Seedvr2 bravo.png",
-      "sha1": "f368d3bc07ffc8c22e7eedb12de3bfb5b1480bac",
+      "sha1": "4182f4ef459b1260237102fd26ca3eaab806d4bb",
       "size": [
-        6720,
-        3776
+        5000,
+        2810
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_2_-_Back_webp_+_Seedvr2_bravo.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_2_-_Back_webp_+_Seedvr2_bravo-800.webp",
-        "out/web/grid/root_2_-_Back_webp_+_Seedvr2_bravo-1600.webp",
-        "out/web/grid/root_2_-_Back_webp_+_Seedvr2_bravo-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/2 - Back_webp + Seedvr2 bravo.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg",
-        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg",
-        "out/ig/root_2_-_Back_webp_+_Seedvr2_bravo-03-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_2_-_Back_webp_+_Seedvr2_bravo-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_2_-_Back_webp_+_Seedvr2_bravo-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_2_-_Back_webp_+_Seedvr2_bravo-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 59934515,
-      "full_bytes": 32237410
+      "source_bytes": 7933116,
+      "full_bytes": 7933116
     },
     {
       "source": "root/3-interior1_webp.webp",
-      "sha1": "78a910876b47b9cfd4321235b66152df076d4f63",
+      "sha1": "a1b68d3ccea5a9bbd76233b3fb9025a45117ee9d",
       "size": [
-        6144,
-        3456
+        5000,
+        2812
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_3-interior1_webp.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_3-interior1_webp-800.webp",
-        "out/web/grid/root_3-interior1_webp-1600.webp",
-        "out/web/grid/root_3-interior1_webp-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/3-interior1_webp.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_3-interior1_webp-01.jpg",
-        "out/ig/root_3-interior1_webp-02.jpg",
-        "out/ig/root_3-interior1_webp-03.jpg",
-        "out/ig/root_3-interior1_webp-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_3-interior1_webp-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_3-interior1_webp-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_3-interior1_webp-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_3-interior1_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 9863870,
-      "full_bytes": 9863870
+      "source_bytes": 5621583,
+      "full_bytes": 5621583
     },
     {
       "source": "root/4 - exterior frente_webp.webp",
-      "sha1": "3d5b0965761a1587173f1b61fe6d5ef16823d41b",
+      "sha1": "c8e88f7a07edada53403af1ada80086e10eceb19",
       "size": [
-        6880,
-        3840
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_4_-_exterior_frente_webp.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_4_-_exterior_frente_webp-800.webp",
-        "out/web/grid/root_4_-_exterior_frente_webp-1600.webp",
-        "out/web/grid/root_4_-_exterior_frente_webp-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/4 - exterior frente_webp.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_4_-_exterior_frente_webp-01.jpg",
-        "out/ig/root_4_-_exterior_frente_webp-02.jpg",
-        "out/ig/root_4_-_exterior_frente_webp-03.jpg",
-        "out/ig/root_4_-_exterior_frente_webp-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_4_-_exterior_frente_webp-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_4_-_exterior_frente_webp-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_4_-_exterior_frente_webp-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_4_-_exterior_frente_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 11903476,
-      "full_bytes": 11903476
+      "source_bytes": 6712554,
+      "full_bytes": 6712554
     },
     {
       "source": "root/5-interior2_webp.webp",
-      "sha1": "62180e697fdff65a6f9884ab953459611c9729c5",
+      "sha1": "1a6c58a41fe8ee25d204cbf305085e0c2cececab",
       "size": [
-        4605,
-        5760
+        3997,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/root_5-interior2_webp.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_5-interior2_webp-800.webp",
-        "out/web/grid/root_5-interior2_webp-1600.webp",
-        "out/web/grid/root_5-interior2_webp-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/5-interior2_webp.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_5-interior2_webp-01.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_5-interior2_webp-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 10414348,
-      "full_bytes": 10414348
+      "source_bytes": 7553623,
+      "full_bytes": 7553623
     },
     {
       "source": "root/6-interior3_webp.webp",
-      "sha1": "cfe9e519903fee0c096d96479a282b917a5f12a4",
+      "sha1": "ab1a7890283697e0a680075fc287398a72ea2b96",
       "size": [
-        5460,
-        3072
+        5000,
+        2813
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_6-interior3_webp.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_6-interior3_webp-800.webp",
-        "out/web/grid/root_6-interior3_webp-1600.webp",
-        "out/web/grid/root_6-interior3_webp-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/6-interior3_webp.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_6-interior3_webp-01.jpg",
-        "out/ig/root_6-interior3_webp-02.jpg",
-        "out/ig/root_6-interior3_webp-03.jpg",
-        "out/ig/root_6-interior3_webp-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_6-interior3_webp-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_6-interior3_webp-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_6-interior3_webp-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_6-interior3_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 7819416,
-      "full_bytes": 7819416
+      "source_bytes": 6196880,
+      "full_bytes": 6196880
     },
     {
       "source": "root/7-interior4_webp.webp",
-      "sha1": "fea12e8ba9011b6245ef5b1676284de4a2f1c53c",
+      "sha1": "c34cf343f56fdf745ac45aa3a361255e9c91afdf",
       "size": [
-        5460,
-        3072
+        5000,
+        2813
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/root_7-interior4_webp.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/root_7-interior4_webp-800.webp",
-        "out/web/grid/root_7-interior4_webp-1600.webp",
-        "out/web/grid/root_7-interior4_webp-2400.webp"
-      ],
+      "web_full": "/home/boundvis/bv/src/vivendas-duas-igrejas/root/7-interior4_webp.webp",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/root_7-interior4_webp-01.jpg",
-        "out/ig/root_7-interior4_webp-02.jpg",
-        "out/ig/root_7-interior4_webp-03.jpg",
-        "out/ig/root_7-interior4_webp-04-full.jpg"
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_7-interior4_webp-01.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_7-interior4_webp-02.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_7-interior4_webp-03.jpg",
+        "/home/boundvis/bv/tmp/vivendas-duas-igrejas/ig/root_7-interior4_webp-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
-      "source_bytes": 6743026,
-      "full_bytes": 6743026
+      "source_bytes": 5252495,
+      "full_bytes": 5252495
     }
   ]
 }
