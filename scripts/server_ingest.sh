@@ -12,6 +12,7 @@ cd "$R" || exit 1
 link="${2:-$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('mega','') for p in r if p['id']==sys.argv[1]),''))" "$pid")}"
 title=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('title',sys.argv[1]) for p in r if p['id']==sys.argv[1]),sys.argv[1]))" "$pid")
 [ -n "$link" ] || { echo "no MEGA link for $pid"; exit 1; }
+fp=$(python3 -c "import yaml,sys;r=yaml.safe_load(open('projects/registry.yml'));r=r.get('projects',r) if isinstance(r,dict) else r;print(next((p.get('finals_pattern','') for p in r if p['id']==sys.argv[1]),''))" "$pid"); [ -n "$fp" ] && export FINALS_PATTERN="$fp"
 SRC="$B/src/$pid"; O="$B/tmp/$pid"; D="$B/outbox/$pid.part"; rm -rf "$D"; mkdir -p "$SRC" "$D"
 # results go to an outbox (server_run.sh resets the repo every run); server_run.sh moves them into reports/<id>/
 echo "$(date '+%F %T') ingest $pid"

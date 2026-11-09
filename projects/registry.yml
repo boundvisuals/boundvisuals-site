@@ -36,6 +36,15 @@ projects:
     publish: true
     note: ""
     status: pending
+  - id: school-building
+    title: School Building
+    location: Switzerland (German-speaking part)
+    year: 2026
+    mega: https://mega.nz/folder/CmJmmLaa#pFFmMDejUyxb8GYu3VaRAw
+    finals_pattern: "png"   # folder has PNG + WebP copies: use the PNG ones only
+    publish: true
+    note: "Portfolio project, Swiss German part. Use PNG, not WebP."
+    status: pending
 # In progress (Vítor will send links): school-building, 10-moradias-sao-felix-da-marinha,
 # corim-residence, vivendas-aveleda, apartamentos-cete-2026, casas-mouriz-respirar-arte
   - id: daily-study-2026
