@@ -104,19 +104,19 @@
   time: '12:00'
   type: story
   project: gold-village
-  file: 10_-_interior3_10-interior3-s02.jpg
+  file: 11_-_interior4_11-interior4-s03.jpg
   approved: false
 - date: '2026-11-29'
   time: '15:00'
   type: story
   project: gold-village
-  file: 11_-_interior4_11-interior4-s03.jpg
+  file: 1_-_exterior1_1-exterior1-s02.jpg
   approved: false
 - date: '2026-11-29'
   time: '17:30'
   type: story
   project: gold-village
-  file: 1_-_exterior1_1-exterior1-s02.jpg
+  file: 10_-_interior3_10-interior3-s02.jpg
   approved: false
 - date: '2026-11-29'
   time: '20:30'

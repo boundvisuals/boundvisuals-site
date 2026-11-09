@@ -5,7 +5,7 @@
   project: school-building
   file: teaser-2026-11-10-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-10'
   time: '12:00'
   type: story
@@ -31,14 +31,14 @@
   project: school-building
   file: teaser-2026-11-10-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-11'
   time: '10:00'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-11-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-11'
   time: '12:00'
   type: story
@@ -63,7 +63,7 @@
   project: vivendas-cete
   file: teaser-2026-11-11-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-12'
   time: '12:00'
   type: story
@@ -88,7 +88,7 @@
   project: school-building
   file: teaser-2026-11-12-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '10:00'
   type: story
@@ -166,7 +166,7 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_1_-_Front___webp_+_Seedvr2_bravo-s01.jpg
+  file: root_4_-_exterior_frente_webp-s01.jpg
   approved: false
 - date: '2026-11-15'
   time: '12:30'
@@ -181,13 +181,13 @@
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_2_-_Back_webp_+_Seedvr2_bravo-s00.jpg
+  file: root_1_-_Front___webp_+_Seedvr2_bravo-s01.jpg
   approved: false
 - date: '2026-11-15'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s01.jpg
+  file: root_2_-_Back_webp_+_Seedvr2_bravo-s00.jpg
   approved: false
 - date: '2026-11-15'
   time: '20:30'

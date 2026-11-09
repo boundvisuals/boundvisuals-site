@@ -94,13 +94,13 @@
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s03.jpg
+  file: root_5-interior2_webp-s01.jpg
   approved: false
 - date: '2026-12-05'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_5-interior2_webp-s01.jpg
+  file: root_4_-_exterior_frente_webp-s03.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'
@@ -133,13 +133,13 @@
   time: '15:00'
   type: story
   project: gold-village
-  file: 2_-_exterior2_2-exterior2-s02.jpg
+  file: 3_-_exterior3_3_exterior3-s01.jpg
   approved: false
 - date: '2026-12-07'
   time: '17:30'
   type: story
   project: gold-village
-  file: 3_-_exterior3_3_exterior3-s01.jpg
+  file: 2_-_exterior2_2-exterior2-s02.jpg
   approved: false
 - date: '2026-12-07'
   time: '20:30'
@@ -149,36 +149,10 @@
   teaser: b
   approved: false
 - date: '2026-12-08'
-  time: '10:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-08-a.jpg
-  teaser: a
-  approved: false
-- date: '2026-12-08'
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
   file: 11_-_Interior_4_11-interior4_edit_0001-s02.jpg
-  approved: false
-- date: '2026-12-08'
-  time: '15:00'
-  type: story
-  project: apartamentos-gondomar-2
-  file: 12_-_Interior_5_12-interior5_0001-s01.jpg
-  approved: false
-- date: '2026-12-08'
-  time: '17:30'
-  type: story
-  project: apartamentos-gondomar-2
-  file: 15_-_Interior_8_15-interior8_edit_0001-s00.jpg
-  approved: false
-- date: '2026-12-08'
-  time: '20:30'
-  type: story
-  project: apartamentos-gondomar-2
-  file: teaser-2026-12-08-b.jpg
-  teaser: b
   approved: false
 - date: '2026-12-09'
   time: '10:00'
@@ -186,12 +160,6 @@
   project: gold-village
   file: teaser-2026-12-09-a.jpg
   teaser: a
-  approved: false
-- date: '2026-12-09'
-  time: '12:00'
-  type: story
-  project: gold-village
-  file: 11_-_interior4_11-interior4-s01.jpg
   approved: false
 - date: '2026-12-09'
   time: '15:00'

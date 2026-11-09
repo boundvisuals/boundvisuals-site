@@ -44,6 +44,13 @@
   file: palette-Renders_finais_9-exterior7_edit_0001.jpg
   approved: false
 - date: '2026-11-18'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: motion-Renders_finais_10-exterior8_edit_0001.mp4
+  approved: false
+  cover: motion-Renders_finais_10-exterior8_edit_0001.jpg
+- date: '2026-11-18'
   time: '20:30'
   type: story
   project: school-building
@@ -67,13 +74,13 @@
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_2_-_Back_webp_+_Seedvr2_bravo-s01.jpg
+  file: root_3-interior1_webp-s01.jpg
   approved: false
 - date: '2026-11-19'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s01.jpg
+  file: root_2_-_Back_webp_+_Seedvr2_bravo-s01.jpg
   approved: false
 - date: '2026-11-19'
   time: '20:30'
@@ -121,13 +128,13 @@
   time: '15:00'
   type: story
   project: gold-village
-  file: 11_-_interior4_11-interior4-s02.jpg
+  file: 1_-_exterior1_1-exterior1-s01.jpg
   approved: false
 - date: '2026-11-21'
   time: '17:30'
   type: story
   project: gold-village
-  file: 1_-_exterior1_1-exterior1-s01.jpg
+  file: 11_-_interior4_11-interior4-s02.jpg
   approved: false
 - date: '2026-11-21'
   time: '20:30'

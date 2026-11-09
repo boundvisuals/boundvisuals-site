@@ -74,19 +74,19 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 17_-_Interior_10_17-interior10_0001-s02.jpg
+  file: 1_-_Exterior1_1-exterior1_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-17'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 19_-_Interior_12_19-interior12_0001-s02.jpg
+  file: 17_-_Interior_10_17-interior10_0001-s02.jpg
   approved: false
 - date: '2026-12-17'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 1_-_Exterior1_1-exterior1_edit_0001-s01.jpg
+  file: 19_-_Interior_12_19-interior12_0001-s02.jpg
   approved: false
 - date: '2026-12-17'
   time: '20:30'
@@ -112,13 +112,13 @@
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 1_-_Exterior1_1-exterior1_edit_0001-s02.jpg
+  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s00.jpg
   approved: false
 - date: '2026-12-18'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s00.jpg
+  file: 1_-_Exterior1_1-exterior1_edit_0001-s02.jpg
   approved: false
 - date: '2026-12-18'
   time: '20:30'
@@ -170,19 +170,19 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s01.jpg
+  file: 5_-_Exterior5_5-exterior5_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-20'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 4_-_Exterior4_4-exterior4_0001-s00.jpg
+  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s01.jpg
   approved: false
 - date: '2026-12-20'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 5_-_Exterior5_5-exterior5_edit_0001-s00.jpg
+  file: 4_-_Exterior4_4-exterior4_0001-s00.jpg
   approved: false
 - date: '2026-12-20'
   time: '20:30'
@@ -202,19 +202,19 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s02.jpg
+  file: 4_-_Exterior4_4-exterior4_0001-s01.jpg
   approved: false
 - date: '2026-12-21'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 3_-_Exterior3_3-exterior3_edit_0001-s00.jpg
+  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s02.jpg
   approved: false
 - date: '2026-12-21'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 4_-_Exterior4_4-exterior4_0001-s01.jpg
+  file: 3_-_Exterior3_3-exterior3_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-21'
   time: '20:30'
