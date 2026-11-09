@@ -1,33 +1,130 @@
 # Week 6 social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py
-- date: '2026-12-11'
+- date: '2026-12-08'
   time: '10:00'
   type: story
   project: apartamentos-gondomar-2
+  file: teaser-2026-12-08-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-08'
+  time: '12:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 11_-_Interior_4_11-interior4_edit_0001-s02.jpg
+  approved: false
+- date: '2026-12-08'
+  time: '15:00'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 15_-_Interior_8_15-interior8_edit_0001-s01.jpg
+  approved: false
+- date: '2026-12-08'
+  time: '17:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: 16_-_Interior_9_16-interior9_0001-s01.jpg
+  approved: false
+- date: '2026-12-08'
+  time: '20:30'
+  type: story
+  project: apartamentos-gondomar-2
+  file: teaser-2026-12-08-b.jpg
+  teaser: b
+  approved: false
+- date: '2026-12-09'
+  time: '10:00'
+  type: story
+  project: vivendas-cete
+  file: teaser-2026-12-09-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-09'
+  time: '12:00'
+  type: story
+  project: vivendas-cete
+  file: 3-interior3_3-interior3-s03.jpg
+  approved: false
+- date: '2026-12-09'
+  time: '15:00'
+  type: story
+  project: vivendas-cete
+  file: 4-interior4_4-interior4-s02.jpg
+  approved: false
+- date: '2026-12-09'
+  time: '17:30'
+  type: story
+  project: vivendas-cete
+  file: 5-exterior1_5-exterior1-s00.jpg
+  approved: false
+- date: '2026-12-09'
+  time: '20:30'
+  type: story
+  project: vivendas-cete
+  file: teaser-2026-12-09-b.jpg
+  teaser: b
+  approved: false
+- date: '2026-12-10'
+  time: '10:00'
+  type: story
+  project: vivendas-duas-igrejas
+  file: teaser-2026-12-10-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-10'
+  time: '12:00'
+  type: story
+  project: vivendas-duas-igrejas
+  file: root_6-interior3_webp-s02.jpg
+  approved: false
+- date: '2026-12-10'
+  time: '15:00'
+  type: story
+  project: vivendas-duas-igrejas
+  file: root_7-interior4_webp-s02.jpg
+  approved: false
+- date: '2026-12-10'
+  time: '17:30'
+  type: story
+  project: vivendas-duas-igrejas
+  file: motion-root_1_-_Front___webp_+_Seedvr2_bravo.mp4
+  approved: false
+  cover: motion-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
+- date: '2026-12-10'
+  time: '20:30'
+  type: story
+  project: vivendas-duas-igrejas
+  file: teaser-2026-12-10-b.jpg
+  teaser: b
+  approved: false
+- date: '2026-12-11'
+  time: '10:00'
+  type: story
+  project: gold-village
   file: teaser-2026-12-11-a.jpg
   teaser: a
   approved: false
 - date: '2026-12-11'
   time: '12:00'
   type: story
-  project: apartamentos-gondomar-2
-  file: 13_-_Interior_6_13-interior6_edit_0001-s01.jpg
+  project: gold-village
+  file: 2_-_exterior2_2-exterior2-s03.jpg
   approved: false
 - date: '2026-12-11'
   time: '15:00'
   type: story
-  project: apartamentos-gondomar-2
-  file: 15_-_Interior_8_15-interior8_edit_0001-s01.jpg
+  project: gold-village
+  file: 3_-_exterior3_3_exterior3-s02.jpg
   approved: false
 - date: '2026-12-11'
   time: '17:30'
   type: story
-  project: apartamentos-gondomar-2
-  file: 16_-_Interior_9_16-interior9_0001-s00.jpg
+  project: gold-village
+  file: 4_-_exterior4_4-exterior4-s00.jpg
   approved: false
 - date: '2026-12-11'
   time: '20:30'
   type: story
-  project: apartamentos-gondomar-2
+  project: gold-village
   file: teaser-2026-12-11-b.jpg
   teaser: b
   approved: false
@@ -48,13 +145,13 @@
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 16_-_Interior_9_16-interior9_0001-s01.jpg
+  file: 18_-_Interior_11_18-interior11_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-12'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 17_-_Interior_10_17-interior10_0001-s00.jpg
+  file: 19_-_Interior_12_19-interior12_0001-s00.jpg
   approved: false
 - date: '2026-12-12'
   time: '20:30'
@@ -66,33 +163,66 @@
 - date: '2026-12-13'
   time: '10:00'
   type: story
-  project: apartamentos-gondomar-2
+  project: vivendas-cete
   file: teaser-2026-12-13-a.jpg
   teaser: a
   approved: false
 - date: '2026-12-13'
   time: '12:00'
   type: story
-  project: apartamentos-gondomar-2
-  file: 17_-_Interior_10_17-interior10_0001-s01.jpg
+  project: vivendas-cete
+  file: 5-exterior1_5-exterior1-s01.jpg
   approved: false
 - date: '2026-12-13'
   time: '15:00'
   type: story
-  project: apartamentos-gondomar-2
-  file: 18_-_Interior_11_18-interior11_edit_0001-s00.jpg
+  project: vivendas-cete
+  file: 6-exterior2_6-exterior2-s01.jpg
   approved: false
 - date: '2026-12-13'
   time: '17:30'
   type: story
-  project: apartamentos-gondomar-2
-  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s00.jpg
+  project: vivendas-cete
+  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
   approved: false
+  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
 - date: '2026-12-13'
   time: '20:30'
   type: story
-  project: apartamentos-gondomar-2
+  project: vivendas-cete
   file: teaser-2026-12-13-b.jpg
+  teaser: b
+  approved: false
+- date: '2026-12-14'
+  time: '10:00'
+  type: story
+  project: gold-village
+  file: teaser-2026-12-14-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-14'
+  time: '12:00'
+  type: story
+  project: gold-village
+  file: 3_-_exterior3_3_exterior3-s03.jpg
+  approved: false
+- date: '2026-12-14'
+  time: '15:00'
+  type: story
+  project: gold-village
+  file: 4_-_exterior4_4-exterior4-s01.jpg
+  approved: false
+- date: '2026-12-14'
+  time: '17:30'
+  type: story
+  project: gold-village
+  file: 5_-_exterior5_5-exterior5-s00.jpg
+  approved: false
+- date: '2026-12-14'
+  time: '20:30'
+  type: story
+  project: gold-village
+  file: teaser-2026-12-14-b.jpg
   teaser: b
   approved: false
 - date: '2026-12-15'
