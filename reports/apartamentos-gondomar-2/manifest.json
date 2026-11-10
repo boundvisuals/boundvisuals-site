@@ -3,435 +3,1082 @@
   "items": [
     {
       "source": "10_-_Interior_3/10-interior3_edit_0001.png",
-      "sha1": "b9fbd4100aaf2071d982d745e4d4f26e1100d6cc",
+      "sha1": "1c67a52793c4e3ab7afdbc0724fc489d741f353b",
       "size": [
-        6605,
-        3686
+        5000,
+        2790
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/10_-_Interior_3_10-interior3_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/10_-_Interior_3_10-interior3_edit_0001-800.webp",
-        "out/web/grid/10_-_Interior_3_10-interior3_edit_0001-1600.webp",
-        "out/web/grid/10_-_Interior_3_10-interior3_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/10_-_Interior_3/10-interior3_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/10_-_Interior_3_10-interior3_edit_0001-01.jpg",
-        "out/ig/10_-_Interior_3_10-interior3_edit_0001-02.jpg",
-        "out/ig/10_-_Interior_3_10-interior3_edit_0001-03.jpg",
-        "out/ig/10_-_Interior_3_10-interior3_edit_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/10_-_Interior_3_10-interior3_edit_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/10_-_Interior_3_10-interior3_edit_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/10_-_Interior_3_10-interior3_edit_0001-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/10_-_Interior_3_10-interior3_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 30714044,
-      "full_bytes": 22139504
+      "crops": "manual",
+      "source_bytes": 3698861,
+      "full_bytes": 3698861
     },
     {
       "source": "11_-_Interior_4/11-interior4_edit_0001.png",
-      "sha1": "1a30df838605cccab3f8f6b2b39923736f793f0a",
+      "sha1": "5c3d07cc4056a65eab894b4f5bdf788dcea54be5",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/11_-_Interior_4_11-interior4_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/11_-_Interior_4_11-interior4_edit_0001-800.webp",
-        "out/web/grid/11_-_Interior_4_11-interior4_edit_0001-1600.webp",
-        "out/web/grid/11_-_Interior_4_11-interior4_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/11_-_Interior_4/11-interior4_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/11_-_Interior_4_11-interior4_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/11_-_Interior_4_11-interior4_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 35239684,
-      "full_bytes": 25867472
+      "source_bytes": 5422485,
+      "full_bytes": 5422485
     },
     {
       "source": "12_-_Interior_5/12-interior5_0001.png",
-      "sha1": "ec7b1250248e1ffc75a3b3666d67ac68a33a0792",
+      "sha1": "2ee2b3131fb0e4ef20bca3f3676ac62ddb0320fa",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/12_-_Interior_5_12-interior5_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/12_-_Interior_5_12-interior5_0001-800.webp",
-        "out/web/grid/12_-_Interior_5_12-interior5_0001-1600.webp",
-        "out/web/grid/12_-_Interior_5_12-interior5_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/12_-_Interior_5/12-interior5_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/12_-_Interior_5_12-interior5_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/12_-_Interior_5_12-interior5_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 33598387,
-      "full_bytes": 25001080
+      "source_bytes": 5420933,
+      "full_bytes": 5420933
     },
     {
       "source": "13_-_Interior_6/13-interior6_edit_0001.png",
-      "sha1": "9f1cd0ba454bf596f9a54a3f0d31840c22f3cad8",
+      "sha1": "e330c5a6b044a53c8cf99d65e61d6ef69e73a61b",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/13_-_Interior_6_13-interior6_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/13_-_Interior_6_13-interior6_edit_0001-800.webp",
-        "out/web/grid/13_-_Interior_6_13-interior6_edit_0001-1600.webp",
-        "out/web/grid/13_-_Interior_6_13-interior6_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/13_-_Interior_6/13-interior6_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/13_-_Interior_6_13-interior6_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/13_-_Interior_6_13-interior6_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 34535202,
-      "full_bytes": 25839718
+      "source_bytes": 5521750,
+      "full_bytes": 5521750
     },
     {
       "source": "14_-_Interior_7/14-interior7_edit_0001.png",
-      "sha1": "3b95440c9d7935c3e85c7358868214c8c76db42b",
+      "sha1": "9e9a1764693c1ceb07588a8632b4a78ff1c9ef88",
       "size": [
-        6054,
-        3379
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/14_-_Interior_7_14-interior7_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/14_-_Interior_7_14-interior7_edit_0001-800.webp",
-        "out/web/grid/14_-_Interior_7_14-interior7_edit_0001-1600.webp",
-        "out/web/grid/14_-_Interior_7_14-interior7_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/14_-_Interior_7/14-interior7_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/14_-_Interior_7_14-interior7_edit_0001-01.jpg",
-        "out/ig/14_-_Interior_7_14-interior7_edit_0001-02.jpg",
-        "out/ig/14_-_Interior_7_14-interior7_edit_0001-03.jpg",
-        "out/ig/14_-_Interior_7_14-interior7_edit_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/14_-_Interior_7_14-interior7_edit_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/14_-_Interior_7_14-interior7_edit_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/14_-_Interior_7_14-interior7_edit_0001-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/14_-_Interior_7_14-interior7_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 26687000,
-      "full_bytes": 18767462
+      "crops": "manual",
+      "source_bytes": 3792628,
+      "full_bytes": 3792628
     },
     {
       "source": "15_-_Interior_8/15-interior8_edit_0001.png",
-      "sha1": "48d297ea65fa7a917fae1a902a794f08b2db36de",
+      "sha1": "2f3ab662aff45790b03bf92572bcdf250c567193",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/15_-_Interior_8_15-interior8_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/15_-_Interior_8_15-interior8_edit_0001-800.webp",
-        "out/web/grid/15_-_Interior_8_15-interior8_edit_0001-1600.webp",
-        "out/web/grid/15_-_Interior_8_15-interior8_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/15_-_Interior_8/15-interior8_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/15_-_Interior_8_15-interior8_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/15_-_Interior_8_15-interior8_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 38306883,
-      "full_bytes": 27010582
+      "source_bytes": 6062760,
+      "full_bytes": 6062760
     },
     {
       "source": "16_-_Interior_9/16-interior9_0001.png",
-      "sha1": "94320ad1239f5434bee8146b16e801da5301926a",
+      "sha1": "a274404c4e2daf6590988a38cfed6a8a19b4731a",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/16_-_Interior_9_16-interior9_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/16_-_Interior_9_16-interior9_0001-800.webp",
-        "out/web/grid/16_-_Interior_9_16-interior9_0001-1600.webp",
-        "out/web/grid/16_-_Interior_9_16-interior9_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/16_-_Interior_9/16-interior9_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/16_-_Interior_9_16-interior9_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/16_-_Interior_9_16-interior9_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 32947999,
-      "full_bytes": 24515216
+      "source_bytes": 4771768,
+      "full_bytes": 4771768
     },
     {
       "source": "17_-_Interior_10/17-interior10_0001.png",
-      "sha1": "6a160d5fe22b8617fa2e748947d3acbc1f318110",
+      "sha1": "7d20c2fac7bc7a632394546610244a2a3d28d0d2",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/17_-_Interior_10_17-interior10_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/17_-_Interior_10_17-interior10_0001-800.webp",
-        "out/web/grid/17_-_Interior_10_17-interior10_0001-1600.webp",
-        "out/web/grid/17_-_Interior_10_17-interior10_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/17_-_Interior_10/17-interior10_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/17_-_Interior_10_17-interior10_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/17_-_Interior_10_17-interior10_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 39005658,
-      "full_bytes": 26964548
+      "source_bytes": 6362600,
+      "full_bytes": 6362600
     },
     {
       "source": "18_-_Interior_11/18-interior11_edit_0001.png",
-      "sha1": "8b13c72a29f31ecf655f4b9313880842434dae07",
+      "sha1": "3faaa77139d00064c7cd07d68d9f40726b08770c",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/18_-_Interior_11_18-interior11_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/18_-_Interior_11_18-interior11_edit_0001-800.webp",
-        "out/web/grid/18_-_Interior_11_18-interior11_edit_0001-1600.webp",
-        "out/web/grid/18_-_Interior_11_18-interior11_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/18_-_Interior_11/18-interior11_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/18_-_Interior_11_18-interior11_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/18_-_Interior_11_18-interior11_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 39783507,
-      "full_bytes": 29132166
+      "source_bytes": 6618000,
+      "full_bytes": 6618000
     },
     {
       "source": "19_-_Interior_12/19-interior12_0001.png",
-      "sha1": "0da444614423cf1581f2c6fe68238ccc0863f2a2",
+      "sha1": "7c66ab83f4d2b3506aec1dbcecf1a81233d7f6f0",
       "size": [
-        6605,
-        3686
+        5000,
+        2790
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/19_-_Interior_12_19-interior12_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/19_-_Interior_12_19-interior12_0001-800.webp",
-        "out/web/grid/19_-_Interior_12_19-interior12_0001-1600.webp",
-        "out/web/grid/19_-_Interior_12_19-interior12_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/19_-_Interior_12/19-interior12_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/19_-_Interior_12_19-interior12_0001-01.jpg",
-        "out/ig/19_-_Interior_12_19-interior12_0001-02.jpg",
-        "out/ig/19_-_Interior_12_19-interior12_0001-03.jpg",
-        "out/ig/19_-_Interior_12_19-interior12_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/19_-_Interior_12_19-interior12_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/19_-_Interior_12_19-interior12_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/19_-_Interior_12_19-interior12_0001-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/19_-_Interior_12_19-interior12_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 25433272,
-      "full_bytes": 19153052
+      "crops": "manual",
+      "source_bytes": 2813360,
+      "full_bytes": 2813360
     },
     {
       "source": "1_-_Exterior1/1-exterior1_edit_0001.png",
-      "sha1": "fb08ebf953bdf0d6a41716417428dbe6e64d9069",
+      "sha1": "ed11475c6f2e915d2cedd479b33edc58d72ab38d",
       "size": [
-        4480,
-        6000
+        3733,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/1_-_Exterior1_1-exterior1_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/1_-_Exterior1_1-exterior1_edit_0001-800.webp",
-        "out/web/grid/1_-_Exterior1_1-exterior1_edit_0001-1600.webp",
-        "out/web/grid/1_-_Exterior1_1-exterior1_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/1_-_Exterior1/1-exterior1_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/1_-_Exterior1_1-exterior1_edit_0001-01.jpg",
-        "out/ig/1_-_Exterior1_1-exterior1_edit_0001-02.jpg",
-        "out/ig/1_-_Exterior1_1-exterior1_edit_0001-03.jpg",
-        "out/ig/1_-_Exterior1_1-exterior1_edit_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/1_-_Exterior1_1-exterior1_edit_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/1_-_Exterior1_1-exterior1_edit_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/1_-_Exterior1_1-exterior1_edit_0001-03-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 43893304,
-      "full_bytes": 31524670
+      "crops": "manual",
+      "source_bytes": 8972113,
+      "full_bytes": 8972113
     },
     {
       "source": "2_-_Exterior2/2-exterior2_4SeedVR2Upscale.png",
-      "sha1": "de05dce1658897a509934c4270e425292734cd8f",
+      "sha1": "f625e599ba871a527259d3e4a66259523253b5a6",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/2_-_Exterior2_2-exterior2_4SeedVR2Upscale.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-800.webp",
-        "out/web/grid/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-1600.webp",
-        "out/web/grid/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/2_-_Exterior2/2-exterior2_4SeedVR2Upscale.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/2_-_Exterior2_2-exterior2_4SeedVR2Upscale-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 61993164,
-      "full_bytes": 30252524
+      "source_bytes": 7603116,
+      "full_bytes": 7603116
     },
     {
       "source": "3_-_Exterior3/3-exterior3_edit_0001.png",
-      "sha1": "0dc3fee777fee9a14778a2b7372d3804bbbf31bd",
+      "sha1": "8d95c1da854c2bcc77f596f9553a7da3f047d5ca",
       "size": [
-        4742,
-        5949
+        3986,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/3_-_Exterior3_3-exterior3_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/3_-_Exterior3_3-exterior3_edit_0001-800.webp",
-        "out/web/grid/3_-_Exterior3_3-exterior3_edit_0001-1600.webp",
-        "out/web/grid/3_-_Exterior3_3-exterior3_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/3_-_Exterior3/3-exterior3_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/3_-_Exterior3_3-exterior3_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/3_-_Exterior3_3-exterior3_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 48678621,
-      "full_bytes": 32521950
+      "source_bytes": 8827779,
+      "full_bytes": 8827779
     },
     {
       "source": "4_-_Exterior4/4-exterior4_0001.png",
-      "sha1": "cb1b531dbd447ce7c49c8dd2c5db771ece15d75f",
+      "sha1": "5027365e0b7d8aa7db5cb340db55f779197732d7",
       "size": [
-        4789,
-        5990
+        3997,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/4_-_Exterior4_4-exterior4_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/4_-_Exterior4_4-exterior4_0001-800.webp",
-        "out/web/grid/4_-_Exterior4_4-exterior4_0001-1600.webp",
-        "out/web/grid/4_-_Exterior4_4-exterior4_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/4_-_Exterior4/4-exterior4_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/4_-_Exterior4_4-exterior4_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/4_-_Exterior4_4-exterior4_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 43400990,
-      "full_bytes": 30839462
+      "source_bytes": 7881632,
+      "full_bytes": 7881632
     },
     {
       "source": "5_-_Exterior5/5-exterior5_edit_0001.png",
-      "sha1": "65afa13142395f74378ff20b93e9f5d9d0253908",
+      "sha1": "3c7e53b786106744149274492fa762a922b5ef88",
       "size": [
-        6054,
-        3379
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/5_-_Exterior5_5-exterior5_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/5_-_Exterior5_5-exterior5_edit_0001-800.webp",
-        "out/web/grid/5_-_Exterior5_5-exterior5_edit_0001-1600.webp",
-        "out/web/grid/5_-_Exterior5_5-exterior5_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/5_-_Exterior5/5-exterior5_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/5_-_Exterior5_5-exterior5_edit_0001-01.jpg",
-        "out/ig/5_-_Exterior5_5-exterior5_edit_0001-02.jpg",
-        "out/ig/5_-_Exterior5_5-exterior5_edit_0001-03.jpg",
-        "out/ig/5_-_Exterior5_5-exterior5_edit_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/5_-_Exterior5_5-exterior5_edit_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/5_-_Exterior5_5-exterior5_edit_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/5_-_Exterior5_5-exterior5_edit_0001-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/5_-_Exterior5_5-exterior5_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 32518485,
-      "full_bytes": 25162496
+      "crops": "manual",
+      "source_bytes": 7617398,
+      "full_bytes": 7617398
     },
     {
       "source": "7_-_Exterior_7/7-exterior7_edit_0001.png",
-      "sha1": "e0b61d8b56fd6e3aadc29a16463711057ab17ab2",
+      "sha1": "3433118edce52e86948d0f0c78b22c3463b31f05",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/7_-_Exterior_7_7-exterior7_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/7_-_Exterior_7_7-exterior7_edit_0001-800.webp",
-        "out/web/grid/7_-_Exterior_7_7-exterior7_edit_0001-1600.webp",
-        "out/web/grid/7_-_Exterior_7_7-exterior7_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/7_-_Exterior_7/7-exterior7_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/7_-_Exterior_7_7-exterior7_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/7_-_Exterior_7_7-exterior7_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 39591478,
-      "full_bytes": 29112756
+      "source_bytes": 6801433,
+      "full_bytes": 6801433
     },
     {
       "source": "8_-_Interior_1/8-interior1_edit_0001.png",
-      "sha1": "d1f0aee8b48e1c531719a0bbd393e1be189651a9",
+      "sha1": "4132515f805230a5649f1fe1f210ff26b68c309d",
       "size": [
-        6054,
-        3379
+        5000,
+        2791
       ],
       "orientation": "landscape",
-      "web_full": "out/web/full/8_-_Interior_1_8-interior1_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/8_-_Interior_1_8-interior1_edit_0001-800.webp",
-        "out/web/grid/8_-_Interior_1_8-interior1_edit_0001-1600.webp",
-        "out/web/grid/8_-_Interior_1_8-interior1_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/8_-_Interior_1/8-interior1_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/8_-_Interior_1_8-interior1_edit_0001-01.jpg",
-        "out/ig/8_-_Interior_1_8-interior1_edit_0001-02.jpg",
-        "out/ig/8_-_Interior_1_8-interior1_edit_0001-03.jpg",
-        "out/ig/8_-_Interior_1_8-interior1_edit_0001-04-full.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/8_-_Interior_1_8-interior1_edit_0001-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/8_-_Interior_1_8-interior1_edit_0001-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/8_-_Interior_1_8-interior1_edit_0001-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/8_-_Interior_1_8-interior1_edit_0001-04-full.jpg"
       ],
       "ig_mode": "carousel",
-      "crops": "auto-unreviewed",
-      "source_bytes": 23453607,
-      "full_bytes": 17396628
+      "crops": "manual",
+      "source_bytes": 3190343,
+      "full_bytes": 3190343
     },
     {
       "source": "9_-_Interior_2/9-interior2_edit_0001.png",
-      "sha1": "b9e8286037f3be479dfeb036c5fdf40bfbbca065",
+      "sha1": "52fc0be3a464ba683c6e94e3a3065361205db560",
       "size": [
-        4826,
-        5990
+        4028,
+        5000
       ],
       "orientation": "portrait",
-      "web_full": "out/web/full/9_-_Interior_2_9-interior2_edit_0001.webp",
-      "lossless_verified": true,
-      "web_grid": [
-        "out/web/grid/9_-_Interior_2_9-interior2_edit_0001-800.webp",
-        "out/web/grid/9_-_Interior_2_9-interior2_edit_0001-1600.webp",
-        "out/web/grid/9_-_Interior_2_9-interior2_edit_0001-2400.webp"
-      ],
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/9_-_Interior_2/9-interior2_edit_0001.png",
+      "lossless_verified": false,
+      "web_grid": [],
       "ig_slides": [
-        "out/ig/9_-_Interior_2_9-interior2_edit_0001-01.jpg"
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/9_-_Interior_2_9-interior2_edit_0001-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
-      "source_bytes": 28336118,
-      "full_bytes": 21676230
+      "source_bytes": 4090279,
+      "full_bytes": 4090279
+    },
+    {
+      "source": "TODAS/1-exterior1_edit_0001_result.jpg",
+      "sha1": "ff1ac9ba3a60eb9d41a8825086af5709be4322ec",
+      "size": [
+        3733,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/1-exterior1_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8908345,
+      "full_bytes": 8908345
+    },
+    {
+      "source": "TODAS/1-exterior1_edit_0001_result.webp",
+      "sha1": "4b6b701e26cd8daecfec8e8bb66499f438b175c7",
+      "size": [
+        3733,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/1-exterior1_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_1-exterior1_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8064942,
+      "full_bytes": 8064942
+    },
+    {
+      "source": "TODAS/10-interior3_edit_0001_result.jpg",
+      "sha1": "a54364cbf87044abe22a1388572aa2bbb752eeea",
+      "size": [
+        5000,
+        2790
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/10-interior3_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3649462,
+      "full_bytes": 3649462
+    },
+    {
+      "source": "TODAS/10-interior3_edit_0001_result.webp",
+      "sha1": "961689f1af8b791ed68d1fc7add4d40dcac5437b",
+      "size": [
+        5000,
+        2790
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/10-interior3_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_10-interior3_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3210050,
+      "full_bytes": 3210050
+    },
+    {
+      "source": "TODAS/11-interior4_edit_0001_result.jpg",
+      "sha1": "1769672fbea9e0917eb42e51395b491fe5497bb9",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/11-interior4_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_11-interior4_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5300708,
+      "full_bytes": 5300708
+    },
+    {
+      "source": "TODAS/11-interior4_edit_0001_result.webp",
+      "sha1": "c789e4eb37d8dad58ce082fbfd8907cd8ba069f4",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/11-interior4_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_11-interior4_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 4577808,
+      "full_bytes": 4577808
+    },
+    {
+      "source": "TODAS/12-interior5_0001_result.jpg",
+      "sha1": "1a12d2239d8f8e92ecdcc4c49d56a94362702f8c",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/12-interior5_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_12-interior5_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5296346,
+      "full_bytes": 5296346
+    },
+    {
+      "source": "TODAS/12-interior5_0001_result.webp",
+      "sha1": "3cf0269113ecb7d216dd83b5ffc4b19ea74c2eff",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/12-interior5_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_12-interior5_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 4466875,
+      "full_bytes": 4466875
+    },
+    {
+      "source": "TODAS/13-interior6_edit_0001_result.jpg",
+      "sha1": "70d57dc3c30e13785b095c369123b8a03c1a2251",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/13-interior6_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_13-interior6_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5352850,
+      "full_bytes": 5352850
+    },
+    {
+      "source": "TODAS/13-interior6_edit_0001_result.webp",
+      "sha1": "6286e68a878f503dc35ee4df4330352273ad5f59",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/13-interior6_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_13-interior6_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 4422671,
+      "full_bytes": 4422671
+    },
+    {
+      "source": "TODAS/14-interior7_edit_0001_result.jpg",
+      "sha1": "7e28ca39c6e843e9a2b8498918f1405bd084cc7f",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/14-interior7_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3704916,
+      "full_bytes": 3704916
+    },
+    {
+      "source": "TODAS/14-interior7_edit_0001_result.webp",
+      "sha1": "1a1557ab6ec05a117b5848e45575a0fe98016a70",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/14-interior7_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_14-interior7_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3240787,
+      "full_bytes": 3240787
+    },
+    {
+      "source": "TODAS/15-interior8_edit_0001_result.jpg",
+      "sha1": "8083bd699473ae8c8ae7b649995dd437e8f0fbf9",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/15-interior8_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_15-interior8_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5919175,
+      "full_bytes": 5919175
+    },
+    {
+      "source": "TODAS/15-interior8_edit_0001_result.webp",
+      "sha1": "5157066e288be843528b2a49f28a25d351d8bbd1",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/15-interior8_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_15-interior8_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5206435,
+      "full_bytes": 5206435
+    },
+    {
+      "source": "TODAS/16-interior9_0001_result.jpg",
+      "sha1": "537c3c8aafa5d7f830011f63a35dbd341b74af17",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/16-interior9_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_16-interior9_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 4626711,
+      "full_bytes": 4626711
+    },
+    {
+      "source": "TODAS/16-interior9_0001_result.webp",
+      "sha1": "7755d5638382b9c140ed5ee227b2fd23aa18083d",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/16-interior9_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_16-interior9_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3837222,
+      "full_bytes": 3837222
+    },
+    {
+      "source": "TODAS/17-interior10_0001_result.jpg",
+      "sha1": "93145fcfde8b87395671982c839adc8871307c29",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/17-interior10_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_17-interior10_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6238660,
+      "full_bytes": 6238660
+    },
+    {
+      "source": "TODAS/17-interior10_0001_result.webp",
+      "sha1": "179117b5126e450fcdc9b9dc470b73d9bd2e4c2a",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/17-interior10_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_17-interior10_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5589574,
+      "full_bytes": 5589574
+    },
+    {
+      "source": "TODAS/18-interior11_edit_0001_result.jpg",
+      "sha1": "93f6a1d2239376628d615514719946d1cd4d99ad",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/18-interior11_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_18-interior11_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6395182,
+      "full_bytes": 6395182
+    },
+    {
+      "source": "TODAS/18-interior11_edit_0001_result.webp",
+      "sha1": "afca69d204c489aa8dd172b3271e2f2a57051a10",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/18-interior11_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_18-interior11_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5199340,
+      "full_bytes": 5199340
+    },
+    {
+      "source": "TODAS/19-interior12_0001_result.jpg",
+      "sha1": "dbbb11341c81195bda30905eafd918a3980b0c28",
+      "size": [
+        5000,
+        2790
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/19-interior12_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2768405,
+      "full_bytes": 2768405
+    },
+    {
+      "source": "TODAS/19-interior12_0001_result.webp",
+      "sha1": "b4e9faaa67b22e3ed1824dc8bf0f9efa0a301aa2",
+      "size": [
+        5000,
+        2790
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/19-interior12_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_19-interior12_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2335117,
+      "full_bytes": 2335117
+    },
+    {
+      "source": "TODAS/2-exterior2_4SeedVR2Upscale_result.jpg",
+      "sha1": "ebd00a5d27ee0b2c8fc7e83f649531b41d7f9b18",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/2-exterior2_4SeedVR2Upscale_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_2-exterior2_4SeedVR2Upscale_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7513636,
+      "full_bytes": 7513636
+    },
+    {
+      "source": "TODAS/2-exterior2_4SeedVR2Upscale_result.webp",
+      "sha1": "ddcfb9150e9eaca5c5e19f5fb8ef5a3662646367",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/2-exterior2_4SeedVR2Upscale_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_2-exterior2_4SeedVR2Upscale_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6686074,
+      "full_bytes": 6686074
+    },
+    {
+      "source": "TODAS/3-exterior3_edit_0001_result.jpg",
+      "sha1": "5dc0032ee10294b528f7e9d3f94f122dcc104e9d",
+      "size": [
+        3986,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/3-exterior3_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_3-exterior3_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8754127,
+      "full_bytes": 8754127
+    },
+    {
+      "source": "TODAS/3-exterior3_edit_0001_result.webp",
+      "sha1": "40589bdc9279ee58d93f83e326392651fa3bc552",
+      "size": [
+        3986,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/3-exterior3_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_3-exterior3_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 8042147,
+      "full_bytes": 8042147
+    },
+    {
+      "source": "TODAS/4-exterior4_0001_result.jpg",
+      "sha1": "a38bcab989f8539b5606a5dc9a6b6ee0f54e4b33",
+      "size": [
+        3997,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/4-exterior4_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_4-exterior4_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7723430,
+      "full_bytes": 7723430
+    },
+    {
+      "source": "TODAS/4-exterior4_0001_result.webp",
+      "sha1": "5461b988067d378f54ebd658bde6dced382b7a0c",
+      "size": [
+        3997,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/4-exterior4_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_4-exterior4_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6790708,
+      "full_bytes": 6790708
+    },
+    {
+      "source": "TODAS/5-exterior5_edit_0001_result.jpg",
+      "sha1": "b00012a0f4e023ab3e030e9ac7b785e2329bf6bc",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/5-exterior5_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 7520466,
+      "full_bytes": 7520466
+    },
+    {
+      "source": "TODAS/5-exterior5_edit_0001_result.webp",
+      "sha1": "73bc101d98b2823f15b2cfb04b3bb17b673f2808",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/5-exterior5_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_5-exterior5_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6600264,
+      "full_bytes": 6600264
+    },
+    {
+      "source": "TODAS/7-exterior7_edit_0001_result.jpg",
+      "sha1": "d519cbf2f2451ed9ccaec650eea1f8dc290df5f9",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/7-exterior7_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_7-exterior7_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 6646378,
+      "full_bytes": 6646378
+    },
+    {
+      "source": "TODAS/7-exterior7_edit_0001_result.webp",
+      "sha1": "add94a2377e562e5f76d85c4fa59f7c48b7cfa86",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/7-exterior7_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_7-exterior7_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 5762613,
+      "full_bytes": 5762613
+    },
+    {
+      "source": "TODAS/8-interior1_edit_0001_result.jpg",
+      "sha1": "1749a633a444396e40e343f7d0d7d4c3374cf855",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/8-interior1_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3090731,
+      "full_bytes": 3090731
+    },
+    {
+      "source": "TODAS/8-interior1_edit_0001_result.webp",
+      "sha1": "0a50268dac14e8ca98e1b313e2abce7a9afaccbd",
+      "size": [
+        5000,
+        2791
+      ],
+      "orientation": "landscape",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/8-interior1_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-01.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-02.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-03.jpg",
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_8-interior1_edit_0001_result-04-full.jpg"
+      ],
+      "ig_mode": "carousel",
+      "crops": "auto-unreviewed",
+      "source_bytes": 2605794,
+      "full_bytes": 2605794
+    },
+    {
+      "source": "TODAS/9-interior2_edit_0001_result.jpg",
+      "sha1": "749438dc81519e4c641b2ea8b73fc0d5a5353178",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/9-interior2_edit_0001_result.jpg",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_9-interior2_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3967030,
+      "full_bytes": 3967030
+    },
+    {
+      "source": "TODAS/9-interior2_edit_0001_result.webp",
+      "sha1": "05154d2b78542538d010760b733980dfb7cce36d",
+      "size": [
+        4028,
+        5000
+      ],
+      "orientation": "portrait",
+      "web_full": "/home/runner/bv/src/apartamentos-gondomar-2/TODAS/9-interior2_edit_0001_result.webp",
+      "lossless_verified": false,
+      "web_grid": [],
+      "ig_slides": [
+        "/home/runner/bv/tmp/apartamentos-gondomar-2/ig/TODAS_9-interior2_edit_0001_result-01.jpg"
+      ],
+      "ig_mode": "single",
+      "crops": "auto-unreviewed",
+      "source_bytes": 3299030,
+      "full_bytes": 3299030
     }
   ]
 }
