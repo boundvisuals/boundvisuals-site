@@ -108,6 +108,7 @@ if ($a === 'data') {
     $i = array_search('Últimas ações:', $old);
     $d['log'] = array_merge(['Último robô de publicação (servidor, ' . date('d/m H:i', filemtime("$store/cron.log")) . '):'], $show, [''], $i !== false ? array_slice($old, $i) : []);
   }
+  $d['app_v'] = (string)@filemtime(__DIR__ . '/app.html');   // app code version: open apps reload themselves when it changes
   $d['ticks'] = read_store("$store/ticks.json.php") ?? new stdClass();
   $d['inbox'] = read_store("$store/inbox.json.php") ?? [];
   $d['opps'] = read_store("$store/opps.json.php") ?? [];

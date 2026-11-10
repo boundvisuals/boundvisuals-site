@@ -733,16 +733,17 @@ new MutationObserver(ms=>{if(LANG!=="en")return;for(const m of ms)for(const nd o
 function setLang(l){LANG=l;try{localStorage.setItem("bv_lang",l)}catch(e){}location.reload()}
 function tlItems(){const seen=new Set();return (D.timeline||[]).filter(t=>{if(t.kind!=="robot")return true;if(seen.has(t.text))return false;seen.add(t.text);return true}).slice(0,18)}
 function renderAll(){if(!D)return;nav();renderHoje();renderCal();renderTarefas();renderIdeias();renderPortfolio();renderProjetos();renderEstudio();renderSobre();renderLinks();renderPessoais();renderConteudo();renderOpps();renderMarca()}
+let APPNEW=false;
 async function load(){
   try{const r=await fetch("api.php?a=data",{cache:"no-store"});if(r.status===401){location.reload();return}
     const j=await r.json();const changed=!D||j.generated_at!==D.generated_at||JSON.stringify(j.pending_approvals)!==JSON.stringify(D.pending_approvals)||JSON.stringify(j.ticks)!==JSON.stringify(D.ticks);
-    D=j;applyLC();lastOk=Date.now();if(changed)renderAll();tick()}catch(e){$("#dot").classList.add("stale");$("#fresh").textContent="sem ligação, a tentar…"}}
+    if(D&&D.app_v&&j.app_v&&j.app_v!==D.app_v){APPNEW=true}D=j;if(APPNEW&&!document.querySelector(".modal.on")){location.reload();return}applyLC();lastOk=Date.now();if(changed)renderAll();tick()}catch(e){$("#dot").classList.add("stale");$("#fresh").textContent="sem ligação, a tentar…"}}
 function tick(){if(!D)return;if(LANG==="en"){setTimeout(()=>applyLang(),0)}const s=(Date.now()-lastOk)/1000;$("#dot").classList.toggle("stale",s>60);
   $("#fresh").textContent=`ao vivo · robôs ${ago(D.generated_at)}`;if($("#gen"))$("#gen").textContent="Dados dos robôs: "+ago(D.generated_at)}
 const h=new Date().getHours();$("#hello").textContent=(h<6?"Boa noite":h<13?"Bom dia":h<20?"Boa tarde":"Boa noite")+", Vítor";
 cur=TABS[0][0];try{const t=localStorage.getItem("bv_tab");if(t&&TABS.some(x=>x[0]===t))cur=t}catch(e){}
-nav();go(cur);load();setInterval(load,15000);setInterval(tick,5000);
-document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});
+nav();go(cur);load();setInterval(load,5000);setInterval(tick,5000);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});window.addEventListener("focus",load);window.addEventListener("pageshow",load);
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>
 
