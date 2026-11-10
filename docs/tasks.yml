@@ -182,3 +182,7 @@
 - id: v-approve-new-calendar
   owner: vitor
   title: "Aprovar o calendário refeito com o School Building (Calendário → Aprovar tudo)"
+- id: v-viewport-captures
+  owner: vitor
+  title: "Prints e vídeos da viewport do 3ds Max (para stories aleatórios)"
+  detail: "Ideia tua 10/11: ir guardando prints e screen recordings curtos da viewport do 3ds Max (wireframe, clay, modelação, câmaras, antes/depois do render) para eu espetar em stories aleatórios. Prova que o 3D é feito por ti. Como mandar: no MEGA, pasta 'viewport' dentro de cada projeto (ou 'FREELANCER STUFF/3D/PORTFOLIO/Viewport'), prints em PNG/JPG, vídeos MP4 até ~15 s. Sempre que fizeres um projeto/Daily Study, lembra-te de gravar 10 s da viewport. Eu lembro-te nos Daily Study."
