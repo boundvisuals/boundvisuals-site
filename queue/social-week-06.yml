@@ -10,19 +10,19 @@
   time: '12:00'
   type: story
   project: school-building
-  file: palette-Renders_finais_12-interior1_edit_0001.jpg
+  file: Renders_finais_14-interior3_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-08'
   time: '15:00'
   type: story
   project: school-building
-  file: palette-Renders_finais_12-interior2_edit_0001.jpg
+  file: palette-Renders_finais_12-interior1_edit_0001.jpg
   approved: false
 - date: '2026-12-08'
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_14-interior3_edit_0001-s00.jpg
+  file: Renders_finais_2-exterior2_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-08'
   time: '20:30'
@@ -119,7 +119,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_2-exterior2_edit_0001-s01.jpg
+  file: Renders_finais_3-exterior5-s00.jpg
   approved: false
 - date: '2026-12-11'
   time: '20:30'
@@ -216,7 +216,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_3-exterior5-s00.jpg
+  file: Renders_finais_6-exterior3_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-14'
   time: '20:30'

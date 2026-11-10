@@ -10,19 +10,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
+  file: palette-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
   approved: false
 - date: '2026-11-17'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_2_-_Back_webp_+_Seedvr2_bravo-s01.jpg
+  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
   approved: false
 - date: '2026-11-17'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: palette-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
+  file: root_2_-_Back_webp_+_Seedvr2_bravo-s01.jpg
   approved: false
 - date: '2026-11-17'
   time: '20:30'
@@ -172,21 +172,21 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_2_-_Back_webp_+_Seedvr2_bravo-s02.jpg
+  file: motion-root_2_-_Back_webp_+_Seedvr2_bravo.mp4
   approved: false
+  cover: motion-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
 - date: '2026-11-22'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s02.jpg
+  file: root_2_-_Back_webp_+_Seedvr2_bravo-s02.jpg
   approved: false
 - date: '2026-11-22'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: motion-root_2_-_Back_webp_+_Seedvr2_bravo.mp4
+  file: root_3-interior1_webp-s01.jpg
   approved: false
-  cover: motion-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
 - date: '2026-11-22'
   time: '20:30'
   type: story
