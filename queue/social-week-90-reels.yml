@@ -7,7 +7,7 @@
   cover: school-building-reel-02-cover.jpg
   caption_en: School Building (part 2)
   caption_pt: School Building (parte 2)
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '12:30'
   type: reel
@@ -68,10 +68,8 @@
   project: apartamentos-gondomar-2
   file: apartamentos-gondomar-2-reel-04.mp4
   cover: apartamentos-gondomar-2-reel-04-cover.jpg
-  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms.
-    (part 4)'
-  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte
-    4)'
+  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 4)'
+  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 4)'
   approved: false
 - date: '2026-11-27'
   time: '12:30'
@@ -97,10 +95,8 @@
   project: apartamentos-gondomar-2
   file: apartamentos-gondomar-2-reel-05.mp4
   cover: apartamentos-gondomar-2-reel-05-cover.jpg
-  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms.
-    (part 5)'
-  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte
-    5)'
+  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 5)'
+  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 5)'
   approved: false
 - date: '2026-12-05'
   time: '12:30'
