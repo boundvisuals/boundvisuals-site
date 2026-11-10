@@ -133,51 +133,51 @@
   project: vivendas-cete
   file: teaser-2026-11-14-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-14'
   time: '12:00'
   type: story
   project: vivendas-cete
   file: 2-interior2_2-interior2-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-14'
   time: '15:00'
   type: story
   project: vivendas-cete
   file: 3-interior3_3-interior3-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-14'
   time: '17:30'
   type: story
   project: vivendas-cete
   file: 4-interior4_4-interior4-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-14'
   time: '20:30'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-14-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-15'
   time: '10:00'
   type: story
   project: school-building
   file: teaser-2026-11-15-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-15'
   time: '12:00'
   type: story
   project: school-building
   file: Renders_finais_1-exterior1-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-15'
   time: '15:00'
   type: story
   project: school-building
   file: Renders_finais_10-exterior8_edit_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-15'
   time: '17:30'
   type: story

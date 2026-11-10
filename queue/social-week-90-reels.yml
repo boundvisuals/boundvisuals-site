@@ -25,7 +25,7 @@
   cover: gold-village-reel-02-cover.jpg
   caption_en: 'Gold Village: timber, green balconies and calm interiors.'
   caption_pt: 'Gold Village: madeira, varandas verdes e interiores calmos.'
-  approved: false
+  approved: true
 - date: '2026-11-17'
   time: '12:30'
   type: reel
