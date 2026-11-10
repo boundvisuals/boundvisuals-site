@@ -261,7 +261,7 @@ def build(out):
             sl = [s for s in sl if s]
             days.setdefault(it["date"], []).append({
                 "key": feed_key(it), "pkey": pkey, "pub": pub_text(it, feed_n), "type": "feed", "time": it["time"], "project": it["project"],
-                "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""),
+                "project_title": TITLES.get(it["project"], it["project"]), "caption": it.get("caption_en", ""), "caption_li": it.get("caption_li", ""),
                 "thumb": sl[0] if sl else None, "slides": sl, "slide_files": list(it["slides"]), "status": st, "link": link,
                 "full": [f"{FILA}/{it['project']}/{quote(x)}?v={fhash(f'reports/{it[chr(112)+chr(114)+chr(111)+chr(106)+chr(101)+chr(99)+chr(116)]}/ig/{x}')}" for x in it["slides"]], "caption_pt": it.get("caption_pt", ""),
                 **crop_info(it, out), **copy_texts(it, feed_n),
@@ -512,8 +512,10 @@ def apply_captions(path):
             d = str(it["date"])
             k = social_key({**it, "date": d}) if "type" in it else feed_key({**it, "date": d})
             e = ed.get(k)
-            if e and (it.get("caption_en") != e["en"] or it.get("caption_pt") != e["pt"]):
+            if e and "en" in e and (it.get("caption_en") != e["en"] or it.get("caption_pt") != e["pt"]):
                 it["caption_en"], it["caption_pt"] = e["en"], e["pt"]; ch = True; n += 1
+            if e and e.get("li") and it.get("caption_li") != e["li"]:
+                it["caption_li"] = e["li"]; ch = True; n += 1
         if ch:
             open(f, "w", encoding="utf-8").write(head + yaml.safe_dump(items, allow_unicode=True, sort_keys=False, width=240))
     print(n)

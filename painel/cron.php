@@ -283,7 +283,7 @@ if (!empty($li['access_token']) && !empty($li['person_urn']) && date('H:i') >= (
         if (!$ids) throw new Exception('no images');
         $esc = fn($t) => preg_replace('/([\\|{}@\[\]()<>#*_~])/', '\\$1', $t);
         $tags = implode(' ', array_map(fn($t) => '{hashtag|\\#|' . $t . '}', ['archviz', '3dvisualization', 'architecture', 'coronarenderer', 'ai']));
-        $text = $esc(trim((string)($cand['caption'] ?? '')) . "\n\nMore of my work: https://www.boundvisuals.com") . "\n\n" . $tags;
+        $text = $esc(trim((string)(($cand['caption_li'] ?? '') !== '' ? $cand['caption_li'] : ($cand['caption'] ?? ''))) . "\n\nMore of my work: https://www.boundvisuals.com") . "\n\n" . $tags;
         $content = count($ids) === 1 ? ['media' => ['id' => $ids[0]]] : ['multiImage' => ['images' => array_map(fn($i) => ['id' => $i], $ids)]];
         $post = ['author' => $li['person_urn'], 'commentary' => $text, 'visibility' => 'PUBLIC',
                  'distribution' => ['feedDistribution' => 'MAIN_FEED', 'targetEntities' => [], 'thirdPartyDistributionChannels' => []],

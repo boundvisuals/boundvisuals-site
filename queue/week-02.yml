@@ -8,6 +8,13 @@
   caption_en: A new school in a Swiss town, seen from above on a misty autumn morning. School Building, Switzerland.
   caption_pt: Uma escola nova numa cidade suíça, vista de cima numa manhã de outono com nevoeiro. School Building, Suíça.
   approved: true
+  caption_li: 'I chose to open this project from the air, on a misty autumn morning.
+
+    A school is part of a town before it is a building, and the aerial shows that relationship first.
+
+    The mist was a deliberate choice: it calms the context and lets the roofs and courtyards read clearly.
+
+    School Building, Switzerland.'
 - date: '2026-11-11'
   time: '19:00'
   project: apartamentos-gondomar-2
@@ -18,6 +25,13 @@
   caption_en: Dark cladding, planted balconies and a quiet path to the door. Apartamentos Gondomar 2.
   caption_pt: Revestimento escuro, varandas com plantas e um caminho calmo até à porta. Apartamentos Gondomar 2.
   approved: true
+  caption_li: 'Dark facades are hard to light. Go too far and you lose all the detail.
+
+    Here I let the planted balconies and the path to the door carry the brightness instead.
+
+    The result is a building that feels calm, not heavy.
+
+    Apartamentos Gondomar 2.'
 - date: '2026-11-12'
   time: '19:00'
   project: vivendas-duas-igrejas
@@ -29,6 +43,13 @@
   caption_en: A reading corner, oak shelves and the light that makes you stay. Interior, Duas Igrejas.
   caption_pt: Um canto de leitura, estantes em carvalho e a luz que nos faz ficar. Interior, Duas Igrejas.
   approved: false
+  caption_li: 'Interiors convince when they feel used.
+
+    For this reading corner I built the image around one thing: the light that makes you want to sit down and stay.
+
+    Oak shelves, a few real-looking objects, nothing staged too perfectly.
+
+    Duas Igrejas, Penafiel.'
 - date: '2026-11-13'
   time: '19:00'
   project: gold-village
@@ -40,6 +61,13 @@
   caption_en: First light through the curtains. A bedroom designed to slow the morning down. Gold Village.
   caption_pt: A primeira luz pelas cortinas. Um quarto pensado para abrandar a manhã. Gold Village.
   approved: true
+  caption_li: 'Bedrooms are the easiest rooms to over-light.
+
+    I went the other way: first light through the curtains, soft shadows, almost no contrast.
+
+    The goal was a room that slows the morning down, and the lighting had to do that job alone.
+
+    Gold Village.'
 - date: '2026-11-14'
   time: '19:00'
   project: vivendas-cete
@@ -50,6 +78,13 @@
   caption_en: Soft linen, warm neutrals and a balcony door left open. Living room, Vivendas Cête.
   caption_pt: Linho, tons quentes e a porta da varanda aberta. Sala, Vivendas Cête.
   approved: true
+  caption_li: 'I left the balcony door open on purpose.
+
+    That one detail connects the living room to the outside and gives the linen and the warm neutrals a reason to glow.
+
+    Small decisions like this are what separate a correct image from an inviting one.
+
+    Vivendas Cête, Penafiel.'
 - date: '2026-11-15'
   time: '19:00'
   project: school-building
@@ -58,6 +93,13 @@
   caption_en: Rain on the playground, timber eaves and children under the canopy. School Building, Switzerland.
   caption_pt: Chuva no recreio, beirados em madeira e crianças debaixo da pala. School Building, Suíça.
   approved: true
+  caption_li: 'Most school renders show sunshine. I wanted rain.
+
+    Wet ground, timber eaves and children sheltering under the canopy show what the architecture is actually for.
+
+    Bad weather is one of the most honest ways to present a building.
+
+    School Building, Switzerland.'
 - date: '2026-11-16'
   time: '19:00'
   project: apartamentos-gondomar-2
@@ -69,3 +111,10 @@
   caption_en: Six floors, one calm facade. Rhythm, shade and a meadow in front. Apartamentos Gondomar 2.
   caption_pt: Seis pisos, uma fachada calma. Ritmo, sombra e um prado à frente. Apartamentos Gondomar 2.
   approved: false
+  caption_li: 'Six floors can easily look like a wall.
+
+    So I worked on rhythm and shade until the facade read as one calm surface, and put a meadow in front to soften the base.
+
+    The building did not change. The way you meet it did.
+
+    Apartamentos Gondomar 2.'

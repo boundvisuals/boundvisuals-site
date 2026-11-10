@@ -217,7 +217,10 @@ if ($a === 'caption' && $_SERVER['REQUEST_METHOD'] === 'POST') {   // caption ed
   $cur = read_store("$store/captions.json.php") ?? [];
   $k = (string)($in['key'] ?? '');
   if ($k === '' || strlen($k) > 300) { http_response_code(400); echo '{"error":"key"}'; exit; }
-  $cur[$k] = ['en' => mb_substr(trim((string)($in['en'] ?? '')), 0, 2000), 'pt' => mb_substr(trim((string)($in['pt'] ?? '')), 0, 2000), 'at' => gmdate('c')];
+  $e = $cur[$k] ?? [];
+  if (isset($in['en'])) { $e['en'] = mb_substr(trim((string)$in['en']), 0, 2000); $e['pt'] = mb_substr(trim((string)($in['pt'] ?? '')), 0, 2000); }
+  if (isset($in['li'])) $e['li'] = mb_substr(trim((string)$in['li']), 0, 2800);
+  $e['at'] = gmdate('c'); $cur[$k] = $e;
   write_store("$store/captions.json.php", $cur);
   echo json_encode(['ok' => true, 'robot' => kick_robot()]);
   exit;

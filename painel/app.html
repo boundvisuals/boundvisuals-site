@@ -478,6 +478,7 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
    ${st!=="published"?`<button class="btn" id="mDel" style="margin-left:auto;color:#ff8a80;border-color:#5a2b2b">🗑 Apagar ${i.type==="story"?"story":i.type==="reel"?"reel":"post"}</button>`:""}</div>
   <div class="gal">${media}</div>
   ${(i.type==="feed"||i.type==="reel")&&st!=="published"?`<div class="card" style="margin-top:14px"><h2>Legenda (editável)</h2><div class="compose"><small class="sub">EN</small><textarea id="cEN">${esc(i.caption||"")}</textarea><small class="sub">PT</small><textarea id="cPT">${esc(i.caption_pt||"")}</textarea><div style="display:flex;justify-content:flex-end"><button class="btn pri" id="cSave">Guardar legenda</button></div></div></div>`:""}
+  ${i.type==="feed"?`<div class="card" style="margin-top:14px"><h2>Legenda do LinkedIn (editável)</h2><div class="compose"><small class="sub">Sai no LinkedIn na manhã seguinte ao post · inglês · o link do site e as hashtags são acrescentados sozinhos</small><textarea id="cLI" style="min-height:150px">${esc(i.caption_li||"")}</textarea><div style="display:flex;justify-content:flex-end"><button class="btn pri" id="cLISave">Guardar legenda LinkedIn</button></div></div></div>`:""}
   ${i.copy_caption?`<div class="caps">${cb("Legenda completa (o que vai para o Instagram)",i.copy_caption)}${(i.copy_comments||[]).map((c,n)=>cb(`Comentário ${n+1} · hashtags`,c)).join("")}</div>`:(i.caption||i.caption_pt?`<div class="caps">${i.caption?`<div><small>Legenda EN</small>${esc(i.caption)}</div>`:""}${i.caption_pt?`<div><small>Legenda PT</small>${esc(i.caption_pt)}</div>`:""}</div>`:"")}
   ${i.note?`<div class="alert err" style="margin-top:14px"><i></i><div>${esc(i.note)}</div></div>`:""}`;
   $("#modal").classList.add("on");document.body.style.overflow="hidden";
@@ -487,6 +488,9 @@ function openItem(key){const i=allItems().find(x=>x.key===key);if(!i)return;cons
   const cs=$("#cSave");if(cs)cs.onclick=async()=>{const old={en:i.caption,pt:i.caption_pt},nw={en:$("#cEN").value.trim(),pt:$("#cPT").value.trim()};cs.disabled=true;
     const save=async v=>{const r=await fetch("api.php?a=caption",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,...v})});if(!r.ok)throw 0;i.caption=v.en;i.caption_pt=v.pt};
     try{await save(nw);toast("Legenda guardada ✓");undoBar("Legenda guardada",()=>save(old).then(()=>toast("Legenda reposta ↺")))}catch(e){toast("Não consegui guardar")}cs.disabled=false};
+  const cl=$("#cLISave");if(cl)cl.onclick=async()=>{const old=i.caption_li||"",nw=$("#cLI").value.trim();cl.disabled=true;
+    const save=async v=>{const r=await fetch("api.php?a=caption",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:i.key,li:v})});if(!r.ok)throw 0;i.caption_li=v};
+    try{await save(nw);toast("Legenda LinkedIn guardada ✓");undoBar("Legenda LinkedIn guardada",()=>save(old).then(()=>toast("Legenda reposta ↺")))}catch(e){toast("Não consegui guardar")}cl.disabled=false};
   $("#mx").onclick=closeModal;const mc=$("#mCrop");if(mc)mc.onclick=()=>cropEditor(i);const mcs=$("#mCropS");if(mcs)mcs.onclick=()=>cropEditor(i,i.teaser?"teaser":"story",i.story_idx||0,true);
   const ma=$("#mAccept");if(ma)ma.onclick=()=>review(i);const mru=$("#mRevUndo");if(mru)mru.onclick=()=>review(i,true);
   const mu=$("#mUnapprove");if(mu)mu.onclick=()=>approve([i.key],mu,true).then(()=>openItem(key));const a=$("#mApprove");if(a)a.onclick=()=>{approve([i.key],a).then(()=>openItem(key))}}
