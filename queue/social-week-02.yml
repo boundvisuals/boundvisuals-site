@@ -87,7 +87,7 @@
   type: story
   project: vivendas-duas-igrejas
   file: root_4_-_exterior_frente_webp-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-12'
   time: '20:30'
   type: story
