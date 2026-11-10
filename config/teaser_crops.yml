@@ -10,8 +10,8 @@ teaser_crops:
     stem: root_2_-_Back_webp_+_Seedvr2_bravo
     crop: [0.529, 0.575, 0.465]
   teaser-2026-11-10-b:
-    stem: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT
-    crop: [0.29, 0.539, 0.73]
+    stem: Renders_finais_5-exterior11_edit_0001
+    crop: [0.501, 0.5, 1.0]
   teaser-2026-11-11-a:
     stem: 10_-_interior3_10-interior3
     crop: [0.415, 0.5, 1.0]
