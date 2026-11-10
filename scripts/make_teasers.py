@@ -13,6 +13,7 @@ disappeared and they were never approved).
 
 usage: python scripts/make_teasers.py [YYYY-MM-DD from]   → prints number of changed queue files/images
 """
+import datetime
 import json, sys, os, re, glob, datetime, pathlib, io
 import yaml
 from PIL import Image, ImageDraw, ImageFont
@@ -224,14 +225,44 @@ def main():
                     used.add((pr, o["file"])); fresh(pr, o["file"])
             # keep this day's existing same-project stories that still fit the rule (approval kept)
             for (dd, f), o in sorted(old.items()):
-                if dd == d and not o.get("teaser") and not o.get("approved") and o["project"] == pr and os.path.exists(f"reports/{pr}/story/{f}") and src_of_story(f) not in day_src and len(mids) < 3 and fresh(pr, f):
+                if dd == d and not o.get("teaser") and not o.get("approved") and o["project"] == pr and os.path.exists(f"reports/{pr}/story/{f}") and src_of_story(f) not in day_src and len(mids) < 2 and fresh(pr, f):
                     mids.append((f, bool(o.get("approved")))); day_src.add(src_of_story(f)); used.add((pr, f))
-            for f in pool(pr):
-                if len(mids) >= 3:
-                    break
-                if (pr, f) in used or src_of_story(f) in day_src or not fresh(pr, f):
-                    continue
-                mids.append((f, False)); day_src.add(src_of_story(f)); used.add((pr, f))
+            def _crops(lim):
+                for f in pool(pr):
+                    if len(mids) >= lim:
+                        break
+                    if (pr, f) in used or src_of_story(f) in day_src or not fresh(pr, f):
+                        continue
+                    mids.append((f, False)); day_src.add(src_of_story(f)); used.add((pr, f))
+            _crops(2)
+            # 1 ALTERNATIVE story every day (Vítor 10/11): alternates motion video / colour palette, keeps the feed varied
+            if not any(m[0].startswith(("palette-", "motion-")) for m in mids) and not any(str(o["file"]).startswith(("palette-", "motion-")) for o in frozen):
+                kinds = ["motion", "palette"] if datetime.date.fromisoformat(d).toordinal() % 2 == 0 else ["palette", "motion"]
+                for kd in kinds:
+                    got = False
+                    if kd == "motion":
+                        for mv in sorted(glob.glob(f"reports/{pr}/story/motion-*.mp4")):
+                            f = os.path.basename(mv); stem = f[7:-4]
+                            if (pr, f) in used or stem in post_src or stem in (TW.get(pr, {}) or {}) or not fresh(pr, f):
+                                continue
+                            o = old.get((d, f)); mids.append((f, bool(o and o.get("approved")))); used.add((pr, f)); got = True; break
+                    else:
+                        for prev in sorted(glob.glob(f"reports/{pr}/preview/*.jpg")):
+                            stem = os.path.basename(prev)[:-4]; f = f"palette-{stem}.jpg"; out = f"reports/{pr}/story/{f}"
+                            if (pr, f) in used or stem in (TW.get(pr, {}) or {}):
+                                continue
+                            if not os.path.exists(out):
+                                try:
+                                    from make_palette import slide as pal_slide
+                                    save_if_changed(frame(pal_slide(prev, T.get(pr, pr))[0].convert("RGB"), "p", T.get(pr, pr)), out); changed += 1
+                                except Exception as e:
+                                    print("palette failed", prev, e, file=sys.stderr); continue
+                            if not fresh(pr, f):
+                                continue
+                            o = old.get((d, f)); mids.append((f, bool(o and o.get("approved")))); used.add((pr, f)); got = True; break
+                    if got:
+                        break
+            _crops(3)
             # then motion stories (slow pan / push-in videos rendered on the server from full-res finals)
             if len(mids) < 3:
                 for mv in sorted(glob.glob(f"reports/{pr}/story/motion-*.mp4")):
