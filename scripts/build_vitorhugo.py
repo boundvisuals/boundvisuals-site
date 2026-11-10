@@ -153,7 +153,7 @@ def build(lang):
     hero_src = PROJ[0]["imgs"][0] if PROJ else M / "portrait.jpg"
     archi = "".join(f'<a class="tile" href="{BV}" target="_blank" rel="noopener">{tag(src, t, 1000)}<span>{e(t)} ↗</span></a>' for src, t in archi_src)
     exp = "".join(f'<li><span class="d">{e(d)}</span><b>{e(r)}</b><span class="o">{e(o)}</span></li>' for d, r, o in T["experience"])
-    recos = "".join(f'<blockquote><p>“{e(str(r["text"]).split(chr(10))[0])}”</p><cite><b>{e(r["who"])}</b> {e(r["role"])}</cite></blockquote>' for r in CV["recommendations"])
+    recos = "".join(f'<blockquote>{"".join("<p>" + e(x.strip()) + "</p>" for x in ("“" + str(r["text"]).strip() + "”").split(chr(10)) if x.strip())}<cite><b>{e(r["who"])}</b> {e(r["role"])}</cite></blockquote>' for r in CV["recommendations"])
     dl = "".join(f'<a href="files/{f}" target="_blank" rel="noopener">{e(t)} <i>PDF ↓</i></a>' for t, f in zip(T["docs"], DOC_FILES))
     lab = T["contact_labels"]
     links = [(lab[0], CV["phone"], TEL), (lab[1], CV["email"], "mailto:" + CV["email"]),
