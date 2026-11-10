@@ -107,21 +107,21 @@
   time: '12:00'
   type: story
   project: vivendas-cete
-  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
+  file: 5-exterior1_5-exterior1-s02.jpg
   approved: false
-  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
 - date: '2026-12-04'
   time: '15:00'
   type: story
   project: vivendas-cete
-  file: 5-exterior1_5-exterior1-s02.jpg
+  file: 6-exterior2_6-exterior2-s02.jpg
   approved: false
 - date: '2026-12-04'
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: 6-exterior2_6-exterior2-s02.jpg
+  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
   approved: false
+  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
 - date: '2026-12-04'
   time: '20:30'
   type: story
@@ -152,7 +152,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_3-exterior5-s01.jpg
+  file: Renders_finais_6-exterior3_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'

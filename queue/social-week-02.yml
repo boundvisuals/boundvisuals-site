@@ -183,14 +183,14 @@
   type: story
   project: school-building
   file: Renders_finais_5-exterior11_edit_0001-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-15'
   time: '20:30'
   type: story
   project: school-building
   file: teaser-2026-11-15-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-16'
   time: '10:00'
   type: story
