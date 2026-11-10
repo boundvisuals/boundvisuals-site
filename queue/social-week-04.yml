@@ -39,6 +39,24 @@
   teaser: a
   approved: false
 - date: '2026-11-25'
+  time: '12:00'
+  type: story
+  project: school-building
+  file: Renders_finais_12-interior1_edit_0001-s01.jpg
+  approved: false
+- date: '2026-11-25'
+  time: '15:00'
+  type: story
+  project: school-building
+  file: Renders_finais_12-interior2_edit_0001-s01.jpg
+  approved: false
+- date: '2026-11-25'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: Renders_finais_14-interior3_edit_0001-s00.jpg
+  approved: false
+- date: '2026-11-25'
   time: '20:30'
   type: story
   project: school-building
@@ -181,10 +199,22 @@
   teaser: a
   approved: false
 - date: '2026-11-30'
-  time: '17:30'
+  time: '12:00'
   type: story
   project: school-building
   file: palette-Renders_finais_1-exterior1.jpg
+  approved: false
+- date: '2026-11-30'
+  time: '15:00'
+  type: story
+  project: school-building
+  file: Renders_finais_14-interior3_edit_0001-s01.jpg
+  approved: false
+- date: '2026-11-30'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: Renders_finais_16-interior5_Edit_0001-s00.jpg
   approved: false
 - date: '2026-11-30'
   time: '20:30'

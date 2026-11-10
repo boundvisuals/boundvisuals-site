@@ -103,6 +103,24 @@
   teaser: a
   approved: false
 - date: '2026-11-20'
+  time: '12:00'
+  type: story
+  project: school-building
+  file: Renders_finais_11-exterior9_edit_0001-s01.jpg
+  approved: false
+- date: '2026-11-20'
+  time: '15:00'
+  type: story
+  project: school-building
+  file: Renders_finais_12-interior1_edit_0001-s00.jpg
+  approved: false
+- date: '2026-11-20'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: Renders_finais_12-interior2_edit_0001-s00.jpg
+  approved: false
+- date: '2026-11-20'
   time: '20:30'
   type: story
   project: school-building

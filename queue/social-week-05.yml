@@ -137,16 +137,22 @@
   teaser: a
   approved: false
 - date: '2026-12-05'
-  time: '15:00'
+  time: '12:00'
   type: story
   project: school-building
   file: palette-Renders_finais_10-exterior8_edit_0001.jpg
   approved: false
 - date: '2026-12-05'
-  time: '17:30'
+  time: '15:00'
   type: story
   project: school-building
   file: palette-Renders_finais_11-exterior9_edit_0001.jpg
+  approved: false
+- date: '2026-12-05'
+  time: '17:30'
+  type: story
+  project: school-building
+  file: Renders_finais_16-interior5_Edit_0001-s01.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'
