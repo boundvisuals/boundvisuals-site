@@ -219,11 +219,11 @@ if (empty($st['ts']) || time() - (int)$st['ts'] > 3300) {
 }
 
 // ---------------------------------------------------------------- LinkedIn (personal profile)
-// Tue/Thu/Sat from 12:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.
+// EVERY day (Vítor 10/11): weekdays from 08:45, weekends from 10:30: the latest feed post that already went out on Instagram, up to 4 images, English caption + site link.
 $oa = rs("$store/oauth.json.php") ?? [];
 $li = $oa['linkedin'] ?? [];
 // Diagnostic: on LinkedIn days, say once per day why nothing was posted (and push it), instead of failing silently.
-if (in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30') {
+if (date('H:i') >= ((int)date('N') >= 6 ? '10:30' : '08:45')) {
   $why = '';
   if (empty($li['access_token']) || empty($li['person_urn'])) $why = 'LinkedIn não está ligado (Painel → Ligar redes → LinkedIn)';
   elseif (($li['expires_at'] ?? PHP_INT_MAX) <= time()) $why = 'token do LinkedIn expirou (voltar a ligar)';
@@ -236,7 +236,7 @@ if (in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30') {
     ws("$store/notify.json.php", $n);
   }
 }
-if (!empty($li['access_token']) && !empty($li['person_urn']) && in_array((int)date('N'), [2, 4, 6], true) && date('H:i') >= '12:30'
+if (!empty($li['access_token']) && !empty($li['person_urn']) && date('H:i') >= ((int)date('N') >= 6 ? '10:30' : '08:45')
     && ($li['expires_at'] ?? PHP_INT_MAX) > time()) {
   $lst = rs("$store/linkedin.json.php") ?? [];
   if (is_file("$store/linkedin.redo")) {   // Vítor deleted the post by hand and asked for a re-post: forget the last one once

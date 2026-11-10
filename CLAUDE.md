@@ -226,3 +226,4 @@ RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY rep
 - make_teasers: every post day gets 1 ALTERNATIVE story (17:30; alternates motion video / colour palette; palette if no motion file yet), 2 crops at 12:00/15:00. Approved days stay frozen (Vítor unapproves a day to get it). When crops run out, extra slots fill with motion/palette.
 - Painel: polls every 5 s + on focus; api.php sends app_v (mtime of app.html) and open apps reload themselves when the code changes (not while a modal is open). ALWAYS run a local `build_painel.py build` before pushing (a build crash = app frozen, happened 10/11).
 - sync-slides keeps only slides of the current crop set; stale teaser_crops (stem of another project) are ignored.
+- LinkedIn DAILY (Vítor 10/11, has traction): cron.php posts every day, weekdays ≥08:45, weekends ≥10:30 = the newest feed post already out on Instagram and not yet on LinkedIn (yesterday's 19:00 post). Old Tue/Thu/Sat rule void.

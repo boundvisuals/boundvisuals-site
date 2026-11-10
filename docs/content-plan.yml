@@ -19,7 +19,7 @@ pillars:
 week:
   - { day: "Todos os dias de post", post: "19:00 · 1 post (carrossel do projeto da vez, projetos misturados)", reel: "Dia sim, dia não", stories: "10:00 HOJE às 19:00 · 12:00, 15:00 e 17:30 até 3 stories do MESMO projeto · 20:30 NOVO NO FEED" }
   - { day: "Terça · Quinta · Sábado", post: "Daily Study quando existir (briefing meu, execução tua)", reel: "Dia sim, dia não", stories: "Como acima" }
-  - { day: "Terça · Quinta · Sábado (≥12:30)", post: "LinkedIn pessoal: o último post que já saiu no Instagram", reel: "YouTube Shorts: reels depois de publicados", stories: "—" }
+  - { day: "Todos os dias (08:45; fim de semana 10:30)", post: "LinkedIn pessoal: o post que saiu na véspera no Instagram", reel: "YouTube Shorts: reels depois de publicados", stories: "—" }
 daily_ideas:
   "Arquitetura e lugares":
     - "Uma foto de rua tua transformada no teu estilo suíço"
