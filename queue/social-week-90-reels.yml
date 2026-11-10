@@ -68,8 +68,10 @@
   project: apartamentos-gondomar-2
   file: apartamentos-gondomar-2-reel-04.mp4
   cover: apartamentos-gondomar-2-reel-04-cover.jpg
-  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 4)'
-  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 4)'
+  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms.
+    (part 4)'
+  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte
+    4)'
   approved: false
 - date: '2026-11-27'
   time: '12:30'
@@ -79,15 +81,6 @@
   cover: gold-village-reel-03-cover.jpg
   caption_en: 'Gold Village: timber, green balconies and calm interiors.'
   caption_pt: 'Gold Village: madeira, varandas verdes e interiores calmos.'
-  approved: false
-- date: '2026-11-29'
-  time: '12:30'
-  type: reel
-  project: vivendas-duas-igrejas
-  file: vivendas-duas-igrejas-reel-03.mp4
-  cover: vivendas-duas-igrejas-reel-03-cover.jpg
-  caption_en: 'Duas Igrejas in motion: garden, timber and light. Penafiel.'
-  caption_pt: 'Duas Igrejas em movimento: jardim, madeira e luz. Penafiel.'
   approved: false
 - date: '2026-12-01'
   time: '12:30'
@@ -104,8 +97,10 @@
   project: apartamentos-gondomar-2
   file: apartamentos-gondomar-2-reel-05.mp4
   cover: apartamentos-gondomar-2-reel-05-cover.jpg
-  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 5)'
-  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 5)'
+  caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms.
+    (part 5)'
+  caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte
+    5)'
   approved: false
 - date: '2026-12-05'
   time: '12:30'
