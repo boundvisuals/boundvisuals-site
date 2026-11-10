@@ -42,20 +42,21 @@
   time: '12:00'
   type: story
   project: gold-village
-  file: 5_-_exterior5_5-exterior5-s02.jpg
+  file: 8_-_interior1_8-interior1-s03.jpg
   approved: false
 - date: '2026-12-16'
   time: '15:00'
   type: story
   project: gold-village
-  file: 8_-_interior1_8-interior1-s03.jpg
+  file: 9_-_interior2_9-interior2-s02.jpg
   approved: false
 - date: '2026-12-16'
   time: '17:30'
   type: story
   project: gold-village
-  file: 9_-_interior2_9-interior2-s00.jpg
+  file: motion-10_-_interior3_10-interior3.mp4
   approved: false
+  cover: motion-10_-_interior3_10-interior3.jpg
 - date: '2026-12-16'
   time: '20:30'
   type: story

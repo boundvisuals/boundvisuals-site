@@ -81,13 +81,13 @@
   time: '15:00'
   type: story
   project: gold-village
-  file: 3_-_exterior3_3_exterior3-s02.jpg
+  file: 3_-_exterior3_3_exterior3-s03.jpg
   approved: false
 - date: '2026-12-03'
   time: '17:30'
   type: story
   project: gold-village
-  file: 4_-_exterior4_4-exterior4-s00.jpg
+  file: 4_-_exterior4_4-exterior4-s01.jpg
   approved: false
 - date: '2026-12-03'
   time: '20:30'
@@ -204,19 +204,19 @@
   time: '12:00'
   type: story
   project: gold-village
-  file: 3_-_exterior3_3_exterior3-s03.jpg
+  file: 4_-_exterior4_4-exterior4-s02.jpg
   approved: false
 - date: '2026-12-07'
   time: '15:00'
   type: story
   project: gold-village
-  file: 4_-_exterior4_4-exterior4-s01.jpg
+  file: 5_-_exterior5_5-exterior5-s01.jpg
   approved: false
 - date: '2026-12-07'
   time: '17:30'
   type: story
   project: gold-village
-  file: 5_-_exterior5_5-exterior5-s00.jpg
+  file: 6_-_exterior6_6-exterior6-s00.jpg
   approved: false
 - date: '2026-12-07'
   time: '20:30'

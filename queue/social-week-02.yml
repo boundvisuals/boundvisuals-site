@@ -101,32 +101,32 @@
   project: gold-village
   file: teaser-2026-11-13-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '12:00'
   type: story
   project: gold-village
   file: 11_-_interior4_11-interior4-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '15:00'
   type: story
   project: gold-village
   file: 1_-_exterior1_1-exterior1-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '17:30'
   type: story
   project: gold-village
   file: 2_-_exterior2_2-exterior2-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-13'
   time: '20:30'
   type: story
   project: gold-village
   file: teaser-2026-11-13-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-14'
   time: '10:00'
   type: story
