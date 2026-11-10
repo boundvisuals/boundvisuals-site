@@ -163,6 +163,13 @@
   teaser: b
   approved: false
 - date: '2026-11-15'
+  time: '10:00'
+  type: story
+  project: school-building
+  file: teaser-2026-11-15-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-11-15'
   time: '12:00'
   type: story
   project: school-building

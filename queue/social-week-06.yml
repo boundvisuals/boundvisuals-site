@@ -1,5 +1,12 @@
 # Week 6 social (stories + reels). approved only after Vítor's OK. Teasers by scripts/make_teasers.py
 - date: '2026-12-08'
+  time: '10:00'
+  type: story
+  project: school-building
+  file: teaser-2026-12-08-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-08'
   time: '12:00'
   type: story
   project: school-building
@@ -89,6 +96,13 @@
   teaser: b
   approved: false
 - date: '2026-12-11'
+  time: '10:00'
+  type: story
+  project: school-building
+  file: teaser-2026-12-11-a.jpg
+  teaser: a
+  approved: false
+- date: '2026-12-11'
   time: '12:00'
   type: story
   project: school-building
@@ -176,6 +190,13 @@
   project: gold-village
   file: teaser-2026-12-13-b.jpg
   teaser: b
+  approved: false
+- date: '2026-12-14'
+  time: '10:00'
+  type: story
+  project: school-building
+  file: teaser-2026-12-14-a.jpg
+  teaser: a
   approved: false
 - date: '2026-12-14'
   time: '12:00'

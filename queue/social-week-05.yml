@@ -42,21 +42,21 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_6-interior3_webp-s02.jpg
+  file: motion-root_1_-_Front___webp_+_Seedvr2_bravo.mp4
   approved: false
+  cover: motion-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
 - date: '2026-12-02'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_7-interior4_webp-s02.jpg
+  file: root_6-interior3_webp-s02.jpg
   approved: false
 - date: '2026-12-02'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: motion-root_1_-_Front___webp_+_Seedvr2_bravo.mp4
+  file: root_7-interior4_webp-s02.jpg
   approved: false
-  cover: motion-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
 - date: '2026-12-02'
   time: '20:30'
   type: story
@@ -128,6 +128,13 @@
   project: vivendas-cete
   file: teaser-2026-12-04-b.jpg
   teaser: b
+  approved: false
+- date: '2026-12-05'
+  time: '10:00'
+  type: story
+  project: school-building
+  file: teaser-2026-12-05-a.jpg
+  teaser: a
   approved: false
 - date: '2026-12-05'
   time: '12:00'
