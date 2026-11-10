@@ -195,7 +195,8 @@ def story_info(it, out):
     if t:   # 'HOJE' / 'NOVO NO FEED' story → its own 4:5 framing of the post image (edited in the Painel)
         tid, d = t.group(1), t.group(2)
         tc = TCROPS.get(tid)
-        if tc:
+        if tc and not os.path.exists(f"reports/{it['project']}/preview/{tc['stem']}.jpg"):
+            tc = None   # stale framing from an older calendar (other project) → ignore
             stem, crop = tc["stem"], tc["crop"]
         else:
             post = next((p for f in sorted(glob.glob("queue/week-*.yml")) for p in (yaml.safe_load(open(f)) or [])

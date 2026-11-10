@@ -69,7 +69,7 @@ def save_if_changed(img, path):
 
 
 MID_TIMES = ["12:00", "15:00", "17:30"]
-TCROPS = (yaml.safe_load(open("config/teaser_crops.yml")) or {}).get("teaser_crops", {}) if os.path.exists("config/teaser_crops.yml") else {}
+TCROPS_ALL = (yaml.safe_load(open("config/teaser_crops.yml")) or {}).get("teaser_crops", {}) if os.path.exists("config/teaser_crops.yml") else {}
 
 
 def teaser_slide(pr, stem, crop):
@@ -183,7 +183,7 @@ def main():
                 if not src:
                     continue
                 if k in fz_teaser:          # approved: never replaced (only Vítor's own crop edit re-renders it)
-                    fn = f"teaser-{d}-{k}.jpg"; tc = TCROPS.get(fn[:-4])
+                    fn = f"teaser-{d}-{k}.jpg"; tc = TCROPS_ALL.get(fn[:-4]); tc = tc if tc and any(x.startswith(tc["stem"]) for x in slides) else None
                     mark = f"reports/{pr}/story/.{fn}.crop"
                     sig = json.dumps([tc, str(p.get("time", "19:00")), T.get(pr, pr)]) if tc else None
                     if tc and not (os.path.exists(mark) and open(mark).read() == sig):
@@ -196,7 +196,7 @@ def main():
                     fresh(pr, fn)
                     continue
                 fn = f"teaser-{d}-{k}.jpg"
-                tc = TCROPS.get(fn[:-4])
+                tc = TCROPS_ALL.get(fn[:-4]); tc = tc if tc and any(x.startswith(tc["stem"]) for x in slides) else None
                 mark = f"reports/{pr}/story/.{fn}.crop"
                 sig = json.dumps([tc, str(p.get("time", "19:00")), T.get(pr, pr)]) if tc else None
                 if tc and os.path.exists(mark) and open(mark).read() == sig and os.path.exists(f"reports/{pr}/story/{fn}"):
