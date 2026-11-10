@@ -137,13 +137,6 @@
   teaser: a
   approved: false
 - date: '2026-12-05'
-  time: '12:00'
-  type: story
-  project: school-building
-  file: motion-Renders_finais_8-exterior6_edit_0001.mp4
-  approved: false
-  cover: motion-Renders_finais_8-exterior6_edit_0001.jpg
-- date: '2026-12-05'
   time: '15:00'
   type: story
   project: school-building

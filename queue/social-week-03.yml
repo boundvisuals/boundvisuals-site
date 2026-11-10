@@ -103,27 +103,6 @@
   teaser: a
   approved: false
 - date: '2026-11-20'
-  time: '12:00'
-  type: story
-  project: school-building
-  file: motion-Renders_finais_16-interior5_Edit_0001.mp4
-  approved: false
-  cover: motion-Renders_finais_16-interior5_Edit_0001.jpg
-- date: '2026-11-20'
-  time: '15:00'
-  type: story
-  project: school-building
-  file: motion-Renders_finais_2-exterior2_edit_0001.mp4
-  approved: false
-  cover: motion-Renders_finais_2-exterior2_edit_0001.jpg
-- date: '2026-11-20'
-  time: '17:30'
-  type: story
-  project: school-building
-  file: motion-Renders_finais_3-exterior5.mp4
-  approved: false
-  cover: motion-Renders_finais_3-exterior5.jpg
-- date: '2026-11-20'
   time: '20:30'
   type: story
   project: school-building
