@@ -577,6 +577,10 @@ def sync_slides():
                 continue
             stem = re.sub(r"-\d\d(-full)?\.jpg$", "", it["slides"][0])
             real = sorted(os.path.basename(x) for x in glob.glob(f"reports/{it['project']}/ig/{glob.escape(stem)}-[0-9][0-9]*.jpg"))
+            nc = len(CROPS.get(stem, []))
+            if nc:   # only the files of the CURRENT crop set (old leftovers after fewer crops are ignored)
+                keep = {f"{stem}-{k:02d}.jpg" for k in range(1, nc + 1)} | {f"{stem}-{nc + 1:02d}-full.jpg"}
+                real = [x for x in real if x in keep]
             if real and real != it["slides"]:
                 it["slides"] = real; ch = True; n += 1
         if ch:
