@@ -39,17 +39,24 @@
   teaser: a
   approved: false
 - date: '2026-12-02'
-  time: '15:00'
+  time: '12:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_6-interior3_webp-s02.jpg
   approved: false
 - date: '2026-12-02'
-  time: '17:30'
+  time: '15:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_7-interior4_webp-s02.jpg
   approved: false
+- date: '2026-12-02'
+  time: '17:30'
+  type: story
+  project: vivendas-duas-igrejas
+  file: motion-root_1_-_Front___webp_+_Seedvr2_bravo.mp4
+  approved: false
+  cover: motion-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
 - date: '2026-12-02'
   time: '20:30'
   type: story
@@ -109,6 +116,13 @@
   file: 6-exterior2_6-exterior2-s01.jpg
   approved: false
 - date: '2026-12-04'
+  time: '17:30'
+  type: story
+  project: vivendas-cete
+  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
+  approved: false
+  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
+- date: '2026-12-04'
   time: '20:30'
   type: story
   project: vivendas-cete
@@ -116,10 +130,23 @@
   teaser: b
   approved: false
 - date: '2026-12-05'
+  time: '12:00'
+  type: story
+  project: school-building
+  file: motion-Renders_finais_8-exterior6_edit_0001.mp4
+  approved: false
+  cover: motion-Renders_finais_8-exterior6_edit_0001.jpg
+- date: '2026-12-05'
+  time: '15:00'
+  type: story
+  project: school-building
+  file: palette-Renders_finais_10-exterior8_edit_0001.jpg
+  approved: false
+- date: '2026-12-05'
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_1-exterior1.jpg
+  file: palette-Renders_finais_11-exterior9_edit_0001.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'
