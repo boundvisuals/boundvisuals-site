@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s01.jpg
+  file: palette-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
   approved: false
 - date: '2026-11-17'
   time: '20:30'
@@ -54,8 +54,9 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: 1_-_exterior1_1-exterior1-s01.jpg
+  file: motion-10_-_interior3_10-interior3.mp4
   approved: false
+  cover: motion-10_-_interior3_10-interior3.jpg
 - date: '2026-11-18'
   time: '20:30'
   type: story
@@ -86,7 +87,7 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: 3-interior3_3-interior3-s02.jpg
+  file: palette-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
   approved: false
 - date: '2026-11-19'
   time: '20:30'
@@ -118,8 +119,9 @@
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_3-exterior5-s00.jpg
+  file: motion-Renders_finais_10-exterior8_edit_0001.mp4
   approved: false
+  cover: motion-Renders_finais_10-exterior8_edit_0001.jpg
 - date: '2026-11-20'
   time: '20:30'
   type: story
@@ -150,7 +152,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 17_-_Interior_10_17-interior10_0001-s00.jpg
+  file: palette-12_-_Interior_5_12-interior5_0001.jpg
   approved: false
 - date: '2026-11-21'
   time: '20:30'
@@ -182,8 +184,9 @@
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s02.jpg
+  file: motion-root_2_-_Back_webp_+_Seedvr2_bravo.mp4
   approved: false
+  cover: motion-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
 - date: '2026-11-22'
   time: '20:30'
   type: story
@@ -214,7 +217,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: 1_-_exterior1_1-exterior1-s02.jpg
+  file: palette-11_-_interior4_11-interior4.jpg
   approved: false
 - date: '2026-11-23'
   time: '20:30'

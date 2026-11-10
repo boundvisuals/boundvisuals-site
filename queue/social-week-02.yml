@@ -54,7 +54,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 13_-_Interior_6_13-interior6_edit_0001-s00.jpg
+  file: palette-11_-_Interior_4_11-interior4_edit_0001.jpg
   approved: false
 - date: '2026-11-11'
   time: '20:30'
@@ -214,8 +214,9 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 13_-_Interior_6_13-interior6_edit_0001-s01.jpg
+  file: motion-11_-_Interior_4_11-interior4_edit_0001.mp4
   approved: false
+  cover: motion-11_-_Interior_4_11-interior4_edit_0001.jpg
 - date: '2026-11-16'
   time: '20:30'
   type: story

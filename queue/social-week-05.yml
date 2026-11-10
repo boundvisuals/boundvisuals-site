@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 19_-_Interior_12_19-interior12_0001-s00.jpg
+  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
   approved: false
 - date: '2026-12-01'
   time: '20:30'
@@ -55,7 +55,7 @@
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_7-interior4_webp-s02.jpg
+  file: root_3-interior1_webp-s01.jpg
   approved: false
 - date: '2026-12-02'
   time: '20:30'
@@ -87,7 +87,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: 4_-_exterior4_4-exterior4-s01.jpg
+  file: palette-1_-_exterior1_1-exterior1.jpg
   approved: false
 - date: '2026-12-03'
   time: '20:30'
@@ -119,9 +119,9 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
+  file: motion-3-interior3_3-interior3.mp4
   approved: false
-  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
+  cover: motion-3-interior3_3-interior3.jpg
 - date: '2026-12-04'
   time: '20:30'
   type: story
@@ -146,13 +146,13 @@
   time: '15:00'
   type: story
   project: school-building
-  file: palette-Renders_finais_10-exterior8_edit_0001.jpg
+  file: palette-Renders_finais_11-exterior9_edit_0001.jpg
   approved: false
 - date: '2026-12-05'
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_11-exterior9_edit_0001.jpg
+  file: Renders_finais_12-interior2_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'
@@ -184,8 +184,9 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 1_-_Exterior1_1-exterior1_edit_0001-s00.jpg
+  file: motion-13_-_Interior_6_13-interior6_edit_0001.mp4
   approved: false
+  cover: motion-13_-_Interior_6_13-interior6_edit_0001.jpg
 - date: '2026-12-06'
   time: '20:30'
   type: story
@@ -216,7 +217,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: 6_-_exterior6_6-exterior6-s00.jpg
+  file: palette-2_-_exterior2_2-exterior2.jpg
   approved: false
 - date: '2026-12-07'
   time: '20:30'

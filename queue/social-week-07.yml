@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 5_-_Exterior5_5-exterior5_edit_0001-s00.jpg
+  file: palette-16_-_Interior_9_16-interior9_0001.jpg
   approved: false
 - date: '2026-12-15'
   time: '20:30'
@@ -54,9 +54,9 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: motion-10_-_interior3_10-interior3.mp4
+  file: motion-2_-_exterior2_2-exterior2.mp4
   approved: false
-  cover: motion-10_-_interior3_10-interior3.jpg
+  cover: motion-2_-_exterior2_2-exterior2.jpg
 - date: '2026-12-16'
   time: '20:30'
   type: story
@@ -87,7 +87,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_9-exterior7_edit_0001.jpg
+  file: Renders_finais_7-exterior4_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-17'
   time: '20:30'
@@ -119,8 +119,9 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 4_-_Exterior4_4-exterior4_0001-s01.jpg
+  file: motion-16_-_Interior_9_16-interior9_0001.mp4
   approved: false
+  cover: motion-16_-_Interior_9_16-interior9_0001.jpg
 - date: '2026-12-18'
   time: '20:30'
   type: story
@@ -139,19 +140,19 @@
   time: '12:00'
   type: story
   project: school-building
-  file: Renders_finais_7-exterior4_edit_0001-s00.jpg
+  file: Renders_finais_8-exterior6_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-19'
   time: '15:00'
   type: story
   project: school-building
-  file: Renders_finais_8-exterior6_edit_0001-s00.jpg
+  file: Renders_finais_9-exterior7_edit_0001-s00.jpg
   approved: false
 - date: '2026-12-19'
   time: '17:30'
   type: story
   project: school-building
-  file: Renders_finais_9-exterior7_edit_0001-s00.jpg
+  file: palette-Renders_finais_14-interior3_edit_0001.jpg
   approved: false
 - date: '2026-12-19'
   time: '20:30'
@@ -183,8 +184,9 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 5_-_Exterior5_5-exterior5_edit_0001-s02.jpg
+  file: motion-17_-_Interior_10_17-interior10_0001.mp4
   approved: false
+  cover: motion-17_-_Interior_10_17-interior10_0001.jpg
 - date: '2026-12-20'
   time: '20:30'
   type: story
@@ -215,9 +217,8 @@
   time: '17:30'
   type: story
   project: school-building
-  file: motion-Renders_finais_1-exterior1.mp4
+  file: palette-Renders_finais_5-exterior11_edit_0001.jpg
   approved: false
-  cover: motion-Renders_finais_1-exterior1.jpg
 - date: '2026-12-21'
   time: '20:30'
   type: story
