@@ -124,3 +124,45 @@ story_crops:
   - [0.687, 0.681, 0.595]
   - [0.647, 0.5, 1.0]
   - [0.482, 0.636, 0.55]
+  Renders_finais_1-exterior1:
+  - [0.62, 0.5, 1.0]
+  - [0.3, 0.6, 0.75]
+  Renders_finais_10-exterior8_edit_0001:
+  - [0.4, 0.5, 1.0]
+  - [0.62, 0.45, 0.8]
+  Renders_finais_11-exterior9_edit_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.75, 0.62, 0.7]
+  Renders_finais_12-interior1_edit_0001:
+  - [0.55, 0.55, 1.0]
+  - [0.75, 0.62, 0.7]
+  Renders_finais_12-interior2_edit_0001:
+  - [0.6, 0.5, 1.0]
+  - [0.35, 0.6, 0.75]
+  Renders_finais_14-interior3_edit_0001:
+  - [0.45, 0.5, 1.0]
+  - [0.6, 0.62, 0.7]
+  Renders_finais_16-interior5_Edit_0001:
+  - [0.5, 0.5, 1.0]
+  - [0.5, 0.6, 0.7]
+  Renders_finais_2-exterior2_edit_0001:
+  - [0.4, 0.5, 1.0]
+  - [0.7, 0.6, 0.75]
+  Renders_finais_3-exterior5:
+  - [0.4, 0.5, 1.0]
+  - [0.62, 0.6, 0.7]
+  Renders_finais_5-exterior11_edit_0001:
+  - [0.45, 0.5, 1.0]
+  - [0.62, 0.5, 1.0]
+  Renders_finais_6-exterior3_edit_0001:
+  - [0.6, 0.5, 1.0]
+  - [0.4, 0.55, 0.75]
+  Renders_finais_7-exterior4_edit_0001:
+  - [0.55, 0.5, 1.0]
+  - [0.4, 0.6, 0.7]
+  Renders_finais_8-exterior6_edit_0001:
+  - [0.4, 0.55, 1.0]
+  - [0.45, 0.7, 0.6]
+  Renders_finais_9-exterior7_edit_0001:
+  - [0.6, 0.5, 1.0]
+  - [0.55, 0.62, 0.7]
