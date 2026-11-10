@@ -42,13 +42,13 @@
   time: '12:00'
   type: story
   project: school-building
-  file: Renders_finais_8-exterior6_edit_0001-s01.jpg
+  file: Renders_finais_7-exterior4_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-23'
   time: '15:00'
   type: story
   project: school-building
-  file: Renders_finais_7-exterior4_edit_0001-s01.jpg
+  file: Renders_finais_8-exterior6_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-23'
   time: '17:30'
@@ -108,15 +108,15 @@
   time: '12:00'
   type: story
   project: school-building
-  file: motion-Renders_finais_1-exterior1.mp4
+  file: Renders_finais_9-exterior7_edit_0001-s01.jpg
   approved: false
-  cover: motion-Renders_finais_1-exterior1.jpg
 - date: '2026-12-25'
   time: '15:00'
   type: story
   project: school-building
-  file: Renders_finais_9-exterior7_edit_0001-s01.jpg
+  file: motion-Renders_finais_1-exterior1.mp4
   approved: false
+  cover: motion-Renders_finais_1-exterior1.jpg
 - date: '2026-12-25'
   time: '17:30'
   type: story
