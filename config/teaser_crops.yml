@@ -15,3 +15,6 @@ teaser_crops:
   teaser-2026-11-11-a:
     stem: 10_-_interior3_10-interior3
     crop: [0.415, 0.5, 1.0]
+  teaser-2026-11-16-a:
+    stem: 5_-_Exterior5_5-exterior5_edit_0001
+    crop: [0.646, 0.5, 1.0]

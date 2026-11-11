@@ -43,19 +43,19 @@
   type: story
   project: apartamentos-gondomar-2
   file: 11_-_Interior_4_11-interior4_edit_0001-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-11'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
   file: 12_-_Interior_5_12-interior5_0001-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-11'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
   file: palette-11_-_Interior_4_11-interior4_edit_0001.jpg
-  approved: false
+  approved: true
 - date: '2026-11-11'
   time: '20:30'
   type: story
@@ -197,25 +197,25 @@
   project: apartamentos-gondomar-2
   file: teaser-2026-11-16-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-16'
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
   file: 11_-_Interior_4_11-interior4_edit_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-16'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
   file: 12_-_Interior_5_12-interior5_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-16'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
   file: motion-11_-_Interior_4_11-interior4_edit_0001.mp4
-  approved: false
+  approved: true
   cover: motion-11_-_Interior_4_11-interior4_edit_0001.jpg
 - date: '2026-11-16'
   time: '20:30'
@@ -223,4 +223,4 @@
   project: apartamentos-gondomar-2
   file: teaser-2026-11-16-b.jpg
   teaser: b
-  approved: false
+  approved: true
