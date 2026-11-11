@@ -16,13 +16,13 @@
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
+  file: 19_-_Interior_12_19-interior12_0001-s00.jpg
   approved: false
 - date: '2026-12-01'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 19_-_Interior_12_19-interior12_0001-s00.jpg
+  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
   approved: false
 - date: '2026-12-01'
   time: '20:30'
@@ -172,21 +172,21 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 18_-_Interior_11_18-interior11_edit_0001-s01.jpg
+  file: 17_-_Interior_10_17-interior10_0001-s02.jpg
   approved: false
 - date: '2026-12-06'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: motion-13_-_Interior_6_13-interior6_edit_0001.mp4
+  file: 18_-_Interior_11_18-interior11_edit_0001-s01.jpg
   approved: false
-  cover: motion-13_-_Interior_6_13-interior6_edit_0001.jpg
 - date: '2026-12-06'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 17_-_Interior_10_17-interior10_0001-s02.jpg
+  file: motion-13_-_Interior_6_13-interior6_edit_0001.mp4
   approved: false
+  cover: motion-13_-_Interior_6_13-interior6_edit_0001.jpg
 - date: '2026-12-06'
   time: '20:30'
   type: story

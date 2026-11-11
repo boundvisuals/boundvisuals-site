@@ -34,7 +34,7 @@
   cover: school-building-reel-03-cover.jpg
   caption_en: School Building (part 3)
   caption_pt: School Building (parte 3)
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '12:30'
   type: reel

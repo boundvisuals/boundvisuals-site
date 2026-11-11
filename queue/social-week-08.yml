@@ -179,19 +179,19 @@
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-17_-_Interior_10_17-interior10_0001.jpg
+  file: 1_-_Exterior1_1-exterior1_edit_0001-s01.jpg
   approved: false
 - date: '2026-12-27'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
-  file: 1_-_Exterior1_1-exterior1_edit_0001-s01.jpg
+  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s00.jpg
   approved: false
 - date: '2026-12-27'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: 2_-_Exterior2_2-exterior2_4SeedVR2Upscale-s00.jpg
+  file: palette-17_-_Interior_10_17-interior10_0001.jpg
   approved: false
 - date: '2026-12-27'
   time: '20:30'
