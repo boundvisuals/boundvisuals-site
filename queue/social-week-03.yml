@@ -37,25 +37,25 @@
   project: gold-village
   file: teaser-2026-11-18-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-18'
   time: '12:00'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s00.jpg
-  approved: false
+  approved: true
 - date: '2026-11-18'
   time: '15:00'
   type: story
   project: gold-village
   file: 11_-_interior4_11-interior4-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-18'
   time: '17:30'
   type: story
   project: gold-village
   file: motion-10_-_interior3_10-interior3.mp4
-  approved: false
+  approved: true
   cover: motion-10_-_interior3_10-interior3.jpg
 - date: '2026-11-18'
   time: '20:30'
@@ -63,7 +63,7 @@
   project: gold-village
   file: teaser-2026-11-18-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '10:00'
   type: story
