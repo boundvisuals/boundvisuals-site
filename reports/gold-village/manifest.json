@@ -9,14 +9,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/10_-_interior3/10-interior3.png",
+      "web_full": "/home/runner/bv/src/gold-village/10_-_interior3/10-interior3.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/10_-_interior3_10-interior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -31,14 +31,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/11_-_interior4/11-interior4.png",
+      "web_full": "/home/runner/bv/src/gold-village/11_-_interior4/11-interior4.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/11_-_interior4_11-interior4-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -53,11 +53,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/gold-village/1_-_exterior1/1-exterior1.png",
+      "web_full": "/home/runner/bv/src/gold-village/1_-_exterior1/1-exterior1.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/1_-_exterior1_1-exterior1-01.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/1_-_exterior1_1-exterior1-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -72,14 +72,14 @@
         2790
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/2_-_exterior2/2-exterior2.png",
+      "web_full": "/home/runner/bv/src/gold-village/2_-_exterior2/2-exterior2.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/2_-_exterior2_2-exterior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -94,14 +94,14 @@
         2790
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/3_-_exterior3/3_exterior3.png",
+      "web_full": "/home/runner/bv/src/gold-village/3_-_exterior3/3_exterior3.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/3_-_exterior3_3_exterior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -116,11 +116,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/gold-village/4_-_exterior4/4-exterior4.png",
+      "web_full": "/home/runner/bv/src/gold-village/4_-_exterior4/4-exterior4.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/4_-_exterior4_4-exterior4-01.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/4_-_exterior4_4-exterior4-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -135,11 +135,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/gold-village/5_-_exterior5/5-exterior5.png",
+      "web_full": "/home/runner/bv/src/gold-village/5_-_exterior5/5-exterior5.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/5_-_exterior5_5-exterior5-01.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/5_-_exterior5_5-exterior5-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -154,11 +154,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/gold-village/6_-_exterior6/6-exterior6.png",
+      "web_full": "/home/runner/bv/src/gold-village/6_-_exterior6/6-exterior6.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/6_-_exterior6_6-exterior6-01.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/6_-_exterior6_6-exterior6-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -173,14 +173,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/8_-_interior1/8-interior1.png",
+      "web_full": "/home/runner/bv/src/gold-village/8_-_interior1/8-interior1.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/8_-_interior1_8-interior1-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -195,14 +195,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/gold-village/9_-_interior2/9-interior2.png",
+      "web_full": "/home/runner/bv/src/gold-village/9_-_interior2/9-interior2.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-01.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-02.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-03.jpg",
-        "/home/boundvis/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-04-full.jpg"
+        "/home/runner/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-01.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-02.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-03.jpg",
+        "/home/runner/bv/tmp/gold-village/ig/9_-_interior2_9-interior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
