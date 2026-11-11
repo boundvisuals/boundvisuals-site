@@ -22,9 +22,9 @@
   time: '17:30'
   type: story
   project: school-building
-  file: motion-Renders_finais_12-interior1_edit_0001.mp4
+  file: motion-Renders_finais_11-exterior9_edit_0001.mp4
   approved: false
-  cover: motion-Renders_finais_12-interior1_edit_0001.jpg
+  cover: motion-Renders_finais_11-exterior9_edit_0001.jpg
 - date: '2026-12-08'
   time: '20:30'
   type: story
@@ -217,9 +217,9 @@
   time: '17:30'
   type: story
   project: school-building
-  file: motion-Renders_finais_12-interior2_edit_0001.mp4
+  file: motion-Renders_finais_12-interior1_edit_0001.mp4
   approved: false
-  cover: motion-Renders_finais_12-interior2_edit_0001.jpg
+  cover: motion-Renders_finais_12-interior1_edit_0001.jpg
 - date: '2026-12-14'
   time: '20:30'
   type: story

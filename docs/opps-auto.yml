@@ -1,6 +1,28 @@
-updated: 2026-11-10 10:01 UTC
-new_today: 0
+updated: 2026-11-11 10:01 UTC
+new_today: 2
 leads:
+- id: auto-2236a91e32
+  title: Head of Brand & Creative
+  org: Atomic
+  kind: vaga
+  url: https://jobicy.com/jobs/155002-head-of-brand-creative-2
+  axis: ads
+  score: 2
+  where: USA
+  src: Jobicy
+  first_seen: '2026-11-11'
+  notes: 🤖 Encontrada pelo robô (Jobicy, 11/11) · USA · eixo ADS · About Golden Child Golden Child is redefining pet nutrition through an uncompromising focus on health, quality, and culinary craftsmanship. A Miami-based startup, we bring together veterinary nutrition expertise,…
+- id: auto-4503b831cf
+  title: Freelance Product and Brand Designers – Join Our Network
+  org: Instrument
+  kind: vaga
+  url: https://jobicy.com/jobs/152896-freelance-product-and-brand-designers-join-our-network
+  axis: ads
+  score: 2
+  where: USA
+  src: Jobicy
+  first_seen: '2026-11-11'
+  notes: 🤖 Encontrada pelo robô (Jobicy, 11/11) · USA · eixo ADS · Instrument is a digitally native design and technology company built to help brands unlock their full potential. Since 2005, our team of makers, thinkers, and storytellers has partnered with leading brands like Google,…
 - id: auto-0372162137
   title: Projektmanager – Social Ads & UGC (m/w/d)
   org: Creative Dreams
