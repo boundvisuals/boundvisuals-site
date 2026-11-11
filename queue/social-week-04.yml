@@ -146,15 +146,15 @@
   time: '15:00'
   type: story
   project: gold-village
-  file: motion-11_-_interior4_11-interior4.mp4
+  file: 1_-_exterior1_1-exterior1-s02.jpg
   approved: false
-  cover: motion-11_-_interior4_11-interior4.jpg
 - date: '2026-11-28'
   time: '17:30'
   type: story
   project: gold-village
-  file: 1_-_exterior1_1-exterior1-s02.jpg
+  file: motion-11_-_interior4_11-interior4.mp4
   approved: false
+  cover: motion-11_-_interior4_11-interior4.jpg
 - date: '2026-11-28'
   time: '20:30'
   type: story
