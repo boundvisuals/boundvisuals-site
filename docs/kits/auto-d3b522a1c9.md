@@ -1,0 +1,36 @@
+# Kit — Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Netherlands) · EverAI
+_Gerado automaticamente pelo robô (modelo). Lê o anúncio e ajusta 2–3 frases antes de enviar._
+
+**Anúncio:** https://www.arbeitnow.nl/jobs/companies/everai/mid-senior-ai-cinematic-video-editor-freelance-full-remote-netherlands-47369
+**Onde:** Netherlands · **Fonte:** Arbeitnow (EU)
+
+## O que enviar
+- Portfólio: **AI for Image & Video** → https://www.boundvisuals.com/vitorhugo/files/Portfolio_AI_light.pdf (versão leve para email; HQ: …/files/Portfolio_AI.pdf)
+- CV curto: https://www.boundvisuals.com/vitorhugo/files/CV_Vitor_Hugo_Short.pdf
+- Site: https://www.boundvisuals.com/vitorhugo/
+- Follow-up: **19/11** (7 dias depois de enviar)
+
+## Carta (EN)
+Hi EverAI team,
+
+I'm Vítor Hugo, a 3D artist and AI image & video specialist based in Portugal. I saw your opening for **Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Netherlands)** and it matches what I do every day: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
+
+A few things I'd bring from day one:
+- Photoreal, client-ready images and films, delivered fast and organised.
+- A modern pipeline that mixes 3D and AI where each one is strongest.
+- Clear communication and quick iteration on feedback.
+
+My portfolio (AI for Image & Video) and CV are attached, and everything is also at boundvisuals.com/vitorhugo. I'd love to show you how I could help — happy to do a short test if useful.
+
+Best regards,
+Vítor Hugo · +351 913 215 170 · vitorhugobs@hotmail.com
+
+## Carta (PT)
+Olá, equipa EverAI,
+
+Sou o Vítor Hugo, artista 3D e especialista em imagem e vídeo com AI, em Portugal. Vi a vossa vaga de **Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Netherlands)** e encaixa no que faço todos os dias: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
+
+Envio o portfólio (AI for Image & Video) e o CV; está tudo também em boundvisuals.com/vitorhugo. Terei todo o gosto em fazer um pequeno teste, se fizer sentido.
+
+Cumprimentos,
+Vítor Hugo · +351 913 215 170 · vitorhugobs@hotmail.com
