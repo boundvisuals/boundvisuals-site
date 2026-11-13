@@ -1,11 +1,11 @@
 {
- "checked": "2026-11-12 10:01 UTC",
+ "checked": "2026-11-13 10:01 UTC",
  "all_ok": false,
  "checks": [
   {
    "name": "Site Bound Visuals",
    "ok": true,
-   "detail": "HTTP 200 · 2.5 s"
+   "detail": "HTTP 200 · 2.2 s"
   },
   {
    "name": "Site Vítor Hugo",
@@ -25,32 +25,32 @@
   {
    "name": "PDF Portfolio_All.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 5 dias"
+   "detail": "HTTP 200 · 6 dias"
   },
   {
    "name": "PDF Portfolio_AI.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 5 dias"
+   "detail": "HTTP 200 · 6 dias"
   },
   {
    "name": "PDF Portfolio_3D_Architecture_Visualization.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 5 dias"
+   "detail": "HTTP 200 · 6 dias"
   },
   {
    "name": "PDF CV_Vitor_Hugo_Long.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 1 dias"
+   "detail": "HTTP 200 · 2 dias"
   },
   {
    "name": "PDF CV_Vitor_Hugo_Short.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 1 dias"
+   "detail": "HTTP 200 · 2 dias"
   },
   {
    "name": "Certificado SSL",
    "ok": true,
-   "detail": "expira em 86 dias"
+   "detail": "expira em 85 dias"
   },
   {
    "name": "Ligação Instagram/Facebook (token)",
@@ -60,7 +60,7 @@
   {
    "name": "Fila de posts",
    "ok": true,
-   "detail": "posts preparados até 2026-12-27 (45 dias)"
+   "detail": "posts preparados até 2026-12-27 (44 dias)"
   },
   {
    "name": "Calendário: sem repetidas e todas as imagens agendadas",
