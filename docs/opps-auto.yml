@@ -1,6 +1,17 @@
-updated: 2026-11-13 10:01 UTC
-new_today: 0
+updated: 2026-11-14 10:01 UTC
+new_today: 1
 leads:
+- id: auto-1f96a372a0
+  title: CDI - AI Designer Motion & Génératif - Artefact 3000 - Paris
+  org: Artefactjobs
+  kind: vaga
+  url: https://www.arbeitnow.fr/jobs/companies/artefactjobs/cdi-ai-designer-motion-generatif-artefact-3000-paris-9th-arrondissement-of-paris-75009-paris-136422
+  axis: ai
+  score: 5
+  where: 9th arrondissement of Paris, 75009, Paris
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-14'
+  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 14/11) · 9th arrondissement of Paris, 75009, Paris · eixo AI · QUI SOMMES-NOUS&nbsp; Artefact 3000 est l’agence créative intégrée d’Artefact qui combine le talent créatif au savoir-faire data &amp; IA. L’agence puise son inspiration dans le réel et les insights précis pour…
 - id: auto-d3b522a1c9
   title: Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Netherlands)
   org: EverAI
