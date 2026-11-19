@@ -88,14 +88,14 @@
   type: story
   project: vivendas-cete
   file: palette-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '20:30'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-19-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-20'
   time: '10:00'
   type: story
