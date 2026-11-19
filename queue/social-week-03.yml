@@ -70,19 +70,19 @@
   project: vivendas-cete
   file: teaser-2026-11-19-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '12:00'
   type: story
   project: vivendas-cete
   file: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '15:00'
   type: story
   project: vivendas-cete
   file: 2-interior2_2-interior2-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-19'
   time: '17:30'
   type: story
@@ -171,19 +171,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
+  file: palette-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
   approved: false
 - date: '2026-11-22'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_2_-_Back_webp_+_Seedvr2_bravo-s02.jpg
+  file: root_1_-_Front___webp_+_Seedvr2_bravo-s02.jpg
   approved: false
 - date: '2026-11-22'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: palette-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
+  file: root_2_-_Back_webp_+_Seedvr2_bravo-s02.jpg
   approved: false
 - date: '2026-11-22'
   time: '20:30'
