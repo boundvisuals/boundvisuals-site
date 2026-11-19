@@ -21,3 +21,6 @@ teaser_crops:
   teaser-2026-11-17-a:
     stem: root_4_-_exterior_frente_webp
     crop: [0.238, 0.655, 0.69]
+  teaser-2026-11-27-a:
+    stem: root_7-interior4_webp
+    crop: [0.52, 0.55, 0.9]

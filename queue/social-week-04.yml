@@ -5,89 +5,89 @@
   project: vivendas-cete
   file: teaser-2026-11-24-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-24'
   time: '12:00'
   type: story
   project: vivendas-cete
   file: 1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-24'
   time: '15:00'
   type: story
   project: vivendas-cete
   file: 2-interior2_2-interior2-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-24'
   time: '17:30'
   type: story
   project: vivendas-cete
   file: palette-3-interior3_3-interior3.jpg
-  approved: false
+  approved: true
 - date: '2026-11-24'
   time: '20:30'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-24-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '10:00'
   type: story
   project: school-building
   file: teaser-2026-11-25-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '12:00'
   type: story
   project: school-building
   file: Renders_finais_14-interior3_edit_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '15:00'
   type: story
   project: school-building
   file: Renders_finais_16-interior5_Edit_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '17:30'
   type: story
   project: school-building
   file: palette-Renders_finais_10-exterior8_edit_0001.jpg
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '20:30'
   type: story
   project: school-building
   file: teaser-2026-11-25-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-26'
   time: '10:00'
   type: story
   project: apartamentos-gondomar-2
   file: teaser-2026-11-26-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-26'
   time: '12:00'
   type: story
   project: apartamentos-gondomar-2
   file: 11_-_Interior_4_11-interior4_edit_0001-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-26'
   time: '15:00'
   type: story
   project: apartamentos-gondomar-2
   file: 17_-_Interior_10_17-interior10_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-26'
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
   file: motion-12_-_Interior_5_12-interior5_0001.mp4
-  approved: false
+  approved: true
   cover: motion-12_-_Interior_5_12-interior5_0001.jpg
 - date: '2026-11-26'
   time: '20:30'
@@ -95,132 +95,132 @@
   project: apartamentos-gondomar-2
   file: teaser-2026-11-26-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '10:00'
   type: story
   project: vivendas-duas-igrejas
   file: teaser-2026-11-27-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
   file: palette-root_3-interior1_webp.jpg
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
   file: root_3-interior1_webp-s03.jpg
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
   file: root_4_-_exterior_frente_webp-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '20:30'
   type: story
   project: vivendas-duas-igrejas
   file: teaser-2026-11-27-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-28'
   time: '10:00'
   type: story
   project: gold-village
   file: teaser-2026-11-28-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-28'
   time: '12:00'
   type: story
   project: gold-village
   file: 10_-_interior3_10-interior3-s03.jpg
-  approved: false
+  approved: true
 - date: '2026-11-28'
   time: '15:00'
   type: story
   project: gold-village
   file: 1_-_exterior1_1-exterior1-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-28'
   time: '17:30'
   type: story
   project: gold-village
   file: palette-11_-_interior4_11-interior4.jpg
-  approved: false
+  approved: true
 - date: '2026-11-28'
   time: '20:30'
   type: story
   project: gold-village
   file: teaser-2026-11-28-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-29'
   time: '10:00'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-29-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-29'
   time: '12:00'
   type: story
   project: vivendas-cete
   file: 3-interior3_3-interior3-s03.jpg
-  approved: false
+  approved: true
 - date: '2026-11-29'
   time: '15:00'
   type: story
   project: vivendas-cete
   file: 4-interior4_4-interior4-s02.jpg
-  approved: false
+  approved: true
 - date: '2026-11-29'
   time: '17:30'
   type: story
   project: vivendas-cete
   file: palette-4-interior4_4-interior4.jpg
-  approved: false
+  approved: true
 - date: '2026-11-29'
   time: '20:30'
   type: story
   project: vivendas-cete
   file: teaser-2026-11-29-b.jpg
   teaser: b
-  approved: false
+  approved: true
 - date: '2026-11-30'
   time: '10:00'
   type: story
   project: school-building
   file: teaser-2026-11-30-a.jpg
   teaser: a
-  approved: false
+  approved: true
 - date: '2026-11-30'
   time: '12:00'
   type: story
   project: school-building
   file: Renders_finais_3-exterior5-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-30'
   time: '15:00'
   type: story
   project: school-building
   file: Renders_finais_5-exterior11_edit_0001-s01.jpg
-  approved: false
+  approved: true
 - date: '2026-11-30'
   time: '17:30'
   type: story
   project: school-building
   file: palette-Renders_finais_11-exterior9_edit_0001.jpg
-  approved: false
+  approved: true
 - date: '2026-11-30'
   time: '20:30'
   type: story
   project: school-building
   file: teaser-2026-11-30-b.jpg
   teaser: b
-  approved: false
+  approved: true

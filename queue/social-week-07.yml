@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-18_-_Interior_11_18-interior11_edit_0001.jpg
+  file: palette-17_-_Interior_10_17-interior10_0001.jpg
   approved: false
 - date: '2026-12-15'
   time: '20:30'
@@ -74,19 +74,19 @@
   time: '12:00'
   type: story
   project: school-building
-  file: Renders_finais_7-exterior4_edit_0001-s01.jpg
+  file: palette-Renders_finais_2-exterior2_edit_0001.jpg
   approved: false
 - date: '2026-12-17'
   time: '15:00'
   type: story
   project: school-building
-  file: Renders_finais_8-exterior6_edit_0001-s01.jpg
+  file: palette-Renders_finais_5-exterior11_edit_0001.jpg
   approved: false
 - date: '2026-12-17'
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_2-exterior2_edit_0001.jpg
+  file: palette-Renders_finais_6-exterior3_edit_0001.jpg
   approved: false
 - date: '2026-12-17'
   time: '20:30'
@@ -118,7 +118,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-19_-_Interior_12_19-interior12_0001.jpg
+  file: palette-18_-_Interior_11_18-interior11_edit_0001.jpg
   approved: false
 - date: '2026-12-18'
   time: '20:30'
@@ -138,19 +138,19 @@
   time: '12:00'
   type: story
   project: school-building
-  file: Renders_finais_12-interior1_edit_0001-s01.jpg
+  file: palette-Renders_finais_7-exterior4_edit_0001.jpg
   approved: false
 - date: '2026-12-19'
   time: '15:00'
   type: story
   project: school-building
-  file: Renders_finais_9-exterior7_edit_0001-s00.jpg
+  file: palette-Renders_finais_8-exterior6_edit_0001.jpg
   approved: false
 - date: '2026-12-19'
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_3-exterior5.jpg
+  file: palette-Renders_finais_9-exterior7_edit_0001.jpg
   approved: false
 - date: '2026-12-19'
   time: '20:30'
@@ -182,7 +182,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-1_-_Exterior1_1-exterior1_edit_0001.jpg
+  file: palette-19_-_Interior_12_19-interior12_0001.jpg
   approved: false
 - date: '2026-12-20'
   time: '20:30'
@@ -197,24 +197,6 @@
   project: school-building
   file: teaser-2026-12-21-a.jpg
   teaser: a
-  approved: false
-- date: '2026-12-21'
-  time: '12:00'
-  type: story
-  project: school-building
-  file: Renders_finais_12-interior2_edit_0001-s00.jpg
-  approved: false
-- date: '2026-12-21'
-  time: '15:00'
-  type: story
-  project: school-building
-  file: Renders_finais_9-exterior7_edit_0001-s01.jpg
-  approved: false
-- date: '2026-12-21'
-  time: '17:30'
-  type: story
-  project: school-building
-  file: palette-Renders_finais_5-exterior11_edit_0001.jpg
   approved: false
 - date: '2026-12-21'
   time: '20:30'

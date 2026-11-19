@@ -52,7 +52,7 @@
   cover: vivendas-duas-igrejas-reel-02-cover.jpg
   caption_en: 'Duas Igrejas in motion: garden, timber and light. Penafiel.'
   caption_pt: 'Duas Igrejas em movimento: jardim, madeira e luz. Penafiel.'
-  approved: false
+  approved: true
 - date: '2026-11-23'
   time: '12:30'
   type: reel
@@ -61,7 +61,7 @@
   cover: school-building-reel-04-cover.jpg
   caption_en: School Building (part 4)
   caption_pt: School Building (parte 4)
-  approved: false
+  approved: true
 - date: '2026-11-25'
   time: '12:30'
   type: reel
@@ -70,7 +70,7 @@
   cover: apartamentos-gondomar-2-reel-04-cover.jpg
   caption_en: 'Apartamentos Gondomar 2, slowly: facade, living rooms and bedrooms. (part 4)'
   caption_pt: 'Apartamentos Gondomar 2, devagar: fachada, salas e quartos. (parte 4)'
-  approved: false
+  approved: true
 - date: '2026-11-27'
   time: '12:30'
   type: reel
@@ -79,7 +79,7 @@
   cover: gold-village-reel-03-cover.jpg
   caption_en: 'Gold Village: timber, green balconies and calm interiors.'
   caption_pt: 'Gold Village: madeira, varandas verdes e interiores calmos.'
-  approved: false
+  approved: true
 - date: '2026-12-01'
   time: '12:30'
   type: reel

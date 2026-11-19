@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-2_-_Exterior2_2-exterior2_4SeedVR2Upscale.jpg
+  file: palette-1_-_Exterior1_1-exterior1_edit_0001.jpg
   approved: false
 - date: '2026-12-22'
   time: '20:30'
@@ -37,24 +37,6 @@
   project: school-building
   file: teaser-2026-12-23-a.jpg
   teaser: a
-  approved: false
-- date: '2026-12-23'
-  time: '12:00'
-  type: story
-  project: school-building
-  file: Renders_finais_11-exterior9_edit_0001-s01.jpg
-  approved: false
-- date: '2026-12-23'
-  time: '15:00'
-  type: story
-  project: school-building
-  file: Renders_finais_12-interior1_edit_0001-s00.jpg
-  approved: false
-- date: '2026-12-23'
-  time: '17:30'
-  type: story
-  project: school-building
-  file: palette-Renders_finais_6-exterior3_edit_0001.jpg
   approved: false
 - date: '2026-12-23'
   time: '20:30'
@@ -86,7 +68,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-3_-_Exterior3_3-exterior3_edit_0001.jpg
+  file: palette-2_-_Exterior2_2-exterior2_4SeedVR2Upscale.jpg
   approved: false
 - date: '2026-12-24'
   time: '20:30'
@@ -101,24 +83,6 @@
   project: school-building
   file: teaser-2026-12-25-a.jpg
   teaser: a
-  approved: false
-- date: '2026-12-25'
-  time: '12:00'
-  type: story
-  project: school-building
-  file: palette-Renders_finais_7-exterior4_edit_0001.jpg
-  approved: false
-- date: '2026-12-25'
-  time: '15:00'
-  type: story
-  project: school-building
-  file: palette-Renders_finais_8-exterior6_edit_0001.jpg
-  approved: false
-- date: '2026-12-25'
-  time: '17:30'
-  type: story
-  project: school-building
-  file: palette-Renders_finais_9-exterior7_edit_0001.jpg
   approved: false
 - date: '2026-12-25'
   time: '20:30'
@@ -150,7 +114,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-4_-_Exterior4_4-exterior4_0001.jpg
+  file: palette-3_-_Exterior3_3-exterior3_edit_0001.jpg
   approved: false
 - date: '2026-12-26'
   time: '20:30'
@@ -182,7 +146,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-5_-_Exterior5_5-exterior5_edit_0001.jpg
+  file: palette-4_-_Exterior4_4-exterior4_0001.jpg
   approved: false
 - date: '2026-12-27'
   time: '20:30'
