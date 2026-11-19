@@ -22,9 +22,8 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.mp4
+  file: palette-3-interior3_3-interior3.jpg
   approved: false
-  cover: motion-1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.jpg
 - date: '2026-11-24'
   time: '20:30'
   type: story
@@ -55,7 +54,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_1-exterior1.jpg
+  file: palette-Renders_finais_10-exterior8_edit_0001.jpg
   approved: false
 - date: '2026-11-25'
   time: '20:30'
@@ -87,9 +86,8 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: motion-12_-_Interior_5_12-interior5_0001.mp4
+  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
   approved: false
-  cover: motion-12_-_Interior_5_12-interior5_0001.jpg
 - date: '2026-11-26'
   time: '20:30'
   type: story
@@ -108,19 +106,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: palette-root_2_-_Back_webp_+_Seedvr2_bravo.jpg
+  file: root_3-interior1_webp-s03.jpg
   approved: false
 - date: '2026-11-27'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s03.jpg
+  file: root_4_-_exterior_frente_webp-s02.jpg
   approved: false
 - date: '2026-11-27'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s02.jpg
+  file: palette-root_3-interior1_webp.jpg
   approved: false
 - date: '2026-11-27'
   time: '20:30'
@@ -152,9 +150,8 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: motion-11_-_interior4_11-interior4.mp4
+  file: palette-11_-_interior4_11-interior4.jpg
   approved: false
-  cover: motion-11_-_interior4_11-interior4.jpg
 - date: '2026-11-28'
   time: '20:30'
   type: story
@@ -185,7 +182,7 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: palette-3-interior3_3-interior3.jpg
+  file: palette-4-interior4_4-interior4.jpg
   approved: false
 - date: '2026-11-29'
   time: '20:30'
@@ -217,9 +214,8 @@
   time: '17:30'
   type: story
   project: school-building
-  file: motion-Renders_finais_10-exterior8_edit_0001.mp4
+  file: palette-Renders_finais_11-exterior9_edit_0001.jpg
   approved: false
-  cover: motion-Renders_finais_10-exterior8_edit_0001.jpg
 - date: '2026-11-30'
   time: '20:30'
   type: story

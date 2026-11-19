@@ -22,7 +22,7 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: palette-13_-_Interior_6_13-interior6_edit_0001.jpg
+  file: palette-15_-_Interior_8_15-interior8_edit_0001.jpg
   approved: false
 - date: '2026-12-01'
   time: '20:30'
@@ -42,20 +42,19 @@
   time: '12:00'
   type: story
   project: vivendas-duas-igrejas
-  file: motion-root_1_-_Front___webp_+_Seedvr2_bravo.mp4
+  file: root_3-interior1_webp-s02.jpg
   approved: false
-  cover: motion-root_1_-_Front___webp_+_Seedvr2_bravo.jpg
 - date: '2026-12-02'
   time: '15:00'
   type: story
   project: vivendas-duas-igrejas
-  file: root_3-interior1_webp-s02.jpg
+  file: root_4_-_exterior_frente_webp-s03.jpg
   approved: false
 - date: '2026-12-02'
   time: '17:30'
   type: story
   project: vivendas-duas-igrejas
-  file: root_4_-_exterior_frente_webp-s03.jpg
+  file: palette-root_4_-_exterior_frente_webp.jpg
   approved: false
 - date: '2026-12-02'
   time: '20:30'
@@ -87,7 +86,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: palette-11_-_interior4_11-interior4.jpg
+  file: palette-1_-_exterior1_1-exterior1.jpg
   approved: false
 - date: '2026-12-03'
   time: '20:30'
@@ -119,9 +118,8 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: motion-2-interior2_2-interior2.mp4
+  file: palette-5-exterior1_5-exterior1.jpg
   approved: false
-  cover: motion-2-interior2_2-interior2.jpg
 - date: '2026-12-04'
   time: '20:30'
   type: story
@@ -152,7 +150,7 @@
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_10-exterior8_edit_0001.jpg
+  file: palette-Renders_finais_12-interior1_edit_0001.jpg
   approved: false
 - date: '2026-12-05'
   time: '20:30'
@@ -184,9 +182,8 @@
   time: '17:30'
   type: story
   project: apartamentos-gondomar-2
-  file: motion-13_-_Interior_6_13-interior6_edit_0001.mp4
+  file: palette-16_-_Interior_9_16-interior9_0001.jpg
   approved: false
-  cover: motion-13_-_Interior_6_13-interior6_edit_0001.jpg
 - date: '2026-12-06'
   time: '20:30'
   type: story
@@ -217,7 +214,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: palette-1_-_exterior1_1-exterior1.jpg
+  file: palette-2_-_exterior2_2-exterior2.jpg
   approved: false
 - date: '2026-12-07'
   time: '20:30'
