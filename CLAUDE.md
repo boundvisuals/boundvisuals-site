@@ -9,6 +9,7 @@ RULE (Vítor, 2026-11-03): DO every Claude-side task proactively without waiting
 RULE (Vítor, 2026-11-03): crops were bad — review every crop at FULL size, composition-first (no meaningless fragments); he may supply his own crops.
 CREDITS: chat got expensive; new chats start from Project doc claude/COMECA-AQUI.md + this file.
 RULE (Vítor, 2026-11-02): when he answers only part of a message, end EVERY reply with what is still open/unanswered from before ("Ficou por responder/fazer"), repeating the open questions in full.
+RULE (Vítor, 2026-11-19): the "Ficou por fazer/responder" list is ALWAYS NUMBERED (1, 2, 3…) so he can answer by number; or use an interactive question card (AskUserQuestion) for open questions.
 
 ## Identity (decided)
 - Display name everywhere: `Vítor Hugo • Bound Visuals`. Instagram handle: `@vitorhugo_boundvisuals` (changed 2026-10-31).
