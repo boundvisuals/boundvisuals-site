@@ -37,6 +37,7 @@
   owner: vitor
   title: "Apagar a cópia de teste /novo (liberta ~3 GB) — diz 'sim' ao Claude"
   detail: "Já não é precisa (o site fica como está). Se disseres que sim: cPanel → Softaculous → WordPress → Instalações → na linha boundvisuals.com/novo clica no X vermelho (Remover) → deixa marcadas as caixas de ficheiros e base de dados → 'Remover instalação'. A instalação principal (boundvisuals.com sem /novo) não se toca."
+  done: true
 - id: v-ds-001
   owner: parked
   title: "Daily Study #001 · Janelas: a luz de uma tarde"
@@ -190,4 +191,5 @@
   note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
 - id: c-linkedin-video
   owner: claude
-  title: "Ver o que é preciso para publicar vídeo/reels no LinkedIn (pedido do Vítor 19/11)"
+  title: "LinkedIn: só posts normais, sem vídeo/reels (decisão do Vítor, 19/11)"
+  done: true
