@@ -10,7 +10,7 @@ Rules (quiet hours: nothing before 08:00 or after 23:00):
   - any time         a feed post just went out on Instagram (last 6 h) — says if it went WITHOUT caption (paste it from the Painel)
   - any time         an approved feed post is > 45 min late (Instagram refused / robot stopped)
 """
-import sys, os, re, glob, json, datetime
+import time, sys, os, re, glob, json, datetime
 from zoneinfo import ZoneInfo
 import yaml
 
@@ -176,6 +176,35 @@ def publish_events(now):
             body += " O Facebook falhou — vê o registo no Painel."
         out.append({"id": f"pub-{key}", "title": f"Publicado no Instagram: {proj} ({at:%H:%M})", "body": body,
                     "url": "/painel/"})
+    # approvals running low: fewer than 2 days of approved feed posts ahead (counting from tomorrow)
+    try:
+        today = now.date(); last = None; pending = 0
+        for f in sorted(glob.glob("queue/week-*.yml")):
+            for it in y(f, []) or []:
+                if not isinstance(it, dict) or not it.get("date"):
+                    continue
+                d0 = datetime.date.fromisoformat(str(it["date"]))
+                if d0 < today:
+                    continue
+                if it.get("approved"):
+                    last = max(last, d0) if last else d0
+                else:
+                    pending += 1
+        if pending and (last is None or (last - today).days < 2):
+            out.append({"id": f"approve-low-{today}", "title": "Faltam aprovações no Calendário",
+                        "body": ("Não há posts aprovados à frente. " if last is None else f"Só está aprovado até {last:%d/%m}. ") +
+                                "Abre o Painel → Bound Visuals → Calendário → Aprovar dia / Aprovar tudo. Sem ✅ não sai nada.",
+                        "url": "/painel/"})
+    except Exception:
+        pass
+    # the host antivirus cleaned api.php and the robot restored it (flag written by server_run.sh)
+    try:
+        fl = os.path.expanduser("~/bv/api_healed.flag")
+        if os.path.exists(fl) and time.time() - os.path.getmtime(fl) < 86400:
+            out.append({"id": "api-healed-" + open(fl).read().strip()[:16], "title": "O antivírus do servidor apagou o api.php",
+                        "body": "Repus o ficheiro sozinho. Se voltar a acontecer muitas vezes, avisa a PTServidor (exceção no Imunify360).", "url": "/painel/"})
+    except Exception:
+        pass
     for f in sorted(glob.glob("queue/week-*.yml")):
         for it in y(f, []) or []:
             if not isinstance(it, dict) or not it.get("approved") or not it.get("date") or not it.get("project"):

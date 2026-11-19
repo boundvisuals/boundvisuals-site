@@ -1,10 +1,10 @@
 # Every open item agreed with Vítor (source for the Painel "Tarefas" tab).
 # owner: vitor | claude | parked. Ticks made in the Painel are stored on the server (store/ticks.json.php).
 - id: v-mood-variations
-  owner: vitor
+  owner: parked
   title: "Variações de ambiente das imagens prontas (noite, chuva, neve, nevoeiro, pôr do sol…)"
   detail: "Ideia tua 06/11: pegar nas imagens finais de todos os projetos e fazer outras versões com pouco trabalho (modo noite, chuva, neve, etc.) para ter mais conteúdo e variações. Pilar 6 'mood variations'. Quando quiseres: eu preparo os prompts (inglês) e o fluxo rápido (Nano Banana/ComfyUI), e no MEGA basta uma pasta 'mood' ao lado de cada final — o robô agenda sozinho."
-  due: dom 15 nov
+  note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
 - id: v-gh-minutes
   owner: vitor
   title: "Robôs do GitHub sem minutos grátis — RESOLVIDO (já não precisas de fazer nada)"
@@ -32,23 +32,24 @@
   title: Apagar 11 plugins desativados no wp-admin (site verificado OK desde 2 nov)
   detail: "1) Abre www.boundvisuals.com/wp-admin e entra. 2) Menu esquerdo → Plugins. 3) Por cima da lista, clica em 'Inativos'. 4) Marca a caixa de cada um: WPBakery Page Builder, LayerSlider, Slider Revolution, Select Twitter Feed, Select Instagram Feed, Disable Right Click Images, Inspect Element Console Blocker, WordPress Importer, GA Google Analytics, Simple Social Icons, Health Check & Troubleshooting. NÃO marques mais nenhum. 5) Menu 'Ações em massa' → 'Eliminar' → 'Aplicar' → confirma 'Sim, eliminar estes ficheiros'. 6) Abre a página inicial e um projeto: devem estar iguais."
   due: quando puderes (esta semana)
+  done: true
 - id: v-novo
   owner: vitor
   title: "Apagar a cópia de teste /novo (liberta ~3 GB) — diz 'sim' ao Claude"
   detail: "Já não é precisa (o site fica como está). Se disseres que sim: cPanel → Softaculous → WordPress → Instalações → na linha boundvisuals.com/novo clica no X vermelho (Remover) → deixa marcadas as caixas de ficheiros e base de dados → 'Remover instalação'. A instalação principal (boundvisuals.com sem /novo) não se toca."
 - id: v-ds-001
-  owner: vitor
+  owner: parked
   title: "Daily Study #001 · Janelas: a luz de uma tarde"
   detail: "Briefing em docs/daily-study-briefings.md. Guardar em Daily Study - 2026 / #001 - Janelas."
-  due: qui 5 nov
+  note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
 - id: v-ds-002
-  owner: vitor
+  owner: parked
   title: "Daily Study #002 · Escada escultural"
-  due: sáb 7 nov
+  note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
 - id: v-ds-003
-  owner: vitor
+  owner: parked
   title: "Daily Study #003 · Uma divisão, 3 materiais"
-  due: ter 10 nov
+  note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
 - id: v-manual-kit
   owner: vitor
   title: Publicar o kit manual dos 3 projetos (site, Behance, Chaos CG Connect, Indústria Criativa)
@@ -183,6 +184,10 @@
   owner: vitor
   title: "Aprovar o calendário refeito com o School Building (Calendário → Aprovar tudo)"
 - id: v-viewport-captures
-  owner: vitor
+  owner: parked
   title: "Prints e vídeos da viewport do 3ds Max (para stories aleatórios)"
   detail: "Ideia tua 10/11: ir guardando prints e screen recordings curtos da viewport do 3ds Max (wireframe, clay, modelação, câmaras, antes/depois do render) para eu espetar em stories aleatórios. Prova que o 3D é feito por ti. Como mandar: no MEGA, pasta 'viewport' dentro de cada projeto (ou 'FREELANCER STUFF/3D/PORTFOLIO/Viewport'), prints em PNG/JPG, vídeos MP4 até ~15 s. Sempre que fizeres um projeto/Daily Study, lembra-te de gravar 10 s da viewport. Eu lembro-te nos Daily Study."
+  note: "STAND-BY (Vítor 19/11): primeiro acabar TODOS os projetos o mais urgente possível. Lembrar-lhe depois."
+- id: c-linkedin-video
+  owner: claude
+  title: "Ver o que é preciso para publicar vídeo/reels no LinkedIn (pedido do Vítor 19/11)"

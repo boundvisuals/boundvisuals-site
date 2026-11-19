@@ -16,6 +16,11 @@ export PATH="$B/env/bin:$PATH"; PY=python3
 PATH="$B/env/bin:$PATH" php -q "$W/painel/cron.php" >/dev/null 2>&1
 exec 9>"$B/run.lock"; flock -n 9 || exit 0
 cd "$R" || exit 1
+# self-heal: the host antivirus (Imunify360) once "cleaned" painel/api.php down to 27 lines (19/11). Restore it from git at once and leave a flag for notify.py.
+if [ "$(wc -l < "$W/painel/api.php" 2>/dev/null || echo 0)" -lt 200 ]; then
+  git checkout -q -- painel/api.php 2>/dev/null; [ "$(wc -l < painel/api.php)" -ge 200 ] || git fetch -q origin && git checkout -q origin/main -- painel/api.php
+  cp painel/api.php "$W/painel/api.php" && date -u +%FT%TZ > "$B/api_healed.flag"
+fi
 [ -f "$B/.deps2" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge pycryptodome >/dev/null 2>&1 && touch "$B/.deps2"; }
 [ -f "$B/.deps3" ] || { "$B/bin/micromamba" install -y -q -r "$B/mamba" -p "$B/env" -c conda-forge numpy >/dev/null 2>&1 && touch "$B/.deps3"; }
 export PYTHONPATH="$B/pylib:${PYTHONPATH:-}"
