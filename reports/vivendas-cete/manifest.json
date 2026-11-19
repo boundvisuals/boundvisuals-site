@@ -9,13 +9,13 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/1-interior1/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
+      "web_full": "/home/runner/bv/src/vivendas-cete/1-interior1/ComfyUI_temp_xhdjb_00001_edit + SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT.webp",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-01.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-02.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/1-interior1_ComfyUI_temp_xhdjb_00001_edit_+_SeedVR2_Gen2Tiles_Refine_v4_AUTO_EDIT-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -30,11 +30,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/2-interior2/2-interior2.png",
+      "web_full": "/home/runner/bv/src/vivendas-cete/2-interior2/2-interior2.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/2-interior2_2-interior2-01.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/2-interior2_2-interior2-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -49,14 +49,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/3-interior3/3-interior3.png",
+      "web_full": "/home/runner/bv/src/vivendas-cete/3-interior3/3-interior3.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-01.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-02.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-03.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-04-full.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-01.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-02.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-03.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/3-interior3_3-interior3-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -71,11 +71,11 @@
         5000
       ],
       "orientation": "portrait",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/4-interior4/4-interior4.png",
+      "web_full": "/home/runner/bv/src/vivendas-cete/4-interior4/4-interior4.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/4-interior4_4-interior4-01.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/4-interior4_4-interior4-01.jpg"
       ],
       "ig_mode": "single",
       "crops": "auto-unreviewed",
@@ -90,13 +90,13 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/5-exterior1/5-exterior1.png",
+      "web_full": "/home/runner/bv/src/vivendas-cete/5-exterior1/5-exterior1.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-01.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-02.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-03-full.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-01.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-02.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/5-exterior1_5-exterior1-03-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
@@ -111,14 +111,14 @@
         2791
       ],
       "orientation": "landscape",
-      "web_full": "/home/boundvis/bv/src/vivendas-cete/6-exterior2/6-exterior2.png",
+      "web_full": "/home/runner/bv/src/vivendas-cete/6-exterior2/6-exterior2.png",
       "lossless_verified": false,
       "web_grid": [],
       "ig_slides": [
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-01.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-02.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-03.jpg",
-        "/home/boundvis/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-04-full.jpg"
+        "/home/runner/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-01.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-02.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-03.jpg",
+        "/home/runner/bv/tmp/vivendas-cete/ig/6-exterior2_6-exterior2-04-full.jpg"
       ],
       "ig_mode": "carousel",
       "crops": "manual",
