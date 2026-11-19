@@ -95,6 +95,8 @@ def listing(link):
 
 def pick(files):
     imgs = [(p, n) for p, n in files if EXT.search(p)]
+    # folders that only collect copies of the finals (Vítor: "TODAS" = all images in one folder) are never a source
+    imgs = [(p, n) for p, n in imgs if not any(re.fullmatch(r"\s*(todas|todos|all)\s*", d, re.I) for d in p.split("/")[1:-1])]
     fin = [(p, n) for p, n in imgs if PATTERN.search("/".join(p.split("/")[2:-1]))]
     if not fin:
         fin = imgs
