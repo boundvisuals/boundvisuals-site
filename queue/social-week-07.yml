@@ -54,8 +54,9 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: palette-4_-_exterior4_4-exterior4.jpg
+  file: motion-1_-_exterior1_1-exterior1.mp4
   approved: false
+  cover: motion-1_-_exterior1_1-exterior1.jpg
 - date: '2026-12-16'
   time: '20:30'
   type: story
