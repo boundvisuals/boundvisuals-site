@@ -86,8 +86,9 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: palette-3_-_exterior3_3_exterior3.jpg
+  file: motion-11_-_interior4_11-interior4.mp4
   approved: false
+  cover: motion-11_-_interior4_11-interior4.jpg
 - date: '2026-12-10'
   time: '20:30'
   type: story
@@ -183,7 +184,7 @@
   time: '17:30'
   type: story
   project: gold-village
-  file: palette-4_-_exterior4_4-exterior4.jpg
+  file: palette-3_-_exterior3_3_exterior3.jpg
   approved: false
 - date: '2026-12-13'
   time: '20:30'
