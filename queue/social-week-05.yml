@@ -115,6 +115,12 @@
   file: palette-5-exterior1_5-exterior1.jpg
   approved: false
 - date: '2026-12-04'
+  time: '17:30'
+  type: story
+  project: vivendas-cete
+  file: 3-interior3_3-interior3-s02.jpg
+  approved: false
+- date: '2026-12-04'
   time: '20:30'
   type: story
   project: vivendas-cete
