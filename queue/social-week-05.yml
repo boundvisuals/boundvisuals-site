@@ -106,19 +106,19 @@
   time: '12:00'
   type: story
   project: vivendas-cete
-  file: 6-exterior2_6-exterior2-s03.jpg
+  file: 3-interior3_3-interior3-s02.jpg
   approved: false
 - date: '2026-12-04'
   time: '15:00'
   type: story
   project: vivendas-cete
-  file: palette-5-exterior1_5-exterior1.jpg
+  file: 6-exterior2_6-exterior2-s03.jpg
   approved: false
 - date: '2026-12-04'
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: 3-interior3_3-interior3-s02.jpg
+  file: palette-5-exterior1_5-exterior1.jpg
   approved: false
 - date: '2026-12-04'
   time: '20:30'
