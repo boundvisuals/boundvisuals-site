@@ -193,3 +193,8 @@
   owner: claude
   title: "LinkedIn: só posts normais, sem vídeo/reels (decisão do Vítor, 19/11)"
   done: true
+- id: v-signature-angles
+  owner: parked
+  title: "Ângulos e composições fora da caixa (signature shots) em cada projeto"
+  detail: "Ideia tua 20/11: além das imagens básicas e obrigatórias, criar por projeto 2 a 3 imagens com ângulos que mais ninguém faz (POV de dentro do carro a fotografar a casa, super wide de alguém a fotografar-se, etc.) para seres conhecido por isso e fugires ao look genérico de AI. Eu escrevo o brief e o prompt de cada uma; tu fazes a base 3D e o AI."
+  note: "STAND-BY: a discutir contigo; arranca depois de acabares os projetos."
