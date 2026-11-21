@@ -1,6 +1,17 @@
-updated: 2026-11-20 10:01 UTC
-new_today: 0
+updated: 2026-11-21 10:01 UTC
+new_today: 1
 leads:
+- id: auto-357592c5d5
+  title: Senior AI Content Producer - Foto, Video, Motion (m/w/d)
+  org: Rosental Organics GmbH
+  kind: vaga
+  url: https://www.arbeitnow.com/jobs/companies/rosental-organics-gmbh/senior-ai-content-producer-foto-video-motion-berlin-331792
+  axis: ai
+  score: 2
+  where: Berlin, Berlin, Deutschland
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-21'
+  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 21/11) · Berlin, Berlin, Deutschland · eixo AI · Bei Rosental Organics bist du kein klassischer Fotograf oder Videograf – du bist der Content Multiplier. Ein Shoot wird bei dir zu 50+ Assets, ein UGC-Clip zu 30 Hook-Variants, ein Produktfoto zu 20 Format-Adaptionen.…
 - id: auto-0d48bf3293
   title: Mid/Senior AI Cinematic Video Editor (Freelance - Remote - Italy)
   org: EverAI
