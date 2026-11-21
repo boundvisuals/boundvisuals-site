@@ -217,8 +217,9 @@
   time: '17:30'
   type: story
   project: school-building
-  file: palette-Renders_finais_14-interior3_edit_0001.jpg
+  file: motion-Renders_finais_10-exterior8_edit_0001.mp4
   approved: false
+  cover: motion-Renders_finais_10-exterior8_edit_0001.jpg
 - date: '2026-12-14'
   time: '20:30'
   type: story

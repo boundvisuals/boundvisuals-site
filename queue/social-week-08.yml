@@ -93,6 +93,12 @@
   teaser: a
   approved: false
 - date: '2026-12-25'
+  time: '12:00'
+  type: story
+  project: school-building
+  file: palette-Renders_finais_9-exterior7_edit_0001.jpg
+  approved: false
+- date: '2026-12-25'
   time: '20:30'
   type: story
   project: school-building
