@@ -1,6 +1,17 @@
-updated: 2026-11-21 10:01 UTC
+updated: 2026-11-22 10:01 UTC
 new_today: 1
 leads:
+- id: auto-893dd6712b
+  title: Marketing Artist- Cortex
+  org: Voodoo
+  kind: vaga
+  url: https://www.arbeitnow.fr/jobs/companies/voodoo/marketing-artist-cortex-paris-39875
+  axis: ai
+  score: 4
+  where: Paris
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-22'
+  notes: '🤖 Encontrada pelo robô (Arbeitnow (EU), 22/11) · Paris · eixo AI · About Voodoo Voodoo is a consumer tech company founded in Paris in 2013, with one mission: entertain the world. Today we are 1,000 people, generating $1b+ in annual revenue, profitably. Our games and apps have passed 7…'
 - id: auto-357592c5d5
   title: Senior AI Content Producer - Foto, Video, Motion (m/w/d)
   org: Rosental Organics GmbH
