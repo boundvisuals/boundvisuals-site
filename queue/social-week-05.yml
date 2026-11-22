@@ -118,8 +118,9 @@
   time: '17:30'
   type: story
   project: vivendas-cete
-  file: palette-5-exterior1_5-exterior1.jpg
+  file: motion-2-interior2_2-interior2.mp4
   approved: false
+  cover: motion-2-interior2_2-interior2.jpg
 - date: '2026-12-04'
   time: '20:30'
   type: story
