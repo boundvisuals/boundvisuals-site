@@ -1,19 +1,19 @@
-# Kit — Photographer – AI Image Quality Evaluation (Remote, U.S.) · ELITEBRAIN
+# Kit — Grafikdesigner:in (m/w/d) mit KI-Affinität (Studentische Hilfskraft Remote) · UNCODED I Gorilla Ventures GmbH
 _Gerado automaticamente pelo robô (modelo). Lê o anúncio e ajusta 2–3 frases antes de enviar._
 
-**Anúncio:** https://weworkremotely.com/remote-jobs/elitebrain-photographer-ai-image-quality-evaluation-remote-u-s
-**Onde:** USA Only · **Fonte:** We Work Remotely
+**Anúncio:** https://www.arbeitnow.com/jobs/companies/uncoded-i-gorilla-ventures-gmbh/grafikdesignerin-mit-ki-affinitat-studentische-hilfskraft-remote-munich-314376
+**Onde:** Munich · **Fonte:** Arbeitnow (EU)
 
 ## O que enviar
 - Portfólio: **AI for Image & Video** → https://www.boundvisuals.com/vitorhugo/files/Portfolio_AI_light.pdf (versão leve para email; HQ: …/files/Portfolio_AI.pdf)
 - CV curto: https://www.boundvisuals.com/vitorhugo/files/CV_Vitor_Hugo_Short.pdf
 - Site: https://www.boundvisuals.com/vitorhugo/
-- Follow-up: **12/11** (7 dias depois de enviar)
+- Follow-up: **30/11** (7 dias depois de enviar)
 
 ## Carta (EN)
-Hi ELITEBRAIN team,
+Hi UNCODED I Gorilla Ventures GmbH team,
 
-I'm Vítor Hugo, a 3D artist and AI image & video specialist based in Portugal. I saw your opening for **Photographer – AI Image Quality Evaluation (Remote, U.S.)** and it matches what I do every day: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
+I'm Vítor Hugo, a 3D artist and AI image & video specialist based in Portugal. I saw your opening for **Grafikdesigner:in (m/w/d) mit KI-Affinität (Studentische Hilfskraft Remote)** and it matches what I do every day: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
 
 A few things I'd bring from day one:
 - Photoreal, client-ready images and films, delivered fast and organised.
@@ -26,9 +26,9 @@ Best regards,
 Vítor Hugo · +351 913 215 170 · vitorhugobs@hotmail.com
 
 ## Carta (PT)
-Olá, equipa ELITEBRAIN,
+Olá, equipa UNCODED I Gorilla Ventures GmbH,
 
-Sou o Vítor Hugo, artista 3D e especialista em imagem e vídeo com AI, em Portugal. Vi a vossa vaga de **Photographer – AI Image Quality Evaluation (Remote, U.S.)** e encaixa no que faço todos os dias: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
+Sou o Vítor Hugo, artista 3D e especialista em imagem e vídeo com AI, em Portugal. Vi a vossa vaga de **Grafikdesigner:in (m/w/d) mit KI-Affinität (Studentische Hilfskraft Remote)** e encaixa no que faço todos os dias: AI image and video production (ComfyUI, Seedance, Kling, Veo, Nano Banana) on top of a solid 3D base.
 
 Envio o portfólio (AI for Image & Video) e o CV; está tudo também em boundvisuals.com/vitorhugo. Terei todo o gosto em fazer um pequeno teste, se fizer sentido.
 
