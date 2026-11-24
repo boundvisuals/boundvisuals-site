@@ -1,6 +1,28 @@
-updated: 2026-11-23 10:01 UTC
+updated: 2026-11-24 10:01 UTC
 new_today: 2
 leads:
+- id: auto-3cd205ff14
+  title: Lead Creative (Motion Design)
+  org: Superside
+  kind: vaga
+  url: https://jobicy.com/jobs/163171-lead-creative-motion-design
+  axis: ads
+  score: 4
+  where: LATAM
+  src: Jobicy
+  first_seen: '2026-11-24'
+  notes: 🤖 Encontrada pelo robô (Jobicy, 24/11) · LATAM · eixo ADS · Superside is looking for a Lead Creative (Motion Design) to push the boundaries of what’s possible in motion and animation. In this role, you’ll lead a global team of top-tier creatives, delivering world-class motion…
+- id: auto-ce71c84572
+  title: Creative (Graphic Designer)
+  org: Superside
+  kind: vaga
+  url: https://jobicy.com/jobs/153808-creative-graphic-designer
+  axis: ai
+  score: 3
+  where: LATAM
+  src: Jobicy
+  first_seen: '2026-11-24'
+  notes: '🤖 Encontrada pelo robô (Jobicy, 24/11) · LATAM · eixo AI · Superside is looking for a talented Graphic Designer to join our global creative team. You''ll create standout visual work for some of the world''s most ambitious brands: from brand identity and campaign design to…'
 - id: auto-b60a51596e
   title: Lead Creative
   org: Superside
@@ -419,25 +441,3 @@ leads:
   src: Arbeitnow (EU)
   first_seen: '2026-11-05'
   notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 05/11) · Düsseldorf · eixo ADS · Du behältst auch bei vielen Projekten gleichzeitig den Überblick? Du planst gern, setzt Prioritäten und sorgst dafür, dass Termine halten? Mit Creative Dreams arbeiten wir als starkes Team täglich mit den größten Ecom-…
-- id: auto-bda86eb274
-  title: Video Editor for a DTC Brand (US-based/Remote)
-  org: Paired
-  kind: vaga
-  url: https://himalayas.app/companies/paired-so/jobs/video-editor-for-a-dtc-brand-us-based-remote?utm_source=api
-  axis: ads
-  score: 3
-  where: Colombia
-  src: Himalayas
-  first_seen: '2026-11-05'
-  notes: 🤖 Encontrada pelo robô (Himalayas, 05/11) · Colombia · eixo ADS · Paired is a global staffing and recruiting agency that pairs remote work with top-tier talent. Paired is a global staffing and recruiting agency that pairs remote work with top-tier talent. We help individuals from…
-- id: auto-3ec7ecd340
-  title: Performance Video Editor & Designer (all genders)
-  org: mammaly
-  kind: vaga
-  url: https://www.arbeitnow.com/jobs/companies/mammaly/performance-video-editor-designer-all-genders-berlin-447347
-  axis: ads
-  score: 2
-  where: Berlin
-  src: Arbeitnow (EU)
-  first_seen: '2026-11-05'
-  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 05/11) · Berlin · eixo ADS · Deine Aufgaben Für unseren Content Hub suchen wir dich als Performance Video Editor & Designer (all genders). Du schneidest Video Ads, erstellst AI Ads und gestaltest Static Ads und Content in hoher Taktung, testest…
