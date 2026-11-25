@@ -1,6 +1,39 @@
-updated: 2026-11-24 10:01 UTC
-new_today: 2
+updated: 2026-11-25 10:01 UTC
+new_today: 3
 leads:
+- id: auto-38cb912a8a
+  title: Generative Motion Artist
+  org: Moon Active
+  kind: vaga
+  url: https://jobicy.com/jobs/164045-generative-motion-artist
+  axis: ai
+  score: 5
+  where: Spain
+  src: Jobicy
+  first_seen: '2026-11-25'
+  notes: 🤖 Encontrada pelo robô (Jobicy, 25/11) · Spain · eixo AI · Moon Active, a leading global mobile game developer entertaining millions worldwide, is seeking a highly skilled and creative Generative Motion Artist to join the in-house video creative team of our Marketing Art…
+- id: auto-132c21321c
+  title: Senior Creative Strategist
+  org: Zabota LLC
+  kind: vaga
+  url: https://himalayas.app/companies/zabota-llc/jobs/senior-creative-strategist?utm_source=api
+  axis: ads
+  score: 3
+  where: Remote
+  src: Himalayas
+  first_seen: '2026-11-25'
+  notes: 🤖 Encontrada pelo robô (Himalayas, 25/11) · Remote · eixo ADS · Senior Creative Strategist About Zabota Zabota is a top-ranked global recruitment firm, recognized as a Top HR Staffing Company by Clutch in 2025. Senior Creative Strategist About Zabota Zabota is a top-ranked global…
+- id: auto-abc88401a9
+  title: AI Video Editor für Social Ads (m/w/d)
+  org: ADMKRS GmbH
+  kind: vaga
+  url: https://www.arbeitnow.com/jobs/companies/admkrs-gmbh/ai-video-editor-fur-social-ads-munich-196635
+  axis: ai
+  score: 2
+  where: Munich
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-25'
+  notes: '🤖 Encontrada pelo robô (Arbeitnow (EU), 25/11) · Munich · eixo AI · Deine Mission Kurz vorab: Wir suchen jemanden, der richtig Lust hat. Auf Tempo, auf Qualität und auf neue Werkzeuge. Wenn du Verantwortung magst, schnell lernst und AI als Chance für deine Kreativität siehst, bist du…'
 - id: auto-3cd205ff14
   title: Lead Creative (Motion Design)
   org: Superside
@@ -408,36 +441,3 @@ leads:
   src: Arbeitnow (EU)
   first_seen: '2026-11-12'
   notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 12/11) · Berlin, DE · eixo ADS · Wir sind wongdoody, mit mehr als 2.000 Kolleg:innen in 25 Designstudios auf vier Kontinenten – ein hochgradig kollaboratives Team aus Expert:innen für Produkterlebnisse, digitales Marketing und immersive Technologien.…
-- id: auto-2236a91e32
-  title: Head of Brand & Creative
-  org: Atomic
-  kind: vaga
-  url: https://jobicy.com/jobs/155002-head-of-brand-creative-2
-  axis: ads
-  score: 2
-  where: USA
-  src: Jobicy
-  first_seen: '2026-11-11'
-  notes: 🤖 Encontrada pelo robô (Jobicy, 11/11) · USA · eixo ADS · About Golden Child Golden Child is redefining pet nutrition through an uncompromising focus on health, quality, and culinary craftsmanship. A Miami-based startup, we bring together veterinary nutrition expertise,…
-- id: auto-4503b831cf
-  title: Freelance Product and Brand Designers – Join Our Network
-  org: Instrument
-  kind: vaga
-  url: https://jobicy.com/jobs/152896-freelance-product-and-brand-designers-join-our-network
-  axis: ads
-  score: 2
-  where: USA
-  src: Jobicy
-  first_seen: '2026-11-11'
-  notes: 🤖 Encontrada pelo robô (Jobicy, 11/11) · USA · eixo ADS · Instrument is a digitally native design and technology company built to help brands unlock their full potential. Since 2005, our team of makers, thinkers, and storytellers has partnered with leading brands like Google,…
-- id: auto-0372162137
-  title: Projektmanager – Social Ads & UGC (m/w/d)
-  org: Creative Dreams
-  kind: vaga
-  url: https://www.arbeitnow.com/jobs/companies/creative-dreams/projektmanager-social-ads-ugc-dusseldorf-219357
-  axis: ads
-  score: 3
-  where: Düsseldorf
-  src: Arbeitnow (EU)
-  first_seen: '2026-11-05'
-  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 05/11) · Düsseldorf · eixo ADS · Du behältst auch bei vielen Projekten gleichzeitig den Überblick? Du planst gern, setzt Prioritäten und sorgst dafür, dass Termine halten? Mit Creative Dreams arbeiten wir als starkes Team täglich mit den größten Ecom-…
