@@ -1,6 +1,28 @@
-updated: 2026-11-25 10:01 UTC
-new_today: 3
+updated: 2026-11-26 10:00 UTC
+new_today: 2
 leads:
+- id: auto-a3b4d654a2
+  title: Creative Technologist
+  org: Black Forest Labs
+  kind: vaga
+  url: https://www.arbeitnow.com/jobs/companies/black-forest-labs/creative-technologist-freiburg-122472
+  axis: ai
+  score: 3
+  where: Freiburg (Germany)
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-26'
+  notes: '🤖 Encontrada pelo robô (Arbeitnow (EU), 26/11) · Freiburg (Germany) · eixo AI · About Black Forest Labs We’re the team building the foundational layer for visual intelligence: multimodal models trained jointly on images, video, audio, and action to see, generate, and understand the world. Our…'
+- id: auto-54d69f280e
+  title: Senior Creative Technologist, AI
+  org: Fanaticsfbg
+  kind: vaga
+  url: https://www.arbeitnow.co.uk/jobs/companies/fanaticsfbg/senior-creative-technologist-ai-leeds-london-165983
+  axis: ai
+  score: 2
+  where: Leeds; London
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-26'
+  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 26/11) · Leeds; London · eixo AI · About Us Fanatics is a leading global sports platform redefining how fans connect with the teams, players and moments they love. Our businesses — Fanatics Commerce, Fanatics Collectibles, Fanatics Betting &amp; Gaming,…
 - id: auto-38cb912a8a
   title: Generative Motion Artist
   org: Moon Active
@@ -419,25 +441,3 @@ leads:
   src: Jobicy
   first_seen: '2026-11-12'
   notes: 🤖 Encontrada pelo robô (Jobicy, 12/11) · Finland · eixo AI · Our Vision & Products EverAI — Building the Future of AI Companionship One of the Top 15 Largest & Fastest-Growing AI Companies in the World 50 Million Users in 2 years — Help Us Reach 100M first, 500M next At EverAI,…
-- id: auto-dd0ae71e72
-  title: Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Portugal)
-  org: EverAI
-  kind: vaga
-  url: https://jobicy.com/jobs/161235-mid-senior-ai-cinematic-video-editor-freelance-full-remote-portugal
-  axis: ai
-  score: 6
-  where: Portugal
-  src: Jobicy
-  first_seen: '2026-11-12'
-  notes: 🤖 Encontrada pelo robô (Jobicy, 12/11) · Portugal · eixo AI · Our Vision & Products EverAI — Building the Future of AI Companionship One of the Top 15 Largest & Fastest-Growing AI Companies in the World 50 Million Users in 2 years — Help Us Reach 100M first, 500M next At EverAI,…
-- id: auto-64328be228
-  title: Senior Creative Strategist – Social & Performance – for dm-drogerie markt
-  org: wongdoody
-  kind: vaga
-  url: https://www.arbeitnow.com/jobs/companies/wongdoody/senior-creative-strategist-social-performance-for-dm-drogerie-markt-berlin-de-371464
-  axis: ads
-  score: 2
-  where: Berlin, DE
-  src: Arbeitnow (EU)
-  first_seen: '2026-11-12'
-  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 12/11) · Berlin, DE · eixo ADS · Wir sind wongdoody, mit mehr als 2.000 Kolleg:innen in 25 Designstudios auf vier Kontinenten – ein hochgradig kollaboratives Team aus Expert:innen für Produkterlebnisse, digitales Marketing und immersive Technologien.…
