@@ -1,6 +1,28 @@
-updated: 2026-11-26 10:00 UTC
+updated: 2026-11-27 10:01 UTC
 new_today: 2
 leads:
+- id: auto-509125b6ed
+  title: Video Editor at AIOS — Remote, $1,500-$2,000/month (contract)
+  org: AIOS (YC W20/S21)
+  kind: vaga
+  url: https://www.arbeitnow.co.uk/jobs/companies/aios-yc-w20s21/video-editor-at-aios-remote-1500-2000-month-contract-blackburn-354752
+  axis: ads
+  score: 3
+  where: Remote (UK hours)
+  src: Arbeitnow (EU)
+  first_seen: '2026-11-27'
+  notes: 🤖 Encontrada pelo robô (Arbeitnow (EU), 27/11) · Remote (UK hours) · eixo ADS · About AIOS AIOS is building the world’s first full-stack AI doctor. We’re at $450M ARR, growing from $7M/yr in April 2025. We’re faithfully serving 200k/mo patients via Bolt Pharmacy, our main UK brand. We’ve just…
+- id: auto-3730fdb8fe
+  title: Motion & Animation Designer (Freelance)
+  org: Red Door Collaborative
+  kind: vaga
+  url: https://himalayas.app/companies/red-door-collaborative/jobs/motion-animation-designer-freelance?utm_source=api
+  axis: ads
+  score: 2
+  where: United States
+  src: Himalayas
+  first_seen: '2026-11-27'
+  notes: 🤖 Encontrada pelo robô (Himalayas, 27/11) · United States · eixo ADS · Remote (US-based) · Freelance, project-based · Paid by project, DOE Applications are reviewed on a rolling basis. Remote (US-based) · Freelance, project-based · Paid by project, DOE Applications are reviewed on a…
 - id: auto-a3b4d654a2
   title: Creative Technologist
   org: Black Forest Labs
@@ -419,25 +441,3 @@ leads:
   src: Jobicy
   first_seen: '2026-11-12'
   notes: 🤖 Encontrada pelo robô (Jobicy, 12/11) · Denmark · eixo AI · Our Vision & Products EverAI — Building the Future of AI Companionship One of the Top 15 Largest & Fastest-Growing AI Companies in the World 50 Million Users in 2 years — Help Us Reach 100M first, 500M next At EverAI,…
-- id: auto-eae684fec0
-  title: Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - UK)
-  org: EverAI
-  kind: vaga
-  url: https://jobicy.com/jobs/161265-mid-senior-ai-cinematic-video-editor-freelance-full-remote-uk
-  axis: ai
-  score: 6
-  where: UK
-  src: Jobicy
-  first_seen: '2026-11-12'
-  notes: 🤖 Encontrada pelo robô (Jobicy, 12/11) · UK · eixo AI · Our Vision & Products EverAI — Building the Future of AI Companionship One of the Top 15 Largest & Fastest-Growing AI Companies in the World 50 Million Users in 2 years — Help Us Reach 100M first, 500M next At EverAI,…
-- id: auto-435c085116
-  title: Mid/Senior AI Cinematic Video Editor (Freelance - Full Remote - Finland)
-  org: EverAI
-  kind: vaga
-  url: https://jobicy.com/jobs/161237-mid-senior-ai-cinematic-video-editor-freelance-full-remote-finland
-  axis: ai
-  score: 6
-  where: Finland
-  src: Jobicy
-  first_seen: '2026-11-12'
-  notes: 🤖 Encontrada pelo robô (Jobicy, 12/11) · Finland · eixo AI · Our Vision & Products EverAI — Building the Future of AI Companionship One of the Top 15 Largest & Fastest-Growing AI Companies in the World 50 Million Users in 2 years — Help Us Reach 100M first, 500M next At EverAI,…
