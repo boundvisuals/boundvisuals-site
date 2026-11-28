@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-27 10:01 UTC",
+ "checked": "2026-11-28 10:01 UTC",
  "all_ok": true,
  "checks": [
   {
@@ -25,32 +25,32 @@
   {
    "name": "PDF Portfolio_All.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 20 dias"
+   "detail": "HTTP 200 · 21 dias"
   },
   {
    "name": "PDF Portfolio_AI.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 20 dias"
+   "detail": "HTTP 200 · 21 dias"
   },
   {
    "name": "PDF Portfolio_3D_Architecture_Visualization.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 20 dias"
+   "detail": "HTTP 200 · 21 dias"
   },
   {
    "name": "PDF CV_Vitor_Hugo_Long.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 7 dias"
+   "detail": "HTTP 200 · 8 dias"
   },
   {
    "name": "PDF CV_Vitor_Hugo_Short.pdf",
    "ok": true,
-   "detail": "HTTP 200 · 7 dias"
+   "detail": "HTTP 200 · 8 dias"
   },
   {
    "name": "Certificado SSL",
    "ok": true,
-   "detail": "expira em 71 dias"
+   "detail": "expira em 70 dias"
   },
   {
    "name": "Ligação Instagram/Facebook (token)",
@@ -60,7 +60,7 @@
   {
    "name": "Fila de posts",
    "ok": true,
-   "detail": "posts preparados até 2026-12-27 (30 dias)"
+   "detail": "posts preparados até 2026-12-27 (29 dias)"
   },
   {
    "name": "Calendário: sem repetidas e todas as imagens agendadas",
